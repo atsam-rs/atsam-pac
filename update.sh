@@ -19,7 +19,7 @@ for xsl in svd/devices/*\.xsl; do
   
   pushd "${TOP}/pac/${chip}"
 
-  xsltproc "${TOP}/${xsl}" "${TOP}/${svd}" | svd2rust #--nightly
+  xsltproc "${TOP}/${xsl}" "${TOP}/${svd}" | svd2rust
 
   rm -rf src/
   form -i lib.rs -o src

@@ -199,13 +199,52 @@ impl<'a> MOSCXTST_W<'a> {
         self.w
     }
 }
+#[doc = "Password\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
+pub enum KEY_A {
+    #[doc = "55: Writing any other value in this field aborts the write operation."]
+    PASSWD = 55,
+}
+impl From<KEY_A> for u8 {
+    #[inline(always)]
+    fn from(variant: KEY_A) -> Self {
+        variant as _
+    }
+}
 #[doc = "Reader of field `KEY`"]
-pub type KEY_R = crate::R<u8, u8>;
+pub type KEY_R = crate::R<u8, KEY_A>;
+impl KEY_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, KEY_A> {
+        use crate::Variant::*;
+        match self.bits {
+            55 => Val(KEY_A::PASSWD),
+            i => Res(i),
+        }
+    }
+    #[doc = "Checks if the value of the field is `PASSWD`"]
+    #[inline(always)]
+    pub fn is_passwd(&self) -> bool {
+        *self == KEY_A::PASSWD
+    }
+}
 #[doc = "Write proxy for field `KEY`"]
 pub struct KEY_W<'a> {
     w: &'a mut W,
 }
 impl<'a> KEY_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: KEY_A) -> &'a mut W {
+        unsafe { self.bits(variant.into()) }
+    }
+    #[doc = "Writing any other value in this field aborts the write operation."]
+    #[inline(always)]
+    pub fn passwd(self) -> &'a mut W {
+        self.variant(KEY_A::PASSWD)
+    }
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
