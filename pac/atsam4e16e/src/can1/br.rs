@@ -83,9 +83,9 @@ impl<'a> BRP_W<'a> {
 #[doc = "Sampling Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SMP_A {
-    #[doc = "0: The incoming bit stream is sampled once at sample point"]
+    #[doc = "0: The incoming bit stream is sampled once at sample point."]
     ONCE = 0,
-    #[doc = "1: The incoming bit stream is sampled three times with a period of a MCK clock period, centered on sample point"]
+    #[doc = "1: The incoming bit stream is sampled three times with a period of a MCK clock period, centered on sample point."]
     THREE = 1,
 }
 impl From<SMP_A> for bool {
@@ -128,12 +128,12 @@ impl<'a> SMP_W<'a> {
             self.bit(variant.into())
         }
     }
-    #[doc = "The incoming bit stream is sampled once at sample point"]
+    #[doc = "The incoming bit stream is sampled once at sample point."]
     #[inline(always)]
     pub fn once(self) -> &'a mut W {
         self.variant(SMP_A::ONCE)
     }
-    #[doc = "The incoming bit stream is sampled three times with a period of a MCK clock period, centered on sample point"]
+    #[doc = "The incoming bit stream is sampled three times with a period of a MCK clock period, centered on sample point."]
     #[inline(always)]
     pub fn three(self) -> &'a mut W {
         self.variant(SMP_A::THREE)
@@ -176,7 +176,7 @@ impl R {
     pub fn sjw(&self) -> SJW_R {
         SJW_R::new(((self.bits >> 12) & 0x03) as u8)
     }
-    #[doc = "Bits 16:22 - Baudrate Prescaler"]
+    #[doc = "Bits 16:22 - Baudrate Prescaler."]
     #[inline(always)]
     pub fn brp(&self) -> BRP_R {
         BRP_R::new(((self.bits >> 16) & 0x7f) as u8)
@@ -208,7 +208,7 @@ impl W {
     pub fn sjw(&mut self) -> SJW_W {
         SJW_W { w: self }
     }
-    #[doc = "Bits 16:22 - Baudrate Prescaler"]
+    #[doc = "Bits 16:22 - Baudrate Prescaler."]
     #[inline(always)]
     pub fn brp(&mut self) -> BRP_W {
         BRP_W { w: self }

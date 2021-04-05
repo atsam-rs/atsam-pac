@@ -13,9 +13,9 @@ impl crate::ResetValue for super::GCFG {
 #[doc = "Arbiter Configuration\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ARB_CFG_A {
-    #[doc = "0: Fixed priority arbiter"]
+    #[doc = "0: Fixed priority arbiter."]
     FIXED = 0,
-    #[doc = "1: Modified round robin arbiter"]
+    #[doc = "1: Modified round robin arbiter."]
     ROUND_ROBIN = 1,
 }
 impl From<ARB_CFG_A> for bool {
@@ -58,12 +58,12 @@ impl<'a> ARB_CFG_W<'a> {
             self.bit(variant.into())
         }
     }
-    #[doc = "Fixed priority arbiter"]
+    #[doc = "Fixed priority arbiter."]
     #[inline(always)]
     pub fn fixed(self) -> &'a mut W {
         self.variant(ARB_CFG_A::FIXED)
     }
-    #[doc = "Modified round robin arbiter"]
+    #[doc = "Modified round robin arbiter."]
     #[inline(always)]
     pub fn round_robin(self) -> &'a mut W {
         self.variant(ARB_CFG_A::ROUND_ROBIN)

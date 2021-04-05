@@ -21,42 +21,42 @@ pub type TXBUFE_R = crate::R<bool, bool>;
 #[doc = "Reader of field `RXBUFF`"]
 pub type RXBUFF_R = crate::R<bool, bool>;
 impl R {
-    #[doc = "Bit 0 - RXRDY Interrupt Mask"]
+    #[doc = "Bit 0 - Mask RXRDY Interrupt"]
     #[inline(always)]
     pub fn rxrdy(&self) -> RXRDY_R {
         RXRDY_R::new((self.bits & 0x01) != 0)
     }
-    #[doc = "Bit 1 - TXRDY Interrupt Mask"]
+    #[doc = "Bit 1 - Disable TXRDY Interrupt"]
     #[inline(always)]
     pub fn txrdy(&self) -> TXRDY_R {
         TXRDY_R::new(((self.bits >> 1) & 0x01) != 0)
     }
-    #[doc = "Bit 3 - End of Receive Buffer Interrupt Mask (available in all USART modes of operation)"]
+    #[doc = "Bit 3 - Mask End of Receive Transfer Interrupt"]
     #[inline(always)]
     pub fn endrx(&self) -> ENDRX_R {
         ENDRX_R::new(((self.bits >> 3) & 0x01) != 0)
     }
-    #[doc = "Bit 4 - End of Transmit Buffer Interrupt Mask (available in all USART modes of operation)"]
+    #[doc = "Bit 4 - Mask End of Transmit Interrupt"]
     #[inline(always)]
     pub fn endtx(&self) -> ENDTX_R {
         ENDTX_R::new(((self.bits >> 4) & 0x01) != 0)
     }
-    #[doc = "Bit 5 - Overrun Error Interrupt Mask"]
+    #[doc = "Bit 5 - Mask Overrun Error Interrupt"]
     #[inline(always)]
     pub fn ovre(&self) -> OVRE_R {
         OVRE_R::new(((self.bits >> 5) & 0x01) != 0)
     }
-    #[doc = "Bit 6 - Framing Error Interrupt Mask"]
+    #[doc = "Bit 6 - Mask Framing Error Interrupt"]
     #[inline(always)]
     pub fn frame(&self) -> FRAME_R {
         FRAME_R::new(((self.bits >> 6) & 0x01) != 0)
     }
-    #[doc = "Bit 7 - Parity Error Interrupt Mask"]
+    #[doc = "Bit 7 - Mask Parity Error Interrupt"]
     #[inline(always)]
     pub fn pare(&self) -> PARE_R {
         PARE_R::new(((self.bits >> 7) & 0x01) != 0)
     }
-    #[doc = "Bit 9 - TXEMPTY Interrupt Mask"]
+    #[doc = "Bit 9 - Mask TXEMPTY Interrupt"]
     #[inline(always)]
     pub fn txempty(&self) -> TXEMPTY_R {
         TXEMPTY_R::new(((self.bits >> 9) & 0x01) != 0)
@@ -66,7 +66,7 @@ impl R {
     pub fn txbufe(&self) -> TXBUFE_R {
         TXBUFE_R::new(((self.bits >> 11) & 0x01) != 0)
     }
-    #[doc = "Bit 12 - Receive Buffer Full Interrupt Mask"]
+    #[doc = "Bit 12 - Mask RXBUFF Interrupt"]
     #[inline(always)]
     pub fn rxbuff(&self) -> RXBUFF_R {
         RXBUFF_R::new(((self.bits >> 12) & 0x01) != 0)

@@ -74,7 +74,7 @@ impl R {
     pub fn rxsusp(&self) -> RXSUSP_R {
         RXSUSP_R::new(((self.bits >> 8) & 0x01) != 0)
     }
-    #[doc = "Bit 9 - Mask UDP Resume Interrupt"]
+    #[doc = "Bit 9 - Mask UDP Resume Interrupt."]
     #[inline(always)]
     pub fn rxrsm(&self) -> RXRSM_R {
         RXRSM_R::new(((self.bits >> 9) & 0x01) != 0)

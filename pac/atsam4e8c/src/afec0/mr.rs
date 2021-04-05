@@ -13,9 +13,9 @@ impl crate::ResetValue for super::MR {
 #[doc = "Trigger Enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TRGEN_A {
-    #[doc = "0: Hardware triggers are disabled. Starting a conversion is only possible by software"]
+    #[doc = "0: Hardware triggers are disabled. Starting a conversion is only possible by software."]
     DIS = 0,
-    #[doc = "1: Hardware trigger selected by TRGSEL field is enabled"]
+    #[doc = "1: Hardware trigger selected by TRGSEL field is enabled."]
     EN = 1,
 }
 impl From<TRGEN_A> for bool {
@@ -58,12 +58,12 @@ impl<'a> TRGEN_W<'a> {
             self.bit(variant.into())
         }
     }
-    #[doc = "Hardware triggers are disabled. Starting a conversion is only possible by software"]
+    #[doc = "Hardware triggers are disabled. Starting a conversion is only possible by software."]
     #[inline(always)]
     pub fn dis(self) -> &'a mut W {
         self.variant(TRGEN_A::DIS)
     }
-    #[doc = "Hardware trigger selected by TRGSEL field is enabled"]
+    #[doc = "Hardware trigger selected by TRGSEL field is enabled."]
     #[inline(always)]
     pub fn en(self) -> &'a mut W {
         self.variant(TRGEN_A::EN)
@@ -358,7 +358,7 @@ impl<'a> FWUP_W<'a> {
 pub enum FREERUN_A {
     #[doc = "0: Normal Mode"]
     OFF = 0,
-    #[doc = "1: Free Run Mode: Never wait for any trigger"]
+    #[doc = "1: Free Run Mode: Never wait for any trigger."]
     ON = 1,
 }
 impl From<FREERUN_A> for bool {
@@ -406,7 +406,7 @@ impl<'a> FREERUN_W<'a> {
     pub fn off(self) -> &'a mut W {
         self.variant(FREERUN_A::OFF)
     }
-    #[doc = "Free Run Mode: Never wait for any trigger"]
+    #[doc = "Free Run Mode: Never wait for any trigger."]
     #[inline(always)]
     pub fn on(self) -> &'a mut W {
         self.variant(FREERUN_A::ON)
@@ -890,9 +890,9 @@ impl<'a> TRANSFER_W<'a> {
 #[doc = "Use Sequence Enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum USEQ_A {
-    #[doc = "0: Normal Mode: The controller converts channels in a simple numeric order"]
+    #[doc = "0: Normal Mode: The controller converts channels in a simple numeric order."]
     NUM_ORDER = 0,
-    #[doc = "1: User Sequence Mode: The sequence respects what is defined in AFE_SEQR1 and AFE_SEQR2 registers"]
+    #[doc = "1: User Sequence Mode: The sequence respects what is defined in AFE_SEQR1 and AFE_SEQR2 registers."]
     REG_ORDER = 1,
 }
 impl From<USEQ_A> for bool {
@@ -935,12 +935,12 @@ impl<'a> USEQ_W<'a> {
             self.bit(variant.into())
         }
     }
-    #[doc = "Normal Mode: The controller converts channels in a simple numeric order"]
+    #[doc = "Normal Mode: The controller converts channels in a simple numeric order."]
     #[inline(always)]
     pub fn num_order(self) -> &'a mut W {
         self.variant(USEQ_A::NUM_ORDER)
     }
-    #[doc = "User Sequence Mode: The sequence respects what is defined in AFE_SEQR1 and AFE_SEQR2 registers"]
+    #[doc = "User Sequence Mode: The sequence respects what is defined in AFE_SEQR1 and AFE_SEQR2 registers."]
     #[inline(always)]
     pub fn reg_order(self) -> &'a mut W {
         self.variant(USEQ_A::REG_ORDER)

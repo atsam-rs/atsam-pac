@@ -25,14 +25,14 @@ impl<'a> USBDIV_W<'a> {
     }
 }
 impl R {
-    #[doc = "Bits 8:11 - Divider for USB Clock"]
+    #[doc = "Bits 8:11 - Divider for USB Clock."]
     #[inline(always)]
     pub fn usbdiv(&self) -> USBDIV_R {
         USBDIV_R::new(((self.bits >> 8) & 0x0f) as u8)
     }
 }
 impl W {
-    #[doc = "Bits 8:11 - Divider for USB Clock"]
+    #[doc = "Bits 8:11 - Divider for USB Clock."]
     #[inline(always)]
     pub fn usbdiv(&mut self) -> USBDIV_W {
         USBDIV_W { w: self }

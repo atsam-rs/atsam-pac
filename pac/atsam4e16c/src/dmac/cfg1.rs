@@ -41,9 +41,9 @@ impl<'a> DST_PER_W<'a> {
 #[doc = "Software or Hardware Selection for the Source\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SRC_H2SEL_A {
-    #[doc = "0: Software handshaking interface is used to trigger a transfer request"]
+    #[doc = "0: Software handshaking interface is used to trigger a transfer request."]
     SW = 0,
-    #[doc = "1: Hardware handshaking interface is used to trigger a transfer request"]
+    #[doc = "1: Hardware handshaking interface is used to trigger a transfer request."]
     HW = 1,
 }
 impl From<SRC_H2SEL_A> for bool {
@@ -86,12 +86,12 @@ impl<'a> SRC_H2SEL_W<'a> {
             self.bit(variant.into())
         }
     }
-    #[doc = "Software handshaking interface is used to trigger a transfer request"]
+    #[doc = "Software handshaking interface is used to trigger a transfer request."]
     #[inline(always)]
     pub fn sw(self) -> &'a mut W {
         self.variant(SRC_H2SEL_A::SW)
     }
-    #[doc = "Hardware handshaking interface is used to trigger a transfer request"]
+    #[doc = "Hardware handshaking interface is used to trigger a transfer request."]
     #[inline(always)]
     pub fn hw(self) -> &'a mut W {
         self.variant(SRC_H2SEL_A::HW)
@@ -116,9 +116,9 @@ impl<'a> SRC_H2SEL_W<'a> {
 #[doc = "Software or Hardware Selection for the Destination\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DST_H2SEL_A {
-    #[doc = "0: Software handshaking interface is used to trigger a transfer request"]
+    #[doc = "0: Software handshaking interface is used to trigger a transfer request."]
     SW = 0,
-    #[doc = "1: Hardware handshaking interface is used to trigger a transfer request"]
+    #[doc = "1: Hardware handshaking interface is used to trigger a transfer request."]
     HW = 1,
 }
 impl From<DST_H2SEL_A> for bool {
@@ -161,12 +161,12 @@ impl<'a> DST_H2SEL_W<'a> {
             self.bit(variant.into())
         }
     }
-    #[doc = "Software handshaking interface is used to trigger a transfer request"]
+    #[doc = "Software handshaking interface is used to trigger a transfer request."]
     #[inline(always)]
     pub fn sw(self) -> &'a mut W {
         self.variant(DST_H2SEL_A::SW)
     }
-    #[doc = "Hardware handshaking interface is used to trigger a transfer request"]
+    #[doc = "Hardware handshaking interface is used to trigger a transfer request."]
     #[inline(always)]
     pub fn hw(self) -> &'a mut W {
         self.variant(DST_H2SEL_A::HW)
@@ -191,9 +191,9 @@ impl<'a> DST_H2SEL_W<'a> {
 #[doc = "Stop On Done\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SOD_A {
-    #[doc = "0: STOP ON DONE disabled, the descriptor fetch operation ignores DONE Field of CTRLA register"]
+    #[doc = "0: STOP ON DONE disabled, the descriptor fetch operation ignores DONE Field of CTRLA register."]
     DISABLE = 0,
-    #[doc = "1: STOP ON DONE activated, the DMAC module is automatically disabled if DONE FIELD is set to 1"]
+    #[doc = "1: STOP ON DONE activated, the DMAC module is automatically disabled if DONE FIELD is set to 1."]
     ENABLE = 1,
 }
 impl From<SOD_A> for bool {
@@ -236,12 +236,12 @@ impl<'a> SOD_W<'a> {
             self.bit(variant.into())
         }
     }
-    #[doc = "STOP ON DONE disabled, the descriptor fetch operation ignores DONE Field of CTRLA register"]
+    #[doc = "STOP ON DONE disabled, the descriptor fetch operation ignores DONE Field of CTRLA register."]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
         self.variant(SOD_A::DISABLE)
     }
-    #[doc = "STOP ON DONE activated, the DMAC module is automatically disabled if DONE FIELD is set to 1"]
+    #[doc = "STOP ON DONE activated, the DMAC module is automatically disabled if DONE FIELD is set to 1."]
     #[inline(always)]
     pub fn enable(self) -> &'a mut W {
         self.variant(SOD_A::ENABLE)
@@ -341,7 +341,7 @@ impl<'a> LOCK_IF_W<'a> {
 #[doc = "Bus Lock\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LOCK_B_A {
-    #[doc = "0: AHB Bus Locking capability is disabled"]
+    #[doc = "0: AHB Bus Locking capability is disabled."]
     DISABLE = 0,
 }
 impl From<LOCK_B_A> for bool {
@@ -380,7 +380,7 @@ impl<'a> LOCK_B_W<'a> {
             self.bit(variant.into())
         }
     }
-    #[doc = "AHB Bus Locking capability is disabled"]
+    #[doc = "AHB Bus Locking capability is disabled."]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
         self.variant(LOCK_B_A::DISABLE)
@@ -405,9 +405,9 @@ impl<'a> LOCK_B_W<'a> {
 #[doc = "Master Interface Arbiter Lock\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LOCK_IF_L_A {
-    #[doc = "0: The Master Interface Arbiter is locked by the channel x for a chunk transfer"]
+    #[doc = "0: The Master Interface Arbiter is locked by the channel x for a chunk transfer."]
     CHUNK = 0,
-    #[doc = "1: The Master Interface Arbiter is locked by the channel x for a buffer transfer"]
+    #[doc = "1: The Master Interface Arbiter is locked by the channel x for a buffer transfer."]
     BUFFER = 1,
 }
 impl From<LOCK_IF_L_A> for bool {
@@ -450,12 +450,12 @@ impl<'a> LOCK_IF_L_W<'a> {
             self.bit(variant.into())
         }
     }
-    #[doc = "The Master Interface Arbiter is locked by the channel x for a chunk transfer"]
+    #[doc = "The Master Interface Arbiter is locked by the channel x for a chunk transfer."]
     #[inline(always)]
     pub fn chunk(self) -> &'a mut W {
         self.variant(LOCK_IF_L_A::CHUNK)
     }
-    #[doc = "The Master Interface Arbiter is locked by the channel x for a buffer transfer"]
+    #[doc = "The Master Interface Arbiter is locked by the channel x for a buffer transfer."]
     #[inline(always)]
     pub fn buffer(self) -> &'a mut W {
         self.variant(LOCK_IF_L_A::BUFFER)
@@ -495,11 +495,11 @@ impl<'a> AHB_PROT_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum FIFOCFG_A {
-    #[doc = "0: The largest defined length AHB burst is performed on the destination AHB interface"]
+    #[doc = "0: The largest defined length AHB burst is performed on the destination AHB interface."]
     ALAP_CFG = 0,
-    #[doc = "1: When half FIFO size is available/filled, a source/destination request is serviced"]
+    #[doc = "1: When half FIFO size is available/filled, a source/destination request is serviced."]
     HALF_CFG = 1,
-    #[doc = "2: When there is enough space/data available to perform a single AHB access, then the request is serviced"]
+    #[doc = "2: When there is enough space/data available to perform a single AHB access, then the request is serviced."]
     ASAP_CFG = 2,
 }
 impl From<FIFOCFG_A> for u8 {
@@ -548,17 +548,17 @@ impl<'a> FIFOCFG_W<'a> {
     pub fn variant(self, variant: FIFOCFG_A) -> &'a mut W {
         unsafe { self.bits(variant.into()) }
     }
-    #[doc = "The largest defined length AHB burst is performed on the destination AHB interface"]
+    #[doc = "The largest defined length AHB burst is performed on the destination AHB interface."]
     #[inline(always)]
     pub fn alap_cfg(self) -> &'a mut W {
         self.variant(FIFOCFG_A::ALAP_CFG)
     }
-    #[doc = "When half FIFO size is available/filled, a source/destination request is serviced"]
+    #[doc = "When half FIFO size is available/filled, a source/destination request is serviced."]
     #[inline(always)]
     pub fn half_cfg(self) -> &'a mut W {
         self.variant(FIFOCFG_A::HALF_CFG)
     }
-    #[doc = "When there is enough space/data available to perform a single AHB access, then the request is serviced"]
+    #[doc = "When there is enough space/data available to perform a single AHB access, then the request is serviced."]
     #[inline(always)]
     pub fn asap_cfg(self) -> &'a mut W {
         self.variant(FIFOCFG_A::ASAP_CFG)

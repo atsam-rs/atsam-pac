@@ -3,9 +3,9 @@ pub type R = crate::R<u32, super::SR>;
 #[doc = "Acknowledge for Update\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ACKUPD_A {
-    #[doc = "0: Time and calendar registers cannot be updated"]
+    #[doc = "0: Time and calendar registers cannot be updated."]
     FREERUN = 0,
-    #[doc = "1: Time and calendar registers can be updated"]
+    #[doc = "1: Time and calendar registers can be updated."]
     UPDATE = 1,
 }
 impl From<ACKUPD_A> for bool {
@@ -39,9 +39,9 @@ impl ACKUPD_R {
 #[doc = "Alarm Flag\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ALARM_A {
-    #[doc = "0: No alarm matching condition occurred"]
+    #[doc = "0: No alarm matching condition occurred."]
     NO_ALARMEVENT = 0,
-    #[doc = "1: An alarm matching condition has occurred"]
+    #[doc = "1: An alarm matching condition has occurred."]
     ALARMEVENT = 1,
 }
 impl From<ALARM_A> for bool {
@@ -75,9 +75,9 @@ impl ALARM_R {
 #[doc = "Second Event\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SEC_A {
-    #[doc = "0: No second event has occurred since the last clear"]
+    #[doc = "0: No second event has occurred since the last clear."]
     NO_SECEVENT = 0,
-    #[doc = "1: At least one second event has occurred since the last clear"]
+    #[doc = "1: At least one second event has occurred since the last clear."]
     SECEVENT = 1,
 }
 impl From<SEC_A> for bool {
@@ -111,9 +111,9 @@ impl SEC_R {
 #[doc = "Time Event\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TIMEV_A {
-    #[doc = "0: No time event has occurred since the last clear"]
+    #[doc = "0: No time event has occurred since the last clear."]
     NO_TIMEVENT = 0,
-    #[doc = "1: At least one time event has occurred since the last clear"]
+    #[doc = "1: At least one time event has occurred since the last clear."]
     TIMEVENT = 1,
 }
 impl From<TIMEV_A> for bool {
@@ -147,9 +147,9 @@ impl TIMEV_R {
 #[doc = "Calendar Event\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CALEV_A {
-    #[doc = "0: No calendar event has occurred since the last clear"]
+    #[doc = "0: No calendar event has occurred since the last clear."]
     NO_CALEVENT = 0,
-    #[doc = "1: At least one calendar event has occurred since the last clear"]
+    #[doc = "1: At least one calendar event has occurred since the last clear."]
     CALEVENT = 1,
 }
 impl From<CALEV_A> for bool {
@@ -183,9 +183,9 @@ impl CALEV_R {
 #[doc = "Time and/or Date Free Running Error\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TDERR_A {
-    #[doc = "0: The internal free running counters are carrying valid values since the last read of the Status Register (RTC_SR)"]
+    #[doc = "0: The internal free running counters are carrying valid values since the last read of RTC_SR."]
     CORRECT = 0,
-    #[doc = "1: The internal free running counters have been corrupted (invalid date or time, non-BCD values) since the last read and/or they are still invalid"]
+    #[doc = "1: The internal free running counters have been corrupted (invalid date or time, non-BCD values) since the last read and/or they are still invalid."]
     ERR_TIMEDATE = 1,
 }
 impl From<TDERR_A> for bool {

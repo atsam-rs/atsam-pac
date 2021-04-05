@@ -38,13 +38,13 @@ impl<'a> RTCT_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum TEMPCMPMOD_A {
-    #[doc = "0: Generates an event when the converted data is lower than the low threshold of the window"]
+    #[doc = "0: Generates an event when the converted data is lower than the low threshold of the window."]
     LOW = 0,
-    #[doc = "1: Generates an event when the converted data is higher than the high threshold of the window"]
+    #[doc = "1: Generates an event when the converted data is higher than the high threshold of the window."]
     HIGH = 1,
-    #[doc = "2: Generates an event when the converted data is in the comparison window"]
+    #[doc = "2: Generates an event when the converted data is in the comparison window."]
     IN = 2,
-    #[doc = "3: Generates an event when the converted data is out of the comparison window"]
+    #[doc = "3: Generates an event when the converted data is out of the comparison window."]
     OUT = 3,
 }
 impl From<TEMPCMPMOD_A> for u8 {
@@ -100,22 +100,22 @@ impl<'a> TEMPCMPMOD_W<'a> {
             self.bits(variant.into())
         }
     }
-    #[doc = "Generates an event when the converted data is lower than the low threshold of the window"]
+    #[doc = "Generates an event when the converted data is lower than the low threshold of the window."]
     #[inline(always)]
     pub fn low(self) -> &'a mut W {
         self.variant(TEMPCMPMOD_A::LOW)
     }
-    #[doc = "Generates an event when the converted data is higher than the high threshold of the window"]
+    #[doc = "Generates an event when the converted data is higher than the high threshold of the window."]
     #[inline(always)]
     pub fn high(self) -> &'a mut W {
         self.variant(TEMPCMPMOD_A::HIGH)
     }
-    #[doc = "Generates an event when the converted data is in the comparison window"]
+    #[doc = "Generates an event when the converted data is in the comparison window."]
     #[inline(always)]
     pub fn in_(self) -> &'a mut W {
         self.variant(TEMPCMPMOD_A::IN)
     }
-    #[doc = "Generates an event when the converted data is out of the comparison window"]
+    #[doc = "Generates an event when the converted data is out of the comparison window."]
     #[inline(always)]
     pub fn out(self) -> &'a mut W {
         self.variant(TEMPCMPMOD_A::OUT)

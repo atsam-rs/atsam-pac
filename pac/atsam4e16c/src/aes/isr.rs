@@ -16,17 +16,17 @@ pub type URAD_R = crate::R<bool, bool>;
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum URAT_A {
-    #[doc = "0: Input Data Register written during the data processing when SMOD=0x2 mode"]
+    #[doc = "0: Input Data Register written during the data processing when SMOD=0x2 mode."]
     IDR_WR_PROCESSING = 0,
-    #[doc = "1: Output Data Register read during the data processing"]
+    #[doc = "1: Output Data Register read during the data processing."]
     ODR_RD_PROCESSING = 1,
-    #[doc = "2: Mode Register written during the data processing"]
+    #[doc = "2: Mode Register written during the data processing."]
     MR_WR_PROCESSING = 2,
-    #[doc = "3: Output Data Register read during the sub-keys generation"]
+    #[doc = "3: Output Data Register read during the sub-keys generation."]
     ODR_RD_SUBKGEN = 3,
-    #[doc = "4: Mode Register written during the sub-keys generation"]
+    #[doc = "4: Mode Register written during the sub-keys generation."]
     MR_WR_SUBKGEN = 4,
-    #[doc = "5: Write-only register read access"]
+    #[doc = "5: Write-only register read access."]
     WOR_RD_ACCESS = 5,
 }
 impl From<URAT_A> for u8 {

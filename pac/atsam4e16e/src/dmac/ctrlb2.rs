@@ -13,9 +13,9 @@ impl crate::ResetValue for super::CTRLB2 {
 #[doc = "Source Address Descriptor\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SRC_DSCR_A {
-    #[doc = "0: Source address is updated when the descriptor is fetched from the memory"]
+    #[doc = "0: Source address is updated when the descriptor is fetched from the memory."]
     FETCH_FROM_MEM = 0,
-    #[doc = "1: Buffer Descriptor Fetch operation is disabled for the source"]
+    #[doc = "1: Buffer Descriptor Fetch operation is disabled for the source."]
     FETCH_DISABLE = 1,
 }
 impl From<SRC_DSCR_A> for bool {
@@ -58,12 +58,12 @@ impl<'a> SRC_DSCR_W<'a> {
             self.bit(variant.into())
         }
     }
-    #[doc = "Source address is updated when the descriptor is fetched from the memory"]
+    #[doc = "Source address is updated when the descriptor is fetched from the memory."]
     #[inline(always)]
     pub fn fetch_from_mem(self) -> &'a mut W {
         self.variant(SRC_DSCR_A::FETCH_FROM_MEM)
     }
-    #[doc = "Buffer Descriptor Fetch operation is disabled for the source"]
+    #[doc = "Buffer Descriptor Fetch operation is disabled for the source."]
     #[inline(always)]
     pub fn fetch_disable(self) -> &'a mut W {
         self.variant(SRC_DSCR_A::FETCH_DISABLE)
@@ -88,9 +88,9 @@ impl<'a> SRC_DSCR_W<'a> {
 #[doc = "Destination Address Descriptor\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DST_DSCR_A {
-    #[doc = "0: Destination address is updated when the descriptor is fetched from the memory"]
+    #[doc = "0: Destination address is updated when the descriptor is fetched from the memory."]
     FETCH_FROM_MEM = 0,
-    #[doc = "1: Buffer Descriptor Fetch operation is disabled for the destination"]
+    #[doc = "1: Buffer Descriptor Fetch operation is disabled for the destination."]
     FETCH_DISABLE = 1,
 }
 impl From<DST_DSCR_A> for bool {
@@ -133,12 +133,12 @@ impl<'a> DST_DSCR_W<'a> {
             self.bit(variant.into())
         }
     }
-    #[doc = "Destination address is updated when the descriptor is fetched from the memory"]
+    #[doc = "Destination address is updated when the descriptor is fetched from the memory."]
     #[inline(always)]
     pub fn fetch_from_mem(self) -> &'a mut W {
         self.variant(DST_DSCR_A::FETCH_FROM_MEM)
     }
-    #[doc = "Buffer Descriptor Fetch operation is disabled for the destination"]
+    #[doc = "Buffer Descriptor Fetch operation is disabled for the destination."]
     #[inline(always)]
     pub fn fetch_disable(self) -> &'a mut W {
         self.variant(DST_DSCR_A::FETCH_DISABLE)

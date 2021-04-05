@@ -14,27 +14,27 @@ impl crate::ResetValue for super::CMR3 {
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum CPRE_A {
-    #[doc = "0: Peripheral clock"]
+    #[doc = "0: Master clock"]
     MCK = 0,
-    #[doc = "1: Peripheral clock/2"]
+    #[doc = "1: Master clock/2"]
     MCK_DIV_2 = 1,
-    #[doc = "2: Peripheral clock/4"]
+    #[doc = "2: Master clock/4"]
     MCK_DIV_4 = 2,
-    #[doc = "3: Peripheral clock/8"]
+    #[doc = "3: Master clock/8"]
     MCK_DIV_8 = 3,
-    #[doc = "4: Peripheral clock/16"]
+    #[doc = "4: Master clock/16"]
     MCK_DIV_16 = 4,
-    #[doc = "5: Peripheral clock/32"]
+    #[doc = "5: Master clock/32"]
     MCK_DIV_32 = 5,
-    #[doc = "6: Peripheral clock/64"]
+    #[doc = "6: Master clock/64"]
     MCK_DIV_64 = 6,
-    #[doc = "7: Peripheral clock/128"]
+    #[doc = "7: Master clock/128"]
     MCK_DIV_128 = 7,
-    #[doc = "8: Peripheral clock/256"]
+    #[doc = "8: Master clock/256"]
     MCK_DIV_256 = 8,
-    #[doc = "9: Peripheral clock/512"]
+    #[doc = "9: Master clock/512"]
     MCK_DIV_512 = 9,
-    #[doc = "10: Peripheral clock/1024"]
+    #[doc = "10: Master clock/1024"]
     MCK_DIV_1024 = 10,
     #[doc = "11: Clock A"]
     CLKA = 11,
@@ -147,57 +147,57 @@ impl<'a> CPRE_W<'a> {
     pub fn variant(self, variant: CPRE_A) -> &'a mut W {
         unsafe { self.bits(variant.into()) }
     }
-    #[doc = "Peripheral clock"]
+    #[doc = "Master clock"]
     #[inline(always)]
     pub fn mck(self) -> &'a mut W {
         self.variant(CPRE_A::MCK)
     }
-    #[doc = "Peripheral clock/2"]
+    #[doc = "Master clock/2"]
     #[inline(always)]
     pub fn mck_div_2(self) -> &'a mut W {
         self.variant(CPRE_A::MCK_DIV_2)
     }
-    #[doc = "Peripheral clock/4"]
+    #[doc = "Master clock/4"]
     #[inline(always)]
     pub fn mck_div_4(self) -> &'a mut W {
         self.variant(CPRE_A::MCK_DIV_4)
     }
-    #[doc = "Peripheral clock/8"]
+    #[doc = "Master clock/8"]
     #[inline(always)]
     pub fn mck_div_8(self) -> &'a mut W {
         self.variant(CPRE_A::MCK_DIV_8)
     }
-    #[doc = "Peripheral clock/16"]
+    #[doc = "Master clock/16"]
     #[inline(always)]
     pub fn mck_div_16(self) -> &'a mut W {
         self.variant(CPRE_A::MCK_DIV_16)
     }
-    #[doc = "Peripheral clock/32"]
+    #[doc = "Master clock/32"]
     #[inline(always)]
     pub fn mck_div_32(self) -> &'a mut W {
         self.variant(CPRE_A::MCK_DIV_32)
     }
-    #[doc = "Peripheral clock/64"]
+    #[doc = "Master clock/64"]
     #[inline(always)]
     pub fn mck_div_64(self) -> &'a mut W {
         self.variant(CPRE_A::MCK_DIV_64)
     }
-    #[doc = "Peripheral clock/128"]
+    #[doc = "Master clock/128"]
     #[inline(always)]
     pub fn mck_div_128(self) -> &'a mut W {
         self.variant(CPRE_A::MCK_DIV_128)
     }
-    #[doc = "Peripheral clock/256"]
+    #[doc = "Master clock/256"]
     #[inline(always)]
     pub fn mck_div_256(self) -> &'a mut W {
         self.variant(CPRE_A::MCK_DIV_256)
     }
-    #[doc = "Peripheral clock/512"]
+    #[doc = "Master clock/512"]
     #[inline(always)]
     pub fn mck_div_512(self) -> &'a mut W {
         self.variant(CPRE_A::MCK_DIV_512)
     }
-    #[doc = "Peripheral clock/1024"]
+    #[doc = "Master clock/1024"]
     #[inline(always)]
     pub fn mck_div_1024(self) -> &'a mut W {
         self.variant(CPRE_A::MCK_DIV_1024)

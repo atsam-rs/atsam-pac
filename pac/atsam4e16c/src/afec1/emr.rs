@@ -14,13 +14,13 @@ impl crate::ResetValue for super::EMR {
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum CMPMODE_A {
-    #[doc = "0: Generates an event when the converted data is lower than the low threshold of the window"]
+    #[doc = "0: Generates an event when the converted data is lower than the low threshold of the window."]
     LOW = 0,
-    #[doc = "1: Generates an event when the converted data is higher than the high threshold of the window"]
+    #[doc = "1: Generates an event when the converted data is higher than the high threshold of the window."]
     HIGH = 1,
-    #[doc = "2: Generates an event when the converted data is in the comparison window"]
+    #[doc = "2: Generates an event when the converted data is in the comparison window."]
     IN = 2,
-    #[doc = "3: Generates an event when the converted data is out of the comparison window"]
+    #[doc = "3: Generates an event when the converted data is out of the comparison window."]
     OUT = 3,
 }
 impl From<CMPMODE_A> for u8 {
@@ -76,22 +76,22 @@ impl<'a> CMPMODE_W<'a> {
             self.bits(variant.into())
         }
     }
-    #[doc = "Generates an event when the converted data is lower than the low threshold of the window"]
+    #[doc = "Generates an event when the converted data is lower than the low threshold of the window."]
     #[inline(always)]
     pub fn low(self) -> &'a mut W {
         self.variant(CMPMODE_A::LOW)
     }
-    #[doc = "Generates an event when the converted data is higher than the high threshold of the window"]
+    #[doc = "Generates an event when the converted data is higher than the high threshold of the window."]
     #[inline(always)]
     pub fn high(self) -> &'a mut W {
         self.variant(CMPMODE_A::HIGH)
     }
-    #[doc = "Generates an event when the converted data is in the comparison window"]
+    #[doc = "Generates an event when the converted data is in the comparison window."]
     #[inline(always)]
     pub fn in_(self) -> &'a mut W {
         self.variant(CMPMODE_A::IN)
     }
-    #[doc = "Generates an event when the converted data is out of the comparison window"]
+    #[doc = "Generates an event when the converted data is out of the comparison window."]
     #[inline(always)]
     pub fn out(self) -> &'a mut W {
         self.variant(CMPMODE_A::OUT)
@@ -159,17 +159,17 @@ impl<'a> CMPFILTER_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum RES_A {
-    #[doc = "0: 12-bit resolution, AFE sample rate is maximum (no averaging)"]
+    #[doc = "0: 12-bit resolution, AFE sample rate is maximum (no averaging)."]
     NO_AVERAGE = 0,
-    #[doc = "1: 10-bit resolution, AFE sample rate is maximum (no averaging)"]
+    #[doc = "1: 10-bit resolution, AFE sample rate is maximum (no averaging)."]
     LOW_RES = 1,
-    #[doc = "2: 13-bit resolution, AFE sample rate divided by 4 (averaging)"]
+    #[doc = "2: 13-bit resolution, AFE sample rate divided by 4 (averaging)."]
     OSR4 = 2,
-    #[doc = "3: 14-bit resolution, AFE sample rate divided by 16 (averaging)"]
+    #[doc = "3: 14-bit resolution, AFE sample rate divided by 16 (averaging)."]
     OSR16 = 3,
-    #[doc = "4: 15-bit resolution, AFE sample rate divided by 64 (averaging)"]
+    #[doc = "4: 15-bit resolution, AFE sample rate divided by 64 (averaging)."]
     OSR64 = 4,
-    #[doc = "5: 16-bit resolution, AFE sample rate divided by 256 (averaging)"]
+    #[doc = "5: 16-bit resolution, AFE sample rate divided by 256 (averaging)."]
     OSR256 = 5,
 }
 impl From<RES_A> for u8 {
@@ -236,32 +236,32 @@ impl<'a> RES_W<'a> {
     pub fn variant(self, variant: RES_A) -> &'a mut W {
         unsafe { self.bits(variant.into()) }
     }
-    #[doc = "12-bit resolution, AFE sample rate is maximum (no averaging)"]
+    #[doc = "12-bit resolution, AFE sample rate is maximum (no averaging)."]
     #[inline(always)]
     pub fn no_average(self) -> &'a mut W {
         self.variant(RES_A::NO_AVERAGE)
     }
-    #[doc = "10-bit resolution, AFE sample rate is maximum (no averaging)"]
+    #[doc = "10-bit resolution, AFE sample rate is maximum (no averaging)."]
     #[inline(always)]
     pub fn low_res(self) -> &'a mut W {
         self.variant(RES_A::LOW_RES)
     }
-    #[doc = "13-bit resolution, AFE sample rate divided by 4 (averaging)"]
+    #[doc = "13-bit resolution, AFE sample rate divided by 4 (averaging)."]
     #[inline(always)]
     pub fn osr4(self) -> &'a mut W {
         self.variant(RES_A::OSR4)
     }
-    #[doc = "14-bit resolution, AFE sample rate divided by 16 (averaging)"]
+    #[doc = "14-bit resolution, AFE sample rate divided by 16 (averaging)."]
     #[inline(always)]
     pub fn osr16(self) -> &'a mut W {
         self.variant(RES_A::OSR16)
     }
-    #[doc = "15-bit resolution, AFE sample rate divided by 64 (averaging)"]
+    #[doc = "15-bit resolution, AFE sample rate divided by 64 (averaging)."]
     #[inline(always)]
     pub fn osr64(self) -> &'a mut W {
         self.variant(RES_A::OSR64)
     }
-    #[doc = "16-bit resolution, AFE sample rate divided by 256 (averaging)"]
+    #[doc = "16-bit resolution, AFE sample rate divided by 256 (averaging)."]
     #[inline(always)]
     pub fn osr256(self) -> &'a mut W {
         self.variant(RES_A::OSR256)

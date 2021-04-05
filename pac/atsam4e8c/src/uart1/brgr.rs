@@ -25,14 +25,14 @@ impl<'a> CD_W<'a> {
     }
 }
 impl R {
-    #[doc = "Bits 0:15 - Clock Divider"]
+    #[doc = "Bits 0:15 - Clock Divisor"]
     #[inline(always)]
     pub fn cd(&self) -> CD_R {
         CD_R::new((self.bits & 0xffff) as u16)
     }
 }
 impl W {
-    #[doc = "Bits 0:15 - Clock Divider"]
+    #[doc = "Bits 0:15 - Clock Divisor"]
     #[inline(always)]
     pub fn cd(&mut self) -> CD_W {
         CD_W { w: self }

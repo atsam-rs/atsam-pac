@@ -3,9 +3,9 @@ pub type W = crate::W<u32, super::CR>;
 #[doc = "Voltage Regulator Off"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum VROFF_AW {
-    #[doc = "0: no effect"]
+    #[doc = "0: no effect."]
     NO_EFFECT = 0,
-    #[doc = "1: if KEY is correct, asserts the vddcore_nreset and stops the voltage regulator"]
+    #[doc = "1: if KEY is correct, asserts the vddcore_nreset and stops the voltage regulator."]
     STOP_VREG = 1,
 }
 impl From<VROFF_AW> for bool {
@@ -26,12 +26,12 @@ impl<'a> VROFF_W<'a> {
             self.bit(variant.into())
         }
     }
-    #[doc = "no effect"]
+    #[doc = "no effect."]
     #[inline(always)]
     pub fn no_effect(self) -> &'a mut W {
         self.variant(VROFF_AW::NO_EFFECT)
     }
-    #[doc = "if KEY is correct, asserts the vddcore_nreset and stops the voltage regulator"]
+    #[doc = "if KEY is correct, asserts the vddcore_nreset and stops the voltage regulator."]
     #[inline(always)]
     pub fn stop_vreg(self) -> &'a mut W {
         self.variant(VROFF_AW::STOP_VREG)
@@ -56,9 +56,9 @@ impl<'a> VROFF_W<'a> {
 #[doc = "Crystal Oscillator Select"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum XTALSEL_AW {
-    #[doc = "0: no effect"]
+    #[doc = "0: no effect."]
     NO_EFFECT = 0,
-    #[doc = "1: if KEY is correct, switches the slow clock on the crystal oscillator output"]
+    #[doc = "1: if KEY is correct, switches the slow clock on the crystal oscillator output."]
     CRYSTAL_SEL = 1,
 }
 impl From<XTALSEL_AW> for bool {
@@ -79,12 +79,12 @@ impl<'a> XTALSEL_W<'a> {
             self.bit(variant.into())
         }
     }
-    #[doc = "no effect"]
+    #[doc = "no effect."]
     #[inline(always)]
     pub fn no_effect(self) -> &'a mut W {
         self.variant(XTALSEL_AW::NO_EFFECT)
     }
-    #[doc = "if KEY is correct, switches the slow clock on the crystal oscillator output"]
+    #[doc = "if KEY is correct, switches the slow clock on the crystal oscillator output."]
     #[inline(always)]
     pub fn crystal_sel(self) -> &'a mut W {
         self.variant(XTALSEL_AW::CRYSTAL_SEL)
@@ -106,34 +106,11 @@ impl<'a> XTALSEL_W<'a> {
         self.w
     }
 }
-#[doc = "Password"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-#[repr(u8)]
-pub enum KEY_AW {
-    #[doc = "165: Writing any other value in this field aborts the write operation"]
-    PASSWD = 165,
-}
-impl From<KEY_AW> for u8 {
-    #[inline(always)]
-    fn from(variant: KEY_AW) -> Self {
-        variant as _
-    }
-}
 #[doc = "Write proxy for field `KEY`"]
 pub struct KEY_W<'a> {
     w: &'a mut W,
 }
 impl<'a> KEY_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: KEY_AW) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
-    #[doc = "Writing any other value in this field aborts the write operation"]
-    #[inline(always)]
-    pub fn passwd(self) -> &'a mut W {
-        self.variant(KEY_AW::PASSWD)
-    }
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {

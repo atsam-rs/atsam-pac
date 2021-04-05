@@ -16,11 +16,11 @@ impl<'a> CMDNB_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum RSPTYP_AW {
-    #[doc = "0: No response"]
+    #[doc = "0: No response."]
     NORESP = 0,
-    #[doc = "1: 48-bit response"]
+    #[doc = "1: 48-bit response."]
     _48_BIT = 1,
-    #[doc = "2: 136-bit response"]
+    #[doc = "2: 136-bit response."]
     _136_BIT = 2,
     #[doc = "3: R1b response type"]
     R1B = 3,
@@ -43,17 +43,17 @@ impl<'a> RSPTYP_W<'a> {
             self.bits(variant.into())
         }
     }
-    #[doc = "No response"]
+    #[doc = "No response."]
     #[inline(always)]
     pub fn noresp(self) -> &'a mut W {
         self.variant(RSPTYP_AW::NORESP)
     }
-    #[doc = "48-bit response"]
+    #[doc = "48-bit response."]
     #[inline(always)]
     pub fn _48_bit(self) -> &'a mut W {
         self.variant(RSPTYP_AW::_48_BIT)
     }
-    #[doc = "136-bit response"]
+    #[doc = "136-bit response."]
     #[inline(always)]
     pub fn _136_bit(self) -> &'a mut W {
         self.variant(RSPTYP_AW::_136_BIT)
@@ -74,21 +74,21 @@ impl<'a> RSPTYP_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum SPCMD_AW {
-    #[doc = "0: Not a special CMD"]
+    #[doc = "0: Not a special CMD."]
     STD = 0,
-    #[doc = "1: Initialization CMD: 74 clock cycles for initialization sequence"]
+    #[doc = "1: Initialization CMD: 74 clock cycles for initialization sequence."]
     INIT = 1,
-    #[doc = "2: Synchronized CMD: Wait for the end of the current data block transfer before sending the pending command"]
+    #[doc = "2: Synchronized CMD: Wait for the end of the current data block transfer before sending the pending command."]
     SYNC = 2,
-    #[doc = "3: CE-ATA Completion Signal disable Command. The host cancels the ability for the device to return a command completion signal on the command line"]
+    #[doc = "3: CE-ATA Completion Signal disable Command. The host cancels the ability for the device to return a command completion signal on the command line."]
     CE_ATA = 3,
-    #[doc = "4: Interrupt command: Corresponds to the Interrupt Mode (CMD40)"]
+    #[doc = "4: Interrupt command: Corresponds to the Interrupt Mode (CMD40)."]
     IT_CMD = 4,
-    #[doc = "5: Interrupt response: Corresponds to the Interrupt Mode (CMD40)"]
+    #[doc = "5: Interrupt response: Corresponds to the Interrupt Mode (CMD40)."]
     IT_RESP = 5,
-    #[doc = "6: Boot Operation Request. Start a boot operation mode, the host processor can read boot data from the MMC device directly"]
+    #[doc = "6: Boot Operation Request. Start a boot operation mode, the host processor can read boot data from the MMC device directly."]
     BOR = 6,
-    #[doc = "7: End Boot Operation. This command allows the host processor to terminate the boot operation mode"]
+    #[doc = "7: End Boot Operation. This command allows the host processor to terminate the boot operation mode."]
     EBO = 7,
 }
 impl From<SPCMD_AW> for u8 {
@@ -109,42 +109,42 @@ impl<'a> SPCMD_W<'a> {
             self.bits(variant.into())
         }
     }
-    #[doc = "Not a special CMD"]
+    #[doc = "Not a special CMD."]
     #[inline(always)]
     pub fn std(self) -> &'a mut W {
         self.variant(SPCMD_AW::STD)
     }
-    #[doc = "Initialization CMD: 74 clock cycles for initialization sequence"]
+    #[doc = "Initialization CMD: 74 clock cycles for initialization sequence."]
     #[inline(always)]
     pub fn init(self) -> &'a mut W {
         self.variant(SPCMD_AW::INIT)
     }
-    #[doc = "Synchronized CMD: Wait for the end of the current data block transfer before sending the pending command"]
+    #[doc = "Synchronized CMD: Wait for the end of the current data block transfer before sending the pending command."]
     #[inline(always)]
     pub fn sync(self) -> &'a mut W {
         self.variant(SPCMD_AW::SYNC)
     }
-    #[doc = "CE-ATA Completion Signal disable Command. The host cancels the ability for the device to return a command completion signal on the command line"]
+    #[doc = "CE-ATA Completion Signal disable Command. The host cancels the ability for the device to return a command completion signal on the command line."]
     #[inline(always)]
     pub fn ce_ata(self) -> &'a mut W {
         self.variant(SPCMD_AW::CE_ATA)
     }
-    #[doc = "Interrupt command: Corresponds to the Interrupt Mode (CMD40)"]
+    #[doc = "Interrupt command: Corresponds to the Interrupt Mode (CMD40)."]
     #[inline(always)]
     pub fn it_cmd(self) -> &'a mut W {
         self.variant(SPCMD_AW::IT_CMD)
     }
-    #[doc = "Interrupt response: Corresponds to the Interrupt Mode (CMD40)"]
+    #[doc = "Interrupt response: Corresponds to the Interrupt Mode (CMD40)."]
     #[inline(always)]
     pub fn it_resp(self) -> &'a mut W {
         self.variant(SPCMD_AW::IT_RESP)
     }
-    #[doc = "Boot Operation Request. Start a boot operation mode, the host processor can read boot data from the MMC device directly"]
+    #[doc = "Boot Operation Request. Start a boot operation mode, the host processor can read boot data from the MMC device directly."]
     #[inline(always)]
     pub fn bor(self) -> &'a mut W {
         self.variant(SPCMD_AW::BOR)
     }
-    #[doc = "End Boot Operation. This command allows the host processor to terminate the boot operation mode"]
+    #[doc = "End Boot Operation. This command allows the host processor to terminate the boot operation mode."]
     #[inline(always)]
     pub fn ebo(self) -> &'a mut W {
         self.variant(SPCMD_AW::EBO)
@@ -159,9 +159,9 @@ impl<'a> SPCMD_W<'a> {
 #[doc = "Open Drain Command"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum OPDCMD_AW {
-    #[doc = "0: Push pull command"]
+    #[doc = "0: Push pull command."]
     PUSHPULL = 0,
-    #[doc = "1: Open drain command"]
+    #[doc = "1: Open drain command."]
     OPENDRAIN = 1,
 }
 impl From<OPDCMD_AW> for bool {
@@ -182,12 +182,12 @@ impl<'a> OPDCMD_W<'a> {
             self.bit(variant.into())
         }
     }
-    #[doc = "Push pull command"]
+    #[doc = "Push pull command."]
     #[inline(always)]
     pub fn pushpull(self) -> &'a mut W {
         self.variant(OPDCMD_AW::PUSHPULL)
     }
-    #[doc = "Open drain command"]
+    #[doc = "Open drain command."]
     #[inline(always)]
     pub fn opendrain(self) -> &'a mut W {
         self.variant(OPDCMD_AW::OPENDRAIN)
@@ -212,9 +212,9 @@ impl<'a> OPDCMD_W<'a> {
 #[doc = "Max Latency for Command to Response"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MAXLAT_AW {
-    #[doc = "0: 5-cycle max latency"]
+    #[doc = "0: 5-cycle max latency."]
     _5 = 0,
-    #[doc = "1: 64-cycle max latency"]
+    #[doc = "1: 64-cycle max latency."]
     _64 = 1,
 }
 impl From<MAXLAT_AW> for bool {
@@ -235,12 +235,12 @@ impl<'a> MAXLAT_W<'a> {
             self.bit(variant.into())
         }
     }
-    #[doc = "5-cycle max latency"]
+    #[doc = "5-cycle max latency."]
     #[inline(always)]
     pub fn _5(self) -> &'a mut W {
         self.variant(MAXLAT_AW::_5)
     }
-    #[doc = "64-cycle max latency"]
+    #[doc = "64-cycle max latency."]
     #[inline(always)]
     pub fn _64(self) -> &'a mut W {
         self.variant(MAXLAT_AW::_64)
@@ -314,9 +314,9 @@ impl<'a> TRCMD_W<'a> {
 #[doc = "Transfer Direction"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TRDIR_AW {
-    #[doc = "0: Write"]
+    #[doc = "0: Write."]
     WRITE = 0,
-    #[doc = "1: Read"]
+    #[doc = "1: Read."]
     READ = 1,
 }
 impl From<TRDIR_AW> for bool {
@@ -337,12 +337,12 @@ impl<'a> TRDIR_W<'a> {
             self.bit(variant.into())
         }
     }
-    #[doc = "Write"]
+    #[doc = "Write."]
     #[inline(always)]
     pub fn write(self) -> &'a mut W {
         self.variant(TRDIR_AW::WRITE)
     }
-    #[doc = "Read"]
+    #[doc = "Read."]
     #[inline(always)]
     pub fn read(self) -> &'a mut W {
         self.variant(TRDIR_AW::READ)
@@ -479,9 +479,9 @@ impl<'a> IOSPCMD_W<'a> {
 #[doc = "ATA with Command Completion Signal"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ATACS_AW {
-    #[doc = "0: Normal operation mode"]
+    #[doc = "0: Normal operation mode."]
     NORMAL = 0,
-    #[doc = "1: This bit indicates that a completion signal is expected within a programmed amount of time (HSMCI_CSTOR)"]
+    #[doc = "1: This bit indicates that a completion signal is expected within a programmed amount of time (HSMCI_CSTOR)."]
     COMPLETION = 1,
 }
 impl From<ATACS_AW> for bool {
@@ -502,12 +502,12 @@ impl<'a> ATACS_W<'a> {
             self.bit(variant.into())
         }
     }
-    #[doc = "Normal operation mode"]
+    #[doc = "Normal operation mode."]
     #[inline(always)]
     pub fn normal(self) -> &'a mut W {
         self.variant(ATACS_AW::NORMAL)
     }
-    #[doc = "This bit indicates that a completion signal is expected within a programmed amount of time (HSMCI_CSTOR)"]
+    #[doc = "This bit indicates that a completion signal is expected within a programmed amount of time (HSMCI_CSTOR)."]
     #[inline(always)]
     pub fn completion(self) -> &'a mut W {
         self.variant(ATACS_AW::COMPLETION)
@@ -602,7 +602,7 @@ impl W {
     pub fn atacs(&mut self) -> ATACS_W {
         ATACS_W { w: self }
     }
-    #[doc = "Bit 27 - Boot Operation Acknowledge"]
+    #[doc = "Bit 27 - Boot Operation Acknowledge."]
     #[inline(always)]
     pub fn boot_ack(&mut self) -> BOOT_ACK_W {
         BOOT_ACK_W { w: self }

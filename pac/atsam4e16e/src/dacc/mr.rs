@@ -13,9 +13,9 @@ impl crate::ResetValue for super::MR {
 #[doc = "Trigger Enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TRGEN_A {
-    #[doc = "0: External trigger mode disabled. DACC in free running mode"]
+    #[doc = "0: External trigger mode disabled. DACC in free running mode."]
     DIS = 0,
-    #[doc = "1: External trigger mode enabled"]
+    #[doc = "1: External trigger mode enabled."]
     EN = 1,
 }
 impl From<TRGEN_A> for bool {
@@ -58,12 +58,12 @@ impl<'a> TRGEN_W<'a> {
             self.bit(variant.into())
         }
     }
-    #[doc = "External trigger mode disabled. DACC in free running mode"]
+    #[doc = "External trigger mode disabled. DACC in free running mode."]
     #[inline(always)]
     pub fn dis(self) -> &'a mut W {
         self.variant(TRGEN_A::DIS)
     }
-    #[doc = "External trigger mode enabled"]
+    #[doc = "External trigger mode enabled."]
     #[inline(always)]
     pub fn en(self) -> &'a mut W {
         self.variant(TRGEN_A::EN)
@@ -305,7 +305,7 @@ impl<'a> USER_SEL_W<'a> {
 #[doc = "Tag Selection Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TAG_A {
-    #[doc = "0: Tag selection mode disabled. Using USER_SEL to select the channel for the conversion"]
+    #[doc = "0: Tag selection mode disabled. Using USER_SEL to select the channel for the conversion."]
     DIS = 0,
     #[doc = "1: Tag selection mode enabled"]
     EN = 1,
@@ -350,7 +350,7 @@ impl<'a> TAG_W<'a> {
             self.bit(variant.into())
         }
     }
-    #[doc = "Tag selection mode disabled. Using USER_SEL to select the channel for the conversion"]
+    #[doc = "Tag selection mode disabled. Using USER_SEL to select the channel for the conversion."]
     #[inline(always)]
     pub fn dis(self) -> &'a mut W {
         self.variant(TAG_A::DIS)

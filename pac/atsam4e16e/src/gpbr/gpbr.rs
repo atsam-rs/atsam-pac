@@ -1,6 +1,6 @@
-#[doc = "Reader of register GPBR[%s]"]
+#[doc = "Reader of register GPBR%s"]
 pub type R = crate::R<u32, super::GPBR>;
-#[doc = "Writer for register GPBR[%s]"]
+#[doc = "Writer for register GPBR%s"]
 pub type W = crate::W<u32, super::GPBR>;
 #[doc = "Reader of field `GPBR_VALUE`"]
 pub type GPBR_VALUE_R = crate::R<u32, u32>;

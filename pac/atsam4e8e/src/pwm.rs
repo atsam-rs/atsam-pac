@@ -71,9 +71,9 @@ pub struct RegisterBlock {
     #[doc = "0xc0 - PWM Fault Protection Value 2 Register"]
     pub fpv2: FPV2,
     _reserved32: [u8; 32usize],
-    #[doc = "0xe4 - PWM Write Protection Control Register"]
+    #[doc = "0xe4 - PWM Write Protect Control Register"]
     pub wpcr: WPCR,
-    #[doc = "0xe8 - PWM Write Protection Status Register"]
+    #[doc = "0xe8 - PWM Write Protect Status Register"]
     pub wpsr: WPSR,
     _reserved34: [u8; 28usize],
     #[doc = "0x108 - Transmit Pointer Register"]
@@ -355,7 +355,7 @@ impl crate::Readable for SCUP {}
 impl crate::Writable for SCUP {}
 #[doc = "PWM Sync Channels Update Period Register"]
 pub mod scup;
-#[doc = "PWM Sync Channels Update Period Update Register\n\nThis register you can [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [scupupd](scupupd) module"]
+#[doc = "PWM Sync Channels Update Period Update Register\n\nThis register you can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [scupupd](scupupd) module"]
 pub type SCUPUPD = crate::Reg<u32, _SCUPUPD>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -562,23 +562,23 @@ impl crate::Readable for FPV2 {}
 impl crate::Writable for FPV2 {}
 #[doc = "PWM Fault Protection Value 2 Register"]
 pub mod fpv2;
-#[doc = "PWM Write Protection Control Register\n\nThis register you can [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [wpcr](wpcr) module"]
+#[doc = "PWM Write Protect Control Register\n\nThis register you can [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [wpcr](wpcr) module"]
 pub type WPCR = crate::Reg<u32, _WPCR>;
 #[allow(missing_docs)]
 #[doc(hidden)]
 pub struct _WPCR;
 #[doc = "`write(|w| ..)` method takes [wpcr::W](wpcr::W) writer structure"]
 impl crate::Writable for WPCR {}
-#[doc = "PWM Write Protection Control Register"]
+#[doc = "PWM Write Protect Control Register"]
 pub mod wpcr;
-#[doc = "PWM Write Protection Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [wpsr](wpsr) module"]
+#[doc = "PWM Write Protect Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [wpsr](wpsr) module"]
 pub type WPSR = crate::Reg<u32, _WPSR>;
 #[allow(missing_docs)]
 #[doc(hidden)]
 pub struct _WPSR;
 #[doc = "`read()` method returns [wpsr::R](wpsr::R) reader structure"]
 impl crate::Readable for WPSR {}
-#[doc = "PWM Write Protection Status Register"]
+#[doc = "PWM Write Protect Status Register"]
 pub mod wpsr;
 #[doc = "PWM Comparison 0 Value Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cmpv0](cmpv0) module"]
 pub type CMPV0 = crate::Reg<u32, _CMPV0>;
@@ -1380,7 +1380,7 @@ impl crate::Readable for TNCR {}
 impl crate::Writable for TNCR {}
 #[doc = "Transmit Next Counter Register"]
 pub mod tncr;
-#[doc = "Transfer Control Register\n\nThis register you can [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ptcr](ptcr) module"]
+#[doc = "Transfer Control Register\n\nThis register you can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ptcr](ptcr) module"]
 pub type PTCR = crate::Reg<u32, _PTCR>;
 #[allow(missing_docs)]
 #[doc(hidden)]

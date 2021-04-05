@@ -14,7 +14,7 @@ impl crate::ResetValue for super::SDCR {
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum SDCSEL_A {
-    #[doc = "0: Slot A is selected"]
+    #[doc = "0: Slot A is selected."]
     SLOTA = 0,
     #[doc = "1: -"]
     SLOTB = 1,
@@ -76,7 +76,7 @@ impl<'a> SDCSEL_W<'a> {
             self.bits(variant.into())
         }
     }
-    #[doc = "Slot A is selected"]
+    #[doc = "Slot A is selected."]
     #[inline(always)]
     pub fn slota(self) -> &'a mut W {
         self.variant(SDCSEL_A::SLOTA)

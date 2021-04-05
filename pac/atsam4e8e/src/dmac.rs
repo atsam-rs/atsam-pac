@@ -12,13 +12,13 @@ pub struct RegisterBlock {
     #[doc = "0x10 - DMAC Software Last Transfer Flag Register"]
     pub last: LAST,
     _reserved5: [u8; 4usize],
-    #[doc = "0x18 - DMAC Error, Chained Buffer Transfer Completed Interrupt and Buffer Transfer Completed Interrupt Enable register"]
+    #[doc = "0x18 - DMAC Error, Chained Buffer Transfer Completed Interrupt and Buffer Transfer Completed Interrupt Enable register."]
     pub ebcier: EBCIER,
-    #[doc = "0x1c - DMAC Error, Chained Buffer Transfer Completed Interrupt and Buffer Transfer Completed Interrupt Disable register"]
+    #[doc = "0x1c - DMAC Error, Chained Buffer Transfer Completed Interrupt and Buffer Transfer Completed Interrupt Disable register."]
     pub ebcidr: EBCIDR,
-    #[doc = "0x20 - DMAC Error, Chained Buffer Transfer Completed Interrupt and Buffer transfer completed Mask Register"]
+    #[doc = "0x20 - DMAC Error, Chained Buffer Transfer Completed Interrupt and Buffer transfer completed Mask Register."]
     pub ebcimr: EBCIMR,
-    #[doc = "0x24 - DMAC Error, Chained Buffer Transfer Completed Interrupt and Buffer transfer completed Status Register"]
+    #[doc = "0x24 - DMAC Error, Chained Buffer Transfer Completed Interrupt and Buffer transfer completed Status Register."]
     pub ebcisr: EBCISR,
     #[doc = "0x28 - DMAC Channel Handler Enable Register"]
     pub cher: CHER,
@@ -139,41 +139,41 @@ impl crate::Readable for LAST {}
 impl crate::Writable for LAST {}
 #[doc = "DMAC Software Last Transfer Flag Register"]
 pub mod last;
-#[doc = "DMAC Error, Chained Buffer Transfer Completed Interrupt and Buffer Transfer Completed Interrupt Enable register\n\nThis register you can [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ebcier](ebcier) module"]
+#[doc = "DMAC Error, Chained Buffer Transfer Completed Interrupt and Buffer Transfer Completed Interrupt Enable register.\n\nThis register you can [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ebcier](ebcier) module"]
 pub type EBCIER = crate::Reg<u32, _EBCIER>;
 #[allow(missing_docs)]
 #[doc(hidden)]
 pub struct _EBCIER;
 #[doc = "`write(|w| ..)` method takes [ebcier::W](ebcier::W) writer structure"]
 impl crate::Writable for EBCIER {}
-#[doc = "DMAC Error, Chained Buffer Transfer Completed Interrupt and Buffer Transfer Completed Interrupt Enable register"]
+#[doc = "DMAC Error, Chained Buffer Transfer Completed Interrupt and Buffer Transfer Completed Interrupt Enable register."]
 pub mod ebcier;
-#[doc = "DMAC Error, Chained Buffer Transfer Completed Interrupt and Buffer Transfer Completed Interrupt Disable register\n\nThis register you can [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ebcidr](ebcidr) module"]
+#[doc = "DMAC Error, Chained Buffer Transfer Completed Interrupt and Buffer Transfer Completed Interrupt Disable register.\n\nThis register you can [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ebcidr](ebcidr) module"]
 pub type EBCIDR = crate::Reg<u32, _EBCIDR>;
 #[allow(missing_docs)]
 #[doc(hidden)]
 pub struct _EBCIDR;
 #[doc = "`write(|w| ..)` method takes [ebcidr::W](ebcidr::W) writer structure"]
 impl crate::Writable for EBCIDR {}
-#[doc = "DMAC Error, Chained Buffer Transfer Completed Interrupt and Buffer Transfer Completed Interrupt Disable register"]
+#[doc = "DMAC Error, Chained Buffer Transfer Completed Interrupt and Buffer Transfer Completed Interrupt Disable register."]
 pub mod ebcidr;
-#[doc = "DMAC Error, Chained Buffer Transfer Completed Interrupt and Buffer transfer completed Mask Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ebcimr](ebcimr) module"]
+#[doc = "DMAC Error, Chained Buffer Transfer Completed Interrupt and Buffer transfer completed Mask Register.\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ebcimr](ebcimr) module"]
 pub type EBCIMR = crate::Reg<u32, _EBCIMR>;
 #[allow(missing_docs)]
 #[doc(hidden)]
 pub struct _EBCIMR;
 #[doc = "`read()` method returns [ebcimr::R](ebcimr::R) reader structure"]
 impl crate::Readable for EBCIMR {}
-#[doc = "DMAC Error, Chained Buffer Transfer Completed Interrupt and Buffer transfer completed Mask Register"]
+#[doc = "DMAC Error, Chained Buffer Transfer Completed Interrupt and Buffer transfer completed Mask Register."]
 pub mod ebcimr;
-#[doc = "DMAC Error, Chained Buffer Transfer Completed Interrupt and Buffer transfer completed Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ebcisr](ebcisr) module"]
+#[doc = "DMAC Error, Chained Buffer Transfer Completed Interrupt and Buffer transfer completed Status Register.\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ebcisr](ebcisr) module"]
 pub type EBCISR = crate::Reg<u32, _EBCISR>;
 #[allow(missing_docs)]
 #[doc(hidden)]
 pub struct _EBCISR;
 #[doc = "`read()` method returns [ebcisr::R](ebcisr::R) reader structure"]
 impl crate::Readable for EBCISR {}
-#[doc = "DMAC Error, Chained Buffer Transfer Completed Interrupt and Buffer transfer completed Status Register"]
+#[doc = "DMAC Error, Chained Buffer Transfer Completed Interrupt and Buffer transfer completed Status Register."]
 pub mod ebcisr;
 #[doc = "DMAC Channel Handler Enable Register\n\nThis register you can [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cher](cher) module"]
 pub type CHER = crate::Reg<u32, _CHER>;

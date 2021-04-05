@@ -89,7 +89,7 @@ impl<'a> TXBUFE_W<'a> {
     }
 }
 impl W {
-    #[doc = "Bit 0 - Transmit Ready Interrupt Disable"]
+    #[doc = "Bit 0 - Transmit Ready Interrupt Disable."]
     #[inline(always)]
     pub fn txrdy(&mut self) -> TXRDY_W {
         TXRDY_W { w: self }

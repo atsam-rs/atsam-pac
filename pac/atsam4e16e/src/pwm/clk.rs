@@ -67,44 +67,44 @@ impl<'a> PREB_W<'a> {
     }
 }
 impl R {
-    #[doc = "Bits 0:7 - CLKA Divide Factor"]
+    #[doc = "Bits 0:7 - CLKA, CLKB Divide Factor"]
     #[inline(always)]
     pub fn diva(&self) -> DIVA_R {
         DIVA_R::new((self.bits & 0xff) as u8)
     }
-    #[doc = "Bits 8:11 - CLKA Source Clock Selection"]
+    #[doc = "Bits 8:11 - CLKA, CLKB Source Clock Selection"]
     #[inline(always)]
     pub fn prea(&self) -> PREA_R {
         PREA_R::new(((self.bits >> 8) & 0x0f) as u8)
     }
-    #[doc = "Bits 16:23 - CLKB Divide Factor"]
+    #[doc = "Bits 16:23 - CLKA, CLKB Divide Factor"]
     #[inline(always)]
     pub fn divb(&self) -> DIVB_R {
         DIVB_R::new(((self.bits >> 16) & 0xff) as u8)
     }
-    #[doc = "Bits 24:27 - CLKB Source Clock Selection"]
+    #[doc = "Bits 24:27 - CLKA, CLKB Source Clock Selection"]
     #[inline(always)]
     pub fn preb(&self) -> PREB_R {
         PREB_R::new(((self.bits >> 24) & 0x0f) as u8)
     }
 }
 impl W {
-    #[doc = "Bits 0:7 - CLKA Divide Factor"]
+    #[doc = "Bits 0:7 - CLKA, CLKB Divide Factor"]
     #[inline(always)]
     pub fn diva(&mut self) -> DIVA_W {
         DIVA_W { w: self }
     }
-    #[doc = "Bits 8:11 - CLKA Source Clock Selection"]
+    #[doc = "Bits 8:11 - CLKA, CLKB Source Clock Selection"]
     #[inline(always)]
     pub fn prea(&mut self) -> PREA_W {
         PREA_W { w: self }
     }
-    #[doc = "Bits 16:23 - CLKB Divide Factor"]
+    #[doc = "Bits 16:23 - CLKA, CLKB Divide Factor"]
     #[inline(always)]
     pub fn divb(&mut self) -> DIVB_W {
         DIVB_W { w: self }
     }
-    #[doc = "Bits 24:27 - CLKB Source Clock Selection"]
+    #[doc = "Bits 24:27 - CLKA, CLKB Source Clock Selection"]
     #[inline(always)]
     pub fn preb(&mut self) -> PREB_W {
         PREB_W { w: self }

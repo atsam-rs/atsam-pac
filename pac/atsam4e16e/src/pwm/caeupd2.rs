@@ -16,11 +16,11 @@ impl<'a> ADEDGVUP_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum ADEDGMUP_AW {
-    #[doc = "0: The additional edge of the channel x output waveform occurs when CCNTx reaches ADEDGVUP and the counter of the channel x is incrementing"]
+    #[doc = "0: The additional edge of the channel x output waveform occurs when CCNTx reaches ADEDGVUP and the counter of the channel x is incrementing."]
     INC = 0,
-    #[doc = "1: The additional edge of the channel x output waveform occurs when CCNTx reaches ADEDGVUP and the counter of the channel x is incrementing"]
+    #[doc = "1: The additional edge of the channel x output waveform occurs when CCNTx reaches ADEDGVUP and the counter of the channel x is incrementing."]
     DEC = 1,
-    #[doc = "2: The additional edge of the channel x output waveform occurs when CCNTx reaches ADEDGVUP, whether the counter is incrementing or not"]
+    #[doc = "2: The additional edge of the channel x output waveform occurs when CCNTx reaches ADEDGVUP, whether the counter is incrementing or not."]
     BOTH = 2,
 }
 impl From<ADEDGMUP_AW> for u8 {
@@ -39,17 +39,17 @@ impl<'a> ADEDGMUP_W<'a> {
     pub fn variant(self, variant: ADEDGMUP_AW) -> &'a mut W {
         unsafe { self.bits(variant.into()) }
     }
-    #[doc = "The additional edge of the channel x output waveform occurs when CCNTx reaches ADEDGVUP and the counter of the channel x is incrementing"]
+    #[doc = "The additional edge of the channel x output waveform occurs when CCNTx reaches ADEDGVUP and the counter of the channel x is incrementing."]
     #[inline(always)]
     pub fn inc(self) -> &'a mut W {
         self.variant(ADEDGMUP_AW::INC)
     }
-    #[doc = "The additional edge of the channel x output waveform occurs when CCNTx reaches ADEDGVUP and the counter of the channel x is incrementing"]
+    #[doc = "The additional edge of the channel x output waveform occurs when CCNTx reaches ADEDGVUP and the counter of the channel x is incrementing."]
     #[inline(always)]
     pub fn dec(self) -> &'a mut W {
         self.variant(ADEDGMUP_AW::DEC)
     }
-    #[doc = "The additional edge of the channel x output waveform occurs when CCNTx reaches ADEDGVUP, whether the counter is incrementing or not"]
+    #[doc = "The additional edge of the channel x output waveform occurs when CCNTx reaches ADEDGVUP, whether the counter is incrementing or not."]
     #[inline(always)]
     pub fn both(self) -> &'a mut W {
         self.variant(ADEDGMUP_AW::BOTH)

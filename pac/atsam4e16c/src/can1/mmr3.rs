@@ -42,17 +42,17 @@ impl<'a> PRIOR_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum MOT_A {
-    #[doc = "0: Mailbox is disabled. This prevents receiving or transmitting any messages with this mailbox"]
+    #[doc = "0: Mailbox is disabled. This prevents receiving or transmitting any messages with this mailbox."]
     MB_DISABLED = 0,
-    #[doc = "1: Reception Mailbox. Mailbox is configured for reception. If a message is received while the mailbox data register is full, it is discarded"]
+    #[doc = "1: Reception Mailbox. Mailbox is configured for reception. If a message is received while the mailbox data register is full, it is discarded."]
     MB_RX = 1,
-    #[doc = "2: Reception mailbox with overwrite. Mailbox is configured for reception. If a message is received while the mailbox is full, it overwrites the previous message"]
+    #[doc = "2: Reception mailbox with overwrite. Mailbox is configured for reception. If a message is received while the mailbox is full, it overwrites the previous message."]
     MB_RX_OVERWRITE = 2,
-    #[doc = "3: Transmit mailbox. Mailbox is configured for transmission"]
+    #[doc = "3: Transmit mailbox. Mailbox is configured for transmission."]
     MB_TX = 3,
-    #[doc = "4: Consumer Mailbox. Mailbox is configured in reception but behaves as a Transmit Mailbox, i.e., it sends a remote frame and waits for an answer"]
+    #[doc = "4: Consumer Mailbox. Mailbox is configured in reception but behaves as a Transmit Mailbox, i.e., it sends a remote frame and waits for an answer."]
     MB_CONSUMER = 4,
-    #[doc = "5: Producer Mailbox. Mailbox is configured in transmission but also behaves like a reception mailbox, i.e., it waits to receive a Remote Frame before sending its contents"]
+    #[doc = "5: Producer Mailbox. Mailbox is configured in transmission but also behaves like a reception mailbox, i.e., it waits to receive a Remote Frame before sending its contents."]
     MB_PRODUCER = 5,
 }
 impl From<MOT_A> for u8 {
@@ -119,32 +119,32 @@ impl<'a> MOT_W<'a> {
     pub fn variant(self, variant: MOT_A) -> &'a mut W {
         unsafe { self.bits(variant.into()) }
     }
-    #[doc = "Mailbox is disabled. This prevents receiving or transmitting any messages with this mailbox"]
+    #[doc = "Mailbox is disabled. This prevents receiving or transmitting any messages with this mailbox."]
     #[inline(always)]
     pub fn mb_disabled(self) -> &'a mut W {
         self.variant(MOT_A::MB_DISABLED)
     }
-    #[doc = "Reception Mailbox. Mailbox is configured for reception. If a message is received while the mailbox data register is full, it is discarded"]
+    #[doc = "Reception Mailbox. Mailbox is configured for reception. If a message is received while the mailbox data register is full, it is discarded."]
     #[inline(always)]
     pub fn mb_rx(self) -> &'a mut W {
         self.variant(MOT_A::MB_RX)
     }
-    #[doc = "Reception mailbox with overwrite. Mailbox is configured for reception. If a message is received while the mailbox is full, it overwrites the previous message"]
+    #[doc = "Reception mailbox with overwrite. Mailbox is configured for reception. If a message is received while the mailbox is full, it overwrites the previous message."]
     #[inline(always)]
     pub fn mb_rx_overwrite(self) -> &'a mut W {
         self.variant(MOT_A::MB_RX_OVERWRITE)
     }
-    #[doc = "Transmit mailbox. Mailbox is configured for transmission"]
+    #[doc = "Transmit mailbox. Mailbox is configured for transmission."]
     #[inline(always)]
     pub fn mb_tx(self) -> &'a mut W {
         self.variant(MOT_A::MB_TX)
     }
-    #[doc = "Consumer Mailbox. Mailbox is configured in reception but behaves as a Transmit Mailbox, i.e., it sends a remote frame and waits for an answer"]
+    #[doc = "Consumer Mailbox. Mailbox is configured in reception but behaves as a Transmit Mailbox, i.e., it sends a remote frame and waits for an answer."]
     #[inline(always)]
     pub fn mb_consumer(self) -> &'a mut W {
         self.variant(MOT_A::MB_CONSUMER)
     }
-    #[doc = "Producer Mailbox. Mailbox is configured in transmission but also behaves like a reception mailbox, i.e., it waits to receive a Remote Frame before sending its contents"]
+    #[doc = "Producer Mailbox. Mailbox is configured in transmission but also behaves like a reception mailbox, i.e., it waits to receive a Remote Frame before sending its contents."]
     #[inline(always)]
     pub fn mb_producer(self) -> &'a mut W {
         self.variant(MOT_A::MB_PRODUCER)

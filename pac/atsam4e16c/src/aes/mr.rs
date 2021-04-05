@@ -37,9 +37,9 @@ impl<'a> CIPHER_W<'a> {
 #[doc = "Dual Input BUFFer\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DUALBUFF_A {
-    #[doc = "0: AES_IDATARx cannot be written during processing of previous block"]
+    #[doc = "0: AES_IDATARx cannot be written during processing of previous block."]
     INACTIVE = 0,
-    #[doc = "1: AES_IDATARx can be written during processing of previous block when SMOD = 0x2. It speeds up the overall runtime of large files"]
+    #[doc = "1: AES_IDATARx can be written during processing of previous block when SMOD = 0x2. It speeds up the overall runtime of large files."]
     ACTIVE = 1,
 }
 impl From<DUALBUFF_A> for bool {
@@ -82,12 +82,12 @@ impl<'a> DUALBUFF_W<'a> {
             self.bit(variant.into())
         }
     }
-    #[doc = "AES_IDATARx cannot be written during processing of previous block"]
+    #[doc = "AES_IDATARx cannot be written during processing of previous block."]
     #[inline(always)]
     pub fn inactive(self) -> &'a mut W {
         self.variant(DUALBUFF_A::INACTIVE)
     }
-    #[doc = "AES_IDATARx can be written during processing of previous block when SMOD = 0x2. It speeds up the overall runtime of large files"]
+    #[doc = "AES_IDATARx can be written during processing of previous block when SMOD = 0x2. It speeds up the overall runtime of large files."]
     #[inline(always)]
     pub fn active(self) -> &'a mut W {
         self.variant(DUALBUFF_A::ACTIVE)

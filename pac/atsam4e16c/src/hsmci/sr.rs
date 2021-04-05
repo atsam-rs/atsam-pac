@@ -55,27 +55,27 @@ pub type OVRE_R = crate::R<bool, bool>;
 #[doc = "Reader of field `UNRE`"]
 pub type UNRE_R = crate::R<bool, bool>;
 impl R {
-    #[doc = "Bit 0 - Command Ready (cleared by writing in HSMCI_CMDR)"]
+    #[doc = "Bit 0 - Command Ready"]
     #[inline(always)]
     pub fn cmdrdy(&self) -> CMDRDY_R {
         CMDRDY_R::new((self.bits & 0x01) != 0)
     }
-    #[doc = "Bit 1 - Receiver Ready (cleared by reading HSMCI_RDR)"]
+    #[doc = "Bit 1 - Receiver Ready"]
     #[inline(always)]
     pub fn rxrdy(&self) -> RXRDY_R {
         RXRDY_R::new(((self.bits >> 1) & 0x01) != 0)
     }
-    #[doc = "Bit 2 - Transmit Ready (cleared by writing in HSMCI_TDR)"]
+    #[doc = "Bit 2 - Transmit Ready"]
     #[inline(always)]
     pub fn txrdy(&self) -> TXRDY_R {
         TXRDY_R::new(((self.bits >> 2) & 0x01) != 0)
     }
-    #[doc = "Bit 3 - Data Block Ended (cleared on read)"]
+    #[doc = "Bit 3 - Data Block Ended"]
     #[inline(always)]
     pub fn blke(&self) -> BLKE_R {
         BLKE_R::new(((self.bits >> 3) & 0x01) != 0)
     }
-    #[doc = "Bit 4 - Data Transfer in Progress (cleared at the end of CRC16 calculation)"]
+    #[doc = "Bit 4 - Data Transfer in Progress"]
     #[inline(always)]
     pub fn dtip(&self) -> DTIP_R {
         DTIP_R::new(((self.bits >> 4) & 0x01) != 0)
@@ -85,17 +85,17 @@ impl R {
     pub fn notbusy(&self) -> NOTBUSY_R {
         NOTBUSY_R::new(((self.bits >> 5) & 0x01) != 0)
     }
-    #[doc = "Bit 6 - End of RX Buffer (cleared by writing HSMCI_RCR or HSMCI_RNCR(1))"]
+    #[doc = "Bit 6 - End of RX Buffer"]
     #[inline(always)]
     pub fn endrx(&self) -> ENDRX_R {
         ENDRX_R::new(((self.bits >> 6) & 0x01) != 0)
     }
-    #[doc = "Bit 7 - End of TX Buffer (cleared by writing HSMCI_TCR or HSMCI_TNCR(1))"]
+    #[doc = "Bit 7 - End of TX Buffer"]
     #[inline(always)]
     pub fn endtx(&self) -> ENDTX_R {
         ENDTX_R::new(((self.bits >> 7) & 0x01) != 0)
     }
-    #[doc = "Bit 8 - SDIO Interrupt for Slot A (cleared on read)"]
+    #[doc = "Bit 8 - SDIO Interrupt for Slot A"]
     #[inline(always)]
     pub fn sdioirqa(&self) -> SDIOIRQA_R {
         SDIOIRQA_R::new(((self.bits >> 8) & 0x01) != 0)
@@ -105,57 +105,57 @@ impl R {
     pub fn sdiowait(&self) -> SDIOWAIT_R {
         SDIOWAIT_R::new(((self.bits >> 12) & 0x01) != 0)
     }
-    #[doc = "Bit 13 - CE-ATA Completion Signal Received (cleared on read)"]
+    #[doc = "Bit 13 - CE-ATA Completion Signal Received"]
     #[inline(always)]
     pub fn csrcv(&self) -> CSRCV_R {
         CSRCV_R::new(((self.bits >> 13) & 0x01) != 0)
     }
-    #[doc = "Bit 14 - RX Buffer Full (cleared by writing HSMCI_RCR or HSMCI_RNCR(1))"]
+    #[doc = "Bit 14 - RX Buffer Full"]
     #[inline(always)]
     pub fn rxbuff(&self) -> RXBUFF_R {
         RXBUFF_R::new(((self.bits >> 14) & 0x01) != 0)
     }
-    #[doc = "Bit 15 - TX Buffer Empty (cleared by writing HSMCI_TCR or HSMCI_TNCR(1))"]
+    #[doc = "Bit 15 - TX Buffer Empty"]
     #[inline(always)]
     pub fn txbufe(&self) -> TXBUFE_R {
         TXBUFE_R::new(((self.bits >> 15) & 0x01) != 0)
     }
-    #[doc = "Bit 16 - Response Index Error (cleared by writing in HSMCI_CMDR)"]
+    #[doc = "Bit 16 - Response Index Error"]
     #[inline(always)]
     pub fn rinde(&self) -> RINDE_R {
         RINDE_R::new(((self.bits >> 16) & 0x01) != 0)
     }
-    #[doc = "Bit 17 - Response Direction Error (cleared by writing in HSMCI_CMDR)"]
+    #[doc = "Bit 17 - Response Direction Error"]
     #[inline(always)]
     pub fn rdire(&self) -> RDIRE_R {
         RDIRE_R::new(((self.bits >> 17) & 0x01) != 0)
     }
-    #[doc = "Bit 18 - Response CRC Error (cleared by writing in HSMCI_CMDR)"]
+    #[doc = "Bit 18 - Response CRC Error"]
     #[inline(always)]
     pub fn rcrce(&self) -> RCRCE_R {
         RCRCE_R::new(((self.bits >> 18) & 0x01) != 0)
     }
-    #[doc = "Bit 19 - Response End Bit Error (cleared by writing in HSMCI_CMDR)"]
+    #[doc = "Bit 19 - Response End Bit Error"]
     #[inline(always)]
     pub fn rende(&self) -> RENDE_R {
         RENDE_R::new(((self.bits >> 19) & 0x01) != 0)
     }
-    #[doc = "Bit 20 - Response Time-out Error (cleared by writing in HSMCI_CMDR)"]
+    #[doc = "Bit 20 - Response Time-out Error"]
     #[inline(always)]
     pub fn rtoe(&self) -> RTOE_R {
         RTOE_R::new(((self.bits >> 20) & 0x01) != 0)
     }
-    #[doc = "Bit 21 - Data CRC Error (cleared on read)"]
+    #[doc = "Bit 21 - Data CRC Error"]
     #[inline(always)]
     pub fn dcrce(&self) -> DCRCE_R {
         DCRCE_R::new(((self.bits >> 21) & 0x01) != 0)
     }
-    #[doc = "Bit 22 - Data Time-out Error (cleared on read)"]
+    #[doc = "Bit 22 - Data Time-out Error"]
     #[inline(always)]
     pub fn dtoe(&self) -> DTOE_R {
         DTOE_R::new(((self.bits >> 22) & 0x01) != 0)
     }
-    #[doc = "Bit 23 - Completion Signal Time-out Error (cleared on read)"]
+    #[doc = "Bit 23 - Completion Signal Time-out Error"]
     #[inline(always)]
     pub fn cstoe(&self) -> CSTOE_R {
         CSTOE_R::new(((self.bits >> 23) & 0x01) != 0)
@@ -170,22 +170,22 @@ impl R {
     pub fn xfrdone(&self) -> XFRDONE_R {
         XFRDONE_R::new(((self.bits >> 27) & 0x01) != 0)
     }
-    #[doc = "Bit 28 - Boot Operation Acknowledge Received (cleared on read)"]
+    #[doc = "Bit 28 - Boot Operation Acknowledge Received"]
     #[inline(always)]
     pub fn ackrcv(&self) -> ACKRCV_R {
         ACKRCV_R::new(((self.bits >> 28) & 0x01) != 0)
     }
-    #[doc = "Bit 29 - Boot Operation Acknowledge Error (cleared on read)"]
+    #[doc = "Bit 29 - Boot Operation Acknowledge Error"]
     #[inline(always)]
     pub fn ackrcve(&self) -> ACKRCVE_R {
         ACKRCVE_R::new(((self.bits >> 29) & 0x01) != 0)
     }
-    #[doc = "Bit 30 - Overrun (if FERRCTRL = 1, cleared by writing in HSMCI_CMDR or cleared on read if FERRCTRL = 0)"]
+    #[doc = "Bit 30 - Overrun"]
     #[inline(always)]
     pub fn ovre(&self) -> OVRE_R {
         OVRE_R::new(((self.bits >> 30) & 0x01) != 0)
     }
-    #[doc = "Bit 31 - Underrun (if FERRCTRL = 1, cleared by writing in HSMCI_CMDR or cleared on read if FERRCTRL = 0)"]
+    #[doc = "Bit 31 - Underrun"]
     #[inline(always)]
     pub fn unre(&self) -> UNRE_R {
         UNRE_R::new(((self.bits >> 31) & 0x01) != 0)

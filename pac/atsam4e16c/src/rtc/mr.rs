@@ -418,7 +418,7 @@ pub enum THIGH_A {
     H_31MS = 0,
     #[doc = "1: 15.6 ms"]
     H_16MS = 1,
-    #[doc = "2: 3.91 ms"]
+    #[doc = "2: 3.91 Lms"]
     H_4MS = 2,
     #[doc = "3: 976 us"]
     H_976US = 3,
@@ -518,7 +518,7 @@ impl<'a> THIGH_W<'a> {
     pub fn h_16ms(self) -> &'a mut W {
         self.variant(THIGH_A::H_16MS)
     }
-    #[doc = "3.91 ms"]
+    #[doc = "3.91 Lms"]
     #[inline(always)]
     pub fn h_4ms(self) -> &'a mut W {
         self.variant(THIGH_A::H_4MS)

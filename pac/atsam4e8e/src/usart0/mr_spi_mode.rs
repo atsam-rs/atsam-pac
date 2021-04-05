@@ -147,7 +147,7 @@ impl<'a> USCLKS_W<'a> {
         self.w
     }
 }
-#[doc = "Character Length"]
+#[doc = "Character Length."]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum CHRL_A {
@@ -283,7 +283,7 @@ impl R {
     pub fn usclks(&self) -> USCLKS_R {
         USCLKS_R::new(((self.bits >> 4) & 0x03) as u8)
     }
-    #[doc = "Bits 6:7 - Character Length"]
+    #[doc = "Bits 6:7 - Character Length."]
     #[inline(always)]
     pub fn chrl(&self) -> CHRL_R {
         CHRL_R::new(((self.bits >> 6) & 0x03) as u8)
@@ -315,7 +315,7 @@ impl W {
     pub fn usclks(&mut self) -> USCLKS_W {
         USCLKS_W { w: self }
     }
-    #[doc = "Bits 6:7 - Character Length"]
+    #[doc = "Bits 6:7 - Character Length."]
     #[inline(always)]
     pub fn chrl(&mut self) -> CHRL_W {
         CHRL_W { w: self }
