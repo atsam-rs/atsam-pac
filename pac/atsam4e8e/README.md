@@ -2,7 +2,7 @@
 
 This repository holds the Peripheral Access Crate for the Atmel `ATSAM4e8e` microcontroller.
 
-[![Build Status](https://travis-ci.org/atsam4-rs/atsam4e8e-pac.svg?branch=master)](https://travis-ci.org/atsam4-rs/atsam4e8e-pac)
+[![Docs](https://docs.rs/atsam4e8e-pac/badge.svg)](https://docs.rs/atsam4e8e-pac/latest/)
 
 This **P**eripheral **A**ccess **C**rates (**PAC**s) is automatically generated, and provides low-level access to the peripherals specified by a device's SVD file.
 

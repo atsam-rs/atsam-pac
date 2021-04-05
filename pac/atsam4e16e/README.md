@@ -2,7 +2,7 @@
 
 This repository holds the Peripheral Access Crate for the Atmel `ATSAM4E16E` microcontroller.
 
-[![Build Status](https://travis-ci.org/atsam4-rs/atsam4e16e-pac.svg?branch=master)](https://travis-ci.org/atsam4-rs/atsam4e16e-pac)
+[![Docs](https://docs.rs/atsam4e16e-pac/badge.svg)](https://docs.rs/atsam4e16e-pac/latest/)
 
 This **P**eripheral **A**ccess **C**rates (**PAC**s) is automatically generated, and provides low-level access to the peripherals specified by a device's SVD file.
 

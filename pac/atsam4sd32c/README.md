@@ -2,7 +2,7 @@
 
 This repository holds the Peripheral Access Crate for the Atmel `ATSAM4SD32C` microcontroller.
 
-[![Build Status](https://www.travis-ci.com/atsam4-rs/atsam4sd32c-pac.svg?branch=master)](https://www.travis-ci.com/atsam4-rs/atsam4sd32c-pac)
+[![Docs](https://docs.rs/atsam4sd32c-pac/badge.svg)](https://docs.rs/atsam4sd32c-pac/latest/)
 
 This **P**eripheral **A**ccess **C**rates (**PAC**s) is automatically generated, and provides low-level access to the peripherals specified by a device's SVD file.
 

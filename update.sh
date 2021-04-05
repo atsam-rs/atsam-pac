@@ -16,7 +16,7 @@ for xsl in svd/devices/*\.xsl; do
   chip=$(basename "${xsl}" .xsl)
   CHIP=$(echo "${chip}" | tr '[:lower:]' '[:upper:]')
   svd=svd/${CHIP}.svd
-  
+
   pushd "${TOP}/pac/${chip}"
 
   xsltproc "${TOP}/${xsl}" "${TOP}/${svd}" | svd2rust #--nightly
