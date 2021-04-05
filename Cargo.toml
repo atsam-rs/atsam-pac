@@ -1,0 +1,10 @@
+[workspace]
+members = [
+    "pac/atsam4e16c",
+    "pac/atsam4e16e",
+    "pac/atsam4e8c",
+    "pac/atsam4e8e",
+    "pac/atsam4s4b",
+    "pac/atsam4s8b",
+    "pac/atsam4sd32c",
+]

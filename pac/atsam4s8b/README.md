@@ -2,7 +2,6 @@
 
 This repository holds the Peripheral Access Crate for the Atmel `ATSAM4S8B` microcontroller.
 
-[![Build Status](https://github.com/atsam4-rs/atsam4s8b-pac/workflows/Rust/badge.svg)](https://github.com/atsam4-rs/atsam4s8b-pac/actions)
 [![Docs](https://docs.rs/atsam4s8b-pac/badge.svg)](https://docs.rs/atsam4s8b-pac/latest/)
 
 This **P**eripheral **A**ccess **C**rates (**PAC**s) is automatically generated, and provides low-level access to the peripherals specified by a device's SVD file.
