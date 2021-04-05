@@ -38,7 +38,7 @@ impl<'a> WPEN_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u32)]
 pub enum WPKEY_A {
-    #[doc = "5523789: Writing any other value in this field aborts the write operation of the WPEN bit.Always reads as 0"]
+    #[doc = "5523789: Writing any other value in this field aborts the write operation of the WPEN bit.Always reads as 0."]
     PASSWD = 5523789,
 }
 impl From<WPKEY_A> for u32 {
@@ -75,7 +75,7 @@ impl<'a> WPKEY_W<'a> {
     pub fn variant(self, variant: WPKEY_A) -> &'a mut W {
         unsafe { self.bits(variant.into()) }
     }
-    #[doc = "Writing any other value in this field aborts the write operation of the WPEN bit.Always reads as 0"]
+    #[doc = "Writing any other value in this field aborts the write operation of the WPEN bit.Always reads as 0."]
     #[inline(always)]
     pub fn passwd(self) -> &'a mut W {
         self.variant(WPKEY_A::PASSWD)

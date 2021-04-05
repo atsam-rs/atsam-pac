@@ -191,7 +191,7 @@ impl<'a> FARG_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum FKEY_AW {
-    #[doc = "90: The 0x5A value enables the command defined by the bits of the register. If the field is written with a different value, the write is not performed and no action is started"]
+    #[doc = "90: The 0x5A value enables the command defined by the bits of the register. If the field is written with a different value, the write is not performed and no action is started."]
     PASSWD = 90,
 }
 impl From<FKEY_AW> for u8 {
@@ -210,7 +210,7 @@ impl<'a> FKEY_W<'a> {
     pub fn variant(self, variant: FKEY_AW) -> &'a mut W {
         unsafe { self.bits(variant.into()) }
     }
-    #[doc = "The 0x5A value enables the command defined by the bits of the register. If the field is written with a different value, the write is not performed and no action is started"]
+    #[doc = "The 0x5A value enables the command defined by the bits of the register. If the field is written with a different value, the write is not performed and no action is started."]
     #[inline(always)]
     pub fn passwd(self) -> &'a mut W {
         self.variant(FKEY_AW::PASSWD)
