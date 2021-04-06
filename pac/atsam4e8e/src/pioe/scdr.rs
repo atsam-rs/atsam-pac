@@ -25,14 +25,14 @@ impl<'a> DIV_W<'a> {
     }
 }
 impl R {
-    #[doc = "Bits 0:13"]
+    #[doc = "Bits 0:13 - Slow Clock Divider Selection for Debouncing"]
     #[inline(always)]
     pub fn div(&self) -> DIV_R {
         DIV_R::new((self.bits & 0x3fff) as u16)
     }
 }
 impl W {
-    #[doc = "Bits 0:13"]
+    #[doc = "Bits 0:13 - Slow Clock Divider Selection for Debouncing"]
     #[inline(always)]
     pub fn div(&mut self) -> DIV_W {
         DIV_W { w: self }

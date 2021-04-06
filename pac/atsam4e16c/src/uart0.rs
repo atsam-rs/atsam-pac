@@ -19,7 +19,10 @@ pub struct RegisterBlock {
     pub thr: THR,
     #[doc = "0x20 - Baud Rate Generator Register"]
     pub brgr: BRGR,
-    _reserved9: [u8; 220usize],
+    _reserved9: [u8; 192usize],
+    #[doc = "0xe4 - Write Protection Mode Register"]
+    pub wpmr: WPMR,
+    _reserved10: [u8; 24usize],
     #[doc = "0x100 - Receive Pointer Register"]
     pub rpr: RPR,
     #[doc = "0x104 - Receive Counter Register"]
@@ -126,6 +129,17 @@ impl crate::Readable for BRGR {}
 impl crate::Writable for BRGR {}
 #[doc = "Baud Rate Generator Register"]
 pub mod brgr;
+#[doc = "Write Protection Mode Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [wpmr](wpmr) module"]
+pub type WPMR = crate::Reg<u32, _WPMR>;
+#[allow(missing_docs)]
+#[doc(hidden)]
+pub struct _WPMR;
+#[doc = "`read()` method returns [wpmr::R](wpmr::R) reader structure"]
+impl crate::Readable for WPMR {}
+#[doc = "`write(|w| ..)` method takes [wpmr::W](wpmr::W) writer structure"]
+impl crate::Writable for WPMR {}
+#[doc = "Write Protection Mode Register"]
+pub mod wpmr;
 #[doc = "Receive Pointer Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [rpr](rpr) module"]
 pub type RPR = crate::Reg<u32, _RPR>;
 #[allow(missing_docs)]

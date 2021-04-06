@@ -1,11 +1,11 @@
 #[doc = "Reader of register SR"]
 pub type R = crate::R<u32, super::SR>;
-#[doc = "FWUP Wake Up Status\n\nValue on reset: 0"]
+#[doc = "FWUP Wake-up Status\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FWUPS_A {
-    #[doc = "0: no wake up due to the assertion of the FWUP pin has occurred since the last read of SUPC_SR."]
+    #[doc = "0: No wake-up due to the assertion of the FWUP pin has occurred since the last read of SUPC_SR."]
     NO = 0,
-    #[doc = "1: at least one wake up due to the assertion of the FWUP pin has occurred since the last read of SUPC_SR."]
+    #[doc = "1: At least one wake-up due to the assertion of the FWUP pin has occurred since the last read of SUPC_SR."]
     PRESENT = 1,
 }
 impl From<FWUPS_A> for bool {
@@ -36,12 +36,12 @@ impl FWUPS_R {
         *self == FWUPS_A::PRESENT
     }
 }
-#[doc = "WKUP Wake Up Status\n\nValue on reset: 0"]
+#[doc = "WKUP Wake-up Status\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WKUPS_A {
-    #[doc = "0: no wake up due to the assertion of the WKUP pins has occurred since the last read of SUPC_SR."]
+    #[doc = "0: No wake-up due to the assertion of the WKUP pins has occurred since the last read of SUPC_SR."]
     NO = 0,
-    #[doc = "1: at least one wake up due to the assertion of the WKUP pins has occurred since the last read of SUPC_SR."]
+    #[doc = "1: At least one wake-up due to the assertion of the WKUP pins has occurred since the last read of SUPC_SR."]
     PRESENT = 1,
 }
 impl From<WKUPS_A> for bool {
@@ -72,12 +72,12 @@ impl WKUPS_R {
         *self == WKUPS_A::PRESENT
     }
 }
-#[doc = "Supply Monitor Detection Wake Up Status\n\nValue on reset: 0"]
+#[doc = "Supply Monitor Detection Wake-up Status\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SMWS_A {
-    #[doc = "0: no wake up due to a supply monitor detection has occurred since the last read of SUPC_SR."]
+    #[doc = "0: No wake-up due to a supply monitor detection has occurred since the last read of SUPC_SR."]
     NO = 0,
-    #[doc = "1: at least one wake up due to a supply monitor detection has occurred since the last read of SUPC_SR."]
+    #[doc = "1: At least one wake-up due to a supply monitor detection has occurred since the last read of SUPC_SR."]
     PRESENT = 1,
 }
 impl From<SMWS_A> for bool {
@@ -111,9 +111,9 @@ impl SMWS_R {
 #[doc = "Brownout Detector Reset Status\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum BODRSTS_A {
-    #[doc = "0: no core brownout rising edge event has been detected since the last read of the SUPC_SR."]
+    #[doc = "0: No core brownout rising edge event has been detected since the last read of the SUPC_SR."]
     NO = 0,
-    #[doc = "1: at least one brownout output rising edge event has been detected since the last read of the SUPC_SR."]
+    #[doc = "1: At least one brownout output rising edge event has been detected since the last read of the SUPC_SR."]
     PRESENT = 1,
 }
 impl From<BODRSTS_A> for bool {
@@ -147,9 +147,9 @@ impl BODRSTS_R {
 #[doc = "Supply Monitor Reset Status\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SMRSTS_A {
-    #[doc = "0: no supply monitor detection has generated a core reset since the last read of the SUPC_SR."]
+    #[doc = "0: No supply monitor detection has generated a core reset since the last read of the SUPC_SR."]
     NO = 0,
-    #[doc = "1: at least one supply monitor detection has generated a core reset since the last read of the SUPC_SR."]
+    #[doc = "1: At least one supply monitor detection has generated a core reset since the last read of the SUPC_SR."]
     PRESENT = 1,
 }
 impl From<SMRSTS_A> for bool {
@@ -183,9 +183,9 @@ impl SMRSTS_R {
 #[doc = "Supply Monitor Status\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SMS_A {
-    #[doc = "0: no supply monitor detection since the last read of SUPC_SR."]
+    #[doc = "0: No supply monitor detection since the last read of SUPC_SR."]
     NO = 0,
-    #[doc = "1: at least one supply monitor detection since the last read of SUPC_SR."]
+    #[doc = "1: At least one supply monitor detection since the last read of SUPC_SR."]
     PRESENT = 1,
 }
 impl From<SMS_A> for bool {
@@ -219,9 +219,9 @@ impl SMS_R {
 #[doc = "Supply Monitor Output Status\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SMOS_A {
-    #[doc = "0: the supply monitor detected VDDIO higher than its threshold at its last measurement."]
+    #[doc = "0: The supply monitor detected VDDIO higher than its threshold at its last measurement."]
     HIGH = 0,
-    #[doc = "1: the supply monitor detected VDDIO lower than its threshold at its last measurement."]
+    #[doc = "1: The supply monitor detected VDDIO lower than its threshold at its last measurement."]
     LOW = 1,
 }
 impl From<SMOS_A> for bool {
@@ -255,9 +255,9 @@ impl SMOS_R {
 #[doc = "32-kHz Oscillator Selection Status\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum OSCSEL_A {
-    #[doc = "0: the slow clock, SLCK is generated by the embedded 32-kHz RC oscillator."]
+    #[doc = "0: The slow clock, SLCK is generated by the embedded 32 kHz RC oscillator."]
     RC = 0,
-    #[doc = "1: the slow clock, SLCK is generated by the 32-kHz crystal oscillator."]
+    #[doc = "1: The slow clock, SLCK is generated by the 32 kHz crystal oscillator."]
     CRYST = 1,
 }
 impl From<OSCSEL_A> for bool {
@@ -324,12 +324,12 @@ impl FWUPIS_R {
         *self == FWUPIS_A::HIGH
     }
 }
-#[doc = "Low Power Debouncer Wake Up Status on WKUP0\n\nValue on reset: 0"]
+#[doc = "Low-power Debouncer Wake-up Status on WKUP0\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LPDBCS0_A {
-    #[doc = "0: no wake up due to the assertion of the WKUP0 pin has occurred since the last read of SUPC_SR."]
+    #[doc = "0: No wake-up due to the assertion of the WKUP0 pin has occurred since the last read of SUPC_SR."]
     NO = 0,
-    #[doc = "1: at least one wake up due to the assertion of the WKUP0 pin has occurred since the last read of SUPC_SR."]
+    #[doc = "1: At least one wake-up due to the assertion of the WKUP0 pin has occurred since the last read of SUPC_SR."]
     PRESENT = 1,
 }
 impl From<LPDBCS0_A> for bool {
@@ -360,12 +360,12 @@ impl LPDBCS0_R {
         *self == LPDBCS0_A::PRESENT
     }
 }
-#[doc = "Low Power Debouncer Wake Up Status on WKUP1\n\nValue on reset: 0"]
+#[doc = "Low-power Debouncer Wake-up Status on WKUP1\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LPDBCS1_A {
-    #[doc = "0: no wake up due to the assertion of the WKUP1 pin has occurred since the last read of SUPC_SR."]
+    #[doc = "0: No wake-up due to the assertion of the WKUP1 pin has occurred since the last read of SUPC_SR."]
     NO = 0,
-    #[doc = "1: at least one wake up due to the assertion of the WKUP1 pin has occurred since the last read of SUPC_SR."]
+    #[doc = "1: At least one wake-up due to the assertion of the WKUP1 pin has occurred since the last read of SUPC_SR."]
     PRESENT = 1,
 }
 impl From<LPDBCS1_A> for bool {
@@ -399,9 +399,9 @@ impl LPDBCS1_R {
 #[doc = "WKUP Input Status 0\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WKUPIS0_A {
-    #[doc = "0: the corresponding wake-up input is disabled, or was inactive at the time the debouncer triggered a wake up event."]
+    #[doc = "0: The corresponding wake-up input is disabled, or was inactive at the time the debouncer triggered a wake-up event."]
     DIS = 0,
-    #[doc = "1: the corresponding wake-up input was active at the time the debouncer triggered a wake up event."]
+    #[doc = "1: The corresponding wake-up input was active at the time the debouncer triggered a wake-up event."]
     EN = 1,
 }
 impl From<WKUPIS0_A> for bool {
@@ -435,9 +435,9 @@ impl WKUPIS0_R {
 #[doc = "WKUP Input Status 1\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WKUPIS1_A {
-    #[doc = "0: the corresponding wake-up input is disabled, or was inactive at the time the debouncer triggered a wake up event."]
+    #[doc = "0: The corresponding wake-up input is disabled, or was inactive at the time the debouncer triggered a wake-up event."]
     DIS = 0,
-    #[doc = "1: the corresponding wake-up input was active at the time the debouncer triggered a wake up event."]
+    #[doc = "1: The corresponding wake-up input was active at the time the debouncer triggered a wake-up event."]
     EN = 1,
 }
 impl From<WKUPIS1_A> for bool {
@@ -471,9 +471,9 @@ impl WKUPIS1_R {
 #[doc = "WKUP Input Status 2\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WKUPIS2_A {
-    #[doc = "0: the corresponding wake-up input is disabled, or was inactive at the time the debouncer triggered a wake up event."]
+    #[doc = "0: The corresponding wake-up input is disabled, or was inactive at the time the debouncer triggered a wake-up event."]
     DIS = 0,
-    #[doc = "1: the corresponding wake-up input was active at the time the debouncer triggered a wake up event."]
+    #[doc = "1: The corresponding wake-up input was active at the time the debouncer triggered a wake-up event."]
     EN = 1,
 }
 impl From<WKUPIS2_A> for bool {
@@ -507,9 +507,9 @@ impl WKUPIS2_R {
 #[doc = "WKUP Input Status 3\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WKUPIS3_A {
-    #[doc = "0: the corresponding wake-up input is disabled, or was inactive at the time the debouncer triggered a wake up event."]
+    #[doc = "0: The corresponding wake-up input is disabled, or was inactive at the time the debouncer triggered a wake-up event."]
     DIS = 0,
-    #[doc = "1: the corresponding wake-up input was active at the time the debouncer triggered a wake up event."]
+    #[doc = "1: The corresponding wake-up input was active at the time the debouncer triggered a wake-up event."]
     EN = 1,
 }
 impl From<WKUPIS3_A> for bool {
@@ -543,9 +543,9 @@ impl WKUPIS3_R {
 #[doc = "WKUP Input Status 4\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WKUPIS4_A {
-    #[doc = "0: the corresponding wake-up input is disabled, or was inactive at the time the debouncer triggered a wake up event."]
+    #[doc = "0: The corresponding wake-up input is disabled, or was inactive at the time the debouncer triggered a wake-up event."]
     DIS = 0,
-    #[doc = "1: the corresponding wake-up input was active at the time the debouncer triggered a wake up event."]
+    #[doc = "1: The corresponding wake-up input was active at the time the debouncer triggered a wake-up event."]
     EN = 1,
 }
 impl From<WKUPIS4_A> for bool {
@@ -579,9 +579,9 @@ impl WKUPIS4_R {
 #[doc = "WKUP Input Status 5\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WKUPIS5_A {
-    #[doc = "0: the corresponding wake-up input is disabled, or was inactive at the time the debouncer triggered a wake up event."]
+    #[doc = "0: The corresponding wake-up input is disabled, or was inactive at the time the debouncer triggered a wake-up event."]
     DIS = 0,
-    #[doc = "1: the corresponding wake-up input was active at the time the debouncer triggered a wake up event."]
+    #[doc = "1: The corresponding wake-up input was active at the time the debouncer triggered a wake-up event."]
     EN = 1,
 }
 impl From<WKUPIS5_A> for bool {
@@ -615,9 +615,9 @@ impl WKUPIS5_R {
 #[doc = "WKUP Input Status 6\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WKUPIS6_A {
-    #[doc = "0: the corresponding wake-up input is disabled, or was inactive at the time the debouncer triggered a wake up event."]
+    #[doc = "0: The corresponding wake-up input is disabled, or was inactive at the time the debouncer triggered a wake-up event."]
     DIS = 0,
-    #[doc = "1: the corresponding wake-up input was active at the time the debouncer triggered a wake up event."]
+    #[doc = "1: The corresponding wake-up input was active at the time the debouncer triggered a wake-up event."]
     EN = 1,
 }
 impl From<WKUPIS6_A> for bool {
@@ -651,9 +651,9 @@ impl WKUPIS6_R {
 #[doc = "WKUP Input Status 7\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WKUPIS7_A {
-    #[doc = "0: the corresponding wake-up input is disabled, or was inactive at the time the debouncer triggered a wake up event."]
+    #[doc = "0: The corresponding wake-up input is disabled, or was inactive at the time the debouncer triggered a wake-up event."]
     DIS = 0,
-    #[doc = "1: the corresponding wake-up input was active at the time the debouncer triggered a wake up event."]
+    #[doc = "1: The corresponding wake-up input was active at the time the debouncer triggered a wake-up event."]
     EN = 1,
 }
 impl From<WKUPIS7_A> for bool {
@@ -687,9 +687,9 @@ impl WKUPIS7_R {
 #[doc = "WKUP Input Status 8\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WKUPIS8_A {
-    #[doc = "0: the corresponding wake-up input is disabled, or was inactive at the time the debouncer triggered a wake up event."]
+    #[doc = "0: The corresponding wake-up input is disabled, or was inactive at the time the debouncer triggered a wake-up event."]
     DIS = 0,
-    #[doc = "1: the corresponding wake-up input was active at the time the debouncer triggered a wake up event."]
+    #[doc = "1: The corresponding wake-up input was active at the time the debouncer triggered a wake-up event."]
     EN = 1,
 }
 impl From<WKUPIS8_A> for bool {
@@ -723,9 +723,9 @@ impl WKUPIS8_R {
 #[doc = "WKUP Input Status 9\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WKUPIS9_A {
-    #[doc = "0: the corresponding wake-up input is disabled, or was inactive at the time the debouncer triggered a wake up event."]
+    #[doc = "0: The corresponding wake-up input is disabled, or was inactive at the time the debouncer triggered a wake-up event."]
     DIS = 0,
-    #[doc = "1: the corresponding wake-up input was active at the time the debouncer triggered a wake up event."]
+    #[doc = "1: The corresponding wake-up input was active at the time the debouncer triggered a wake-up event."]
     EN = 1,
 }
 impl From<WKUPIS9_A> for bool {
@@ -759,9 +759,9 @@ impl WKUPIS9_R {
 #[doc = "WKUP Input Status 10\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WKUPIS10_A {
-    #[doc = "0: the corresponding wake-up input is disabled, or was inactive at the time the debouncer triggered a wake up event."]
+    #[doc = "0: The corresponding wake-up input is disabled, or was inactive at the time the debouncer triggered a wake-up event."]
     DIS = 0,
-    #[doc = "1: the corresponding wake-up input was active at the time the debouncer triggered a wake up event."]
+    #[doc = "1: The corresponding wake-up input was active at the time the debouncer triggered a wake-up event."]
     EN = 1,
 }
 impl From<WKUPIS10_A> for bool {
@@ -795,9 +795,9 @@ impl WKUPIS10_R {
 #[doc = "WKUP Input Status 11\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WKUPIS11_A {
-    #[doc = "0: the corresponding wake-up input is disabled, or was inactive at the time the debouncer triggered a wake up event."]
+    #[doc = "0: The corresponding wake-up input is disabled, or was inactive at the time the debouncer triggered a wake-up event."]
     DIS = 0,
-    #[doc = "1: the corresponding wake-up input was active at the time the debouncer triggered a wake up event."]
+    #[doc = "1: The corresponding wake-up input was active at the time the debouncer triggered a wake-up event."]
     EN = 1,
 }
 impl From<WKUPIS11_A> for bool {
@@ -831,9 +831,9 @@ impl WKUPIS11_R {
 #[doc = "WKUP Input Status 12\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WKUPIS12_A {
-    #[doc = "0: the corresponding wake-up input is disabled, or was inactive at the time the debouncer triggered a wake up event."]
+    #[doc = "0: The corresponding wake-up input is disabled, or was inactive at the time the debouncer triggered a wake-up event."]
     DIS = 0,
-    #[doc = "1: the corresponding wake-up input was active at the time the debouncer triggered a wake up event."]
+    #[doc = "1: The corresponding wake-up input was active at the time the debouncer triggered a wake-up event."]
     EN = 1,
 }
 impl From<WKUPIS12_A> for bool {
@@ -867,9 +867,9 @@ impl WKUPIS12_R {
 #[doc = "WKUP Input Status 13\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WKUPIS13_A {
-    #[doc = "0: the corresponding wake-up input is disabled, or was inactive at the time the debouncer triggered a wake up event."]
+    #[doc = "0: The corresponding wake-up input is disabled, or was inactive at the time the debouncer triggered a wake-up event."]
     DIS = 0,
-    #[doc = "1: the corresponding wake-up input was active at the time the debouncer triggered a wake up event."]
+    #[doc = "1: The corresponding wake-up input was active at the time the debouncer triggered a wake-up event."]
     EN = 1,
 }
 impl From<WKUPIS13_A> for bool {
@@ -903,9 +903,9 @@ impl WKUPIS13_R {
 #[doc = "WKUP Input Status 14\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WKUPIS14_A {
-    #[doc = "0: the corresponding wake-up input is disabled, or was inactive at the time the debouncer triggered a wake up event."]
+    #[doc = "0: The corresponding wake-up input is disabled, or was inactive at the time the debouncer triggered a wake-up event."]
     DIS = 0,
-    #[doc = "1: the corresponding wake-up input was active at the time the debouncer triggered a wake up event."]
+    #[doc = "1: The corresponding wake-up input was active at the time the debouncer triggered a wake-up event."]
     EN = 1,
 }
 impl From<WKUPIS14_A> for bool {
@@ -939,9 +939,9 @@ impl WKUPIS14_R {
 #[doc = "WKUP Input Status 15\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WKUPIS15_A {
-    #[doc = "0: the corresponding wake-up input is disabled, or was inactive at the time the debouncer triggered a wake up event."]
+    #[doc = "0: The corresponding wake-up input is disabled, or was inactive at the time the debouncer triggered a wake-up event."]
     DIS = 0,
-    #[doc = "1: the corresponding wake-up input was active at the time the debouncer triggered a wake up event."]
+    #[doc = "1: The corresponding wake-up input was active at the time the debouncer triggered a wake-up event."]
     EN = 1,
 }
 impl From<WKUPIS15_A> for bool {
@@ -973,17 +973,17 @@ impl WKUPIS15_R {
     }
 }
 impl R {
-    #[doc = "Bit 0 - FWUP Wake Up Status"]
+    #[doc = "Bit 0 - FWUP Wake-up Status"]
     #[inline(always)]
     pub fn fwups(&self) -> FWUPS_R {
         FWUPS_R::new((self.bits & 0x01) != 0)
     }
-    #[doc = "Bit 1 - WKUP Wake Up Status"]
+    #[doc = "Bit 1 - WKUP Wake-up Status"]
     #[inline(always)]
     pub fn wkups(&self) -> WKUPS_R {
         WKUPS_R::new(((self.bits >> 1) & 0x01) != 0)
     }
-    #[doc = "Bit 2 - Supply Monitor Detection Wake Up Status"]
+    #[doc = "Bit 2 - Supply Monitor Detection Wake-up Status"]
     #[inline(always)]
     pub fn smws(&self) -> SMWS_R {
         SMWS_R::new(((self.bits >> 2) & 0x01) != 0)
@@ -1018,12 +1018,12 @@ impl R {
     pub fn fwupis(&self) -> FWUPIS_R {
         FWUPIS_R::new(((self.bits >> 12) & 0x01) != 0)
     }
-    #[doc = "Bit 13 - Low Power Debouncer Wake Up Status on WKUP0"]
+    #[doc = "Bit 13 - Low-power Debouncer Wake-up Status on WKUP0"]
     #[inline(always)]
     pub fn lpdbcs0(&self) -> LPDBCS0_R {
         LPDBCS0_R::new(((self.bits >> 13) & 0x01) != 0)
     }
-    #[doc = "Bit 14 - Low Power Debouncer Wake Up Status on WKUP1"]
+    #[doc = "Bit 14 - Low-power Debouncer Wake-up Status on WKUP1"]
     #[inline(always)]
     pub fn lpdbcs1(&self) -> LPDBCS1_R {
         LPDBCS1_R::new(((self.bits >> 14) & 0x01) != 0)

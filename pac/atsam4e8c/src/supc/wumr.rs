@@ -10,12 +10,12 @@ impl crate::ResetValue for super::WUMR {
         0
     }
 }
-#[doc = "Force Wake Up Enable\n\nValue on reset: 0"]
+#[doc = "Force Wake-up Enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FWUPEN_A {
-    #[doc = "0: the Force Wake Up pin has no wake up effect."]
+    #[doc = "0: The force wake-up pin has no wake-up effect."]
     NOT_ENABLE = 0,
-    #[doc = "1: the Force Wake Up pin low forces the wake up of the core power supply."]
+    #[doc = "1: The force wake-up pin low forces the wake-up of the core power supply."]
     ENABLE = 1,
 }
 impl From<FWUPEN_A> for bool {
@@ -58,12 +58,12 @@ impl<'a> FWUPEN_W<'a> {
             self.bit(variant.into())
         }
     }
-    #[doc = "the Force Wake Up pin has no wake up effect."]
+    #[doc = "The force wake-up pin has no wake-up effect."]
     #[inline(always)]
     pub fn not_enable(self) -> &'a mut W {
         self.variant(FWUPEN_A::NOT_ENABLE)
     }
-    #[doc = "the Force Wake Up pin low forces the wake up of the core power supply."]
+    #[doc = "The force wake-up pin low forces the wake-up of the core power supply."]
     #[inline(always)]
     pub fn enable(self) -> &'a mut W {
         self.variant(FWUPEN_A::ENABLE)
@@ -85,12 +85,12 @@ impl<'a> FWUPEN_W<'a> {
         self.w
     }
 }
-#[doc = "Supply Monitor Wake Up Enable\n\nValue on reset: 0"]
+#[doc = "Supply Monitor Wake-up Enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SMEN_A {
-    #[doc = "0: the supply monitor detection has no wake up effect."]
+    #[doc = "0: The supply monitor detection has no wake-up effect."]
     NOT_ENABLE = 0,
-    #[doc = "1: the supply monitor detection forces the wake up of the core power supply."]
+    #[doc = "1: The supply monitor detection forces the wake-up of the core power supply."]
     ENABLE = 1,
 }
 impl From<SMEN_A> for bool {
@@ -133,12 +133,12 @@ impl<'a> SMEN_W<'a> {
             self.bit(variant.into())
         }
     }
-    #[doc = "the supply monitor detection has no wake up effect."]
+    #[doc = "The supply monitor detection has no wake-up effect."]
     #[inline(always)]
     pub fn not_enable(self) -> &'a mut W {
         self.variant(SMEN_A::NOT_ENABLE)
     }
-    #[doc = "the supply monitor detection forces the wake up of the core power supply."]
+    #[doc = "The supply monitor detection forces the wake-up of the core power supply."]
     #[inline(always)]
     pub fn enable(self) -> &'a mut W {
         self.variant(SMEN_A::ENABLE)
@@ -160,12 +160,12 @@ impl<'a> SMEN_W<'a> {
         self.w
     }
 }
-#[doc = "Real Time Timer Wake Up Enable\n\nValue on reset: 0"]
+#[doc = "Real-time Timer Wake-up Enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RTTEN_A {
-    #[doc = "0: the RTT alarm signal has no wake up effect."]
+    #[doc = "0: The RTT alarm signal has no wake-up effect."]
     NOT_ENABLE = 0,
-    #[doc = "1: the RTT alarm signal forces the wake up of the core power supply."]
+    #[doc = "1: The RTT alarm signal forces the wake-up of the core power supply."]
     ENABLE = 1,
 }
 impl From<RTTEN_A> for bool {
@@ -208,12 +208,12 @@ impl<'a> RTTEN_W<'a> {
             self.bit(variant.into())
         }
     }
-    #[doc = "the RTT alarm signal has no wake up effect."]
+    #[doc = "The RTT alarm signal has no wake-up effect."]
     #[inline(always)]
     pub fn not_enable(self) -> &'a mut W {
         self.variant(RTTEN_A::NOT_ENABLE)
     }
-    #[doc = "the RTT alarm signal forces the wake up of the core power supply."]
+    #[doc = "The RTT alarm signal forces the wake-up of the core power supply."]
     #[inline(always)]
     pub fn enable(self) -> &'a mut W {
         self.variant(RTTEN_A::ENABLE)
@@ -235,12 +235,12 @@ impl<'a> RTTEN_W<'a> {
         self.w
     }
 }
-#[doc = "Real Time Clock Wake Up Enable\n\nValue on reset: 0"]
+#[doc = "Real-time Clock Wake-up Enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RTCEN_A {
-    #[doc = "0: the RTC alarm signal has no wake up effect."]
+    #[doc = "0: The RTC alarm signal has no wake-up effect."]
     NOT_ENABLE = 0,
-    #[doc = "1: the RTC alarm signal forces the wake up of the core power supply."]
+    #[doc = "1: The RTC alarm signal forces the wake-up of the core power supply."]
     ENABLE = 1,
 }
 impl From<RTCEN_A> for bool {
@@ -283,12 +283,12 @@ impl<'a> RTCEN_W<'a> {
             self.bit(variant.into())
         }
     }
-    #[doc = "the RTC alarm signal has no wake up effect."]
+    #[doc = "The RTC alarm signal has no wake-up effect."]
     #[inline(always)]
     pub fn not_enable(self) -> &'a mut W {
         self.variant(RTCEN_A::NOT_ENABLE)
     }
-    #[doc = "the RTC alarm signal forces the wake up of the core power supply."]
+    #[doc = "The RTC alarm signal forces the wake-up of the core power supply."]
     #[inline(always)]
     pub fn enable(self) -> &'a mut W {
         self.variant(RTCEN_A::ENABLE)
@@ -310,12 +310,12 @@ impl<'a> RTCEN_W<'a> {
         self.w
     }
 }
-#[doc = "Low power Debouncer ENable WKUP0\n\nValue on reset: 0"]
+#[doc = "Low-power Debouncer Enable WKUP0\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LPDBCEN0_A {
-    #[doc = "0: the WKUP0 input pin is not connected with low power debouncer."]
+    #[doc = "0: The WKUP0 input pin is not connected with low-power debouncer."]
     NOT_ENABLE = 0,
-    #[doc = "1: the WKUP0 input pin is connected with low power debouncer and can force a core wake up."]
+    #[doc = "1: The WKUP0 input pin is connected with low-power debouncer and forces a system wake-up."]
     ENABLE = 1,
 }
 impl From<LPDBCEN0_A> for bool {
@@ -358,12 +358,12 @@ impl<'a> LPDBCEN0_W<'a> {
             self.bit(variant.into())
         }
     }
-    #[doc = "the WKUP0 input pin is not connected with low power debouncer."]
+    #[doc = "The WKUP0 input pin is not connected with low-power debouncer."]
     #[inline(always)]
     pub fn not_enable(self) -> &'a mut W {
         self.variant(LPDBCEN0_A::NOT_ENABLE)
     }
-    #[doc = "the WKUP0 input pin is connected with low power debouncer and can force a core wake up."]
+    #[doc = "The WKUP0 input pin is connected with low-power debouncer and forces a system wake-up."]
     #[inline(always)]
     pub fn enable(self) -> &'a mut W {
         self.variant(LPDBCEN0_A::ENABLE)
@@ -385,12 +385,12 @@ impl<'a> LPDBCEN0_W<'a> {
         self.w
     }
 }
-#[doc = "Low power Debouncer ENable WKUP1\n\nValue on reset: 0"]
+#[doc = "Low-power Debouncer Enable WKUP1\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LPDBCEN1_A {
-    #[doc = "0: the WKUP1input pin is not connected with low power debouncer."]
+    #[doc = "0: The WKUP1 input pin is not connected with low-power debouncer."]
     NOT_ENABLE = 0,
-    #[doc = "1: the WKUP1 input pin is connected with low power debouncer and can force a core wake up."]
+    #[doc = "1: The WKUP1 input pin is connected with low-power debouncer and forces a system wake-up."]
     ENABLE = 1,
 }
 impl From<LPDBCEN1_A> for bool {
@@ -433,12 +433,12 @@ impl<'a> LPDBCEN1_W<'a> {
             self.bit(variant.into())
         }
     }
-    #[doc = "the WKUP1input pin is not connected with low power debouncer."]
+    #[doc = "The WKUP1 input pin is not connected with low-power debouncer."]
     #[inline(always)]
     pub fn not_enable(self) -> &'a mut W {
         self.variant(LPDBCEN1_A::NOT_ENABLE)
     }
-    #[doc = "the WKUP1 input pin is connected with low power debouncer and can force a core wake up."]
+    #[doc = "The WKUP1 input pin is connected with low-power debouncer and forces a system wake-up."]
     #[inline(always)]
     pub fn enable(self) -> &'a mut W {
         self.variant(LPDBCEN1_A::ENABLE)
@@ -460,12 +460,12 @@ impl<'a> LPDBCEN1_W<'a> {
         self.w
     }
 }
-#[doc = "Low power Debouncer Clear\n\nValue on reset: 0"]
+#[doc = "Low-power Debouncer Clear\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LPDBCCLR_A {
-    #[doc = "0: a low power debounce event does not create an immediate clear on first half GPBR registers."]
+    #[doc = "0: A low-power debounce event does not create an immediate clear on the first half of GPBR registers."]
     NOT_ENABLE = 0,
-    #[doc = "1: a low power debounce event on WKUP0 or WKUP1 generates an immediate clear on first half GPBR registers."]
+    #[doc = "1: A low-power debounce event on WKUP0 or WKUP1 generates an immediate clear on the first half of GPBR registers."]
     ENABLE = 1,
 }
 impl From<LPDBCCLR_A> for bool {
@@ -508,12 +508,12 @@ impl<'a> LPDBCCLR_W<'a> {
             self.bit(variant.into())
         }
     }
-    #[doc = "a low power debounce event does not create an immediate clear on first half GPBR registers."]
+    #[doc = "A low-power debounce event does not create an immediate clear on the first half of GPBR registers."]
     #[inline(always)]
     pub fn not_enable(self) -> &'a mut W {
         self.variant(LPDBCCLR_A::NOT_ENABLE)
     }
-    #[doc = "a low power debounce event on WKUP0 or WKUP1 generates an immediate clear on first half GPBR registers."]
+    #[doc = "A low-power debounce event on WKUP0 or WKUP1 generates an immediate clear on the first half of GPBR registers."]
     #[inline(always)]
     pub fn enable(self) -> &'a mut W {
         self.variant(LPDBCCLR_A::ENABLE)
@@ -535,7 +535,7 @@ impl<'a> LPDBCCLR_W<'a> {
         self.w
     }
 }
-#[doc = "Force Wake Up Debouncer Period\n\nValue on reset: 0"]
+#[doc = "Force Wake-up Debouncer Period\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum FWUPDBC_A {
@@ -653,7 +653,7 @@ impl<'a> FWUPDBC_W<'a> {
         self.w
     }
 }
-#[doc = "Wake Up Inputs Debouncer Period\n\nValue on reset: 0"]
+#[doc = "Wake-up Inputs Debouncer Period\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum WKUPDBC_A {
@@ -771,25 +771,25 @@ impl<'a> WKUPDBC_W<'a> {
         self.w
     }
 }
-#[doc = "Low Power DeBounCer Period\n\nValue on reset: 0"]
+#[doc = "Low-power Debouncer Period\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum LPDBC_A {
-    #[doc = "0: Disable the low power debouncer."]
+    #[doc = "0: Disable the low-power debouncers."]
     DISABLE = 0,
-    #[doc = "1: WKUP0/1 in its active state for at least 2 RTCOUT0 periods"]
+    #[doc = "1: WKUP0/1 in active state for at least 2 RTCOUTx periods"]
     _2_RTCOUT0 = 1,
-    #[doc = "2: WKUP0/1 in its active state for at least 3 RTCOUT0 periods"]
+    #[doc = "2: WKUP0/1 in active state for at least 3 RTCOUTx periods"]
     _3_RTCOUT0 = 2,
-    #[doc = "3: WKUP0/1 in its active state for at least 4 RTCOUT0 periods"]
+    #[doc = "3: WKUP0/1 in active state for at least 4 RTCOUTx periods"]
     _4_RTCOUT0 = 3,
-    #[doc = "4: WKUP0/1 in its active state for at least 5 RTCOUT0 periods"]
+    #[doc = "4: WKUP0/1 in active state for at least 5 RTCOUTx periods"]
     _5_RTCOUT0 = 4,
-    #[doc = "5: WKUP0/1 in its active state for at least 6 RTCOUT0 periods"]
+    #[doc = "5: WKUP0/1 in active state for at least 6 RTCOUTx periods"]
     _6_RTCOUT0 = 5,
-    #[doc = "6: WKUP0/1 in its active state for at least 7 RTCOUT0 periods"]
+    #[doc = "6: WKUP0/1 in active state for at least 7 RTCOUTx periods"]
     _7_RTCOUT0 = 6,
-    #[doc = "7: WKUP0/1 in its active state for at least 8 RTCOUT0 periods"]
+    #[doc = "7: WKUP0/1 in active state for at least 8 RTCOUTx periods"]
     _8_RTCOUT0 = 7,
 }
 impl From<LPDBC_A> for u8 {
@@ -869,42 +869,42 @@ impl<'a> LPDBC_W<'a> {
             self.bits(variant.into())
         }
     }
-    #[doc = "Disable the low power debouncer."]
+    #[doc = "Disable the low-power debouncers."]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
         self.variant(LPDBC_A::DISABLE)
     }
-    #[doc = "WKUP0/1 in its active state for at least 2 RTCOUT0 periods"]
+    #[doc = "WKUP0/1 in active state for at least 2 RTCOUTx periods"]
     #[inline(always)]
     pub fn _2_rtcout0(self) -> &'a mut W {
         self.variant(LPDBC_A::_2_RTCOUT0)
     }
-    #[doc = "WKUP0/1 in its active state for at least 3 RTCOUT0 periods"]
+    #[doc = "WKUP0/1 in active state for at least 3 RTCOUTx periods"]
     #[inline(always)]
     pub fn _3_rtcout0(self) -> &'a mut W {
         self.variant(LPDBC_A::_3_RTCOUT0)
     }
-    #[doc = "WKUP0/1 in its active state for at least 4 RTCOUT0 periods"]
+    #[doc = "WKUP0/1 in active state for at least 4 RTCOUTx periods"]
     #[inline(always)]
     pub fn _4_rtcout0(self) -> &'a mut W {
         self.variant(LPDBC_A::_4_RTCOUT0)
     }
-    #[doc = "WKUP0/1 in its active state for at least 5 RTCOUT0 periods"]
+    #[doc = "WKUP0/1 in active state for at least 5 RTCOUTx periods"]
     #[inline(always)]
     pub fn _5_rtcout0(self) -> &'a mut W {
         self.variant(LPDBC_A::_5_RTCOUT0)
     }
-    #[doc = "WKUP0/1 in its active state for at least 6 RTCOUT0 periods"]
+    #[doc = "WKUP0/1 in active state for at least 6 RTCOUTx periods"]
     #[inline(always)]
     pub fn _6_rtcout0(self) -> &'a mut W {
         self.variant(LPDBC_A::_6_RTCOUT0)
     }
-    #[doc = "WKUP0/1 in its active state for at least 7 RTCOUT0 periods"]
+    #[doc = "WKUP0/1 in active state for at least 7 RTCOUTx periods"]
     #[inline(always)]
     pub fn _7_rtcout0(self) -> &'a mut W {
         self.variant(LPDBC_A::_7_RTCOUT0)
     }
-    #[doc = "WKUP0/1 in its active state for at least 8 RTCOUT0 periods"]
+    #[doc = "WKUP0/1 in active state for at least 8 RTCOUTx periods"]
     #[inline(always)]
     pub fn _8_rtcout0(self) -> &'a mut W {
         self.variant(LPDBC_A::_8_RTCOUT0)
@@ -917,104 +917,104 @@ impl<'a> LPDBC_W<'a> {
     }
 }
 impl R {
-    #[doc = "Bit 0 - Force Wake Up Enable"]
+    #[doc = "Bit 0 - Force Wake-up Enable"]
     #[inline(always)]
     pub fn fwupen(&self) -> FWUPEN_R {
         FWUPEN_R::new((self.bits & 0x01) != 0)
     }
-    #[doc = "Bit 1 - Supply Monitor Wake Up Enable"]
+    #[doc = "Bit 1 - Supply Monitor Wake-up Enable"]
     #[inline(always)]
     pub fn smen(&self) -> SMEN_R {
         SMEN_R::new(((self.bits >> 1) & 0x01) != 0)
     }
-    #[doc = "Bit 2 - Real Time Timer Wake Up Enable"]
+    #[doc = "Bit 2 - Real-time Timer Wake-up Enable"]
     #[inline(always)]
     pub fn rtten(&self) -> RTTEN_R {
         RTTEN_R::new(((self.bits >> 2) & 0x01) != 0)
     }
-    #[doc = "Bit 3 - Real Time Clock Wake Up Enable"]
+    #[doc = "Bit 3 - Real-time Clock Wake-up Enable"]
     #[inline(always)]
     pub fn rtcen(&self) -> RTCEN_R {
         RTCEN_R::new(((self.bits >> 3) & 0x01) != 0)
     }
-    #[doc = "Bit 5 - Low power Debouncer ENable WKUP0"]
+    #[doc = "Bit 5 - Low-power Debouncer Enable WKUP0"]
     #[inline(always)]
     pub fn lpdbcen0(&self) -> LPDBCEN0_R {
         LPDBCEN0_R::new(((self.bits >> 5) & 0x01) != 0)
     }
-    #[doc = "Bit 6 - Low power Debouncer ENable WKUP1"]
+    #[doc = "Bit 6 - Low-power Debouncer Enable WKUP1"]
     #[inline(always)]
     pub fn lpdbcen1(&self) -> LPDBCEN1_R {
         LPDBCEN1_R::new(((self.bits >> 6) & 0x01) != 0)
     }
-    #[doc = "Bit 7 - Low power Debouncer Clear"]
+    #[doc = "Bit 7 - Low-power Debouncer Clear"]
     #[inline(always)]
     pub fn lpdbcclr(&self) -> LPDBCCLR_R {
         LPDBCCLR_R::new(((self.bits >> 7) & 0x01) != 0)
     }
-    #[doc = "Bits 8:10 - Force Wake Up Debouncer Period"]
+    #[doc = "Bits 8:10 - Force Wake-up Debouncer Period"]
     #[inline(always)]
     pub fn fwupdbc(&self) -> FWUPDBC_R {
         FWUPDBC_R::new(((self.bits >> 8) & 0x07) as u8)
     }
-    #[doc = "Bits 12:14 - Wake Up Inputs Debouncer Period"]
+    #[doc = "Bits 12:14 - Wake-up Inputs Debouncer Period"]
     #[inline(always)]
     pub fn wkupdbc(&self) -> WKUPDBC_R {
         WKUPDBC_R::new(((self.bits >> 12) & 0x07) as u8)
     }
-    #[doc = "Bits 16:18 - Low Power DeBounCer Period"]
+    #[doc = "Bits 16:18 - Low-power Debouncer Period"]
     #[inline(always)]
     pub fn lpdbc(&self) -> LPDBC_R {
         LPDBC_R::new(((self.bits >> 16) & 0x07) as u8)
     }
 }
 impl W {
-    #[doc = "Bit 0 - Force Wake Up Enable"]
+    #[doc = "Bit 0 - Force Wake-up Enable"]
     #[inline(always)]
     pub fn fwupen(&mut self) -> FWUPEN_W {
         FWUPEN_W { w: self }
     }
-    #[doc = "Bit 1 - Supply Monitor Wake Up Enable"]
+    #[doc = "Bit 1 - Supply Monitor Wake-up Enable"]
     #[inline(always)]
     pub fn smen(&mut self) -> SMEN_W {
         SMEN_W { w: self }
     }
-    #[doc = "Bit 2 - Real Time Timer Wake Up Enable"]
+    #[doc = "Bit 2 - Real-time Timer Wake-up Enable"]
     #[inline(always)]
     pub fn rtten(&mut self) -> RTTEN_W {
         RTTEN_W { w: self }
     }
-    #[doc = "Bit 3 - Real Time Clock Wake Up Enable"]
+    #[doc = "Bit 3 - Real-time Clock Wake-up Enable"]
     #[inline(always)]
     pub fn rtcen(&mut self) -> RTCEN_W {
         RTCEN_W { w: self }
     }
-    #[doc = "Bit 5 - Low power Debouncer ENable WKUP0"]
+    #[doc = "Bit 5 - Low-power Debouncer Enable WKUP0"]
     #[inline(always)]
     pub fn lpdbcen0(&mut self) -> LPDBCEN0_W {
         LPDBCEN0_W { w: self }
     }
-    #[doc = "Bit 6 - Low power Debouncer ENable WKUP1"]
+    #[doc = "Bit 6 - Low-power Debouncer Enable WKUP1"]
     #[inline(always)]
     pub fn lpdbcen1(&mut self) -> LPDBCEN1_W {
         LPDBCEN1_W { w: self }
     }
-    #[doc = "Bit 7 - Low power Debouncer Clear"]
+    #[doc = "Bit 7 - Low-power Debouncer Clear"]
     #[inline(always)]
     pub fn lpdbcclr(&mut self) -> LPDBCCLR_W {
         LPDBCCLR_W { w: self }
     }
-    #[doc = "Bits 8:10 - Force Wake Up Debouncer Period"]
+    #[doc = "Bits 8:10 - Force Wake-up Debouncer Period"]
     #[inline(always)]
     pub fn fwupdbc(&mut self) -> FWUPDBC_W {
         FWUPDBC_W { w: self }
     }
-    #[doc = "Bits 12:14 - Wake Up Inputs Debouncer Period"]
+    #[doc = "Bits 12:14 - Wake-up Inputs Debouncer Period"]
     #[inline(always)]
     pub fn wkupdbc(&mut self) -> WKUPDBC_W {
         WKUPDBC_W { w: self }
     }
-    #[doc = "Bits 16:18 - Low Power DeBounCer Period"]
+    #[doc = "Bits 16:18 - Low-power Debouncer Period"]
     #[inline(always)]
     pub fn lpdbc(&mut self) -> LPDBC_W {
         LPDBC_W { w: self }

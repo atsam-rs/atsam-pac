@@ -29,12 +29,12 @@ impl R {
     pub fn txrdy(&self) -> TXRDY_R {
         TXRDY_R::new(((self.bits >> 1) & 0x01) != 0)
     }
-    #[doc = "Bit 3 - End of Receive Buffer Interrupt Mask"]
+    #[doc = "Bit 3"]
     #[inline(always)]
     pub fn endrx(&self) -> ENDRX_R {
         ENDRX_R::new(((self.bits >> 3) & 0x01) != 0)
     }
-    #[doc = "Bit 4 - End of Transmit Buffer Interrupt Mask"]
+    #[doc = "Bit 4"]
     #[inline(always)]
     pub fn endtx(&self) -> ENDTX_R {
         ENDTX_R::new(((self.bits >> 4) & 0x01) != 0)
@@ -54,12 +54,12 @@ impl R {
     pub fn unre(&self) -> UNRE_R {
         UNRE_R::new(((self.bits >> 10) & 0x01) != 0)
     }
-    #[doc = "Bit 11 - Transmit Buffer Empty Interrupt Mask"]
+    #[doc = "Bit 11"]
     #[inline(always)]
     pub fn txbufe(&self) -> TXBUFE_R {
         TXBUFE_R::new(((self.bits >> 11) & 0x01) != 0)
     }
-    #[doc = "Bit 12 - Receive Buffer Full Interrupt Mask"]
+    #[doc = "Bit 12"]
     #[inline(always)]
     pub fn rxbuff(&self) -> RXBUFF_R {
         RXBUFF_R::new(((self.bits >> 12) & 0x01) != 0)

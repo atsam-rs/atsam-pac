@@ -23,7 +23,7 @@ impl<'a> SWRST_W<'a> {
     }
 }
 impl W {
-    #[doc = "Bit 0 - SoftWare ReSeT"]
+    #[doc = "Bit 0 - Software Reset"]
     #[inline(always)]
     pub fn swrst(&mut self) -> SWRST_W {
         SWRST_W { w: self }

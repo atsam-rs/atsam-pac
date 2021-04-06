@@ -32,20 +32,6 @@ pub type OVRE13_R = crate::R<bool, bool>;
 pub type OVRE14_R = crate::R<bool, bool>;
 #[doc = "Reader of field `OVRE15`"]
 pub type OVRE15_R = crate::R<bool, bool>;
-#[doc = "Reader of field `OVRE16`"]
-pub type OVRE16_R = crate::R<u8, u8>;
-#[doc = "Reader of field `OVRE17`"]
-pub type OVRE17_R = crate::R<bool, bool>;
-#[doc = "Reader of field `OVRE18`"]
-pub type OVRE18_R = crate::R<bool, bool>;
-#[doc = "Reader of field `OVRE19`"]
-pub type OVRE19_R = crate::R<bool, bool>;
-#[doc = "Reader of field `OVRE20`"]
-pub type OVRE20_R = crate::R<bool, bool>;
-#[doc = "Reader of field `OVRE21`"]
-pub type OVRE21_R = crate::R<bool, bool>;
-#[doc = "Reader of field `OVRE22`"]
-pub type OVRE22_R = crate::R<bool, bool>;
 impl R {
     #[doc = "Bit 0 - Overrun Error 0"]
     #[inline(always)]
@@ -126,40 +112,5 @@ impl R {
     #[inline(always)]
     pub fn ovre15(&self) -> OVRE15_R {
         OVRE15_R::new(((self.bits >> 15) & 0x01) != 0)
-    }
-    #[doc = "Bits 16:17 - Overrun Error 16"]
-    #[inline(always)]
-    pub fn ovre16(&self) -> OVRE16_R {
-        OVRE16_R::new(((self.bits >> 16) & 0x03) as u8)
-    }
-    #[doc = "Bit 18 - Overrun Error 17"]
-    #[inline(always)]
-    pub fn ovre17(&self) -> OVRE17_R {
-        OVRE17_R::new(((self.bits >> 18) & 0x01) != 0)
-    }
-    #[doc = "Bit 19 - Overrun Error 18"]
-    #[inline(always)]
-    pub fn ovre18(&self) -> OVRE18_R {
-        OVRE18_R::new(((self.bits >> 19) & 0x01) != 0)
-    }
-    #[doc = "Bit 20 - Overrun Error 19"]
-    #[inline(always)]
-    pub fn ovre19(&self) -> OVRE19_R {
-        OVRE19_R::new(((self.bits >> 20) & 0x01) != 0)
-    }
-    #[doc = "Bit 21 - Overrun Error 20"]
-    #[inline(always)]
-    pub fn ovre20(&self) -> OVRE20_R {
-        OVRE20_R::new(((self.bits >> 21) & 0x01) != 0)
-    }
-    #[doc = "Bit 22 - Overrun Error 21"]
-    #[inline(always)]
-    pub fn ovre21(&self) -> OVRE21_R {
-        OVRE21_R::new(((self.bits >> 22) & 0x01) != 0)
-    }
-    #[doc = "Bit 23 - Overrun Error 22"]
-    #[inline(always)]
-    pub fn ovre22(&self) -> OVRE22_R {
-        OVRE22_R::new(((self.bits >> 23) & 0x01) != 0)
     }
 }

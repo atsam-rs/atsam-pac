@@ -532,8 +532,8 @@ impl<'a> INV_W<'a> {
 #[doc = "Selection Of Fault Source\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SELFS_A {
-    #[doc = "0: The CE flag is used to drive the FAULT output."]
-    CE = 0,
+    #[doc = "0: The CF flag is used to drive the FAULT output."]
+    CF = 0,
     #[doc = "1: The output of the analog comparator flag is used to drive the FAULT output."]
     OUTPUT = 1,
 }
@@ -550,14 +550,14 @@ impl SELFS_R {
     #[inline(always)]
     pub fn variant(&self) -> SELFS_A {
         match self.bits {
-            false => SELFS_A::CE,
+            false => SELFS_A::CF,
             true => SELFS_A::OUTPUT,
         }
     }
-    #[doc = "Checks if the value of the field is `CE`"]
+    #[doc = "Checks if the value of the field is `CF`"]
     #[inline(always)]
-    pub fn is_ce(&self) -> bool {
-        *self == SELFS_A::CE
+    pub fn is_cf(&self) -> bool {
+        *self == SELFS_A::CF
     }
     #[doc = "Checks if the value of the field is `OUTPUT`"]
     #[inline(always)]
@@ -577,10 +577,10 @@ impl<'a> SELFS_W<'a> {
             self.bit(variant.into())
         }
     }
-    #[doc = "The CE flag is used to drive the FAULT output."]
+    #[doc = "The CF flag is used to drive the FAULT output."]
     #[inline(always)]
-    pub fn ce(self) -> &'a mut W {
-        self.variant(SELFS_A::CE)
+    pub fn cf(self) -> &'a mut W {
+        self.variant(SELFS_A::CF)
     }
     #[doc = "The output of the analog comparator flag is used to drive the FAULT output."]
     #[inline(always)]

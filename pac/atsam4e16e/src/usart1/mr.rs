@@ -20,7 +20,7 @@ pub enum USART_MODE_A {
     IS07816_T_1 = 6,
     #[doc = "8: IrDA"]
     IRDA = 8,
-    #[doc = "14: SPI Master"]
+    #[doc = "14: SPI master"]
     SPI_MASTER = 14,
     #[doc = "15: SPI Slave"]
     SPI_SLAVE = 15,
@@ -142,7 +142,7 @@ impl<'a> USART_MODE_W<'a> {
     pub fn irda(self) -> &'a mut W {
         self.variant(USART_MODE_A::IRDA)
     }
-    #[doc = "SPI Master"]
+    #[doc = "SPI master"]
     #[inline(always)]
     pub fn spi_master(self) -> &'a mut W {
         self.variant(USART_MODE_A::SPI_MASTER)
@@ -163,11 +163,11 @@ impl<'a> USART_MODE_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum USCLKS_A {
-    #[doc = "0: Master Clock MCK is selected"]
+    #[doc = "0: Peripheral clock is selected"]
     MCK = 0,
-    #[doc = "1: Internal Clock Divided MCK/DIV (DIV=8) is selected"]
+    #[doc = "1: Peripheral clock divided (DIV=8) is selected"]
     DIV = 1,
-    #[doc = "3: Serial Clock SLK is selected"]
+    #[doc = "3: Serial clock SCK is selected"]
     SCK = 3,
 }
 impl From<USCLKS_A> for u8 {
@@ -216,17 +216,17 @@ impl<'a> USCLKS_W<'a> {
     pub fn variant(self, variant: USCLKS_A) -> &'a mut W {
         unsafe { self.bits(variant.into()) }
     }
-    #[doc = "Master Clock MCK is selected"]
+    #[doc = "Peripheral clock is selected"]
     #[inline(always)]
     pub fn mck(self) -> &'a mut W {
         self.variant(USCLKS_A::MCK)
     }
-    #[doc = "Internal Clock Divided MCK/DIV (DIV=8) is selected"]
+    #[doc = "Peripheral clock divided (DIV=8) is selected"]
     #[inline(always)]
     pub fn div(self) -> &'a mut W {
         self.variant(USCLKS_A::DIV)
     }
-    #[doc = "Serial Clock SLK is selected"]
+    #[doc = "Serial clock SCK is selected"]
     #[inline(always)]
     pub fn sck(self) -> &'a mut W {
         self.variant(USCLKS_A::SCK)
@@ -238,7 +238,7 @@ impl<'a> USCLKS_W<'a> {
         self.w
     }
 }
-#[doc = "Character Length."]
+#[doc = "Character Length"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum CHRL_A {
@@ -556,7 +556,7 @@ impl<'a> NBSTOP_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum CHMODE_A {
-    #[doc = "0: Normal Mode"]
+    #[doc = "0: Normal mode"]
     NORMAL = 0,
     #[doc = "1: Automatic Echo. Receiver input is connected to the TXD pin."]
     AUTOMATIC = 1,
@@ -618,7 +618,7 @@ impl<'a> CHMODE_W<'a> {
             self.bits(variant.into())
         }
     }
-    #[doc = "Normal Mode"]
+    #[doc = "Normal mode"]
     #[inline(always)]
     pub fn normal(self) -> &'a mut W {
         self.variant(CHMODE_A::NORMAL)
@@ -958,7 +958,7 @@ impl R {
     pub fn usclks(&self) -> USCLKS_R {
         USCLKS_R::new(((self.bits >> 4) & 0x03) as u8)
     }
-    #[doc = "Bits 6:7 - Character Length."]
+    #[doc = "Bits 6:7 - Character Length"]
     #[inline(always)]
     pub fn chrl(&self) -> CHRL_R {
         CHRL_R::new(((self.bits >> 6) & 0x03) as u8)
@@ -1028,7 +1028,7 @@ impl R {
     pub fn max_iteration(&self) -> MAX_ITERATION_R {
         MAX_ITERATION_R::new(((self.bits >> 24) & 0x07) as u8)
     }
-    #[doc = "Bit 28 - Infrared Receive Line Filter"]
+    #[doc = "Bit 28 - Receive Line Filter"]
     #[inline(always)]
     pub fn filter(&self) -> FILTER_R {
         FILTER_R::new(((self.bits >> 28) & 0x01) != 0)
@@ -1060,7 +1060,7 @@ impl W {
     pub fn usclks(&mut self) -> USCLKS_W {
         USCLKS_W { w: self }
     }
-    #[doc = "Bits 6:7 - Character Length."]
+    #[doc = "Bits 6:7 - Character Length"]
     #[inline(always)]
     pub fn chrl(&mut self) -> CHRL_W {
         CHRL_W { w: self }
@@ -1130,7 +1130,7 @@ impl W {
     pub fn max_iteration(&mut self) -> MAX_ITERATION_W {
         MAX_ITERATION_W { w: self }
     }
-    #[doc = "Bit 28 - Infrared Receive Line Filter"]
+    #[doc = "Bit 28 - Receive Line Filter"]
     #[inline(always)]
     pub fn filter(&mut self) -> FILTER_W {
         FILTER_W { w: self }

@@ -34,7 +34,7 @@ impl<'a> CIPHER_W<'a> {
         self.w
     }
 }
-#[doc = "Dual Input BUFFer\n\nValue on reset: 0"]
+#[doc = "Dual Input Buffer\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DUALBUFF_A {
     #[doc = "0: AES_IDATARx cannot be written during processing of previous block."]
@@ -515,13 +515,52 @@ impl<'a> CFBS_W<'a> {
         self.w
     }
 }
+#[doc = "Key\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
+pub enum CKEY_A {
+    #[doc = "14: This field must be written with 0xE the first time that AES_MR is programmed. For subsequent programming of the AES_MR, any value can be written, including that of 0xE.Always reads as 0."]
+    PASSWD = 14,
+}
+impl From<CKEY_A> for u8 {
+    #[inline(always)]
+    fn from(variant: CKEY_A) -> Self {
+        variant as _
+    }
+}
 #[doc = "Reader of field `CKEY`"]
-pub type CKEY_R = crate::R<u8, u8>;
+pub type CKEY_R = crate::R<u8, CKEY_A>;
+impl CKEY_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, CKEY_A> {
+        use crate::Variant::*;
+        match self.bits {
+            14 => Val(CKEY_A::PASSWD),
+            i => Res(i),
+        }
+    }
+    #[doc = "Checks if the value of the field is `PASSWD`"]
+    #[inline(always)]
+    pub fn is_passwd(&self) -> bool {
+        *self == CKEY_A::PASSWD
+    }
+}
 #[doc = "Write proxy for field `CKEY`"]
 pub struct CKEY_W<'a> {
     w: &'a mut W,
 }
 impl<'a> CKEY_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: CKEY_A) -> &'a mut W {
+        unsafe { self.bits(variant.into()) }
+    }
+    #[doc = "This field must be written with 0xE the first time that AES_MR is programmed. For subsequent programming of the AES_MR, any value can be written, including that of 0xE.Always reads as 0."]
+    #[inline(always)]
+    pub fn passwd(self) -> &'a mut W {
+        self.variant(CKEY_A::PASSWD)
+    }
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
@@ -535,7 +574,7 @@ impl R {
     pub fn cipher(&self) -> CIPHER_R {
         CIPHER_R::new((self.bits & 0x01) != 0)
     }
-    #[doc = "Bit 3 - Dual Input BUFFer"]
+    #[doc = "Bit 3 - Dual Input Buffer"]
     #[inline(always)]
     pub fn dualbuff(&self) -> DUALBUFF_R {
         DUALBUFF_R::new(((self.bits >> 3) & 0x01) != 0)
@@ -582,7 +621,7 @@ impl W {
     pub fn cipher(&mut self) -> CIPHER_W {
         CIPHER_W { w: self }
     }
-    #[doc = "Bit 3 - Dual Input BUFFer"]
+    #[doc = "Bit 3 - Dual Input Buffer"]
     #[inline(always)]
     pub fn dualbuff(&mut self) -> DUALBUFF_W {
         DUALBUFF_W { w: self }

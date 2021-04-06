@@ -94,7 +94,7 @@ impl R {
     pub fn bit12(&self) -> BIT12_R {
         BIT12_R::new(((self.bits >> 12) & 0x01) != 0)
     }
-    #[doc = "Bit 13 - USB Bus Wakeup Interrupt"]
+    #[doc = "Bit 13 - USB Bus WAKEUP Interrupt"]
     #[inline(always)]
     pub fn wakeup(&self) -> WAKEUP_R {
         WAKEUP_R::new(((self.bits >> 13) & 0x01) != 0)

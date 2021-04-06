@@ -346,7 +346,7 @@ pub enum CLK_A {
     MCK_16 = 1,
     #[doc = "2: MCK divided by 32 (MCK up to 80 MHz)"]
     MCK_32 = 2,
-    #[doc = "3: MCK divided by 48 (MCK up to 120MHz)"]
+    #[doc = "3: MCK divided by 48 (MCK up to 120 MHz)"]
     MCK_48 = 3,
     #[doc = "4: MCK divided by 64 (MCK up to 160 MHz)"]
     MCK_64 = 4,
@@ -432,7 +432,7 @@ impl<'a> CLK_W<'a> {
     pub fn mck_32(self) -> &'a mut W {
         self.variant(CLK_A::MCK_32)
     }
-    #[doc = "MCK divided by 48 (MCK up to 120MHz)"]
+    #[doc = "MCK divided by 48 (MCK up to 120 MHz)"]
     #[inline(always)]
     pub fn mck_48(self) -> &'a mut W {
         self.variant(CLK_A::MCK_48)

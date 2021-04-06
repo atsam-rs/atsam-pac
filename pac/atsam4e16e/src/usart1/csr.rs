@@ -97,7 +97,7 @@ impl R {
     pub fn txempty(&self) -> TXEMPTY_R {
         TXEMPTY_R::new(((self.bits >> 9) & 0x01) != 0)
     }
-    #[doc = "Bit 10 - MaxNumber of Repetitions Reached"]
+    #[doc = "Bit 10 - Max Number of Repetitions Reached"]
     #[inline(always)]
     pub fn iter(&self) -> ITER_R {
         ITER_R::new(((self.bits >> 10) & 0x01) != 0)
@@ -112,7 +112,7 @@ impl R {
     pub fn rxbuff(&self) -> RXBUFF_R {
         RXBUFF_R::new(((self.bits >> 12) & 0x01) != 0)
     }
-    #[doc = "Bit 13 - Non AcknowledgeInterrupt"]
+    #[doc = "Bit 13 - Non Acknowledge Interrupt"]
     #[inline(always)]
     pub fn nack(&self) -> NACK_R {
         NACK_R::new(((self.bits >> 13) & 0x01) != 0)

@@ -185,7 +185,7 @@ impl W {
     pub fn txdis(&mut self) -> TXDIS_W {
         TXDIS_W { w: self }
     }
-    #[doc = "Bit 8 - Reset Status Bits"]
+    #[doc = "Bit 8 - Reset Status"]
     #[inline(always)]
     pub fn rststa(&mut self) -> RSTSTA_W {
         RSTSTA_W { w: self }

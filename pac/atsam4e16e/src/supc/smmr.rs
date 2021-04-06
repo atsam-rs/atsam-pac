@@ -132,9 +132,9 @@ impl<'a> SMSMPL_W<'a> {
 #[doc = "Supply Monitor Reset Enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SMRSTEN_A {
-    #[doc = "0: the core reset signal \"vddcore_nreset\" is not affected when a supply monitor detection occurs."]
+    #[doc = "0: The core reset signal \"vddcore_nreset\" is not affected when a supply monitor detection occurs."]
     NOT_ENABLE = 0,
-    #[doc = "1: the core reset signal, vddcore_nreset is asserted when a supply monitor detection occurs."]
+    #[doc = "1: The core reset signal, vddcore_nreset is asserted when a supply monitor detection occurs."]
     ENABLE = 1,
 }
 impl From<SMRSTEN_A> for bool {
@@ -177,12 +177,12 @@ impl<'a> SMRSTEN_W<'a> {
             self.bit(variant.into())
         }
     }
-    #[doc = "the core reset signal \"vddcore_nreset\" is not affected when a supply monitor detection occurs."]
+    #[doc = "The core reset signal \"vddcore_nreset\" is not affected when a supply monitor detection occurs."]
     #[inline(always)]
     pub fn not_enable(self) -> &'a mut W {
         self.variant(SMRSTEN_A::NOT_ENABLE)
     }
-    #[doc = "the core reset signal, vddcore_nreset is asserted when a supply monitor detection occurs."]
+    #[doc = "The core reset signal, vddcore_nreset is asserted when a supply monitor detection occurs."]
     #[inline(always)]
     pub fn enable(self) -> &'a mut W {
         self.variant(SMRSTEN_A::ENABLE)
@@ -207,9 +207,9 @@ impl<'a> SMRSTEN_W<'a> {
 #[doc = "Supply Monitor Interrupt Enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SMIEN_A {
-    #[doc = "0: the SUPC interrupt signal is not affected when a supply monitor detection occurs."]
+    #[doc = "0: The SUPC interrupt signal is not affected when a supply monitor detection occurs."]
     NOT_ENABLE = 0,
-    #[doc = "1: the SUPC interrupt signal is asserted when a supply monitor detection occurs."]
+    #[doc = "1: The SUPC interrupt signal is asserted when a supply monitor detection occurs."]
     ENABLE = 1,
 }
 impl From<SMIEN_A> for bool {
@@ -252,12 +252,12 @@ impl<'a> SMIEN_W<'a> {
             self.bit(variant.into())
         }
     }
-    #[doc = "the SUPC interrupt signal is not affected when a supply monitor detection occurs."]
+    #[doc = "The SUPC interrupt signal is not affected when a supply monitor detection occurs."]
     #[inline(always)]
     pub fn not_enable(self) -> &'a mut W {
         self.variant(SMIEN_A::NOT_ENABLE)
     }
-    #[doc = "the SUPC interrupt signal is asserted when a supply monitor detection occurs."]
+    #[doc = "The SUPC interrupt signal is asserted when a supply monitor detection occurs."]
     #[inline(always)]
     pub fn enable(self) -> &'a mut W {
         self.variant(SMIEN_A::ENABLE)

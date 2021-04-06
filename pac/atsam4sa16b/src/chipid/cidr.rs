@@ -97,8 +97,6 @@ pub enum NVPSIZ_A {
     _64K = 5,
     #[doc = "7: 128 Kbytes"]
     _128K = 7,
-    #[doc = "8: 160 Kbytes"]
-    _160K = 8,
     #[doc = "9: 256 Kbytes"]
     _256K = 9,
     #[doc = "10: 512 Kbytes"]
@@ -128,7 +126,6 @@ impl NVPSIZ_R {
             3 => Val(NVPSIZ_A::_32K),
             5 => Val(NVPSIZ_A::_64K),
             7 => Val(NVPSIZ_A::_128K),
-            8 => Val(NVPSIZ_A::_160K),
             9 => Val(NVPSIZ_A::_256K),
             10 => Val(NVPSIZ_A::_512K),
             12 => Val(NVPSIZ_A::_1024K),
@@ -165,11 +162,6 @@ impl NVPSIZ_R {
     #[inline(always)]
     pub fn is_128k(&self) -> bool {
         *self == NVPSIZ_A::_128K
-    }
-    #[doc = "Checks if the value of the field is `_160K`"]
-    #[inline(always)]
-    pub fn is_160k(&self) -> bool {
-        *self == NVPSIZ_A::_160K
     }
     #[doc = "Checks if the value of the field is `_256K`"]
     #[inline(always)]
@@ -303,8 +295,8 @@ pub enum SRAMSIZ_A {
     _48K = 0,
     #[doc = "1: 192 Kbytes"]
     _192K = 1,
-    #[doc = "2: 384 Kbytes"]
-    _384K = 2,
+    #[doc = "2: 2 Kbytes"]
+    _2K = 2,
     #[doc = "3: 6 Kbytes"]
     _6K = 3,
     #[doc = "4: 24 Kbytes"]
@@ -347,7 +339,7 @@ impl SRAMSIZ_R {
         match self.bits {
             0 => SRAMSIZ_A::_48K,
             1 => SRAMSIZ_A::_192K,
-            2 => SRAMSIZ_A::_384K,
+            2 => SRAMSIZ_A::_2K,
             3 => SRAMSIZ_A::_6K,
             4 => SRAMSIZ_A::_24K,
             5 => SRAMSIZ_A::_4K,
@@ -374,10 +366,10 @@ impl SRAMSIZ_R {
     pub fn is_192k(&self) -> bool {
         *self == SRAMSIZ_A::_192K
     }
-    #[doc = "Checks if the value of the field is `_384K`"]
+    #[doc = "Checks if the value of the field is `_2K`"]
     #[inline(always)]
-    pub fn is_384k(&self) -> bool {
-        *self == SRAMSIZ_A::_384K
+    pub fn is_2k(&self) -> bool {
+        *self == SRAMSIZ_A::_2K
     }
     #[doc = "Checks if the value of the field is `_6K`"]
     #[inline(always)]

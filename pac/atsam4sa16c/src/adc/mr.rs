@@ -206,9 +206,9 @@ impl<'a> TRGSEL_W<'a> {
 #[doc = "Sleep Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SLEEP_A {
-    #[doc = "0: Normal Mode: The ADC core and reference voltage circuitry are kept ON between conversions."]
+    #[doc = "0: Normal Mode: The ADC Core and reference voltage circuitry are kept ON between conversions"]
     NORMAL = 0,
-    #[doc = "1: Sleep Mode: The wake-up time can be modified by programming FWUP bit."]
+    #[doc = "1: Sleep Mode: The wake-up time can be modified by programming FWUP bit"]
     SLEEP = 1,
 }
 impl From<SLEEP_A> for bool {
@@ -251,12 +251,12 @@ impl<'a> SLEEP_W<'a> {
             self.bit(variant.into())
         }
     }
-    #[doc = "Normal Mode: The ADC core and reference voltage circuitry are kept ON between conversions."]
+    #[doc = "Normal Mode: The ADC Core and reference voltage circuitry are kept ON between conversions"]
     #[inline(always)]
     pub fn normal(self) -> &'a mut W {
         self.variant(SLEEP_A::NORMAL)
     }
-    #[doc = "Sleep Mode: The wake-up time can be modified by programming FWUP bit."]
+    #[doc = "Sleep Mode: The wake-up time can be modified by programming FWUP bit"]
     #[inline(always)]
     pub fn sleep(self) -> &'a mut W {
         self.variant(SLEEP_A::SLEEP)
@@ -281,9 +281,9 @@ impl<'a> SLEEP_W<'a> {
 #[doc = "Fast Wake Up\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FWUP_A {
-    #[doc = "0: If SLEEP is 1, then both ADC core and reference voltage circuitry are OFF between conversions"]
+    #[doc = "0: If SLEEP is 1 then both ADC Core and reference voltage circuitry are OFF between conversions"]
     OFF = 0,
-    #[doc = "1: If SLEEP is 1, then Fast Wake-up Sleep mode: The voltage reference is ON between conversions and ADC core is OFF"]
+    #[doc = "1: If SLEEP is 1 then Fast Wake-up Sleep Mode: The Voltage reference is ON between conversions and ADC Core is OFF"]
     ON = 1,
 }
 impl From<FWUP_A> for bool {
@@ -326,12 +326,12 @@ impl<'a> FWUP_W<'a> {
             self.bit(variant.into())
         }
     }
-    #[doc = "If SLEEP is 1, then both ADC core and reference voltage circuitry are OFF between conversions"]
+    #[doc = "If SLEEP is 1 then both ADC Core and reference voltage circuitry are OFF between conversions"]
     #[inline(always)]
     pub fn off(self) -> &'a mut W {
         self.variant(FWUP_A::OFF)
     }
-    #[doc = "If SLEEP is 1, then Fast Wake-up Sleep mode: The voltage reference is ON between conversions and ADC core is OFF"]
+    #[doc = "If SLEEP is 1 then Fast Wake-up Sleep Mode: The Voltage reference is ON between conversions and ADC Core is OFF"]
     #[inline(always)]
     pub fn on(self) -> &'a mut W {
         self.variant(FWUP_A::ON)
@@ -442,41 +442,41 @@ impl<'a> PRESCAL_W<'a> {
         self.w
     }
 }
-#[doc = "Startup Time\n\nValue on reset: 0"]
+#[doc = "Start Up Time\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum STARTUP_A {
-    #[doc = "0: 0 periods of ADCCLK"]
+    #[doc = "0: 0 periods of ADCClock"]
     SUT0 = 0,
-    #[doc = "1: 8 periods of ADCCLK"]
+    #[doc = "1: 8 periods of ADCClock"]
     SUT8 = 1,
-    #[doc = "2: 16 periods of ADCCLK"]
+    #[doc = "2: 16 periods of ADCClock"]
     SUT16 = 2,
-    #[doc = "3: 24 periods of ADCCLK"]
+    #[doc = "3: 24 periods of ADCClock"]
     SUT24 = 3,
-    #[doc = "4: 64 periods of ADCCLK"]
+    #[doc = "4: 64 periods of ADCClock"]
     SUT64 = 4,
-    #[doc = "5: 80 periods of ADCCLK"]
+    #[doc = "5: 80 periods of ADCClock"]
     SUT80 = 5,
-    #[doc = "6: 96 periods of ADCCLK"]
+    #[doc = "6: 96 periods of ADCClock"]
     SUT96 = 6,
-    #[doc = "7: 112 periods of ADCCLK"]
+    #[doc = "7: 112 periods of ADCClock"]
     SUT112 = 7,
-    #[doc = "8: 512 periods of ADCCLK"]
+    #[doc = "8: 512 periods of ADCClock"]
     SUT512 = 8,
-    #[doc = "9: 576 periods of ADCCLK"]
+    #[doc = "9: 576 periods of ADCClock"]
     SUT576 = 9,
-    #[doc = "10: 640 periods of ADCCLK"]
+    #[doc = "10: 640 periods of ADCClock"]
     SUT640 = 10,
-    #[doc = "11: 704 periods of ADCCLK"]
+    #[doc = "11: 704 periods of ADCClock"]
     SUT704 = 11,
-    #[doc = "12: 768 periods of ADCCLK"]
+    #[doc = "12: 768 periods of ADCClock"]
     SUT768 = 12,
-    #[doc = "13: 832 periods of ADCCLK"]
+    #[doc = "13: 832 periods of ADCClock"]
     SUT832 = 13,
-    #[doc = "14: 896 periods of ADCCLK"]
+    #[doc = "14: 896 periods of ADCClock"]
     SUT896 = 14,
-    #[doc = "15: 960 periods of ADCCLK"]
+    #[doc = "15: 960 periods of ADCClock"]
     SUT960 = 15,
 }
 impl From<STARTUP_A> for u8 {
@@ -604,82 +604,82 @@ impl<'a> STARTUP_W<'a> {
             self.bits(variant.into())
         }
     }
-    #[doc = "0 periods of ADCCLK"]
+    #[doc = "0 periods of ADCClock"]
     #[inline(always)]
     pub fn sut0(self) -> &'a mut W {
         self.variant(STARTUP_A::SUT0)
     }
-    #[doc = "8 periods of ADCCLK"]
+    #[doc = "8 periods of ADCClock"]
     #[inline(always)]
     pub fn sut8(self) -> &'a mut W {
         self.variant(STARTUP_A::SUT8)
     }
-    #[doc = "16 periods of ADCCLK"]
+    #[doc = "16 periods of ADCClock"]
     #[inline(always)]
     pub fn sut16(self) -> &'a mut W {
         self.variant(STARTUP_A::SUT16)
     }
-    #[doc = "24 periods of ADCCLK"]
+    #[doc = "24 periods of ADCClock"]
     #[inline(always)]
     pub fn sut24(self) -> &'a mut W {
         self.variant(STARTUP_A::SUT24)
     }
-    #[doc = "64 periods of ADCCLK"]
+    #[doc = "64 periods of ADCClock"]
     #[inline(always)]
     pub fn sut64(self) -> &'a mut W {
         self.variant(STARTUP_A::SUT64)
     }
-    #[doc = "80 periods of ADCCLK"]
+    #[doc = "80 periods of ADCClock"]
     #[inline(always)]
     pub fn sut80(self) -> &'a mut W {
         self.variant(STARTUP_A::SUT80)
     }
-    #[doc = "96 periods of ADCCLK"]
+    #[doc = "96 periods of ADCClock"]
     #[inline(always)]
     pub fn sut96(self) -> &'a mut W {
         self.variant(STARTUP_A::SUT96)
     }
-    #[doc = "112 periods of ADCCLK"]
+    #[doc = "112 periods of ADCClock"]
     #[inline(always)]
     pub fn sut112(self) -> &'a mut W {
         self.variant(STARTUP_A::SUT112)
     }
-    #[doc = "512 periods of ADCCLK"]
+    #[doc = "512 periods of ADCClock"]
     #[inline(always)]
     pub fn sut512(self) -> &'a mut W {
         self.variant(STARTUP_A::SUT512)
     }
-    #[doc = "576 periods of ADCCLK"]
+    #[doc = "576 periods of ADCClock"]
     #[inline(always)]
     pub fn sut576(self) -> &'a mut W {
         self.variant(STARTUP_A::SUT576)
     }
-    #[doc = "640 periods of ADCCLK"]
+    #[doc = "640 periods of ADCClock"]
     #[inline(always)]
     pub fn sut640(self) -> &'a mut W {
         self.variant(STARTUP_A::SUT640)
     }
-    #[doc = "704 periods of ADCCLK"]
+    #[doc = "704 periods of ADCClock"]
     #[inline(always)]
     pub fn sut704(self) -> &'a mut W {
         self.variant(STARTUP_A::SUT704)
     }
-    #[doc = "768 periods of ADCCLK"]
+    #[doc = "768 periods of ADCClock"]
     #[inline(always)]
     pub fn sut768(self) -> &'a mut W {
         self.variant(STARTUP_A::SUT768)
     }
-    #[doc = "832 periods of ADCCLK"]
+    #[doc = "832 periods of ADCClock"]
     #[inline(always)]
     pub fn sut832(self) -> &'a mut W {
         self.variant(STARTUP_A::SUT832)
     }
-    #[doc = "896 periods of ADCCLK"]
+    #[doc = "896 periods of ADCClock"]
     #[inline(always)]
     pub fn sut896(self) -> &'a mut W {
         self.variant(STARTUP_A::SUT896)
     }
-    #[doc = "960 periods of ADCCLK"]
+    #[doc = "960 periods of ADCClock"]
     #[inline(always)]
     pub fn sut960(self) -> &'a mut W {
         self.variant(STARTUP_A::SUT960)
@@ -695,13 +695,13 @@ impl<'a> STARTUP_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum SETTLING_A {
-    #[doc = "0: 3 periods of ADCCLK"]
+    #[doc = "0: 3 periods of ADCClock"]
     AST3 = 0,
-    #[doc = "1: 5 periods of ADCCLK"]
+    #[doc = "1: 5 periods of ADCClock"]
     AST5 = 1,
-    #[doc = "2: 9 periods of ADCCLK"]
+    #[doc = "2: 9 periods of ADCClock"]
     AST9 = 2,
-    #[doc = "3: 17 periods of ADCCLK"]
+    #[doc = "3: 17 periods of ADCClock"]
     AST17 = 3,
 }
 impl From<SETTLING_A> for u8 {
@@ -757,22 +757,22 @@ impl<'a> SETTLING_W<'a> {
             self.bits(variant.into())
         }
     }
-    #[doc = "3 periods of ADCCLK"]
+    #[doc = "3 periods of ADCClock"]
     #[inline(always)]
     pub fn ast3(self) -> &'a mut W {
         self.variant(SETTLING_A::AST3)
     }
-    #[doc = "5 periods of ADCCLK"]
+    #[doc = "5 periods of ADCClock"]
     #[inline(always)]
     pub fn ast5(self) -> &'a mut W {
         self.variant(SETTLING_A::AST5)
     }
-    #[doc = "9 periods of ADCCLK"]
+    #[doc = "9 periods of ADCClock"]
     #[inline(always)]
     pub fn ast9(self) -> &'a mut W {
         self.variant(SETTLING_A::AST9)
     }
-    #[doc = "17 periods of ADCCLK"]
+    #[doc = "17 periods of ADCClock"]
     #[inline(always)]
     pub fn ast17(self) -> &'a mut W {
         self.variant(SETTLING_A::AST17)
@@ -787,9 +787,9 @@ impl<'a> SETTLING_W<'a> {
 #[doc = "Analog Change\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ANACH_A {
-    #[doc = "0: No analog change on channel switching: DIFF0, GAIN0 and OFF0 are used for all channels."]
+    #[doc = "0: No analog change on channel switching: DIFF0, GAIN0 and OFF0 are used for all channels"]
     NONE = 0,
-    #[doc = "1: Allows different analog settings for each channel. See ADC_CGR and ADC_COR registers."]
+    #[doc = "1: Allows different analog settings for each channel. See ADC_CGR and ADC_COR Registers"]
     ALLOWED = 1,
 }
 impl From<ANACH_A> for bool {
@@ -832,12 +832,12 @@ impl<'a> ANACH_W<'a> {
             self.bit(variant.into())
         }
     }
-    #[doc = "No analog change on channel switching: DIFF0, GAIN0 and OFF0 are used for all channels."]
+    #[doc = "No analog change on channel switching: DIFF0, GAIN0 and OFF0 are used for all channels"]
     #[inline(always)]
     pub fn none(self) -> &'a mut W {
         self.variant(ANACH_A::NONE)
     }
-    #[doc = "Allows different analog settings for each channel. See ADC_CGR and ADC_COR registers."]
+    #[doc = "Allows different analog settings for each channel. See ADC_CGR and ADC_COR Registers"]
     #[inline(always)]
     pub fn allowed(self) -> &'a mut W {
         self.variant(ANACH_A::ALLOWED)
@@ -892,7 +892,7 @@ impl<'a> TRANSFER_W<'a> {
 pub enum USEQ_A {
     #[doc = "0: Normal Mode: The controller converts channels in a simple numeric order depending only on the channel index."]
     NUM_ORDER = 0,
-    #[doc = "1: User Sequence Mode: The sequence respects what is defined in ADC_SEQR1 and ADC_SEQR2 registers and can be used to convert the same channel several times."]
+    #[doc = "1: User Sequence Mode: The sequence respects what is defined in ADC_SEQR1 and ADC_SEQR2 registers and can be used to convert several times the same channel."]
     REG_ORDER = 1,
 }
 impl From<USEQ_A> for bool {
@@ -940,7 +940,7 @@ impl<'a> USEQ_W<'a> {
     pub fn num_order(self) -> &'a mut W {
         self.variant(USEQ_A::NUM_ORDER)
     }
-    #[doc = "User Sequence Mode: The sequence respects what is defined in ADC_SEQR1 and ADC_SEQR2 registers and can be used to convert the same channel several times."]
+    #[doc = "User Sequence Mode: The sequence respects what is defined in ADC_SEQR1 and ADC_SEQR2 registers and can be used to convert several times the same channel."]
     #[inline(always)]
     pub fn reg_order(self) -> &'a mut W {
         self.variant(USEQ_A::REG_ORDER)
@@ -993,7 +993,7 @@ impl R {
     pub fn prescal(&self) -> PRESCAL_R {
         PRESCAL_R::new(((self.bits >> 8) & 0xff) as u8)
     }
-    #[doc = "Bits 16:19 - Startup Time"]
+    #[doc = "Bits 16:19 - Start Up Time"]
     #[inline(always)]
     pub fn startup(&self) -> STARTUP_R {
         STARTUP_R::new(((self.bits >> 16) & 0x0f) as u8)
@@ -1013,7 +1013,7 @@ impl R {
     pub fn tracktim(&self) -> TRACKTIM_R {
         TRACKTIM_R::new(((self.bits >> 24) & 0x0f) as u8)
     }
-    #[doc = "Bits 28:29 - Hold Time"]
+    #[doc = "Bits 28:29 - Transfer Period"]
     #[inline(always)]
     pub fn transfer(&self) -> TRANSFER_R {
         TRANSFER_R::new(((self.bits >> 28) & 0x03) as u8)
@@ -1055,7 +1055,7 @@ impl W {
     pub fn prescal(&mut self) -> PRESCAL_W {
         PRESCAL_W { w: self }
     }
-    #[doc = "Bits 16:19 - Startup Time"]
+    #[doc = "Bits 16:19 - Start Up Time"]
     #[inline(always)]
     pub fn startup(&mut self) -> STARTUP_W {
         STARTUP_W { w: self }
@@ -1075,7 +1075,7 @@ impl W {
     pub fn tracktim(&mut self) -> TRACKTIM_W {
         TRACKTIM_W { w: self }
     }
-    #[doc = "Bits 28:29 - Hold Time"]
+    #[doc = "Bits 28:29 - Transfer Period"]
     #[inline(always)]
     pub fn transfer(&mut self) -> TRANSFER_W {
         TRANSFER_W { w: self }

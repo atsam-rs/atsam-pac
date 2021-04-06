@@ -183,7 +183,7 @@ impl CALEV_R {
 #[doc = "Time and/or Date Free Running Error\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TDERR_A {
-    #[doc = "0: The internal free running counters are carrying valid values since the last read of RTC_SR."]
+    #[doc = "0: The internal free running counters are carrying valid values since the last read of the Status Register (RTC_SR)."]
     CORRECT = 0,
     #[doc = "1: The internal free running counters have been corrupted (invalid date or time, non-BCD values) since the last read and/or they are still invalid."]
     ERR_TIMEDATE = 1,

@@ -1,6 +1,6 @@
-#[doc = "Reader of register PMC_PCK%s"]
+#[doc = "Reader of register PMC_PCK[%s]"]
 pub type R = crate::R<u32, super::PMC_PCK>;
-#[doc = "Writer for register PMC_PCK%s"]
+#[doc = "Writer for register PMC_PCK[%s]"]
 pub type W = crate::W<u32, super::PMC_PCK>;
 #[doc = "Master Clock Source Selection"]
 #[derive(Clone, Copy, Debug, PartialEq)]
@@ -94,13 +94,130 @@ impl<'a> CSS_W<'a> {
         self.w
     }
 }
+#[doc = "Programmable Clock Prescaler"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
+pub enum PRES_A {
+    #[doc = "0: Selected clock"]
+    CLK_1 = 0,
+    #[doc = "1: Selected clock divided by 2"]
+    CLK_2 = 1,
+    #[doc = "2: Selected clock divided by 4"]
+    CLK_4 = 2,
+    #[doc = "3: Selected clock divided by 8"]
+    CLK_8 = 3,
+    #[doc = "4: Selected clock divided by 16"]
+    CLK_16 = 4,
+    #[doc = "5: Selected clock divided by 32"]
+    CLK_32 = 5,
+    #[doc = "6: Selected clock divided by 64"]
+    CLK_64 = 6,
+}
+impl From<PRES_A> for u8 {
+    #[inline(always)]
+    fn from(variant: PRES_A) -> Self {
+        variant as _
+    }
+}
 #[doc = "Reader of field `PRES`"]
-pub type PRES_R = crate::R<u8, u8>;
+pub type PRES_R = crate::R<u8, PRES_A>;
+impl PRES_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, PRES_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(PRES_A::CLK_1),
+            1 => Val(PRES_A::CLK_2),
+            2 => Val(PRES_A::CLK_4),
+            3 => Val(PRES_A::CLK_8),
+            4 => Val(PRES_A::CLK_16),
+            5 => Val(PRES_A::CLK_32),
+            6 => Val(PRES_A::CLK_64),
+            i => Res(i),
+        }
+    }
+    #[doc = "Checks if the value of the field is `CLK_1`"]
+    #[inline(always)]
+    pub fn is_clk_1(&self) -> bool {
+        *self == PRES_A::CLK_1
+    }
+    #[doc = "Checks if the value of the field is `CLK_2`"]
+    #[inline(always)]
+    pub fn is_clk_2(&self) -> bool {
+        *self == PRES_A::CLK_2
+    }
+    #[doc = "Checks if the value of the field is `CLK_4`"]
+    #[inline(always)]
+    pub fn is_clk_4(&self) -> bool {
+        *self == PRES_A::CLK_4
+    }
+    #[doc = "Checks if the value of the field is `CLK_8`"]
+    #[inline(always)]
+    pub fn is_clk_8(&self) -> bool {
+        *self == PRES_A::CLK_8
+    }
+    #[doc = "Checks if the value of the field is `CLK_16`"]
+    #[inline(always)]
+    pub fn is_clk_16(&self) -> bool {
+        *self == PRES_A::CLK_16
+    }
+    #[doc = "Checks if the value of the field is `CLK_32`"]
+    #[inline(always)]
+    pub fn is_clk_32(&self) -> bool {
+        *self == PRES_A::CLK_32
+    }
+    #[doc = "Checks if the value of the field is `CLK_64`"]
+    #[inline(always)]
+    pub fn is_clk_64(&self) -> bool {
+        *self == PRES_A::CLK_64
+    }
+}
 #[doc = "Write proxy for field `PRES`"]
 pub struct PRES_W<'a> {
     w: &'a mut W,
 }
 impl<'a> PRES_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: PRES_A) -> &'a mut W {
+        unsafe { self.bits(variant.into()) }
+    }
+    #[doc = "Selected clock"]
+    #[inline(always)]
+    pub fn clk_1(self) -> &'a mut W {
+        self.variant(PRES_A::CLK_1)
+    }
+    #[doc = "Selected clock divided by 2"]
+    #[inline(always)]
+    pub fn clk_2(self) -> &'a mut W {
+        self.variant(PRES_A::CLK_2)
+    }
+    #[doc = "Selected clock divided by 4"]
+    #[inline(always)]
+    pub fn clk_4(self) -> &'a mut W {
+        self.variant(PRES_A::CLK_4)
+    }
+    #[doc = "Selected clock divided by 8"]
+    #[inline(always)]
+    pub fn clk_8(self) -> &'a mut W {
+        self.variant(PRES_A::CLK_8)
+    }
+    #[doc = "Selected clock divided by 16"]
+    #[inline(always)]
+    pub fn clk_16(self) -> &'a mut W {
+        self.variant(PRES_A::CLK_16)
+    }
+    #[doc = "Selected clock divided by 32"]
+    #[inline(always)]
+    pub fn clk_32(self) -> &'a mut W {
+        self.variant(PRES_A::CLK_32)
+    }
+    #[doc = "Selected clock divided by 64"]
+    #[inline(always)]
+    pub fn clk_64(self) -> &'a mut W {
+        self.variant(PRES_A::CLK_64)
+    }
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {

@@ -14,15 +14,15 @@ impl crate::ResetValue for super::CMR2_WAVE_EQ_1 {
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum TCCLKS_A {
-    #[doc = "0: Clock selected: TCLK1"]
+    #[doc = "0: Clock selected: internal TIMER_CLOCK1 clock signal (from PMC)"]
     TIMER_CLOCK1 = 0,
-    #[doc = "1: Clock selected: TCLK2"]
+    #[doc = "1: Clock selected: internal TIMER_CLOCK2 clock signal (from PMC)"]
     TIMER_CLOCK2 = 1,
-    #[doc = "2: Clock selected: TCLK3"]
+    #[doc = "2: Clock selected: internal TIMER_CLOCK3 clock signal (from PMC)"]
     TIMER_CLOCK3 = 2,
-    #[doc = "3: Clock selected: TCLK4"]
+    #[doc = "3: Clock selected: internal TIMER_CLOCK4 clock signal (from PMC)"]
     TIMER_CLOCK4 = 3,
-    #[doc = "4: Clock selected: TCLK5"]
+    #[doc = "4: Clock selected: internal TIMER_CLOCK5 clock signal (from PMC)"]
     TIMER_CLOCK5 = 4,
     #[doc = "5: Clock selected: XC0"]
     XC0 = 5,
@@ -108,27 +108,27 @@ impl<'a> TCCLKS_W<'a> {
             self.bits(variant.into())
         }
     }
-    #[doc = "Clock selected: TCLK1"]
+    #[doc = "Clock selected: internal TIMER_CLOCK1 clock signal (from PMC)"]
     #[inline(always)]
     pub fn timer_clock1(self) -> &'a mut W {
         self.variant(TCCLKS_A::TIMER_CLOCK1)
     }
-    #[doc = "Clock selected: TCLK2"]
+    #[doc = "Clock selected: internal TIMER_CLOCK2 clock signal (from PMC)"]
     #[inline(always)]
     pub fn timer_clock2(self) -> &'a mut W {
         self.variant(TCCLKS_A::TIMER_CLOCK2)
     }
-    #[doc = "Clock selected: TCLK3"]
+    #[doc = "Clock selected: internal TIMER_CLOCK3 clock signal (from PMC)"]
     #[inline(always)]
     pub fn timer_clock3(self) -> &'a mut W {
         self.variant(TCCLKS_A::TIMER_CLOCK3)
     }
-    #[doc = "Clock selected: TCLK4"]
+    #[doc = "Clock selected: internal TIMER_CLOCK4 clock signal (from PMC)"]
     #[inline(always)]
     pub fn timer_clock4(self) -> &'a mut W {
         self.variant(TCCLKS_A::TIMER_CLOCK4)
     }
-    #[doc = "Clock selected: TCLK5"]
+    #[doc = "Clock selected: internal TIMER_CLOCK5 clock signal (from PMC)"]
     #[inline(always)]
     pub fn timer_clock5(self) -> &'a mut W {
         self.variant(TCCLKS_A::TIMER_CLOCK5)

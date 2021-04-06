@@ -59,24 +59,24 @@ impl<'a> ENCF1_W<'a> {
     }
 }
 impl R {
-    #[doc = "Bit 0 - Enable Compare Fault Channel 0"]
+    #[doc = "Bit 0 - ENable Compare Fault Channel 0"]
     #[inline(always)]
     pub fn encf0(&self) -> ENCF0_R {
         ENCF0_R::new((self.bits & 0x01) != 0)
     }
-    #[doc = "Bit 1 - Enable Compare Fault Channel 1"]
+    #[doc = "Bit 1 - ENable Compare Fault Channel 1"]
     #[inline(always)]
     pub fn encf1(&self) -> ENCF1_R {
         ENCF1_R::new(((self.bits >> 1) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = "Bit 0 - Enable Compare Fault Channel 0"]
+    #[doc = "Bit 0 - ENable Compare Fault Channel 0"]
     #[inline(always)]
     pub fn encf0(&mut self) -> ENCF0_W {
         ENCF0_W { w: self }
     }
-    #[doc = "Bit 1 - Enable Compare Fault Channel 1"]
+    #[doc = "Bit 1 - ENable Compare Fault Channel 1"]
     #[inline(always)]
     pub fn encf1(&mut self) -> ENCF1_W {
         ENCF1_W { w: self }

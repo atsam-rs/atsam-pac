@@ -1,4 +1,4 @@
-#[doc = "Reader of register ODATAR%s"]
+#[doc = "Reader of register ODATAR[%s]"]
 pub type R = crate::R<u32, super::ODATAR>;
 #[doc = "Reader of field `ODATA`"]
 pub type ODATA_R = crate::R<u32, u32>;

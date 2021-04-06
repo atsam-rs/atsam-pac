@@ -238,9 +238,9 @@ impl<'a> RTCEN_W<'a> {
 #[doc = "Low-power Debouncer Enable WKUP0\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LPDBCEN0_A {
-    #[doc = "0: The WKUP0 input pin is not connected to the low-power debouncer."]
+    #[doc = "0: The WKUP0 input pin is not connected with low-power debouncer."]
     NOT_ENABLE = 0,
-    #[doc = "1: The WKUP0 input pin is connected to the low-power debouncer and forces a system wake-up."]
+    #[doc = "1: The WKUP0 input pin is connected with low-power debouncer and forces a system wake-up."]
     ENABLE = 1,
 }
 impl From<LPDBCEN0_A> for bool {
@@ -283,12 +283,12 @@ impl<'a> LPDBCEN0_W<'a> {
             self.bit(variant.into())
         }
     }
-    #[doc = "The WKUP0 input pin is not connected to the low-power debouncer."]
+    #[doc = "The WKUP0 input pin is not connected with low-power debouncer."]
     #[inline(always)]
     pub fn not_enable(self) -> &'a mut W {
         self.variant(LPDBCEN0_A::NOT_ENABLE)
     }
-    #[doc = "The WKUP0 input pin is connected to the low-power debouncer and forces a system wake-up."]
+    #[doc = "The WKUP0 input pin is connected with low-power debouncer and forces a system wake-up."]
     #[inline(always)]
     pub fn enable(self) -> &'a mut W {
         self.variant(LPDBCEN0_A::ENABLE)
@@ -313,9 +313,9 @@ impl<'a> LPDBCEN0_W<'a> {
 #[doc = "Low-power Debouncer Enable WKUP1\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LPDBCEN1_A {
-    #[doc = "0: The WKUP1 input pin is not connected to the low-power debouncer."]
+    #[doc = "0: The WKUP1 input pin is not connected with low-power debouncer."]
     NOT_ENABLE = 0,
-    #[doc = "1: The WKUP1 input pin is connected to the low-power debouncer and forces a system wake-up."]
+    #[doc = "1: The WKUP1 input pin is connected with low-power debouncer and forces a system wake-up."]
     ENABLE = 1,
 }
 impl From<LPDBCEN1_A> for bool {
@@ -358,12 +358,12 @@ impl<'a> LPDBCEN1_W<'a> {
             self.bit(variant.into())
         }
     }
-    #[doc = "The WKUP1 input pin is not connected to the low-power debouncer."]
+    #[doc = "The WKUP1 input pin is not connected with low-power debouncer."]
     #[inline(always)]
     pub fn not_enable(self) -> &'a mut W {
         self.variant(LPDBCEN1_A::NOT_ENABLE)
     }
-    #[doc = "The WKUP1 input pin is connected to the low-power debouncer and forces a system wake-up."]
+    #[doc = "The WKUP1 input pin is connected with low-power debouncer and forces a system wake-up."]
     #[inline(always)]
     pub fn enable(self) -> &'a mut W {
         self.variant(LPDBCEN1_A::ENABLE)
@@ -584,19 +584,19 @@ impl<'a> WKUPDBC_W<'a> {
 pub enum LPDBC_A {
     #[doc = "0: Disable the low-power debouncers."]
     DISABLE = 0,
-    #[doc = "1: WKUP0/1 in active state for at least 2 RTCOUTx clock periods"]
+    #[doc = "1: WKUP0/1 in active state for at least 2 RTCOUTx periods"]
     _2_RTCOUT0 = 1,
-    #[doc = "2: WKUP0/1 in active state for at least 3 RTCOUTx clock periods"]
+    #[doc = "2: WKUP0/1 in active state for at least 3 RTCOUTx periods"]
     _3_RTCOUT0 = 2,
-    #[doc = "3: WKUP0/1 in active state for at least 4 RTCOUTx clock periods"]
+    #[doc = "3: WKUP0/1 in active state for at least 4 RTCOUTx periods"]
     _4_RTCOUT0 = 3,
-    #[doc = "4: WKUP0/1 in active state for at least 5 RTCOUTx clock periods"]
+    #[doc = "4: WKUP0/1 in active state for at least 5 RTCOUTx periods"]
     _5_RTCOUT0 = 4,
-    #[doc = "5: WKUP0/1 in active state for at least 6 RTCOUTx clock periods"]
+    #[doc = "5: WKUP0/1 in active state for at least 6 RTCOUTx periods"]
     _6_RTCOUT0 = 5,
-    #[doc = "6: WKUP0/1 in active state for at least 7 RTCOUTx clock periods"]
+    #[doc = "6: WKUP0/1 in active state for at least 7 RTCOUTx periods"]
     _7_RTCOUT0 = 6,
-    #[doc = "7: WKUP0/1 in active state for at least 8 RTCOUTx clock periods"]
+    #[doc = "7: WKUP0/1 in active state for at least 8 RTCOUTx periods"]
     _8_RTCOUT0 = 7,
 }
 impl From<LPDBC_A> for u8 {
@@ -681,37 +681,37 @@ impl<'a> LPDBC_W<'a> {
     pub fn disable(self) -> &'a mut W {
         self.variant(LPDBC_A::DISABLE)
     }
-    #[doc = "WKUP0/1 in active state for at least 2 RTCOUTx clock periods"]
+    #[doc = "WKUP0/1 in active state for at least 2 RTCOUTx periods"]
     #[inline(always)]
     pub fn _2_rtcout0(self) -> &'a mut W {
         self.variant(LPDBC_A::_2_RTCOUT0)
     }
-    #[doc = "WKUP0/1 in active state for at least 3 RTCOUTx clock periods"]
+    #[doc = "WKUP0/1 in active state for at least 3 RTCOUTx periods"]
     #[inline(always)]
     pub fn _3_rtcout0(self) -> &'a mut W {
         self.variant(LPDBC_A::_3_RTCOUT0)
     }
-    #[doc = "WKUP0/1 in active state for at least 4 RTCOUTx clock periods"]
+    #[doc = "WKUP0/1 in active state for at least 4 RTCOUTx periods"]
     #[inline(always)]
     pub fn _4_rtcout0(self) -> &'a mut W {
         self.variant(LPDBC_A::_4_RTCOUT0)
     }
-    #[doc = "WKUP0/1 in active state for at least 5 RTCOUTx clock periods"]
+    #[doc = "WKUP0/1 in active state for at least 5 RTCOUTx periods"]
     #[inline(always)]
     pub fn _5_rtcout0(self) -> &'a mut W {
         self.variant(LPDBC_A::_5_RTCOUT0)
     }
-    #[doc = "WKUP0/1 in active state for at least 6 RTCOUTx clock periods"]
+    #[doc = "WKUP0/1 in active state for at least 6 RTCOUTx periods"]
     #[inline(always)]
     pub fn _6_rtcout0(self) -> &'a mut W {
         self.variant(LPDBC_A::_6_RTCOUT0)
     }
-    #[doc = "WKUP0/1 in active state for at least 7 RTCOUTx clock periods"]
+    #[doc = "WKUP0/1 in active state for at least 7 RTCOUTx periods"]
     #[inline(always)]
     pub fn _7_rtcout0(self) -> &'a mut W {
         self.variant(LPDBC_A::_7_RTCOUT0)
     }
-    #[doc = "WKUP0/1 in active state for at least 8 RTCOUTx clock periods"]
+    #[doc = "WKUP0/1 in active state for at least 8 RTCOUTx periods"]
     #[inline(always)]
     pub fn _8_rtcout0(self) -> &'a mut W {
         self.variant(LPDBC_A::_8_RTCOUT0)

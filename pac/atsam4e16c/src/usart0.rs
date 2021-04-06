@@ -7,9 +7,9 @@ pub struct RegisterBlock {
     _reserved_3_idr: [u8; 4usize],
     _reserved_4_imr: [u8; 4usize],
     _reserved_5_csr: [u8; 4usize],
-    #[doc = "0x18 - Receiver Holding Register"]
+    #[doc = "0x18 - Receive Holding Register"]
     pub rhr: RHR,
-    #[doc = "0x1c - Transmitter Holding Register"]
+    #[doc = "0x1c - Transmit Holding Register"]
     pub thr: THR,
     #[doc = "0x20 - Baud Rate Generator Register"]
     pub brgr: BRGR,
@@ -25,12 +25,12 @@ pub struct RegisterBlock {
     _reserved13: [u8; 4usize],
     #[doc = "0x4c - IrDA Filter Register"]
     pub if_: IF,
-    #[doc = "0x50 - Manchester Encoder Decoder Register"]
+    #[doc = "0x50 - Manchester Configuration Register"]
     pub man: MAN,
     _reserved15: [u8; 144usize],
-    #[doc = "0xe4 - Write Protect Mode Register"]
+    #[doc = "0xe4 - Write Protection Mode Register"]
     pub wpmr: WPMR,
-    #[doc = "0xe8 - Write Protect Status Register"]
+    #[doc = "0xe8 - Write Protection Status Register"]
     pub wpsr: WPSR,
     _reserved17: [u8; 20usize],
     #[doc = "0x100 - Receive Pointer Register"]
@@ -288,23 +288,23 @@ pub struct _CSR_SPI_MODE;
 impl crate::Readable for CSR_SPI_MODE {}
 #[doc = "Channel Status Register"]
 pub mod csr_spi_mode;
-#[doc = "Receiver Holding Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [rhr](rhr) module"]
+#[doc = "Receive Holding Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [rhr](rhr) module"]
 pub type RHR = crate::Reg<u32, _RHR>;
 #[allow(missing_docs)]
 #[doc(hidden)]
 pub struct _RHR;
 #[doc = "`read()` method returns [rhr::R](rhr::R) reader structure"]
 impl crate::Readable for RHR {}
-#[doc = "Receiver Holding Register"]
+#[doc = "Receive Holding Register"]
 pub mod rhr;
-#[doc = "Transmitter Holding Register\n\nThis register you can [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [thr](thr) module"]
+#[doc = "Transmit Holding Register\n\nThis register you can [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [thr](thr) module"]
 pub type THR = crate::Reg<u32, _THR>;
 #[allow(missing_docs)]
 #[doc(hidden)]
 pub struct _THR;
 #[doc = "`write(|w| ..)` method takes [thr::W](thr::W) writer structure"]
 impl crate::Writable for THR {}
-#[doc = "Transmitter Holding Register"]
+#[doc = "Transmit Holding Register"]
 pub mod thr;
 #[doc = "Baud Rate Generator Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [brgr](brgr) module"]
 pub type BRGR = crate::Reg<u32, _BRGR>;
@@ -370,7 +370,7 @@ impl crate::Readable for IF {}
 impl crate::Writable for IF {}
 #[doc = "IrDA Filter Register"]
 pub mod if_;
-#[doc = "Manchester Encoder Decoder Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [man](man) module"]
+#[doc = "Manchester Configuration Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [man](man) module"]
 pub type MAN = crate::Reg<u32, _MAN>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -379,9 +379,9 @@ pub struct _MAN;
 impl crate::Readable for MAN {}
 #[doc = "`write(|w| ..)` method takes [man::W](man::W) writer structure"]
 impl crate::Writable for MAN {}
-#[doc = "Manchester Encoder Decoder Register"]
+#[doc = "Manchester Configuration Register"]
 pub mod man;
-#[doc = "Write Protect Mode Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [wpmr](wpmr) module"]
+#[doc = "Write Protection Mode Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [wpmr](wpmr) module"]
 pub type WPMR = crate::Reg<u32, _WPMR>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -390,16 +390,16 @@ pub struct _WPMR;
 impl crate::Readable for WPMR {}
 #[doc = "`write(|w| ..)` method takes [wpmr::W](wpmr::W) writer structure"]
 impl crate::Writable for WPMR {}
-#[doc = "Write Protect Mode Register"]
+#[doc = "Write Protection Mode Register"]
 pub mod wpmr;
-#[doc = "Write Protect Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [wpsr](wpsr) module"]
+#[doc = "Write Protection Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [wpsr](wpsr) module"]
 pub type WPSR = crate::Reg<u32, _WPSR>;
 #[allow(missing_docs)]
 #[doc(hidden)]
 pub struct _WPSR;
 #[doc = "`read()` method returns [wpsr::R](wpsr::R) reader structure"]
 impl crate::Readable for WPSR {}
-#[doc = "Write Protect Status Register"]
+#[doc = "Write Protection Status Register"]
 pub mod wpsr;
 #[doc = "Receive Pointer Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [rpr](rpr) module"]
 pub type RPR = crate::Reg<u32, _RPR>;

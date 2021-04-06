@@ -109,9 +109,9 @@ impl<'a> SDCSEL_W<'a> {
 pub enum SDCBUS_A {
     #[doc = "0: 1 bit"]
     _1 = 0,
-    #[doc = "2: 4 bit"]
+    #[doc = "2: 4 bits"]
     _4 = 2,
-    #[doc = "3: 8 bit"]
+    #[doc = "3: 8 bits"]
     _8 = 3,
 }
 impl From<SDCBUS_A> for u8 {
@@ -165,12 +165,12 @@ impl<'a> SDCBUS_W<'a> {
     pub fn _1(self) -> &'a mut W {
         self.variant(SDCBUS_A::_1)
     }
-    #[doc = "4 bit"]
+    #[doc = "4 bits"]
     #[inline(always)]
     pub fn _4(self) -> &'a mut W {
         self.variant(SDCBUS_A::_4)
     }
-    #[doc = "8 bit"]
+    #[doc = "8 bits"]
     #[inline(always)]
     pub fn _8(self) -> &'a mut W {
         self.variant(SDCBUS_A::_8)

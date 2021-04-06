@@ -4,7 +4,7 @@ pub type W = crate::W<u32, super::FCR>;
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum FCMD_AW {
-    #[doc = "0: Get Flash Descriptor"]
+    #[doc = "0: Get Flash descriptor"]
     GETD = 0,
     #[doc = "1: Write page"]
     WP = 1,
@@ -16,35 +16,35 @@ pub enum FCMD_AW {
     EWPL = 4,
     #[doc = "5: Erase all"]
     EA = 5,
-    #[doc = "7: Erase Pages"]
+    #[doc = "7: Erase pages"]
     EPA = 7,
-    #[doc = "8: Set Lock Bit"]
+    #[doc = "8: Set lock bit"]
     SLB = 8,
-    #[doc = "9: Clear Lock Bit"]
+    #[doc = "9: Clear lock bit"]
     CLB = 9,
-    #[doc = "10: Get Lock Bit"]
+    #[doc = "10: Get lock bit"]
     GLB = 10,
-    #[doc = "11: Set GPNVM Bit"]
+    #[doc = "11: Set GPNVM bit"]
     SGPB = 11,
-    #[doc = "12: Clear GPNVM Bit"]
+    #[doc = "12: Clear GPNVM bit"]
     CGPB = 12,
-    #[doc = "13: Get GPNVM Bit"]
+    #[doc = "13: Get GPNVM bit"]
     GGPB = 13,
-    #[doc = "14: Start Read Unique Identifier"]
+    #[doc = "14: Start read unique identifier"]
     STUI = 14,
-    #[doc = "15: Stop Read Unique Identifier"]
+    #[doc = "15: Stop read unique identifier"]
     SPUI = 15,
-    #[doc = "16: Get CALIB Bit"]
+    #[doc = "16: Get CALIB bit"]
     GCALB = 16,
-    #[doc = "17: Erase Sector"]
+    #[doc = "17: Erase sector"]
     ES = 17,
-    #[doc = "18: Write User Signature"]
+    #[doc = "18: Write user signature"]
     WUS = 18,
-    #[doc = "19: Erase User Signature"]
+    #[doc = "19: Erase user signature"]
     EUS = 19,
-    #[doc = "20: Start Read User Signature"]
+    #[doc = "20: Start read user signature"]
     STUS = 20,
-    #[doc = "21: Stop Read User Signature"]
+    #[doc = "21: Stop read user signature"]
     SPUS = 21,
 }
 impl From<FCMD_AW> for u8 {
@@ -63,7 +63,7 @@ impl<'a> FCMD_W<'a> {
     pub fn variant(self, variant: FCMD_AW) -> &'a mut W {
         unsafe { self.bits(variant.into()) }
     }
-    #[doc = "Get Flash Descriptor"]
+    #[doc = "Get Flash descriptor"]
     #[inline(always)]
     pub fn getd(self) -> &'a mut W {
         self.variant(FCMD_AW::GETD)
@@ -93,77 +93,77 @@ impl<'a> FCMD_W<'a> {
     pub fn ea(self) -> &'a mut W {
         self.variant(FCMD_AW::EA)
     }
-    #[doc = "Erase Pages"]
+    #[doc = "Erase pages"]
     #[inline(always)]
     pub fn epa(self) -> &'a mut W {
         self.variant(FCMD_AW::EPA)
     }
-    #[doc = "Set Lock Bit"]
+    #[doc = "Set lock bit"]
     #[inline(always)]
     pub fn slb(self) -> &'a mut W {
         self.variant(FCMD_AW::SLB)
     }
-    #[doc = "Clear Lock Bit"]
+    #[doc = "Clear lock bit"]
     #[inline(always)]
     pub fn clb(self) -> &'a mut W {
         self.variant(FCMD_AW::CLB)
     }
-    #[doc = "Get Lock Bit"]
+    #[doc = "Get lock bit"]
     #[inline(always)]
     pub fn glb(self) -> &'a mut W {
         self.variant(FCMD_AW::GLB)
     }
-    #[doc = "Set GPNVM Bit"]
+    #[doc = "Set GPNVM bit"]
     #[inline(always)]
     pub fn sgpb(self) -> &'a mut W {
         self.variant(FCMD_AW::SGPB)
     }
-    #[doc = "Clear GPNVM Bit"]
+    #[doc = "Clear GPNVM bit"]
     #[inline(always)]
     pub fn cgpb(self) -> &'a mut W {
         self.variant(FCMD_AW::CGPB)
     }
-    #[doc = "Get GPNVM Bit"]
+    #[doc = "Get GPNVM bit"]
     #[inline(always)]
     pub fn ggpb(self) -> &'a mut W {
         self.variant(FCMD_AW::GGPB)
     }
-    #[doc = "Start Read Unique Identifier"]
+    #[doc = "Start read unique identifier"]
     #[inline(always)]
     pub fn stui(self) -> &'a mut W {
         self.variant(FCMD_AW::STUI)
     }
-    #[doc = "Stop Read Unique Identifier"]
+    #[doc = "Stop read unique identifier"]
     #[inline(always)]
     pub fn spui(self) -> &'a mut W {
         self.variant(FCMD_AW::SPUI)
     }
-    #[doc = "Get CALIB Bit"]
+    #[doc = "Get CALIB bit"]
     #[inline(always)]
     pub fn gcalb(self) -> &'a mut W {
         self.variant(FCMD_AW::GCALB)
     }
-    #[doc = "Erase Sector"]
+    #[doc = "Erase sector"]
     #[inline(always)]
     pub fn es(self) -> &'a mut W {
         self.variant(FCMD_AW::ES)
     }
-    #[doc = "Write User Signature"]
+    #[doc = "Write user signature"]
     #[inline(always)]
     pub fn wus(self) -> &'a mut W {
         self.variant(FCMD_AW::WUS)
     }
-    #[doc = "Erase User Signature"]
+    #[doc = "Erase user signature"]
     #[inline(always)]
     pub fn eus(self) -> &'a mut W {
         self.variant(FCMD_AW::EUS)
     }
-    #[doc = "Start Read User Signature"]
+    #[doc = "Start read user signature"]
     #[inline(always)]
     pub fn stus(self) -> &'a mut W {
         self.variant(FCMD_AW::STUS)
     }
-    #[doc = "Stop Read User Signature"]
+    #[doc = "Stop read user signature"]
     #[inline(always)]
     pub fn spus(self) -> &'a mut W {
         self.variant(FCMD_AW::SPUS)

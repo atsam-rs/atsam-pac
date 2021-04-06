@@ -124,7 +124,7 @@ impl R {
     pub fn tovf(&self) -> TOVF_R {
         TOVF_R::new(((self.bits >> 22) & 0x01) != 0)
     }
-    #[doc = "Bit 23"]
+    #[doc = "Bit 23 - Timestamp"]
     #[inline(always)]
     pub fn tstp(&self) -> TSTP_R {
         TSTP_R::new(((self.bits >> 23) & 0x01) != 0)

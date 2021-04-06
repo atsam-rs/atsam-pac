@@ -141,7 +141,7 @@ impl R {
     pub fn fam(&self) -> FAM_R {
         FAM_R::new(((self.bits >> 24) & 0x01) != 0)
     }
-    #[doc = "Bit 26 - Code Loops Optimization Enable"]
+    #[doc = "Bit 26 - Code Loop Optimization Enable"]
     #[inline(always)]
     pub fn cloe(&self) -> CLOE_R {
         CLOE_R::new(((self.bits >> 26) & 0x01) != 0)
@@ -168,7 +168,7 @@ impl W {
     pub fn fam(&mut self) -> FAM_W {
         FAM_W { w: self }
     }
-    #[doc = "Bit 26 - Code Loops Optimization Enable"]
+    #[doc = "Bit 26 - Code Loop Optimization Enable"]
     #[inline(always)]
     pub fn cloe(&mut self) -> CLOE_W {
         CLOE_W { w: self }

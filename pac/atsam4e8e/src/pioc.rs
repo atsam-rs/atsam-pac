@@ -79,7 +79,7 @@ pub struct RegisterBlock {
     _reserved34: [u8; 4usize],
     #[doc = "0xb0 - Additional Interrupt Modes Enable Register"]
     pub aimer: AIMER,
-    #[doc = "0xb4 - Additional Interrupt Modes Disables Register"]
+    #[doc = "0xb4 - Additional Interrupt Modes Disable Register"]
     pub aimdr: AIMDR,
     #[doc = "0xb8 - Additional Interrupt Modes Mask Register"]
     pub aimmr: AIMMR,
@@ -91,24 +91,24 @@ pub struct RegisterBlock {
     #[doc = "0xc8 - Edge/Level Status Register"]
     pub elsr: ELSR,
     _reserved40: [u8; 4usize],
-    #[doc = "0xd0 - Falling Edge/Low Level Select Register"]
+    #[doc = "0xd0 - Falling Edge/Low-Level Select Register"]
     pub fellsr: FELLSR,
-    #[doc = "0xd4 - Rising Edge/ High Level Select Register"]
+    #[doc = "0xd4 - Rising Edge/High-Level Select Register"]
     pub rehlsr: REHLSR,
     #[doc = "0xd8 - Fall/Rise - Low/High Status Register"]
     pub frlhsr: FRLHSR,
     _reserved43: [u8; 4usize],
     #[doc = "0xe0 - Lock Status"]
     pub locksr: LOCKSR,
-    #[doc = "0xe4 - Write Protect Mode Register"]
+    #[doc = "0xe4 - Write Protection Mode Register"]
     pub wpmr: WPMR,
-    #[doc = "0xe8 - Write Protect Status Register"]
+    #[doc = "0xe8 - Write Protection Status Register"]
     pub wpsr: WPSR,
     _reserved46: [u8; 20usize],
     #[doc = "0x100 - Schmitt Trigger Register"]
     pub schmitt: SCHMITT,
     _reserved47: [u8; 12usize],
-    #[doc = "0x110 - IO Delay Register"]
+    #[doc = "0x110 - I/O Delay Register"]
     pub delayr: DELAYR,
     _reserved48: [u8; 60usize],
     #[doc = "0x150 - Parallel Capture Mode Register"]
@@ -445,14 +445,14 @@ pub struct _AIMER;
 impl crate::Writable for AIMER {}
 #[doc = "Additional Interrupt Modes Enable Register"]
 pub mod aimer;
-#[doc = "Additional Interrupt Modes Disables Register\n\nThis register you can [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [aimdr](aimdr) module"]
+#[doc = "Additional Interrupt Modes Disable Register\n\nThis register you can [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [aimdr](aimdr) module"]
 pub type AIMDR = crate::Reg<u32, _AIMDR>;
 #[allow(missing_docs)]
 #[doc(hidden)]
 pub struct _AIMDR;
 #[doc = "`write(|w| ..)` method takes [aimdr::W](aimdr::W) writer structure"]
 impl crate::Writable for AIMDR {}
-#[doc = "Additional Interrupt Modes Disables Register"]
+#[doc = "Additional Interrupt Modes Disable Register"]
 pub mod aimdr;
 #[doc = "Additional Interrupt Modes Mask Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [aimmr](aimmr) module"]
 pub type AIMMR = crate::Reg<u32, _AIMMR>;
@@ -490,23 +490,23 @@ pub struct _ELSR;
 impl crate::Readable for ELSR {}
 #[doc = "Edge/Level Status Register"]
 pub mod elsr;
-#[doc = "Falling Edge/Low Level Select Register\n\nThis register you can [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [fellsr](fellsr) module"]
+#[doc = "Falling Edge/Low-Level Select Register\n\nThis register you can [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [fellsr](fellsr) module"]
 pub type FELLSR = crate::Reg<u32, _FELLSR>;
 #[allow(missing_docs)]
 #[doc(hidden)]
 pub struct _FELLSR;
 #[doc = "`write(|w| ..)` method takes [fellsr::W](fellsr::W) writer structure"]
 impl crate::Writable for FELLSR {}
-#[doc = "Falling Edge/Low Level Select Register"]
+#[doc = "Falling Edge/Low-Level Select Register"]
 pub mod fellsr;
-#[doc = "Rising Edge/ High Level Select Register\n\nThis register you can [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [rehlsr](rehlsr) module"]
+#[doc = "Rising Edge/High-Level Select Register\n\nThis register you can [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [rehlsr](rehlsr) module"]
 pub type REHLSR = crate::Reg<u32, _REHLSR>;
 #[allow(missing_docs)]
 #[doc(hidden)]
 pub struct _REHLSR;
 #[doc = "`write(|w| ..)` method takes [rehlsr::W](rehlsr::W) writer structure"]
 impl crate::Writable for REHLSR {}
-#[doc = "Rising Edge/ High Level Select Register"]
+#[doc = "Rising Edge/High-Level Select Register"]
 pub mod rehlsr;
 #[doc = "Fall/Rise - Low/High Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [frlhsr](frlhsr) module"]
 pub type FRLHSR = crate::Reg<u32, _FRLHSR>;
@@ -526,7 +526,7 @@ pub struct _LOCKSR;
 impl crate::Readable for LOCKSR {}
 #[doc = "Lock Status"]
 pub mod locksr;
-#[doc = "Write Protect Mode Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [wpmr](wpmr) module"]
+#[doc = "Write Protection Mode Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [wpmr](wpmr) module"]
 pub type WPMR = crate::Reg<u32, _WPMR>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -535,16 +535,16 @@ pub struct _WPMR;
 impl crate::Readable for WPMR {}
 #[doc = "`write(|w| ..)` method takes [wpmr::W](wpmr::W) writer structure"]
 impl crate::Writable for WPMR {}
-#[doc = "Write Protect Mode Register"]
+#[doc = "Write Protection Mode Register"]
 pub mod wpmr;
-#[doc = "Write Protect Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [wpsr](wpsr) module"]
+#[doc = "Write Protection Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [wpsr](wpsr) module"]
 pub type WPSR = crate::Reg<u32, _WPSR>;
 #[allow(missing_docs)]
 #[doc(hidden)]
 pub struct _WPSR;
 #[doc = "`read()` method returns [wpsr::R](wpsr::R) reader structure"]
 impl crate::Readable for WPSR {}
-#[doc = "Write Protect Status Register"]
+#[doc = "Write Protection Status Register"]
 pub mod wpsr;
 #[doc = "Schmitt Trigger Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [schmitt](schmitt) module"]
 pub type SCHMITT = crate::Reg<u32, _SCHMITT>;
@@ -557,7 +557,7 @@ impl crate::Readable for SCHMITT {}
 impl crate::Writable for SCHMITT {}
 #[doc = "Schmitt Trigger Register"]
 pub mod schmitt;
-#[doc = "IO Delay Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [delayr](delayr) module"]
+#[doc = "I/O Delay Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [delayr](delayr) module"]
 pub type DELAYR = crate::Reg<u32, _DELAYR>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -566,7 +566,7 @@ pub struct _DELAYR;
 impl crate::Readable for DELAYR {}
 #[doc = "`write(|w| ..)` method takes [delayr::W](delayr::W) writer structure"]
 impl crate::Writable for DELAYR {}
-#[doc = "IO Delay Register"]
+#[doc = "I/O Delay Register"]
 pub mod delayr;
 #[doc = "Parallel Capture Mode Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pcmr](pcmr) module"]
 pub type PCMR = crate::Reg<u32, _PCMR>;

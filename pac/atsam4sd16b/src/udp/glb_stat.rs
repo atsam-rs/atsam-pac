@@ -151,7 +151,7 @@ impl R {
     pub fn rsminpr(&self) -> RSMINPR_R {
         RSMINPR_R::new(((self.bits >> 3) & 0x01) != 0)
     }
-    #[doc = "Bit 4 - Remote Wakeup Enable"]
+    #[doc = "Bit 4 - Remote Wake Up Enable"]
     #[inline(always)]
     pub fn rmwupe(&self) -> RMWUPE_R {
         RMWUPE_R::new(((self.bits >> 4) & 0x01) != 0)
@@ -178,7 +178,7 @@ impl W {
     pub fn rsminpr(&mut self) -> RSMINPR_W {
         RSMINPR_W { w: self }
     }
-    #[doc = "Bit 4 - Remote Wakeup Enable"]
+    #[doc = "Bit 4 - Remote Wake Up Enable"]
     #[inline(always)]
     pub fn rmwupe(&mut self) -> RMWUPE_W {
         RMWUPE_W { w: self }

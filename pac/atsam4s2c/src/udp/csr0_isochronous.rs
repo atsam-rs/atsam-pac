@@ -194,7 +194,7 @@ impl<'a> DIR_W<'a> {
         self.w
     }
 }
-#[doc = "Endpoint Type (Read/Write)"]
+#[doc = "Endpoint Type"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum EPTYPE_A {
@@ -423,17 +423,17 @@ impl R {
     pub fn rx_data_bk1(&self) -> RX_DATA_BK1_R {
         RX_DATA_BK1_R::new(((self.bits >> 6) & 0x01) != 0)
     }
-    #[doc = "Bit 7 - Transfer Direction (only available for control endpoints) (Read/Write)"]
+    #[doc = "Bit 7 - Transfer Direction (only available for control endpoints)"]
     #[inline(always)]
     pub fn dir(&self) -> DIR_R {
         DIR_R::new(((self.bits >> 7) & 0x01) != 0)
     }
-    #[doc = "Bits 8:10 - Endpoint Type (Read/Write)"]
+    #[doc = "Bits 8:10 - Endpoint Type"]
     #[inline(always)]
     pub fn eptype(&self) -> EPTYPE_R {
         EPTYPE_R::new(((self.bits >> 8) & 0x07) as u8)
     }
-    #[doc = "Bit 11 - Data Toggle (Read-only)"]
+    #[doc = "Bit 11 - Data Toggle"]
     #[inline(always)]
     pub fn dtgle(&self) -> DTGLE_R {
         DTGLE_R::new(((self.bits >> 11) & 0x01) != 0)
@@ -443,7 +443,7 @@ impl R {
     pub fn epeds(&self) -> EPEDS_R {
         EPEDS_R::new(((self.bits >> 15) & 0x01) != 0)
     }
-    #[doc = "Bits 16:26 - Number of Bytes Available in the FIFO (Read-only)"]
+    #[doc = "Bits 16:26 - Number of Bytes Available in the FIFO"]
     #[inline(always)]
     pub fn rxbytecnt(&self) -> RXBYTECNT_R {
         RXBYTECNT_R::new(((self.bits >> 16) & 0x07ff) as u16)
@@ -485,17 +485,17 @@ impl W {
     pub fn rx_data_bk1(&mut self) -> RX_DATA_BK1_W {
         RX_DATA_BK1_W { w: self }
     }
-    #[doc = "Bit 7 - Transfer Direction (only available for control endpoints) (Read/Write)"]
+    #[doc = "Bit 7 - Transfer Direction (only available for control endpoints)"]
     #[inline(always)]
     pub fn dir(&mut self) -> DIR_W {
         DIR_W { w: self }
     }
-    #[doc = "Bits 8:10 - Endpoint Type (Read/Write)"]
+    #[doc = "Bits 8:10 - Endpoint Type"]
     #[inline(always)]
     pub fn eptype(&mut self) -> EPTYPE_W {
         EPTYPE_W { w: self }
     }
-    #[doc = "Bit 11 - Data Toggle (Read-only)"]
+    #[doc = "Bit 11 - Data Toggle"]
     #[inline(always)]
     pub fn dtgle(&mut self) -> DTGLE_W {
         DTGLE_W { w: self }
@@ -505,7 +505,7 @@ impl W {
     pub fn epeds(&mut self) -> EPEDS_W {
         EPEDS_W { w: self }
     }
-    #[doc = "Bits 16:26 - Number of Bytes Available in the FIFO (Read-only)"]
+    #[doc = "Bits 16:26 - Number of Bytes Available in the FIFO"]
     #[inline(always)]
     pub fn rxbytecnt(&mut self) -> RXBYTECNT_W {
         RXBYTECNT_W { w: self }

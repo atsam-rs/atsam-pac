@@ -7,9 +7,9 @@ pub struct RegisterBlock {
     pub smmr: SMMR,
     #[doc = "0x08 - Supply Controller Mode Register"]
     pub mr: MR,
-    #[doc = "0x0c - Supply Controller Wake Up Mode Register"]
+    #[doc = "0x0c - Supply Controller Wake-up Mode Register"]
     pub wumr: WUMR,
-    #[doc = "0x10 - Supply Controller Wake Up Inputs Register"]
+    #[doc = "0x10 - Supply Controller Wake-up Inputs Register"]
     pub wuir: WUIR,
     #[doc = "0x14 - Supply Controller Status Register"]
     pub sr: SR,
@@ -45,7 +45,7 @@ impl crate::Readable for MR {}
 impl crate::Writable for MR {}
 #[doc = "Supply Controller Mode Register"]
 pub mod mr;
-#[doc = "Supply Controller Wake Up Mode Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [wumr](wumr) module"]
+#[doc = "Supply Controller Wake-up Mode Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [wumr](wumr) module"]
 pub type WUMR = crate::Reg<u32, _WUMR>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -54,9 +54,9 @@ pub struct _WUMR;
 impl crate::Readable for WUMR {}
 #[doc = "`write(|w| ..)` method takes [wumr::W](wumr::W) writer structure"]
 impl crate::Writable for WUMR {}
-#[doc = "Supply Controller Wake Up Mode Register"]
+#[doc = "Supply Controller Wake-up Mode Register"]
 pub mod wumr;
-#[doc = "Supply Controller Wake Up Inputs Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [wuir](wuir) module"]
+#[doc = "Supply Controller Wake-up Inputs Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [wuir](wuir) module"]
 pub type WUIR = crate::Reg<u32, _WUIR>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -65,7 +65,7 @@ pub struct _WUIR;
 impl crate::Readable for WUIR {}
 #[doc = "`write(|w| ..)` method takes [wuir::W](wuir::W) writer structure"]
 impl crate::Writable for WUIR {}
-#[doc = "Supply Controller Wake Up Inputs Register"]
+#[doc = "Supply Controller Wake-up Inputs Register"]
 pub mod wuir;
 #[doc = "Supply Controller Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sr](sr) module"]
 pub type SR = crate::Reg<u32, _SR>;

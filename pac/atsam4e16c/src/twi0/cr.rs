@@ -207,7 +207,7 @@ impl W {
     pub fn svdis(&mut self) -> SVDIS_W {
         SVDIS_W { w: self }
     }
-    #[doc = "Bit 6 - SMBUS Quick Command"]
+    #[doc = "Bit 6 - SMBus Quick Command"]
     #[inline(always)]
     pub fn quick(&mut self) -> QUICK_W {
         QUICK_W { w: self }

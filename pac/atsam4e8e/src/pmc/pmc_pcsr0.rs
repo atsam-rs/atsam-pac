@@ -1,5 +1,9 @@
 #[doc = "Reader of register PMC_PCSR0"]
 pub type R = crate::R<u32, super::PMC_PCSR0>;
+#[doc = "Reader of field `PID7`"]
+pub type PID7_R = crate::R<bool, bool>;
+#[doc = "Reader of field `PID8`"]
+pub type PID8_R = crate::R<bool, bool>;
 #[doc = "Reader of field `PID9`"]
 pub type PID9_R = crate::R<bool, bool>;
 #[doc = "Reader of field `PID10`"]
@@ -47,6 +51,16 @@ pub type PID30_R = crate::R<bool, bool>;
 #[doc = "Reader of field `PID31`"]
 pub type PID31_R = crate::R<bool, bool>;
 impl R {
+    #[doc = "Bit 7 - Peripheral Clock 7 Status"]
+    #[inline(always)]
+    pub fn pid7(&self) -> PID7_R {
+        PID7_R::new(((self.bits >> 7) & 0x01) != 0)
+    }
+    #[doc = "Bit 8 - Peripheral Clock 8 Status"]
+    #[inline(always)]
+    pub fn pid8(&self) -> PID8_R {
+        PID8_R::new(((self.bits >> 8) & 0x01) != 0)
+    }
     #[doc = "Bit 9 - Peripheral Clock 9 Status"]
     #[inline(always)]
     pub fn pid9(&self) -> PID9_R {

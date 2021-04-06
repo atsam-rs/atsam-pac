@@ -1,5 +1,13 @@
 #[doc = "Writer for register DMA_IDR"]
 pub type W = crate::W<u32, super::DMA_IDR>;
+#[doc = "Register DMA_IDR `reset()`'s with value 0"]
+impl crate::ResetValue for super::DMA_IDR {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
+    }
+}
 #[doc = "Write proxy for field `DMAIDR`"]
 pub struct DMAIDR_W<'a> {
     w: &'a mut W,
@@ -23,7 +31,7 @@ impl<'a> DMAIDR_W<'a> {
     }
 }
 impl W {
-    #[doc = "Bit 0 - Interrupt Disable"]
+    #[doc = "Bit 0 - Interrupt Disable register"]
     #[inline(always)]
     pub fn dmaidr(&mut self) -> DMAIDR_W {
         DMAIDR_W { w: self }

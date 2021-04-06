@@ -120,11 +120,11 @@ impl<'a> HIGHPPM_W<'a> {
         self.w
     }
 }
-#[doc = "RTCOUT0 Output Source Selection\n\nValue on reset: 0"]
+#[doc = "RTCOUT0 OutputSource Selection\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum OUT0_A {
-    #[doc = "0: no waveform, stuck at '0'"]
+    #[doc = "0: No waveform, stuck at '0'"]
     NO_WAVE = 0,
     #[doc = "1: 1 Hz square wave"]
     FREQ1HZ = 1,
@@ -134,11 +134,11 @@ pub enum OUT0_A {
     FREQ64HZ = 3,
     #[doc = "4: 512 Hz square wave"]
     FREQ512HZ = 4,
-    #[doc = "5: output toggles when alarm flag rises"]
+    #[doc = "5: Output toggles when alarm flag rises"]
     ALARM_TOGGLE = 5,
-    #[doc = "6: output is a copy of the alarm flag"]
+    #[doc = "6: Output is a copy of the alarm flag"]
     ALARM_FLAG = 6,
-    #[doc = "7: duty cycle programmable pulse"]
+    #[doc = "7: Duty cycle programmable pulse"]
     PROG_PULSE = 7,
 }
 impl From<OUT0_A> for u8 {
@@ -218,7 +218,7 @@ impl<'a> OUT0_W<'a> {
             self.bits(variant.into())
         }
     }
-    #[doc = "no waveform, stuck at '0'"]
+    #[doc = "No waveform, stuck at '0'"]
     #[inline(always)]
     pub fn no_wave(self) -> &'a mut W {
         self.variant(OUT0_A::NO_WAVE)
@@ -243,17 +243,17 @@ impl<'a> OUT0_W<'a> {
     pub fn freq512hz(self) -> &'a mut W {
         self.variant(OUT0_A::FREQ512HZ)
     }
-    #[doc = "output toggles when alarm flag rises"]
+    #[doc = "Output toggles when alarm flag rises"]
     #[inline(always)]
     pub fn alarm_toggle(self) -> &'a mut W {
         self.variant(OUT0_A::ALARM_TOGGLE)
     }
-    #[doc = "output is a copy of the alarm flag"]
+    #[doc = "Output is a copy of the alarm flag"]
     #[inline(always)]
     pub fn alarm_flag(self) -> &'a mut W {
         self.variant(OUT0_A::ALARM_FLAG)
     }
-    #[doc = "duty cycle programmable pulse"]
+    #[doc = "Duty cycle programmable pulse"]
     #[inline(always)]
     pub fn prog_pulse(self) -> &'a mut W {
         self.variant(OUT0_A::PROG_PULSE)
@@ -269,7 +269,7 @@ impl<'a> OUT0_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum OUT1_A {
-    #[doc = "0: no waveform, stuck at '0'"]
+    #[doc = "0: No waveform, stuck at '0'"]
     NO_WAVE = 0,
     #[doc = "1: 1 Hz square wave"]
     FREQ1HZ = 1,
@@ -279,11 +279,11 @@ pub enum OUT1_A {
     FREQ64HZ = 3,
     #[doc = "4: 512 Hz square wave"]
     FREQ512HZ = 4,
-    #[doc = "5: output toggles when alarm flag rises"]
+    #[doc = "5: Output toggles when alarm flag rises"]
     ALARM_TOGGLE = 5,
-    #[doc = "6: output is a copy of the alarm flag"]
+    #[doc = "6: Output is a copy of the alarm flag"]
     ALARM_FLAG = 6,
-    #[doc = "7: duty cycle programmable pulse"]
+    #[doc = "7: Duty cycle programmable pulse"]
     PROG_PULSE = 7,
 }
 impl From<OUT1_A> for u8 {
@@ -363,7 +363,7 @@ impl<'a> OUT1_W<'a> {
             self.bits(variant.into())
         }
     }
-    #[doc = "no waveform, stuck at '0'"]
+    #[doc = "No waveform, stuck at '0'"]
     #[inline(always)]
     pub fn no_wave(self) -> &'a mut W {
         self.variant(OUT1_A::NO_WAVE)
@@ -388,17 +388,17 @@ impl<'a> OUT1_W<'a> {
     pub fn freq512hz(self) -> &'a mut W {
         self.variant(OUT1_A::FREQ512HZ)
     }
-    #[doc = "output toggles when alarm flag rises"]
+    #[doc = "Output toggles when alarm flag rises"]
     #[inline(always)]
     pub fn alarm_toggle(self) -> &'a mut W {
         self.variant(OUT1_A::ALARM_TOGGLE)
     }
-    #[doc = "output is a copy of the alarm flag"]
+    #[doc = "Output is a copy of the alarm flag"]
     #[inline(always)]
     pub fn alarm_flag(self) -> &'a mut W {
         self.variant(OUT1_A::ALARM_FLAG)
     }
-    #[doc = "duty cycle programmable pulse"]
+    #[doc = "Duty cycle programmable pulse"]
     #[inline(always)]
     pub fn prog_pulse(self) -> &'a mut W {
         self.variant(OUT1_A::PROG_PULSE)
@@ -418,7 +418,7 @@ pub enum THIGH_A {
     H_31MS = 0,
     #[doc = "1: 15.6 ms"]
     H_16MS = 1,
-    #[doc = "2: 3.91 Lms"]
+    #[doc = "2: 3.91 ms"]
     H_4MS = 2,
     #[doc = "3: 976 us"]
     H_976US = 3,
@@ -518,7 +518,7 @@ impl<'a> THIGH_W<'a> {
     pub fn h_16ms(self) -> &'a mut W {
         self.variant(THIGH_A::H_16MS)
     }
-    #[doc = "3.91 Lms"]
+    #[doc = "3.91 ms"]
     #[inline(always)]
     pub fn h_4ms(self) -> &'a mut W {
         self.variant(THIGH_A::H_4MS)
@@ -674,7 +674,7 @@ impl R {
     pub fn highppm(&self) -> HIGHPPM_R {
         HIGHPPM_R::new(((self.bits >> 15) & 0x01) != 0)
     }
-    #[doc = "Bits 16:18 - RTCOUT0 Output Source Selection"]
+    #[doc = "Bits 16:18 - RTCOUT0 OutputSource Selection"]
     #[inline(always)]
     pub fn out0(&self) -> OUT0_R {
         OUT0_R::new(((self.bits >> 16) & 0x07) as u8)
@@ -721,7 +721,7 @@ impl W {
     pub fn highppm(&mut self) -> HIGHPPM_W {
         HIGHPPM_W { w: self }
     }
-    #[doc = "Bits 16:18 - RTCOUT0 Output Source Selection"]
+    #[doc = "Bits 16:18 - RTCOUT0 OutputSource Selection"]
     #[inline(always)]
     pub fn out0(&mut self) -> OUT0_W {
         OUT0_W { w: self }

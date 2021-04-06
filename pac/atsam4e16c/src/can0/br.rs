@@ -85,7 +85,7 @@ impl<'a> BRP_W<'a> {
 pub enum SMP_A {
     #[doc = "0: The incoming bit stream is sampled once at sample point."]
     ONCE = 0,
-    #[doc = "1: The incoming bit stream is sampled three times with a period of a MCK clock period, centered on sample point."]
+    #[doc = "1: The incoming bit stream is sampled three times with a period of a peripheral clock, centered on sample point."]
     THREE = 1,
 }
 impl From<SMP_A> for bool {
@@ -133,7 +133,7 @@ impl<'a> SMP_W<'a> {
     pub fn once(self) -> &'a mut W {
         self.variant(SMP_A::ONCE)
     }
-    #[doc = "The incoming bit stream is sampled three times with a period of a MCK clock period, centered on sample point."]
+    #[doc = "The incoming bit stream is sampled three times with a period of a peripheral clock, centered on sample point."]
     #[inline(always)]
     pub fn three(self) -> &'a mut W {
         self.variant(SMP_A::THREE)

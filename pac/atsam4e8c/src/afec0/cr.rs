@@ -77,7 +77,7 @@ impl W {
     pub fn start(&mut self) -> START_W {
         START_W { w: self }
     }
-    #[doc = "Bit 3 - Automatic Calibration of AFE"]
+    #[doc = "Bit 3 - Automatic Calibration of AFEC"]
     #[inline(always)]
     pub fn autocal(&mut self) -> AUTOCAL_W {
         AUTOCAL_W { w: self }

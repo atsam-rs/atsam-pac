@@ -34,7 +34,7 @@ impl<'a> WPEN_W<'a> {
         self.w
     }
 }
-#[doc = "Write Protection Key\n\nValue on reset: 0"]
+#[doc = "Write Protect Key\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u32)]
 pub enum WPKEY_A {
@@ -93,7 +93,7 @@ impl R {
     pub fn wpen(&self) -> WPEN_R {
         WPEN_R::new((self.bits & 0x01) != 0)
     }
-    #[doc = "Bits 8:31 - Write Protection Key"]
+    #[doc = "Bits 8:31 - Write Protect Key"]
     #[inline(always)]
     pub fn wpkey(&self) -> WPKEY_R {
         WPKEY_R::new(((self.bits >> 8) & 0x00ff_ffff) as u32)
@@ -105,7 +105,7 @@ impl W {
     pub fn wpen(&mut self) -> WPEN_W {
         WPEN_W { w: self }
     }
-    #[doc = "Bits 8:31 - Write Protection Key"]
+    #[doc = "Bits 8:31 - Write Protect Key"]
     #[inline(always)]
     pub fn wpkey(&mut self) -> WPKEY_W {
         WPKEY_W { w: self }

@@ -34,52 +34,13 @@ impl<'a> WPEN_W<'a> {
         self.w
     }
 }
-#[doc = "Write Protection Key\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-#[repr(u32)]
-pub enum WPKEY_A {
-    #[doc = "5459267: Writing any other value in this field aborts the write operation of the WPEN bit. Always reads as 0."]
-    PASSWD = 5459267,
-}
-impl From<WPKEY_A> for u32 {
-    #[inline(always)]
-    fn from(variant: WPKEY_A) -> Self {
-        variant as _
-    }
-}
 #[doc = "Reader of field `WPKEY`"]
-pub type WPKEY_R = crate::R<u32, WPKEY_A>;
-impl WPKEY_R {
-    #[doc = r"Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u32, WPKEY_A> {
-        use crate::Variant::*;
-        match self.bits {
-            5459267 => Val(WPKEY_A::PASSWD),
-            i => Res(i),
-        }
-    }
-    #[doc = "Checks if the value of the field is `PASSWD`"]
-    #[inline(always)]
-    pub fn is_passwd(&self) -> bool {
-        *self == WPKEY_A::PASSWD
-    }
-}
+pub type WPKEY_R = crate::R<u32, u32>;
 #[doc = "Write proxy for field `WPKEY`"]
 pub struct WPKEY_W<'a> {
     w: &'a mut W,
 }
 impl<'a> WPKEY_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: WPKEY_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
-    #[doc = "Writing any other value in this field aborts the write operation of the WPEN bit. Always reads as 0."]
-    #[inline(always)]
-    pub fn passwd(self) -> &'a mut W {
-        self.variant(WPKEY_A::PASSWD)
-    }
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u32) -> &'a mut W {
@@ -93,7 +54,7 @@ impl R {
     pub fn wpen(&self) -> WPEN_R {
         WPEN_R::new((self.bits & 0x01) != 0)
     }
-    #[doc = "Bits 8:31 - Write Protection Key"]
+    #[doc = "Bits 8:31 - Write Protect KEY"]
     #[inline(always)]
     pub fn wpkey(&self) -> WPKEY_R {
         WPKEY_R::new(((self.bits >> 8) & 0x00ff_ffff) as u32)
@@ -105,7 +66,7 @@ impl W {
     pub fn wpen(&mut self) -> WPEN_W {
         WPEN_W { w: self }
     }
-    #[doc = "Bits 8:31 - Write Protection Key"]
+    #[doc = "Bits 8:31 - Write Protect KEY"]
     #[inline(always)]
     pub fn wpkey(&mut self) -> WPKEY_W {
         WPKEY_W { w: self }

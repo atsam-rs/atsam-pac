@@ -123,84 +123,84 @@ impl<'a> DELAY7_W<'a> {
     }
 }
 impl R {
-    #[doc = "Bits 0:3"]
+    #[doc = "Bits 0:3 - Delay Control for Simultaneous Switch Reduction"]
     #[inline(always)]
     pub fn delay0(&self) -> DELAY0_R {
         DELAY0_R::new((self.bits & 0x0f) as u8)
     }
-    #[doc = "Bits 4:7"]
+    #[doc = "Bits 4:7 - Delay Control for Simultaneous Switch Reduction"]
     #[inline(always)]
     pub fn delay1(&self) -> DELAY1_R {
         DELAY1_R::new(((self.bits >> 4) & 0x0f) as u8)
     }
-    #[doc = "Bits 8:11"]
+    #[doc = "Bits 8:11 - Delay Control for Simultaneous Switch Reduction"]
     #[inline(always)]
     pub fn delay2(&self) -> DELAY2_R {
         DELAY2_R::new(((self.bits >> 8) & 0x0f) as u8)
     }
-    #[doc = "Bits 12:15"]
+    #[doc = "Bits 12:15 - Delay Control for Simultaneous Switch Reduction"]
     #[inline(always)]
     pub fn delay3(&self) -> DELAY3_R {
         DELAY3_R::new(((self.bits >> 12) & 0x0f) as u8)
     }
-    #[doc = "Bits 16:19"]
+    #[doc = "Bits 16:19 - Delay Control for Simultaneous Switch Reduction"]
     #[inline(always)]
     pub fn delay4(&self) -> DELAY4_R {
         DELAY4_R::new(((self.bits >> 16) & 0x0f) as u8)
     }
-    #[doc = "Bits 20:23"]
+    #[doc = "Bits 20:23 - Delay Control for Simultaneous Switch Reduction"]
     #[inline(always)]
     pub fn delay5(&self) -> DELAY5_R {
         DELAY5_R::new(((self.bits >> 20) & 0x0f) as u8)
     }
-    #[doc = "Bits 24:27"]
+    #[doc = "Bits 24:27 - Delay Control for Simultaneous Switch Reduction"]
     #[inline(always)]
     pub fn delay6(&self) -> DELAY6_R {
         DELAY6_R::new(((self.bits >> 24) & 0x0f) as u8)
     }
-    #[doc = "Bits 28:31"]
+    #[doc = "Bits 28:31 - Delay Control for Simultaneous Switch Reduction"]
     #[inline(always)]
     pub fn delay7(&self) -> DELAY7_R {
         DELAY7_R::new(((self.bits >> 28) & 0x0f) as u8)
     }
 }
 impl W {
-    #[doc = "Bits 0:3"]
+    #[doc = "Bits 0:3 - Delay Control for Simultaneous Switch Reduction"]
     #[inline(always)]
     pub fn delay0(&mut self) -> DELAY0_W {
         DELAY0_W { w: self }
     }
-    #[doc = "Bits 4:7"]
+    #[doc = "Bits 4:7 - Delay Control for Simultaneous Switch Reduction"]
     #[inline(always)]
     pub fn delay1(&mut self) -> DELAY1_W {
         DELAY1_W { w: self }
     }
-    #[doc = "Bits 8:11"]
+    #[doc = "Bits 8:11 - Delay Control for Simultaneous Switch Reduction"]
     #[inline(always)]
     pub fn delay2(&mut self) -> DELAY2_W {
         DELAY2_W { w: self }
     }
-    #[doc = "Bits 12:15"]
+    #[doc = "Bits 12:15 - Delay Control for Simultaneous Switch Reduction"]
     #[inline(always)]
     pub fn delay3(&mut self) -> DELAY3_W {
         DELAY3_W { w: self }
     }
-    #[doc = "Bits 16:19"]
+    #[doc = "Bits 16:19 - Delay Control for Simultaneous Switch Reduction"]
     #[inline(always)]
     pub fn delay4(&mut self) -> DELAY4_W {
         DELAY4_W { w: self }
     }
-    #[doc = "Bits 20:23"]
+    #[doc = "Bits 20:23 - Delay Control for Simultaneous Switch Reduction"]
     #[inline(always)]
     pub fn delay5(&mut self) -> DELAY5_W {
         DELAY5_W { w: self }
     }
-    #[doc = "Bits 24:27"]
+    #[doc = "Bits 24:27 - Delay Control for Simultaneous Switch Reduction"]
     #[inline(always)]
     pub fn delay6(&mut self) -> DELAY6_W {
         DELAY6_W { w: self }
     }
-    #[doc = "Bits 28:31"]
+    #[doc = "Bits 28:31 - Delay Control for Simultaneous Switch Reduction"]
     #[inline(always)]
     pub fn delay7(&mut self) -> DELAY7_W {
         DELAY7_W { w: self }

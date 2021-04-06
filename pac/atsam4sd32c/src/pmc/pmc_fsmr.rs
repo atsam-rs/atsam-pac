@@ -496,9 +496,9 @@ impl<'a> LPM_W<'a> {
 pub enum FLPM_A {
     #[doc = "0: Flash is in Standby Mode when system enters Wait Mode"]
     FLASH_STANDBY = 0,
-    #[doc = "1: Flash is in Deep-power-down mode when system enters Wait Mode"]
+    #[doc = "1: Flash is in deep-power-down mode when system enters Wait Mode"]
     FLASH_DEEP_POWERDOWN = 1,
-    #[doc = "2: Idle mode"]
+    #[doc = "2: idle mode"]
     FLASH_IDLE = 2,
 }
 impl From<FLPM_A> for u8 {
@@ -552,12 +552,12 @@ impl<'a> FLPM_W<'a> {
     pub fn flash_standby(self) -> &'a mut W {
         self.variant(FLPM_A::FLASH_STANDBY)
     }
-    #[doc = "Flash is in Deep-power-down mode when system enters Wait Mode"]
+    #[doc = "Flash is in deep-power-down mode when system enters Wait Mode"]
     #[inline(always)]
     pub fn flash_deep_powerdown(self) -> &'a mut W {
         self.variant(FLPM_A::FLASH_DEEP_POWERDOWN)
     }
-    #[doc = "Idle mode"]
+    #[doc = "idle mode"]
     #[inline(always)]
     pub fn flash_idle(self) -> &'a mut W {
         self.variant(FLPM_A::FLASH_IDLE)
@@ -570,82 +570,82 @@ impl<'a> FLPM_W<'a> {
     }
 }
 impl R {
-    #[doc = "Bit 0 - Fast Startup Input Enable 0"]
+    #[doc = "Bit 0 - Fast Start-up Input Enable 0"]
     #[inline(always)]
     pub fn fstt0(&self) -> FSTT0_R {
         FSTT0_R::new((self.bits & 0x01) != 0)
     }
-    #[doc = "Bit 1 - Fast Startup Input Enable 1"]
+    #[doc = "Bit 1 - Fast Start-up Input Enable 1"]
     #[inline(always)]
     pub fn fstt1(&self) -> FSTT1_R {
         FSTT1_R::new(((self.bits >> 1) & 0x01) != 0)
     }
-    #[doc = "Bit 2 - Fast Startup Input Enable 2"]
+    #[doc = "Bit 2 - Fast Start-up Input Enable 2"]
     #[inline(always)]
     pub fn fstt2(&self) -> FSTT2_R {
         FSTT2_R::new(((self.bits >> 2) & 0x01) != 0)
     }
-    #[doc = "Bit 3 - Fast Startup Input Enable 3"]
+    #[doc = "Bit 3 - Fast Start-up Input Enable 3"]
     #[inline(always)]
     pub fn fstt3(&self) -> FSTT3_R {
         FSTT3_R::new(((self.bits >> 3) & 0x01) != 0)
     }
-    #[doc = "Bit 4 - Fast Startup Input Enable 4"]
+    #[doc = "Bit 4 - Fast Start-up Input Enable 4"]
     #[inline(always)]
     pub fn fstt4(&self) -> FSTT4_R {
         FSTT4_R::new(((self.bits >> 4) & 0x01) != 0)
     }
-    #[doc = "Bit 5 - Fast Startup Input Enable 5"]
+    #[doc = "Bit 5 - Fast Start-up Input Enable 5"]
     #[inline(always)]
     pub fn fstt5(&self) -> FSTT5_R {
         FSTT5_R::new(((self.bits >> 5) & 0x01) != 0)
     }
-    #[doc = "Bit 6 - Fast Startup Input Enable 6"]
+    #[doc = "Bit 6 - Fast Start-up Input Enable 6"]
     #[inline(always)]
     pub fn fstt6(&self) -> FSTT6_R {
         FSTT6_R::new(((self.bits >> 6) & 0x01) != 0)
     }
-    #[doc = "Bit 7 - Fast Startup Input Enable 7"]
+    #[doc = "Bit 7 - Fast Start-up Input Enable 7"]
     #[inline(always)]
     pub fn fstt7(&self) -> FSTT7_R {
         FSTT7_R::new(((self.bits >> 7) & 0x01) != 0)
     }
-    #[doc = "Bit 8 - Fast Startup Input Enable 8"]
+    #[doc = "Bit 8 - Fast Start-up Input Enable 8"]
     #[inline(always)]
     pub fn fstt8(&self) -> FSTT8_R {
         FSTT8_R::new(((self.bits >> 8) & 0x01) != 0)
     }
-    #[doc = "Bit 9 - Fast Startup Input Enable 9"]
+    #[doc = "Bit 9 - Fast Start-up Input Enable 9"]
     #[inline(always)]
     pub fn fstt9(&self) -> FSTT9_R {
         FSTT9_R::new(((self.bits >> 9) & 0x01) != 0)
     }
-    #[doc = "Bit 10 - Fast Startup Input Enable 10"]
+    #[doc = "Bit 10 - Fast Start-up Input Enable 10"]
     #[inline(always)]
     pub fn fstt10(&self) -> FSTT10_R {
         FSTT10_R::new(((self.bits >> 10) & 0x01) != 0)
     }
-    #[doc = "Bit 11 - Fast Startup Input Enable 11"]
+    #[doc = "Bit 11 - Fast Start-up Input Enable 11"]
     #[inline(always)]
     pub fn fstt11(&self) -> FSTT11_R {
         FSTT11_R::new(((self.bits >> 11) & 0x01) != 0)
     }
-    #[doc = "Bit 12 - Fast Startup Input Enable 12"]
+    #[doc = "Bit 12 - Fast Start-up Input Enable 12"]
     #[inline(always)]
     pub fn fstt12(&self) -> FSTT12_R {
         FSTT12_R::new(((self.bits >> 12) & 0x01) != 0)
     }
-    #[doc = "Bit 13 - Fast Startup Input Enable 13"]
+    #[doc = "Bit 13 - Fast Start-up Input Enable 13"]
     #[inline(always)]
     pub fn fstt13(&self) -> FSTT13_R {
         FSTT13_R::new(((self.bits >> 13) & 0x01) != 0)
     }
-    #[doc = "Bit 14 - Fast Startup Input Enable 14"]
+    #[doc = "Bit 14 - Fast Start-up Input Enable 14"]
     #[inline(always)]
     pub fn fstt14(&self) -> FSTT14_R {
         FSTT14_R::new(((self.bits >> 14) & 0x01) != 0)
     }
-    #[doc = "Bit 15 - Fast Startup Input Enable 15"]
+    #[doc = "Bit 15 - Fast Start-up Input Enable 15"]
     #[inline(always)]
     pub fn fstt15(&self) -> FSTT15_R {
         FSTT15_R::new(((self.bits >> 15) & 0x01) != 0)
@@ -677,82 +677,82 @@ impl R {
     }
 }
 impl W {
-    #[doc = "Bit 0 - Fast Startup Input Enable 0"]
+    #[doc = "Bit 0 - Fast Start-up Input Enable 0"]
     #[inline(always)]
     pub fn fstt0(&mut self) -> FSTT0_W {
         FSTT0_W { w: self }
     }
-    #[doc = "Bit 1 - Fast Startup Input Enable 1"]
+    #[doc = "Bit 1 - Fast Start-up Input Enable 1"]
     #[inline(always)]
     pub fn fstt1(&mut self) -> FSTT1_W {
         FSTT1_W { w: self }
     }
-    #[doc = "Bit 2 - Fast Startup Input Enable 2"]
+    #[doc = "Bit 2 - Fast Start-up Input Enable 2"]
     #[inline(always)]
     pub fn fstt2(&mut self) -> FSTT2_W {
         FSTT2_W { w: self }
     }
-    #[doc = "Bit 3 - Fast Startup Input Enable 3"]
+    #[doc = "Bit 3 - Fast Start-up Input Enable 3"]
     #[inline(always)]
     pub fn fstt3(&mut self) -> FSTT3_W {
         FSTT3_W { w: self }
     }
-    #[doc = "Bit 4 - Fast Startup Input Enable 4"]
+    #[doc = "Bit 4 - Fast Start-up Input Enable 4"]
     #[inline(always)]
     pub fn fstt4(&mut self) -> FSTT4_W {
         FSTT4_W { w: self }
     }
-    #[doc = "Bit 5 - Fast Startup Input Enable 5"]
+    #[doc = "Bit 5 - Fast Start-up Input Enable 5"]
     #[inline(always)]
     pub fn fstt5(&mut self) -> FSTT5_W {
         FSTT5_W { w: self }
     }
-    #[doc = "Bit 6 - Fast Startup Input Enable 6"]
+    #[doc = "Bit 6 - Fast Start-up Input Enable 6"]
     #[inline(always)]
     pub fn fstt6(&mut self) -> FSTT6_W {
         FSTT6_W { w: self }
     }
-    #[doc = "Bit 7 - Fast Startup Input Enable 7"]
+    #[doc = "Bit 7 - Fast Start-up Input Enable 7"]
     #[inline(always)]
     pub fn fstt7(&mut self) -> FSTT7_W {
         FSTT7_W { w: self }
     }
-    #[doc = "Bit 8 - Fast Startup Input Enable 8"]
+    #[doc = "Bit 8 - Fast Start-up Input Enable 8"]
     #[inline(always)]
     pub fn fstt8(&mut self) -> FSTT8_W {
         FSTT8_W { w: self }
     }
-    #[doc = "Bit 9 - Fast Startup Input Enable 9"]
+    #[doc = "Bit 9 - Fast Start-up Input Enable 9"]
     #[inline(always)]
     pub fn fstt9(&mut self) -> FSTT9_W {
         FSTT9_W { w: self }
     }
-    #[doc = "Bit 10 - Fast Startup Input Enable 10"]
+    #[doc = "Bit 10 - Fast Start-up Input Enable 10"]
     #[inline(always)]
     pub fn fstt10(&mut self) -> FSTT10_W {
         FSTT10_W { w: self }
     }
-    #[doc = "Bit 11 - Fast Startup Input Enable 11"]
+    #[doc = "Bit 11 - Fast Start-up Input Enable 11"]
     #[inline(always)]
     pub fn fstt11(&mut self) -> FSTT11_W {
         FSTT11_W { w: self }
     }
-    #[doc = "Bit 12 - Fast Startup Input Enable 12"]
+    #[doc = "Bit 12 - Fast Start-up Input Enable 12"]
     #[inline(always)]
     pub fn fstt12(&mut self) -> FSTT12_W {
         FSTT12_W { w: self }
     }
-    #[doc = "Bit 13 - Fast Startup Input Enable 13"]
+    #[doc = "Bit 13 - Fast Start-up Input Enable 13"]
     #[inline(always)]
     pub fn fstt13(&mut self) -> FSTT13_W {
         FSTT13_W { w: self }
     }
-    #[doc = "Bit 14 - Fast Startup Input Enable 14"]
+    #[doc = "Bit 14 - Fast Start-up Input Enable 14"]
     #[inline(always)]
     pub fn fstt14(&mut self) -> FSTT14_W {
         FSTT14_W { w: self }
     }
-    #[doc = "Bit 15 - Fast Startup Input Enable 15"]
+    #[doc = "Bit 15 - Fast Start-up Input Enable 15"]
     #[inline(always)]
     pub fn fstt15(&mut self) -> FSTT15_W {
         FSTT15_W { w: self }

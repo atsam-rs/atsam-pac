@@ -121,7 +121,7 @@ impl<'a> CLOE_W<'a> {
     }
 }
 impl R {
-    #[doc = "Bit 0 - Flash Ready Interrupt Enable"]
+    #[doc = "Bit 0 - Ready Interrupt Enable"]
     #[inline(always)]
     pub fn frdy(&self) -> FRDY_R {
         FRDY_R::new((self.bits & 0x01) != 0)
@@ -148,7 +148,7 @@ impl R {
     }
 }
 impl W {
-    #[doc = "Bit 0 - Flash Ready Interrupt Enable"]
+    #[doc = "Bit 0 - Ready Interrupt Enable"]
     #[inline(always)]
     pub fn frdy(&mut self) -> FRDY_W {
         FRDY_W { w: self }

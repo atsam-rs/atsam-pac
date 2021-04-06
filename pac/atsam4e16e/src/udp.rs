@@ -32,13 +32,13 @@ pub struct RegisterBlock {
 impl RegisterBlock {
     #[doc = "0x30 - Endpoint Control and Status Register"]
     #[inline(always)]
-    pub fn csr0_isoendpt(&self) -> &CSR0_ISOENDPT {
-        unsafe { &*(((self as *const Self) as *const u8).add(48usize) as *const CSR0_ISOENDPT) }
+    pub fn csr0_isochronous(&self) -> &CSR0_ISOCHRONOUS {
+        unsafe { &*(((self as *const Self) as *const u8).add(48usize) as *const CSR0_ISOCHRONOUS) }
     }
     #[doc = "0x30 - Endpoint Control and Status Register"]
     #[inline(always)]
-    pub fn csr0_isoendpt_mut(&self) -> &mut CSR0_ISOENDPT {
-        unsafe { &mut *(((self as *const Self) as *mut u8).add(48usize) as *mut CSR0_ISOENDPT) }
+    pub fn csr0_isochronous_mut(&self) -> &mut CSR0_ISOCHRONOUS {
+        unsafe { &mut *(((self as *const Self) as *mut u8).add(48usize) as *mut CSR0_ISOCHRONOUS) }
     }
     #[doc = "0x30 - Endpoint Control and Status Register"]
     #[inline(always)]
@@ -149,17 +149,17 @@ impl crate::Readable for CSR {}
 impl crate::Writable for CSR {}
 #[doc = "Endpoint Control and Status Register"]
 pub mod csr;
-#[doc = "Endpoint Control and Status Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [csr0_isoendpt](csr0_isoendpt) module"]
-pub type CSR0_ISOENDPT = crate::Reg<u32, _CSR0_ISOENDPT>;
+#[doc = "Endpoint Control and Status Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [csr0_isochronous](csr0_isochronous) module"]
+pub type CSR0_ISOCHRONOUS = crate::Reg<u32, _CSR0_ISOCHRONOUS>;
 #[allow(missing_docs)]
 #[doc(hidden)]
-pub struct _CSR0_ISOENDPT;
-#[doc = "`read()` method returns [csr0_isoendpt::R](csr0_isoendpt::R) reader structure"]
-impl crate::Readable for CSR0_ISOENDPT {}
-#[doc = "`write(|w| ..)` method takes [csr0_isoendpt::W](csr0_isoendpt::W) writer structure"]
-impl crate::Writable for CSR0_ISOENDPT {}
+pub struct _CSR0_ISOCHRONOUS;
+#[doc = "`read()` method returns [csr0_isochronous::R](csr0_isochronous::R) reader structure"]
+impl crate::Readable for CSR0_ISOCHRONOUS {}
+#[doc = "`write(|w| ..)` method takes [csr0_isochronous::W](csr0_isochronous::W) writer structure"]
+impl crate::Writable for CSR0_ISOCHRONOUS {}
 #[doc = "Endpoint Control and Status Register"]
-pub mod csr0_isoendpt;
+pub mod csr0_isochronous;
 #[doc = "Endpoint FIFO Data Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [fdr](fdr) module"]
 pub type FDR = crate::Reg<u32, _FDR>;
 #[allow(missing_docs)]

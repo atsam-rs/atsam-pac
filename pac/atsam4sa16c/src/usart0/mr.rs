@@ -2,15 +2,7 @@
 pub type R = crate::R<u32, super::MR>;
 #[doc = "Writer for register MR"]
 pub type W = crate::W<u32, super::MR>;
-#[doc = "Register MR `reset()`'s with value 0"]
-impl crate::ResetValue for super::MR {
-    type Type = u32;
-    #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
-    }
-}
-#[doc = "USART Mode of Operation\n\nValue on reset: 0"]
+#[doc = "USART Mode of Operation"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum USART_MODE_A {
@@ -167,15 +159,15 @@ impl<'a> USART_MODE_W<'a> {
         self.w
     }
 }
-#[doc = "Clock Selection\n\nValue on reset: 0"]
+#[doc = "Clock Selection"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum USCLKS_A {
-    #[doc = "0: Peripheral clock is selected"]
+    #[doc = "0: master Clock MCK is selected"]
     MCK = 0,
-    #[doc = "1: Peripheral clock divided (DIV=8) is selected"]
+    #[doc = "1: Internal Clock Divided MCK/DIV (DIV=8) is selected"]
     DIV = 1,
-    #[doc = "3: Serial clock (SCK) is selected"]
+    #[doc = "3: Serial Clock SLK is selected"]
     SCK = 3,
 }
 impl From<USCLKS_A> for u8 {
@@ -224,17 +216,17 @@ impl<'a> USCLKS_W<'a> {
     pub fn variant(self, variant: USCLKS_A) -> &'a mut W {
         unsafe { self.bits(variant.into()) }
     }
-    #[doc = "Peripheral clock is selected"]
+    #[doc = "master Clock MCK is selected"]
     #[inline(always)]
     pub fn mck(self) -> &'a mut W {
         self.variant(USCLKS_A::MCK)
     }
-    #[doc = "Peripheral clock divided (DIV=8) is selected"]
+    #[doc = "Internal Clock Divided MCK/DIV (DIV=8) is selected"]
     #[inline(always)]
     pub fn div(self) -> &'a mut W {
         self.variant(USCLKS_A::DIV)
     }
-    #[doc = "Serial clock (SCK) is selected"]
+    #[doc = "Serial Clock SLK is selected"]
     #[inline(always)]
     pub fn sck(self) -> &'a mut W {
         self.variant(USCLKS_A::SCK)
@@ -246,7 +238,7 @@ impl<'a> USCLKS_W<'a> {
         self.w
     }
 }
-#[doc = "Character Length\n\nValue on reset: 0"]
+#[doc = "Character Length"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum CHRL_A {
@@ -363,7 +355,7 @@ impl<'a> SYNC_W<'a> {
         self.w
     }
 }
-#[doc = "Parity Type\n\nValue on reset: 0"]
+#[doc = "Parity Type"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum PAR_A {
@@ -481,7 +473,7 @@ impl<'a> PAR_W<'a> {
         self.w
     }
 }
-#[doc = "Number of Stop Bits\n\nValue on reset: 0"]
+#[doc = "Number of Stop Bits"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum NBSTOP_A {
@@ -560,7 +552,7 @@ impl<'a> NBSTOP_W<'a> {
         self.w
     }
 }
-#[doc = "Channel Mode\n\nValue on reset: 0"]
+#[doc = "Channel Mode"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum CHMODE_A {
@@ -1036,7 +1028,7 @@ impl R {
     pub fn max_iteration(&self) -> MAX_ITERATION_R {
         MAX_ITERATION_R::new(((self.bits >> 24) & 0x07) as u8)
     }
-    #[doc = "Bit 28 - Receive Line Filter"]
+    #[doc = "Bit 28 - Infrared Receive Line Filter"]
     #[inline(always)]
     pub fn filter(&self) -> FILTER_R {
         FILTER_R::new(((self.bits >> 28) & 0x01) != 0)
@@ -1138,7 +1130,7 @@ impl W {
     pub fn max_iteration(&mut self) -> MAX_ITERATION_W {
         MAX_ITERATION_W { w: self }
     }
-    #[doc = "Bit 28 - Receive Line Filter"]
+    #[doc = "Bit 28 - Infrared Receive Line Filter"]
     #[inline(always)]
     pub fn filter(&mut self) -> FILTER_W {
         FILTER_W { w: self }

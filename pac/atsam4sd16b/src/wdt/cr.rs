@@ -22,7 +22,7 @@ impl<'a> WDRSTT_W<'a> {
         self.w
     }
 }
-#[doc = "Password"]
+#[doc = "Password."]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum KEY_AW {
@@ -63,7 +63,7 @@ impl W {
     pub fn wdrstt(&mut self) -> WDRSTT_W {
         WDRSTT_W { w: self }
     }
-    #[doc = "Bits 24:31 - Password"]
+    #[doc = "Bits 24:31 - Password."]
     #[inline(always)]
     pub fn key(&mut self) -> KEY_W {
         KEY_W { w: self }

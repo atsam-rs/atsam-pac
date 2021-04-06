@@ -10,13 +10,13 @@ impl crate::ResetValue for super::EMR0 {
         0
     }
 }
-#[doc = "TRIGger SouRCe for input A\n\nValue on reset: 0"]
+#[doc = "Trigger Source for Input A\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum TRIGSRCA_A {
-    #[doc = "0: the trigger/capture input A is driven by external pin TIOAx"]
+    #[doc = "0: The trigger/capture input A is driven by external pin TIOAx"]
     EXTERNAL_TIOAX = 0,
-    #[doc = "1: the trigger/capture input A is driven internally by PWMx"]
+    #[doc = "1: The trigger/capture input A is driven internally by PWMx"]
     PWMX = 1,
 }
 impl From<TRIGSRCA_A> for u8 {
@@ -59,12 +59,12 @@ impl<'a> TRIGSRCA_W<'a> {
     pub fn variant(self, variant: TRIGSRCA_A) -> &'a mut W {
         unsafe { self.bits(variant.into()) }
     }
-    #[doc = "the trigger/capture input A is driven by external pin TIOAx"]
+    #[doc = "The trigger/capture input A is driven by external pin TIOAx"]
     #[inline(always)]
     pub fn external_tioax(self) -> &'a mut W {
         self.variant(TRIGSRCA_A::EXTERNAL_TIOAX)
     }
-    #[doc = "the trigger/capture input A is driven internally by PWMx"]
+    #[doc = "The trigger/capture input A is driven internally by PWMx"]
     #[inline(always)]
     pub fn pwmx(self) -> &'a mut W {
         self.variant(TRIGSRCA_A::PWMX)
@@ -76,13 +76,13 @@ impl<'a> TRIGSRCA_W<'a> {
         self.w
     }
 }
-#[doc = "TRIGger SouRCe for input B\n\nValue on reset: 0"]
+#[doc = "Trigger Source for Input B\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum TRIGSRCB_A {
-    #[doc = "0: the trigger/capture input B is driven by external pin TIOBx"]
+    #[doc = "0: The trigger/capture input B is driven by external pin TIOBx"]
     EXTERNAL_TIOBX = 0,
-    #[doc = "1: the trigger/capture input B is driven internally by PWMx"]
+    #[doc = "1: The trigger/capture input B is driven internally by PWMx"]
     PWMX = 1,
 }
 impl From<TRIGSRCB_A> for u8 {
@@ -125,12 +125,12 @@ impl<'a> TRIGSRCB_W<'a> {
     pub fn variant(self, variant: TRIGSRCB_A) -> &'a mut W {
         unsafe { self.bits(variant.into()) }
     }
-    #[doc = "the trigger/capture input B is driven by external pin TIOBx"]
+    #[doc = "The trigger/capture input B is driven by external pin TIOBx"]
     #[inline(always)]
     pub fn external_tiobx(self) -> &'a mut W {
         self.variant(TRIGSRCB_A::EXTERNAL_TIOBX)
     }
-    #[doc = "the trigger/capture input B is driven internally by PWMx"]
+    #[doc = "The trigger/capture input B is driven internally by PWMx"]
     #[inline(always)]
     pub fn pwmx(self) -> &'a mut W {
         self.variant(TRIGSRCB_A::PWMX)
@@ -167,34 +167,34 @@ impl<'a> NODIVCLK_W<'a> {
     }
 }
 impl R {
-    #[doc = "Bits 0:1 - TRIGger SouRCe for input A"]
+    #[doc = "Bits 0:1 - Trigger Source for Input A"]
     #[inline(always)]
     pub fn trigsrca(&self) -> TRIGSRCA_R {
         TRIGSRCA_R::new((self.bits & 0x03) as u8)
     }
-    #[doc = "Bits 4:5 - TRIGger SouRCe for input B"]
+    #[doc = "Bits 4:5 - Trigger Source for Input B"]
     #[inline(always)]
     pub fn trigsrcb(&self) -> TRIGSRCB_R {
         TRIGSRCB_R::new(((self.bits >> 4) & 0x03) as u8)
     }
-    #[doc = "Bit 8 - NO DIVided CLocK"]
+    #[doc = "Bit 8 - No Divided Clock"]
     #[inline(always)]
     pub fn nodivclk(&self) -> NODIVCLK_R {
         NODIVCLK_R::new(((self.bits >> 8) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = "Bits 0:1 - TRIGger SouRCe for input A"]
+    #[doc = "Bits 0:1 - Trigger Source for Input A"]
     #[inline(always)]
     pub fn trigsrca(&mut self) -> TRIGSRCA_W {
         TRIGSRCA_W { w: self }
     }
-    #[doc = "Bits 4:5 - TRIGger SouRCe for input B"]
+    #[doc = "Bits 4:5 - Trigger Source for Input B"]
     #[inline(always)]
     pub fn trigsrcb(&mut self) -> TRIGSRCB_W {
         TRIGSRCB_W { w: self }
     }
-    #[doc = "Bit 8 - NO DIVided CLocK"]
+    #[doc = "Bit 8 - No Divided Clock"]
     #[inline(always)]
     pub fn nodivclk(&mut self) -> NODIVCLK_W {
         NODIVCLK_W { w: self }

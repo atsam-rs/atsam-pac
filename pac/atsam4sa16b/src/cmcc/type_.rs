@@ -10,17 +10,17 @@ pub type RANDP_R = crate::R<bool, bool>;
 pub type LRUP_R = crate::R<bool, bool>;
 #[doc = "Reader of field `RRP`"]
 pub type RRP_R = crate::R<bool, bool>;
-#[doc = "Number of Ways"]
+#[doc = "Number of Way"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum WAYNUM_A {
     #[doc = "0: Direct Mapped Cache"]
     DMAPPED = 0,
-    #[doc = "1: 2-way set associative"]
+    #[doc = "1: 2-WAY set associative"]
     ARCH2WAY = 1,
-    #[doc = "2: 4-way set associative"]
+    #[doc = "2: 4-WAY set associative"]
     ARCH4WAY = 2,
-    #[doc = "3: 8-way set associative"]
+    #[doc = "3: 8-WAY set associative"]
     ARCH8WAY = 3,
 }
 impl From<WAYNUM_A> for u8 {
@@ -66,17 +66,17 @@ impl WAYNUM_R {
 }
 #[doc = "Reader of field `LCKDOWN`"]
 pub type LCKDOWN_R = crate::R<bool, bool>;
-#[doc = "Data Cache Size"]
+#[doc = "Cache Size"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum CSIZE_A {
-    #[doc = "0: Data cache size is 1 Kbyte"]
+    #[doc = "0: Cache Size 1 Kbytes"]
     CSIZE_1KB = 0,
-    #[doc = "1: Data cache size is 2 Kbytes"]
+    #[doc = "1: Cache Size 2 Kbytes"]
     CSIZE_2KB = 1,
-    #[doc = "2: Data cache size is 4 Kbytes"]
+    #[doc = "2: Cache Size 4 Kbytes"]
     CSIZE_4KB = 2,
-    #[doc = "3: Data cache size is 8 Kbytes"]
+    #[doc = "3: Cache Size 8 Kbytes"]
     CSIZE_8KB = 3,
 }
 impl From<CSIZE_A> for u8 {
@@ -121,17 +121,17 @@ impl CSIZE_R {
         *self == CSIZE_A::CSIZE_8KB
     }
 }
-#[doc = "Cache LIne Size"]
+#[doc = "Cache Size"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum CLSIZE_A {
-    #[doc = "0: Cache line size is 4 bytes"]
+    #[doc = "0: 4 Bytes"]
     CLSIZE_1KB = 0,
-    #[doc = "1: Cache line size is 8 bytes"]
+    #[doc = "1: 8 Bytes"]
     CLSIZE_2KB = 1,
-    #[doc = "2: Cache line size is 16 bytes"]
+    #[doc = "2: 16 Bytes"]
     CLSIZE_4KB = 2,
-    #[doc = "3: Cache line size is 32 bytes"]
+    #[doc = "3: 32 Bytes"]
     CLSIZE_8KB = 3,
 }
 impl From<CLSIZE_A> for u8 {
@@ -202,22 +202,22 @@ impl R {
     pub fn rrp(&self) -> RRP_R {
         RRP_R::new(((self.bits >> 4) & 0x01) != 0)
     }
-    #[doc = "Bits 5:6 - Number of Ways"]
+    #[doc = "Bits 5:6 - Number of Way"]
     #[inline(always)]
     pub fn waynum(&self) -> WAYNUM_R {
         WAYNUM_R::new(((self.bits >> 5) & 0x03) as u8)
     }
-    #[doc = "Bit 7 - Lockdown Supported"]
+    #[doc = "Bit 7 - Lock Down Supported"]
     #[inline(always)]
     pub fn lckdown(&self) -> LCKDOWN_R {
         LCKDOWN_R::new(((self.bits >> 7) & 0x01) != 0)
     }
-    #[doc = "Bits 8:10 - Data Cache Size"]
+    #[doc = "Bits 8:10 - Cache Size"]
     #[inline(always)]
     pub fn csize(&self) -> CSIZE_R {
         CSIZE_R::new(((self.bits >> 8) & 0x07) as u8)
     }
-    #[doc = "Bits 11:13 - Cache LIne Size"]
+    #[doc = "Bits 11:13 - Cache Size"]
     #[inline(always)]
     pub fn clsize(&self) -> CLSIZE_R {
         CLSIZE_R::new(((self.bits >> 11) & 0x07) as u8)

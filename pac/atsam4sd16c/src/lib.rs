@@ -493,7 +493,7 @@ impl Deref for CRCCU {
 }
 #[doc = "Cyclic Redundancy Check Calculation Unit"]
 pub mod crccu;
-#[doc = "Cortex-M Cache Controller"]
+#[doc = "Cortex M Cache Controller"]
 pub struct CMCC {
     _marker: PhantomData<*const ()>,
 }
@@ -512,7 +512,7 @@ impl Deref for CMCC {
         unsafe { &*CMCC::ptr() }
     }
 }
-#[doc = "Cortex-M Cache Controller"]
+#[doc = "Cortex M Cache Controller"]
 pub mod cmcc;
 #[doc = "Static Memory Controller"]
 pub struct SMC {

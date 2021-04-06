@@ -54,12 +54,12 @@ impl R {
     pub fn rxbrk(&self) -> RXBRK_R {
         RXBRK_R::new(((self.bits >> 2) & 0x01) != 0)
     }
-    #[doc = "Bit 3 - End of Receive Buffer Interrupt Mask (available in all USART modes of operation)"]
+    #[doc = "Bit 3 - End of Receive Transfer Interrupt Mask (available in all USART modes of operation)"]
     #[inline(always)]
     pub fn endrx(&self) -> ENDRX_R {
         ENDRX_R::new(((self.bits >> 3) & 0x01) != 0)
     }
-    #[doc = "Bit 4 - End of Transmit Buffer Interrupt Mask (available in all USART modes of operation)"]
+    #[doc = "Bit 4 - End of Transmit Interrupt Mask (available in all USART modes of operation)"]
     #[inline(always)]
     pub fn endtx(&self) -> ENDTX_R {
         ENDTX_R::new(((self.bits >> 4) & 0x01) != 0)
@@ -94,17 +94,17 @@ impl R {
     pub fn iter(&self) -> ITER_R {
         ITER_R::new(((self.bits >> 10) & 0x01) != 0)
     }
-    #[doc = "Bit 11 - Transmit Buffer Empty Interrupt Mask (available in all USART modes of operation)"]
+    #[doc = "Bit 11 - Buffer Empty Interrupt Mask (available in all USART modes of operation)"]
     #[inline(always)]
     pub fn txbufe(&self) -> TXBUFE_R {
         TXBUFE_R::new(((self.bits >> 11) & 0x01) != 0)
     }
-    #[doc = "Bit 12 - Receive Buffer Full Interrupt Mask (available in all USART modes of operation)"]
+    #[doc = "Bit 12 - Buffer Full Interrupt Mask (available in all USART modes of operation)"]
     #[inline(always)]
     pub fn rxbuff(&self) -> RXBUFF_R {
         RXBUFF_R::new(((self.bits >> 12) & 0x01) != 0)
     }
-    #[doc = "Bit 13 - Non Acknowledge Interrupt Mask"]
+    #[doc = "Bit 13 - Non AcknowledgeInterrupt Mask"]
     #[inline(always)]
     pub fn nack(&self) -> NACK_R {
         NACK_R::new(((self.bits >> 13) & 0x01) != 0)

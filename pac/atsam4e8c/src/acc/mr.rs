@@ -10,11 +10,11 @@ impl crate::ResetValue for super::MR {
         0
     }
 }
-#[doc = "SELection for MINUS comparator input\n\nValue on reset: 0"]
+#[doc = "Selection for Minus Comparator Input\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum SELMINUS_A {
-    #[doc = "0: SelectTS"]
+    #[doc = "0: Select TS"]
     TS = 0,
     #[doc = "1: Select ADVREF"]
     ADVREF = 1,
@@ -108,7 +108,7 @@ impl<'a> SELMINUS_W<'a> {
             self.bits(variant.into())
         }
     }
-    #[doc = "SelectTS"]
+    #[doc = "Select TS"]
     #[inline(always)]
     pub fn ts(self) -> &'a mut W {
         self.variant(SELMINUS_A::TS)
@@ -155,7 +155,7 @@ impl<'a> SELMINUS_W<'a> {
         self.w
     }
 }
-#[doc = "SELection for PLUS comparator input\n\nValue on reset: 0"]
+#[doc = "Selection For Plus Comparator Input\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum SELPLUS_A {
@@ -300,12 +300,12 @@ impl<'a> SELPLUS_W<'a> {
         self.w
     }
 }
-#[doc = "Analog Comparator ENable\n\nValue on reset: 0"]
+#[doc = "Analog Comparator Enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ACEN_A {
-    #[doc = "0: Analog Comparator Disabled."]
+    #[doc = "0: Analog comparator disabled."]
     DIS = 0,
-    #[doc = "1: Analog Comparator Enabled."]
+    #[doc = "1: Analog comparator enabled."]
     EN = 1,
 }
 impl From<ACEN_A> for bool {
@@ -348,12 +348,12 @@ impl<'a> ACEN_W<'a> {
             self.bit(variant.into())
         }
     }
-    #[doc = "Analog Comparator Disabled."]
+    #[doc = "Analog comparator disabled."]
     #[inline(always)]
     pub fn dis(self) -> &'a mut W {
         self.variant(ACEN_A::DIS)
     }
-    #[doc = "Analog Comparator Enabled."]
+    #[doc = "Analog comparator enabled."]
     #[inline(always)]
     pub fn en(self) -> &'a mut W {
         self.variant(ACEN_A::EN)
@@ -375,15 +375,15 @@ impl<'a> ACEN_W<'a> {
         self.w
     }
 }
-#[doc = "EDGE TYPe\n\nValue on reset: 0"]
+#[doc = "Edge Type\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum EDGETYP_A {
-    #[doc = "0: only rising edge of comparator output"]
+    #[doc = "0: Only rising edge of comparator output"]
     RISING = 0,
-    #[doc = "1: falling edge of comparator output"]
+    #[doc = "1: Falling edge of comparator output"]
     FALLING = 1,
-    #[doc = "2: any edge of comparator output"]
+    #[doc = "2: Any edge of comparator output"]
     ANY = 2,
 }
 impl From<EDGETYP_A> for u8 {
@@ -432,17 +432,17 @@ impl<'a> EDGETYP_W<'a> {
     pub fn variant(self, variant: EDGETYP_A) -> &'a mut W {
         unsafe { self.bits(variant.into()) }
     }
-    #[doc = "only rising edge of comparator output"]
+    #[doc = "Only rising edge of comparator output"]
     #[inline(always)]
     pub fn rising(self) -> &'a mut W {
         self.variant(EDGETYP_A::RISING)
     }
-    #[doc = "falling edge of comparator output"]
+    #[doc = "Falling edge of comparator output"]
     #[inline(always)]
     pub fn falling(self) -> &'a mut W {
         self.variant(EDGETYP_A::FALLING)
     }
-    #[doc = "any edge of comparator output"]
+    #[doc = "Any edge of comparator output"]
     #[inline(always)]
     pub fn any(self) -> &'a mut W {
         self.variant(EDGETYP_A::ANY)
@@ -454,12 +454,12 @@ impl<'a> EDGETYP_W<'a> {
         self.w
     }
 }
-#[doc = "INVert comparator output\n\nValue on reset: 0"]
+#[doc = "Invert Comparator Output\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum INV_A {
-    #[doc = "0: Analog Comparator output is directly processed."]
+    #[doc = "0: Analog comparator output is directly processed."]
     DIS = 0,
-    #[doc = "1: Analog Comparator output is inverted prior to being processed."]
+    #[doc = "1: Analog comparator output is inverted prior to being processed."]
     EN = 1,
 }
 impl From<INV_A> for bool {
@@ -502,12 +502,12 @@ impl<'a> INV_W<'a> {
             self.bit(variant.into())
         }
     }
-    #[doc = "Analog Comparator output is directly processed."]
+    #[doc = "Analog comparator output is directly processed."]
     #[inline(always)]
     pub fn dis(self) -> &'a mut W {
         self.variant(INV_A::DIS)
     }
-    #[doc = "Analog Comparator output is inverted prior to being processed."]
+    #[doc = "Analog comparator output is inverted prior to being processed."]
     #[inline(always)]
     pub fn en(self) -> &'a mut W {
         self.variant(INV_A::EN)
@@ -529,12 +529,12 @@ impl<'a> INV_W<'a> {
         self.w
     }
 }
-#[doc = "SELection of Fault Source\n\nValue on reset: 0"]
+#[doc = "Selection Of Fault Source\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SELFS_A {
-    #[doc = "0: the CF flag is used to drive the FAULT output."]
+    #[doc = "0: The CF flag is used to drive the FAULT output."]
     CF = 0,
-    #[doc = "1: the output of the Analog Comparator flag is used to drive the FAULT output."]
+    #[doc = "1: The output of the analog comparator flag is used to drive the FAULT output."]
     OUTPUT = 1,
 }
 impl From<SELFS_A> for bool {
@@ -577,12 +577,12 @@ impl<'a> SELFS_W<'a> {
             self.bit(variant.into())
         }
     }
-    #[doc = "the CF flag is used to drive the FAULT output."]
+    #[doc = "The CF flag is used to drive the FAULT output."]
     #[inline(always)]
     pub fn cf(self) -> &'a mut W {
         self.variant(SELFS_A::CF)
     }
-    #[doc = "the output of the Analog Comparator flag is used to drive the FAULT output."]
+    #[doc = "The output of the analog comparator flag is used to drive the FAULT output."]
     #[inline(always)]
     pub fn output(self) -> &'a mut W {
         self.variant(SELFS_A::OUTPUT)
@@ -607,9 +607,9 @@ impl<'a> SELFS_W<'a> {
 #[doc = "Fault Enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FE_A {
-    #[doc = "0: the FAULT output is tied to 0."]
+    #[doc = "0: The FAULT output is tied to 0."]
     DIS = 0,
-    #[doc = "1: the FAULT output is driven by the signal defined by SELFS."]
+    #[doc = "1: The FAULT output is driven by the signal defined by SELFS."]
     EN = 1,
 }
 impl From<FE_A> for bool {
@@ -652,12 +652,12 @@ impl<'a> FE_W<'a> {
             self.bit(variant.into())
         }
     }
-    #[doc = "the FAULT output is tied to 0."]
+    #[doc = "The FAULT output is tied to 0."]
     #[inline(always)]
     pub fn dis(self) -> &'a mut W {
         self.variant(FE_A::DIS)
     }
-    #[doc = "the FAULT output is driven by the signal defined by SELFS."]
+    #[doc = "The FAULT output is driven by the signal defined by SELFS."]
     #[inline(always)]
     pub fn en(self) -> &'a mut W {
         self.variant(FE_A::EN)
@@ -680,32 +680,32 @@ impl<'a> FE_W<'a> {
     }
 }
 impl R {
-    #[doc = "Bits 0:2 - SELection for MINUS comparator input"]
+    #[doc = "Bits 0:2 - Selection for Minus Comparator Input"]
     #[inline(always)]
     pub fn selminus(&self) -> SELMINUS_R {
         SELMINUS_R::new((self.bits & 0x07) as u8)
     }
-    #[doc = "Bits 4:6 - SELection for PLUS comparator input"]
+    #[doc = "Bits 4:6 - Selection For Plus Comparator Input"]
     #[inline(always)]
     pub fn selplus(&self) -> SELPLUS_R {
         SELPLUS_R::new(((self.bits >> 4) & 0x07) as u8)
     }
-    #[doc = "Bit 8 - Analog Comparator ENable"]
+    #[doc = "Bit 8 - Analog Comparator Enable"]
     #[inline(always)]
     pub fn acen(&self) -> ACEN_R {
         ACEN_R::new(((self.bits >> 8) & 0x01) != 0)
     }
-    #[doc = "Bits 9:10 - EDGE TYPe"]
+    #[doc = "Bits 9:10 - Edge Type"]
     #[inline(always)]
     pub fn edgetyp(&self) -> EDGETYP_R {
         EDGETYP_R::new(((self.bits >> 9) & 0x03) as u8)
     }
-    #[doc = "Bit 12 - INVert comparator output"]
+    #[doc = "Bit 12 - Invert Comparator Output"]
     #[inline(always)]
     pub fn inv(&self) -> INV_R {
         INV_R::new(((self.bits >> 12) & 0x01) != 0)
     }
-    #[doc = "Bit 13 - SELection of Fault Source"]
+    #[doc = "Bit 13 - Selection Of Fault Source"]
     #[inline(always)]
     pub fn selfs(&self) -> SELFS_R {
         SELFS_R::new(((self.bits >> 13) & 0x01) != 0)
@@ -717,32 +717,32 @@ impl R {
     }
 }
 impl W {
-    #[doc = "Bits 0:2 - SELection for MINUS comparator input"]
+    #[doc = "Bits 0:2 - Selection for Minus Comparator Input"]
     #[inline(always)]
     pub fn selminus(&mut self) -> SELMINUS_W {
         SELMINUS_W { w: self }
     }
-    #[doc = "Bits 4:6 - SELection for PLUS comparator input"]
+    #[doc = "Bits 4:6 - Selection For Plus Comparator Input"]
     #[inline(always)]
     pub fn selplus(&mut self) -> SELPLUS_W {
         SELPLUS_W { w: self }
     }
-    #[doc = "Bit 8 - Analog Comparator ENable"]
+    #[doc = "Bit 8 - Analog Comparator Enable"]
     #[inline(always)]
     pub fn acen(&mut self) -> ACEN_W {
         ACEN_W { w: self }
     }
-    #[doc = "Bits 9:10 - EDGE TYPe"]
+    #[doc = "Bits 9:10 - Edge Type"]
     #[inline(always)]
     pub fn edgetyp(&mut self) -> EDGETYP_W {
         EDGETYP_W { w: self }
     }
-    #[doc = "Bit 12 - INVert comparator output"]
+    #[doc = "Bit 12 - Invert Comparator Output"]
     #[inline(always)]
     pub fn inv(&mut self) -> INV_W {
         INV_W { w: self }
     }
-    #[doc = "Bit 13 - SELection of Fault Source"]
+    #[doc = "Bit 13 - Selection Of Fault Source"]
     #[inline(always)]
     pub fn selfs(&mut self) -> SELFS_W {
         SELFS_W { w: self }

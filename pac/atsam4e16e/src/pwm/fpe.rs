@@ -67,44 +67,44 @@ impl<'a> FPE3_W<'a> {
     }
 }
 impl R {
-    #[doc = "Bits 0:7 - Fault Protection Enable for channel 0 (fault input bit varies from 0 to 7)"]
+    #[doc = "Bits 0:7 - Fault Protection Enable for channel 0"]
     #[inline(always)]
     pub fn fpe0(&self) -> FPE0_R {
         FPE0_R::new((self.bits & 0xff) as u8)
     }
-    #[doc = "Bits 8:15 - Fault Protection Enable for channel 1 (fault input bit varies from 0 to 7)"]
+    #[doc = "Bits 8:15 - Fault Protection Enable for channel 1"]
     #[inline(always)]
     pub fn fpe1(&self) -> FPE1_R {
         FPE1_R::new(((self.bits >> 8) & 0xff) as u8)
     }
-    #[doc = "Bits 16:23 - Fault Protection Enable for channel 2 (fault input bit varies from 0 to 7)"]
+    #[doc = "Bits 16:23 - Fault Protection Enable for channel 2"]
     #[inline(always)]
     pub fn fpe2(&self) -> FPE2_R {
         FPE2_R::new(((self.bits >> 16) & 0xff) as u8)
     }
-    #[doc = "Bits 24:31 - Fault Protection Enable for channel 3 (fault input bit varies from 0 to 7)"]
+    #[doc = "Bits 24:31 - Fault Protection Enable for channel 3"]
     #[inline(always)]
     pub fn fpe3(&self) -> FPE3_R {
         FPE3_R::new(((self.bits >> 24) & 0xff) as u8)
     }
 }
 impl W {
-    #[doc = "Bits 0:7 - Fault Protection Enable for channel 0 (fault input bit varies from 0 to 7)"]
+    #[doc = "Bits 0:7 - Fault Protection Enable for channel 0"]
     #[inline(always)]
     pub fn fpe0(&mut self) -> FPE0_W {
         FPE0_W { w: self }
     }
-    #[doc = "Bits 8:15 - Fault Protection Enable for channel 1 (fault input bit varies from 0 to 7)"]
+    #[doc = "Bits 8:15 - Fault Protection Enable for channel 1"]
     #[inline(always)]
     pub fn fpe1(&mut self) -> FPE1_W {
         FPE1_W { w: self }
     }
-    #[doc = "Bits 16:23 - Fault Protection Enable for channel 2 (fault input bit varies from 0 to 7)"]
+    #[doc = "Bits 16:23 - Fault Protection Enable for channel 2"]
     #[inline(always)]
     pub fn fpe2(&mut self) -> FPE2_W {
         FPE2_W { w: self }
     }
-    #[doc = "Bits 24:31 - Fault Protection Enable for channel 3 (fault input bit varies from 0 to 7)"]
+    #[doc = "Bits 24:31 - Fault Protection Enable for channel 3"]
     #[inline(always)]
     pub fn fpe3(&mut self) -> FPE3_W {
         FPE3_W { w: self }

@@ -91,13 +91,13 @@ pub struct RegisterBlock {
 impl RegisterBlock {
     #[doc = "0x04 - Channel Mode Register (channel = 0)"]
     #[inline(always)]
-    pub fn cmr0_waveform_mode(&self) -> &CMR0_WAVEFORM_MODE {
-        unsafe { &*(((self as *const Self) as *const u8).add(4usize) as *const CMR0_WAVEFORM_MODE) }
+    pub fn cmr0_wave_eq_1(&self) -> &CMR0_WAVE_EQ_1 {
+        unsafe { &*(((self as *const Self) as *const u8).add(4usize) as *const CMR0_WAVE_EQ_1) }
     }
     #[doc = "0x04 - Channel Mode Register (channel = 0)"]
     #[inline(always)]
-    pub fn cmr0_waveform_mode_mut(&self) -> &mut CMR0_WAVEFORM_MODE {
-        unsafe { &mut *(((self as *const Self) as *mut u8).add(4usize) as *mut CMR0_WAVEFORM_MODE) }
+    pub fn cmr0_wave_eq_1_mut(&self) -> &mut CMR0_WAVE_EQ_1 {
+        unsafe { &mut *(((self as *const Self) as *mut u8).add(4usize) as *mut CMR0_WAVE_EQ_1) }
     }
     #[doc = "0x04 - Channel Mode Register (channel = 0)"]
     #[inline(always)]
@@ -111,17 +111,13 @@ impl RegisterBlock {
     }
     #[doc = "0x44 - Channel Mode Register (channel = 1)"]
     #[inline(always)]
-    pub fn cmr1_waveform_mode(&self) -> &CMR1_WAVEFORM_MODE {
-        unsafe {
-            &*(((self as *const Self) as *const u8).add(68usize) as *const CMR1_WAVEFORM_MODE)
-        }
+    pub fn cmr1_wave_eq_1(&self) -> &CMR1_WAVE_EQ_1 {
+        unsafe { &*(((self as *const Self) as *const u8).add(68usize) as *const CMR1_WAVE_EQ_1) }
     }
     #[doc = "0x44 - Channel Mode Register (channel = 1)"]
     #[inline(always)]
-    pub fn cmr1_waveform_mode_mut(&self) -> &mut CMR1_WAVEFORM_MODE {
-        unsafe {
-            &mut *(((self as *const Self) as *mut u8).add(68usize) as *mut CMR1_WAVEFORM_MODE)
-        }
+    pub fn cmr1_wave_eq_1_mut(&self) -> &mut CMR1_WAVE_EQ_1 {
+        unsafe { &mut *(((self as *const Self) as *mut u8).add(68usize) as *mut CMR1_WAVE_EQ_1) }
     }
     #[doc = "0x44 - Channel Mode Register (channel = 1)"]
     #[inline(always)]
@@ -135,17 +131,13 @@ impl RegisterBlock {
     }
     #[doc = "0x84 - Channel Mode Register (channel = 2)"]
     #[inline(always)]
-    pub fn cmr2_waveform_mode(&self) -> &CMR2_WAVEFORM_MODE {
-        unsafe {
-            &*(((self as *const Self) as *const u8).add(132usize) as *const CMR2_WAVEFORM_MODE)
-        }
+    pub fn cmr2_wave_eq_1(&self) -> &CMR2_WAVE_EQ_1 {
+        unsafe { &*(((self as *const Self) as *const u8).add(132usize) as *const CMR2_WAVE_EQ_1) }
     }
     #[doc = "0x84 - Channel Mode Register (channel = 2)"]
     #[inline(always)]
-    pub fn cmr2_waveform_mode_mut(&self) -> &mut CMR2_WAVEFORM_MODE {
-        unsafe {
-            &mut *(((self as *const Self) as *mut u8).add(132usize) as *mut CMR2_WAVEFORM_MODE)
-        }
+    pub fn cmr2_wave_eq_1_mut(&self) -> &mut CMR2_WAVE_EQ_1 {
+        unsafe { &mut *(((self as *const Self) as *mut u8).add(132usize) as *mut CMR2_WAVE_EQ_1) }
     }
     #[doc = "0x84 - Channel Mode Register (channel = 2)"]
     #[inline(always)]
@@ -178,17 +170,17 @@ impl crate::Readable for CMR0 {}
 impl crate::Writable for CMR0 {}
 #[doc = "Channel Mode Register (channel = 0)"]
 pub mod cmr0;
-#[doc = "Channel Mode Register (channel = 0)\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cmr0_waveform_mode](cmr0_waveform_mode) module"]
-pub type CMR0_WAVEFORM_MODE = crate::Reg<u32, _CMR0_WAVEFORM_MODE>;
+#[doc = "Channel Mode Register (channel = 0)\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cmr0_wave_eq_1](cmr0_wave_eq_1) module"]
+pub type CMR0_WAVE_EQ_1 = crate::Reg<u32, _CMR0_WAVE_EQ_1>;
 #[allow(missing_docs)]
 #[doc(hidden)]
-pub struct _CMR0_WAVEFORM_MODE;
-#[doc = "`read()` method returns [cmr0_waveform_mode::R](cmr0_waveform_mode::R) reader structure"]
-impl crate::Readable for CMR0_WAVEFORM_MODE {}
-#[doc = "`write(|w| ..)` method takes [cmr0_waveform_mode::W](cmr0_waveform_mode::W) writer structure"]
-impl crate::Writable for CMR0_WAVEFORM_MODE {}
+pub struct _CMR0_WAVE_EQ_1;
+#[doc = "`read()` method returns [cmr0_wave_eq_1::R](cmr0_wave_eq_1::R) reader structure"]
+impl crate::Readable for CMR0_WAVE_EQ_1 {}
+#[doc = "`write(|w| ..)` method takes [cmr0_wave_eq_1::W](cmr0_wave_eq_1::W) writer structure"]
+impl crate::Writable for CMR0_WAVE_EQ_1 {}
 #[doc = "Channel Mode Register (channel = 0)"]
-pub mod cmr0_waveform_mode;
+pub mod cmr0_wave_eq_1;
 #[doc = "Stepper Motor Mode Register (channel = 0)\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [smmr0](smmr0) module"]
 pub type SMMR0 = crate::Reg<u32, _SMMR0>;
 #[allow(missing_docs)]
@@ -298,17 +290,17 @@ impl crate::Readable for CMR1 {}
 impl crate::Writable for CMR1 {}
 #[doc = "Channel Mode Register (channel = 1)"]
 pub mod cmr1;
-#[doc = "Channel Mode Register (channel = 1)\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cmr1_waveform_mode](cmr1_waveform_mode) module"]
-pub type CMR1_WAVEFORM_MODE = crate::Reg<u32, _CMR1_WAVEFORM_MODE>;
+#[doc = "Channel Mode Register (channel = 1)\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cmr1_wave_eq_1](cmr1_wave_eq_1) module"]
+pub type CMR1_WAVE_EQ_1 = crate::Reg<u32, _CMR1_WAVE_EQ_1>;
 #[allow(missing_docs)]
 #[doc(hidden)]
-pub struct _CMR1_WAVEFORM_MODE;
-#[doc = "`read()` method returns [cmr1_waveform_mode::R](cmr1_waveform_mode::R) reader structure"]
-impl crate::Readable for CMR1_WAVEFORM_MODE {}
-#[doc = "`write(|w| ..)` method takes [cmr1_waveform_mode::W](cmr1_waveform_mode::W) writer structure"]
-impl crate::Writable for CMR1_WAVEFORM_MODE {}
+pub struct _CMR1_WAVE_EQ_1;
+#[doc = "`read()` method returns [cmr1_wave_eq_1::R](cmr1_wave_eq_1::R) reader structure"]
+impl crate::Readable for CMR1_WAVE_EQ_1 {}
+#[doc = "`write(|w| ..)` method takes [cmr1_wave_eq_1::W](cmr1_wave_eq_1::W) writer structure"]
+impl crate::Writable for CMR1_WAVE_EQ_1 {}
 #[doc = "Channel Mode Register (channel = 1)"]
-pub mod cmr1_waveform_mode;
+pub mod cmr1_wave_eq_1;
 #[doc = "Stepper Motor Mode Register (channel = 1)\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [smmr1](smmr1) module"]
 pub type SMMR1 = crate::Reg<u32, _SMMR1>;
 #[allow(missing_docs)]
@@ -418,17 +410,17 @@ impl crate::Readable for CMR2 {}
 impl crate::Writable for CMR2 {}
 #[doc = "Channel Mode Register (channel = 2)"]
 pub mod cmr2;
-#[doc = "Channel Mode Register (channel = 2)\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cmr2_waveform_mode](cmr2_waveform_mode) module"]
-pub type CMR2_WAVEFORM_MODE = crate::Reg<u32, _CMR2_WAVEFORM_MODE>;
+#[doc = "Channel Mode Register (channel = 2)\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cmr2_wave_eq_1](cmr2_wave_eq_1) module"]
+pub type CMR2_WAVE_EQ_1 = crate::Reg<u32, _CMR2_WAVE_EQ_1>;
 #[allow(missing_docs)]
 #[doc(hidden)]
-pub struct _CMR2_WAVEFORM_MODE;
-#[doc = "`read()` method returns [cmr2_waveform_mode::R](cmr2_waveform_mode::R) reader structure"]
-impl crate::Readable for CMR2_WAVEFORM_MODE {}
-#[doc = "`write(|w| ..)` method takes [cmr2_waveform_mode::W](cmr2_waveform_mode::W) writer structure"]
-impl crate::Writable for CMR2_WAVEFORM_MODE {}
+pub struct _CMR2_WAVE_EQ_1;
+#[doc = "`read()` method returns [cmr2_wave_eq_1::R](cmr2_wave_eq_1::R) reader structure"]
+impl crate::Readable for CMR2_WAVE_EQ_1 {}
+#[doc = "`write(|w| ..)` method takes [cmr2_wave_eq_1::W](cmr2_wave_eq_1::W) writer structure"]
+impl crate::Writable for CMR2_WAVE_EQ_1 {}
 #[doc = "Channel Mode Register (channel = 2)"]
-pub mod cmr2_waveform_mode;
+pub mod cmr2_wave_eq_1;
 #[doc = "Stepper Motor Mode Register (channel = 2)\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [smmr2](smmr2) module"]
 pub type SMMR2 = crate::Reg<u32, _SMMR2>;
 #[allow(missing_docs)]

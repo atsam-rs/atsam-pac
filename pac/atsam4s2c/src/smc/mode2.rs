@@ -293,12 +293,12 @@ impl<'a> PS_W<'a> {
     }
 }
 impl R {
-    #[doc = "Bit 0 - Read Mode"]
+    #[doc = "Bit 0"]
     #[inline(always)]
     pub fn read_mode(&self) -> READ_MODE_R {
         READ_MODE_R::new((self.bits & 0x01) != 0)
     }
-    #[doc = "Bit 1 - Write Mode"]
+    #[doc = "Bit 1"]
     #[inline(always)]
     pub fn write_mode(&self) -> WRITE_MODE_R {
         WRITE_MODE_R::new(((self.bits >> 1) & 0x01) != 0)
@@ -330,12 +330,12 @@ impl R {
     }
 }
 impl W {
-    #[doc = "Bit 0 - Read Mode"]
+    #[doc = "Bit 0"]
     #[inline(always)]
     pub fn read_mode(&mut self) -> READ_MODE_W {
         READ_MODE_W { w: self }
     }
-    #[doc = "Bit 1 - Write Mode"]
+    #[doc = "Bit 1"]
     #[inline(always)]
     pub fn write_mode(&mut self) -> WRITE_MODE_W {
         WRITE_MODE_W { w: self }

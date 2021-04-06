@@ -32,7 +32,9 @@ pub struct RegisterBlock {
     pub wpmr: WPMR,
     #[doc = "0xe8 - Write Protection Status Register"]
     pub wpsr: WPSR,
-    _reserved17: [u8; 20usize],
+    _reserved17: [u8; 16usize],
+    #[doc = "0xfc - Version Register"]
+    pub version: VERSION,
     #[doc = "0x100 - Receive Pointer Register"]
     pub rpr: RPR,
     #[doc = "0x104 - Receive Counter Register"]
@@ -194,7 +196,7 @@ pub struct _CR_SPI_MODE;
 impl crate::Writable for CR_SPI_MODE {}
 #[doc = "Control Register"]
 pub mod cr_spi_mode;
-#[doc = "Mode Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [mr](mr) module"]
+#[doc = "Mode Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [mr](mr) module"]
 pub type MR = crate::Reg<u32, _MR>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -205,7 +207,7 @@ impl crate::Readable for MR {}
 impl crate::Writable for MR {}
 #[doc = "Mode Register"]
 pub mod mr;
-#[doc = "Mode Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [mr_spi_mode](mr_spi_mode) module"]
+#[doc = "Mode Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [mr_spi_mode](mr_spi_mode) module"]
 pub type MR_SPI_MODE = crate::Reg<u32, _MR_SPI_MODE>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -401,6 +403,15 @@ pub struct _WPSR;
 impl crate::Readable for WPSR {}
 #[doc = "Write Protection Status Register"]
 pub mod wpsr;
+#[doc = "Version Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [version](version) module"]
+pub type VERSION = crate::Reg<u32, _VERSION>;
+#[allow(missing_docs)]
+#[doc(hidden)]
+pub struct _VERSION;
+#[doc = "`read()` method returns [version::R](version::R) reader structure"]
+impl crate::Readable for VERSION {}
+#[doc = "Version Register"]
+pub mod version;
 #[doc = "Receive Pointer Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [rpr](rpr) module"]
 pub type RPR = crate::Reg<u32, _RPR>;
 #[allow(missing_docs)]
@@ -489,7 +500,7 @@ impl crate::Readable for TNCR {}
 impl crate::Writable for TNCR {}
 #[doc = "Transmit Next Counter Register"]
 pub mod tncr;
-#[doc = "Transfer Control Register\n\nThis register you can [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ptcr](ptcr) module"]
+#[doc = "Transfer Control Register\n\nThis register you can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ptcr](ptcr) module"]
 pub type PTCR = crate::Reg<u32, _PTCR>;
 #[allow(missing_docs)]
 #[doc(hidden)]

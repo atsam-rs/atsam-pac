@@ -1,6 +1,6 @@
-#[doc = "Reader of register TIDM%s"]
+#[doc = "Reader of register TIDM[%s]"]
 pub type R = crate::R<u32, super::TIDM>;
-#[doc = "Writer for register TIDM%s"]
+#[doc = "Writer for register TIDM[%s]"]
 pub type W = crate::W<u32, super::TIDM>;
 #[doc = "Reader of field `TID`"]
 pub type TID_R = crate::R<u16, u16>;

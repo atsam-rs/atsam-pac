@@ -22,11 +22,34 @@ impl<'a> WDRSTT_W<'a> {
         self.w
     }
 }
+#[doc = "Password."]
+#[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
+pub enum KEY_AW {
+    #[doc = "165: Writing any other value in this field aborts the write operation."]
+    PASSWD = 165,
+}
+impl From<KEY_AW> for u8 {
+    #[inline(always)]
+    fn from(variant: KEY_AW) -> Self {
+        variant as _
+    }
+}
 #[doc = "Write proxy for field `KEY`"]
 pub struct KEY_W<'a> {
     w: &'a mut W,
 }
 impl<'a> KEY_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: KEY_AW) -> &'a mut W {
+        unsafe { self.bits(variant.into()) }
+    }
+    #[doc = "Writing any other value in this field aborts the write operation."]
+    #[inline(always)]
+    pub fn passwd(self) -> &'a mut W {
+        self.variant(KEY_AW::PASSWD)
+    }
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
@@ -40,7 +63,7 @@ impl W {
     pub fn wdrstt(&mut self) -> WDRSTT_W {
         WDRSTT_W { w: self }
     }
-    #[doc = "Bits 24:31 - Password"]
+    #[doc = "Bits 24:31 - Password."]
     #[inline(always)]
     pub fn key(&mut self) -> KEY_W {
         KEY_W { w: self }

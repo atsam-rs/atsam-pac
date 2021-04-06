@@ -67,17 +67,17 @@ impl<'a> QERR_W<'a> {
     }
 }
 impl W {
-    #[doc = "Bit 0 - InDeX"]
+    #[doc = "Bit 0 - Index"]
     #[inline(always)]
     pub fn idx(&mut self) -> IDX_W {
         IDX_W { w: self }
     }
-    #[doc = "Bit 1 - DIRection CHanGe"]
+    #[doc = "Bit 1 - Direction Change"]
     #[inline(always)]
     pub fn dirchg(&mut self) -> DIRCHG_W {
         DIRCHG_W { w: self }
     }
-    #[doc = "Bit 2 - Quadrature ERRor"]
+    #[doc = "Bit 2 - Quadrature Error"]
     #[inline(always)]
     pub fn qerr(&mut self) -> QERR_W {
         QERR_W { w: self }

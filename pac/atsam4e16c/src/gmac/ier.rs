@@ -549,7 +549,7 @@ impl W {
     pub fn txubr(&mut self) -> TXUBR_W {
         TXUBR_W { w: self }
     }
-    #[doc = "Bit 4 - Transmit Under Run"]
+    #[doc = "Bit 4 - Transmit Underrun"]
     #[inline(always)]
     pub fn tur(&mut self) -> TUR_W {
         TUR_W { w: self }
@@ -559,7 +559,7 @@ impl W {
     pub fn rlex(&mut self) -> RLEX_W {
         RLEX_W { w: self }
     }
-    #[doc = "Bit 6 - Transmit Frame Corruption due to AHB error"]
+    #[doc = "Bit 6 - Transmit Frame Corruption Due to AHB Error"]
     #[inline(always)]
     pub fn tfc(&mut self) -> TFC_W {
         TFC_W { w: self }

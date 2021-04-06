@@ -10,30 +10,6 @@ impl crate::ResetValue for super::NCR {
         0
     }
 }
-#[doc = "Reader of field `LB`"]
-pub type LB_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `LB`"]
-pub struct LB_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> LB_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
-        self.w
-    }
-}
 #[doc = "Reader of field `LBL`"]
 pub type LBL_R = crate::R<bool, bool>;
 #[doc = "Write proxy for field `LBL`"]
@@ -322,30 +298,6 @@ impl<'a> TXZQPF_W<'a> {
         self.w
     }
 }
-#[doc = "Reader of field `RDS`"]
-pub type RDS_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `RDS`"]
-pub struct RDS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RDS_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 14)) | (((value as u32) & 0x01) << 14);
-        self.w
-    }
-}
 #[doc = "Reader of field `SRTSM`"]
 pub type SRTSM_R = crate::R<bool, bool>;
 #[doc = "Write proxy for field `SRTSM`"]
@@ -443,11 +395,6 @@ impl<'a> FNP_W<'a> {
     }
 }
 impl R {
-    #[doc = "Bit 0 - Loop Back"]
-    #[inline(always)]
-    pub fn lb(&self) -> LB_R {
-        LB_R::new((self.bits & 0x01) != 0)
-    }
     #[doc = "Bit 1 - Loop Back Local"]
     #[inline(always)]
     pub fn lbl(&self) -> LBL_R {
@@ -508,11 +455,6 @@ impl R {
     pub fn txzqpf(&self) -> TXZQPF_R {
         TXZQPF_R::new(((self.bits >> 12) & 0x01) != 0)
     }
-    #[doc = "Bit 14 - Read Snapshot"]
-    #[inline(always)]
-    pub fn rds(&self) -> RDS_R {
-        RDS_R::new(((self.bits >> 14) & 0x01) != 0)
-    }
     #[doc = "Bit 15 - Store Receive Time Stamp to Memory"]
     #[inline(always)]
     pub fn srtsm(&self) -> SRTSM_R {
@@ -535,11 +477,6 @@ impl R {
     }
 }
 impl W {
-    #[doc = "Bit 0 - Loop Back"]
-    #[inline(always)]
-    pub fn lb(&mut self) -> LB_W {
-        LB_W { w: self }
-    }
     #[doc = "Bit 1 - Loop Back Local"]
     #[inline(always)]
     pub fn lbl(&mut self) -> LBL_W {
@@ -599,11 +536,6 @@ impl W {
     #[inline(always)]
     pub fn txzqpf(&mut self) -> TXZQPF_W {
         TXZQPF_W { w: self }
-    }
-    #[doc = "Bit 14 - Read Snapshot"]
-    #[inline(always)]
-    pub fn rds(&mut self) -> RDS_W {
-        RDS_W { w: self }
     }
     #[doc = "Bit 15 - Store Receive Time Stamp to Memory"]
     #[inline(always)]

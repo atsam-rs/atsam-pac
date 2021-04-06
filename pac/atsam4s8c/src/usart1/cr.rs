@@ -442,7 +442,7 @@ impl W {
     pub fn stpbrk(&mut self) -> STPBRK_W {
         STPBRK_W { w: self }
     }
-    #[doc = "Bit 11 - Clear TIMEOUT Flag and Start Time-out After Next Character Received"]
+    #[doc = "Bit 11 - Start Time-out"]
     #[inline(always)]
     pub fn sttto(&mut self) -> STTTO_W {
         STTTO_W { w: self }
@@ -462,7 +462,7 @@ impl W {
     pub fn rstnack(&mut self) -> RSTNACK_W {
         RSTNACK_W { w: self }
     }
-    #[doc = "Bit 15 - Start Time-out Immediately"]
+    #[doc = "Bit 15 - Rearm Time-out"]
     #[inline(always)]
     pub fn retto(&mut self) -> RETTO_W {
         RETTO_W { w: self }
@@ -477,12 +477,12 @@ impl W {
     pub fn dtrdis(&mut self) -> DTRDIS_W {
         DTRDIS_W { w: self }
     }
-    #[doc = "Bit 18 - Request to Send Pin Control"]
+    #[doc = "Bit 18 - Request to Send Enable"]
     #[inline(always)]
     pub fn rtsen(&mut self) -> RTSEN_W {
         RTSEN_W { w: self }
     }
-    #[doc = "Bit 19 - Request to Send Pin Control"]
+    #[doc = "Bit 19 - Request to Send Disable"]
     #[inline(always)]
     pub fn rtsdis(&mut self) -> RTSDIS_W {
         RTSDIS_W { w: self }

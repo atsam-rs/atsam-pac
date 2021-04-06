@@ -6,7 +6,7 @@ pub type W = crate::W<u32, super::MR_SPI_MODE>;
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum USART_MODE_A {
-    #[doc = "14: SPI Master"]
+    #[doc = "14: SPI master"]
     SPI_MASTER = 14,
     #[doc = "15: SPI Slave"]
     SPI_SLAVE = 15,
@@ -51,7 +51,7 @@ impl<'a> USART_MODE_W<'a> {
     pub fn variant(self, variant: USART_MODE_A) -> &'a mut W {
         unsafe { self.bits(variant.into()) }
     }
-    #[doc = "SPI Master"]
+    #[doc = "SPI master"]
     #[inline(always)]
     pub fn spi_master(self) -> &'a mut W {
         self.variant(USART_MODE_A::SPI_MASTER)
@@ -72,9 +72,9 @@ impl<'a> USART_MODE_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum USCLKS_A {
-    #[doc = "0: Master Clock MCK is selected"]
+    #[doc = "0: Peripheral clock is selected"]
     MCK = 0,
-    #[doc = "1: Internal Clock Divided MCK/DIV (DIV=8) is selected"]
+    #[doc = "1: Peripheral clock divided (DIV=8) is selected"]
     DIV = 1,
     #[doc = "3: Serial Clock SLK is selected"]
     SCK = 3,
@@ -125,12 +125,12 @@ impl<'a> USCLKS_W<'a> {
     pub fn variant(self, variant: USCLKS_A) -> &'a mut W {
         unsafe { self.bits(variant.into()) }
     }
-    #[doc = "Master Clock MCK is selected"]
+    #[doc = "Peripheral clock is selected"]
     #[inline(always)]
     pub fn mck(self) -> &'a mut W {
         self.variant(USCLKS_A::MCK)
     }
-    #[doc = "Internal Clock Divided MCK/DIV (DIV=8) is selected"]
+    #[doc = "Peripheral clock divided (DIV=8) is selected"]
     #[inline(always)]
     pub fn div(self) -> &'a mut W {
         self.variant(USCLKS_A::DIV)
@@ -147,7 +147,7 @@ impl<'a> USCLKS_W<'a> {
         self.w
     }
 }
-#[doc = "Character Length."]
+#[doc = "Character Length"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum CHRL_A {
@@ -283,7 +283,7 @@ impl R {
     pub fn usclks(&self) -> USCLKS_R {
         USCLKS_R::new(((self.bits >> 4) & 0x03) as u8)
     }
-    #[doc = "Bits 6:7 - Character Length."]
+    #[doc = "Bits 6:7 - Character Length"]
     #[inline(always)]
     pub fn chrl(&self) -> CHRL_R {
         CHRL_R::new(((self.bits >> 6) & 0x03) as u8)
@@ -315,7 +315,7 @@ impl W {
     pub fn usclks(&mut self) -> USCLKS_W {
         USCLKS_W { w: self }
     }
-    #[doc = "Bits 6:7 - Character Length."]
+    #[doc = "Bits 6:7 - Character Length"]
     #[inline(always)]
     pub fn chrl(&mut self) -> CHRL_W {
         CHRL_W { w: self }

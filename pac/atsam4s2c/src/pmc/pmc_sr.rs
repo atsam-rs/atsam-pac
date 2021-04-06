@@ -27,7 +27,7 @@ pub type CFDS_R = crate::R<bool, bool>;
 #[doc = "Reader of field `FOS`"]
 pub type FOS_R = crate::R<bool, bool>;
 impl R {
-    #[doc = "Bit 0 - Main Crystal Oscillator Status"]
+    #[doc = "Bit 0 - Main XTAL Oscillator Status"]
     #[inline(always)]
     pub fn moscxts(&self) -> MOSCXTS_R {
         MOSCXTS_R::new((self.bits & 0x01) != 0)

@@ -1,5 +1,49 @@
 #[doc = "Writer for register PMC_PCER0"]
 pub type W = crate::W<u32, super::PMC_PCER0>;
+#[doc = "Write proxy for field `PID7`"]
+pub struct PID7_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> PID7_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 7)) | (((value as u32) & 0x01) << 7);
+        self.w
+    }
+}
+#[doc = "Write proxy for field `PID8`"]
+pub struct PID8_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> PID8_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 8)) | (((value as u32) & 0x01) << 8);
+        self.w
+    }
+}
 #[doc = "Write proxy for field `PID9`"]
 pub struct PID9_W<'a> {
     w: &'a mut W,
@@ -507,6 +551,16 @@ impl<'a> PID31_W<'a> {
     }
 }
 impl W {
+    #[doc = "Bit 7 - Peripheral Clock 7 Enable"]
+    #[inline(always)]
+    pub fn pid7(&mut self) -> PID7_W {
+        PID7_W { w: self }
+    }
+    #[doc = "Bit 8 - Peripheral Clock 8 Enable"]
+    #[inline(always)]
+    pub fn pid8(&mut self) -> PID8_W {
+        PID8_W { w: self }
+    }
     #[doc = "Bit 9 - Peripheral Clock 9 Enable"]
     #[inline(always)]
     pub fn pid9(&mut self) -> PID9_W {

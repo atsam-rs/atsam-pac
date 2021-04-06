@@ -1,6 +1,6 @@
-#[doc = "Reader of register ELMR%s"]
+#[doc = "Reader of register ELMR[%s]"]
 pub type R = crate::R<u32, super::ELMR>;
-#[doc = "Writer for register ELMR%s"]
+#[doc = "Writer for register ELMR[%s]"]
 pub type W = crate::W<u32, super::ELMR>;
 #[doc = "Reader of field `CSEL0`"]
 pub type CSEL0_R = crate::R<bool, bool>;

@@ -434,12 +434,12 @@ impl W {
     pub fn rxbrk(&mut self) -> RXBRK_W {
         RXBRK_W { w: self }
     }
-    #[doc = "Bit 3 - End of Receive Buffer Transfer Interrupt Disable (available in all USART modes of operation)"]
+    #[doc = "Bit 3 - End of Receive Transfer Interrupt Disable (available in all USART modes of operation)"]
     #[inline(always)]
     pub fn endrx(&mut self) -> ENDRX_W {
         ENDRX_W { w: self }
     }
-    #[doc = "Bit 4 - End of Transmit Buffer Interrupt Disable (available in all USART modes of operation)"]
+    #[doc = "Bit 4 - End of Transmit Interrupt Disable (available in all USART modes of operation)"]
     #[inline(always)]
     pub fn endtx(&mut self) -> ENDTX_W {
         ENDTX_W { w: self }
@@ -474,17 +474,17 @@ impl W {
     pub fn iter(&mut self) -> ITER_W {
         ITER_W { w: self }
     }
-    #[doc = "Bit 11 - Transmit Buffer Empty Interrupt Disable (available in all USART modes of operation)"]
+    #[doc = "Bit 11 - Buffer Empty Interrupt Disable (available in all USART modes of operation)"]
     #[inline(always)]
     pub fn txbufe(&mut self) -> TXBUFE_W {
         TXBUFE_W { w: self }
     }
-    #[doc = "Bit 12 - Receive Buffer Full Interrupt Disable (available in all USART modes of operation)"]
+    #[doc = "Bit 12 - Buffer Full Interrupt Disable (available in all USART modes of operation)"]
     #[inline(always)]
     pub fn rxbuff(&mut self) -> RXBUFF_W {
         RXBUFF_W { w: self }
     }
-    #[doc = "Bit 13 - Non Acknowledge Interrupt Disable"]
+    #[doc = "Bit 13 - Non AcknowledgeInterrupt Disable"]
     #[inline(always)]
     pub fn nack(&mut self) -> NACK_W {
         NACK_W { w: self }

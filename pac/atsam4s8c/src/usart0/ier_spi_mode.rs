@@ -209,12 +209,12 @@ impl W {
     pub fn txrdy(&mut self) -> TXRDY_W {
         TXRDY_W { w: self }
     }
-    #[doc = "Bit 3 - End of Receive Buffer Interrupt Enable"]
+    #[doc = "Bit 3"]
     #[inline(always)]
     pub fn endrx(&mut self) -> ENDRX_W {
         ENDRX_W { w: self }
     }
-    #[doc = "Bit 4 - End of Transmit Buffer Interrupt Enable"]
+    #[doc = "Bit 4"]
     #[inline(always)]
     pub fn endtx(&mut self) -> ENDTX_W {
         ENDTX_W { w: self }
@@ -234,12 +234,12 @@ impl W {
     pub fn unre(&mut self) -> UNRE_W {
         UNRE_W { w: self }
     }
-    #[doc = "Bit 11 - Transmit Buffer Empty Interrupt Enable"]
+    #[doc = "Bit 11"]
     #[inline(always)]
     pub fn txbufe(&mut self) -> TXBUFE_W {
         TXBUFE_W { w: self }
     }
-    #[doc = "Bit 12 - Receive Buffer Full Interrupt Enable"]
+    #[doc = "Bit 12"]
     #[inline(always)]
     pub fn rxbuff(&mut self) -> RXBUFF_W {
         RXBUFF_W { w: self }

@@ -16,11 +16,11 @@ impl<'a> CMDNB_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum RSPTYP_AW {
-    #[doc = "0: No response."]
+    #[doc = "0: No response"]
     NORESP = 0,
-    #[doc = "1: 48-bit response."]
+    #[doc = "1: 48-bit response"]
     _48_BIT = 1,
-    #[doc = "2: 136-bit response."]
+    #[doc = "2: 136-bit response"]
     _136_BIT = 2,
     #[doc = "3: R1b response type"]
     R1B = 3,
@@ -43,17 +43,17 @@ impl<'a> RSPTYP_W<'a> {
             self.bits(variant.into())
         }
     }
-    #[doc = "No response."]
+    #[doc = "No response"]
     #[inline(always)]
     pub fn noresp(self) -> &'a mut W {
         self.variant(RSPTYP_AW::NORESP)
     }
-    #[doc = "48-bit response."]
+    #[doc = "48-bit response"]
     #[inline(always)]
     pub fn _48_bit(self) -> &'a mut W {
         self.variant(RSPTYP_AW::_48_BIT)
     }
-    #[doc = "136-bit response."]
+    #[doc = "136-bit response"]
     #[inline(always)]
     pub fn _136_bit(self) -> &'a mut W {
         self.variant(RSPTYP_AW::_136_BIT)
@@ -602,7 +602,7 @@ impl W {
     pub fn atacs(&mut self) -> ATACS_W {
         ATACS_W { w: self }
     }
-    #[doc = "Bit 27 - Boot Operation Acknowledge."]
+    #[doc = "Bit 27 - Boot Operation Acknowledge"]
     #[inline(always)]
     pub fn boot_ack(&mut self) -> BOOT_ACK_W {
         BOOT_ACK_W { w: self }

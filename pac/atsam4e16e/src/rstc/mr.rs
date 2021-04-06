@@ -72,13 +72,52 @@ impl<'a> ERSTL_W<'a> {
         self.w
     }
 }
+#[doc = "Write Access Password\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
+pub enum KEY_A {
+    #[doc = "165: Writing any other value in this field aborts the write operation.Always reads as 0."]
+    PASSWD = 165,
+}
+impl From<KEY_A> for u8 {
+    #[inline(always)]
+    fn from(variant: KEY_A) -> Self {
+        variant as _
+    }
+}
 #[doc = "Reader of field `KEY`"]
-pub type KEY_R = crate::R<u8, u8>;
+pub type KEY_R = crate::R<u8, KEY_A>;
+impl KEY_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, KEY_A> {
+        use crate::Variant::*;
+        match self.bits {
+            165 => Val(KEY_A::PASSWD),
+            i => Res(i),
+        }
+    }
+    #[doc = "Checks if the value of the field is `PASSWD`"]
+    #[inline(always)]
+    pub fn is_passwd(&self) -> bool {
+        *self == KEY_A::PASSWD
+    }
+}
 #[doc = "Write proxy for field `KEY`"]
 pub struct KEY_W<'a> {
     w: &'a mut W,
 }
 impl<'a> KEY_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: KEY_A) -> &'a mut W {
+        unsafe { self.bits(variant.into()) }
+    }
+    #[doc = "Writing any other value in this field aborts the write operation.Always reads as 0."]
+    #[inline(always)]
+    pub fn passwd(self) -> &'a mut W {
+        self.variant(KEY_A::PASSWD)
+    }
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
@@ -102,7 +141,7 @@ impl R {
     pub fn erstl(&self) -> ERSTL_R {
         ERSTL_R::new(((self.bits >> 8) & 0x0f) as u8)
     }
-    #[doc = "Bits 24:31 - Password"]
+    #[doc = "Bits 24:31 - Write Access Password"]
     #[inline(always)]
     pub fn key(&self) -> KEY_R {
         KEY_R::new(((self.bits >> 24) & 0xff) as u8)
@@ -124,7 +163,7 @@ impl W {
     pub fn erstl(&mut self) -> ERSTL_W {
         ERSTL_W { w: self }
     }
-    #[doc = "Bits 24:31 - Password"]
+    #[doc = "Bits 24:31 - Write Access Password"]
     #[inline(always)]
     pub fn key(&mut self) -> KEY_W {
         KEY_W { w: self }

@@ -25,14 +25,14 @@ impl<'a> IBCTL_W<'a> {
     }
 }
 impl R {
-    #[doc = "Bits 8:9 - AFE Bias Current Control"]
+    #[doc = "Bits 8:9 - AFEC Bias Current Control"]
     #[inline(always)]
     pub fn ibctl(&self) -> IBCTL_R {
         IBCTL_R::new(((self.bits >> 8) & 0x03) as u8)
     }
 }
 impl W {
-    #[doc = "Bits 8:9 - AFE Bias Current Control"]
+    #[doc = "Bits 8:9 - AFEC Bias Current Control"]
     #[inline(always)]
     pub fn ibctl(&mut self) -> IBCTL_W {
         IBCTL_W { w: self }
