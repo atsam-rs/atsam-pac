@@ -4,3 +4,4 @@
 
 # SVD Versions (source location: http://packs.download.atmel.com)
 ATSAM4E - 1.1.57 (2016-09-15) with custom patches.
+ATSAM4S - 1.0.56 (2016-09-15)

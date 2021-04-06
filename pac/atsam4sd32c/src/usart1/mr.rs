@@ -566,11 +566,11 @@ impl<'a> NBSTOP_W<'a> {
 pub enum CHMODE_A {
     #[doc = "0: Normal mode"]
     NORMAL = 0,
-    #[doc = "1: Automatic Echo. Receiver input is connected to the TXD pin"]
+    #[doc = "1: Automatic Echo. Receiver input is connected to the TXD pin."]
     AUTOMATIC = 1,
-    #[doc = "2: Local Loopback. Transmitter output is connected to the Receiver Input"]
+    #[doc = "2: Local Loopback. Transmitter output is connected to the Receiver Input."]
     LOCAL_LOOPBACK = 2,
-    #[doc = "3: Remote Loopback. RXD pin is internally connected to the TXD pin"]
+    #[doc = "3: Remote Loopback. RXD pin is internally connected to the TXD pin."]
     REMOTE_LOOPBACK = 3,
 }
 impl From<CHMODE_A> for u8 {
@@ -631,17 +631,17 @@ impl<'a> CHMODE_W<'a> {
     pub fn normal(self) -> &'a mut W {
         self.variant(CHMODE_A::NORMAL)
     }
-    #[doc = "Automatic Echo. Receiver input is connected to the TXD pin"]
+    #[doc = "Automatic Echo. Receiver input is connected to the TXD pin."]
     #[inline(always)]
     pub fn automatic(self) -> &'a mut W {
         self.variant(CHMODE_A::AUTOMATIC)
     }
-    #[doc = "Local Loopback. Transmitter output is connected to the Receiver Input"]
+    #[doc = "Local Loopback. Transmitter output is connected to the Receiver Input."]
     #[inline(always)]
     pub fn local_loopback(self) -> &'a mut W {
         self.variant(CHMODE_A::LOCAL_LOOPBACK)
     }
-    #[doc = "Remote Loopback. RXD pin is internally connected to the TXD pin"]
+    #[doc = "Remote Loopback. RXD pin is internally connected to the TXD pin."]
     #[inline(always)]
     pub fn remote_loopback(self) -> &'a mut W {
         self.variant(CHMODE_A::REMOTE_LOOPBACK)

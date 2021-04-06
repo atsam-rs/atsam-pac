@@ -850,7 +850,7 @@ impl Deref for RTC {
 }
 #[doc = "Real-time Clock"]
 pub mod rtc;
-#[doc = "General Purpose Backup Register"]
+#[doc = "General Purpose Backup Registers"]
 pub struct GPBR {
     _marker: PhantomData<*const ()>,
 }
@@ -869,7 +869,7 @@ impl Deref for GPBR {
         unsafe { &*GPBR::ptr() }
     }
 }
-#[doc = "General Purpose Backup Register"]
+#[doc = "General Purpose Backup Registers"]
 pub mod gpbr;
 #[no_mangle]
 static mut DEVICE_PERIPHERALS: bool = false;

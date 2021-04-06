@@ -249,7 +249,7 @@
               <enumeratedValues>
                 <enumeratedValue>
                   <name>SLOTA</name>
-                  <description>Slot A is selected</description>
+                  <description>Slot A is selected.</description>
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
@@ -364,42 +364,42 @@
               <enumeratedValues>
                 <enumeratedValue>
                   <name>STD</name>
-                  <description>Not a special CMD</description>
+                  <description>Not a special CMD.</description>
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>INIT</name>
-                  <description>Initialization CMD: 74 clock cycles for initialization sequence</description>
+                  <description>Initialization CMD: 74 clock cycles for initialization sequence.</description>
                   <value>0x1</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>SYNC</name>
-                  <description>Synchronized CMD: Wait for the end of the current data block transfer before sending the pending command</description>
+                  <description>Synchronized CMD: Wait for the end of the current data block transfer before sending the pending command.</description>
                   <value>0x2</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>CE_ATA</name>
-                  <description>CE-ATA Completion Signal disable Command. The host cancels the ability for the device to return a command completion signal on the command line</description>
+                  <description>CE-ATA Completion Signal disable Command. The host cancels the ability for the device to return a command completion signal on the command line.</description>
                   <value>0x3</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>IT_CMD</name>
-                  <description>Interrupt command: Corresponds to the Interrupt Mode (CMD40)</description>
+                  <description>Interrupt command: Corresponds to the Interrupt Mode (CMD40).</description>
                   <value>0x4</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>IT_RESP</name>
-                  <description>Interrupt response: Corresponds to the Interrupt Mode (CMD40)</description>
+                  <description>Interrupt response: Corresponds to the Interrupt Mode (CMD40).</description>
                   <value>0x5</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>BOR</name>
-                  <description>Boot Operation Request. Start a boot operation mode, the host processor can read boot data from the MMC device directly</description>
+                  <description>Boot Operation Request. Start a boot operation mode, the host processor can read boot data from the MMC device directly.</description>
                   <value>0x6</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>EBO</name>
-                  <description>End Boot Operation. This command allows the host processor to terminate the boot operation mode</description>
+                  <description>End Boot Operation. This command allows the host processor to terminate the boot operation mode.</description>
                   <value>0x7</value>
                 </enumeratedValue>
               </enumeratedValues>
@@ -413,12 +413,12 @@
               <enumeratedValues>
                 <enumeratedValue>
                   <name>PUSHPULL</name>
-                  <description>Push pull command</description>
+                  <description>Push pull command.</description>
                   <value>0</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>OPENDRAIN</name>
-                  <description>Open drain command</description>
+                  <description>Open drain command.</description>
                   <value>1</value>
                 </enumeratedValue>
               </enumeratedValues>
@@ -432,12 +432,12 @@
               <enumeratedValues>
                 <enumeratedValue>
                   <name>5</name>
-                  <description>5-cycle max latency</description>
+                  <description>5-cycle max latency.</description>
                   <value>0</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>64</name>
-                  <description>64-cycle max latency</description>
+                  <description>64-cycle max latency.</description>
                   <value>1</value>
                 </enumeratedValue>
               </enumeratedValues>
@@ -475,12 +475,12 @@
               <enumeratedValues>
                 <enumeratedValue>
                   <name>WRITE</name>
-                  <description>Write</description>
+                  <description>Write.</description>
                   <value>0</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>READ</name>
-                  <description>Read</description>
+                  <description>Read.</description>
                   <value>1</value>
                 </enumeratedValue>
               </enumeratedValues>
@@ -552,12 +552,12 @@
               <enumeratedValues>
                 <enumeratedValue>
                   <name>NORMAL</name>
-                  <description>Normal operation mode</description>
+                  <description>Normal operation mode.</description>
                   <value>0</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>COMPLETION</name>
-                  <description>This bit indicates that a completion signal is expected within a programmed amount of time (HSMCI_CSTOR)</description>
+                  <description>This bit indicates that a completion signal is expected within a programmed amount of time (HSMCI_CSTOR).</description>
                   <value>1</value>
                 </enumeratedValue>
               </enumeratedValues>
@@ -1568,7 +1568,7 @@
               <enumeratedValues>
                 <enumeratedValue>
                   <name>PASSWD</name>
-                  <description>Writing any other value in this field aborts the write operation of the WPEN bit.Always reads as 0</description>
+                  <description>Writing any other value in this field aborts the write operation of the WPEN bit.Always reads as 0.</description>
                   <value>0x4D4349</value>
                 </enumeratedValue>
               </enumeratedValues>
@@ -1989,7 +1989,7 @@
               <enumeratedValues>
                 <enumeratedValue>
                   <name>CONTINUOUS</name>
-                  <description>Continuous, as soon as the receiver is enabled, and immediately after the end of transfer of the previous data</description>
+                  <description>Continuous, as soon as the receiver is enabled, and immediately after the end of transfer of the previous data.</description>
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
@@ -2949,7 +2949,7 @@
               <enumeratedValues>
                 <enumeratedValue>
                   <name>PASSWD</name>
-                  <description>Writing any other value in this field aborts the write operation of the WPEN bit.Always reads as 0</description>
+                  <description>Writing any other value in this field aborts the write operation of the WPEN bit.Always reads as 0.</description>
                   <value>0x535343</value>
                 </enumeratedValue>
               </enumeratedValues>
@@ -3844,7 +3844,7 @@
               <enumeratedValues>
                 <enumeratedValue>
                   <name>PASSWD</name>
-                  <description>Writing any other value in this field aborts the write operation of the WPEN bit.Always reads as 0</description>
+                  <description>Writing any other value in this field aborts the write operation of the WPEN bit.Always reads as 0.</description>
                   <value>0x535049</value>
                 </enumeratedValue>
               </enumeratedValues>
@@ -4202,22 +4202,22 @@
               <enumeratedValues>
                 <enumeratedValue>
                   <name>NONE</name>
-                  <description>The clock is not gated by an external signal</description>
+                  <description>The clock is not gated by an external signal.</description>
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>XC0</name>
-                  <description>XC0 is ANDed with the selected clock</description>
+                  <description>XC0 is ANDed with the selected clock.</description>
                   <value>0x1</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>XC1</name>
-                  <description>XC1 is ANDed with the selected clock</description>
+                  <description>XC1 is ANDed with the selected clock.</description>
                   <value>0x2</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>XC2</name>
-                  <description>XC2 is ANDed with the selected clock</description>
+                  <description>XC2 is ANDed with the selected clock.</description>
                   <value>0x3</value>
                 </enumeratedValue>
               </enumeratedValues>
@@ -4245,7 +4245,7 @@
               <enumeratedValues>
                 <enumeratedValue>
                   <name>NONE</name>
-                  <description>The clock is not gated by an external signal</description>
+                  <description>The clock is not gated by an external signal.</description>
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
@@ -4420,22 +4420,22 @@
               <enumeratedValues>
                 <enumeratedValue>
                   <name>NONE</name>
-                  <description>The clock is not gated by an external signal</description>
+                  <description>The clock is not gated by an external signal.</description>
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>XC0</name>
-                  <description>XC0 is ANDed with the selected clock</description>
+                  <description>XC0 is ANDed with the selected clock.</description>
                   <value>0x1</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>XC1</name>
-                  <description>XC1 is ANDed with the selected clock</description>
+                  <description>XC1 is ANDed with the selected clock.</description>
                   <value>0x2</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>XC2</name>
-                  <description>XC2 is ANDed with the selected clock</description>
+                  <description>XC2 is ANDed with the selected clock.</description>
                   <value>0x3</value>
                 </enumeratedValue>
               </enumeratedValues>
@@ -5267,22 +5267,22 @@
               <enumeratedValues>
                 <enumeratedValue>
                   <name>NONE</name>
-                  <description>The clock is not gated by an external signal</description>
+                  <description>The clock is not gated by an external signal.</description>
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>XC0</name>
-                  <description>XC0 is ANDed with the selected clock</description>
+                  <description>XC0 is ANDed with the selected clock.</description>
                   <value>0x1</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>XC1</name>
-                  <description>XC1 is ANDed with the selected clock</description>
+                  <description>XC1 is ANDed with the selected clock.</description>
                   <value>0x2</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>XC2</name>
-                  <description>XC2 is ANDed with the selected clock</description>
+                  <description>XC2 is ANDed with the selected clock.</description>
                   <value>0x3</value>
                 </enumeratedValue>
               </enumeratedValues>
@@ -5310,7 +5310,7 @@
               <enumeratedValues>
                 <enumeratedValue>
                   <name>NONE</name>
-                  <description>The clock is not gated by an external signal</description>
+                  <description>The clock is not gated by an external signal.</description>
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
@@ -5485,22 +5485,22 @@
               <enumeratedValues>
                 <enumeratedValue>
                   <name>NONE</name>
-                  <description>The clock is not gated by an external signal</description>
+                  <description>The clock is not gated by an external signal.</description>
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>XC0</name>
-                  <description>XC0 is ANDed with the selected clock</description>
+                  <description>XC0 is ANDed with the selected clock.</description>
                   <value>0x1</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>XC1</name>
-                  <description>XC1 is ANDed with the selected clock</description>
+                  <description>XC1 is ANDed with the selected clock.</description>
                   <value>0x2</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>XC2</name>
-                  <description>XC2 is ANDed with the selected clock</description>
+                  <description>XC2 is ANDed with the selected clock.</description>
                   <value>0x3</value>
                 </enumeratedValue>
               </enumeratedValues>
@@ -6332,22 +6332,22 @@
               <enumeratedValues>
                 <enumeratedValue>
                   <name>NONE</name>
-                  <description>The clock is not gated by an external signal</description>
+                  <description>The clock is not gated by an external signal.</description>
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>XC0</name>
-                  <description>XC0 is ANDed with the selected clock</description>
+                  <description>XC0 is ANDed with the selected clock.</description>
                   <value>0x1</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>XC1</name>
-                  <description>XC1 is ANDed with the selected clock</description>
+                  <description>XC1 is ANDed with the selected clock.</description>
                   <value>0x2</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>XC2</name>
-                  <description>XC2 is ANDed with the selected clock</description>
+                  <description>XC2 is ANDed with the selected clock.</description>
                   <value>0x3</value>
                 </enumeratedValue>
               </enumeratedValues>
@@ -6375,7 +6375,7 @@
               <enumeratedValues>
                 <enumeratedValue>
                   <name>NONE</name>
-                  <description>The clock is not gated by an external signal</description>
+                  <description>The clock is not gated by an external signal.</description>
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
@@ -6550,22 +6550,22 @@
               <enumeratedValues>
                 <enumeratedValue>
                   <name>NONE</name>
-                  <description>The clock is not gated by an external signal</description>
+                  <description>The clock is not gated by an external signal.</description>
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>XC0</name>
-                  <description>XC0 is ANDed with the selected clock</description>
+                  <description>XC0 is ANDed with the selected clock.</description>
                   <value>0x1</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>XC1</name>
-                  <description>XC1 is ANDed with the selected clock</description>
+                  <description>XC1 is ANDed with the selected clock.</description>
                   <value>0x2</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>XC2</name>
-                  <description>XC2 is ANDed with the selected clock</description>
+                  <description>XC2 is ANDed with the selected clock.</description>
                   <value>0x3</value>
                 </enumeratedValue>
               </enumeratedValues>
@@ -7646,7 +7646,7 @@
               <enumeratedValues>
                 <enumeratedValue>
                   <name>PASSWD</name>
-                  <description>Writing any other value in this field aborts the write operation of the WPEN bit.Always reads as 0</description>
+                  <description>Writing any other value in this field aborts the write operation of the WPEN bit.Always reads as 0.</description>
                   <value>0x54494D</value>
                 </enumeratedValue>
               </enumeratedValues>
@@ -7783,22 +7783,22 @@
               <enumeratedValues>
                 <enumeratedValue>
                   <name>NONE</name>
-                  <description>The clock is not gated by an external signal</description>
+                  <description>The clock is not gated by an external signal.</description>
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>XC0</name>
-                  <description>XC0 is ANDed with the selected clock</description>
+                  <description>XC0 is ANDed with the selected clock.</description>
                   <value>0x1</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>XC1</name>
-                  <description>XC1 is ANDed with the selected clock</description>
+                  <description>XC1 is ANDed with the selected clock.</description>
                   <value>0x2</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>XC2</name>
-                  <description>XC2 is ANDed with the selected clock</description>
+                  <description>XC2 is ANDed with the selected clock.</description>
                   <value>0x3</value>
                 </enumeratedValue>
               </enumeratedValues>
@@ -7826,7 +7826,7 @@
               <enumeratedValues>
                 <enumeratedValue>
                   <name>NONE</name>
-                  <description>The clock is not gated by an external signal</description>
+                  <description>The clock is not gated by an external signal.</description>
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
@@ -8001,22 +8001,22 @@
               <enumeratedValues>
                 <enumeratedValue>
                   <name>NONE</name>
-                  <description>The clock is not gated by an external signal</description>
+                  <description>The clock is not gated by an external signal.</description>
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>XC0</name>
-                  <description>XC0 is ANDed with the selected clock</description>
+                  <description>XC0 is ANDed with the selected clock.</description>
                   <value>0x1</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>XC1</name>
-                  <description>XC1 is ANDed with the selected clock</description>
+                  <description>XC1 is ANDed with the selected clock.</description>
                   <value>0x2</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>XC2</name>
-                  <description>XC2 is ANDed with the selected clock</description>
+                  <description>XC2 is ANDed with the selected clock.</description>
                   <value>0x3</value>
                 </enumeratedValue>
               </enumeratedValues>
@@ -8848,22 +8848,22 @@
               <enumeratedValues>
                 <enumeratedValue>
                   <name>NONE</name>
-                  <description>The clock is not gated by an external signal</description>
+                  <description>The clock is not gated by an external signal.</description>
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>XC0</name>
-                  <description>XC0 is ANDed with the selected clock</description>
+                  <description>XC0 is ANDed with the selected clock.</description>
                   <value>0x1</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>XC1</name>
-                  <description>XC1 is ANDed with the selected clock</description>
+                  <description>XC1 is ANDed with the selected clock.</description>
                   <value>0x2</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>XC2</name>
-                  <description>XC2 is ANDed with the selected clock</description>
+                  <description>XC2 is ANDed with the selected clock.</description>
                   <value>0x3</value>
                 </enumeratedValue>
               </enumeratedValues>
@@ -8891,7 +8891,7 @@
               <enumeratedValues>
                 <enumeratedValue>
                   <name>NONE</name>
-                  <description>The clock is not gated by an external signal</description>
+                  <description>The clock is not gated by an external signal.</description>
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
@@ -9066,22 +9066,22 @@
               <enumeratedValues>
                 <enumeratedValue>
                   <name>NONE</name>
-                  <description>The clock is not gated by an external signal</description>
+                  <description>The clock is not gated by an external signal.</description>
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>XC0</name>
-                  <description>XC0 is ANDed with the selected clock</description>
+                  <description>XC0 is ANDed with the selected clock.</description>
                   <value>0x1</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>XC1</name>
-                  <description>XC1 is ANDed with the selected clock</description>
+                  <description>XC1 is ANDed with the selected clock.</description>
                   <value>0x2</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>XC2</name>
-                  <description>XC2 is ANDed with the selected clock</description>
+                  <description>XC2 is ANDed with the selected clock.</description>
                   <value>0x3</value>
                 </enumeratedValue>
               </enumeratedValues>
@@ -9913,22 +9913,22 @@
               <enumeratedValues>
                 <enumeratedValue>
                   <name>NONE</name>
-                  <description>The clock is not gated by an external signal</description>
+                  <description>The clock is not gated by an external signal.</description>
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>XC0</name>
-                  <description>XC0 is ANDed with the selected clock</description>
+                  <description>XC0 is ANDed with the selected clock.</description>
                   <value>0x1</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>XC1</name>
-                  <description>XC1 is ANDed with the selected clock</description>
+                  <description>XC1 is ANDed with the selected clock.</description>
                   <value>0x2</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>XC2</name>
-                  <description>XC2 is ANDed with the selected clock</description>
+                  <description>XC2 is ANDed with the selected clock.</description>
                   <value>0x3</value>
                 </enumeratedValue>
               </enumeratedValues>
@@ -9956,7 +9956,7 @@
               <enumeratedValues>
                 <enumeratedValue>
                   <name>NONE</name>
-                  <description>The clock is not gated by an external signal</description>
+                  <description>The clock is not gated by an external signal.</description>
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
@@ -10131,22 +10131,22 @@
               <enumeratedValues>
                 <enumeratedValue>
                   <name>NONE</name>
-                  <description>The clock is not gated by an external signal</description>
+                  <description>The clock is not gated by an external signal.</description>
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>XC0</name>
-                  <description>XC0 is ANDed with the selected clock</description>
+                  <description>XC0 is ANDed with the selected clock.</description>
                   <value>0x1</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>XC1</name>
-                  <description>XC1 is ANDed with the selected clock</description>
+                  <description>XC1 is ANDed with the selected clock.</description>
                   <value>0x2</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>XC2</name>
-                  <description>XC2 is ANDed with the selected clock</description>
+                  <description>XC2 is ANDed with the selected clock.</description>
                   <value>0x3</value>
                 </enumeratedValue>
               </enumeratedValues>
@@ -11227,7 +11227,7 @@
               <enumeratedValues>
                 <enumeratedValue>
                   <name>PASSWD</name>
-                  <description>Writing any other value in this field aborts the write operation of the WPEN bit.Always reads as 0</description>
+                  <description>Writing any other value in this field aborts the write operation of the WPEN bit.Always reads as 0.</description>
                   <value>0x54494D</value>
                 </enumeratedValue>
               </enumeratedValues>
@@ -13004,6 +13004,18 @@
               <bitOffset>0</bitOffset>
               <bitWidth>8</bitWidth>
               <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>CLKA_POFF</name>
+                  <description>CLKA clock is turned off</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PREA</name>
+                  <description>CLKA clock is clock selected by PREA</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
             </field>
             <field>
               <name>PREA</name>
@@ -13075,6 +13087,18 @@
               <bitOffset>16</bitOffset>
               <bitWidth>8</bitWidth>
               <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>CLKB_POFF</name>
+                  <description>CLKB clock is turned off</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PREB</name>
+                  <description>CLKB clock is clock selected by PREB</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
             </field>
             <field>
               <name>PREB</name>
@@ -14936,17 +14960,17 @@
               <enumeratedValues>
                 <enumeratedValue>
                   <name>DISABLE_SW_PROT</name>
-                  <description>Disables the software write protection of the register groups of which the bit WPRGx is at '1'</description>
+                  <description>Disables the software write protection of the register groups of which the bit WPRGx is at '1'.</description>
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>ENABLE_SW_PROT</name>
-                  <description>Enables the software write protection of the register groups of which the bit WPRGx is at '1'</description>
+                  <description>Enables the software write protection of the register groups of which the bit WPRGx is at '1'.</description>
                   <value>0x1</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>ENABLE_HW_PROT</name>
-                  <description>Enables the hardware write protection of the register groups of which the bit WPRGx is at '1'. Only a hardware reset of the PWM controller can disable the hardware write protection. Moreover, to meet security requirements, the PIO lines associated with the PWM can not be configured through the PIO interface</description>
+                  <description>Enables the hardware write protection of the register groups of which the bit WPRGx is at '1'. Only a hardware reset of the PWM controller can disable the hardware write protection. Moreover, to meet security requirements, the PIO lines associated with the PWM can not be configured through the PIO interface.</description>
                   <value>0x2</value>
                 </enumeratedValue>
               </enumeratedValues>
@@ -17784,17 +17808,17 @@
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>AUTOMATIC</name>
-                  <description>Automatic Echo. Receiver input is connected to the TXD pin</description>
+                  <description>Automatic Echo. Receiver input is connected to the TXD pin.</description>
                   <value>0x1</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>LOCAL_LOOPBACK</name>
-                  <description>Local Loopback. Transmitter output is connected to the Receiver Input</description>
+                  <description>Local Loopback. Transmitter output is connected to the Receiver Input.</description>
                   <value>0x2</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>REMOTE_LOOPBACK</name>
-                  <description>Remote Loopback. RXD pin is internally connected to the TXD pin</description>
+                  <description>Remote Loopback. RXD pin is internally connected to the TXD pin.</description>
                   <value>0x3</value>
                 </enumeratedValue>
               </enumeratedValues>
@@ -19170,7 +19194,7 @@
               <enumeratedValues>
                 <enumeratedValue>
                   <name>PASSWD</name>
-                  <description>Writing any other value in this field aborts the write operation of the WPEN bit. Always reads as 0</description>
+                  <description>Writing any other value in this field aborts the write operation of the WPEN bit. Always reads as 0.</description>
                   <value>0x555341</value>
                 </enumeratedValue>
               </enumeratedValues>
@@ -19824,17 +19848,17 @@
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>AUTOMATIC</name>
-                  <description>Automatic Echo. Receiver input is connected to the TXD pin</description>
+                  <description>Automatic Echo. Receiver input is connected to the TXD pin.</description>
                   <value>0x1</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>LOCAL_LOOPBACK</name>
-                  <description>Local Loopback. Transmitter output is connected to the Receiver Input</description>
+                  <description>Local Loopback. Transmitter output is connected to the Receiver Input.</description>
                   <value>0x2</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>REMOTE_LOOPBACK</name>
-                  <description>Remote Loopback. RXD pin is internally connected to the TXD pin</description>
+                  <description>Remote Loopback. RXD pin is internally connected to the TXD pin.</description>
                   <value>0x3</value>
                 </enumeratedValue>
               </enumeratedValues>
@@ -21210,7 +21234,7 @@
               <enumeratedValues>
                 <enumeratedValue>
                   <name>PASSWD</name>
-                  <description>Writing any other value in this field aborts the write operation of the WPEN bit. Always reads as 0</description>
+                  <description>Writing any other value in this field aborts the write operation of the WPEN bit. Always reads as 0.</description>
                   <value>0x555341</value>
                 </enumeratedValue>
               </enumeratedValues>
@@ -21826,7 +21850,7 @@
             </field>
             <field>
               <name>RXRSM</name>
-              <description>Mask UDP Resume Interrupt</description>
+              <description>Mask UDP Resume Interrupt.</description>
               <bitOffset>9</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-only</access>
@@ -22454,12 +22478,12 @@
               <enumeratedValues>
                 <enumeratedValue>
                   <name>DIS</name>
-                  <description>Hardware triggers are disabled. Starting a conversion is only possible by software</description>
+                  <description>Hardware triggers are disabled. Starting a conversion is only possible by software.</description>
                   <value>0</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>EN</name>
-                  <description>Hardware trigger selected by TRGSEL field is enabled</description>
+                  <description>Hardware trigger selected by TRGSEL field is enabled.</description>
                   <value>1</value>
                 </enumeratedValue>
               </enumeratedValues>
@@ -22512,12 +22536,12 @@
               <enumeratedValues>
                 <enumeratedValue>
                   <name>NORMAL</name>
-                  <description>Normal Mode: The ADC core and reference voltage circuitry are kept ON between conversions</description>
+                  <description>Normal Mode: The ADC core and reference voltage circuitry are kept ON between conversions.</description>
                   <value>0</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>SLEEP</name>
-                  <description>Sleep Mode: The wake-up time can be modified by programming FWUP bit</description>
+                  <description>Sleep Mode: The wake-up time can be modified by programming FWUP bit.</description>
                   <value>1</value>
                 </enumeratedValue>
               </enumeratedValues>
@@ -22555,7 +22579,7 @@
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>ON</name>
-                  <description>Free Run Mode: Never wait for any trigger</description>
+                  <description>Free Run Mode: Never wait for any trigger.</description>
                   <value>1</value>
                 </enumeratedValue>
               </enumeratedValues>
@@ -22694,12 +22718,12 @@
               <enumeratedValues>
                 <enumeratedValue>
                   <name>NONE</name>
-                  <description>No analog change on channel switching: DIFF0, GAIN0 and OFF0 are used for all channels</description>
+                  <description>No analog change on channel switching: DIFF0, GAIN0 and OFF0 are used for all channels.</description>
                   <value>0</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>ALLOWED</name>
-                  <description>Allows different analog settings for each channel. See ADC_CGR and ADC_COR registers</description>
+                  <description>Allows different analog settings for each channel. See ADC_CGR and ADC_COR registers.</description>
                   <value>1</value>
                 </enumeratedValue>
               </enumeratedValues>
@@ -22727,12 +22751,12 @@
               <enumeratedValues>
                 <enumeratedValue>
                   <name>NUM_ORDER</name>
-                  <description>Normal Mode: The controller converts channels in a simple numeric order depending only on the channel index</description>
+                  <description>Normal Mode: The controller converts channels in a simple numeric order depending only on the channel index.</description>
                   <value>0</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>REG_ORDER</name>
-                  <description>User Sequence Mode: The sequence respects what is defined in ADC_SEQR1 and ADC_SEQR2 registers and can be used to convert the same channel several times</description>
+                  <description>User Sequence Mode: The sequence respects what is defined in ADC_SEQR1 and ADC_SEQR2 registers and can be used to convert the same channel several times.</description>
                   <value>1</value>
                 </enumeratedValue>
               </enumeratedValues>
@@ -24045,22 +24069,22 @@
               <enumeratedValues>
                 <enumeratedValue>
                   <name>LOW</name>
-                  <description>Generates an event when the converted data is lower than the low threshold of the window</description>
+                  <description>Generates an event when the converted data is lower than the low threshold of the window.</description>
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>HIGH</name>
-                  <description>Generates an event when the converted data is higher than the high threshold of the window</description>
+                  <description>Generates an event when the converted data is higher than the high threshold of the window.</description>
                   <value>0x1</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>IN</name>
-                  <description>Generates an event when the converted data is in the comparison window</description>
+                  <description>Generates an event when the converted data is in the comparison window.</description>
                   <value>0x2</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>OUT</name>
-                  <description>Generates an event when the converted data is out of the comparison window</description>
+                  <description>Generates an event when the converted data is out of the comparison window.</description>
                   <value>0x3</value>
                 </enumeratedValue>
               </enumeratedValues>
@@ -25098,12 +25122,12 @@
               <enumeratedValues>
                 <enumeratedValue>
                   <name>DIS</name>
-                  <description>External trigger mode disabled. DACC in free-running mode</description>
+                  <description>External trigger mode disabled. DACC in free-running mode.</description>
                   <value>0</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>EN</name>
-                  <description>External trigger mode enabled</description>
+                  <description>External trigger mode enabled.</description>
                   <value>1</value>
                 </enumeratedValue>
               </enumeratedValues>
@@ -25201,7 +25225,7 @@
               <enumeratedValues>
                 <enumeratedValue>
                   <name>DIS</name>
-                  <description>Tag selection mode disabled. Using USER_SEL to select the channel for the conversion</description>
+                  <description>Tag selection mode disabled. Using USER_SEL to select the channel for the conversion.</description>
                   <value>0</value>
                 </enumeratedValue>
                 <enumeratedValue>
@@ -25693,7 +25717,7 @@
           <fields>
             <field>
               <name>TXRDY</name>
-              <description>Transmit Ready Interrupt Disable</description>
+              <description>Transmit Ready Interrupt Disable.</description>
               <bitOffset>0</bitOffset>
               <bitWidth>1</bitWidth>
               <access>write-only</access>
@@ -25852,7 +25876,7 @@
               <enumeratedValues>
                 <enumeratedValue>
                   <name>PASSWD</name>
-                  <description>Writing any other value in this field aborts the write operation of the WPEN bit.Always reads as 0</description>
+                  <description>Writing any other value in this field aborts the write operation of the WPEN bit.Always reads as 0.</description>
                   <value>0x444143</value>
                 </enumeratedValue>
               </enumeratedValues>
@@ -26161,12 +26185,12 @@
               <enumeratedValues>
                 <enumeratedValue>
                   <name>DIS</name>
-                  <description>Analog comparator disabled</description>
+                  <description>Analog comparator disabled.</description>
                   <value>0</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>EN</name>
-                  <description>Analog comparator enabled</description>
+                  <description>Analog comparator enabled.</description>
                   <value>1</value>
                 </enumeratedValue>
               </enumeratedValues>
@@ -26204,12 +26228,12 @@
               <enumeratedValues>
                 <enumeratedValue>
                   <name>DIS</name>
-                  <description>Analog comparator output is directly processed</description>
+                  <description>Analog comparator output is directly processed.</description>
                   <value>0</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>EN</name>
-                  <description>Analog comparator output is inverted prior to being processed</description>
+                  <description>Analog comparator output is inverted prior to being processed.</description>
                   <value>1</value>
                 </enumeratedValue>
               </enumeratedValues>
@@ -26223,12 +26247,12 @@
               <enumeratedValues>
                 <enumeratedValue>
                   <name>CE</name>
-                  <description>The CE flag is used to drive the FAULT output</description>
+                  <description>The CE flag is used to drive the FAULT output.</description>
                   <value>0</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>OUTPUT</name>
-                  <description>The output of the analog comparator flag is used to drive the FAULT output</description>
+                  <description>The output of the analog comparator flag is used to drive the FAULT output.</description>
                   <value>1</value>
                 </enumeratedValue>
               </enumeratedValues>
@@ -26242,12 +26266,12 @@
               <enumeratedValues>
                 <enumeratedValue>
                   <name>DIS</name>
-                  <description>The FAULT output is tied to 0</description>
+                  <description>The FAULT output is tied to 0.</description>
                   <value>0</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>EN</name>
-                  <description>The FAULT output is driven by the signal defined by SELFS</description>
+                  <description>The FAULT output is driven by the signal defined by SELFS.</description>
                   <value>1</value>
                 </enumeratedValue>
               </enumeratedValues>
@@ -26351,12 +26375,12 @@
               <enumeratedValues>
                 <enumeratedValue>
                   <name>LOPW</name>
-                  <description>Low-power option</description>
+                  <description>Low-power option.</description>
                   <value>0</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>HISP</name>
-                  <description>High-speed option</description>
+                  <description>High-speed option.</description>
                   <value>1</value>
                 </enumeratedValue>
               </enumeratedValues>
@@ -26394,7 +26418,7 @@
               <enumeratedValues>
                 <enumeratedValue>
                   <name>PASSWD</name>
-                  <description>Writing any other value in this field aborts the write operation of the WPEN bit.Always reads as 0</description>
+                  <description>Writing any other value in this field aborts the write operation of the WPEN bit.Always reads as 0.</description>
                   <value>0x414343</value>
                 </enumeratedValue>
               </enumeratedValues>
@@ -27979,7 +28003,7 @@
               <enumeratedValues>
                 <enumeratedValue>
                   <name>PASSWD</name>
-                  <description>Writing any other value in this field aborts the write operation of the WPEN bit. Always reads as 0</description>
+                  <description>Writing any other value in this field aborts the write operation of the WPEN bit. Always reads as 0.</description>
                   <value>0x534D43</value>
                 </enumeratedValue>
               </enumeratedValues>
@@ -28042,27 +28066,27 @@
               <enumeratedValues>
                 <enumeratedValue>
                   <name>INFINITE</name>
-                  <description>No predicted end of burst is generated and therefore INCR bursts coming from this master cannot be broken</description>
+                  <description>No predicted end of burst is generated and therefore INCR bursts coming from this master cannot be broken.</description>
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>SINGLE</name>
-                  <description>The undefined length burst is treated as a succession of single access allowing rearbitration at each beat of the INCR burst</description>
+                  <description>The undefined length burst is treated as a succession of single access allowing rearbitration at each beat of the INCR burst.</description>
                   <value>0x1</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>FOUR_BEAT</name>
-                  <description>The undefined length burst is split into a 4-beat bursts allowing rearbitration at each 4-beat burst end</description>
+                  <description>The undefined length burst is split into a 4-beat bursts allowing rearbitration at each 4-beat burst end.</description>
                   <value>0x2</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>EIGHT_BEAT</name>
-                  <description>The undefined length burst is split into 8-beat bursts allowing rearbitration at each 8-beat burst end</description>
+                  <description>The undefined length burst is split into 8-beat bursts allowing rearbitration at each 8-beat burst end.</description>
                   <value>0x3</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>SIXTEEN_BEAT</name>
-                  <description>The undefined length burst is split into 16-beat bursts allowing rearbitration at each 16-beat burst end</description>
+                  <description>The undefined length burst is split into 16-beat bursts allowing rearbitration at each 16-beat burst end.</description>
                   <value>0x4</value>
                 </enumeratedValue>
               </enumeratedValues>
@@ -28095,17 +28119,17 @@
               <enumeratedValues>
                 <enumeratedValue>
                   <name>NO_DEFAULT</name>
-                  <description>At the end of current slave access, if no other master request is pending, the slave is disconnected from all masters.This results in having a one cycle latency for the first access of a burst transfer or for a single access</description>
+                  <description>At the end of current slave access, if no other master request is pending, the slave is disconnected from all masters.This results in having a one cycle latency for the first access of a burst transfer or for a single access.</description>
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>LAST</name>
-                  <description>At the end of current slave access, if no other master request is pending, the slave stays connected to the last master having accessed it.This results in not having the one cycle latency when the last master tries to access the slave again</description>
+                  <description>At the end of current slave access, if no other master request is pending, the slave stays connected to the last master having accessed it.This results in not having the one cycle latency when the last master tries to access the slave again.</description>
                   <value>0x1</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>FIXED</name>
-                  <description>At the end of the current slave access, if no other master request is pending, the slave connects to the fixed master the number that has been written in the FIXED_DEFMSTR field.This results in not having the one cycle latency when the fixed master tries to access the slave again</description>
+                  <description>At the end of the current slave access, if no other master request is pending, the slave connects to the fixed master the number that has been written in the FIXED_DEFMSTR field.This results in not having the one cycle latency when the fixed master tries to access the slave again.</description>
                   <value>0x2</value>
                 </enumeratedValue>
               </enumeratedValues>
@@ -28484,7 +28508,7 @@
               <enumeratedValues>
                 <enumeratedValue>
                   <name>PASSWD</name>
-                  <description>Writing any other value in this field aborts the write operation of the WPEN bit. Always reads as 0</description>
+                  <description>Writing any other value in this field aborts the write operation of the WPEN bit. Always reads as 0.</description>
                   <value>0x4D4154</value>
                 </enumeratedValue>
               </enumeratedValues>
@@ -29252,7 +29276,7 @@
               <enumeratedValues>
                 <enumeratedValue>
                   <name>PASSWD</name>
-                  <description>Writing any other value in this field aborts the write operation.Always reads as 0</description>
+                  <description>Writing any other value in this field aborts the write operation.Always reads as 0.</description>
                   <value>0x37</value>
                 </enumeratedValue>
               </enumeratedValues>
@@ -30264,7 +30288,7 @@
               <enumeratedValues>
                 <enumeratedValue>
                   <name>PASSWD</name>
-                  <description>Writing any other value in this field aborts the write operation of the WPEN bit. Always reads as 0</description>
+                  <description>Writing any other value in this field aborts the write operation of the WPEN bit. Always reads as 0.</description>
                   <value>0x504D43</value>
                 </enumeratedValue>
               </enumeratedValues>
@@ -32434,7 +32458,7 @@
               <enumeratedValues>
                 <enumeratedValue>
                   <name>PASSWD</name>
-                  <description>The 0x5A value enables the command defined by the bits of the register. If the field is written with a different value, the write is not performed and no action is started</description>
+                  <description>The 0x5A value enables the command defined by the bits of the register. If the field is written with a different value, the write is not performed and no action is started.</description>
                   <value>0x5A</value>
                 </enumeratedValue>
               </enumeratedValues>
@@ -32697,7 +32721,7 @@
               <enumeratedValues>
                 <enumeratedValue>
                   <name>PASSWD</name>
-                  <description>The 0x5A value enables the command defined by the bits of the register. If the field is written with a different value, the write is not performed and no action is started</description>
+                  <description>The 0x5A value enables the command defined by the bits of the register. If the field is written with a different value, the write is not performed and no action is started.</description>
                   <value>0x5A</value>
                 </enumeratedValue>
               </enumeratedValues>
@@ -42852,7 +42876,7 @@
               <enumeratedValues>
                 <enumeratedValue>
                   <name>PASSWD</name>
-                  <description>Writing any other value in this field aborts the write operation of the WPEN bit. Always reads as 0</description>
+                  <description>Writing any other value in this field aborts the write operation of the WPEN bit. Always reads as 0.</description>
                   <value>0x50494F</value>
                 </enumeratedValue>
               </enumeratedValues>
@@ -53566,7 +53590,7 @@
               <enumeratedValues>
                 <enumeratedValue>
                   <name>PASSWD</name>
-                  <description>Writing any other value in this field aborts the write operation of the WPEN bit. Always reads as 0</description>
+                  <description>Writing any other value in this field aborts the write operation of the WPEN bit. Always reads as 0.</description>
                   <value>0x50494F</value>
                 </enumeratedValue>
               </enumeratedValues>
@@ -64151,7 +64175,7 @@
               <enumeratedValues>
                 <enumeratedValue>
                   <name>PASSWD</name>
-                  <description>Writing any other value in this field aborts the write operation of the WPEN bit. Always reads as 0</description>
+                  <description>Writing any other value in this field aborts the write operation of the WPEN bit. Always reads as 0.</description>
                   <value>0x50494F</value>
                 </enumeratedValue>
               </enumeratedValues>
@@ -64695,7 +64719,7 @@
               <enumeratedValues>
                 <enumeratedValue>
                   <name>PASSWD</name>
-                  <description>Writing any other value in this field aborts the write operation</description>
+                  <description>Writing any other value in this field aborts the write operation.</description>
                   <value>0xA5</value>
                 </enumeratedValue>
               </enumeratedValues>
@@ -64804,7 +64828,7 @@
               <enumeratedValues>
                 <enumeratedValue>
                   <name>PASSWD</name>
-                  <description>Writing any other value in this field aborts the write operation.Always reads as 0</description>
+                  <description>Writing any other value in this field aborts the write operation.Always reads as 0.</description>
                   <value>0xA5</value>
                 </enumeratedValue>
               </enumeratedValues>
@@ -64842,12 +64866,12 @@
               <enumeratedValues>
                 <enumeratedValue>
                   <name>NO_EFFECT</name>
-                  <description>No effect</description>
+                  <description>No effect.</description>
                   <value>0</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>STOP_VREG</name>
-                  <description>If KEY is correct, VROFF asserts the vddcore_nreset and stops the voltage regulator</description>
+                  <description>If KEY is correct, VROFF asserts the vddcore_nreset and stops the voltage regulator.</description>
                   <value>1</value>
                 </enumeratedValue>
               </enumeratedValues>
@@ -64861,12 +64885,12 @@
               <enumeratedValues>
                 <enumeratedValue>
                   <name>NO_EFFECT</name>
-                  <description>No effect</description>
+                  <description>No effect.</description>
                   <value>0</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>CRYSTAL_SEL</name>
-                  <description>If KEY is correct, XTALSEL switches the slow clock on the crystal oscillator output</description>
+                  <description>If KEY is correct, XTALSEL switches the slow clock on the crystal oscillator output.</description>
                   <value>1</value>
                 </enumeratedValue>
               </enumeratedValues>
@@ -64880,7 +64904,7 @@
               <enumeratedValues>
                 <enumeratedValue>
                   <name>PASSWD</name>
-                  <description>Writing any other value in this field aborts the write operation</description>
+                  <description>Writing any other value in this field aborts the write operation.</description>
                   <value>0xA5</value>
                 </enumeratedValue>
               </enumeratedValues>
@@ -64945,12 +64969,12 @@
               <enumeratedValues>
                 <enumeratedValue>
                   <name>NOT_ENABLE</name>
-                  <description>The core reset signal vddcore_nreset is not affected when a supply monitor detection occurs</description>
+                  <description>The core reset signal vddcore_nreset is not affected when a supply monitor detection occurs.</description>
                   <value>0</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>ENABLE</name>
-                  <description>The core reset signal, vddcore_nreset is asserted when a supply monitor detection occurs</description>
+                  <description>The core reset signal, vddcore_nreset is asserted when a supply monitor detection occurs.</description>
                   <value>1</value>
                 </enumeratedValue>
               </enumeratedValues>
@@ -64964,12 +64988,12 @@
               <enumeratedValues>
                 <enumeratedValue>
                   <name>NOT_ENABLE</name>
-                  <description>The SUPC interrupt signal is not affected when a supply monitor detection occurs</description>
+                  <description>The SUPC interrupt signal is not affected when a supply monitor detection occurs.</description>
                   <value>0</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>ENABLE</name>
-                  <description>The SUPC interrupt signal is asserted when a supply monitor detection occurs</description>
+                  <description>The SUPC interrupt signal is asserted when a supply monitor detection occurs.</description>
                   <value>1</value>
                 </enumeratedValue>
               </enumeratedValues>
@@ -64993,12 +65017,12 @@
               <enumeratedValues>
                 <enumeratedValue>
                   <name>NOT_ENABLE</name>
-                  <description>The core reset signal vddcore_nreset is not affected when a brownout detection occurs</description>
+                  <description>The core reset signal vddcore_nreset is not affected when a brownout detection occurs.</description>
                   <value>0</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>ENABLE</name>
-                  <description>The core reset signal, vddcore_nreset is asserted when a brownout detection occurs</description>
+                  <description>The core reset signal, vddcore_nreset is asserted when a brownout detection occurs.</description>
                   <value>1</value>
                 </enumeratedValue>
               </enumeratedValues>
@@ -65012,12 +65036,12 @@
               <enumeratedValues>
                 <enumeratedValue>
                   <name>ENABLE</name>
-                  <description>The core brownout detector is enabled</description>
+                  <description>The core brownout detector is enabled.</description>
                   <value>0</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>DISABLE</name>
-                  <description>The core brownout detector is disabled</description>
+                  <description>The core brownout detector is disabled.</description>
                   <value>1</value>
                 </enumeratedValue>
               </enumeratedValues>
@@ -65031,12 +65055,12 @@
               <enumeratedValues>
                 <enumeratedValue>
                   <name>ONREG_UNUSED</name>
-                  <description>Internal voltage regulator is not used (external power supply is used)</description>
+                  <description>Internal voltage regulator is not used (external power supply is used).</description>
                   <value>0</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>ONREG_USED</name>
-                  <description>Internal voltage regulator is used</description>
+                  <description>Internal voltage regulator is used.</description>
                   <value>1</value>
                 </enumeratedValue>
               </enumeratedValues>
@@ -65050,12 +65074,12 @@
               <enumeratedValues>
                 <enumeratedValue>
                   <name>NO_EFFECT</name>
-                  <description>No effect. Clock selection depends on the value of XTALSEL (SUPC_CR)</description>
+                  <description>No effect. Clock selection depends on the value of XTALSEL (SUPC_CR).</description>
                   <value>0</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>BYPASS</name>
-                  <description>The 32 kHz crystal oscillator is bypassed if XTALSEL (SUPC_CR) is set. OSCBYPASS must be set prior to setting XTALSEL</description>
+                  <description>The 32 kHz crystal oscillator is bypassed if XTALSEL (SUPC_CR) is set. OSCBYPASS must be set prior to setting XTALSEL.</description>
                   <value>1</value>
                 </enumeratedValue>
               </enumeratedValues>
@@ -65069,7 +65093,7 @@
               <enumeratedValues>
                 <enumeratedValue>
                   <name>PASSWD</name>
-                  <description>Writing any other value in this field aborts the write operation</description>
+                  <description>Writing any other value in this field aborts the write operation.</description>
                   <value>0xA5</value>
                 </enumeratedValue>
               </enumeratedValues>
@@ -65093,12 +65117,12 @@
               <enumeratedValues>
                 <enumeratedValue>
                   <name>NOT_ENABLE</name>
-                  <description>The supply monitor detection has no wake-up effect</description>
+                  <description>The supply monitor detection has no wake-up effect.</description>
                   <value>0</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>ENABLE</name>
-                  <description>The supply monitor detection forces the wake-up of the core power supply</description>
+                  <description>The supply monitor detection forces the wake-up of the core power supply.</description>
                   <value>1</value>
                 </enumeratedValue>
               </enumeratedValues>
@@ -65112,12 +65136,12 @@
               <enumeratedValues>
                 <enumeratedValue>
                   <name>NOT_ENABLE</name>
-                  <description>The RTT alarm signal has no wake-up effect</description>
+                  <description>The RTT alarm signal has no wake-up effect.</description>
                   <value>0</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>ENABLE</name>
-                  <description>The RTT alarm signal forces the wake-up of the core power supply</description>
+                  <description>The RTT alarm signal forces the wake-up of the core power supply.</description>
                   <value>1</value>
                 </enumeratedValue>
               </enumeratedValues>
@@ -65131,12 +65155,12 @@
               <enumeratedValues>
                 <enumeratedValue>
                   <name>NOT_ENABLE</name>
-                  <description>The RTC alarm signal has no wake-up effect</description>
+                  <description>The RTC alarm signal has no wake-up effect.</description>
                   <value>0</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>ENABLE</name>
-                  <description>The RTC alarm signal forces the wake-up of the core power supply</description>
+                  <description>The RTC alarm signal forces the wake-up of the core power supply.</description>
                   <value>1</value>
                 </enumeratedValue>
               </enumeratedValues>
@@ -65150,12 +65174,12 @@
               <enumeratedValues>
                 <enumeratedValue>
                   <name>NOT_ENABLE</name>
-                  <description>The WKUP0 input pin is not connected to the low-power debouncer</description>
+                  <description>The WKUP0 input pin is not connected to the low-power debouncer.</description>
                   <value>0</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>ENABLE</name>
-                  <description>The WKUP0 input pin is connected to the low-power debouncer and forces a system wake-up</description>
+                  <description>The WKUP0 input pin is connected to the low-power debouncer and forces a system wake-up.</description>
                   <value>1</value>
                 </enumeratedValue>
               </enumeratedValues>
@@ -65169,12 +65193,12 @@
               <enumeratedValues>
                 <enumeratedValue>
                   <name>NOT_ENABLE</name>
-                  <description>The WKUP1 input pin is not connected to the low-power debouncer</description>
+                  <description>The WKUP1 input pin is not connected to the low-power debouncer.</description>
                   <value>0</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>ENABLE</name>
-                  <description>The WKUP1 input pin is connected to the low-power debouncer and forces a system wake-up</description>
+                  <description>The WKUP1 input pin is connected to the low-power debouncer and forces a system wake-up.</description>
                   <value>1</value>
                 </enumeratedValue>
               </enumeratedValues>
@@ -65188,12 +65212,12 @@
               <enumeratedValues>
                 <enumeratedValue>
                   <name>NOT_ENABLE</name>
-                  <description>A low-power debounce event does not create an immediate clear on the first half of GPBR registers</description>
+                  <description>A low-power debounce event does not create an immediate clear on the first half of GPBR registers.</description>
                   <value>0</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>ENABLE</name>
-                  <description>A low-power debounce event on WKUP0 or WKUP1 generates an immediate clear on the first half of GPBR registers</description>
+                  <description>A low-power debounce event on WKUP0 or WKUP1 generates an immediate clear on the first half of GPBR registers.</description>
                   <value>1</value>
                 </enumeratedValue>
               </enumeratedValues>
@@ -65207,7 +65231,7 @@
               <enumeratedValues>
                 <enumeratedValue>
                   <name>IMMEDIATE</name>
-                  <description>Immediate, no debouncing, detected active at least on one Slow Clock edge</description>
+                  <description>Immediate, no debouncing, detected active at least on one Slow Clock edge.</description>
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
@@ -65246,7 +65270,7 @@
               <enumeratedValues>
                 <enumeratedValue>
                   <name>DISABLE</name>
-                  <description>Disable the low-power debouncers</description>
+                  <description>Disable the low-power debouncers.</description>
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
@@ -65305,12 +65329,12 @@
               <enumeratedValues>
                 <enumeratedValue>
                   <name>DISABLE</name>
-                  <description>The corresponding wake-up input has no wake-up effect</description>
+                  <description>The corresponding wake-up input has no wake-up effect.</description>
                   <value>0</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>ENABLE</name>
-                  <description>The corresponding wake-up input is enabled for a wake-up of the core power supply</description>
+                  <description>The corresponding wake-up input is enabled for a wake-up of the core power supply.</description>
                   <value>1</value>
                 </enumeratedValue>
               </enumeratedValues>
@@ -65324,12 +65348,12 @@
               <enumeratedValues>
                 <enumeratedValue>
                   <name>DISABLE</name>
-                  <description>The corresponding wake-up input has no wake-up effect</description>
+                  <description>The corresponding wake-up input has no wake-up effect.</description>
                   <value>0</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>ENABLE</name>
-                  <description>The corresponding wake-up input is enabled for a wake-up of the core power supply</description>
+                  <description>The corresponding wake-up input is enabled for a wake-up of the core power supply.</description>
                   <value>1</value>
                 </enumeratedValue>
               </enumeratedValues>
@@ -65343,12 +65367,12 @@
               <enumeratedValues>
                 <enumeratedValue>
                   <name>DISABLE</name>
-                  <description>The corresponding wake-up input has no wake-up effect</description>
+                  <description>The corresponding wake-up input has no wake-up effect.</description>
                   <value>0</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>ENABLE</name>
-                  <description>The corresponding wake-up input is enabled for a wake-up of the core power supply</description>
+                  <description>The corresponding wake-up input is enabled for a wake-up of the core power supply.</description>
                   <value>1</value>
                 </enumeratedValue>
               </enumeratedValues>
@@ -65362,12 +65386,12 @@
               <enumeratedValues>
                 <enumeratedValue>
                   <name>DISABLE</name>
-                  <description>The corresponding wake-up input has no wake-up effect</description>
+                  <description>The corresponding wake-up input has no wake-up effect.</description>
                   <value>0</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>ENABLE</name>
-                  <description>The corresponding wake-up input is enabled for a wake-up of the core power supply</description>
+                  <description>The corresponding wake-up input is enabled for a wake-up of the core power supply.</description>
                   <value>1</value>
                 </enumeratedValue>
               </enumeratedValues>
@@ -65381,12 +65405,12 @@
               <enumeratedValues>
                 <enumeratedValue>
                   <name>DISABLE</name>
-                  <description>The corresponding wake-up input has no wake-up effect</description>
+                  <description>The corresponding wake-up input has no wake-up effect.</description>
                   <value>0</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>ENABLE</name>
-                  <description>The corresponding wake-up input is enabled for a wake-up of the core power supply</description>
+                  <description>The corresponding wake-up input is enabled for a wake-up of the core power supply.</description>
                   <value>1</value>
                 </enumeratedValue>
               </enumeratedValues>
@@ -65400,12 +65424,12 @@
               <enumeratedValues>
                 <enumeratedValue>
                   <name>DISABLE</name>
-                  <description>The corresponding wake-up input has no wake-up effect</description>
+                  <description>The corresponding wake-up input has no wake-up effect.</description>
                   <value>0</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>ENABLE</name>
-                  <description>The corresponding wake-up input is enabled for a wake-up of the core power supply</description>
+                  <description>The corresponding wake-up input is enabled for a wake-up of the core power supply.</description>
                   <value>1</value>
                 </enumeratedValue>
               </enumeratedValues>
@@ -65419,12 +65443,12 @@
               <enumeratedValues>
                 <enumeratedValue>
                   <name>DISABLE</name>
-                  <description>The corresponding wake-up input has no wake-up effect</description>
+                  <description>The corresponding wake-up input has no wake-up effect.</description>
                   <value>0</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>ENABLE</name>
-                  <description>The corresponding wake-up input is enabled for a wake-up of the core power supply</description>
+                  <description>The corresponding wake-up input is enabled for a wake-up of the core power supply.</description>
                   <value>1</value>
                 </enumeratedValue>
               </enumeratedValues>
@@ -65438,12 +65462,12 @@
               <enumeratedValues>
                 <enumeratedValue>
                   <name>DISABLE</name>
-                  <description>The corresponding wake-up input has no wake-up effect</description>
+                  <description>The corresponding wake-up input has no wake-up effect.</description>
                   <value>0</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>ENABLE</name>
-                  <description>The corresponding wake-up input is enabled for a wake-up of the core power supply</description>
+                  <description>The corresponding wake-up input is enabled for a wake-up of the core power supply.</description>
                   <value>1</value>
                 </enumeratedValue>
               </enumeratedValues>
@@ -65457,12 +65481,12 @@
               <enumeratedValues>
                 <enumeratedValue>
                   <name>DISABLE</name>
-                  <description>The corresponding wake-up input has no wake-up effect</description>
+                  <description>The corresponding wake-up input has no wake-up effect.</description>
                   <value>0</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>ENABLE</name>
-                  <description>The corresponding wake-up input is enabled for a wake-up of the core power supply</description>
+                  <description>The corresponding wake-up input is enabled for a wake-up of the core power supply.</description>
                   <value>1</value>
                 </enumeratedValue>
               </enumeratedValues>
@@ -65476,12 +65500,12 @@
               <enumeratedValues>
                 <enumeratedValue>
                   <name>DISABLE</name>
-                  <description>The corresponding wake-up input has no wake-up effect</description>
+                  <description>The corresponding wake-up input has no wake-up effect.</description>
                   <value>0</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>ENABLE</name>
-                  <description>The corresponding wake-up input is enabled for a wake-up of the core power supply</description>
+                  <description>The corresponding wake-up input is enabled for a wake-up of the core power supply.</description>
                   <value>1</value>
                 </enumeratedValue>
               </enumeratedValues>
@@ -65495,12 +65519,12 @@
               <enumeratedValues>
                 <enumeratedValue>
                   <name>DISABLE</name>
-                  <description>The corresponding wake-up input has no wake-up effect</description>
+                  <description>The corresponding wake-up input has no wake-up effect.</description>
                   <value>0</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>ENABLE</name>
-                  <description>The corresponding wake-up input is enabled for a wake-up of the core power supply</description>
+                  <description>The corresponding wake-up input is enabled for a wake-up of the core power supply.</description>
                   <value>1</value>
                 </enumeratedValue>
               </enumeratedValues>
@@ -65514,12 +65538,12 @@
               <enumeratedValues>
                 <enumeratedValue>
                   <name>DISABLE</name>
-                  <description>The corresponding wake-up input has no wake-up effect</description>
+                  <description>The corresponding wake-up input has no wake-up effect.</description>
                   <value>0</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>ENABLE</name>
-                  <description>The corresponding wake-up input is enabled for a wake-up of the core power supply</description>
+                  <description>The corresponding wake-up input is enabled for a wake-up of the core power supply.</description>
                   <value>1</value>
                 </enumeratedValue>
               </enumeratedValues>
@@ -65533,12 +65557,12 @@
               <enumeratedValues>
                 <enumeratedValue>
                   <name>DISABLE</name>
-                  <description>The corresponding wake-up input has no wake-up effect</description>
+                  <description>The corresponding wake-up input has no wake-up effect.</description>
                   <value>0</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>ENABLE</name>
-                  <description>The corresponding wake-up input is enabled for a wake-up of the core power supply</description>
+                  <description>The corresponding wake-up input is enabled for a wake-up of the core power supply.</description>
                   <value>1</value>
                 </enumeratedValue>
               </enumeratedValues>
@@ -65552,12 +65576,12 @@
               <enumeratedValues>
                 <enumeratedValue>
                   <name>DISABLE</name>
-                  <description>The corresponding wake-up input has no wake-up effect</description>
+                  <description>The corresponding wake-up input has no wake-up effect.</description>
                   <value>0</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>ENABLE</name>
-                  <description>The corresponding wake-up input is enabled for a wake-up of the core power supply</description>
+                  <description>The corresponding wake-up input is enabled for a wake-up of the core power supply.</description>
                   <value>1</value>
                 </enumeratedValue>
               </enumeratedValues>
@@ -65571,12 +65595,12 @@
               <enumeratedValues>
                 <enumeratedValue>
                   <name>DISABLE</name>
-                  <description>The corresponding wake-up input has no wake-up effect</description>
+                  <description>The corresponding wake-up input has no wake-up effect.</description>
                   <value>0</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>ENABLE</name>
-                  <description>The corresponding wake-up input is enabled for a wake-up of the core power supply</description>
+                  <description>The corresponding wake-up input is enabled for a wake-up of the core power supply.</description>
                   <value>1</value>
                 </enumeratedValue>
               </enumeratedValues>
@@ -65590,12 +65614,12 @@
               <enumeratedValues>
                 <enumeratedValue>
                   <name>DISABLE</name>
-                  <description>The corresponding wake-up input has no wake-up effect</description>
+                  <description>The corresponding wake-up input has no wake-up effect.</description>
                   <value>0</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>ENABLE</name>
-                  <description>The corresponding wake-up input is enabled for a wake-up of the core power supply</description>
+                  <description>The corresponding wake-up input is enabled for a wake-up of the core power supply.</description>
                   <value>1</value>
                 </enumeratedValue>
               </enumeratedValues>
@@ -65609,12 +65633,12 @@
               <enumeratedValues>
                 <enumeratedValue>
                   <name>LOW</name>
-                  <description>A falling edge followed by a low level for a period defined by WKUPDBC on the corre-sponding wake-up input forces the wake-up of the core power supply</description>
+                  <description>A falling edge followed by a low level for a period defined by WKUPDBC on the corre-sponding wake-up input forces the wake-up of the core power supply.</description>
                   <value>0</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>HIGH</name>
-                  <description>A rising edge followed by a high level for a period defined by WKUPDBC on the cor-responding wake-up input forces the wake-up of the core power supply</description>
+                  <description>A rising edge followed by a high level for a period defined by WKUPDBC on the cor-responding wake-up input forces the wake-up of the core power supply.</description>
                   <value>1</value>
                 </enumeratedValue>
               </enumeratedValues>
@@ -65628,12 +65652,12 @@
               <enumeratedValues>
                 <enumeratedValue>
                   <name>LOW</name>
-                  <description>A falling edge followed by a low level for a period defined by WKUPDBC on the corre-sponding wake-up input forces the wake-up of the core power supply</description>
+                  <description>A falling edge followed by a low level for a period defined by WKUPDBC on the corre-sponding wake-up input forces the wake-up of the core power supply.</description>
                   <value>0</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>HIGH</name>
-                  <description>A rising edge followed by a high level for a period defined by WKUPDBC on the cor-responding wake-up input forces the wake-up of the core power supply</description>
+                  <description>A rising edge followed by a high level for a period defined by WKUPDBC on the cor-responding wake-up input forces the wake-up of the core power supply.</description>
                   <value>1</value>
                 </enumeratedValue>
               </enumeratedValues>
@@ -65647,12 +65671,12 @@
               <enumeratedValues>
                 <enumeratedValue>
                   <name>LOW</name>
-                  <description>A falling edge followed by a low level for a period defined by WKUPDBC on the corre-sponding wake-up input forces the wake-up of the core power supply</description>
+                  <description>A falling edge followed by a low level for a period defined by WKUPDBC on the corre-sponding wake-up input forces the wake-up of the core power supply.</description>
                   <value>0</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>HIGH</name>
-                  <description>A rising edge followed by a high level for a period defined by WKUPDBC on the cor-responding wake-up input forces the wake-up of the core power supply</description>
+                  <description>A rising edge followed by a high level for a period defined by WKUPDBC on the cor-responding wake-up input forces the wake-up of the core power supply.</description>
                   <value>1</value>
                 </enumeratedValue>
               </enumeratedValues>
@@ -65666,12 +65690,12 @@
               <enumeratedValues>
                 <enumeratedValue>
                   <name>LOW</name>
-                  <description>A falling edge followed by a low level for a period defined by WKUPDBC on the corre-sponding wake-up input forces the wake-up of the core power supply</description>
+                  <description>A falling edge followed by a low level for a period defined by WKUPDBC on the corre-sponding wake-up input forces the wake-up of the core power supply.</description>
                   <value>0</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>HIGH</name>
-                  <description>A rising edge followed by a high level for a period defined by WKUPDBC on the cor-responding wake-up input forces the wake-up of the core power supply</description>
+                  <description>A rising edge followed by a high level for a period defined by WKUPDBC on the cor-responding wake-up input forces the wake-up of the core power supply.</description>
                   <value>1</value>
                 </enumeratedValue>
               </enumeratedValues>
@@ -65685,12 +65709,12 @@
               <enumeratedValues>
                 <enumeratedValue>
                   <name>LOW</name>
-                  <description>A falling edge followed by a low level for a period defined by WKUPDBC on the corre-sponding wake-up input forces the wake-up of the core power supply</description>
+                  <description>A falling edge followed by a low level for a period defined by WKUPDBC on the corre-sponding wake-up input forces the wake-up of the core power supply.</description>
                   <value>0</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>HIGH</name>
-                  <description>A rising edge followed by a high level for a period defined by WKUPDBC on the cor-responding wake-up input forces the wake-up of the core power supply</description>
+                  <description>A rising edge followed by a high level for a period defined by WKUPDBC on the cor-responding wake-up input forces the wake-up of the core power supply.</description>
                   <value>1</value>
                 </enumeratedValue>
               </enumeratedValues>
@@ -65704,12 +65728,12 @@
               <enumeratedValues>
                 <enumeratedValue>
                   <name>LOW</name>
-                  <description>A falling edge followed by a low level for a period defined by WKUPDBC on the corre-sponding wake-up input forces the wake-up of the core power supply</description>
+                  <description>A falling edge followed by a low level for a period defined by WKUPDBC on the corre-sponding wake-up input forces the wake-up of the core power supply.</description>
                   <value>0</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>HIGH</name>
-                  <description>A rising edge followed by a high level for a period defined by WKUPDBC on the cor-responding wake-up input forces the wake-up of the core power supply</description>
+                  <description>A rising edge followed by a high level for a period defined by WKUPDBC on the cor-responding wake-up input forces the wake-up of the core power supply.</description>
                   <value>1</value>
                 </enumeratedValue>
               </enumeratedValues>
@@ -65723,12 +65747,12 @@
               <enumeratedValues>
                 <enumeratedValue>
                   <name>LOW</name>
-                  <description>A falling edge followed by a low level for a period defined by WKUPDBC on the corre-sponding wake-up input forces the wake-up of the core power supply</description>
+                  <description>A falling edge followed by a low level for a period defined by WKUPDBC on the corre-sponding wake-up input forces the wake-up of the core power supply.</description>
                   <value>0</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>HIGH</name>
-                  <description>A rising edge followed by a high level for a period defined by WKUPDBC on the cor-responding wake-up input forces the wake-up of the core power supply</description>
+                  <description>A rising edge followed by a high level for a period defined by WKUPDBC on the cor-responding wake-up input forces the wake-up of the core power supply.</description>
                   <value>1</value>
                 </enumeratedValue>
               </enumeratedValues>
@@ -65742,12 +65766,12 @@
               <enumeratedValues>
                 <enumeratedValue>
                   <name>LOW</name>
-                  <description>A falling edge followed by a low level for a period defined by WKUPDBC on the corre-sponding wake-up input forces the wake-up of the core power supply</description>
+                  <description>A falling edge followed by a low level for a period defined by WKUPDBC on the corre-sponding wake-up input forces the wake-up of the core power supply.</description>
                   <value>0</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>HIGH</name>
-                  <description>A rising edge followed by a high level for a period defined by WKUPDBC on the cor-responding wake-up input forces the wake-up of the core power supply</description>
+                  <description>A rising edge followed by a high level for a period defined by WKUPDBC on the cor-responding wake-up input forces the wake-up of the core power supply.</description>
                   <value>1</value>
                 </enumeratedValue>
               </enumeratedValues>
@@ -65761,12 +65785,12 @@
               <enumeratedValues>
                 <enumeratedValue>
                   <name>LOW</name>
-                  <description>A falling edge followed by a low level for a period defined by WKUPDBC on the corre-sponding wake-up input forces the wake-up of the core power supply</description>
+                  <description>A falling edge followed by a low level for a period defined by WKUPDBC on the corre-sponding wake-up input forces the wake-up of the core power supply.</description>
                   <value>0</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>HIGH</name>
-                  <description>A rising edge followed by a high level for a period defined by WKUPDBC on the cor-responding wake-up input forces the wake-up of the core power supply</description>
+                  <description>A rising edge followed by a high level for a period defined by WKUPDBC on the cor-responding wake-up input forces the wake-up of the core power supply.</description>
                   <value>1</value>
                 </enumeratedValue>
               </enumeratedValues>
@@ -65780,12 +65804,12 @@
               <enumeratedValues>
                 <enumeratedValue>
                   <name>LOW</name>
-                  <description>A falling edge followed by a low level for a period defined by WKUPDBC on the corre-sponding wake-up input forces the wake-up of the core power supply</description>
+                  <description>A falling edge followed by a low level for a period defined by WKUPDBC on the corre-sponding wake-up input forces the wake-up of the core power supply.</description>
                   <value>0</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>HIGH</name>
-                  <description>A rising edge followed by a high level for a period defined by WKUPDBC on the cor-responding wake-up input forces the wake-up of the core power supply</description>
+                  <description>A rising edge followed by a high level for a period defined by WKUPDBC on the cor-responding wake-up input forces the wake-up of the core power supply.</description>
                   <value>1</value>
                 </enumeratedValue>
               </enumeratedValues>
@@ -65799,12 +65823,12 @@
               <enumeratedValues>
                 <enumeratedValue>
                   <name>LOW</name>
-                  <description>A falling edge followed by a low level for a period defined by WKUPDBC on the corre-sponding wake-up input forces the wake-up of the core power supply</description>
+                  <description>A falling edge followed by a low level for a period defined by WKUPDBC on the corre-sponding wake-up input forces the wake-up of the core power supply.</description>
                   <value>0</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>HIGH</name>
-                  <description>A rising edge followed by a high level for a period defined by WKUPDBC on the cor-responding wake-up input forces the wake-up of the core power supply</description>
+                  <description>A rising edge followed by a high level for a period defined by WKUPDBC on the cor-responding wake-up input forces the wake-up of the core power supply.</description>
                   <value>1</value>
                 </enumeratedValue>
               </enumeratedValues>
@@ -65818,12 +65842,12 @@
               <enumeratedValues>
                 <enumeratedValue>
                   <name>LOW</name>
-                  <description>A falling edge followed by a low level for a period defined by WKUPDBC on the corre-sponding wake-up input forces the wake-up of the core power supply</description>
+                  <description>A falling edge followed by a low level for a period defined by WKUPDBC on the corre-sponding wake-up input forces the wake-up of the core power supply.</description>
                   <value>0</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>HIGH</name>
-                  <description>A rising edge followed by a high level for a period defined by WKUPDBC on the cor-responding wake-up input forces the wake-up of the core power supply</description>
+                  <description>A rising edge followed by a high level for a period defined by WKUPDBC on the cor-responding wake-up input forces the wake-up of the core power supply.</description>
                   <value>1</value>
                 </enumeratedValue>
               </enumeratedValues>
@@ -65837,12 +65861,12 @@
               <enumeratedValues>
                 <enumeratedValue>
                   <name>LOW</name>
-                  <description>A falling edge followed by a low level for a period defined by WKUPDBC on the corre-sponding wake-up input forces the wake-up of the core power supply</description>
+                  <description>A falling edge followed by a low level for a period defined by WKUPDBC on the corre-sponding wake-up input forces the wake-up of the core power supply.</description>
                   <value>0</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>HIGH</name>
-                  <description>A rising edge followed by a high level for a period defined by WKUPDBC on the cor-responding wake-up input forces the wake-up of the core power supply</description>
+                  <description>A rising edge followed by a high level for a period defined by WKUPDBC on the cor-responding wake-up input forces the wake-up of the core power supply.</description>
                   <value>1</value>
                 </enumeratedValue>
               </enumeratedValues>
@@ -65856,12 +65880,12 @@
               <enumeratedValues>
                 <enumeratedValue>
                   <name>LOW</name>
-                  <description>A falling edge followed by a low level for a period defined by WKUPDBC on the corre-sponding wake-up input forces the wake-up of the core power supply</description>
+                  <description>A falling edge followed by a low level for a period defined by WKUPDBC on the corre-sponding wake-up input forces the wake-up of the core power supply.</description>
                   <value>0</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>HIGH</name>
-                  <description>A rising edge followed by a high level for a period defined by WKUPDBC on the cor-responding wake-up input forces the wake-up of the core power supply</description>
+                  <description>A rising edge followed by a high level for a period defined by WKUPDBC on the cor-responding wake-up input forces the wake-up of the core power supply.</description>
                   <value>1</value>
                 </enumeratedValue>
               </enumeratedValues>
@@ -65875,12 +65899,12 @@
               <enumeratedValues>
                 <enumeratedValue>
                   <name>LOW</name>
-                  <description>A falling edge followed by a low level for a period defined by WKUPDBC on the corre-sponding wake-up input forces the wake-up of the core power supply</description>
+                  <description>A falling edge followed by a low level for a period defined by WKUPDBC on the corre-sponding wake-up input forces the wake-up of the core power supply.</description>
                   <value>0</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>HIGH</name>
-                  <description>A rising edge followed by a high level for a period defined by WKUPDBC on the cor-responding wake-up input forces the wake-up of the core power supply</description>
+                  <description>A rising edge followed by a high level for a period defined by WKUPDBC on the cor-responding wake-up input forces the wake-up of the core power supply.</description>
                   <value>1</value>
                 </enumeratedValue>
               </enumeratedValues>
@@ -65894,12 +65918,12 @@
               <enumeratedValues>
                 <enumeratedValue>
                   <name>LOW</name>
-                  <description>A falling edge followed by a low level for a period defined by WKUPDBC on the corre-sponding wake-up input forces the wake-up of the core power supply</description>
+                  <description>A falling edge followed by a low level for a period defined by WKUPDBC on the corre-sponding wake-up input forces the wake-up of the core power supply.</description>
                   <value>0</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>HIGH</name>
-                  <description>A rising edge followed by a high level for a period defined by WKUPDBC on the cor-responding wake-up input forces the wake-up of the core power supply</description>
+                  <description>A rising edge followed by a high level for a period defined by WKUPDBC on the cor-responding wake-up input forces the wake-up of the core power supply.</description>
                   <value>1</value>
                 </enumeratedValue>
               </enumeratedValues>
@@ -65923,12 +65947,12 @@
               <enumeratedValues>
                 <enumeratedValue>
                   <name>NO</name>
-                  <description>No wake-up due to the assertion of the WKUP pins has occurred since the last read of SUPC_SR</description>
+                  <description>No wake-up due to the assertion of the WKUP pins has occurred since the last read of SUPC_SR.</description>
                   <value>0</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>PRESENT</name>
-                  <description>At least one wake-up due to the assertion of the WKUP pins has occurred since the last read of SUPC_SR</description>
+                  <description>At least one wake-up due to the assertion of the WKUP pins has occurred since the last read of SUPC_SR.</description>
                   <value>1</value>
                 </enumeratedValue>
               </enumeratedValues>
@@ -65942,12 +65966,12 @@
               <enumeratedValues>
                 <enumeratedValue>
                   <name>NO</name>
-                  <description>No wake-up due to a supply monitor detection has occurred since the last read of SUPC_SR</description>
+                  <description>No wake-up due to a supply monitor detection has occurred since the last read of SUPC_SR.</description>
                   <value>0</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>PRESENT</name>
-                  <description>At least one wake-up due to a supply monitor detection has occurred since the last read of SUPC_SR</description>
+                  <description>At least one wake-up due to a supply monitor detection has occurred since the last read of SUPC_SR.</description>
                   <value>1</value>
                 </enumeratedValue>
               </enumeratedValues>
@@ -65961,12 +65985,12 @@
               <enumeratedValues>
                 <enumeratedValue>
                   <name>NO</name>
-                  <description>No core brownout rising edge event has been detected since the last read of the SUPC_SR</description>
+                  <description>No core brownout rising edge event has been detected since the last read of the SUPC_SR.</description>
                   <value>0</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>PRESENT</name>
-                  <description>At least one brownout output rising edge event has been detected since the last read of the SUPC_SR</description>
+                  <description>At least one brownout output rising edge event has been detected since the last read of the SUPC_SR.</description>
                   <value>1</value>
                 </enumeratedValue>
               </enumeratedValues>
@@ -65980,12 +66004,12 @@
               <enumeratedValues>
                 <enumeratedValue>
                   <name>NO</name>
-                  <description>No supply monitor detection has generated a core reset since the last read of the SUPC_SR</description>
+                  <description>No supply monitor detection has generated a core reset since the last read of the SUPC_SR.</description>
                   <value>0</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>PRESENT</name>
-                  <description>At least one supply monitor detection has generated a core reset since the last read of the SUPC_SR</description>
+                  <description>At least one supply monitor detection has generated a core reset since the last read of the SUPC_SR.</description>
                   <value>1</value>
                 </enumeratedValue>
               </enumeratedValues>
@@ -65999,12 +66023,12 @@
               <enumeratedValues>
                 <enumeratedValue>
                   <name>NO</name>
-                  <description>No supply monitor detection since the last read of SUPC_SR</description>
+                  <description>No supply monitor detection since the last read of SUPC_SR.</description>
                   <value>0</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>PRESENT</name>
-                  <description>At least one supply monitor detection since the last read of SUPC_SR</description>
+                  <description>At least one supply monitor detection since the last read of SUPC_SR.</description>
                   <value>1</value>
                 </enumeratedValue>
               </enumeratedValues>
@@ -66018,12 +66042,12 @@
               <enumeratedValues>
                 <enumeratedValue>
                   <name>HIGH</name>
-                  <description>The supply monitor detected VDDIO higher than its threshold at its last measurement</description>
+                  <description>The supply monitor detected VDDIO higher than its threshold at its last measurement.</description>
                   <value>0</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>LOW</name>
-                  <description>The supply monitor detected VDDIO lower than its threshold at its last measurement</description>
+                  <description>The supply monitor detected VDDIO lower than its threshold at its last measurement.</description>
                   <value>1</value>
                 </enumeratedValue>
               </enumeratedValues>
@@ -66037,12 +66061,12 @@
               <enumeratedValues>
                 <enumeratedValue>
                   <name>RC</name>
-                  <description>The slow clock, SLCK, is generated by the embedded 32 kHz RC oscillator</description>
+                  <description>The slow clock, SLCK, is generated by the embedded 32 kHz RC oscillator.</description>
                   <value>0</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>CRYST</name>
-                  <description>The slow clock, SLCK, is generated by the 32 kHz crystal oscillator</description>
+                  <description>The slow clock, SLCK, is generated by the 32 kHz crystal oscillator.</description>
                   <value>1</value>
                 </enumeratedValue>
               </enumeratedValues>
@@ -66056,12 +66080,12 @@
               <enumeratedValues>
                 <enumeratedValue>
                   <name>NO</name>
-                  <description>No wake-up due to the assertion of the WKUP0 pin has occurred since the last read of SUPC_SR</description>
+                  <description>No wake-up due to the assertion of the WKUP0 pin has occurred since the last read of SUPC_SR.</description>
                   <value>0</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>PRESENT</name>
-                  <description>At least one wake-up due to the assertion of the WKUP0 pin has occurred since the last read of SUPC_SR</description>
+                  <description>At least one wake-up due to the assertion of the WKUP0 pin has occurred since the last read of SUPC_SR.</description>
                   <value>1</value>
                 </enumeratedValue>
               </enumeratedValues>
@@ -66075,12 +66099,12 @@
               <enumeratedValues>
                 <enumeratedValue>
                   <name>NO</name>
-                  <description>No wake-up due to the assertion of the WKUP1 pin has occurred since the last read of SUPC_SR</description>
+                  <description>No wake-up due to the assertion of the WKUP1 pin has occurred since the last read of SUPC_SR.</description>
                   <value>0</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>PRESENT</name>
-                  <description>At least one wake-up due to the assertion of the WKUP1 pin has occurred since the last read of SUPC_SR</description>
+                  <description>At least one wake-up due to the assertion of the WKUP1 pin has occurred since the last read of SUPC_SR.</description>
                   <value>1</value>
                 </enumeratedValue>
               </enumeratedValues>
@@ -66094,12 +66118,12 @@
               <enumeratedValues>
                 <enumeratedValue>
                   <name>DIS</name>
-                  <description>The corresponding wake-up input is disabled, or was inactive at the time the debouncer triggered a wake-up event</description>
+                  <description>The corresponding wake-up input is disabled, or was inactive at the time the debouncer triggered a wake-up event.</description>
                   <value>0</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>EN</name>
-                  <description>The corresponding wake-up input was active at the time the debouncer triggered a wake-up event since the last read of SUPC_SR</description>
+                  <description>The corresponding wake-up input was active at the time the debouncer triggered a wake-up event since the last read of SUPC_SR.</description>
                   <value>1</value>
                 </enumeratedValue>
               </enumeratedValues>
@@ -66113,12 +66137,12 @@
               <enumeratedValues>
                 <enumeratedValue>
                   <name>DIS</name>
-                  <description>The corresponding wake-up input is disabled, or was inactive at the time the debouncer triggered a wake-up event</description>
+                  <description>The corresponding wake-up input is disabled, or was inactive at the time the debouncer triggered a wake-up event.</description>
                   <value>0</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>EN</name>
-                  <description>The corresponding wake-up input was active at the time the debouncer triggered a wake-up event since the last read of SUPC_SR</description>
+                  <description>The corresponding wake-up input was active at the time the debouncer triggered a wake-up event since the last read of SUPC_SR.</description>
                   <value>1</value>
                 </enumeratedValue>
               </enumeratedValues>
@@ -66132,12 +66156,12 @@
               <enumeratedValues>
                 <enumeratedValue>
                   <name>DIS</name>
-                  <description>The corresponding wake-up input is disabled, or was inactive at the time the debouncer triggered a wake-up event</description>
+                  <description>The corresponding wake-up input is disabled, or was inactive at the time the debouncer triggered a wake-up event.</description>
                   <value>0</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>EN</name>
-                  <description>The corresponding wake-up input was active at the time the debouncer triggered a wake-up event since the last read of SUPC_SR</description>
+                  <description>The corresponding wake-up input was active at the time the debouncer triggered a wake-up event since the last read of SUPC_SR.</description>
                   <value>1</value>
                 </enumeratedValue>
               </enumeratedValues>
@@ -66151,12 +66175,12 @@
               <enumeratedValues>
                 <enumeratedValue>
                   <name>DIS</name>
-                  <description>The corresponding wake-up input is disabled, or was inactive at the time the debouncer triggered a wake-up event</description>
+                  <description>The corresponding wake-up input is disabled, or was inactive at the time the debouncer triggered a wake-up event.</description>
                   <value>0</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>EN</name>
-                  <description>The corresponding wake-up input was active at the time the debouncer triggered a wake-up event since the last read of SUPC_SR</description>
+                  <description>The corresponding wake-up input was active at the time the debouncer triggered a wake-up event since the last read of SUPC_SR.</description>
                   <value>1</value>
                 </enumeratedValue>
               </enumeratedValues>
@@ -66170,12 +66194,12 @@
               <enumeratedValues>
                 <enumeratedValue>
                   <name>DIS</name>
-                  <description>The corresponding wake-up input is disabled, or was inactive at the time the debouncer triggered a wake-up event</description>
+                  <description>The corresponding wake-up input is disabled, or was inactive at the time the debouncer triggered a wake-up event.</description>
                   <value>0</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>EN</name>
-                  <description>The corresponding wake-up input was active at the time the debouncer triggered a wake-up event since the last read of SUPC_SR</description>
+                  <description>The corresponding wake-up input was active at the time the debouncer triggered a wake-up event since the last read of SUPC_SR.</description>
                   <value>1</value>
                 </enumeratedValue>
               </enumeratedValues>
@@ -66189,12 +66213,12 @@
               <enumeratedValues>
                 <enumeratedValue>
                   <name>DIS</name>
-                  <description>The corresponding wake-up input is disabled, or was inactive at the time the debouncer triggered a wake-up event</description>
+                  <description>The corresponding wake-up input is disabled, or was inactive at the time the debouncer triggered a wake-up event.</description>
                   <value>0</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>EN</name>
-                  <description>The corresponding wake-up input was active at the time the debouncer triggered a wake-up event since the last read of SUPC_SR</description>
+                  <description>The corresponding wake-up input was active at the time the debouncer triggered a wake-up event since the last read of SUPC_SR.</description>
                   <value>1</value>
                 </enumeratedValue>
               </enumeratedValues>
@@ -66208,12 +66232,12 @@
               <enumeratedValues>
                 <enumeratedValue>
                   <name>DIS</name>
-                  <description>The corresponding wake-up input is disabled, or was inactive at the time the debouncer triggered a wake-up event</description>
+                  <description>The corresponding wake-up input is disabled, or was inactive at the time the debouncer triggered a wake-up event.</description>
                   <value>0</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>EN</name>
-                  <description>The corresponding wake-up input was active at the time the debouncer triggered a wake-up event since the last read of SUPC_SR</description>
+                  <description>The corresponding wake-up input was active at the time the debouncer triggered a wake-up event since the last read of SUPC_SR.</description>
                   <value>1</value>
                 </enumeratedValue>
               </enumeratedValues>
@@ -66227,12 +66251,12 @@
               <enumeratedValues>
                 <enumeratedValue>
                   <name>DIS</name>
-                  <description>The corresponding wake-up input is disabled, or was inactive at the time the debouncer triggered a wake-up event</description>
+                  <description>The corresponding wake-up input is disabled, or was inactive at the time the debouncer triggered a wake-up event.</description>
                   <value>0</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>EN</name>
-                  <description>The corresponding wake-up input was active at the time the debouncer triggered a wake-up event since the last read of SUPC_SR</description>
+                  <description>The corresponding wake-up input was active at the time the debouncer triggered a wake-up event since the last read of SUPC_SR.</description>
                   <value>1</value>
                 </enumeratedValue>
               </enumeratedValues>
@@ -66246,12 +66270,12 @@
               <enumeratedValues>
                 <enumeratedValue>
                   <name>DIS</name>
-                  <description>The corresponding wake-up input is disabled, or was inactive at the time the debouncer triggered a wake-up event</description>
+                  <description>The corresponding wake-up input is disabled, or was inactive at the time the debouncer triggered a wake-up event.</description>
                   <value>0</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>EN</name>
-                  <description>The corresponding wake-up input was active at the time the debouncer triggered a wake-up event since the last read of SUPC_SR</description>
+                  <description>The corresponding wake-up input was active at the time the debouncer triggered a wake-up event since the last read of SUPC_SR.</description>
                   <value>1</value>
                 </enumeratedValue>
               </enumeratedValues>
@@ -66265,12 +66289,12 @@
               <enumeratedValues>
                 <enumeratedValue>
                   <name>DIS</name>
-                  <description>The corresponding wake-up input is disabled, or was inactive at the time the debouncer triggered a wake-up event</description>
+                  <description>The corresponding wake-up input is disabled, or was inactive at the time the debouncer triggered a wake-up event.</description>
                   <value>0</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>EN</name>
-                  <description>The corresponding wake-up input was active at the time the debouncer triggered a wake-up event since the last read of SUPC_SR</description>
+                  <description>The corresponding wake-up input was active at the time the debouncer triggered a wake-up event since the last read of SUPC_SR.</description>
                   <value>1</value>
                 </enumeratedValue>
               </enumeratedValues>
@@ -66284,12 +66308,12 @@
               <enumeratedValues>
                 <enumeratedValue>
                   <name>DIS</name>
-                  <description>The corresponding wake-up input is disabled, or was inactive at the time the debouncer triggered a wake-up event</description>
+                  <description>The corresponding wake-up input is disabled, or was inactive at the time the debouncer triggered a wake-up event.</description>
                   <value>0</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>EN</name>
-                  <description>The corresponding wake-up input was active at the time the debouncer triggered a wake-up event since the last read of SUPC_SR</description>
+                  <description>The corresponding wake-up input was active at the time the debouncer triggered a wake-up event since the last read of SUPC_SR.</description>
                   <value>1</value>
                 </enumeratedValue>
               </enumeratedValues>
@@ -66303,12 +66327,12 @@
               <enumeratedValues>
                 <enumeratedValue>
                   <name>DIS</name>
-                  <description>The corresponding wake-up input is disabled, or was inactive at the time the debouncer triggered a wake-up event</description>
+                  <description>The corresponding wake-up input is disabled, or was inactive at the time the debouncer triggered a wake-up event.</description>
                   <value>0</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>EN</name>
-                  <description>The corresponding wake-up input was active at the time the debouncer triggered a wake-up event since the last read of SUPC_SR</description>
+                  <description>The corresponding wake-up input was active at the time the debouncer triggered a wake-up event since the last read of SUPC_SR.</description>
                   <value>1</value>
                 </enumeratedValue>
               </enumeratedValues>
@@ -66322,12 +66346,12 @@
               <enumeratedValues>
                 <enumeratedValue>
                   <name>DIS</name>
-                  <description>The corresponding wake-up input is disabled, or was inactive at the time the debouncer triggered a wake-up event</description>
+                  <description>The corresponding wake-up input is disabled, or was inactive at the time the debouncer triggered a wake-up event.</description>
                   <value>0</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>EN</name>
-                  <description>The corresponding wake-up input was active at the time the debouncer triggered a wake-up event since the last read of SUPC_SR</description>
+                  <description>The corresponding wake-up input was active at the time the debouncer triggered a wake-up event since the last read of SUPC_SR.</description>
                   <value>1</value>
                 </enumeratedValue>
               </enumeratedValues>
@@ -66341,12 +66365,12 @@
               <enumeratedValues>
                 <enumeratedValue>
                   <name>DIS</name>
-                  <description>The corresponding wake-up input is disabled, or was inactive at the time the debouncer triggered a wake-up event</description>
+                  <description>The corresponding wake-up input is disabled, or was inactive at the time the debouncer triggered a wake-up event.</description>
                   <value>0</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>EN</name>
-                  <description>The corresponding wake-up input was active at the time the debouncer triggered a wake-up event since the last read of SUPC_SR</description>
+                  <description>The corresponding wake-up input was active at the time the debouncer triggered a wake-up event since the last read of SUPC_SR.</description>
                   <value>1</value>
                 </enumeratedValue>
               </enumeratedValues>
@@ -66360,12 +66384,12 @@
               <enumeratedValues>
                 <enumeratedValue>
                   <name>DIS</name>
-                  <description>The corresponding wake-up input is disabled, or was inactive at the time the debouncer triggered a wake-up event</description>
+                  <description>The corresponding wake-up input is disabled, or was inactive at the time the debouncer triggered a wake-up event.</description>
                   <value>0</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>EN</name>
-                  <description>The corresponding wake-up input was active at the time the debouncer triggered a wake-up event since the last read of SUPC_SR</description>
+                  <description>The corresponding wake-up input was active at the time the debouncer triggered a wake-up event since the last read of SUPC_SR.</description>
                   <value>1</value>
                 </enumeratedValue>
               </enumeratedValues>
@@ -66379,12 +66403,12 @@
               <enumeratedValues>
                 <enumeratedValue>
                   <name>DIS</name>
-                  <description>The corresponding wake-up input is disabled, or was inactive at the time the debouncer triggered a wake-up event</description>
+                  <description>The corresponding wake-up input is disabled, or was inactive at the time the debouncer triggered a wake-up event.</description>
                   <value>0</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>EN</name>
-                  <description>The corresponding wake-up input was active at the time the debouncer triggered a wake-up event since the last read of SUPC_SR</description>
+                  <description>The corresponding wake-up input was active at the time the debouncer triggered a wake-up event since the last read of SUPC_SR.</description>
                   <value>1</value>
                 </enumeratedValue>
               </enumeratedValues>
@@ -66554,7 +66578,7 @@
               <enumeratedValues>
                 <enumeratedValue>
                   <name>PASSWD</name>
-                  <description>Writing any other value in this field aborts the write operation</description>
+                  <description>Writing any other value in this field aborts the write operation.</description>
                   <value>0xA5</value>
                 </enumeratedValue>
               </enumeratedValues>
@@ -67161,12 +67185,12 @@
               <enumeratedValues>
                 <enumeratedValue>
                   <name>FREERUN</name>
-                  <description>Time and calendar registers cannot be updated</description>
+                  <description>Time and calendar registers cannot be updated.</description>
                   <value>0</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>UPDATE</name>
-                  <description>Time and calendar registers can be updated</description>
+                  <description>Time and calendar registers can be updated.</description>
                   <value>1</value>
                 </enumeratedValue>
               </enumeratedValues>
@@ -67180,12 +67204,12 @@
               <enumeratedValues>
                 <enumeratedValue>
                   <name>NO_ALARMEVENT</name>
-                  <description>No alarm matching condition occurred</description>
+                  <description>No alarm matching condition occurred.</description>
                   <value>0</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>ALARMEVENT</name>
-                  <description>An alarm matching condition has occurred</description>
+                  <description>An alarm matching condition has occurred.</description>
                   <value>1</value>
                 </enumeratedValue>
               </enumeratedValues>
@@ -67199,12 +67223,12 @@
               <enumeratedValues>
                 <enumeratedValue>
                   <name>NO_SECEVENT</name>
-                  <description>No second event has occurred since the last clear</description>
+                  <description>No second event has occurred since the last clear.</description>
                   <value>0</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>SECEVENT</name>
-                  <description>At least one second event has occurred since the last clear</description>
+                  <description>At least one second event has occurred since the last clear.</description>
                   <value>1</value>
                 </enumeratedValue>
               </enumeratedValues>
@@ -67218,12 +67242,12 @@
               <enumeratedValues>
                 <enumeratedValue>
                   <name>NO_TIMEVENT</name>
-                  <description>No time event has occurred since the last clear</description>
+                  <description>No time event has occurred since the last clear.</description>
                   <value>0</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>TIMEVENT</name>
-                  <description>At least one time event has occurred since the last clear</description>
+                  <description>At least one time event has occurred since the last clear.</description>
                   <value>1</value>
                 </enumeratedValue>
               </enumeratedValues>
@@ -67237,12 +67261,12 @@
               <enumeratedValues>
                 <enumeratedValue>
                   <name>NO_CALEVENT</name>
-                  <description>No calendar event has occurred since the last clear</description>
+                  <description>No calendar event has occurred since the last clear.</description>
                   <value>0</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>CALEVENT</name>
-                  <description>At least one calendar event has occurred since the last clear</description>
+                  <description>At least one calendar event has occurred since the last clear.</description>
                   <value>1</value>
                 </enumeratedValue>
               </enumeratedValues>
@@ -67256,12 +67280,12 @@
               <enumeratedValues>
                 <enumeratedValue>
                   <name>CORRECT</name>
-                  <description>The internal free running counters are carrying valid values since the last read of the Status Register (RTC_SR)</description>
+                  <description>The internal free running counters are carrying valid values since the last read of the Status Register (RTC_SR).</description>
                   <value>0</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>ERR_TIMEDATE</name>
-                  <description>The internal free running counters have been corrupted (invalid date or time, non-BCD values) since the last read and/or they are still invalid</description>
+                  <description>The internal free running counters have been corrupted (invalid date or time, non-BCD values) since the last read and/or they are still invalid.</description>
                   <value>1</value>
                 </enumeratedValue>
               </enumeratedValues>
@@ -67516,7 +67540,7 @@
     <peripheral>
       <name>GPBR</name>
       <version>6378H</version>
-      <description>General Purpose Backup Register</description>
+      <description>General Purpose Backup Registers</description>
       <groupName>SYSC</groupName>
       <prependToName>GPBR_</prependToName>
       <baseAddress>0x400E1490</baseAddress>

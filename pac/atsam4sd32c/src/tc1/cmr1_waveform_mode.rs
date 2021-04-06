@@ -183,13 +183,13 @@ impl<'a> CLKI_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum BURST_A {
-    #[doc = "0: The clock is not gated by an external signal"]
+    #[doc = "0: The clock is not gated by an external signal."]
     NONE = 0,
-    #[doc = "1: XC0 is ANDed with the selected clock"]
+    #[doc = "1: XC0 is ANDed with the selected clock."]
     XC0 = 1,
-    #[doc = "2: XC1 is ANDed with the selected clock"]
+    #[doc = "2: XC1 is ANDed with the selected clock."]
     XC1 = 2,
-    #[doc = "3: XC2 is ANDed with the selected clock"]
+    #[doc = "3: XC2 is ANDed with the selected clock."]
     XC2 = 3,
 }
 impl From<BURST_A> for u8 {
@@ -245,22 +245,22 @@ impl<'a> BURST_W<'a> {
             self.bits(variant.into())
         }
     }
-    #[doc = "The clock is not gated by an external signal"]
+    #[doc = "The clock is not gated by an external signal."]
     #[inline(always)]
     pub fn none(self) -> &'a mut W {
         self.variant(BURST_A::NONE)
     }
-    #[doc = "XC0 is ANDed with the selected clock"]
+    #[doc = "XC0 is ANDed with the selected clock."]
     #[inline(always)]
     pub fn xc0(self) -> &'a mut W {
         self.variant(BURST_A::XC0)
     }
-    #[doc = "XC1 is ANDed with the selected clock"]
+    #[doc = "XC1 is ANDed with the selected clock."]
     #[inline(always)]
     pub fn xc1(self) -> &'a mut W {
         self.variant(BURST_A::XC1)
     }
-    #[doc = "XC2 is ANDed with the selected clock"]
+    #[doc = "XC2 is ANDed with the selected clock."]
     #[inline(always)]
     pub fn xc2(self) -> &'a mut W {
         self.variant(BURST_A::XC2)

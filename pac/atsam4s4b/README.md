@@ -1,4 +1,4 @@
-# Microchip/Atmel ATSAM4S8B PAC for Rust
+# Microchip/Atmel ATSAM4S4B PAC for Rust
 
 This repository holds the Peripheral Access Crate for the Atmel `ATSAM4S4B` microcontroller.
 
