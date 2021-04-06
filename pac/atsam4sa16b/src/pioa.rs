@@ -93,7 +93,7 @@ pub struct RegisterBlock {
     _reserved40: [u8; 4usize],
     #[doc = "0xd0 - Falling Edge/Low-Level Select Register"]
     pub fellsr: FELLSR,
-    #[doc = "0xd4 - Rising Edge/High-Level Select Register"]
+    #[doc = "0xd4 - Rising Edge/ High-Level Select Register"]
     pub rehlsr: REHLSR,
     #[doc = "0xd8 - Fall/Rise - Low/High Status Register"]
     pub frlhsr: FRLHSR,
@@ -510,14 +510,14 @@ pub struct _FELLSR;
 impl crate::Writable for FELLSR {}
 #[doc = "Falling Edge/Low-Level Select Register"]
 pub mod fellsr;
-#[doc = "Rising Edge/High-Level Select Register\n\nThis register you can [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [rehlsr](rehlsr) module"]
+#[doc = "Rising Edge/ High-Level Select Register\n\nThis register you can [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [rehlsr](rehlsr) module"]
 pub type REHLSR = crate::Reg<u32, _REHLSR>;
 #[allow(missing_docs)]
 #[doc(hidden)]
 pub struct _REHLSR;
 #[doc = "`write(|w| ..)` method takes [rehlsr::W](rehlsr::W) writer structure"]
 impl crate::Writable for REHLSR {}
-#[doc = "Rising Edge/High-Level Select Register"]
+#[doc = "Rising Edge/ High-Level Select Register"]
 pub mod rehlsr;
 #[doc = "Fall/Rise - Low/High Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [frlhsr](frlhsr) module"]
 pub type FRLHSR = crate::Reg<u32, _FRLHSR>;
@@ -668,7 +668,7 @@ impl crate::Readable for RNCR {}
 impl crate::Writable for RNCR {}
 #[doc = "Receive Next Counter Register"]
 pub mod rncr;
-#[doc = "Transfer Control Register\n\nThis register you can [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ptcr](ptcr) module"]
+#[doc = "Transfer Control Register\n\nThis register you can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ptcr](ptcr) module"]
 pub type PTCR = crate::Reg<u32, _PTCR>;
 #[allow(missing_docs)]
 #[doc(hidden)]

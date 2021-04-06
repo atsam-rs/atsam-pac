@@ -1,5 +1,13 @@
 #[doc = "Writer for register DMA_EN"]
 pub type W = crate::W<u32, super::DMA_EN>;
+#[doc = "Register DMA_EN `reset()`'s with value 0"]
+impl crate::ResetValue for super::DMA_EN {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
+    }
+}
 #[doc = "Write proxy for field `DMAEN`"]
 pub struct DMAEN_W<'a> {
     w: &'a mut W,
@@ -23,7 +31,7 @@ impl<'a> DMAEN_W<'a> {
     }
 }
 impl W {
-    #[doc = "Bit 0 - DMA Enable"]
+    #[doc = "Bit 0 - DMA Enable Register"]
     #[inline(always)]
     pub fn dmaen(&mut self) -> DMAEN_W {
         DMAEN_W { w: self }

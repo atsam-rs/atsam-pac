@@ -1,13 +1,5 @@
 #[doc = "Writer for register CDR"]
 pub type W = crate::W<u32, super::CDR>;
-#[doc = "Register CDR `reset()`'s with value 0"]
-impl crate::ResetValue for super::CDR {
-    type Type = u32;
-    #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
-    }
-}
 #[doc = "Write proxy for field `DATA`"]
 pub struct DATA_W<'a> {
     w: &'a mut W,

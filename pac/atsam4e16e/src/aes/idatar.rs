@@ -1,4 +1,4 @@
-#[doc = "Writer for register IDATAR%s"]
+#[doc = "Writer for register IDATAR[%s]"]
 pub type W = crate::W<u32, super::IDATAR>;
 #[doc = "Write proxy for field `IDATA`"]
 pub struct IDATA_W<'a> {

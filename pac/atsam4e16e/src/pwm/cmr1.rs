@@ -14,27 +14,27 @@ impl crate::ResetValue for super::CMR1 {
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum CPRE_A {
-    #[doc = "0: Master clock"]
+    #[doc = "0: Peripheral clock"]
     MCK = 0,
-    #[doc = "1: Master clock/2"]
+    #[doc = "1: Peripheral clock/2"]
     MCK_DIV_2 = 1,
-    #[doc = "2: Master clock/4"]
+    #[doc = "2: Peripheral clock/4"]
     MCK_DIV_4 = 2,
-    #[doc = "3: Master clock/8"]
+    #[doc = "3: Peripheral clock/8"]
     MCK_DIV_8 = 3,
-    #[doc = "4: Master clock/16"]
+    #[doc = "4: Peripheral clock/16"]
     MCK_DIV_16 = 4,
-    #[doc = "5: Master clock/32"]
+    #[doc = "5: Peripheral clock/32"]
     MCK_DIV_32 = 5,
-    #[doc = "6: Master clock/64"]
+    #[doc = "6: Peripheral clock/64"]
     MCK_DIV_64 = 6,
-    #[doc = "7: Master clock/128"]
+    #[doc = "7: Peripheral clock/128"]
     MCK_DIV_128 = 7,
-    #[doc = "8: Master clock/256"]
+    #[doc = "8: Peripheral clock/256"]
     MCK_DIV_256 = 8,
-    #[doc = "9: Master clock/512"]
+    #[doc = "9: Peripheral clock/512"]
     MCK_DIV_512 = 9,
-    #[doc = "10: Master clock/1024"]
+    #[doc = "10: Peripheral clock/1024"]
     MCK_DIV_1024 = 10,
     #[doc = "11: Clock A"]
     CLKA = 11,
@@ -147,57 +147,57 @@ impl<'a> CPRE_W<'a> {
     pub fn variant(self, variant: CPRE_A) -> &'a mut W {
         unsafe { self.bits(variant.into()) }
     }
-    #[doc = "Master clock"]
+    #[doc = "Peripheral clock"]
     #[inline(always)]
     pub fn mck(self) -> &'a mut W {
         self.variant(CPRE_A::MCK)
     }
-    #[doc = "Master clock/2"]
+    #[doc = "Peripheral clock/2"]
     #[inline(always)]
     pub fn mck_div_2(self) -> &'a mut W {
         self.variant(CPRE_A::MCK_DIV_2)
     }
-    #[doc = "Master clock/4"]
+    #[doc = "Peripheral clock/4"]
     #[inline(always)]
     pub fn mck_div_4(self) -> &'a mut W {
         self.variant(CPRE_A::MCK_DIV_4)
     }
-    #[doc = "Master clock/8"]
+    #[doc = "Peripheral clock/8"]
     #[inline(always)]
     pub fn mck_div_8(self) -> &'a mut W {
         self.variant(CPRE_A::MCK_DIV_8)
     }
-    #[doc = "Master clock/16"]
+    #[doc = "Peripheral clock/16"]
     #[inline(always)]
     pub fn mck_div_16(self) -> &'a mut W {
         self.variant(CPRE_A::MCK_DIV_16)
     }
-    #[doc = "Master clock/32"]
+    #[doc = "Peripheral clock/32"]
     #[inline(always)]
     pub fn mck_div_32(self) -> &'a mut W {
         self.variant(CPRE_A::MCK_DIV_32)
     }
-    #[doc = "Master clock/64"]
+    #[doc = "Peripheral clock/64"]
     #[inline(always)]
     pub fn mck_div_64(self) -> &'a mut W {
         self.variant(CPRE_A::MCK_DIV_64)
     }
-    #[doc = "Master clock/128"]
+    #[doc = "Peripheral clock/128"]
     #[inline(always)]
     pub fn mck_div_128(self) -> &'a mut W {
         self.variant(CPRE_A::MCK_DIV_128)
     }
-    #[doc = "Master clock/256"]
+    #[doc = "Peripheral clock/256"]
     #[inline(always)]
     pub fn mck_div_256(self) -> &'a mut W {
         self.variant(CPRE_A::MCK_DIV_256)
     }
-    #[doc = "Master clock/512"]
+    #[doc = "Peripheral clock/512"]
     #[inline(always)]
     pub fn mck_div_512(self) -> &'a mut W {
         self.variant(CPRE_A::MCK_DIV_512)
     }
-    #[doc = "Master clock/1024"]
+    #[doc = "Peripheral clock/1024"]
     #[inline(always)]
     pub fn mck_div_1024(self) -> &'a mut W {
         self.variant(CPRE_A::MCK_DIV_1024)
@@ -291,13 +291,13 @@ impl<'a> CES_W<'a> {
         self.w
     }
 }
-#[doc = "Reader of field `UPDS`"]
-pub type UPDS_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `UPDS`"]
-pub struct UPDS_W<'a> {
+#[doc = "Reader of field `TCTS`"]
+pub type TCTS_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `TCTS`"]
+pub struct TCTS_W<'a> {
     w: &'a mut W,
 }
-impl<'a> UPDS_W<'a> {
+impl<'a> TCTS_W<'a> {
     #[doc = r"Sets the field bit"]
     #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
@@ -311,7 +311,7 @@ impl<'a> UPDS_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 11)) | (((value as u32) & 0x01) << 11);
+        self.w.bits = (self.w.bits & !(0x01 << 13)) | (((value as u32) & 0x01) << 13);
         self.w
     }
 }
@@ -408,10 +408,10 @@ impl R {
     pub fn ces(&self) -> CES_R {
         CES_R::new(((self.bits >> 10) & 0x01) != 0)
     }
-    #[doc = "Bit 11 - Update Selection"]
+    #[doc = "Bit 13 - Timer Counter Trigger Selection"]
     #[inline(always)]
-    pub fn upds(&self) -> UPDS_R {
-        UPDS_R::new(((self.bits >> 11) & 0x01) != 0)
+    pub fn tcts(&self) -> TCTS_R {
+        TCTS_R::new(((self.bits >> 13) & 0x01) != 0)
     }
     #[doc = "Bit 16 - Dead-Time Generator Enable"]
     #[inline(always)]
@@ -450,10 +450,10 @@ impl W {
     pub fn ces(&mut self) -> CES_W {
         CES_W { w: self }
     }
-    #[doc = "Bit 11 - Update Selection"]
+    #[doc = "Bit 13 - Timer Counter Trigger Selection"]
     #[inline(always)]
-    pub fn upds(&mut self) -> UPDS_W {
-        UPDS_W { w: self }
+    pub fn tcts(&mut self) -> TCTS_W {
+        TCTS_W { w: self }
     }
     #[doc = "Bit 16 - Dead-Time Generator Enable"]
     #[inline(always)]

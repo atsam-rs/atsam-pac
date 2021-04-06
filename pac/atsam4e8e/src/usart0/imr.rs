@@ -104,7 +104,7 @@ impl R {
     pub fn rxbuff(&self) -> RXBUFF_R {
         RXBUFF_R::new(((self.bits >> 12) & 0x01) != 0)
     }
-    #[doc = "Bit 13 - Non AcknowledgeInterrupt Mask"]
+    #[doc = "Bit 13 - Non Acknowledge Interrupt Mask"]
     #[inline(always)]
     pub fn nack(&self) -> NACK_R {
         NACK_R::new(((self.bits >> 13) & 0x01) != 0)

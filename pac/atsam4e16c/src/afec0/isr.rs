@@ -32,22 +32,6 @@ pub type EOC13_R = crate::R<bool, bool>;
 pub type EOC14_R = crate::R<bool, bool>;
 #[doc = "Reader of field `EOC15`"]
 pub type EOC15_R = crate::R<bool, bool>;
-#[doc = "Reader of field `EOC16`"]
-pub type EOC16_R = crate::R<bool, bool>;
-#[doc = "Reader of field `EOC17`"]
-pub type EOC17_R = crate::R<bool, bool>;
-#[doc = "Reader of field `EOC18`"]
-pub type EOC18_R = crate::R<bool, bool>;
-#[doc = "Reader of field `EOC19`"]
-pub type EOC19_R = crate::R<bool, bool>;
-#[doc = "Reader of field `EOC20`"]
-pub type EOC20_R = crate::R<bool, bool>;
-#[doc = "Reader of field `EOC21`"]
-pub type EOC21_R = crate::R<bool, bool>;
-#[doc = "Reader of field `EOC22`"]
-pub type EOC22_R = crate::R<bool, bool>;
-#[doc = "Reader of field `EOC23`"]
-pub type EOC23_R = crate::R<bool, bool>;
 #[doc = "Reader of field `DRDY`"]
 pub type DRDY_R = crate::R<bool, bool>;
 #[doc = "Reader of field `GOVRE`"]
@@ -142,46 +126,6 @@ impl R {
     #[inline(always)]
     pub fn eoc15(&self) -> EOC15_R {
         EOC15_R::new(((self.bits >> 15) & 0x01) != 0)
-    }
-    #[doc = "Bit 16 - End of Conversion 16"]
-    #[inline(always)]
-    pub fn eoc16(&self) -> EOC16_R {
-        EOC16_R::new(((self.bits >> 16) & 0x01) != 0)
-    }
-    #[doc = "Bit 17 - End of Conversion 17"]
-    #[inline(always)]
-    pub fn eoc17(&self) -> EOC17_R {
-        EOC17_R::new(((self.bits >> 17) & 0x01) != 0)
-    }
-    #[doc = "Bit 18 - End of Conversion 18"]
-    #[inline(always)]
-    pub fn eoc18(&self) -> EOC18_R {
-        EOC18_R::new(((self.bits >> 18) & 0x01) != 0)
-    }
-    #[doc = "Bit 19 - End of Conversion 19"]
-    #[inline(always)]
-    pub fn eoc19(&self) -> EOC19_R {
-        EOC19_R::new(((self.bits >> 19) & 0x01) != 0)
-    }
-    #[doc = "Bit 20 - End of Conversion 20"]
-    #[inline(always)]
-    pub fn eoc20(&self) -> EOC20_R {
-        EOC20_R::new(((self.bits >> 20) & 0x01) != 0)
-    }
-    #[doc = "Bit 21 - End of Conversion 21"]
-    #[inline(always)]
-    pub fn eoc21(&self) -> EOC21_R {
-        EOC21_R::new(((self.bits >> 21) & 0x01) != 0)
-    }
-    #[doc = "Bit 22 - End of Conversion 22"]
-    #[inline(always)]
-    pub fn eoc22(&self) -> EOC22_R {
-        EOC22_R::new(((self.bits >> 22) & 0x01) != 0)
-    }
-    #[doc = "Bit 23 - End of Conversion 23"]
-    #[inline(always)]
-    pub fn eoc23(&self) -> EOC23_R {
-        EOC23_R::new(((self.bits >> 23) & 0x01) != 0)
     }
     #[doc = "Bit 24 - Data Ready"]
     #[inline(always)]

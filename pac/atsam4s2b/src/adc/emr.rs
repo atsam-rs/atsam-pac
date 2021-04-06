@@ -181,7 +181,7 @@ impl R {
     pub fn cmpall(&self) -> CMPALL_R {
         CMPALL_R::new(((self.bits >> 9) & 0x01) != 0)
     }
-    #[doc = "Bit 24 - Tag of the ADC_LCDR"]
+    #[doc = "Bit 24 - Tag of the ADC_LDCR"]
     #[inline(always)]
     pub fn tag(&self) -> TAG_R {
         TAG_R::new(((self.bits >> 24) & 0x01) != 0)
@@ -203,7 +203,7 @@ impl W {
     pub fn cmpall(&mut self) -> CMPALL_W {
         CMPALL_W { w: self }
     }
-    #[doc = "Bit 24 - Tag of the ADC_LCDR"]
+    #[doc = "Bit 24 - Tag of the ADC_LDCR"]
     #[inline(always)]
     pub fn tag(&mut self) -> TAG_W {
         TAG_W { w: self }

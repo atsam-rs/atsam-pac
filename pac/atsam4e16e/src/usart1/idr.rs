@@ -484,7 +484,7 @@ impl W {
     pub fn rxbuff(&mut self) -> RXBUFF_W {
         RXBUFF_W { w: self }
     }
-    #[doc = "Bit 13 - Non AcknowledgeInterrupt Disable"]
+    #[doc = "Bit 13 - Non Acknowledge Interrupt Disable"]
     #[inline(always)]
     pub fn nack(&mut self) -> NACK_W {
         NACK_W { w: self }

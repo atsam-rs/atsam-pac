@@ -1,6 +1,6 @@
-#[doc = "Reader of register FDR%s"]
+#[doc = "Reader of register FDR[%s]"]
 pub type R = crate::R<u32, super::FDR>;
-#[doc = "Writer for register FDR%s"]
+#[doc = "Writer for register FDR[%s]"]
 pub type W = crate::W<u32, super::FDR>;
 #[doc = "Reader of field `FIFO_DATA`"]
 pub type FIFO_DATA_R = crate::R<u8, u8>;

@@ -223,7 +223,7 @@ impl R {
     pub fn txgo(&self) -> TXGO_R {
         TXGO_R::new(((self.bits >> 3) & 0x01) != 0)
     }
-    #[doc = "Bit 4 - Transmit Frame Corruption due to AHB error"]
+    #[doc = "Bit 4 - Transmit Frame Corruption Due to AHB Error"]
     #[inline(always)]
     pub fn tfc(&self) -> TFC_R {
         TFC_R::new(((self.bits >> 4) & 0x01) != 0)
@@ -233,7 +233,7 @@ impl R {
     pub fn txcomp(&self) -> TXCOMP_R {
         TXCOMP_R::new(((self.bits >> 5) & 0x01) != 0)
     }
-    #[doc = "Bit 6 - Transmit Under Run"]
+    #[doc = "Bit 6 - Transmit Underrun"]
     #[inline(always)]
     pub fn und(&self) -> UND_R {
         UND_R::new(((self.bits >> 6) & 0x01) != 0)
@@ -265,7 +265,7 @@ impl W {
     pub fn txgo(&mut self) -> TXGO_W {
         TXGO_W { w: self }
     }
-    #[doc = "Bit 4 - Transmit Frame Corruption due to AHB error"]
+    #[doc = "Bit 4 - Transmit Frame Corruption Due to AHB Error"]
     #[inline(always)]
     pub fn tfc(&mut self) -> TFC_W {
         TFC_W { w: self }
@@ -275,7 +275,7 @@ impl W {
     pub fn txcomp(&mut self) -> TXCOMP_W {
         TXCOMP_W { w: self }
     }
-    #[doc = "Bit 6 - Transmit Under Run"]
+    #[doc = "Bit 6 - Transmit Underrun"]
     #[inline(always)]
     pub fn und(&mut self) -> UND_W {
         UND_W { w: self }

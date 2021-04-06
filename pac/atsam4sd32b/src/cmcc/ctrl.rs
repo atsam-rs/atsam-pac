@@ -1,5 +1,13 @@
 #[doc = "Writer for register CTRL"]
 pub type W = crate::W<u32, super::CTRL>;
+#[doc = "Register CTRL `reset()`'s with value 0"]
+impl crate::ResetValue for super::CTRL {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
+    }
+}
 #[doc = "Write proxy for field `CEN`"]
 pub struct CEN_W<'a> {
     w: &'a mut W,

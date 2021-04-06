@@ -22,7 +22,7 @@ pub enum PAR_A {
     SPACE = 2,
     #[doc = "3: Mark: parity forced to 1"]
     MARK = 3,
-    #[doc = "4: No Parity"]
+    #[doc = "4: No parity"]
     NO = 4,
 }
 impl From<PAR_A> for u8 {
@@ -103,7 +103,7 @@ impl<'a> PAR_W<'a> {
     pub fn mark(self) -> &'a mut W {
         self.variant(PAR_A::MARK)
     }
-    #[doc = "No Parity"]
+    #[doc = "No parity"]
     #[inline(always)]
     pub fn no(self) -> &'a mut W {
         self.variant(PAR_A::NO)
@@ -119,13 +119,13 @@ impl<'a> PAR_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum CHMODE_A {
-    #[doc = "0: Normal Mode"]
+    #[doc = "0: Normal mode"]
     NORMAL = 0,
-    #[doc = "1: Automatic Echo"]
+    #[doc = "1: Automatic echo"]
     AUTOMATIC = 1,
-    #[doc = "2: Local Loopback"]
+    #[doc = "2: Local loopback"]
     LOCAL_LOOPBACK = 2,
-    #[doc = "3: Remote Loopback"]
+    #[doc = "3: Remote loopback"]
     REMOTE_LOOPBACK = 3,
 }
 impl From<CHMODE_A> for u8 {
@@ -181,22 +181,22 @@ impl<'a> CHMODE_W<'a> {
             self.bits(variant.into())
         }
     }
-    #[doc = "Normal Mode"]
+    #[doc = "Normal mode"]
     #[inline(always)]
     pub fn normal(self) -> &'a mut W {
         self.variant(CHMODE_A::NORMAL)
     }
-    #[doc = "Automatic Echo"]
+    #[doc = "Automatic echo"]
     #[inline(always)]
     pub fn automatic(self) -> &'a mut W {
         self.variant(CHMODE_A::AUTOMATIC)
     }
-    #[doc = "Local Loopback"]
+    #[doc = "Local loopback"]
     #[inline(always)]
     pub fn local_loopback(self) -> &'a mut W {
         self.variant(CHMODE_A::LOCAL_LOOPBACK)
     }
-    #[doc = "Remote Loopback"]
+    #[doc = "Remote loopback"]
     #[inline(always)]
     pub fn remote_loopback(self) -> &'a mut W {
         self.variant(CHMODE_A::REMOTE_LOOPBACK)

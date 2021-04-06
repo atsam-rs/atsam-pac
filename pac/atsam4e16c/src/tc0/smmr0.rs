@@ -64,7 +64,7 @@ impl R {
     pub fn gcen(&self) -> GCEN_R {
         GCEN_R::new((self.bits & 0x01) != 0)
     }
-    #[doc = "Bit 1 - DOWN Count"]
+    #[doc = "Bit 1 - Down Count"]
     #[inline(always)]
     pub fn down(&self) -> DOWN_R {
         DOWN_R::new(((self.bits >> 1) & 0x01) != 0)
@@ -76,7 +76,7 @@ impl W {
     pub fn gcen(&mut self) -> GCEN_W {
         GCEN_W { w: self }
     }
-    #[doc = "Bit 1 - DOWN Count"]
+    #[doc = "Bit 1 - Down Count"]
     #[inline(always)]
     pub fn down(&mut self) -> DOWN_W {
         DOWN_W { w: self }

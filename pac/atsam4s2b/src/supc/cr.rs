@@ -5,7 +5,7 @@ pub type W = crate::W<u32, super::CR>;
 pub enum VROFF_AW {
     #[doc = "0: No effect."]
     NO_EFFECT = 0,
-    #[doc = "1: If KEY is correct, VROFF asserts the vddcore_nreset and stops the voltage regulator."]
+    #[doc = "1: If KEY is correct, asserts the vddcore_nreset and stops the voltage regulator."]
     STOP_VREG = 1,
 }
 impl From<VROFF_AW> for bool {
@@ -31,7 +31,7 @@ impl<'a> VROFF_W<'a> {
     pub fn no_effect(self) -> &'a mut W {
         self.variant(VROFF_AW::NO_EFFECT)
     }
-    #[doc = "If KEY is correct, VROFF asserts the vddcore_nreset and stops the voltage regulator."]
+    #[doc = "If KEY is correct, asserts the vddcore_nreset and stops the voltage regulator."]
     #[inline(always)]
     pub fn stop_vreg(self) -> &'a mut W {
         self.variant(VROFF_AW::STOP_VREG)
@@ -58,7 +58,7 @@ impl<'a> VROFF_W<'a> {
 pub enum XTALSEL_AW {
     #[doc = "0: No effect."]
     NO_EFFECT = 0,
-    #[doc = "1: If KEY is correct, XTALSEL switches the slow clock on the crystal oscillator output."]
+    #[doc = "1: If KEY is correct, switches the slow clock on the crystal oscillator output."]
     CRYSTAL_SEL = 1,
 }
 impl From<XTALSEL_AW> for bool {
@@ -84,7 +84,7 @@ impl<'a> XTALSEL_W<'a> {
     pub fn no_effect(self) -> &'a mut W {
         self.variant(XTALSEL_AW::NO_EFFECT)
     }
-    #[doc = "If KEY is correct, XTALSEL switches the slow clock on the crystal oscillator output."]
+    #[doc = "If KEY is correct, switches the slow clock on the crystal oscillator output."]
     #[inline(always)]
     pub fn crystal_sel(self) -> &'a mut W {
         self.variant(XTALSEL_AW::CRYSTAL_SEL)

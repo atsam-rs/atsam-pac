@@ -7,7 +7,7 @@ pub type SCO_R = crate::R<bool, bool>;
 #[doc = "Reader of field `MASK`"]
 pub type MASK_R = crate::R<bool, bool>;
 impl R {
-    #[doc = "Bit 0 - Comparison Edge (cleared on read)"]
+    #[doc = "Bit 0 - Comparison Edge"]
     #[inline(always)]
     pub fn ce(&self) -> CE_R {
         CE_R::new((self.bits & 0x01) != 0)

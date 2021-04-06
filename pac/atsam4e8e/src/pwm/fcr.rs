@@ -13,7 +13,7 @@ impl<'a> FCLR_W<'a> {
     }
 }
 impl W {
-    #[doc = "Bits 0:7 - Fault Clear (fault input bit varies from 0 to 7)"]
+    #[doc = "Bits 0:7 - Fault Clear"]
     #[inline(always)]
     pub fn fclr(&mut self) -> FCLR_W {
         FCLR_W { w: self }

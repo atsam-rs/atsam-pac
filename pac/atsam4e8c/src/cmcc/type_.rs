@@ -125,13 +125,13 @@ impl CSIZE_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum CLSIZE_A {
-    #[doc = "0: 4 bytes"]
+    #[doc = "0: 4 Bytes"]
     CLSIZE_1KB = 0,
-    #[doc = "1: 8 bytes"]
+    #[doc = "1: 8 Bytes"]
     CLSIZE_2KB = 1,
-    #[doc = "2: 16 bytes"]
+    #[doc = "2: 16 Bytes"]
     CLSIZE_4KB = 2,
-    #[doc = "3: 32 bytes"]
+    #[doc = "3: 32 Bytes"]
     CLSIZE_8KB = 3,
 }
 impl From<CLSIZE_A> for u8 {

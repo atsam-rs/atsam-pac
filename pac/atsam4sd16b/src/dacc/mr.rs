@@ -278,13 +278,64 @@ impl<'a> WORD_W<'a> {
         self.w
     }
 }
-#[doc = "Reader of field `ONE`"]
-pub type ONE_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `ONE`"]
-pub struct ONE_W<'a> {
+#[doc = "Sleep Mode\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum SLEEP_A {
+    #[doc = "0: Normal mode: the DAC core and reference voltage circuitry are kept ON between conversions."]
+    DISABLED = 0,
+    #[doc = "1: Sleep mode: the DAC core and/or reference voltage circuitry are OFF between conversions."]
+    ENABLED = 1,
+}
+impl From<SLEEP_A> for bool {
+    #[inline(always)]
+    fn from(variant: SLEEP_A) -> Self {
+        variant as u8 != 0
+    }
+}
+#[doc = "Reader of field `SLEEP`"]
+pub type SLEEP_R = crate::R<bool, SLEEP_A>;
+impl SLEEP_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> SLEEP_A {
+        match self.bits {
+            false => SLEEP_A::DISABLED,
+            true => SLEEP_A::ENABLED,
+        }
+    }
+    #[doc = "Checks if the value of the field is `DISABLED`"]
+    #[inline(always)]
+    pub fn is_disabled(&self) -> bool {
+        *self == SLEEP_A::DISABLED
+    }
+    #[doc = "Checks if the value of the field is `ENABLED`"]
+    #[inline(always)]
+    pub fn is_enabled(&self) -> bool {
+        *self == SLEEP_A::ENABLED
+    }
+}
+#[doc = "Write proxy for field `SLEEP`"]
+pub struct SLEEP_W<'a> {
     w: &'a mut W,
 }
-impl<'a> ONE_W<'a> {
+impl<'a> SLEEP_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: SLEEP_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
+    #[doc = "Normal mode: the DAC core and reference voltage circuitry are kept ON between conversions."]
+    #[inline(always)]
+    pub fn disabled(self) -> &'a mut W {
+        self.variant(SLEEP_A::DISABLED)
+    }
+    #[doc = "Sleep mode: the DAC core and/or reference voltage circuitry are OFF between conversions."]
+    #[inline(always)]
+    pub fn enabled(self) -> &'a mut W {
+        self.variant(SLEEP_A::ENABLED)
+    }
     #[doc = r"Sets the field bit"]
     #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
@@ -298,7 +349,96 @@ impl<'a> ONE_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | (((value as u32) & 0x01) << 8);
+        self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u32) & 0x01) << 5);
+        self.w
+    }
+}
+#[doc = "Fast Wake-up Mode\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum FASTWKUP_A {
+    #[doc = "0: Normal sleep mode: the sleep mode is defined by the SLEEP bit. Voltage reference is OFF between conversions."]
+    STAMODE = 0,
+    #[doc = "1: Fast wake-up after sleep mode: voltage reference is kept ON between conversions; DAC core is OFF"]
+    FASTWAKEUP = 1,
+}
+impl From<FASTWKUP_A> for bool {
+    #[inline(always)]
+    fn from(variant: FASTWKUP_A) -> Self {
+        variant as u8 != 0
+    }
+}
+#[doc = "Reader of field `FASTWKUP`"]
+pub type FASTWKUP_R = crate::R<bool, FASTWKUP_A>;
+impl FASTWKUP_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> FASTWKUP_A {
+        match self.bits {
+            false => FASTWKUP_A::STAMODE,
+            true => FASTWKUP_A::FASTWAKEUP,
+        }
+    }
+    #[doc = "Checks if the value of the field is `STAMODE`"]
+    #[inline(always)]
+    pub fn is_stamode(&self) -> bool {
+        *self == FASTWKUP_A::STAMODE
+    }
+    #[doc = "Checks if the value of the field is `FASTWAKEUP`"]
+    #[inline(always)]
+    pub fn is_fastwakeup(&self) -> bool {
+        *self == FASTWKUP_A::FASTWAKEUP
+    }
+}
+#[doc = "Write proxy for field `FASTWKUP`"]
+pub struct FASTWKUP_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> FASTWKUP_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: FASTWKUP_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
+    #[doc = "Normal sleep mode: the sleep mode is defined by the SLEEP bit. Voltage reference is OFF between conversions."]
+    #[inline(always)]
+    pub fn stamode(self) -> &'a mut W {
+        self.variant(FASTWKUP_A::STAMODE)
+    }
+    #[doc = "Fast wake-up after sleep mode: voltage reference is kept ON between conversions; DAC core is OFF"]
+    #[inline(always)]
+    pub fn fastwakeup(self) -> &'a mut W {
+        self.variant(FASTWKUP_A::FASTWAKEUP)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 6)) | (((value as u32) & 0x01) << 6);
+        self.w
+    }
+}
+#[doc = "Reader of field `REFRESH`"]
+pub type REFRESH_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `REFRESH`"]
+pub struct REFRESH_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> REFRESH_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub unsafe fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0xff << 8)) | (((value as u32) & 0xff) << 8);
         self.w
     }
 }
@@ -443,7 +583,7 @@ impl<'a> TAG_W<'a> {
         self.w
     }
 }
-#[doc = "Maximum Speed Mode\n\nValue on reset: 0"]
+#[doc = "Max Speed Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MAXS_A {
     #[doc = "0: Normal mode"]
@@ -522,133 +662,133 @@ impl<'a> MAXS_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum STARTUP_A {
-    #[doc = "0: 0 periods of peripheral clock"]
+    #[doc = "0: 0 periods of DACClock"]
     _0 = 0,
-    #[doc = "1: 8 periods of peripheral clock"]
+    #[doc = "1: 8 periods of DACClock"]
     _8 = 1,
-    #[doc = "2: 16 periods of peripheral clock"]
+    #[doc = "2: 16 periods of DACClock"]
     _16 = 2,
-    #[doc = "3: 24 periods of peripheral clock"]
+    #[doc = "3: 24 periods of DACClock"]
     _24 = 3,
-    #[doc = "4: 64 periods of peripheral clock"]
+    #[doc = "4: 64 periods of DACClock"]
     _64 = 4,
-    #[doc = "5: 80 periods of peripheral clock"]
+    #[doc = "5: 80 periods of DACClock"]
     _80 = 5,
-    #[doc = "6: 96 periods of peripheral clock"]
+    #[doc = "6: 96 periods of DACClock"]
     _96 = 6,
-    #[doc = "7: 112 periods of peripheral clock"]
+    #[doc = "7: 112 periods of DACClock"]
     _112 = 7,
-    #[doc = "8: 512 periods of peripheral clock"]
+    #[doc = "8: 512 periods of DACClock"]
     _512 = 8,
-    #[doc = "9: 576 periods of peripheral clock"]
+    #[doc = "9: 576 periods of DACClock"]
     _576 = 9,
-    #[doc = "10: 640 periods of peripheral clock"]
+    #[doc = "10: 640 periods of DACClock"]
     _640 = 10,
-    #[doc = "11: 704 periods of peripheral clock"]
+    #[doc = "11: 704 periods of DACClock"]
     _704 = 11,
-    #[doc = "12: 768 periods of peripheral clock"]
+    #[doc = "12: 768 periods of DACClock"]
     _768 = 12,
-    #[doc = "13: 832 periods of peripheral clock"]
+    #[doc = "13: 832 periods of DACClock"]
     _832 = 13,
-    #[doc = "14: 896 periods of peripheral clock"]
+    #[doc = "14: 896 periods of DACClock"]
     _896 = 14,
-    #[doc = "15: 960 periods of peripheral clock"]
+    #[doc = "15: 960 periods of DACClock"]
     _960 = 15,
-    #[doc = "16: 1024 periods of peripheral clock"]
+    #[doc = "16: 1024 periods of DACClock"]
     _1024 = 16,
-    #[doc = "17: 1088 periods of peripheral clock"]
+    #[doc = "17: 1088 periods of DACClock"]
     _1088 = 17,
-    #[doc = "18: 1152 periods of peripheral clock"]
+    #[doc = "18: 1152 periods of DACClock"]
     _1152 = 18,
-    #[doc = "19: 1216 periods of peripheral clock"]
+    #[doc = "19: 1216 periods of DACClock"]
     _1216 = 19,
-    #[doc = "20: 1280 periods of peripheral clock"]
+    #[doc = "20: 1280 periods of DACClock"]
     _1280 = 20,
-    #[doc = "21: 1344 periods of peripheral clock"]
+    #[doc = "21: 1344 periods of DACClock"]
     _1344 = 21,
-    #[doc = "22: 1408 periods of peripheral clock"]
+    #[doc = "22: 1408 periods of DACClock"]
     _1408 = 22,
-    #[doc = "23: 1472 periods of peripheral clock"]
+    #[doc = "23: 1472 periods of DACClock"]
     _1472 = 23,
-    #[doc = "24: 1536 periods of peripheral clock"]
+    #[doc = "24: 1536 periods of DACClock"]
     _1536 = 24,
-    #[doc = "25: 1600 periods of peripheral clock"]
+    #[doc = "25: 1600 periods of DACClock"]
     _1600 = 25,
-    #[doc = "26: 1664 periods of peripheral clock"]
+    #[doc = "26: 1664 periods of DACClock"]
     _1664 = 26,
-    #[doc = "27: 1728 periods of peripheral clock"]
+    #[doc = "27: 1728 periods of DACClock"]
     _1728 = 27,
-    #[doc = "28: 1792 periods of peripheral clock"]
+    #[doc = "28: 1792 periods of DACClock"]
     _1792 = 28,
-    #[doc = "29: 1856 periods of peripheral clock"]
+    #[doc = "29: 1856 periods of DACClock"]
     _1856 = 29,
-    #[doc = "30: 1920 periods of peripheral clock"]
+    #[doc = "30: 1920 periods of DACClock"]
     _1920 = 30,
-    #[doc = "31: 1984 periods of peripheral clock"]
+    #[doc = "31: 1984 periods of DACClock"]
     _1984 = 31,
-    #[doc = "32: 2048 periods of peripheral clock"]
+    #[doc = "32: 2048 periods of DACClock"]
     _2048 = 32,
-    #[doc = "33: 2112 periods of peripheral clock"]
+    #[doc = "33: 2112 periods of DACClock"]
     _2112 = 33,
-    #[doc = "34: 2176 periods of peripheral clock"]
+    #[doc = "34: 2176 periods of DACClock"]
     _2176 = 34,
-    #[doc = "35: 2240 periods of peripheral clock"]
+    #[doc = "35: 2240 periods of DACClock"]
     _2240 = 35,
-    #[doc = "36: 2304 periods of peripheral clock"]
+    #[doc = "36: 2304 periods of DACClock"]
     _2304 = 36,
-    #[doc = "37: 2368 periods of peripheral clock"]
+    #[doc = "37: 2368 periods of DACClock"]
     _2368 = 37,
-    #[doc = "38: 2432 periods of peripheral clock"]
+    #[doc = "38: 2432 periods of DACClock"]
     _2432 = 38,
-    #[doc = "39: 2496 periods of peripheral clock"]
+    #[doc = "39: 2496 periods of DACClock"]
     _2496 = 39,
-    #[doc = "40: 2560 periods of peripheral clock"]
+    #[doc = "40: 2560 periods of DACClock"]
     _2560 = 40,
-    #[doc = "41: 2624 periods of peripheral clock"]
+    #[doc = "41: 2624 periods of DACClock"]
     _2624 = 41,
-    #[doc = "42: 2688 periods of peripheral clock"]
+    #[doc = "42: 2688 periods of DACClock"]
     _2688 = 42,
-    #[doc = "43: 2752 periods of peripheral clock"]
+    #[doc = "43: 2752 periods of DACClock"]
     _2752 = 43,
-    #[doc = "44: 2816 periods of peripheral clock"]
+    #[doc = "44: 2816 periods of DACClock"]
     _2816 = 44,
-    #[doc = "45: 2880 periods of peripheral clock"]
+    #[doc = "45: 2880 periods of DACClock"]
     _2880 = 45,
-    #[doc = "46: 2944 periods of peripheral clock"]
+    #[doc = "46: 2944 periods of DACClock"]
     _2944 = 46,
-    #[doc = "47: 3008 periods of peripheral clock"]
+    #[doc = "47: 3008 periods of DACClock"]
     _3008 = 47,
-    #[doc = "48: 3072 periods of peripheral clock"]
+    #[doc = "48: 3072 periods of DACClock"]
     _3072 = 48,
-    #[doc = "49: 3136 periods of peripheral clock"]
+    #[doc = "49: 3136 periods of DACClock"]
     _3136 = 49,
-    #[doc = "50: 3200 periods of peripheral clock"]
+    #[doc = "50: 3200 periods of DACClock"]
     _3200 = 50,
-    #[doc = "51: 3264 periods of peripheral clock"]
+    #[doc = "51: 3264 periods of DACClock"]
     _3264 = 51,
-    #[doc = "52: 3328 periods of peripheral clock"]
+    #[doc = "52: 3328 periods of DACClock"]
     _3328 = 52,
-    #[doc = "53: 3392 periods of peripheral clock"]
+    #[doc = "53: 3392 periods of DACClock"]
     _3392 = 53,
-    #[doc = "54: 3456 periods of peripheral clock"]
+    #[doc = "54: 3456 periods of DACClock"]
     _3456 = 54,
-    #[doc = "55: 3520 periods of peripheral clock"]
+    #[doc = "55: 3520 periods of DACClock"]
     _3520 = 55,
-    #[doc = "56: 3584 periods of peripheral clock"]
+    #[doc = "56: 3584 periods of DACClock"]
     _3584 = 56,
-    #[doc = "57: 3648 periods of peripheral clock"]
+    #[doc = "57: 3648 periods of DACClock"]
     _3648 = 57,
-    #[doc = "58: 3712 periods of peripheral clock"]
+    #[doc = "58: 3712 periods of DACClock"]
     _3712 = 58,
-    #[doc = "59: 3776 periods of peripheral clock"]
+    #[doc = "59: 3776 periods of DACClock"]
     _3776 = 59,
-    #[doc = "60: 3840 periods of peripheral clock"]
+    #[doc = "60: 3840 periods of DACClock"]
     _3840 = 60,
-    #[doc = "61: 3904 periods of peripheral clock"]
+    #[doc = "61: 3904 periods of DACClock"]
     _3904 = 61,
-    #[doc = "62: 3968 periods of peripheral clock"]
+    #[doc = "62: 3968 periods of DACClock"]
     _3968 = 62,
-    #[doc = "63: 4032 periods of peripheral clock"]
+    #[doc = "63: 4032 periods of DACClock"]
     _4032 = 63,
 }
 impl From<STARTUP_A> for u8 {
@@ -1064,322 +1204,322 @@ impl<'a> STARTUP_W<'a> {
             self.bits(variant.into())
         }
     }
-    #[doc = "0 periods of peripheral clock"]
+    #[doc = "0 periods of DACClock"]
     #[inline(always)]
     pub fn _0(self) -> &'a mut W {
         self.variant(STARTUP_A::_0)
     }
-    #[doc = "8 periods of peripheral clock"]
+    #[doc = "8 periods of DACClock"]
     #[inline(always)]
     pub fn _8(self) -> &'a mut W {
         self.variant(STARTUP_A::_8)
     }
-    #[doc = "16 periods of peripheral clock"]
+    #[doc = "16 periods of DACClock"]
     #[inline(always)]
     pub fn _16(self) -> &'a mut W {
         self.variant(STARTUP_A::_16)
     }
-    #[doc = "24 periods of peripheral clock"]
+    #[doc = "24 periods of DACClock"]
     #[inline(always)]
     pub fn _24(self) -> &'a mut W {
         self.variant(STARTUP_A::_24)
     }
-    #[doc = "64 periods of peripheral clock"]
+    #[doc = "64 periods of DACClock"]
     #[inline(always)]
     pub fn _64(self) -> &'a mut W {
         self.variant(STARTUP_A::_64)
     }
-    #[doc = "80 periods of peripheral clock"]
+    #[doc = "80 periods of DACClock"]
     #[inline(always)]
     pub fn _80(self) -> &'a mut W {
         self.variant(STARTUP_A::_80)
     }
-    #[doc = "96 periods of peripheral clock"]
+    #[doc = "96 periods of DACClock"]
     #[inline(always)]
     pub fn _96(self) -> &'a mut W {
         self.variant(STARTUP_A::_96)
     }
-    #[doc = "112 periods of peripheral clock"]
+    #[doc = "112 periods of DACClock"]
     #[inline(always)]
     pub fn _112(self) -> &'a mut W {
         self.variant(STARTUP_A::_112)
     }
-    #[doc = "512 periods of peripheral clock"]
+    #[doc = "512 periods of DACClock"]
     #[inline(always)]
     pub fn _512(self) -> &'a mut W {
         self.variant(STARTUP_A::_512)
     }
-    #[doc = "576 periods of peripheral clock"]
+    #[doc = "576 periods of DACClock"]
     #[inline(always)]
     pub fn _576(self) -> &'a mut W {
         self.variant(STARTUP_A::_576)
     }
-    #[doc = "640 periods of peripheral clock"]
+    #[doc = "640 periods of DACClock"]
     #[inline(always)]
     pub fn _640(self) -> &'a mut W {
         self.variant(STARTUP_A::_640)
     }
-    #[doc = "704 periods of peripheral clock"]
+    #[doc = "704 periods of DACClock"]
     #[inline(always)]
     pub fn _704(self) -> &'a mut W {
         self.variant(STARTUP_A::_704)
     }
-    #[doc = "768 periods of peripheral clock"]
+    #[doc = "768 periods of DACClock"]
     #[inline(always)]
     pub fn _768(self) -> &'a mut W {
         self.variant(STARTUP_A::_768)
     }
-    #[doc = "832 periods of peripheral clock"]
+    #[doc = "832 periods of DACClock"]
     #[inline(always)]
     pub fn _832(self) -> &'a mut W {
         self.variant(STARTUP_A::_832)
     }
-    #[doc = "896 periods of peripheral clock"]
+    #[doc = "896 periods of DACClock"]
     #[inline(always)]
     pub fn _896(self) -> &'a mut W {
         self.variant(STARTUP_A::_896)
     }
-    #[doc = "960 periods of peripheral clock"]
+    #[doc = "960 periods of DACClock"]
     #[inline(always)]
     pub fn _960(self) -> &'a mut W {
         self.variant(STARTUP_A::_960)
     }
-    #[doc = "1024 periods of peripheral clock"]
+    #[doc = "1024 periods of DACClock"]
     #[inline(always)]
     pub fn _1024(self) -> &'a mut W {
         self.variant(STARTUP_A::_1024)
     }
-    #[doc = "1088 periods of peripheral clock"]
+    #[doc = "1088 periods of DACClock"]
     #[inline(always)]
     pub fn _1088(self) -> &'a mut W {
         self.variant(STARTUP_A::_1088)
     }
-    #[doc = "1152 periods of peripheral clock"]
+    #[doc = "1152 periods of DACClock"]
     #[inline(always)]
     pub fn _1152(self) -> &'a mut W {
         self.variant(STARTUP_A::_1152)
     }
-    #[doc = "1216 periods of peripheral clock"]
+    #[doc = "1216 periods of DACClock"]
     #[inline(always)]
     pub fn _1216(self) -> &'a mut W {
         self.variant(STARTUP_A::_1216)
     }
-    #[doc = "1280 periods of peripheral clock"]
+    #[doc = "1280 periods of DACClock"]
     #[inline(always)]
     pub fn _1280(self) -> &'a mut W {
         self.variant(STARTUP_A::_1280)
     }
-    #[doc = "1344 periods of peripheral clock"]
+    #[doc = "1344 periods of DACClock"]
     #[inline(always)]
     pub fn _1344(self) -> &'a mut W {
         self.variant(STARTUP_A::_1344)
     }
-    #[doc = "1408 periods of peripheral clock"]
+    #[doc = "1408 periods of DACClock"]
     #[inline(always)]
     pub fn _1408(self) -> &'a mut W {
         self.variant(STARTUP_A::_1408)
     }
-    #[doc = "1472 periods of peripheral clock"]
+    #[doc = "1472 periods of DACClock"]
     #[inline(always)]
     pub fn _1472(self) -> &'a mut W {
         self.variant(STARTUP_A::_1472)
     }
-    #[doc = "1536 periods of peripheral clock"]
+    #[doc = "1536 periods of DACClock"]
     #[inline(always)]
     pub fn _1536(self) -> &'a mut W {
         self.variant(STARTUP_A::_1536)
     }
-    #[doc = "1600 periods of peripheral clock"]
+    #[doc = "1600 periods of DACClock"]
     #[inline(always)]
     pub fn _1600(self) -> &'a mut W {
         self.variant(STARTUP_A::_1600)
     }
-    #[doc = "1664 periods of peripheral clock"]
+    #[doc = "1664 periods of DACClock"]
     #[inline(always)]
     pub fn _1664(self) -> &'a mut W {
         self.variant(STARTUP_A::_1664)
     }
-    #[doc = "1728 periods of peripheral clock"]
+    #[doc = "1728 periods of DACClock"]
     #[inline(always)]
     pub fn _1728(self) -> &'a mut W {
         self.variant(STARTUP_A::_1728)
     }
-    #[doc = "1792 periods of peripheral clock"]
+    #[doc = "1792 periods of DACClock"]
     #[inline(always)]
     pub fn _1792(self) -> &'a mut W {
         self.variant(STARTUP_A::_1792)
     }
-    #[doc = "1856 periods of peripheral clock"]
+    #[doc = "1856 periods of DACClock"]
     #[inline(always)]
     pub fn _1856(self) -> &'a mut W {
         self.variant(STARTUP_A::_1856)
     }
-    #[doc = "1920 periods of peripheral clock"]
+    #[doc = "1920 periods of DACClock"]
     #[inline(always)]
     pub fn _1920(self) -> &'a mut W {
         self.variant(STARTUP_A::_1920)
     }
-    #[doc = "1984 periods of peripheral clock"]
+    #[doc = "1984 periods of DACClock"]
     #[inline(always)]
     pub fn _1984(self) -> &'a mut W {
         self.variant(STARTUP_A::_1984)
     }
-    #[doc = "2048 periods of peripheral clock"]
+    #[doc = "2048 periods of DACClock"]
     #[inline(always)]
     pub fn _2048(self) -> &'a mut W {
         self.variant(STARTUP_A::_2048)
     }
-    #[doc = "2112 periods of peripheral clock"]
+    #[doc = "2112 periods of DACClock"]
     #[inline(always)]
     pub fn _2112(self) -> &'a mut W {
         self.variant(STARTUP_A::_2112)
     }
-    #[doc = "2176 periods of peripheral clock"]
+    #[doc = "2176 periods of DACClock"]
     #[inline(always)]
     pub fn _2176(self) -> &'a mut W {
         self.variant(STARTUP_A::_2176)
     }
-    #[doc = "2240 periods of peripheral clock"]
+    #[doc = "2240 periods of DACClock"]
     #[inline(always)]
     pub fn _2240(self) -> &'a mut W {
         self.variant(STARTUP_A::_2240)
     }
-    #[doc = "2304 periods of peripheral clock"]
+    #[doc = "2304 periods of DACClock"]
     #[inline(always)]
     pub fn _2304(self) -> &'a mut W {
         self.variant(STARTUP_A::_2304)
     }
-    #[doc = "2368 periods of peripheral clock"]
+    #[doc = "2368 periods of DACClock"]
     #[inline(always)]
     pub fn _2368(self) -> &'a mut W {
         self.variant(STARTUP_A::_2368)
     }
-    #[doc = "2432 periods of peripheral clock"]
+    #[doc = "2432 periods of DACClock"]
     #[inline(always)]
     pub fn _2432(self) -> &'a mut W {
         self.variant(STARTUP_A::_2432)
     }
-    #[doc = "2496 periods of peripheral clock"]
+    #[doc = "2496 periods of DACClock"]
     #[inline(always)]
     pub fn _2496(self) -> &'a mut W {
         self.variant(STARTUP_A::_2496)
     }
-    #[doc = "2560 periods of peripheral clock"]
+    #[doc = "2560 periods of DACClock"]
     #[inline(always)]
     pub fn _2560(self) -> &'a mut W {
         self.variant(STARTUP_A::_2560)
     }
-    #[doc = "2624 periods of peripheral clock"]
+    #[doc = "2624 periods of DACClock"]
     #[inline(always)]
     pub fn _2624(self) -> &'a mut W {
         self.variant(STARTUP_A::_2624)
     }
-    #[doc = "2688 periods of peripheral clock"]
+    #[doc = "2688 periods of DACClock"]
     #[inline(always)]
     pub fn _2688(self) -> &'a mut W {
         self.variant(STARTUP_A::_2688)
     }
-    #[doc = "2752 periods of peripheral clock"]
+    #[doc = "2752 periods of DACClock"]
     #[inline(always)]
     pub fn _2752(self) -> &'a mut W {
         self.variant(STARTUP_A::_2752)
     }
-    #[doc = "2816 periods of peripheral clock"]
+    #[doc = "2816 periods of DACClock"]
     #[inline(always)]
     pub fn _2816(self) -> &'a mut W {
         self.variant(STARTUP_A::_2816)
     }
-    #[doc = "2880 periods of peripheral clock"]
+    #[doc = "2880 periods of DACClock"]
     #[inline(always)]
     pub fn _2880(self) -> &'a mut W {
         self.variant(STARTUP_A::_2880)
     }
-    #[doc = "2944 periods of peripheral clock"]
+    #[doc = "2944 periods of DACClock"]
     #[inline(always)]
     pub fn _2944(self) -> &'a mut W {
         self.variant(STARTUP_A::_2944)
     }
-    #[doc = "3008 periods of peripheral clock"]
+    #[doc = "3008 periods of DACClock"]
     #[inline(always)]
     pub fn _3008(self) -> &'a mut W {
         self.variant(STARTUP_A::_3008)
     }
-    #[doc = "3072 periods of peripheral clock"]
+    #[doc = "3072 periods of DACClock"]
     #[inline(always)]
     pub fn _3072(self) -> &'a mut W {
         self.variant(STARTUP_A::_3072)
     }
-    #[doc = "3136 periods of peripheral clock"]
+    #[doc = "3136 periods of DACClock"]
     #[inline(always)]
     pub fn _3136(self) -> &'a mut W {
         self.variant(STARTUP_A::_3136)
     }
-    #[doc = "3200 periods of peripheral clock"]
+    #[doc = "3200 periods of DACClock"]
     #[inline(always)]
     pub fn _3200(self) -> &'a mut W {
         self.variant(STARTUP_A::_3200)
     }
-    #[doc = "3264 periods of peripheral clock"]
+    #[doc = "3264 periods of DACClock"]
     #[inline(always)]
     pub fn _3264(self) -> &'a mut W {
         self.variant(STARTUP_A::_3264)
     }
-    #[doc = "3328 periods of peripheral clock"]
+    #[doc = "3328 periods of DACClock"]
     #[inline(always)]
     pub fn _3328(self) -> &'a mut W {
         self.variant(STARTUP_A::_3328)
     }
-    #[doc = "3392 periods of peripheral clock"]
+    #[doc = "3392 periods of DACClock"]
     #[inline(always)]
     pub fn _3392(self) -> &'a mut W {
         self.variant(STARTUP_A::_3392)
     }
-    #[doc = "3456 periods of peripheral clock"]
+    #[doc = "3456 periods of DACClock"]
     #[inline(always)]
     pub fn _3456(self) -> &'a mut W {
         self.variant(STARTUP_A::_3456)
     }
-    #[doc = "3520 periods of peripheral clock"]
+    #[doc = "3520 periods of DACClock"]
     #[inline(always)]
     pub fn _3520(self) -> &'a mut W {
         self.variant(STARTUP_A::_3520)
     }
-    #[doc = "3584 periods of peripheral clock"]
+    #[doc = "3584 periods of DACClock"]
     #[inline(always)]
     pub fn _3584(self) -> &'a mut W {
         self.variant(STARTUP_A::_3584)
     }
-    #[doc = "3648 periods of peripheral clock"]
+    #[doc = "3648 periods of DACClock"]
     #[inline(always)]
     pub fn _3648(self) -> &'a mut W {
         self.variant(STARTUP_A::_3648)
     }
-    #[doc = "3712 periods of peripheral clock"]
+    #[doc = "3712 periods of DACClock"]
     #[inline(always)]
     pub fn _3712(self) -> &'a mut W {
         self.variant(STARTUP_A::_3712)
     }
-    #[doc = "3776 periods of peripheral clock"]
+    #[doc = "3776 periods of DACClock"]
     #[inline(always)]
     pub fn _3776(self) -> &'a mut W {
         self.variant(STARTUP_A::_3776)
     }
-    #[doc = "3840 periods of peripheral clock"]
+    #[doc = "3840 periods of DACClock"]
     #[inline(always)]
     pub fn _3840(self) -> &'a mut W {
         self.variant(STARTUP_A::_3840)
     }
-    #[doc = "3904 periods of peripheral clock"]
+    #[doc = "3904 periods of DACClock"]
     #[inline(always)]
     pub fn _3904(self) -> &'a mut W {
         self.variant(STARTUP_A::_3904)
     }
-    #[doc = "3968 periods of peripheral clock"]
+    #[doc = "3968 periods of DACClock"]
     #[inline(always)]
     pub fn _3968(self) -> &'a mut W {
         self.variant(STARTUP_A::_3968)
     }
-    #[doc = "4032 periods of peripheral clock"]
+    #[doc = "4032 periods of DACClock"]
     #[inline(always)]
     pub fn _4032(self) -> &'a mut W {
         self.variant(STARTUP_A::_4032)
@@ -1407,10 +1547,20 @@ impl R {
     pub fn word(&self) -> WORD_R {
         WORD_R::new(((self.bits >> 4) & 0x01) != 0)
     }
-    #[doc = "Bit 8 - Must Be Set to 1"]
+    #[doc = "Bit 5 - Sleep Mode"]
     #[inline(always)]
-    pub fn one(&self) -> ONE_R {
-        ONE_R::new(((self.bits >> 8) & 0x01) != 0)
+    pub fn sleep(&self) -> SLEEP_R {
+        SLEEP_R::new(((self.bits >> 5) & 0x01) != 0)
+    }
+    #[doc = "Bit 6 - Fast Wake-up Mode"]
+    #[inline(always)]
+    pub fn fastwkup(&self) -> FASTWKUP_R {
+        FASTWKUP_R::new(((self.bits >> 6) & 0x01) != 0)
+    }
+    #[doc = "Bits 8:15 - Automatic Refresh Period"]
+    #[inline(always)]
+    pub fn refresh(&self) -> REFRESH_R {
+        REFRESH_R::new(((self.bits >> 8) & 0xff) as u8)
     }
     #[doc = "Bits 16:17 - User Channel Selection"]
     #[inline(always)]
@@ -1422,7 +1572,7 @@ impl R {
     pub fn tag(&self) -> TAG_R {
         TAG_R::new(((self.bits >> 20) & 0x01) != 0)
     }
-    #[doc = "Bit 21 - Maximum Speed Mode"]
+    #[doc = "Bit 21 - Max Speed Mode"]
     #[inline(always)]
     pub fn maxs(&self) -> MAXS_R {
         MAXS_R::new(((self.bits >> 21) & 0x01) != 0)
@@ -1449,10 +1599,20 @@ impl W {
     pub fn word(&mut self) -> WORD_W {
         WORD_W { w: self }
     }
-    #[doc = "Bit 8 - Must Be Set to 1"]
+    #[doc = "Bit 5 - Sleep Mode"]
     #[inline(always)]
-    pub fn one(&mut self) -> ONE_W {
-        ONE_W { w: self }
+    pub fn sleep(&mut self) -> SLEEP_W {
+        SLEEP_W { w: self }
+    }
+    #[doc = "Bit 6 - Fast Wake-up Mode"]
+    #[inline(always)]
+    pub fn fastwkup(&mut self) -> FASTWKUP_W {
+        FASTWKUP_W { w: self }
+    }
+    #[doc = "Bits 8:15 - Automatic Refresh Period"]
+    #[inline(always)]
+    pub fn refresh(&mut self) -> REFRESH_W {
+        REFRESH_W { w: self }
     }
     #[doc = "Bits 16:17 - User Channel Selection"]
     #[inline(always)]
@@ -1464,7 +1624,7 @@ impl W {
     pub fn tag(&mut self) -> TAG_W {
         TAG_W { w: self }
     }
-    #[doc = "Bit 21 - Maximum Speed Mode"]
+    #[doc = "Bit 21 - Max Speed Mode"]
     #[inline(always)]
     pub fn maxs(&mut self) -> MAXS_W {
         MAXS_W { w: self }

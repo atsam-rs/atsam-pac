@@ -170,7 +170,7 @@ impl R {
     pub fn rttdis(&self) -> RTTDIS_R {
         RTTDIS_R::new(((self.bits >> 20) & 0x01) != 0)
     }
-    #[doc = "Bit 24 - Real-Time Clock 1Hz Clock Selection"]
+    #[doc = "Bit 24 - Real-Time Clock 1 Hz Clock Selection"]
     #[inline(always)]
     pub fn rtc1hz(&self) -> RTC1HZ_R {
         RTC1HZ_R::new(((self.bits >> 24) & 0x01) != 0)
@@ -202,7 +202,7 @@ impl W {
     pub fn rttdis(&mut self) -> RTTDIS_W {
         RTTDIS_W { w: self }
     }
-    #[doc = "Bit 24 - Real-Time Clock 1Hz Clock Selection"]
+    #[doc = "Bit 24 - Real-Time Clock 1 Hz Clock Selection"]
     #[inline(always)]
     pub fn rtc1hz(&mut self) -> RTC1HZ_W {
         RTC1HZ_W { w: self }

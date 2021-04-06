@@ -199,11 +199,11 @@ impl<'a> MOSCXTST_W<'a> {
         self.w
     }
 }
-#[doc = "Password\n\nValue on reset: 0"]
+#[doc = "Write Access Password\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum KEY_A {
-    #[doc = "55: Writing any other value in this field aborts the write operation."]
+    #[doc = "55: Writing any other value in this field aborts the write operation.Always reads as 0."]
     PASSWD = 55,
 }
 impl From<KEY_A> for u8 {
@@ -240,7 +240,7 @@ impl<'a> KEY_W<'a> {
     pub fn variant(self, variant: KEY_A) -> &'a mut W {
         unsafe { self.bits(variant.into()) }
     }
-    #[doc = "Writing any other value in this field aborts the write operation."]
+    #[doc = "Writing any other value in this field aborts the write operation.Always reads as 0."]
     #[inline(always)]
     pub fn passwd(self) -> &'a mut W {
         self.variant(KEY_A::PASSWD)
@@ -331,7 +331,7 @@ impl R {
     pub fn moscxtst(&self) -> MOSCXTST_R {
         MOSCXTST_R::new(((self.bits >> 8) & 0xff) as u8)
     }
-    #[doc = "Bits 16:23 - Password"]
+    #[doc = "Bits 16:23 - Write Access Password"]
     #[inline(always)]
     pub fn key(&self) -> KEY_R {
         KEY_R::new(((self.bits >> 16) & 0xff) as u8)
@@ -378,7 +378,7 @@ impl W {
     pub fn moscxtst(&mut self) -> MOSCXTST_W {
         MOSCXTST_W { w: self }
     }
-    #[doc = "Bits 16:23 - Password"]
+    #[doc = "Bits 16:23 - Write Access Password"]
     #[inline(always)]
     pub fn key(&mut self) -> KEY_W {
         KEY_W { w: self }

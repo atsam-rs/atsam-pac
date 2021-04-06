@@ -1,4 +1,4 @@
-#[doc = "Writer for register IVR%s"]
+#[doc = "Writer for register IVR[%s]"]
 pub type W = crate::W<u32, super::IVR>;
 #[doc = "Write proxy for field `IV`"]
 pub struct IV_W<'a> {

@@ -2,12 +2,12 @@
 pub type R = crate::R<u32, super::MAN>;
 #[doc = "Writer for register MAN"]
 pub type W = crate::W<u32, super::MAN>;
-#[doc = "Register MAN `reset()`'s with value 0x3001_1004"]
+#[doc = "Register MAN `reset()`'s with value 0xb001_1004"]
 impl crate::ResetValue for super::MAN {
     type Type = u32;
     #[inline(always)]
     fn reset_value() -> Self::Type {
-        0x3001_1004
+        0xb001_1004
     }
 }
 #[doc = "Reader of field `TX_PL`"]

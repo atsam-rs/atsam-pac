@@ -1,88 +1,95 @@
 #[doc = r"Register block"]
 #[repr(C)]
 pub struct RegisterBlock {
-    #[doc = "0x00 - Control Register"]
+    #[doc = "0x00 - AFEC Control Register"]
     pub cr: CR,
-    #[doc = "0x04 - Mode Register"]
+    #[doc = "0x04 - AFEC Mode Register"]
     pub mr: MR,
-    #[doc = "0x08 - Extended Mode Register"]
+    #[doc = "0x08 - AFEC Extended Mode Register"]
     pub emr: EMR,
-    #[doc = "0x0c - Channel Sequence 1 Register"]
+    #[doc = "0x0c - AFEC Channel Sequence 1 Register"]
     pub seq1r: SEQ1R,
-    #[doc = "0x10 - Channel Sequence 2 Register"]
+    #[doc = "0x10 - AFEC Channel Sequence 2 Register"]
     pub seq2r: SEQ2R,
-    #[doc = "0x14 - Channel Enable Register"]
+    #[doc = "0x14 - AFEC Channel Enable Register"]
     pub cher: CHER,
-    #[doc = "0x18 - Channel Disable Register"]
+    #[doc = "0x18 - AFEC Channel Disable Register"]
     pub chdr: CHDR,
-    #[doc = "0x1c - Channel Status Register"]
+    #[doc = "0x1c - AFEC Channel Status Register"]
     pub chsr: CHSR,
-    #[doc = "0x20 - Last Converted Data Register"]
+    #[doc = "0x20 - AFEC Last Converted Data Register"]
     pub lcdr: LCDR,
-    #[doc = "0x24 - Interrupt Enable Register"]
+    #[doc = "0x24 - AFEC Interrupt Enable Register"]
     pub ier: IER,
-    #[doc = "0x28 - Interrupt Disable Register"]
+    #[doc = "0x28 - AFEC Interrupt Disable Register"]
     pub idr: IDR,
-    #[doc = "0x2c - Interrupt Mask Register"]
+    #[doc = "0x2c - AFEC Interrupt Mask Register"]
     pub imr: IMR,
-    #[doc = "0x30 - Interrupt Status Register"]
+    #[doc = "0x30 - AFEC Interrupt Status Register"]
     pub isr: ISR,
     _reserved13: [u8; 24usize],
-    #[doc = "0x4c - Overrun Status Register"]
+    #[doc = "0x4c - AFEC Overrun Status Register"]
     pub over: OVER,
-    #[doc = "0x50 - Compare Window Register"]
+    #[doc = "0x50 - AFEC Compare Window Register"]
     pub cwr: CWR,
-    #[doc = "0x54 - Channel Gain Register"]
+    #[doc = "0x54 - AFEC Channel Gain Register"]
     pub cgr: CGR,
     _reserved16: [u8; 4usize],
-    #[doc = "0x5c - Channel DC Offset Register"]
+    #[doc = "0x5c - AFEC Channel Calibration DC Offset Register"]
     pub cdor: CDOR,
-    #[doc = "0x60 - Channel Differential Register"]
+    #[doc = "0x60 - AFEC Channel Differential Register"]
     pub diffr: DIFFR,
-    #[doc = "0x64 - Channel Register Selection"]
+    #[doc = "0x64 - AFEC Channel Register Selection"]
     pub cselr: CSELR,
-    #[doc = "0x68 - Channel Data Register"]
+    #[doc = "0x68 - AFEC Channel Data Register"]
     pub cdr: CDR,
-    #[doc = "0x6c - Channel Offset Compensation Register"]
+    #[doc = "0x6c - AFEC Channel Offset Compensation Register"]
     pub cocr: COCR,
-    #[doc = "0x70 - Temperature Sensor Mode Register"]
+    #[doc = "0x70 - AFEC Temperature Sensor Mode Register"]
     pub tempmr: TEMPMR,
-    #[doc = "0x74 - Temperature Compare Window Register"]
+    #[doc = "0x74 - AFEC Temperature Compare Window Register"]
     pub tempcwr: TEMPCWR,
     _reserved23: [u8; 28usize],
-    #[doc = "0x94 - Analog Control Register"]
+    #[doc = "0x94 - AFEC Analog Control Register"]
     pub acr: ACR,
-    _reserved24: [u8; 76usize],
-    #[doc = "0xe4 - Write Protect Mode Register"]
+    _reserved24: [u8; 56usize],
+    #[doc = "0xd0 - AFEC Correction Select Register"]
+    pub cosr: COSR,
+    #[doc = "0xd4 - AFEC Correction Values Register"]
+    pub cvr: CVR,
+    #[doc = "0xd8 - AFEC Channel Error Correction Register"]
+    pub cecr: CECR,
+    _reserved27: [u8; 8usize],
+    #[doc = "0xe4 - AFEC Write Protection Mode Register"]
     pub wpmr: WPMR,
-    #[doc = "0xe8 - Write Protect Status Register"]
+    #[doc = "0xe8 - AFEC Write Protection Status Register"]
     pub wpsr: WPSR,
-    _reserved26: [u8; 20usize],
+    _reserved29: [u8; 20usize],
     #[doc = "0x100 - Receive Pointer Register"]
     pub rpr: RPR,
     #[doc = "0x104 - Receive Counter Register"]
     pub rcr: RCR,
-    _reserved28: [u8; 8usize],
+    _reserved31: [u8; 8usize],
     #[doc = "0x110 - Receive Next Pointer Register"]
     pub rnpr: RNPR,
     #[doc = "0x114 - Receive Next Counter Register"]
     pub rncr: RNCR,
-    _reserved30: [u8; 8usize],
+    _reserved33: [u8; 8usize],
     #[doc = "0x120 - Transfer Control Register"]
     pub ptcr: PTCR,
     #[doc = "0x124 - Transfer Status Register"]
     pub ptsr: PTSR,
 }
-#[doc = "Control Register\n\nThis register you can [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cr](cr) module"]
+#[doc = "AFEC Control Register\n\nThis register you can [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cr](cr) module"]
 pub type CR = crate::Reg<u32, _CR>;
 #[allow(missing_docs)]
 #[doc(hidden)]
 pub struct _CR;
 #[doc = "`write(|w| ..)` method takes [cr::W](cr::W) writer structure"]
 impl crate::Writable for CR {}
-#[doc = "Control Register"]
+#[doc = "AFEC Control Register"]
 pub mod cr;
-#[doc = "Mode Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [mr](mr) module"]
+#[doc = "AFEC Mode Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [mr](mr) module"]
 pub type MR = crate::Reg<u32, _MR>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -91,9 +98,9 @@ pub struct _MR;
 impl crate::Readable for MR {}
 #[doc = "`write(|w| ..)` method takes [mr::W](mr::W) writer structure"]
 impl crate::Writable for MR {}
-#[doc = "Mode Register"]
+#[doc = "AFEC Mode Register"]
 pub mod mr;
-#[doc = "Extended Mode Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [emr](emr) module"]
+#[doc = "AFEC Extended Mode Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [emr](emr) module"]
 pub type EMR = crate::Reg<u32, _EMR>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -102,9 +109,9 @@ pub struct _EMR;
 impl crate::Readable for EMR {}
 #[doc = "`write(|w| ..)` method takes [emr::W](emr::W) writer structure"]
 impl crate::Writable for EMR {}
-#[doc = "Extended Mode Register"]
+#[doc = "AFEC Extended Mode Register"]
 pub mod emr;
-#[doc = "Channel Sequence 1 Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [seq1r](seq1r) module"]
+#[doc = "AFEC Channel Sequence 1 Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [seq1r](seq1r) module"]
 pub type SEQ1R = crate::Reg<u32, _SEQ1R>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -113,9 +120,9 @@ pub struct _SEQ1R;
 impl crate::Readable for SEQ1R {}
 #[doc = "`write(|w| ..)` method takes [seq1r::W](seq1r::W) writer structure"]
 impl crate::Writable for SEQ1R {}
-#[doc = "Channel Sequence 1 Register"]
+#[doc = "AFEC Channel Sequence 1 Register"]
 pub mod seq1r;
-#[doc = "Channel Sequence 2 Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [seq2r](seq2r) module"]
+#[doc = "AFEC Channel Sequence 2 Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [seq2r](seq2r) module"]
 pub type SEQ2R = crate::Reg<u32, _SEQ2R>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -124,90 +131,90 @@ pub struct _SEQ2R;
 impl crate::Readable for SEQ2R {}
 #[doc = "`write(|w| ..)` method takes [seq2r::W](seq2r::W) writer structure"]
 impl crate::Writable for SEQ2R {}
-#[doc = "Channel Sequence 2 Register"]
+#[doc = "AFEC Channel Sequence 2 Register"]
 pub mod seq2r;
-#[doc = "Channel Enable Register\n\nThis register you can [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cher](cher) module"]
+#[doc = "AFEC Channel Enable Register\n\nThis register you can [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cher](cher) module"]
 pub type CHER = crate::Reg<u32, _CHER>;
 #[allow(missing_docs)]
 #[doc(hidden)]
 pub struct _CHER;
 #[doc = "`write(|w| ..)` method takes [cher::W](cher::W) writer structure"]
 impl crate::Writable for CHER {}
-#[doc = "Channel Enable Register"]
+#[doc = "AFEC Channel Enable Register"]
 pub mod cher;
-#[doc = "Channel Disable Register\n\nThis register you can [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [chdr](chdr) module"]
+#[doc = "AFEC Channel Disable Register\n\nThis register you can [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [chdr](chdr) module"]
 pub type CHDR = crate::Reg<u32, _CHDR>;
 #[allow(missing_docs)]
 #[doc(hidden)]
 pub struct _CHDR;
 #[doc = "`write(|w| ..)` method takes [chdr::W](chdr::W) writer structure"]
 impl crate::Writable for CHDR {}
-#[doc = "Channel Disable Register"]
+#[doc = "AFEC Channel Disable Register"]
 pub mod chdr;
-#[doc = "Channel Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [chsr](chsr) module"]
+#[doc = "AFEC Channel Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [chsr](chsr) module"]
 pub type CHSR = crate::Reg<u32, _CHSR>;
 #[allow(missing_docs)]
 #[doc(hidden)]
 pub struct _CHSR;
 #[doc = "`read()` method returns [chsr::R](chsr::R) reader structure"]
 impl crate::Readable for CHSR {}
-#[doc = "Channel Status Register"]
+#[doc = "AFEC Channel Status Register"]
 pub mod chsr;
-#[doc = "Last Converted Data Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [lcdr](lcdr) module"]
+#[doc = "AFEC Last Converted Data Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [lcdr](lcdr) module"]
 pub type LCDR = crate::Reg<u32, _LCDR>;
 #[allow(missing_docs)]
 #[doc(hidden)]
 pub struct _LCDR;
 #[doc = "`read()` method returns [lcdr::R](lcdr::R) reader structure"]
 impl crate::Readable for LCDR {}
-#[doc = "Last Converted Data Register"]
+#[doc = "AFEC Last Converted Data Register"]
 pub mod lcdr;
-#[doc = "Interrupt Enable Register\n\nThis register you can [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ier](ier) module"]
+#[doc = "AFEC Interrupt Enable Register\n\nThis register you can [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ier](ier) module"]
 pub type IER = crate::Reg<u32, _IER>;
 #[allow(missing_docs)]
 #[doc(hidden)]
 pub struct _IER;
 #[doc = "`write(|w| ..)` method takes [ier::W](ier::W) writer structure"]
 impl crate::Writable for IER {}
-#[doc = "Interrupt Enable Register"]
+#[doc = "AFEC Interrupt Enable Register"]
 pub mod ier;
-#[doc = "Interrupt Disable Register\n\nThis register you can [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [idr](idr) module"]
+#[doc = "AFEC Interrupt Disable Register\n\nThis register you can [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [idr](idr) module"]
 pub type IDR = crate::Reg<u32, _IDR>;
 #[allow(missing_docs)]
 #[doc(hidden)]
 pub struct _IDR;
 #[doc = "`write(|w| ..)` method takes [idr::W](idr::W) writer structure"]
 impl crate::Writable for IDR {}
-#[doc = "Interrupt Disable Register"]
+#[doc = "AFEC Interrupt Disable Register"]
 pub mod idr;
-#[doc = "Interrupt Mask Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [imr](imr) module"]
+#[doc = "AFEC Interrupt Mask Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [imr](imr) module"]
 pub type IMR = crate::Reg<u32, _IMR>;
 #[allow(missing_docs)]
 #[doc(hidden)]
 pub struct _IMR;
 #[doc = "`read()` method returns [imr::R](imr::R) reader structure"]
 impl crate::Readable for IMR {}
-#[doc = "Interrupt Mask Register"]
+#[doc = "AFEC Interrupt Mask Register"]
 pub mod imr;
-#[doc = "Interrupt Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [isr](isr) module"]
+#[doc = "AFEC Interrupt Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [isr](isr) module"]
 pub type ISR = crate::Reg<u32, _ISR>;
 #[allow(missing_docs)]
 #[doc(hidden)]
 pub struct _ISR;
 #[doc = "`read()` method returns [isr::R](isr::R) reader structure"]
 impl crate::Readable for ISR {}
-#[doc = "Interrupt Status Register"]
+#[doc = "AFEC Interrupt Status Register"]
 pub mod isr;
-#[doc = "Overrun Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [over](over) module"]
+#[doc = "AFEC Overrun Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [over](over) module"]
 pub type OVER = crate::Reg<u32, _OVER>;
 #[allow(missing_docs)]
 #[doc(hidden)]
 pub struct _OVER;
 #[doc = "`read()` method returns [over::R](over::R) reader structure"]
 impl crate::Readable for OVER {}
-#[doc = "Overrun Status Register"]
+#[doc = "AFEC Overrun Status Register"]
 pub mod over;
-#[doc = "Compare Window Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cwr](cwr) module"]
+#[doc = "AFEC Compare Window Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cwr](cwr) module"]
 pub type CWR = crate::Reg<u32, _CWR>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -216,9 +223,9 @@ pub struct _CWR;
 impl crate::Readable for CWR {}
 #[doc = "`write(|w| ..)` method takes [cwr::W](cwr::W) writer structure"]
 impl crate::Writable for CWR {}
-#[doc = "Compare Window Register"]
+#[doc = "AFEC Compare Window Register"]
 pub mod cwr;
-#[doc = "Channel Gain Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cgr](cgr) module"]
+#[doc = "AFEC Channel Gain Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cgr](cgr) module"]
 pub type CGR = crate::Reg<u32, _CGR>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -227,9 +234,9 @@ pub struct _CGR;
 impl crate::Readable for CGR {}
 #[doc = "`write(|w| ..)` method takes [cgr::W](cgr::W) writer structure"]
 impl crate::Writable for CGR {}
-#[doc = "Channel Gain Register"]
+#[doc = "AFEC Channel Gain Register"]
 pub mod cgr;
-#[doc = "Channel DC Offset Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cdor](cdor) module"]
+#[doc = "AFEC Channel Calibration DC Offset Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cdor](cdor) module"]
 pub type CDOR = crate::Reg<u32, _CDOR>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -238,9 +245,9 @@ pub struct _CDOR;
 impl crate::Readable for CDOR {}
 #[doc = "`write(|w| ..)` method takes [cdor::W](cdor::W) writer structure"]
 impl crate::Writable for CDOR {}
-#[doc = "Channel DC Offset Register"]
+#[doc = "AFEC Channel Calibration DC Offset Register"]
 pub mod cdor;
-#[doc = "Channel Differential Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [diffr](diffr) module"]
+#[doc = "AFEC Channel Differential Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [diffr](diffr) module"]
 pub type DIFFR = crate::Reg<u32, _DIFFR>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -249,36 +256,40 @@ pub struct _DIFFR;
 impl crate::Readable for DIFFR {}
 #[doc = "`write(|w| ..)` method takes [diffr::W](diffr::W) writer structure"]
 impl crate::Writable for DIFFR {}
-#[doc = "Channel Differential Register"]
+#[doc = "AFEC Channel Differential Register"]
 pub mod diffr;
-#[doc = "Channel Register Selection\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cselr](cselr) module"]
+#[doc = "AFEC Channel Register Selection\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cselr](cselr) module"]
 pub type CSELR = crate::Reg<u32, _CSELR>;
 #[allow(missing_docs)]
 #[doc(hidden)]
 pub struct _CSELR;
 #[doc = "`read()` method returns [cselr::R](cselr::R) reader structure"]
 impl crate::Readable for CSELR {}
-#[doc = "Channel Register Selection"]
+#[doc = "`write(|w| ..)` method takes [cselr::W](cselr::W) writer structure"]
+impl crate::Writable for CSELR {}
+#[doc = "AFEC Channel Register Selection"]
 pub mod cselr;
-#[doc = "Channel Data Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cdr](cdr) module"]
+#[doc = "AFEC Channel Data Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cdr](cdr) module"]
 pub type CDR = crate::Reg<u32, _CDR>;
 #[allow(missing_docs)]
 #[doc(hidden)]
 pub struct _CDR;
 #[doc = "`read()` method returns [cdr::R](cdr::R) reader structure"]
 impl crate::Readable for CDR {}
-#[doc = "Channel Data Register"]
+#[doc = "AFEC Channel Data Register"]
 pub mod cdr;
-#[doc = "Channel Offset Compensation Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cocr](cocr) module"]
+#[doc = "AFEC Channel Offset Compensation Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cocr](cocr) module"]
 pub type COCR = crate::Reg<u32, _COCR>;
 #[allow(missing_docs)]
 #[doc(hidden)]
 pub struct _COCR;
 #[doc = "`read()` method returns [cocr::R](cocr::R) reader structure"]
 impl crate::Readable for COCR {}
-#[doc = "Channel Offset Compensation Register"]
+#[doc = "`write(|w| ..)` method takes [cocr::W](cocr::W) writer structure"]
+impl crate::Writable for COCR {}
+#[doc = "AFEC Channel Offset Compensation Register"]
 pub mod cocr;
-#[doc = "Temperature Sensor Mode Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [tempmr](tempmr) module"]
+#[doc = "AFEC Temperature Sensor Mode Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [tempmr](tempmr) module"]
 pub type TEMPMR = crate::Reg<u32, _TEMPMR>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -287,9 +298,9 @@ pub struct _TEMPMR;
 impl crate::Readable for TEMPMR {}
 #[doc = "`write(|w| ..)` method takes [tempmr::W](tempmr::W) writer structure"]
 impl crate::Writable for TEMPMR {}
-#[doc = "Temperature Sensor Mode Register"]
+#[doc = "AFEC Temperature Sensor Mode Register"]
 pub mod tempmr;
-#[doc = "Temperature Compare Window Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [tempcwr](tempcwr) module"]
+#[doc = "AFEC Temperature Compare Window Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [tempcwr](tempcwr) module"]
 pub type TEMPCWR = crate::Reg<u32, _TEMPCWR>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -298,9 +309,9 @@ pub struct _TEMPCWR;
 impl crate::Readable for TEMPCWR {}
 #[doc = "`write(|w| ..)` method takes [tempcwr::W](tempcwr::W) writer structure"]
 impl crate::Writable for TEMPCWR {}
-#[doc = "Temperature Compare Window Register"]
+#[doc = "AFEC Temperature Compare Window Register"]
 pub mod tempcwr;
-#[doc = "Analog Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [acr](acr) module"]
+#[doc = "AFEC Analog Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [acr](acr) module"]
 pub type ACR = crate::Reg<u32, _ACR>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -309,9 +320,42 @@ pub struct _ACR;
 impl crate::Readable for ACR {}
 #[doc = "`write(|w| ..)` method takes [acr::W](acr::W) writer structure"]
 impl crate::Writable for ACR {}
-#[doc = "Analog Control Register"]
+#[doc = "AFEC Analog Control Register"]
 pub mod acr;
-#[doc = "Write Protect Mode Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [wpmr](wpmr) module"]
+#[doc = "AFEC Correction Select Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cosr](cosr) module"]
+pub type COSR = crate::Reg<u32, _COSR>;
+#[allow(missing_docs)]
+#[doc(hidden)]
+pub struct _COSR;
+#[doc = "`read()` method returns [cosr::R](cosr::R) reader structure"]
+impl crate::Readable for COSR {}
+#[doc = "`write(|w| ..)` method takes [cosr::W](cosr::W) writer structure"]
+impl crate::Writable for COSR {}
+#[doc = "AFEC Correction Select Register"]
+pub mod cosr;
+#[doc = "AFEC Correction Values Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cvr](cvr) module"]
+pub type CVR = crate::Reg<u32, _CVR>;
+#[allow(missing_docs)]
+#[doc(hidden)]
+pub struct _CVR;
+#[doc = "`read()` method returns [cvr::R](cvr::R) reader structure"]
+impl crate::Readable for CVR {}
+#[doc = "`write(|w| ..)` method takes [cvr::W](cvr::W) writer structure"]
+impl crate::Writable for CVR {}
+#[doc = "AFEC Correction Values Register"]
+pub mod cvr;
+#[doc = "AFEC Channel Error Correction Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cecr](cecr) module"]
+pub type CECR = crate::Reg<u32, _CECR>;
+#[allow(missing_docs)]
+#[doc(hidden)]
+pub struct _CECR;
+#[doc = "`read()` method returns [cecr::R](cecr::R) reader structure"]
+impl crate::Readable for CECR {}
+#[doc = "`write(|w| ..)` method takes [cecr::W](cecr::W) writer structure"]
+impl crate::Writable for CECR {}
+#[doc = "AFEC Channel Error Correction Register"]
+pub mod cecr;
+#[doc = "AFEC Write Protection Mode Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [wpmr](wpmr) module"]
 pub type WPMR = crate::Reg<u32, _WPMR>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -320,16 +364,16 @@ pub struct _WPMR;
 impl crate::Readable for WPMR {}
 #[doc = "`write(|w| ..)` method takes [wpmr::W](wpmr::W) writer structure"]
 impl crate::Writable for WPMR {}
-#[doc = "Write Protect Mode Register"]
+#[doc = "AFEC Write Protection Mode Register"]
 pub mod wpmr;
-#[doc = "Write Protect Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [wpsr](wpsr) module"]
+#[doc = "AFEC Write Protection Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [wpsr](wpsr) module"]
 pub type WPSR = crate::Reg<u32, _WPSR>;
 #[allow(missing_docs)]
 #[doc(hidden)]
 pub struct _WPSR;
 #[doc = "`read()` method returns [wpsr::R](wpsr::R) reader structure"]
 impl crate::Readable for WPSR {}
-#[doc = "Write Protect Status Register"]
+#[doc = "AFEC Write Protection Status Register"]
 pub mod wpsr;
 #[doc = "Receive Pointer Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [rpr](rpr) module"]
 pub type RPR = crate::Reg<u32, _RPR>;

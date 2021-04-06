@@ -323,7 +323,7 @@ impl R {
     pub fn bits_(&self) -> BITS_R {
         BITS_R::new(((self.bits >> 4) & 0x0f) as u8)
     }
-    #[doc = "Bits 8:15 - Serial Clock Bit Rate"]
+    #[doc = "Bits 8:15 - Serial Clock Baud Rate"]
     #[inline(always)]
     pub fn scbr(&self) -> SCBR_R {
         SCBR_R::new(((self.bits >> 8) & 0xff) as u8)
@@ -365,7 +365,7 @@ impl W {
     pub fn bits_(&mut self) -> BITS_W {
         BITS_W { w: self }
     }
-    #[doc = "Bits 8:15 - Serial Clock Bit Rate"]
+    #[doc = "Bits 8:15 - Serial Clock Baud Rate"]
     #[inline(always)]
     pub fn scbr(&mut self) -> SCBR_W {
         SCBR_W { w: self }

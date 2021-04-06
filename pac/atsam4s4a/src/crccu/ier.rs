@@ -1,5 +1,13 @@
 #[doc = "Writer for register IER"]
 pub type W = crate::W<u32, super::IER>;
+#[doc = "Register IER `reset()`'s with value 0"]
+impl crate::ResetValue for super::IER {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
+    }
+}
 #[doc = "Write proxy for field `ERRIER`"]
 pub struct ERRIER_W<'a> {
     w: &'a mut W,

@@ -1,6 +1,6 @@
-#[doc = "Reader of register CSR%s"]
+#[doc = "Reader of register CSR[%s]"]
 pub type R = crate::R<u32, super::CSR>;
-#[doc = "Writer for register CSR%s"]
+#[doc = "Writer for register CSR[%s]"]
 pub type W = crate::W<u32, super::CSR>;
 #[doc = "Reader of field `TXCOMP`"]
 pub type TXCOMP_R = crate::R<bool, bool>;

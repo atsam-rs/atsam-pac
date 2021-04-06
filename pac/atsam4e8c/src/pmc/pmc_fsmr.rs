@@ -466,13 +466,102 @@ impl<'a> USBAL_W<'a> {
         self.w
     }
 }
+#[doc = "Reader of field `LPM`"]
+pub type LPM_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `LPM`"]
+pub struct LPM_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> LPM_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 20)) | (((value as u32) & 0x01) << 20);
+        self.w
+    }
+}
+#[doc = "Flash Low-power Mode\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
+pub enum FLPM_A {
+    #[doc = "0: Flash is in Standby Mode when system enters Wait Mode"]
+    FLASH_STANDBY = 0,
+    #[doc = "1: Flash is in deep-power-down mode when system enters Wait Mode"]
+    FLASH_DEEP_POWERDOWN = 1,
+    #[doc = "2: idle mode"]
+    FLASH_IDLE = 2,
+}
+impl From<FLPM_A> for u8 {
+    #[inline(always)]
+    fn from(variant: FLPM_A) -> Self {
+        variant as _
+    }
+}
 #[doc = "Reader of field `FLPM`"]
-pub type FLPM_R = crate::R<u8, u8>;
+pub type FLPM_R = crate::R<u8, FLPM_A>;
+impl FLPM_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, FLPM_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(FLPM_A::FLASH_STANDBY),
+            1 => Val(FLPM_A::FLASH_DEEP_POWERDOWN),
+            2 => Val(FLPM_A::FLASH_IDLE),
+            i => Res(i),
+        }
+    }
+    #[doc = "Checks if the value of the field is `FLASH_STANDBY`"]
+    #[inline(always)]
+    pub fn is_flash_standby(&self) -> bool {
+        *self == FLPM_A::FLASH_STANDBY
+    }
+    #[doc = "Checks if the value of the field is `FLASH_DEEP_POWERDOWN`"]
+    #[inline(always)]
+    pub fn is_flash_deep_powerdown(&self) -> bool {
+        *self == FLPM_A::FLASH_DEEP_POWERDOWN
+    }
+    #[doc = "Checks if the value of the field is `FLASH_IDLE`"]
+    #[inline(always)]
+    pub fn is_flash_idle(&self) -> bool {
+        *self == FLPM_A::FLASH_IDLE
+    }
+}
 #[doc = "Write proxy for field `FLPM`"]
 pub struct FLPM_W<'a> {
     w: &'a mut W,
 }
 impl<'a> FLPM_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: FLPM_A) -> &'a mut W {
+        unsafe { self.bits(variant.into()) }
+    }
+    #[doc = "Flash is in Standby Mode when system enters Wait Mode"]
+    #[inline(always)]
+    pub fn flash_standby(self) -> &'a mut W {
+        self.variant(FLPM_A::FLASH_STANDBY)
+    }
+    #[doc = "Flash is in deep-power-down mode when system enters Wait Mode"]
+    #[inline(always)]
+    pub fn flash_deep_powerdown(self) -> &'a mut W {
+        self.variant(FLPM_A::FLASH_DEEP_POWERDOWN)
+    }
+    #[doc = "idle mode"]
+    #[inline(always)]
+    pub fn flash_idle(self) -> &'a mut W {
+        self.variant(FLPM_A::FLASH_IDLE)
+    }
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
@@ -576,7 +665,12 @@ impl R {
     pub fn usbal(&self) -> USBAL_R {
         USBAL_R::new(((self.bits >> 18) & 0x01) != 0)
     }
-    #[doc = "Bits 21:22 - Flash Low Power Mode"]
+    #[doc = "Bit 20 - Low-power Mode"]
+    #[inline(always)]
+    pub fn lpm(&self) -> LPM_R {
+        LPM_R::new(((self.bits >> 20) & 0x01) != 0)
+    }
+    #[doc = "Bits 21:22 - Flash Low-power Mode"]
     #[inline(always)]
     pub fn flpm(&self) -> FLPM_R {
         FLPM_R::new(((self.bits >> 21) & 0x03) as u8)
@@ -678,7 +772,12 @@ impl W {
     pub fn usbal(&mut self) -> USBAL_W {
         USBAL_W { w: self }
     }
-    #[doc = "Bits 21:22 - Flash Low Power Mode"]
+    #[doc = "Bit 20 - Low-power Mode"]
+    #[inline(always)]
+    pub fn lpm(&mut self) -> LPM_W {
+        LPM_W { w: self }
+    }
+    #[doc = "Bits 21:22 - Flash Low-power Mode"]
     #[inline(always)]
     pub fn flpm(&mut self) -> FLPM_W {
         FLPM_W { w: self }

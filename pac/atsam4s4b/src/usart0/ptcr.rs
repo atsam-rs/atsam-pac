@@ -1,5 +1,13 @@
 #[doc = "Writer for register PTCR"]
 pub type W = crate::W<u32, super::PTCR>;
+#[doc = "Register PTCR `reset()`'s with value 0"]
+impl crate::ResetValue for super::PTCR {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
+    }
+}
 #[doc = "Write proxy for field `RXTEN`"]
 pub struct RXTEN_W<'a> {
     w: &'a mut W,

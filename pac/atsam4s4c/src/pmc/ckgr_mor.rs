@@ -110,11 +110,11 @@ impl<'a> MOSCRCEN_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum MOSCRCF_A {
-    #[doc = "0: The fast RC oscillator frequency is at 4 MHz (default)"]
+    #[doc = "0: The Fast RC Oscillator Frequency is at 4 MHz (default)"]
     _4_MHZ = 0,
-    #[doc = "1: The fast RC oscillator frequency is at 8 MHz"]
+    #[doc = "1: The Fast RC Oscillator Frequency is at 8 MHz"]
     _8_MHZ = 1,
-    #[doc = "2: The fast RC oscillator frequency is at 12 MHz"]
+    #[doc = "2: The Fast RC Oscillator Frequency is at 12 MHz"]
     _12_MHZ = 2,
 }
 impl From<MOSCRCF_A> for u8 {
@@ -163,17 +163,17 @@ impl<'a> MOSCRCF_W<'a> {
     pub fn variant(self, variant: MOSCRCF_A) -> &'a mut W {
         unsafe { self.bits(variant.into()) }
     }
-    #[doc = "The fast RC oscillator frequency is at 4 MHz (default)"]
+    #[doc = "The Fast RC Oscillator Frequency is at 4 MHz (default)"]
     #[inline(always)]
     pub fn _4_mhz(self) -> &'a mut W {
         self.variant(MOSCRCF_A::_4_MHZ)
     }
-    #[doc = "The fast RC oscillator frequency is at 8 MHz"]
+    #[doc = "The Fast RC Oscillator Frequency is at 8 MHz"]
     #[inline(always)]
     pub fn _8_mhz(self) -> &'a mut W {
         self.variant(MOSCRCF_A::_8_MHZ)
     }
-    #[doc = "The fast RC oscillator frequency is at 12 MHz"]
+    #[doc = "The Fast RC Oscillator Frequency is at 12 MHz"]
     #[inline(always)]
     pub fn _12_mhz(self) -> &'a mut W {
         self.variant(MOSCRCF_A::_12_MHZ)
@@ -311,7 +311,7 @@ impl R {
     pub fn moscxtby(&self) -> MOSCXTBY_R {
         MOSCXTBY_R::new(((self.bits >> 1) & 0x01) != 0)
     }
-    #[doc = "Bit 2 - Wait Mode Command (Write-only)"]
+    #[doc = "Bit 2 - Wait Mode Command"]
     #[inline(always)]
     pub fn waitmode(&self) -> WAITMODE_R {
         WAITMODE_R::new(((self.bits >> 2) & 0x01) != 0)
@@ -358,7 +358,7 @@ impl W {
     pub fn moscxtby(&mut self) -> MOSCXTBY_W {
         MOSCXTBY_W { w: self }
     }
-    #[doc = "Bit 2 - Wait Mode Command (Write-only)"]
+    #[doc = "Bit 2 - Wait Mode Command"]
     #[inline(always)]
     pub fn waitmode(&mut self) -> WAITMODE_W {
         WAITMODE_W { w: self }

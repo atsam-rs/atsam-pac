@@ -104,11 +104,11 @@ impl<'a> FSLEN_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum FSOS_A {
-    #[doc = "0: None, TF pin is an input"]
+    #[doc = "0: None, RF pin is an input"]
     NONE = 0,
-    #[doc = "1: Negative Pulse, TF pin is an output"]
+    #[doc = "1: Negative Pulse, RF pin is an output"]
     NEGATIVE = 1,
-    #[doc = "2: Positive Pulse, TF pin is an output"]
+    #[doc = "2: Positive Pulse, RF pin is an output"]
     POSITIVE = 2,
     #[doc = "3: Driven Low during data transfer"]
     LOW = 3,
@@ -181,17 +181,17 @@ impl<'a> FSOS_W<'a> {
     pub fn variant(self, variant: FSOS_A) -> &'a mut W {
         unsafe { self.bits(variant.into()) }
     }
-    #[doc = "None, TF pin is an input"]
+    #[doc = "None, RF pin is an input"]
     #[inline(always)]
     pub fn none(self) -> &'a mut W {
         self.variant(FSOS_A::NONE)
     }
-    #[doc = "Negative Pulse, TF pin is an output"]
+    #[doc = "Negative Pulse, RF pin is an output"]
     #[inline(always)]
     pub fn negative(self) -> &'a mut W {
         self.variant(FSOS_A::NEGATIVE)
     }
-    #[doc = "Positive Pulse, TF pin is an output"]
+    #[doc = "Positive Pulse, RF pin is an output"]
     #[inline(always)]
     pub fn positive(self) -> &'a mut W {
         self.variant(FSOS_A::POSITIVE)
@@ -347,7 +347,7 @@ impl R {
     pub fn msbf(&self) -> MSBF_R {
         MSBF_R::new(((self.bits >> 7) & 0x01) != 0)
     }
-    #[doc = "Bits 8:11 - Data Number per Frame"]
+    #[doc = "Bits 8:11 - Data Number per frame"]
     #[inline(always)]
     pub fn datnb(&self) -> DATNB_R {
         DATNB_R::new(((self.bits >> 8) & 0x0f) as u8)
@@ -394,7 +394,7 @@ impl W {
     pub fn msbf(&mut self) -> MSBF_W {
         MSBF_W { w: self }
     }
-    #[doc = "Bits 8:11 - Data Number per Frame"]
+    #[doc = "Bits 8:11 - Data Number per frame"]
     #[inline(always)]
     pub fn datnb(&mut self) -> DATNB_W {
         DATNB_W { w: self }

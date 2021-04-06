@@ -90,17 +90,17 @@ impl<'a> TRGEN_W<'a> {
 #[repr(u8)]
 pub enum TRGSEL_A {
     #[doc = "0: ADTRG pin"]
-    AFE_TRIG0 = 0,
+    AFEC_TRIG0 = 0,
     #[doc = "1: TIO Output of the Timer Counter Channel 0"]
-    AFE_TRIG1 = 1,
+    AFEC_TRIG1 = 1,
     #[doc = "2: TIO Output of the Timer Counter Channel 1"]
-    AFE_TRIG2 = 2,
+    AFEC_TRIG2 = 2,
     #[doc = "3: TIO Output of the Timer Counter Channel 2"]
-    AFE_TRIG3 = 3,
+    AFEC_TRIG3 = 3,
     #[doc = "4: PWM Event Line 0"]
-    AFE_TRIG4 = 4,
+    AFEC_TRIG4 = 4,
     #[doc = "5: PWM Event Line 1"]
-    AFE_TRIG5 = 5,
+    AFEC_TRIG5 = 5,
 }
 impl From<TRGSEL_A> for u8 {
     #[inline(always)]
@@ -116,44 +116,44 @@ impl TRGSEL_R {
     pub fn variant(&self) -> crate::Variant<u8, TRGSEL_A> {
         use crate::Variant::*;
         match self.bits {
-            0 => Val(TRGSEL_A::AFE_TRIG0),
-            1 => Val(TRGSEL_A::AFE_TRIG1),
-            2 => Val(TRGSEL_A::AFE_TRIG2),
-            3 => Val(TRGSEL_A::AFE_TRIG3),
-            4 => Val(TRGSEL_A::AFE_TRIG4),
-            5 => Val(TRGSEL_A::AFE_TRIG5),
+            0 => Val(TRGSEL_A::AFEC_TRIG0),
+            1 => Val(TRGSEL_A::AFEC_TRIG1),
+            2 => Val(TRGSEL_A::AFEC_TRIG2),
+            3 => Val(TRGSEL_A::AFEC_TRIG3),
+            4 => Val(TRGSEL_A::AFEC_TRIG4),
+            5 => Val(TRGSEL_A::AFEC_TRIG5),
             i => Res(i),
         }
     }
-    #[doc = "Checks if the value of the field is `AFE_TRIG0`"]
+    #[doc = "Checks if the value of the field is `AFEC_TRIG0`"]
     #[inline(always)]
-    pub fn is_afe_trig0(&self) -> bool {
-        *self == TRGSEL_A::AFE_TRIG0
+    pub fn is_afec_trig0(&self) -> bool {
+        *self == TRGSEL_A::AFEC_TRIG0
     }
-    #[doc = "Checks if the value of the field is `AFE_TRIG1`"]
+    #[doc = "Checks if the value of the field is `AFEC_TRIG1`"]
     #[inline(always)]
-    pub fn is_afe_trig1(&self) -> bool {
-        *self == TRGSEL_A::AFE_TRIG1
+    pub fn is_afec_trig1(&self) -> bool {
+        *self == TRGSEL_A::AFEC_TRIG1
     }
-    #[doc = "Checks if the value of the field is `AFE_TRIG2`"]
+    #[doc = "Checks if the value of the field is `AFEC_TRIG2`"]
     #[inline(always)]
-    pub fn is_afe_trig2(&self) -> bool {
-        *self == TRGSEL_A::AFE_TRIG2
+    pub fn is_afec_trig2(&self) -> bool {
+        *self == TRGSEL_A::AFEC_TRIG2
     }
-    #[doc = "Checks if the value of the field is `AFE_TRIG3`"]
+    #[doc = "Checks if the value of the field is `AFEC_TRIG3`"]
     #[inline(always)]
-    pub fn is_afe_trig3(&self) -> bool {
-        *self == TRGSEL_A::AFE_TRIG3
+    pub fn is_afec_trig3(&self) -> bool {
+        *self == TRGSEL_A::AFEC_TRIG3
     }
-    #[doc = "Checks if the value of the field is `AFE_TRIG4`"]
+    #[doc = "Checks if the value of the field is `AFEC_TRIG4`"]
     #[inline(always)]
-    pub fn is_afe_trig4(&self) -> bool {
-        *self == TRGSEL_A::AFE_TRIG4
+    pub fn is_afec_trig4(&self) -> bool {
+        *self == TRGSEL_A::AFEC_TRIG4
     }
-    #[doc = "Checks if the value of the field is `AFE_TRIG5`"]
+    #[doc = "Checks if the value of the field is `AFEC_TRIG5`"]
     #[inline(always)]
-    pub fn is_afe_trig5(&self) -> bool {
-        *self == TRGSEL_A::AFE_TRIG5
+    pub fn is_afec_trig5(&self) -> bool {
+        *self == TRGSEL_A::AFEC_TRIG5
     }
 }
 #[doc = "Write proxy for field `TRGSEL`"]
@@ -168,33 +168,33 @@ impl<'a> TRGSEL_W<'a> {
     }
     #[doc = "ADTRG pin"]
     #[inline(always)]
-    pub fn afe_trig0(self) -> &'a mut W {
-        self.variant(TRGSEL_A::AFE_TRIG0)
+    pub fn afec_trig0(self) -> &'a mut W {
+        self.variant(TRGSEL_A::AFEC_TRIG0)
     }
     #[doc = "TIO Output of the Timer Counter Channel 0"]
     #[inline(always)]
-    pub fn afe_trig1(self) -> &'a mut W {
-        self.variant(TRGSEL_A::AFE_TRIG1)
+    pub fn afec_trig1(self) -> &'a mut W {
+        self.variant(TRGSEL_A::AFEC_TRIG1)
     }
     #[doc = "TIO Output of the Timer Counter Channel 1"]
     #[inline(always)]
-    pub fn afe_trig2(self) -> &'a mut W {
-        self.variant(TRGSEL_A::AFE_TRIG2)
+    pub fn afec_trig2(self) -> &'a mut W {
+        self.variant(TRGSEL_A::AFEC_TRIG2)
     }
     #[doc = "TIO Output of the Timer Counter Channel 2"]
     #[inline(always)]
-    pub fn afe_trig3(self) -> &'a mut W {
-        self.variant(TRGSEL_A::AFE_TRIG3)
+    pub fn afec_trig3(self) -> &'a mut W {
+        self.variant(TRGSEL_A::AFEC_TRIG3)
     }
     #[doc = "PWM Event Line 0"]
     #[inline(always)]
-    pub fn afe_trig4(self) -> &'a mut W {
-        self.variant(TRGSEL_A::AFE_TRIG4)
+    pub fn afec_trig4(self) -> &'a mut W {
+        self.variant(TRGSEL_A::AFEC_TRIG4)
     }
     #[doc = "PWM Event Line 1"]
     #[inline(always)]
-    pub fn afe_trig5(self) -> &'a mut W {
-        self.variant(TRGSEL_A::AFE_TRIG5)
+    pub fn afec_trig5(self) -> &'a mut W {
+        self.variant(TRGSEL_A::AFEC_TRIG5)
     }
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
@@ -206,9 +206,9 @@ impl<'a> TRGSEL_W<'a> {
 #[doc = "Sleep Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SLEEP_A {
-    #[doc = "0: Normal Mode: The AFE Core and reference voltage circuitry are kept ON between conversions"]
+    #[doc = "0: Normal Mode: The AFEC Core and reference voltage circuitry are kept ON between conversions"]
     NORMAL = 0,
-    #[doc = "1: Sleep Mode: The AFE Core and reference voltage circuitry are OFF between conversions"]
+    #[doc = "1: Sleep Mode: The AFEC Core and reference voltage circuitry are OFF between conversions"]
     SLEEP = 1,
 }
 impl From<SLEEP_A> for bool {
@@ -251,12 +251,12 @@ impl<'a> SLEEP_W<'a> {
             self.bit(variant.into())
         }
     }
-    #[doc = "Normal Mode: The AFE Core and reference voltage circuitry are kept ON between conversions"]
+    #[doc = "Normal Mode: The AFEC Core and reference voltage circuitry are kept ON between conversions"]
     #[inline(always)]
     pub fn normal(self) -> &'a mut W {
         self.variant(SLEEP_A::NORMAL)
     }
-    #[doc = "Sleep Mode: The AFE Core and reference voltage circuitry are OFF between conversions"]
+    #[doc = "Sleep Mode: The AFEC Core and reference voltage circuitry are OFF between conversions"]
     #[inline(always)]
     pub fn sleep(self) -> &'a mut W {
         self.variant(SLEEP_A::SLEEP)
@@ -278,12 +278,12 @@ impl<'a> SLEEP_W<'a> {
         self.w
     }
 }
-#[doc = "Fast Wake Up\n\nValue on reset: 0"]
+#[doc = "Fast Wake-up\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FWUP_A {
     #[doc = "0: Normal Sleep Mode: The sleep mode is defined by the SLEEP bit"]
     OFF = 0,
-    #[doc = "1: Fast Wake Up Sleep Mode: The Voltage reference is ON between conversions and AFE Core is OFF"]
+    #[doc = "1: Fast Wake Up Sleep Mode: The Voltage reference is ON between conversions and AFEC Core is OFF"]
     ON = 1,
 }
 impl From<FWUP_A> for bool {
@@ -331,7 +331,7 @@ impl<'a> FWUP_W<'a> {
     pub fn off(self) -> &'a mut W {
         self.variant(FWUP_A::OFF)
     }
-    #[doc = "Fast Wake Up Sleep Mode: The Voltage reference is ON between conversions and AFE Core is OFF"]
+    #[doc = "Fast Wake Up Sleep Mode: The Voltage reference is ON between conversions and AFEC Core is OFF"]
     #[inline(always)]
     pub fn on(self) -> &'a mut W {
         self.variant(FWUP_A::ON)
@@ -442,7 +442,7 @@ impl<'a> PRESCAL_W<'a> {
         self.w
     }
 }
-#[doc = "Start Up Time\n\nValue on reset: 0"]
+#[doc = "Start-up Time\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum STARTUP_A {
@@ -787,9 +787,9 @@ impl<'a> SETTLING_W<'a> {
 #[doc = "Analog Change\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ANACH_A {
-    #[doc = "0: No analog change on channel switching: DIFF0, GAIN0 and OFF0 are used for all channels"]
+    #[doc = "0: No analog change on channel switching: DIFF0, GAIN0 are used for all channels"]
     NONE = 0,
-    #[doc = "1: Allows different analog settings for each channel. See AFE_CGR and AFE_CDOR Registers"]
+    #[doc = "1: Allows different analog settings for each channel. See AFEC_CGR."]
     ALLOWED = 1,
 }
 impl From<ANACH_A> for bool {
@@ -832,12 +832,12 @@ impl<'a> ANACH_W<'a> {
             self.bit(variant.into())
         }
     }
-    #[doc = "No analog change on channel switching: DIFF0, GAIN0 and OFF0 are used for all channels"]
+    #[doc = "No analog change on channel switching: DIFF0, GAIN0 are used for all channels"]
     #[inline(always)]
     pub fn none(self) -> &'a mut W {
         self.variant(ANACH_A::NONE)
     }
-    #[doc = "Allows different analog settings for each channel. See AFE_CGR and AFE_CDOR Registers"]
+    #[doc = "Allows different analog settings for each channel. See AFEC_CGR."]
     #[inline(always)]
     pub fn allowed(self) -> &'a mut W {
         self.variant(ANACH_A::ALLOWED)
@@ -892,7 +892,7 @@ impl<'a> TRANSFER_W<'a> {
 pub enum USEQ_A {
     #[doc = "0: Normal Mode: The controller converts channels in a simple numeric order."]
     NUM_ORDER = 0,
-    #[doc = "1: User Sequence Mode: The sequence respects what is defined in AFE_SEQR1 and AFE_SEQR2 registers."]
+    #[doc = "1: User Sequence Mode: The sequence respects what is defined in AFEC_SEQR1 and AFEC_SEQR2."]
     REG_ORDER = 1,
 }
 impl From<USEQ_A> for bool {
@@ -940,7 +940,7 @@ impl<'a> USEQ_W<'a> {
     pub fn num_order(self) -> &'a mut W {
         self.variant(USEQ_A::NUM_ORDER)
     }
-    #[doc = "User Sequence Mode: The sequence respects what is defined in AFE_SEQR1 and AFE_SEQR2 registers."]
+    #[doc = "User Sequence Mode: The sequence respects what is defined in AFEC_SEQR1 and AFEC_SEQR2."]
     #[inline(always)]
     pub fn reg_order(self) -> &'a mut W {
         self.variant(USEQ_A::REG_ORDER)
@@ -978,7 +978,7 @@ impl R {
     pub fn sleep(&self) -> SLEEP_R {
         SLEEP_R::new(((self.bits >> 5) & 0x01) != 0)
     }
-    #[doc = "Bit 6 - Fast Wake Up"]
+    #[doc = "Bit 6 - Fast Wake-up"]
     #[inline(always)]
     pub fn fwup(&self) -> FWUP_R {
         FWUP_R::new(((self.bits >> 6) & 0x01) != 0)
@@ -993,7 +993,7 @@ impl R {
     pub fn prescal(&self) -> PRESCAL_R {
         PRESCAL_R::new(((self.bits >> 8) & 0xff) as u8)
     }
-    #[doc = "Bits 16:19 - Start Up Time"]
+    #[doc = "Bits 16:19 - Start-up Time"]
     #[inline(always)]
     pub fn startup(&self) -> STARTUP_R {
         STARTUP_R::new(((self.bits >> 16) & 0x0f) as u8)
@@ -1040,7 +1040,7 @@ impl W {
     pub fn sleep(&mut self) -> SLEEP_W {
         SLEEP_W { w: self }
     }
-    #[doc = "Bit 6 - Fast Wake Up"]
+    #[doc = "Bit 6 - Fast Wake-up"]
     #[inline(always)]
     pub fn fwup(&mut self) -> FWUP_W {
         FWUP_W { w: self }
@@ -1055,7 +1055,7 @@ impl W {
     pub fn prescal(&mut self) -> PRESCAL_W {
         PRESCAL_W { w: self }
     }
-    #[doc = "Bits 16:19 - Start Up Time"]
+    #[doc = "Bits 16:19 - Start-up Time"]
     #[inline(always)]
     pub fn startup(&mut self) -> STARTUP_W {
         STARTUP_W { w: self }

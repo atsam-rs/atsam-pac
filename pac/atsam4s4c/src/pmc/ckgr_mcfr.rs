@@ -78,7 +78,7 @@ impl R {
     pub fn mainf(&self) -> MAINF_R {
         MAINF_R::new((self.bits & 0xffff) as u16)
     }
-    #[doc = "Bit 16 - Main Clock Frequency Measure Ready"]
+    #[doc = "Bit 16 - Main Clock Ready"]
     #[inline(always)]
     pub fn mainfrdy(&self) -> MAINFRDY_R {
         MAINFRDY_R::new(((self.bits >> 16) & 0x01) != 0)
@@ -95,7 +95,7 @@ impl W {
     pub fn mainf(&mut self) -> MAINF_W {
         MAINF_W { w: self }
     }
-    #[doc = "Bit 16 - Main Clock Frequency Measure Ready"]
+    #[doc = "Bit 16 - Main Clock Ready"]
     #[inline(always)]
     pub fn mainfrdy(&mut self) -> MAINFRDY_W {
         MAINFRDY_W { w: self }

@@ -32,22 +32,6 @@ pub type CH13_R = crate::R<bool, bool>;
 pub type CH14_R = crate::R<bool, bool>;
 #[doc = "Reader of field `CH15`"]
 pub type CH15_R = crate::R<bool, bool>;
-#[doc = "Reader of field `CH16`"]
-pub type CH16_R = crate::R<bool, bool>;
-#[doc = "Reader of field `DIFF17`"]
-pub type DIFF17_R = crate::R<bool, bool>;
-#[doc = "Reader of field `CH18`"]
-pub type CH18_R = crate::R<bool, bool>;
-#[doc = "Reader of field `CH19`"]
-pub type CH19_R = crate::R<bool, bool>;
-#[doc = "Reader of field `CH20`"]
-pub type CH20_R = crate::R<bool, bool>;
-#[doc = "Reader of field `CH21`"]
-pub type CH21_R = crate::R<bool, bool>;
-#[doc = "Reader of field `CH22`"]
-pub type CH22_R = crate::R<bool, bool>;
-#[doc = "Reader of field `CH23`"]
-pub type CH23_R = crate::R<bool, bool>;
 impl R {
     #[doc = "Bit 0 - Channel 0 Status"]
     #[inline(always)]
@@ -128,45 +112,5 @@ impl R {
     #[inline(always)]
     pub fn ch15(&self) -> CH15_R {
         CH15_R::new(((self.bits >> 15) & 0x01) != 0)
-    }
-    #[doc = "Bit 16 - Channel 16 Status"]
-    #[inline(always)]
-    pub fn ch16(&self) -> CH16_R {
-        CH16_R::new(((self.bits >> 16) & 0x01) != 0)
-    }
-    #[doc = "Bit 17"]
-    #[inline(always)]
-    pub fn diff17(&self) -> DIFF17_R {
-        DIFF17_R::new(((self.bits >> 17) & 0x01) != 0)
-    }
-    #[doc = "Bit 18 - Channel 18 Status"]
-    #[inline(always)]
-    pub fn ch18(&self) -> CH18_R {
-        CH18_R::new(((self.bits >> 18) & 0x01) != 0)
-    }
-    #[doc = "Bit 19 - Channel 19 Status"]
-    #[inline(always)]
-    pub fn ch19(&self) -> CH19_R {
-        CH19_R::new(((self.bits >> 19) & 0x01) != 0)
-    }
-    #[doc = "Bit 20 - Channel 20 Status"]
-    #[inline(always)]
-    pub fn ch20(&self) -> CH20_R {
-        CH20_R::new(((self.bits >> 20) & 0x01) != 0)
-    }
-    #[doc = "Bit 21 - Channel 21 Status"]
-    #[inline(always)]
-    pub fn ch21(&self) -> CH21_R {
-        CH21_R::new(((self.bits >> 21) & 0x01) != 0)
-    }
-    #[doc = "Bit 22 - Channel 22 Status"]
-    #[inline(always)]
-    pub fn ch22(&self) -> CH22_R {
-        CH22_R::new(((self.bits >> 22) & 0x01) != 0)
-    }
-    #[doc = "Bit 23 - Channel 23 Status"]
-    #[inline(always)]
-    pub fn ch23(&self) -> CH23_R {
-        CH23_R::new(((self.bits >> 23) & 0x01) != 0)
     }
 }

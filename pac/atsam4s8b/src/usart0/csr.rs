@@ -47,92 +47,92 @@ pub type CTS_R = crate::R<bool, bool>;
 #[doc = "Reader of field `MANERR`"]
 pub type MANERR_R = crate::R<bool, bool>;
 impl R {
-    #[doc = "Bit 0 - Receiver Ready (cleared by reading US_RHR)"]
+    #[doc = "Bit 0 - Receiver Ready"]
     #[inline(always)]
     pub fn rxrdy(&self) -> RXRDY_R {
         RXRDY_R::new((self.bits & 0x01) != 0)
     }
-    #[doc = "Bit 1 - Transmitter Ready (cleared by writing US_THR)"]
+    #[doc = "Bit 1 - Transmitter Ready"]
     #[inline(always)]
     pub fn txrdy(&self) -> TXRDY_R {
         TXRDY_R::new(((self.bits >> 1) & 0x01) != 0)
     }
-    #[doc = "Bit 2 - Break Received/End of Break (cleared by writing a one to bit US_CR.RSTSTA)"]
+    #[doc = "Bit 2 - Break Received/End of Break"]
     #[inline(always)]
     pub fn rxbrk(&self) -> RXBRK_R {
         RXBRK_R::new(((self.bits >> 2) & 0x01) != 0)
     }
-    #[doc = "Bit 3 - End of RX Buffer (cleared by writing US_RCR or US_RNCR)"]
+    #[doc = "Bit 3 - End of Receiver Transfer"]
     #[inline(always)]
     pub fn endrx(&self) -> ENDRX_R {
         ENDRX_R::new(((self.bits >> 3) & 0x01) != 0)
     }
-    #[doc = "Bit 4 - End of TX Buffer (cleared by writing US_TCR or US_TNCR)"]
+    #[doc = "Bit 4 - End of Transmitter Transfer"]
     #[inline(always)]
     pub fn endtx(&self) -> ENDTX_R {
         ENDTX_R::new(((self.bits >> 4) & 0x01) != 0)
     }
-    #[doc = "Bit 5 - Overrun Error (cleared by writing a one to bit US_CR.RSTSTA)"]
+    #[doc = "Bit 5 - Overrun Error"]
     #[inline(always)]
     pub fn ovre(&self) -> OVRE_R {
         OVRE_R::new(((self.bits >> 5) & 0x01) != 0)
     }
-    #[doc = "Bit 6 - Framing Error (cleared by writing a one to bit US_CR.RSTSTA)"]
+    #[doc = "Bit 6 - Framing Error"]
     #[inline(always)]
     pub fn frame(&self) -> FRAME_R {
         FRAME_R::new(((self.bits >> 6) & 0x01) != 0)
     }
-    #[doc = "Bit 7 - Parity Error (cleared by writing a one to bit US_CR.RSTSTA)"]
+    #[doc = "Bit 7 - Parity Error"]
     #[inline(always)]
     pub fn pare(&self) -> PARE_R {
         PARE_R::new(((self.bits >> 7) & 0x01) != 0)
     }
-    #[doc = "Bit 8 - Receiver Time-out (cleared by writing a one to bit US_CR.STTTO)"]
+    #[doc = "Bit 8 - Receiver Time-out"]
     #[inline(always)]
     pub fn timeout(&self) -> TIMEOUT_R {
         TIMEOUT_R::new(((self.bits >> 8) & 0x01) != 0)
     }
-    #[doc = "Bit 9 - Transmitter Empty (cleared by writing US_THR)"]
+    #[doc = "Bit 9 - Transmitter Empty"]
     #[inline(always)]
     pub fn txempty(&self) -> TXEMPTY_R {
         TXEMPTY_R::new(((self.bits >> 9) & 0x01) != 0)
     }
-    #[doc = "Bit 10 - Max Number of Repetitions Reached (cleared by writing a one to bit US_CR.RSTIT)"]
+    #[doc = "Bit 10 - Max Number of Repetitions Reached"]
     #[inline(always)]
     pub fn iter(&self) -> ITER_R {
         ITER_R::new(((self.bits >> 10) & 0x01) != 0)
     }
-    #[doc = "Bit 11 - TX Buffer Empty (cleared by writing US_TCR or US_TNCR)"]
+    #[doc = "Bit 11 - Transmission Buffer Empty"]
     #[inline(always)]
     pub fn txbufe(&self) -> TXBUFE_R {
         TXBUFE_R::new(((self.bits >> 11) & 0x01) != 0)
     }
-    #[doc = "Bit 12 - RX Buffer Full (cleared by writing US_RCR or US_RNCR)"]
+    #[doc = "Bit 12 - Reception Buffer Full"]
     #[inline(always)]
     pub fn rxbuff(&self) -> RXBUFF_R {
         RXBUFF_R::new(((self.bits >> 12) & 0x01) != 0)
     }
-    #[doc = "Bit 13 - Non Acknowledge Interrupt (cleared by writing a one to bit US_CR.RSTNACK)"]
+    #[doc = "Bit 13 - Non AcknowledgeInterrupt"]
     #[inline(always)]
     pub fn nack(&self) -> NACK_R {
         NACK_R::new(((self.bits >> 13) & 0x01) != 0)
     }
-    #[doc = "Bit 16 - Ring Indicator Input Change Flag (cleared on read)"]
+    #[doc = "Bit 16 - Ring Indicator Input Change Flag"]
     #[inline(always)]
     pub fn riic(&self) -> RIIC_R {
         RIIC_R::new(((self.bits >> 16) & 0x01) != 0)
     }
-    #[doc = "Bit 17 - Data Set Ready Input Change Flag (cleared on read)"]
+    #[doc = "Bit 17 - Data Set Ready Input Change Flag"]
     #[inline(always)]
     pub fn dsric(&self) -> DSRIC_R {
         DSRIC_R::new(((self.bits >> 17) & 0x01) != 0)
     }
-    #[doc = "Bit 18 - Data Carrier Detect Input Change Flag (cleared on read)"]
+    #[doc = "Bit 18 - Data Carrier Detect Input Change Flag"]
     #[inline(always)]
     pub fn dcdic(&self) -> DCDIC_R {
         DCDIC_R::new(((self.bits >> 18) & 0x01) != 0)
     }
-    #[doc = "Bit 19 - Clear to Send Input Change Flag (cleared on read)"]
+    #[doc = "Bit 19 - Clear to Send Input Change Flag"]
     #[inline(always)]
     pub fn ctsic(&self) -> CTSIC_R {
         CTSIC_R::new(((self.bits >> 19) & 0x01) != 0)
@@ -157,7 +157,7 @@ impl R {
     pub fn cts(&self) -> CTS_R {
         CTS_R::new(((self.bits >> 23) & 0x01) != 0)
     }
-    #[doc = "Bit 24 - Manchester Error (cleared by writing a one to the bit US_CR.RSTSTA)"]
+    #[doc = "Bit 24 - Manchester Error"]
     #[inline(always)]
     pub fn manerr(&self) -> MANERR_R {
         MANERR_R::new(((self.bits >> 24) & 0x01) != 0)

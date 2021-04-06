@@ -347,7 +347,7 @@ impl W {
     pub fn sofint(&mut self) -> SOFINT_W {
         SOFINT_W { w: self }
     }
-    #[doc = "Bit 13 - Enable UDP Bus Wakeup Interrupt"]
+    #[doc = "Bit 13 - Enable UDP bus Wakeup Interrupt"]
     #[inline(always)]
     pub fn wakeup(&mut self) -> WAKEUP_W {
         WAKEUP_W { w: self }

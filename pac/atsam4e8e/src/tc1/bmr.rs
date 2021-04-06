@@ -174,10 +174,10 @@ impl<'a> TC1XC1S_W<'a> {
 pub enum TC2XC2S_A {
     #[doc = "0: Signal connected to XC2: TCLK2"]
     TCLK2 = 0,
-    #[doc = "2: Signal connected to XC2: TIOA1"]
-    TIOA1 = 2,
-    #[doc = "3: Signal connected to XC2: TIOA2"]
-    TIOA2 = 3,
+    #[doc = "2: Signal connected to XC2: TIOA0"]
+    TIOA0 = 2,
+    #[doc = "3: Signal connected to XC2: TIOA1"]
+    TIOA1 = 3,
 }
 impl From<TC2XC2S_A> for u8 {
     #[inline(always)]
@@ -194,8 +194,8 @@ impl TC2XC2S_R {
         use crate::Variant::*;
         match self.bits {
             0 => Val(TC2XC2S_A::TCLK2),
-            2 => Val(TC2XC2S_A::TIOA1),
-            3 => Val(TC2XC2S_A::TIOA2),
+            2 => Val(TC2XC2S_A::TIOA0),
+            3 => Val(TC2XC2S_A::TIOA1),
             i => Res(i),
         }
     }
@@ -204,15 +204,15 @@ impl TC2XC2S_R {
     pub fn is_tclk2(&self) -> bool {
         *self == TC2XC2S_A::TCLK2
     }
+    #[doc = "Checks if the value of the field is `TIOA0`"]
+    #[inline(always)]
+    pub fn is_tioa0(&self) -> bool {
+        *self == TC2XC2S_A::TIOA0
+    }
     #[doc = "Checks if the value of the field is `TIOA1`"]
     #[inline(always)]
     pub fn is_tioa1(&self) -> bool {
         *self == TC2XC2S_A::TIOA1
-    }
-    #[doc = "Checks if the value of the field is `TIOA2`"]
-    #[inline(always)]
-    pub fn is_tioa2(&self) -> bool {
-        *self == TC2XC2S_A::TIOA2
     }
 }
 #[doc = "Write proxy for field `TC2XC2S`"]
@@ -230,15 +230,15 @@ impl<'a> TC2XC2S_W<'a> {
     pub fn tclk2(self) -> &'a mut W {
         self.variant(TC2XC2S_A::TCLK2)
     }
+    #[doc = "Signal connected to XC2: TIOA0"]
+    #[inline(always)]
+    pub fn tioa0(self) -> &'a mut W {
+        self.variant(TC2XC2S_A::TIOA0)
+    }
     #[doc = "Signal connected to XC2: TIOA1"]
     #[inline(always)]
     pub fn tioa1(self) -> &'a mut W {
         self.variant(TC2XC2S_A::TIOA1)
-    }
-    #[doc = "Signal connected to XC2: TIOA2"]
-    #[inline(always)]
-    pub fn tioa2(self) -> &'a mut W {
-        self.variant(TC2XC2S_A::TIOA2)
     }
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
@@ -487,13 +487,64 @@ impl<'a> IDXPHB_W<'a> {
         self.w
     }
 }
-#[doc = "Reader of field `FILTER`"]
-pub type FILTER_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `FILTER`"]
-pub struct FILTER_W<'a> {
+#[doc = "Auto-Correction of missing pulses\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum AUTOC_A {
+    #[doc = "0: the detection and auto-correction function is disabled."]
+    DISABLED = 0,
+    #[doc = "1: the detection and auto-correction function is enabled."]
+    ENABLED = 1,
+}
+impl From<AUTOC_A> for bool {
+    #[inline(always)]
+    fn from(variant: AUTOC_A) -> Self {
+        variant as u8 != 0
+    }
+}
+#[doc = "Reader of field `AUTOC`"]
+pub type AUTOC_R = crate::R<bool, AUTOC_A>;
+impl AUTOC_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> AUTOC_A {
+        match self.bits {
+            false => AUTOC_A::DISABLED,
+            true => AUTOC_A::ENABLED,
+        }
+    }
+    #[doc = "Checks if the value of the field is `DISABLED`"]
+    #[inline(always)]
+    pub fn is_disabled(&self) -> bool {
+        *self == AUTOC_A::DISABLED
+    }
+    #[doc = "Checks if the value of the field is `ENABLED`"]
+    #[inline(always)]
+    pub fn is_enabled(&self) -> bool {
+        *self == AUTOC_A::ENABLED
+    }
+}
+#[doc = "Write proxy for field `AUTOC`"]
+pub struct AUTOC_W<'a> {
     w: &'a mut W,
 }
-impl<'a> FILTER_W<'a> {
+impl<'a> AUTOC_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: AUTOC_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
+    #[doc = "the detection and auto-correction function is disabled."]
+    #[inline(always)]
+    pub fn disabled(self) -> &'a mut W {
+        self.variant(AUTOC_A::DISABLED)
+    }
+    #[doc = "the detection and auto-correction function is enabled."]
+    #[inline(always)]
+    pub fn enabled(self) -> &'a mut W {
+        self.variant(AUTOC_A::ENABLED)
+    }
     #[doc = r"Sets the field bit"]
     #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
@@ -507,7 +558,7 @@ impl<'a> FILTER_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 19)) | (((value as u32) & 0x01) << 19);
+        self.w.bits = (self.w.bits & !(0x01 << 18)) | (((value as u32) & 0x01) << 18);
         self.w
     }
 }
@@ -541,62 +592,62 @@ impl R {
     pub fn tc2xc2s(&self) -> TC2XC2S_R {
         TC2XC2S_R::new(((self.bits >> 4) & 0x03) as u8)
     }
-    #[doc = "Bit 8 - Quadrature Decoder ENabled"]
+    #[doc = "Bit 8 - Quadrature Decoder Enabled"]
     #[inline(always)]
     pub fn qden(&self) -> QDEN_R {
         QDEN_R::new(((self.bits >> 8) & 0x01) != 0)
     }
-    #[doc = "Bit 9 - POSition ENabled"]
+    #[doc = "Bit 9 - Position Enabled"]
     #[inline(always)]
     pub fn posen(&self) -> POSEN_R {
         POSEN_R::new(((self.bits >> 9) & 0x01) != 0)
     }
-    #[doc = "Bit 10 - SPEED ENabled"]
+    #[doc = "Bit 10 - Speed Enabled"]
     #[inline(always)]
     pub fn speeden(&self) -> SPEEDEN_R {
         SPEEDEN_R::new(((self.bits >> 10) & 0x01) != 0)
     }
-    #[doc = "Bit 11 - Quadrature Decoding TRANSparent"]
+    #[doc = "Bit 11 - Quadrature Decoding Transparent"]
     #[inline(always)]
     pub fn qdtrans(&self) -> QDTRANS_R {
         QDTRANS_R::new(((self.bits >> 11) & 0x01) != 0)
     }
-    #[doc = "Bit 12 - EDGe on PHA count mode"]
+    #[doc = "Bit 12 - Edge on PHA Count Mode"]
     #[inline(always)]
     pub fn edgpha(&self) -> EDGPHA_R {
         EDGPHA_R::new(((self.bits >> 12) & 0x01) != 0)
     }
-    #[doc = "Bit 13 - INVerted phA"]
+    #[doc = "Bit 13 - Inverted PHA"]
     #[inline(always)]
     pub fn inva(&self) -> INVA_R {
         INVA_R::new(((self.bits >> 13) & 0x01) != 0)
     }
-    #[doc = "Bit 14 - INVerted phB"]
+    #[doc = "Bit 14 - Inverted PHB"]
     #[inline(always)]
     pub fn invb(&self) -> INVB_R {
         INVB_R::new(((self.bits >> 14) & 0x01) != 0)
     }
-    #[doc = "Bit 15 - INVerted InDeX"]
+    #[doc = "Bit 15 - Inverted Index"]
     #[inline(always)]
     pub fn invidx(&self) -> INVIDX_R {
         INVIDX_R::new(((self.bits >> 15) & 0x01) != 0)
     }
-    #[doc = "Bit 16 - SWAP PHA and PHB"]
+    #[doc = "Bit 16 - Swap PHA and PHB"]
     #[inline(always)]
     pub fn swap(&self) -> SWAP_R {
         SWAP_R::new(((self.bits >> 16) & 0x01) != 0)
     }
-    #[doc = "Bit 17 - InDeX pin is PHB pin"]
+    #[doc = "Bit 17 - Index Pin is PHB Pin"]
     #[inline(always)]
     pub fn idxphb(&self) -> IDXPHB_R {
         IDXPHB_R::new(((self.bits >> 17) & 0x01) != 0)
     }
-    #[doc = "Bit 19"]
+    #[doc = "Bit 18 - Auto-Correction of missing pulses"]
     #[inline(always)]
-    pub fn filter(&self) -> FILTER_R {
-        FILTER_R::new(((self.bits >> 19) & 0x01) != 0)
+    pub fn autoc(&self) -> AUTOC_R {
+        AUTOC_R::new(((self.bits >> 18) & 0x01) != 0)
     }
-    #[doc = "Bits 20:25 - MAXimum FILTer"]
+    #[doc = "Bits 20:25 - Maximum Filter"]
     #[inline(always)]
     pub fn maxfilt(&self) -> MAXFILT_R {
         MAXFILT_R::new(((self.bits >> 20) & 0x3f) as u8)
@@ -618,62 +669,62 @@ impl W {
     pub fn tc2xc2s(&mut self) -> TC2XC2S_W {
         TC2XC2S_W { w: self }
     }
-    #[doc = "Bit 8 - Quadrature Decoder ENabled"]
+    #[doc = "Bit 8 - Quadrature Decoder Enabled"]
     #[inline(always)]
     pub fn qden(&mut self) -> QDEN_W {
         QDEN_W { w: self }
     }
-    #[doc = "Bit 9 - POSition ENabled"]
+    #[doc = "Bit 9 - Position Enabled"]
     #[inline(always)]
     pub fn posen(&mut self) -> POSEN_W {
         POSEN_W { w: self }
     }
-    #[doc = "Bit 10 - SPEED ENabled"]
+    #[doc = "Bit 10 - Speed Enabled"]
     #[inline(always)]
     pub fn speeden(&mut self) -> SPEEDEN_W {
         SPEEDEN_W { w: self }
     }
-    #[doc = "Bit 11 - Quadrature Decoding TRANSparent"]
+    #[doc = "Bit 11 - Quadrature Decoding Transparent"]
     #[inline(always)]
     pub fn qdtrans(&mut self) -> QDTRANS_W {
         QDTRANS_W { w: self }
     }
-    #[doc = "Bit 12 - EDGe on PHA count mode"]
+    #[doc = "Bit 12 - Edge on PHA Count Mode"]
     #[inline(always)]
     pub fn edgpha(&mut self) -> EDGPHA_W {
         EDGPHA_W { w: self }
     }
-    #[doc = "Bit 13 - INVerted phA"]
+    #[doc = "Bit 13 - Inverted PHA"]
     #[inline(always)]
     pub fn inva(&mut self) -> INVA_W {
         INVA_W { w: self }
     }
-    #[doc = "Bit 14 - INVerted phB"]
+    #[doc = "Bit 14 - Inverted PHB"]
     #[inline(always)]
     pub fn invb(&mut self) -> INVB_W {
         INVB_W { w: self }
     }
-    #[doc = "Bit 15 - INVerted InDeX"]
+    #[doc = "Bit 15 - Inverted Index"]
     #[inline(always)]
     pub fn invidx(&mut self) -> INVIDX_W {
         INVIDX_W { w: self }
     }
-    #[doc = "Bit 16 - SWAP PHA and PHB"]
+    #[doc = "Bit 16 - Swap PHA and PHB"]
     #[inline(always)]
     pub fn swap(&mut self) -> SWAP_W {
         SWAP_W { w: self }
     }
-    #[doc = "Bit 17 - InDeX pin is PHB pin"]
+    #[doc = "Bit 17 - Index Pin is PHB Pin"]
     #[inline(always)]
     pub fn idxphb(&mut self) -> IDXPHB_W {
         IDXPHB_W { w: self }
     }
-    #[doc = "Bit 19"]
+    #[doc = "Bit 18 - Auto-Correction of missing pulses"]
     #[inline(always)]
-    pub fn filter(&mut self) -> FILTER_W {
-        FILTER_W { w: self }
+    pub fn autoc(&mut self) -> AUTOC_W {
+        AUTOC_W { w: self }
     }
-    #[doc = "Bits 20:25 - MAXimum FILTer"]
+    #[doc = "Bits 20:25 - Maximum Filter"]
     #[inline(always)]
     pub fn maxfilt(&mut self) -> MAXFILT_W {
         MAXFILT_W { w: self }

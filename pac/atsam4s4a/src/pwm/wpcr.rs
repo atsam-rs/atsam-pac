@@ -1,14 +1,14 @@
 #[doc = "Writer for register WPCR"]
 pub type W = crate::W<u32, super::WPCR>;
-#[doc = "Write Protection Command"]
+#[doc = "Write Protect Command"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum WPCMD_AW {
-    #[doc = "0: Disables the software write protection of the register groups of which the bit WPRGx is at '1'."]
+    #[doc = "0: Disable the Software Write Protect of the register groups of which the bit WPRGx is at '1'."]
     DISABLE_SW_PROT = 0,
-    #[doc = "1: Enables the software write protection of the register groups of which the bit WPRGx is at '1'."]
+    #[doc = "1: Enable the Software Write Protect of the register groups of which the bit WPRGx is at '1'."]
     ENABLE_SW_PROT = 1,
-    #[doc = "2: Enables the hardware write protection of the register groups of which the bit WPRGx is at '1'. Only a hardware reset of the PWM controller can disable the hardware write protection. Moreover, to meet security requirements, the PIO lines associated with the PWM can not be configured through the PIO interface."]
+    #[doc = "2: Enable the Hardware Write Protect of the register groups of which the bit WPRGx is at '1'. Only a hardware reset of the PWM controller can disable the hardware write protect. Moreover, to meet security requirements, the PIO lines associated with PWM can not be configured through the PIO interface."]
     ENABLE_HW_PROT = 2,
 }
 impl From<WPCMD_AW> for u8 {
@@ -27,17 +27,17 @@ impl<'a> WPCMD_W<'a> {
     pub fn variant(self, variant: WPCMD_AW) -> &'a mut W {
         unsafe { self.bits(variant.into()) }
     }
-    #[doc = "Disables the software write protection of the register groups of which the bit WPRGx is at '1'."]
+    #[doc = "Disable the Software Write Protect of the register groups of which the bit WPRGx is at '1'."]
     #[inline(always)]
     pub fn disable_sw_prot(self) -> &'a mut W {
         self.variant(WPCMD_AW::DISABLE_SW_PROT)
     }
-    #[doc = "Enables the software write protection of the register groups of which the bit WPRGx is at '1'."]
+    #[doc = "Enable the Software Write Protect of the register groups of which the bit WPRGx is at '1'."]
     #[inline(always)]
     pub fn enable_sw_prot(self) -> &'a mut W {
         self.variant(WPCMD_AW::ENABLE_SW_PROT)
     }
-    #[doc = "Enables the hardware write protection of the register groups of which the bit WPRGx is at '1'. Only a hardware reset of the PWM controller can disable the hardware write protection. Moreover, to meet security requirements, the PIO lines associated with the PWM can not be configured through the PIO interface."]
+    #[doc = "Enable the Hardware Write Protect of the register groups of which the bit WPRGx is at '1'. Only a hardware reset of the PWM controller can disable the hardware write protect. Moreover, to meet security requirements, the PIO lines associated with PWM can not be configured through the PIO interface."]
     #[inline(always)]
     pub fn enable_hw_prot(self) -> &'a mut W {
         self.variant(WPCMD_AW::ENABLE_HW_PROT)
@@ -181,7 +181,7 @@ impl<'a> WPRG5_W<'a> {
         self.w
     }
 }
-#[doc = "Write Protection Key"]
+#[doc = "Write Protect Key"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u32)]
 pub enum WPKEY_AW {
@@ -217,42 +217,42 @@ impl<'a> WPKEY_W<'a> {
     }
 }
 impl W {
-    #[doc = "Bits 0:1 - Write Protection Command"]
+    #[doc = "Bits 0:1 - Write Protect Command"]
     #[inline(always)]
     pub fn wpcmd(&mut self) -> WPCMD_W {
         WPCMD_W { w: self }
     }
-    #[doc = "Bit 2 - Write Protection Register Group 0"]
+    #[doc = "Bit 2 - Write Protect Register Group 0"]
     #[inline(always)]
     pub fn wprg0(&mut self) -> WPRG0_W {
         WPRG0_W { w: self }
     }
-    #[doc = "Bit 3 - Write Protection Register Group 1"]
+    #[doc = "Bit 3 - Write Protect Register Group 1"]
     #[inline(always)]
     pub fn wprg1(&mut self) -> WPRG1_W {
         WPRG1_W { w: self }
     }
-    #[doc = "Bit 4 - Write Protection Register Group 2"]
+    #[doc = "Bit 4 - Write Protect Register Group 2"]
     #[inline(always)]
     pub fn wprg2(&mut self) -> WPRG2_W {
         WPRG2_W { w: self }
     }
-    #[doc = "Bit 5 - Write Protection Register Group 3"]
+    #[doc = "Bit 5 - Write Protect Register Group 3"]
     #[inline(always)]
     pub fn wprg3(&mut self) -> WPRG3_W {
         WPRG3_W { w: self }
     }
-    #[doc = "Bit 6 - Write Protection Register Group 4"]
+    #[doc = "Bit 6 - Write Protect Register Group 4"]
     #[inline(always)]
     pub fn wprg4(&mut self) -> WPRG4_W {
         WPRG4_W { w: self }
     }
-    #[doc = "Bit 7 - Write Protection Register Group 5"]
+    #[doc = "Bit 7 - Write Protect Register Group 5"]
     #[inline(always)]
     pub fn wprg5(&mut self) -> WPRG5_W {
         WPRG5_W { w: self }
     }
-    #[doc = "Bits 8:31 - Write Protection Key"]
+    #[doc = "Bits 8:31 - Write Protect Key"]
     #[inline(always)]
     pub fn wpkey(&mut self) -> WPKEY_W {
         WPKEY_W { w: self }

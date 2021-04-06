@@ -25,14 +25,14 @@ impl<'a> ADDR_W<'a> {
     }
 }
 impl R {
-    #[doc = "Bits 2:31 - Receive buffer queue base address"]
+    #[doc = "Bits 2:31 - Receive Buffer Queue Base Address"]
     #[inline(always)]
     pub fn addr(&self) -> ADDR_R {
         ADDR_R::new(((self.bits >> 2) & 0x3fff_ffff) as u32)
     }
 }
 impl W {
-    #[doc = "Bits 2:31 - Receive buffer queue base address"]
+    #[doc = "Bits 2:31 - Receive Buffer Queue Base Address"]
     #[inline(always)]
     pub fn addr(&mut self) -> ADDR_W {
         ADDR_W { w: self }

@@ -1,11 +1,11 @@
 #[doc = "Reader of register WPSR"]
 pub type R = crate::R<u32, super::WPSR>;
-#[doc = "Reader of field `WPROTERR`"]
-pub type WPROTERR_R = crate::R<bool, bool>;
+#[doc = "Reader of field `WPVS`"]
+pub type WPVS_R = crate::R<bool, bool>;
 impl R {
-    #[doc = "Bit 0 - Write PROTection ERRor"]
+    #[doc = "Bit 0 - Write Protection Violation Status"]
     #[inline(always)]
-    pub fn wproterr(&self) -> WPROTERR_R {
-        WPROTERR_R::new((self.bits & 0x01) != 0)
+    pub fn wpvs(&self) -> WPVS_R {
+        WPVS_R::new((self.bits & 0x01) != 0)
     }
 }

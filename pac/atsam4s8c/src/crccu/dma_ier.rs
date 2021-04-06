@@ -1,5 +1,13 @@
 #[doc = "Writer for register DMA_IER"]
 pub type W = crate::W<u32, super::DMA_IER>;
+#[doc = "Register DMA_IER `reset()`'s with value 0"]
+impl crate::ResetValue for super::DMA_IER {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
+    }
+}
 #[doc = "Write proxy for field `DMAIER`"]
 pub struct DMAIER_W<'a> {
     w: &'a mut W,
@@ -23,7 +31,7 @@ impl<'a> DMAIER_W<'a> {
     }
 }
 impl W {
-    #[doc = "Bit 0 - Interrupt Enable"]
+    #[doc = "Bit 0 - Interrupt Enable register"]
     #[inline(always)]
     pub fn dmaier(&mut self) -> DMAIER_W {
         DMAIER_W { w: self }

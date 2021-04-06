@@ -53,34 +53,34 @@ impl<'a> FFIL_W<'a> {
     }
 }
 impl R {
-    #[doc = "Bits 0:7 - Fault Polarity (fault input bit varies from 0 to 7)"]
+    #[doc = "Bits 0:7 - Fault Polarity"]
     #[inline(always)]
     pub fn fpol(&self) -> FPOL_R {
         FPOL_R::new((self.bits & 0xff) as u8)
     }
-    #[doc = "Bits 8:15 - Fault Activation Mode (fault input bit varies from 0 to 7)"]
+    #[doc = "Bits 8:15 - Fault Activation Mode"]
     #[inline(always)]
     pub fn fmod(&self) -> FMOD_R {
         FMOD_R::new(((self.bits >> 8) & 0xff) as u8)
     }
-    #[doc = "Bits 16:23 - Fault Filtering (fault input bit varies from 0 to 7)"]
+    #[doc = "Bits 16:23 - Fault Filtering"]
     #[inline(always)]
     pub fn ffil(&self) -> FFIL_R {
         FFIL_R::new(((self.bits >> 16) & 0xff) as u8)
     }
 }
 impl W {
-    #[doc = "Bits 0:7 - Fault Polarity (fault input bit varies from 0 to 7)"]
+    #[doc = "Bits 0:7 - Fault Polarity"]
     #[inline(always)]
     pub fn fpol(&mut self) -> FPOL_W {
         FPOL_W { w: self }
     }
-    #[doc = "Bits 8:15 - Fault Activation Mode (fault input bit varies from 0 to 7)"]
+    #[doc = "Bits 8:15 - Fault Activation Mode"]
     #[inline(always)]
     pub fn fmod(&mut self) -> FMOD_W {
         FMOD_W { w: self }
     }
-    #[doc = "Bits 16:23 - Fault Filtering (fault input bit varies from 0 to 7)"]
+    #[doc = "Bits 16:23 - Fault Filtering"]
     #[inline(always)]
     pub fn ffil(&mut self) -> FFIL_W {
         FFIL_W { w: self }

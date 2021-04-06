@@ -159,17 +159,17 @@ impl<'a> CMPFILTER_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum RES_A {
-    #[doc = "0: 12-bit resolution, AFE sample rate is maximum (no averaging)."]
+    #[doc = "0: 12-bit resolution, AFEC sample rate is maximum (no averaging)."]
     NO_AVERAGE = 0,
-    #[doc = "1: 10-bit resolution, AFE sample rate is maximum (no averaging)."]
+    #[doc = "1: 10-bit resolution, AFEC sample rate is maximum (no averaging)."]
     LOW_RES = 1,
-    #[doc = "2: 13-bit resolution, AFE sample rate divided by 4 (averaging)."]
+    #[doc = "2: 13-bit resolution, AFEC sample rate divided by 4 (averaging)."]
     OSR4 = 2,
-    #[doc = "3: 14-bit resolution, AFE sample rate divided by 16 (averaging)."]
+    #[doc = "3: 14-bit resolution, AFEC sample rate divided by 16 (averaging)."]
     OSR16 = 3,
-    #[doc = "4: 15-bit resolution, AFE sample rate divided by 64 (averaging)."]
+    #[doc = "4: 15-bit resolution, AFEC sample rate divided by 64 (averaging)."]
     OSR64 = 4,
-    #[doc = "5: 16-bit resolution, AFE sample rate divided by 256 (averaging)."]
+    #[doc = "5: 16-bit resolution, AFEC sample rate divided by 256 (averaging)."]
     OSR256 = 5,
 }
 impl From<RES_A> for u8 {
@@ -236,32 +236,32 @@ impl<'a> RES_W<'a> {
     pub fn variant(self, variant: RES_A) -> &'a mut W {
         unsafe { self.bits(variant.into()) }
     }
-    #[doc = "12-bit resolution, AFE sample rate is maximum (no averaging)."]
+    #[doc = "12-bit resolution, AFEC sample rate is maximum (no averaging)."]
     #[inline(always)]
     pub fn no_average(self) -> &'a mut W {
         self.variant(RES_A::NO_AVERAGE)
     }
-    #[doc = "10-bit resolution, AFE sample rate is maximum (no averaging)."]
+    #[doc = "10-bit resolution, AFEC sample rate is maximum (no averaging)."]
     #[inline(always)]
     pub fn low_res(self) -> &'a mut W {
         self.variant(RES_A::LOW_RES)
     }
-    #[doc = "13-bit resolution, AFE sample rate divided by 4 (averaging)."]
+    #[doc = "13-bit resolution, AFEC sample rate divided by 4 (averaging)."]
     #[inline(always)]
     pub fn osr4(self) -> &'a mut W {
         self.variant(RES_A::OSR4)
     }
-    #[doc = "14-bit resolution, AFE sample rate divided by 16 (averaging)."]
+    #[doc = "14-bit resolution, AFEC sample rate divided by 16 (averaging)."]
     #[inline(always)]
     pub fn osr16(self) -> &'a mut W {
         self.variant(RES_A::OSR16)
     }
-    #[doc = "15-bit resolution, AFE sample rate divided by 64 (averaging)."]
+    #[doc = "15-bit resolution, AFEC sample rate divided by 64 (averaging)."]
     #[inline(always)]
     pub fn osr64(self) -> &'a mut W {
         self.variant(RES_A::OSR64)
     }
-    #[doc = "16-bit resolution, AFE sample rate divided by 256 (averaging)."]
+    #[doc = "16-bit resolution, AFEC sample rate divided by 256 (averaging)."]
     #[inline(always)]
     pub fn osr256(self) -> &'a mut W {
         self.variant(RES_A::OSR256)
@@ -270,6 +270,99 @@ impl<'a> RES_W<'a> {
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
         self.w.bits = (self.w.bits & !(0x07 << 16)) | (((value as u32) & 0x07) << 16);
+        self.w
+    }
+}
+#[doc = "AFE Running Mode\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
+pub enum AFEMODE_A {
+    #[doc = "0: Normal mode of operation."]
+    NORMAL = 0,
+    #[doc = "1: Offset Error mode to measure the offset error."]
+    OFFSET_ERROR = 1,
+    #[doc = "2: Gain Error mode to measure the gain error."]
+    GAIN_ERROR_HIGH = 2,
+    #[doc = "3: `11`"]
+    GAIN_ERROR_LOW = 3,
+}
+impl From<AFEMODE_A> for u8 {
+    #[inline(always)]
+    fn from(variant: AFEMODE_A) -> Self {
+        variant as _
+    }
+}
+#[doc = "Reader of field `AFEMODE`"]
+pub type AFEMODE_R = crate::R<u8, AFEMODE_A>;
+impl AFEMODE_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> AFEMODE_A {
+        match self.bits {
+            0 => AFEMODE_A::NORMAL,
+            1 => AFEMODE_A::OFFSET_ERROR,
+            2 => AFEMODE_A::GAIN_ERROR_HIGH,
+            3 => AFEMODE_A::GAIN_ERROR_LOW,
+            _ => unreachable!(),
+        }
+    }
+    #[doc = "Checks if the value of the field is `NORMAL`"]
+    #[inline(always)]
+    pub fn is_normal(&self) -> bool {
+        *self == AFEMODE_A::NORMAL
+    }
+    #[doc = "Checks if the value of the field is `OFFSET_ERROR`"]
+    #[inline(always)]
+    pub fn is_offset_error(&self) -> bool {
+        *self == AFEMODE_A::OFFSET_ERROR
+    }
+    #[doc = "Checks if the value of the field is `GAIN_ERROR_HIGH`"]
+    #[inline(always)]
+    pub fn is_gain_error_high(&self) -> bool {
+        *self == AFEMODE_A::GAIN_ERROR_HIGH
+    }
+    #[doc = "Checks if the value of the field is `GAIN_ERROR_LOW`"]
+    #[inline(always)]
+    pub fn is_gain_error_low(&self) -> bool {
+        *self == AFEMODE_A::GAIN_ERROR_LOW
+    }
+}
+#[doc = "Write proxy for field `AFEMODE`"]
+pub struct AFEMODE_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> AFEMODE_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: AFEMODE_A) -> &'a mut W {
+        {
+            self.bits(variant.into())
+        }
+    }
+    #[doc = "Normal mode of operation."]
+    #[inline(always)]
+    pub fn normal(self) -> &'a mut W {
+        self.variant(AFEMODE_A::NORMAL)
+    }
+    #[doc = "Offset Error mode to measure the offset error."]
+    #[inline(always)]
+    pub fn offset_error(self) -> &'a mut W {
+        self.variant(AFEMODE_A::OFFSET_ERROR)
+    }
+    #[doc = "Gain Error mode to measure the gain error."]
+    #[inline(always)]
+    pub fn gain_error_high(self) -> &'a mut W {
+        self.variant(AFEMODE_A::GAIN_ERROR_HIGH)
+    }
+    #[doc = "`11`"]
+    #[inline(always)]
+    pub fn gain_error_low(self) -> &'a mut W {
+        self.variant(AFEMODE_A::GAIN_ERROR_LOW)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x03 << 20)) | (((value as u32) & 0x03) << 20);
         self.w
     }
 }
@@ -321,6 +414,99 @@ impl<'a> STM_W<'a> {
         self.w
     }
 }
+#[doc = "Sign Mode\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
+pub enum SIGNMODE_A {
+    #[doc = "0: Single-Ended Channels: Unsigned conversions.Differential Channels: Signed conversions."]
+    SE_UNSG_DF_SIGN = 0,
+    #[doc = "1: Single-Ended Channels: Signed conversions.Differential Channels: Unsigned conversions."]
+    SE_SIGN_DF_UNSG = 1,
+    #[doc = "2: All Channels: Unsigned conversions."]
+    ALL_UNSIGNED = 2,
+    #[doc = "3: All Channels: Signed conversions."]
+    ALL_SIGNED = 3,
+}
+impl From<SIGNMODE_A> for u8 {
+    #[inline(always)]
+    fn from(variant: SIGNMODE_A) -> Self {
+        variant as _
+    }
+}
+#[doc = "Reader of field `SIGNMODE`"]
+pub type SIGNMODE_R = crate::R<u8, SIGNMODE_A>;
+impl SIGNMODE_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> SIGNMODE_A {
+        match self.bits {
+            0 => SIGNMODE_A::SE_UNSG_DF_SIGN,
+            1 => SIGNMODE_A::SE_SIGN_DF_UNSG,
+            2 => SIGNMODE_A::ALL_UNSIGNED,
+            3 => SIGNMODE_A::ALL_SIGNED,
+            _ => unreachable!(),
+        }
+    }
+    #[doc = "Checks if the value of the field is `SE_UNSG_DF_SIGN`"]
+    #[inline(always)]
+    pub fn is_se_unsg_df_sign(&self) -> bool {
+        *self == SIGNMODE_A::SE_UNSG_DF_SIGN
+    }
+    #[doc = "Checks if the value of the field is `SE_SIGN_DF_UNSG`"]
+    #[inline(always)]
+    pub fn is_se_sign_df_unsg(&self) -> bool {
+        *self == SIGNMODE_A::SE_SIGN_DF_UNSG
+    }
+    #[doc = "Checks if the value of the field is `ALL_UNSIGNED`"]
+    #[inline(always)]
+    pub fn is_all_unsigned(&self) -> bool {
+        *self == SIGNMODE_A::ALL_UNSIGNED
+    }
+    #[doc = "Checks if the value of the field is `ALL_SIGNED`"]
+    #[inline(always)]
+    pub fn is_all_signed(&self) -> bool {
+        *self == SIGNMODE_A::ALL_SIGNED
+    }
+}
+#[doc = "Write proxy for field `SIGNMODE`"]
+pub struct SIGNMODE_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> SIGNMODE_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: SIGNMODE_A) -> &'a mut W {
+        {
+            self.bits(variant.into())
+        }
+    }
+    #[doc = "Single-Ended Channels: Unsigned conversions.Differential Channels: Signed conversions."]
+    #[inline(always)]
+    pub fn se_unsg_df_sign(self) -> &'a mut W {
+        self.variant(SIGNMODE_A::SE_UNSG_DF_SIGN)
+    }
+    #[doc = "Single-Ended Channels: Signed conversions.Differential Channels: Unsigned conversions."]
+    #[inline(always)]
+    pub fn se_sign_df_unsg(self) -> &'a mut W {
+        self.variant(SIGNMODE_A::SE_SIGN_DF_UNSG)
+    }
+    #[doc = "All Channels: Unsigned conversions."]
+    #[inline(always)]
+    pub fn all_unsigned(self) -> &'a mut W {
+        self.variant(SIGNMODE_A::ALL_UNSIGNED)
+    }
+    #[doc = "All Channels: Signed conversions."]
+    #[inline(always)]
+    pub fn all_signed(self) -> &'a mut W {
+        self.variant(SIGNMODE_A::ALL_SIGNED)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x03 << 28)) | (((value as u32) & 0x03) << 28);
+        self.w
+    }
+}
 impl R {
     #[doc = "Bits 0:1 - Comparison Mode"]
     #[inline(always)]
@@ -347,7 +533,12 @@ impl R {
     pub fn res(&self) -> RES_R {
         RES_R::new(((self.bits >> 16) & 0x07) as u8)
     }
-    #[doc = "Bit 24 - TAG of AFE_LDCR register"]
+    #[doc = "Bits 20:21 - AFE Running Mode"]
+    #[inline(always)]
+    pub fn afemode(&self) -> AFEMODE_R {
+        AFEMODE_R::new(((self.bits >> 20) & 0x03) as u8)
+    }
+    #[doc = "Bit 24 - TAG of the AFEC_LDCR"]
     #[inline(always)]
     pub fn tag(&self) -> TAG_R {
         TAG_R::new(((self.bits >> 24) & 0x01) != 0)
@@ -356,6 +547,11 @@ impl R {
     #[inline(always)]
     pub fn stm(&self) -> STM_R {
         STM_R::new(((self.bits >> 25) & 0x01) != 0)
+    }
+    #[doc = "Bits 28:29 - Sign Mode"]
+    #[inline(always)]
+    pub fn signmode(&self) -> SIGNMODE_R {
+        SIGNMODE_R::new(((self.bits >> 28) & 0x03) as u8)
     }
 }
 impl W {
@@ -384,7 +580,12 @@ impl W {
     pub fn res(&mut self) -> RES_W {
         RES_W { w: self }
     }
-    #[doc = "Bit 24 - TAG of AFE_LDCR register"]
+    #[doc = "Bits 20:21 - AFE Running Mode"]
+    #[inline(always)]
+    pub fn afemode(&mut self) -> AFEMODE_W {
+        AFEMODE_W { w: self }
+    }
+    #[doc = "Bit 24 - TAG of the AFEC_LDCR"]
     #[inline(always)]
     pub fn tag(&mut self) -> TAG_W {
         TAG_W { w: self }
@@ -393,5 +594,10 @@ impl W {
     #[inline(always)]
     pub fn stm(&mut self) -> STM_W {
         STM_W { w: self }
+    }
+    #[doc = "Bits 28:29 - Sign Mode"]
+    #[inline(always)]
+    pub fn signmode(&mut self) -> SIGNMODE_W {
+        SIGNMODE_W { w: self }
     }
 }

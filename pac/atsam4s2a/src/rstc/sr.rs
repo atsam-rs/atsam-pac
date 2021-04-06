@@ -2,11 +2,11 @@
 pub type R = crate::R<u32, super::SR>;
 #[doc = "Reader of field `URSTS`"]
 pub type URSTS_R = crate::R<bool, bool>;
-#[doc = "Reset Type"]
+#[doc = "Reset Type\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum RSTTYP_A {
-    #[doc = "0: First power-up reset"]
+    #[doc = "0: First power-up Reset"]
     GENERAL_RST = 0,
     #[doc = "1: Return from Backup Mode"]
     BACKUP_RST = 1,

@@ -40,7 +40,7 @@ impl R {
     pub fn endtx(&self) -> ENDTX_R {
         ENDTX_R::new(((self.bits >> 2) & 0x01) != 0)
     }
-    #[doc = "Bit 3 - Transmit Buffer Empty Interrupt Mask"]
+    #[doc = "Bit 3"]
     #[inline(always)]
     pub fn txbufe(&self) -> TXBUFE_R {
         TXBUFE_R::new(((self.bits >> 3) & 0x01) != 0)
@@ -60,7 +60,7 @@ impl R {
     pub fn endrx(&self) -> ENDRX_R {
         ENDRX_R::new(((self.bits >> 6) & 0x01) != 0)
     }
-    #[doc = "Bit 7 - Receive Buffer Full Interrupt Mask"]
+    #[doc = "Bit 7"]
     #[inline(always)]
     pub fn rxbuff(&self) -> RXBUFF_R {
         RXBUFF_R::new(((self.bits >> 7) & 0x01) != 0)

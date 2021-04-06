@@ -45,12 +45,12 @@ impl R {
     pub fn ovres(&self) -> OVRES_R {
         OVRES_R::new(((self.bits >> 3) & 0x01) != 0)
     }
-    #[doc = "Bit 4 - End of RX buffer"]
+    #[doc = "Bit 4 - End of RX Buffer"]
     #[inline(always)]
     pub fn endrx(&self) -> ENDRX_R {
         ENDRX_R::new(((self.bits >> 4) & 0x01) != 0)
     }
-    #[doc = "Bit 5 - End of TX buffer"]
+    #[doc = "Bit 5 - End of TX Buffer"]
     #[inline(always)]
     pub fn endtx(&self) -> ENDTX_R {
         ENDTX_R::new(((self.bits >> 5) & 0x01) != 0)
@@ -75,7 +75,7 @@ impl R {
     pub fn txempty(&self) -> TXEMPTY_R {
         TXEMPTY_R::new(((self.bits >> 9) & 0x01) != 0)
     }
-    #[doc = "Bit 10 - Underrun Error Status (Slave Mode Only)"]
+    #[doc = "Bit 10 - Underrun Error Status (Slave mode Only)"]
     #[inline(always)]
     pub fn undes(&self) -> UNDES_R {
         UNDES_R::new(((self.bits >> 10) & 0x01) != 0)

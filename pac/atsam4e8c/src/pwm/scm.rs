@@ -114,7 +114,7 @@ pub enum UPDM_A {
     MODE0 = 0,
     #[doc = "1: Manual write of double buffer registers and automatic update of synchronous channels"]
     MODE1 = 1,
-    #[doc = "2: Automatic write of duty-cycle update registers by the PDC and automatic update of synchronous channels"]
+    #[doc = "2: Automatic write of duty-cycle update registers by the PDCPDC or DMA and automatic update of synchronous channels"]
     MODE2 = 2,
 }
 impl From<UPDM_A> for u8 {
@@ -173,7 +173,7 @@ impl<'a> UPDM_W<'a> {
     pub fn mode1(self) -> &'a mut W {
         self.variant(UPDM_A::MODE1)
     }
-    #[doc = "Automatic write of duty-cycle update registers by the PDC and automatic update of synchronous channels"]
+    #[doc = "Automatic write of duty-cycle update registers by the PDCPDC or DMA and automatic update of synchronous channels"]
     #[inline(always)]
     pub fn mode2(self) -> &'a mut W {
         self.variant(UPDM_A::MODE2)
@@ -249,12 +249,12 @@ impl R {
     pub fn updm(&self) -> UPDM_R {
         UPDM_R::new(((self.bits >> 16) & 0x03) as u8)
     }
-    #[doc = "Bit 20 - PDC Transfer Request Mode"]
+    #[doc = "Bit 20 - PDCPDC or DMA Transfer Request Mode"]
     #[inline(always)]
     pub fn ptrm(&self) -> PTRM_R {
         PTRM_R::new(((self.bits >> 20) & 0x01) != 0)
     }
-    #[doc = "Bits 21:23 - PDC Transfer Request Comparison Selection"]
+    #[doc = "Bits 21:23 - PDCPDC or DMA Transfer Request Comparison Selection"]
     #[inline(always)]
     pub fn ptrcs(&self) -> PTRCS_R {
         PTRCS_R::new(((self.bits >> 21) & 0x07) as u8)
@@ -286,12 +286,12 @@ impl W {
     pub fn updm(&mut self) -> UPDM_W {
         UPDM_W { w: self }
     }
-    #[doc = "Bit 20 - PDC Transfer Request Mode"]
+    #[doc = "Bit 20 - PDCPDC or DMA Transfer Request Mode"]
     #[inline(always)]
     pub fn ptrm(&mut self) -> PTRM_W {
         PTRM_W { w: self }
     }
-    #[doc = "Bits 21:23 - PDC Transfer Request Comparison Selection"]
+    #[doc = "Bits 21:23 - PDCPDC or DMA Transfer Request Comparison Selection"]
     #[inline(always)]
     pub fn ptrcs(&mut self) -> PTRCS_W {
         PTRCS_W { w: self }

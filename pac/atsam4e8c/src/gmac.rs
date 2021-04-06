@@ -106,7 +106,7 @@ Register"]
     pub tbft1518: TBFT1518,
     #[doc = "0x130 - Greater Than 1518 Byte Frames Transmitted Register"]
     pub gtbft1518: GTBFT1518,
-    #[doc = "0x134 - Transmit Under Runs Register"]
+    #[doc = "0x134 - Transmit Underruns Register"]
     pub tur: TUR,
     #[doc = "0x138 - Single Collision Frames Register"]
     pub scf: SCF,
@@ -173,12 +173,14 @@ Received"]
     #[doc = "0x1b0 - UDP Checksum Errors Register"]
     pub uce: UCE,
     _reserved77: [u8; 20usize],
-    #[doc = "0x1c8 - 1588 Timer Sync Strobe Seconds Register"]
-    pub tsss: TSSS,
+    #[doc = "0x1c8 - 1588 Timer Sync Strobe Seconds \\[31:0\\]
+Register"]
+    pub tsssl: TSSSL,
     #[doc = "0x1cc - 1588 Timer Sync Strobe Nanoseconds Register"]
     pub tssn: TSSN,
-    #[doc = "0x1d0 - 1588 Timer Seconds Register"]
-    pub ts: TS,
+    #[doc = "0x1d0 - 1588 Timer Seconds \\[31:0\\]
+Register"]
+    pub tsl: TSL,
     #[doc = "0x1d4 - 1588 Timer Nanoseconds Register"]
     pub tn: TN,
     #[doc = "0x1d8 - 1588 Timer Adjust Register"]
@@ -683,14 +685,14 @@ pub struct _GTBFT1518;
 impl crate::Readable for GTBFT1518 {}
 #[doc = "Greater Than 1518 Byte Frames Transmitted Register"]
 pub mod gtbft1518;
-#[doc = "Transmit Under Runs Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [tur](tur) module"]
+#[doc = "Transmit Underruns Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [tur](tur) module"]
 pub type TUR = crate::Reg<u32, _TUR>;
 #[allow(missing_docs)]
 #[doc(hidden)]
 pub struct _TUR;
 #[doc = "`read()` method returns [tur::R](tur::R) reader structure"]
 impl crate::Readable for TUR {}
-#[doc = "Transmit Under Runs Register"]
+#[doc = "Transmit Underruns Register"]
 pub mod tur;
 #[doc = "Single Collision Frames Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [scf](scf) module"]
 pub type SCF = crate::Reg<u32, _SCF>;
@@ -975,17 +977,19 @@ pub struct _UCE;
 impl crate::Readable for UCE {}
 #[doc = "UDP Checksum Errors Register"]
 pub mod uce;
-#[doc = "1588 Timer Sync Strobe Seconds Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [tsss](tsss) module"]
-pub type TSSS = crate::Reg<u32, _TSSS>;
+#[doc = "1588 Timer Sync Strobe Seconds \\[31:0\\]
+Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [tsssl](tsssl) module"]
+pub type TSSSL = crate::Reg<u32, _TSSSL>;
 #[allow(missing_docs)]
 #[doc(hidden)]
-pub struct _TSSS;
-#[doc = "`read()` method returns [tsss::R](tsss::R) reader structure"]
-impl crate::Readable for TSSS {}
-#[doc = "`write(|w| ..)` method takes [tsss::W](tsss::W) writer structure"]
-impl crate::Writable for TSSS {}
-#[doc = "1588 Timer Sync Strobe Seconds Register"]
-pub mod tsss;
+pub struct _TSSSL;
+#[doc = "`read()` method returns [tsssl::R](tsssl::R) reader structure"]
+impl crate::Readable for TSSSL {}
+#[doc = "`write(|w| ..)` method takes [tsssl::W](tsssl::W) writer structure"]
+impl crate::Writable for TSSSL {}
+#[doc = "1588 Timer Sync Strobe Seconds \\[31:0\\]
+Register"]
+pub mod tsssl;
 #[doc = "1588 Timer Sync Strobe Nanoseconds Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [tssn](tssn) module"]
 pub type TSSN = crate::Reg<u32, _TSSN>;
 #[allow(missing_docs)]
@@ -997,17 +1001,19 @@ impl crate::Readable for TSSN {}
 impl crate::Writable for TSSN {}
 #[doc = "1588 Timer Sync Strobe Nanoseconds Register"]
 pub mod tssn;
-#[doc = "1588 Timer Seconds Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ts](ts) module"]
-pub type TS = crate::Reg<u32, _TS>;
+#[doc = "1588 Timer Seconds \\[31:0\\]
+Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [tsl](tsl) module"]
+pub type TSL = crate::Reg<u32, _TSL>;
 #[allow(missing_docs)]
 #[doc(hidden)]
-pub struct _TS;
-#[doc = "`read()` method returns [ts::R](ts::R) reader structure"]
-impl crate::Readable for TS {}
-#[doc = "`write(|w| ..)` method takes [ts::W](ts::W) writer structure"]
-impl crate::Writable for TS {}
-#[doc = "1588 Timer Seconds Register"]
-pub mod ts;
+pub struct _TSL;
+#[doc = "`read()` method returns [tsl::R](tsl::R) reader structure"]
+impl crate::Readable for TSL {}
+#[doc = "`write(|w| ..)` method takes [tsl::W](tsl::W) writer structure"]
+impl crate::Writable for TSL {}
+#[doc = "1588 Timer Seconds \\[31:0\\]
+Register"]
+pub mod tsl;
 #[doc = "1588 Timer Nanoseconds Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [tn](tn) module"]
 pub type TN = crate::Reg<u32, _TN>;
 #[allow(missing_docs)]

@@ -29,41 +29,41 @@ use core::ops::Deref;
 pub const NVIC_PRIO_BITS: u8 = 4;
 #[cfg(feature = "rt")]
 extern "C" {
-    fn ID_PMC();
-    fn ID_EFC();
-    fn ID_UART0();
-    fn ID_PIOA();
-    fn ID_PIOB();
-    fn ID_PIOC();
-    fn ID_PIOD();
-    fn ID_PIOE();
-    fn ID_USART0();
-    fn ID_USART1();
-    fn ID_HSMCI();
-    fn ID_TWI0();
-    fn ID_TWI1();
-    fn ID_SPI();
-    fn ID_DMAC();
-    fn ID_TC0();
-    fn ID_TC1();
-    fn ID_TC2();
-    fn ID_TC3();
-    fn ID_TC4();
-    fn ID_TC5();
-    fn ID_TC6();
-    fn ID_TC7();
-    fn ID_TC8();
-    fn ID_AFEC0();
-    fn ID_AFEC1();
-    fn ID_DACC();
-    fn ID_ACC();
-    fn ID_UDP();
-    fn ID_PWM();
-    fn ID_CAN0();
-    fn ID_CAN1();
-    fn ID_AES();
-    fn ID_GMAC();
-    fn ID_UART1();
+    fn PMC();
+    fn EFC();
+    fn UART0();
+    fn PIOA();
+    fn PIOB();
+    fn PIOC();
+    fn PIOD();
+    fn PIOE();
+    fn USART0();
+    fn USART1();
+    fn HSMCI();
+    fn TWI0();
+    fn TWI1();
+    fn SPI();
+    fn DMAC();
+    fn TC0();
+    fn TC1();
+    fn TC2();
+    fn TC3();
+    fn TC4();
+    fn TC5();
+    fn TC6();
+    fn TC7();
+    fn TC8();
+    fn AFEC0();
+    fn AFEC1();
+    fn DACC();
+    fn ACC();
+    fn UDP();
+    fn PWM();
+    fn CAN0();
+    fn CAN1();
+    fn AES();
+    fn GMAC();
+    fn UART1();
 }
 #[doc(hidden)]
 pub union Vector {
@@ -80,126 +80,122 @@ pub static __INTERRUPTS: [Vector; 46] = [
     Vector { _reserved: 0 },
     Vector { _reserved: 0 },
     Vector { _reserved: 0 },
-    Vector { _handler: ID_PMC },
-    Vector { _handler: ID_EFC },
-    Vector { _handler: ID_UART0 },
+    Vector { _handler: PMC },
+    Vector { _handler: EFC },
+    Vector { _handler: UART0 },
     Vector { _reserved: 0 },
-    Vector { _handler: ID_PIOA },
-    Vector { _handler: ID_PIOB },
-    Vector { _handler: ID_PIOC },
-    Vector { _handler: ID_PIOD },
-    Vector { _handler: ID_PIOE },
-    Vector {
-        _handler: ID_USART0,
-    },
-    Vector {
-        _handler: ID_USART1,
-    },
-    Vector { _handler: ID_HSMCI },
-    Vector { _handler: ID_TWI0 },
-    Vector { _handler: ID_TWI1 },
-    Vector { _handler: ID_SPI },
-    Vector { _handler: ID_DMAC },
-    Vector { _handler: ID_TC0 },
-    Vector { _handler: ID_TC1 },
-    Vector { _handler: ID_TC2 },
-    Vector { _handler: ID_TC3 },
-    Vector { _handler: ID_TC4 },
-    Vector { _handler: ID_TC5 },
-    Vector { _handler: ID_TC6 },
-    Vector { _handler: ID_TC7 },
-    Vector { _handler: ID_TC8 },
-    Vector { _handler: ID_AFEC0 },
-    Vector { _handler: ID_AFEC1 },
-    Vector { _handler: ID_DACC },
-    Vector { _handler: ID_ACC },
+    Vector { _handler: PIOA },
+    Vector { _handler: PIOB },
+    Vector { _handler: PIOC },
+    Vector { _handler: PIOD },
+    Vector { _handler: PIOE },
+    Vector { _handler: USART0 },
+    Vector { _handler: USART1 },
+    Vector { _handler: HSMCI },
+    Vector { _handler: TWI0 },
+    Vector { _handler: TWI1 },
+    Vector { _handler: SPI },
+    Vector { _handler: DMAC },
+    Vector { _handler: TC0 },
+    Vector { _handler: TC1 },
+    Vector { _handler: TC2 },
+    Vector { _handler: TC3 },
+    Vector { _handler: TC4 },
+    Vector { _handler: TC5 },
+    Vector { _handler: TC6 },
+    Vector { _handler: TC7 },
+    Vector { _handler: TC8 },
+    Vector { _handler: AFEC0 },
+    Vector { _handler: AFEC1 },
+    Vector { _handler: DACC },
+    Vector { _handler: ACC },
     Vector { _reserved: 0 },
-    Vector { _handler: ID_UDP },
-    Vector { _handler: ID_PWM },
-    Vector { _handler: ID_CAN0 },
-    Vector { _handler: ID_CAN1 },
-    Vector { _handler: ID_AES },
+    Vector { _handler: UDP },
+    Vector { _handler: PWM },
+    Vector { _handler: CAN0 },
+    Vector { _handler: CAN1 },
+    Vector { _handler: AES },
     Vector { _reserved: 0 },
     Vector { _reserved: 0 },
     Vector { _reserved: 0 },
     Vector { _reserved: 0 },
-    Vector { _handler: ID_GMAC },
-    Vector { _handler: ID_UART1 },
+    Vector { _handler: GMAC },
+    Vector { _handler: UART1 },
 ];
 #[doc = r"Enumeration of all the interrupts"]
 #[derive(Copy, Clone, Debug)]
 #[repr(u8)]
 pub enum Interrupt {
-    #[doc = "5 - ID_PMC"]
-    ID_PMC = 5,
-    #[doc = "6 - ID_EFC"]
-    ID_EFC = 6,
-    #[doc = "7 - ID_UART0"]
-    ID_UART0 = 7,
-    #[doc = "9 - ID_PIOA"]
-    ID_PIOA = 9,
-    #[doc = "10 - ID_PIOB"]
-    ID_PIOB = 10,
-    #[doc = "11 - ID_PIOC"]
-    ID_PIOC = 11,
-    #[doc = "12 - ID_PIOD"]
-    ID_PIOD = 12,
-    #[doc = "13 - ID_PIOE"]
-    ID_PIOE = 13,
-    #[doc = "14 - ID_USART0"]
-    ID_USART0 = 14,
-    #[doc = "15 - ID_USART1"]
-    ID_USART1 = 15,
-    #[doc = "16 - ID_HSMCI"]
-    ID_HSMCI = 16,
-    #[doc = "17 - ID_TWI0"]
-    ID_TWI0 = 17,
-    #[doc = "18 - ID_TWI1"]
-    ID_TWI1 = 18,
-    #[doc = "19 - ID_SPI"]
-    ID_SPI = 19,
-    #[doc = "20 - ID_DMAC"]
-    ID_DMAC = 20,
-    #[doc = "21 - ID_TC0"]
-    ID_TC0 = 21,
-    #[doc = "22 - ID_TC1"]
-    ID_TC1 = 22,
-    #[doc = "23 - ID_TC2"]
-    ID_TC2 = 23,
-    #[doc = "24 - ID_TC3"]
-    ID_TC3 = 24,
-    #[doc = "25 - ID_TC4"]
-    ID_TC4 = 25,
-    #[doc = "26 - ID_TC5"]
-    ID_TC5 = 26,
-    #[doc = "27 - ID_TC6"]
-    ID_TC6 = 27,
-    #[doc = "28 - ID_TC7"]
-    ID_TC7 = 28,
-    #[doc = "29 - ID_TC8"]
-    ID_TC8 = 29,
-    #[doc = "30 - ID_AFEC0"]
-    ID_AFEC0 = 30,
-    #[doc = "31 - ID_AFEC1"]
-    ID_AFEC1 = 31,
-    #[doc = "32 - ID_DACC"]
-    ID_DACC = 32,
-    #[doc = "33 - ID_ACC"]
-    ID_ACC = 33,
-    #[doc = "35 - ID_UDP"]
-    ID_UDP = 35,
-    #[doc = "36 - ID_PWM"]
-    ID_PWM = 36,
-    #[doc = "37 - ID_CAN0"]
-    ID_CAN0 = 37,
-    #[doc = "38 - ID_CAN1"]
-    ID_CAN1 = 38,
-    #[doc = "39 - ID_AES"]
-    ID_AES = 39,
-    #[doc = "44 - ID_GMAC"]
-    ID_GMAC = 44,
-    #[doc = "45 - ID_UART1"]
-    ID_UART1 = 45,
+    #[doc = "5 - PMC"]
+    PMC = 5,
+    #[doc = "6 - EFC"]
+    EFC = 6,
+    #[doc = "7 - UART0"]
+    UART0 = 7,
+    #[doc = "9 - PIOA"]
+    PIOA = 9,
+    #[doc = "10 - PIOB"]
+    PIOB = 10,
+    #[doc = "11 - PIOC"]
+    PIOC = 11,
+    #[doc = "12 - PIOD"]
+    PIOD = 12,
+    #[doc = "13 - PIOE"]
+    PIOE = 13,
+    #[doc = "14 - USART0"]
+    USART0 = 14,
+    #[doc = "15 - USART1"]
+    USART1 = 15,
+    #[doc = "16 - HSMCI"]
+    HSMCI = 16,
+    #[doc = "17 - TWI0"]
+    TWI0 = 17,
+    #[doc = "18 - TWI1"]
+    TWI1 = 18,
+    #[doc = "19 - SPI"]
+    SPI = 19,
+    #[doc = "20 - DMAC"]
+    DMAC = 20,
+    #[doc = "21 - TC0"]
+    TC0 = 21,
+    #[doc = "22 - TC1"]
+    TC1 = 22,
+    #[doc = "23 - TC2"]
+    TC2 = 23,
+    #[doc = "24 - TC3"]
+    TC3 = 24,
+    #[doc = "25 - TC4"]
+    TC4 = 25,
+    #[doc = "26 - TC5"]
+    TC5 = 26,
+    #[doc = "27 - TC6"]
+    TC6 = 27,
+    #[doc = "28 - TC7"]
+    TC7 = 28,
+    #[doc = "29 - TC8"]
+    TC8 = 29,
+    #[doc = "30 - AFEC0"]
+    AFEC0 = 30,
+    #[doc = "31 - AFEC1"]
+    AFEC1 = 31,
+    #[doc = "32 - DACC"]
+    DACC = 32,
+    #[doc = "33 - ACC"]
+    ACC = 33,
+    #[doc = "35 - UDP"]
+    UDP = 35,
+    #[doc = "36 - PWM"]
+    PWM = 36,
+    #[doc = "37 - CAN0"]
+    CAN0 = 37,
+    #[doc = "38 - CAN1"]
+    CAN1 = 38,
+    #[doc = "39 - AES"]
+    AES = 39,
+    #[doc = "44 - GMAC"]
+    GMAC = 44,
+    #[doc = "45 - UART1"]
+    UART1 = 45,
 }
 unsafe impl bare_metal::Nr for Interrupt {
     #[inline(always)]
@@ -322,27 +318,6 @@ impl Deref for GMAC {
 }
 #[doc = "Gigabit Ethernet MAC"]
 pub mod gmac;
-#[doc = "Cyclic Redundancy Check Calculation Unit"]
-pub struct CRCCU {
-    _marker: PhantomData<*const ()>,
-}
-unsafe impl Send for CRCCU {}
-impl CRCCU {
-    #[doc = r"Returns a pointer to the register block"]
-    #[inline(always)]
-    pub const fn ptr() -> *const crccu::RegisterBlock {
-        0x4004_4000 as *const _
-    }
-}
-impl Deref for CRCCU {
-    type Target = crccu::RegisterBlock;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        unsafe { &*CRCCU::ptr() }
-    }
-}
-#[doc = "Cyclic Redundancy Check Calculation Unit"]
-pub mod crccu;
 #[doc = "Static Memory Controller"]
 pub struct SMC {
     _marker: PhantomData<*const ()>,
@@ -1036,7 +1011,7 @@ impl Deref for RTC {
 }
 #[doc = "Real-time Clock"]
 pub mod rtc;
-#[doc = "General Purpose Backup Register"]
+#[doc = "General Purpose Backup Registers"]
 pub struct GPBR {
     _marker: PhantomData<*const ()>,
 }
@@ -1055,8 +1030,29 @@ impl Deref for GPBR {
         unsafe { &*GPBR::ptr() }
     }
 }
-#[doc = "General Purpose Backup Register"]
+#[doc = "General Purpose Backup Registers"]
 pub mod gpbr;
+#[doc = "Reinforced Safety Watchdog Timer"]
+pub struct RSWDT {
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for RSWDT {}
+impl RSWDT {
+    #[doc = r"Returns a pointer to the register block"]
+    #[inline(always)]
+    pub const fn ptr() -> *const rswdt::RegisterBlock {
+        0x400e_1900 as *const _
+    }
+}
+impl Deref for RSWDT {
+    type Target = rswdt::RegisterBlock;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        unsafe { &*RSWDT::ptr() }
+    }
+}
+#[doc = "Reinforced Safety Watchdog Timer"]
+pub mod rswdt;
 #[no_mangle]
 static mut DEVICE_PERIPHERALS: bool = false;
 #[doc = r"All the peripherals"]
@@ -1072,8 +1068,6 @@ pub struct Peripherals {
     pub CAN1: CAN1,
     #[doc = "GMAC"]
     pub GMAC: GMAC,
-    #[doc = "CRCCU"]
-    pub CRCCU: CRCCU,
     #[doc = "SMC"]
     pub SMC: SMC,
     #[doc = "UART1"]
@@ -1142,6 +1136,8 @@ pub struct Peripherals {
     pub RTC: RTC,
     #[doc = "GPBR"]
     pub GPBR: GPBR,
+    #[doc = "RSWDT"]
+    pub RSWDT: RSWDT,
 }
 impl Peripherals {
     #[doc = r"Returns all the peripherals *once*"]
@@ -1173,9 +1169,6 @@ impl Peripherals {
                 _marker: PhantomData,
             },
             GMAC: GMAC {
-                _marker: PhantomData,
-            },
-            CRCCU: CRCCU {
                 _marker: PhantomData,
             },
             SMC: SMC {
@@ -1278,6 +1271,9 @@ impl Peripherals {
                 _marker: PhantomData,
             },
             GPBR: GPBR {
+                _marker: PhantomData,
+            },
+            RSWDT: RSWDT {
                 _marker: PhantomData,
             },
         }

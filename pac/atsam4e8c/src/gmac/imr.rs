@@ -65,7 +65,7 @@ impl R {
     pub fn txubr(&self) -> TXUBR_R {
         TXUBR_R::new(((self.bits >> 3) & 0x01) != 0)
     }
-    #[doc = "Bit 4 - Transmit Under Run"]
+    #[doc = "Bit 4 - Transmit Underrun"]
     #[inline(always)]
     pub fn tur(&self) -> TUR_R {
         TUR_R::new(((self.bits >> 4) & 0x01) != 0)
@@ -75,7 +75,7 @@ impl R {
     pub fn rlex(&self) -> RLEX_R {
         RLEX_R::new(((self.bits >> 5) & 0x01) != 0)
     }
-    #[doc = "Bit 6 - Transmit Frame Corruption due to AHB error"]
+    #[doc = "Bit 6 - Transmit Frame Corruption Due to AHB Error"]
     #[inline(always)]
     pub fn tfc(&self) -> TFC_R {
         TFC_R::new(((self.bits >> 6) & 0x01) != 0)

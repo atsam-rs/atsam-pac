@@ -77,7 +77,7 @@ impl<'a> ONE_W<'a> {
     }
 }
 impl R {
-    #[doc = "Bits 0:7 - Divider"]
+    #[doc = "Bits 0:7 - PLLA Front_End Divider"]
     #[inline(always)]
     pub fn diva(&self) -> DIVA_R {
         DIVA_R::new((self.bits & 0xff) as u8)
@@ -99,7 +99,7 @@ impl R {
     }
 }
 impl W {
-    #[doc = "Bits 0:7 - Divider"]
+    #[doc = "Bits 0:7 - PLLA Front_End Divider"]
     #[inline(always)]
     pub fn diva(&mut self) -> DIVA_W {
         DIVA_W { w: self }

@@ -1,4 +1,4 @@
-#[doc = "Writer for register KEYWR%s"]
+#[doc = "Writer for register KEYWR[%s]"]
 pub type W = crate::W<u32, super::KEYWR>;
 #[doc = "Write proxy for field `KEYW`"]
 pub struct KEYW_W<'a> {

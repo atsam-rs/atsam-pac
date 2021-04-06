@@ -20,7 +20,7 @@ impl<'a> LOWTHRES_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x0fff) | ((value as u32) & 0x0fff);
+        self.w.bits = (self.w.bits & !0xffff) | ((value as u32) & 0xffff);
         self.w
     }
 }
@@ -34,29 +34,29 @@ impl<'a> HIGHTHRES_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0fff << 16)) | (((value as u32) & 0x0fff) << 16);
+        self.w.bits = (self.w.bits & !(0xffff << 16)) | (((value as u32) & 0xffff) << 16);
         self.w
     }
 }
 impl R {
-    #[doc = "Bits 0:11 - Low Threshold"]
+    #[doc = "Bits 0:15 - Low Threshold"]
     #[inline(always)]
     pub fn lowthres(&self) -> LOWTHRES_R {
-        LOWTHRES_R::new((self.bits & 0x0fff) as u16)
+        LOWTHRES_R::new((self.bits & 0xffff) as u16)
     }
-    #[doc = "Bits 16:27 - High Threshold"]
+    #[doc = "Bits 16:31 - High Threshold"]
     #[inline(always)]
     pub fn highthres(&self) -> HIGHTHRES_R {
-        HIGHTHRES_R::new(((self.bits >> 16) & 0x0fff) as u16)
+        HIGHTHRES_R::new(((self.bits >> 16) & 0xffff) as u16)
     }
 }
 impl W {
-    #[doc = "Bits 0:11 - Low Threshold"]
+    #[doc = "Bits 0:15 - Low Threshold"]
     #[inline(always)]
     pub fn lowthres(&mut self) -> LOWTHRES_W {
         LOWTHRES_W { w: self }
     }
-    #[doc = "Bits 16:27 - High Threshold"]
+    #[doc = "Bits 16:31 - High Threshold"]
     #[inline(always)]
     pub fn highthres(&mut self) -> HIGHTHRES_W {
         HIGHTHRES_W { w: self }

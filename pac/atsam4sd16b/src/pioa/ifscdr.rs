@@ -705,162 +705,162 @@ impl<'a> P31_W<'a> {
     }
 }
 impl W {
-    #[doc = "Bit 0 - Peripheral Clock Glitch Filtering Select"]
+    #[doc = "Bit 0 - PIO Clock Glitch Filtering Select"]
     #[inline(always)]
     pub fn p0(&mut self) -> P0_W {
         P0_W { w: self }
     }
-    #[doc = "Bit 1 - Peripheral Clock Glitch Filtering Select"]
+    #[doc = "Bit 1 - PIO Clock Glitch Filtering Select"]
     #[inline(always)]
     pub fn p1(&mut self) -> P1_W {
         P1_W { w: self }
     }
-    #[doc = "Bit 2 - Peripheral Clock Glitch Filtering Select"]
+    #[doc = "Bit 2 - PIO Clock Glitch Filtering Select"]
     #[inline(always)]
     pub fn p2(&mut self) -> P2_W {
         P2_W { w: self }
     }
-    #[doc = "Bit 3 - Peripheral Clock Glitch Filtering Select"]
+    #[doc = "Bit 3 - PIO Clock Glitch Filtering Select"]
     #[inline(always)]
     pub fn p3(&mut self) -> P3_W {
         P3_W { w: self }
     }
-    #[doc = "Bit 4 - Peripheral Clock Glitch Filtering Select"]
+    #[doc = "Bit 4 - PIO Clock Glitch Filtering Select"]
     #[inline(always)]
     pub fn p4(&mut self) -> P4_W {
         P4_W { w: self }
     }
-    #[doc = "Bit 5 - Peripheral Clock Glitch Filtering Select"]
+    #[doc = "Bit 5 - PIO Clock Glitch Filtering Select"]
     #[inline(always)]
     pub fn p5(&mut self) -> P5_W {
         P5_W { w: self }
     }
-    #[doc = "Bit 6 - Peripheral Clock Glitch Filtering Select"]
+    #[doc = "Bit 6 - PIO Clock Glitch Filtering Select"]
     #[inline(always)]
     pub fn p6(&mut self) -> P6_W {
         P6_W { w: self }
     }
-    #[doc = "Bit 7 - Peripheral Clock Glitch Filtering Select"]
+    #[doc = "Bit 7 - PIO Clock Glitch Filtering Select"]
     #[inline(always)]
     pub fn p7(&mut self) -> P7_W {
         P7_W { w: self }
     }
-    #[doc = "Bit 8 - Peripheral Clock Glitch Filtering Select"]
+    #[doc = "Bit 8 - PIO Clock Glitch Filtering Select"]
     #[inline(always)]
     pub fn p8(&mut self) -> P8_W {
         P8_W { w: self }
     }
-    #[doc = "Bit 9 - Peripheral Clock Glitch Filtering Select"]
+    #[doc = "Bit 9 - PIO Clock Glitch Filtering Select"]
     #[inline(always)]
     pub fn p9(&mut self) -> P9_W {
         P9_W { w: self }
     }
-    #[doc = "Bit 10 - Peripheral Clock Glitch Filtering Select"]
+    #[doc = "Bit 10 - PIO Clock Glitch Filtering Select"]
     #[inline(always)]
     pub fn p10(&mut self) -> P10_W {
         P10_W { w: self }
     }
-    #[doc = "Bit 11 - Peripheral Clock Glitch Filtering Select"]
+    #[doc = "Bit 11 - PIO Clock Glitch Filtering Select"]
     #[inline(always)]
     pub fn p11(&mut self) -> P11_W {
         P11_W { w: self }
     }
-    #[doc = "Bit 12 - Peripheral Clock Glitch Filtering Select"]
+    #[doc = "Bit 12 - PIO Clock Glitch Filtering Select"]
     #[inline(always)]
     pub fn p12(&mut self) -> P12_W {
         P12_W { w: self }
     }
-    #[doc = "Bit 13 - Peripheral Clock Glitch Filtering Select"]
+    #[doc = "Bit 13 - PIO Clock Glitch Filtering Select"]
     #[inline(always)]
     pub fn p13(&mut self) -> P13_W {
         P13_W { w: self }
     }
-    #[doc = "Bit 14 - Peripheral Clock Glitch Filtering Select"]
+    #[doc = "Bit 14 - PIO Clock Glitch Filtering Select"]
     #[inline(always)]
     pub fn p14(&mut self) -> P14_W {
         P14_W { w: self }
     }
-    #[doc = "Bit 15 - Peripheral Clock Glitch Filtering Select"]
+    #[doc = "Bit 15 - PIO Clock Glitch Filtering Select"]
     #[inline(always)]
     pub fn p15(&mut self) -> P15_W {
         P15_W { w: self }
     }
-    #[doc = "Bit 16 - Peripheral Clock Glitch Filtering Select"]
+    #[doc = "Bit 16 - PIO Clock Glitch Filtering Select"]
     #[inline(always)]
     pub fn p16(&mut self) -> P16_W {
         P16_W { w: self }
     }
-    #[doc = "Bit 17 - Peripheral Clock Glitch Filtering Select"]
+    #[doc = "Bit 17 - PIO Clock Glitch Filtering Select"]
     #[inline(always)]
     pub fn p17(&mut self) -> P17_W {
         P17_W { w: self }
     }
-    #[doc = "Bit 18 - Peripheral Clock Glitch Filtering Select"]
+    #[doc = "Bit 18 - PIO Clock Glitch Filtering Select"]
     #[inline(always)]
     pub fn p18(&mut self) -> P18_W {
         P18_W { w: self }
     }
-    #[doc = "Bit 19 - Peripheral Clock Glitch Filtering Select"]
+    #[doc = "Bit 19 - PIO Clock Glitch Filtering Select"]
     #[inline(always)]
     pub fn p19(&mut self) -> P19_W {
         P19_W { w: self }
     }
-    #[doc = "Bit 20 - Peripheral Clock Glitch Filtering Select"]
+    #[doc = "Bit 20 - PIO Clock Glitch Filtering Select"]
     #[inline(always)]
     pub fn p20(&mut self) -> P20_W {
         P20_W { w: self }
     }
-    #[doc = "Bit 21 - Peripheral Clock Glitch Filtering Select"]
+    #[doc = "Bit 21 - PIO Clock Glitch Filtering Select"]
     #[inline(always)]
     pub fn p21(&mut self) -> P21_W {
         P21_W { w: self }
     }
-    #[doc = "Bit 22 - Peripheral Clock Glitch Filtering Select"]
+    #[doc = "Bit 22 - PIO Clock Glitch Filtering Select"]
     #[inline(always)]
     pub fn p22(&mut self) -> P22_W {
         P22_W { w: self }
     }
-    #[doc = "Bit 23 - Peripheral Clock Glitch Filtering Select"]
+    #[doc = "Bit 23 - PIO Clock Glitch Filtering Select"]
     #[inline(always)]
     pub fn p23(&mut self) -> P23_W {
         P23_W { w: self }
     }
-    #[doc = "Bit 24 - Peripheral Clock Glitch Filtering Select"]
+    #[doc = "Bit 24 - PIO Clock Glitch Filtering Select"]
     #[inline(always)]
     pub fn p24(&mut self) -> P24_W {
         P24_W { w: self }
     }
-    #[doc = "Bit 25 - Peripheral Clock Glitch Filtering Select"]
+    #[doc = "Bit 25 - PIO Clock Glitch Filtering Select"]
     #[inline(always)]
     pub fn p25(&mut self) -> P25_W {
         P25_W { w: self }
     }
-    #[doc = "Bit 26 - Peripheral Clock Glitch Filtering Select"]
+    #[doc = "Bit 26 - PIO Clock Glitch Filtering Select"]
     #[inline(always)]
     pub fn p26(&mut self) -> P26_W {
         P26_W { w: self }
     }
-    #[doc = "Bit 27 - Peripheral Clock Glitch Filtering Select"]
+    #[doc = "Bit 27 - PIO Clock Glitch Filtering Select"]
     #[inline(always)]
     pub fn p27(&mut self) -> P27_W {
         P27_W { w: self }
     }
-    #[doc = "Bit 28 - Peripheral Clock Glitch Filtering Select"]
+    #[doc = "Bit 28 - PIO Clock Glitch Filtering Select"]
     #[inline(always)]
     pub fn p28(&mut self) -> P28_W {
         P28_W { w: self }
     }
-    #[doc = "Bit 29 - Peripheral Clock Glitch Filtering Select"]
+    #[doc = "Bit 29 - PIO Clock Glitch Filtering Select"]
     #[inline(always)]
     pub fn p29(&mut self) -> P29_W {
         P29_W { w: self }
     }
-    #[doc = "Bit 30 - Peripheral Clock Glitch Filtering Select"]
+    #[doc = "Bit 30 - PIO Clock Glitch Filtering Select"]
     #[inline(always)]
     pub fn p30(&mut self) -> P30_W {
         P30_W { w: self }
     }
-    #[doc = "Bit 31 - Peripheral Clock Glitch Filtering Select"]
+    #[doc = "Bit 31 - PIO Clock Glitch Filtering Select"]
     #[inline(always)]
     pub fn p31(&mut self) -> P31_W {
         P31_W { w: self }

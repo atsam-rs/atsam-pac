@@ -150,30 +150,6 @@ impl<'a> ESPA_W<'a> {
         self.w
     }
 }
-#[doc = "Reader of field `TXCOEN`"]
-pub type TXCOEN_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `TXCOEN`"]
-pub struct TXCOEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TXCOEN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 11)) | (((value as u32) & 0x01) << 11);
-        self.w
-    }
-}
 #[doc = "Reader of field `DRBS`"]
 pub type DRBS_R = crate::R<u8, u8>;
 #[doc = "Write proxy for field `DRBS`"]
@@ -204,11 +180,6 @@ impl R {
     pub fn espa(&self) -> ESPA_R {
         ESPA_R::new(((self.bits >> 7) & 0x01) != 0)
     }
-    #[doc = "Bit 11 - Transmitter Checksum Generation Offload Enable"]
-    #[inline(always)]
-    pub fn txcoen(&self) -> TXCOEN_R {
-        TXCOEN_R::new(((self.bits >> 11) & 0x01) != 0)
-    }
     #[doc = "Bits 16:23 - DMA Receive Buffer Size"]
     #[inline(always)]
     pub fn drbs(&self) -> DRBS_R {
@@ -230,11 +201,6 @@ impl W {
     #[inline(always)]
     pub fn espa(&mut self) -> ESPA_W {
         ESPA_W { w: self }
-    }
-    #[doc = "Bit 11 - Transmitter Checksum Generation Offload Enable"]
-    #[inline(always)]
-    pub fn txcoen(&mut self) -> TXCOEN_W {
-        TXCOEN_W { w: self }
     }
     #[doc = "Bits 16:23 - DMA Receive Buffer Size"]
     #[inline(always)]

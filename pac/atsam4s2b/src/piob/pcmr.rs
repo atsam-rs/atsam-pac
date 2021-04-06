@@ -38,11 +38,11 @@ impl<'a> PCEN_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum DSIZE_A {
-    #[doc = "0: The reception data in the PIO_PCRHR is a byte (8-bit)"]
+    #[doc = "0: The reception data in the PIO_PCRHR register is a byte (8-bit)"]
     BYTE = 0,
-    #[doc = "1: The reception data in the PIO_PCRHR is a half-word (16-bit)"]
+    #[doc = "1: The reception data in the PIO_PCRHR register is a half-word (16-bit)"]
     HALFWORD = 1,
-    #[doc = "2: The reception data in the PIO_PCRHR is a word (32-bit)"]
+    #[doc = "2: The reception data in the PIO_PCRHR register is a word (32-bit)"]
     WORD = 2,
 }
 impl From<DSIZE_A> for u8 {
@@ -91,17 +91,17 @@ impl<'a> DSIZE_W<'a> {
     pub fn variant(self, variant: DSIZE_A) -> &'a mut W {
         unsafe { self.bits(variant.into()) }
     }
-    #[doc = "The reception data in the PIO_PCRHR is a byte (8-bit)"]
+    #[doc = "The reception data in the PIO_PCRHR register is a byte (8-bit)"]
     #[inline(always)]
     pub fn byte(self) -> &'a mut W {
         self.variant(DSIZE_A::BYTE)
     }
-    #[doc = "The reception data in the PIO_PCRHR is a half-word (16-bit)"]
+    #[doc = "The reception data in the PIO_PCRHR register is a half-word (16-bit)"]
     #[inline(always)]
     pub fn halfword(self) -> &'a mut W {
         self.variant(DSIZE_A::HALFWORD)
     }
-    #[doc = "The reception data in the PIO_PCRHR is a word (32-bit)"]
+    #[doc = "The reception data in the PIO_PCRHR register is a word (32-bit)"]
     #[inline(always)]
     pub fn word(self) -> &'a mut W {
         self.variant(DSIZE_A::WORD)

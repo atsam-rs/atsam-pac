@@ -10,8 +10,6 @@ pub type SEC_R = crate::R<bool, bool>;
 pub type TIM_R = crate::R<bool, bool>;
 #[doc = "Reader of field `CAL`"]
 pub type CAL_R = crate::R<bool, bool>;
-#[doc = "Reader of field `TDERR`"]
-pub type TDERR_R = crate::R<bool, bool>;
 impl R {
     #[doc = "Bit 0 - Acknowledge Update Interrupt Mask"]
     #[inline(always)]
@@ -37,10 +35,5 @@ impl R {
     #[inline(always)]
     pub fn cal(&self) -> CAL_R {
         CAL_R::new(((self.bits >> 4) & 0x01) != 0)
-    }
-    #[doc = "Bit 5 - Time and/or Date Error Mask"]
-    #[inline(always)]
-    pub fn tderr(&self) -> TDERR_R {
-        TDERR_R::new(((self.bits >> 5) & 0x01) != 0)
     }
 }

@@ -10,12 +10,12 @@ impl crate::ResetValue for super::ACR {
         0
     }
 }
-#[doc = "Current SELection\n\nValue on reset: 0"]
+#[doc = "Current Selection\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ISEL_A {
-    #[doc = "0: low power option."]
+    #[doc = "0: Low-power option."]
     LOPW = 0,
-    #[doc = "1: high speed option."]
+    #[doc = "1: High-speed option."]
     HISP = 1,
 }
 impl From<ISEL_A> for bool {
@@ -58,12 +58,12 @@ impl<'a> ISEL_W<'a> {
             self.bit(variant.into())
         }
     }
-    #[doc = "low power option."]
+    #[doc = "Low-power option."]
     #[inline(always)]
     pub fn lopw(self) -> &'a mut W {
         self.variant(ISEL_A::LOPW)
     }
-    #[doc = "high speed option."]
+    #[doc = "High-speed option."]
     #[inline(always)]
     pub fn hisp(self) -> &'a mut W {
         self.variant(ISEL_A::HISP)
@@ -100,24 +100,24 @@ impl<'a> HYST_W<'a> {
     }
 }
 impl R {
-    #[doc = "Bit 0 - Current SELection"]
+    #[doc = "Bit 0 - Current Selection"]
     #[inline(always)]
     pub fn isel(&self) -> ISEL_R {
         ISEL_R::new((self.bits & 0x01) != 0)
     }
-    #[doc = "Bits 1:2 - HYSTeresis selection"]
+    #[doc = "Bits 1:2 - Hysteresis Selection"]
     #[inline(always)]
     pub fn hyst(&self) -> HYST_R {
         HYST_R::new(((self.bits >> 1) & 0x03) as u8)
     }
 }
 impl W {
-    #[doc = "Bit 0 - Current SELection"]
+    #[doc = "Bit 0 - Current Selection"]
     #[inline(always)]
     pub fn isel(&mut self) -> ISEL_W {
         ISEL_W { w: self }
     }
-    #[doc = "Bits 1:2 - HYSTeresis selection"]
+    #[doc = "Bits 1:2 - Hysteresis Selection"]
     #[inline(always)]
     pub fn hyst(&mut self) -> HYST_W {
         HYST_W { w: self }

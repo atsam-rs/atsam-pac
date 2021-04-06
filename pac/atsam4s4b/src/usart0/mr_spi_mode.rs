@@ -2,15 +2,7 @@
 pub type R = crate::R<u32, super::MR_SPI_MODE>;
 #[doc = "Writer for register MR_SPI_MODE"]
 pub type W = crate::W<u32, super::MR_SPI_MODE>;
-#[doc = "Register MR_SPI_MODE `reset()`'s with value 0"]
-impl crate::ResetValue for super::MR_SPI_MODE {
-    type Type = u32;
-    #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
-    }
-}
-#[doc = "USART Mode of Operation\n\nValue on reset: 0"]
+#[doc = "USART Mode of Operation"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum USART_MODE_A {
@@ -76,13 +68,13 @@ impl<'a> USART_MODE_W<'a> {
         self.w
     }
 }
-#[doc = "Clock Selection\n\nValue on reset: 0"]
+#[doc = "Clock Selection"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum USCLKS_A {
-    #[doc = "0: Peripheral clock is selected"]
+    #[doc = "0: master Clock MCK is selected"]
     MCK = 0,
-    #[doc = "1: Peripheral clock divided (DIV=8) is selected"]
+    #[doc = "1: Internal Clock Divided MCK/DIV (DIV=8) is selected"]
     DIV = 1,
     #[doc = "3: Serial Clock SLK is selected"]
     SCK = 3,
@@ -133,12 +125,12 @@ impl<'a> USCLKS_W<'a> {
     pub fn variant(self, variant: USCLKS_A) -> &'a mut W {
         unsafe { self.bits(variant.into()) }
     }
-    #[doc = "Peripheral clock is selected"]
+    #[doc = "master Clock MCK is selected"]
     #[inline(always)]
     pub fn mck(self) -> &'a mut W {
         self.variant(USCLKS_A::MCK)
     }
-    #[doc = "Peripheral clock divided (DIV=8) is selected"]
+    #[doc = "Internal Clock Divided MCK/DIV (DIV=8) is selected"]
     #[inline(always)]
     pub fn div(self) -> &'a mut W {
         self.variant(USCLKS_A::DIV)
@@ -155,7 +147,7 @@ impl<'a> USCLKS_W<'a> {
         self.w
     }
 }
-#[doc = "Character Length\n\nValue on reset: 0"]
+#[doc = "Character Length"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum CHRL_A {
@@ -256,30 +248,6 @@ impl<'a> CPOL_W<'a> {
         self.w
     }
 }
-#[doc = "Reader of field `CLKO`"]
-pub type CLKO_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `CLKO`"]
-pub struct CLKO_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CLKO_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 18)) | (((value as u32) & 0x01) << 18);
-        self.w
-    }
-}
 #[doc = "Reader of field `WRDBT`"]
 pub type WRDBT_R = crate::R<bool, bool>;
 #[doc = "Write proxy for field `WRDBT`"]
@@ -330,11 +298,6 @@ impl R {
     pub fn cpol(&self) -> CPOL_R {
         CPOL_R::new(((self.bits >> 16) & 0x01) != 0)
     }
-    #[doc = "Bit 18 - Clock Output Select"]
-    #[inline(always)]
-    pub fn clko(&self) -> CLKO_R {
-        CLKO_R::new(((self.bits >> 18) & 0x01) != 0)
-    }
     #[doc = "Bit 20 - Wait Read Data Before Transfer"]
     #[inline(always)]
     pub fn wrdbt(&self) -> WRDBT_R {
@@ -366,11 +329,6 @@ impl W {
     #[inline(always)]
     pub fn cpol(&mut self) -> CPOL_W {
         CPOL_W { w: self }
-    }
-    #[doc = "Bit 18 - Clock Output Select"]
-    #[inline(always)]
-    pub fn clko(&mut self) -> CLKO_W {
-        CLKO_W { w: self }
     }
     #[doc = "Bit 20 - Wait Read Data Before Transfer"]
     #[inline(always)]

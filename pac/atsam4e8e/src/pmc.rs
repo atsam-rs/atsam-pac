@@ -46,9 +46,9 @@ pub struct RegisterBlock {
     #[doc = "0x78 - Fault Output Clear Register"]
     pub pmc_focr: PMC_FOCR,
     _reserved19: [u8; 104usize],
-    #[doc = "0xe4 - Write Protect Mode Register"]
+    #[doc = "0xe4 - Write Protection Mode Register"]
     pub pmc_wpmr: PMC_WPMR,
-    #[doc = "0xe8 - Write Protect Status Register"]
+    #[doc = "0xe8 - Write Protection Status Register"]
     pub pmc_wpsr: PMC_WPSR,
     _reserved21: [u8; 20usize],
     #[doc = "0x100 - Peripheral Clock Enable Register 1"]
@@ -60,6 +60,9 @@ pub struct RegisterBlock {
     _reserved24: [u8; 4usize],
     #[doc = "0x110 - Oscillator Calibration Register"]
     pub pmc_ocr: PMC_OCR,
+    _reserved25: [u8; 28usize],
+    #[doc = "0x130 - PLL Maximum Multiplier Value Register"]
+    pub pmc_pmmr: PMC_PMMR,
 }
 #[doc = "System Clock Enable Register\n\nThis register you can [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pmc_scer](pmc_scer) module"]
 pub type PMC_SCER = crate::Reg<u32, _PMC_SCER>;
@@ -248,7 +251,7 @@ pub struct _PMC_FOCR;
 impl crate::Writable for PMC_FOCR {}
 #[doc = "Fault Output Clear Register"]
 pub mod pmc_focr;
-#[doc = "Write Protect Mode Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pmc_wpmr](pmc_wpmr) module"]
+#[doc = "Write Protection Mode Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pmc_wpmr](pmc_wpmr) module"]
 pub type PMC_WPMR = crate::Reg<u32, _PMC_WPMR>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -257,16 +260,16 @@ pub struct _PMC_WPMR;
 impl crate::Readable for PMC_WPMR {}
 #[doc = "`write(|w| ..)` method takes [pmc_wpmr::W](pmc_wpmr::W) writer structure"]
 impl crate::Writable for PMC_WPMR {}
-#[doc = "Write Protect Mode Register"]
+#[doc = "Write Protection Mode Register"]
 pub mod pmc_wpmr;
-#[doc = "Write Protect Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pmc_wpsr](pmc_wpsr) module"]
+#[doc = "Write Protection Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pmc_wpsr](pmc_wpsr) module"]
 pub type PMC_WPSR = crate::Reg<u32, _PMC_WPSR>;
 #[allow(missing_docs)]
 #[doc(hidden)]
 pub struct _PMC_WPSR;
 #[doc = "`read()` method returns [pmc_wpsr::R](pmc_wpsr::R) reader structure"]
 impl crate::Readable for PMC_WPSR {}
-#[doc = "Write Protect Status Register"]
+#[doc = "Write Protection Status Register"]
 pub mod pmc_wpsr;
 #[doc = "Peripheral Clock Enable Register 1\n\nThis register you can [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pmc_pcer1](pmc_pcer1) module"]
 pub type PMC_PCER1 = crate::Reg<u32, _PMC_PCER1>;
@@ -306,3 +309,14 @@ impl crate::Readable for PMC_OCR {}
 impl crate::Writable for PMC_OCR {}
 #[doc = "Oscillator Calibration Register"]
 pub mod pmc_ocr;
+#[doc = "PLL Maximum Multiplier Value Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pmc_pmmr](pmc_pmmr) module"]
+pub type PMC_PMMR = crate::Reg<u32, _PMC_PMMR>;
+#[allow(missing_docs)]
+#[doc(hidden)]
+pub struct _PMC_PMMR;
+#[doc = "`read()` method returns [pmc_pmmr::R](pmc_pmmr::R) reader structure"]
+impl crate::Readable for PMC_PMMR {}
+#[doc = "`write(|w| ..)` method takes [pmc_pmmr::W](pmc_pmmr::W) writer structure"]
+impl crate::Writable for PMC_PMMR {}
+#[doc = "PLL Maximum Multiplier Value Register"]
+pub mod pmc_pmmr;

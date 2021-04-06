@@ -19,7 +19,8 @@ pub struct RegisterBlock {
     pub isr1: ISR1,
     #[doc = "0x20 - PWM Sync Channels Mode Register"]
     pub scm: SCM,
-    _reserved9: [u8; 4usize],
+    #[doc = "0x24 - PWM DMA Register"]
+    pub dmar: DMAR,
     #[doc = "0x28 - PWM Sync Channels Update Control Register"]
     pub scuc: SCUC,
     #[doc = "0x2c - PWM Sync Channels Update Period Register"]
@@ -52,28 +53,25 @@ pub struct RegisterBlock {
     pub fsr: FSR,
     #[doc = "0x64 - PWM Fault Clear Register"]
     pub fcr: FCR,
-    #[doc = "0x68 - PWM Fault Protection Value Register 1"]
-    pub fpv1: FPV1,
+    #[doc = "0x68 - PWM Fault Protection Value Register"]
+    pub fpv: FPV,
     #[doc = "0x6c - PWM Fault Protection Enable Register"]
     pub fpe: FPE,
-    _reserved27: [u8; 12usize],
+    _reserved28: [u8; 12usize],
     #[doc = "0x7c - PWM Event Line 0 Mode Register"]
     pub elmr: [ELMR; 2],
-    _reserved28: [u8; 28usize],
+    _reserved29: [u8; 28usize],
     #[doc = "0xa0 - PWM Spread Spectrum Register"]
     pub sspr: SSPR,
     #[doc = "0xa4 - PWM Spread Spectrum Update Register"]
     pub sspup: SSPUP,
-    _reserved30: [u8; 8usize],
+    _reserved31: [u8; 8usize],
     #[doc = "0xb0 - PWM Stepper Motor Mode Register"]
     pub smmr: SMMR,
-    _reserved31: [u8; 12usize],
-    #[doc = "0xc0 - PWM Fault Protection Value 2 Register"]
-    pub fpv2: FPV2,
-    _reserved32: [u8; 32usize],
-    #[doc = "0xe4 - PWM Write Protect Control Register"]
+    _reserved32: [u8; 48usize],
+    #[doc = "0xe4 - PWM Write Protection Control Register"]
     pub wpcr: WPCR,
-    #[doc = "0xe8 - PWM Write Protect Status Register"]
+    #[doc = "0xe8 - PWM Write Protection Status Register"]
     pub wpsr: WPSR,
     _reserved34: [u8; 28usize],
     #[doc = "0x108 - Transmit Pointer Register"]
@@ -219,34 +217,6 @@ pub struct RegisterBlock {
     pub dt3: DT3,
     #[doc = "0x27c - PWM Channel Dead Time Update Register (ch_num = 3)"]
     pub dtupd3: DTUPD3,
-    _reserved104: [u8; 384usize],
-    #[doc = "0x400 - PWM Channel Mode Update Register (ch_num = 0)"]
-    pub cmupd0: CMUPD0,
-    #[doc = "0x404 - PWM Channel Additional Edge Register (ch_num = 0)"]
-    pub cae0: CAE0,
-    #[doc = "0x408 - PWM Channel Additional Edge Update Register (ch_num = 0)"]
-    pub caeupd0: CAEUPD0,
-    _reserved107: [u8; 20usize],
-    #[doc = "0x420 - PWM Channel Mode Update Register (ch_num = 1)"]
-    pub cmupd1: CMUPD1,
-    #[doc = "0x424 - PWM Channel Additional Edge Register (ch_num = 1)"]
-    pub cae1: CAE1,
-    #[doc = "0x428 - PWM Channel Additional Edge Update Register (ch_num = 1)"]
-    pub caeupd1: CAEUPD1,
-    _reserved110: [u8; 20usize],
-    #[doc = "0x440 - PWM Channel Mode Update Register (ch_num = 2)"]
-    pub cmupd2: CMUPD2,
-    #[doc = "0x444 - PWM Channel Additional Edge Register (ch_num = 2)"]
-    pub cae2: CAE2,
-    #[doc = "0x448 - PWM Channel Additional Edge Update Register (ch_num = 2)"]
-    pub caeupd2: CAEUPD2,
-    _reserved113: [u8; 20usize],
-    #[doc = "0x460 - PWM Channel Mode Update Register (ch_num = 3)"]
-    pub cmupd3: CMUPD3,
-    #[doc = "0x464 - PWM Channel Additional Edge Register (ch_num = 3)"]
-    pub cae3: CAE3,
-    #[doc = "0x468 - PWM Channel Additional Edge Update Register (ch_num = 3)"]
-    pub caeupd3: CAEUPD3,
 }
 #[doc = "PWM Clock Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [clk](clk) module"]
 pub type CLK = crate::Reg<u32, _CLK>;
@@ -333,6 +303,15 @@ impl crate::Readable for SCM {}
 impl crate::Writable for SCM {}
 #[doc = "PWM Sync Channels Mode Register"]
 pub mod scm;
+#[doc = "PWM DMA Register\n\nThis register you can [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [dmar](dmar) module"]
+pub type DMAR = crate::Reg<u32, _DMAR>;
+#[allow(missing_docs)]
+#[doc(hidden)]
+pub struct _DMAR;
+#[doc = "`write(|w| ..)` method takes [dmar::W](dmar::W) writer structure"]
+impl crate::Writable for DMAR {}
+#[doc = "PWM DMA Register"]
+pub mod dmar;
 #[doc = "PWM Sync Channels Update Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [scuc](scuc) module"]
 pub type SCUC = crate::Reg<u32, _SCUC>;
 #[allow(missing_docs)]
@@ -487,17 +466,17 @@ pub struct _FCR;
 impl crate::Writable for FCR {}
 #[doc = "PWM Fault Clear Register"]
 pub mod fcr;
-#[doc = "PWM Fault Protection Value Register 1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [fpv1](fpv1) module"]
-pub type FPV1 = crate::Reg<u32, _FPV1>;
+#[doc = "PWM Fault Protection Value Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [fpv](fpv) module"]
+pub type FPV = crate::Reg<u32, _FPV>;
 #[allow(missing_docs)]
 #[doc(hidden)]
-pub struct _FPV1;
-#[doc = "`read()` method returns [fpv1::R](fpv1::R) reader structure"]
-impl crate::Readable for FPV1 {}
-#[doc = "`write(|w| ..)` method takes [fpv1::W](fpv1::W) writer structure"]
-impl crate::Writable for FPV1 {}
-#[doc = "PWM Fault Protection Value Register 1"]
-pub mod fpv1;
+pub struct _FPV;
+#[doc = "`read()` method returns [fpv::R](fpv::R) reader structure"]
+impl crate::Readable for FPV {}
+#[doc = "`write(|w| ..)` method takes [fpv::W](fpv::W) writer structure"]
+impl crate::Writable for FPV {}
+#[doc = "PWM Fault Protection Value Register"]
+pub mod fpv;
 #[doc = "PWM Fault Protection Enable Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [fpe](fpe) module"]
 pub type FPE = crate::Reg<u32, _FPE>;
 #[allow(missing_docs)]
@@ -551,34 +530,23 @@ impl crate::Readable for SMMR {}
 impl crate::Writable for SMMR {}
 #[doc = "PWM Stepper Motor Mode Register"]
 pub mod smmr;
-#[doc = "PWM Fault Protection Value 2 Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [fpv2](fpv2) module"]
-pub type FPV2 = crate::Reg<u32, _FPV2>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _FPV2;
-#[doc = "`read()` method returns [fpv2::R](fpv2::R) reader structure"]
-impl crate::Readable for FPV2 {}
-#[doc = "`write(|w| ..)` method takes [fpv2::W](fpv2::W) writer structure"]
-impl crate::Writable for FPV2 {}
-#[doc = "PWM Fault Protection Value 2 Register"]
-pub mod fpv2;
-#[doc = "PWM Write Protect Control Register\n\nThis register you can [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [wpcr](wpcr) module"]
+#[doc = "PWM Write Protection Control Register\n\nThis register you can [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [wpcr](wpcr) module"]
 pub type WPCR = crate::Reg<u32, _WPCR>;
 #[allow(missing_docs)]
 #[doc(hidden)]
 pub struct _WPCR;
 #[doc = "`write(|w| ..)` method takes [wpcr::W](wpcr::W) writer structure"]
 impl crate::Writable for WPCR {}
-#[doc = "PWM Write Protect Control Register"]
+#[doc = "PWM Write Protection Control Register"]
 pub mod wpcr;
-#[doc = "PWM Write Protect Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [wpsr](wpsr) module"]
+#[doc = "PWM Write Protection Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [wpsr](wpsr) module"]
 pub type WPSR = crate::Reg<u32, _WPSR>;
 #[allow(missing_docs)]
 #[doc(hidden)]
 pub struct _WPSR;
 #[doc = "`read()` method returns [wpsr::R](wpsr::R) reader structure"]
 impl crate::Readable for WPSR {}
-#[doc = "PWM Write Protect Status Register"]
+#[doc = "PWM Write Protection Status Register"]
 pub mod wpsr;
 #[doc = "PWM Comparison 0 Value Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cmpv0](cmpv0) module"]
 pub type CMPV0 = crate::Reg<u32, _CMPV0>;
@@ -1220,122 +1188,6 @@ pub struct _DTUPD3;
 impl crate::Writable for DTUPD3 {}
 #[doc = "PWM Channel Dead Time Update Register (ch_num = 3)"]
 pub mod dtupd3;
-#[doc = "PWM Channel Mode Update Register (ch_num = 0)\n\nThis register you can [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cmupd0](cmupd0) module"]
-pub type CMUPD0 = crate::Reg<u32, _CMUPD0>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _CMUPD0;
-#[doc = "`write(|w| ..)` method takes [cmupd0::W](cmupd0::W) writer structure"]
-impl crate::Writable for CMUPD0 {}
-#[doc = "PWM Channel Mode Update Register (ch_num = 0)"]
-pub mod cmupd0;
-#[doc = "PWM Channel Additional Edge Register (ch_num = 0)\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cae0](cae0) module"]
-pub type CAE0 = crate::Reg<u32, _CAE0>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _CAE0;
-#[doc = "`read()` method returns [cae0::R](cae0::R) reader structure"]
-impl crate::Readable for CAE0 {}
-#[doc = "`write(|w| ..)` method takes [cae0::W](cae0::W) writer structure"]
-impl crate::Writable for CAE0 {}
-#[doc = "PWM Channel Additional Edge Register (ch_num = 0)"]
-pub mod cae0;
-#[doc = "PWM Channel Additional Edge Update Register (ch_num = 0)\n\nThis register you can [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [caeupd0](caeupd0) module"]
-pub type CAEUPD0 = crate::Reg<u32, _CAEUPD0>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _CAEUPD0;
-#[doc = "`write(|w| ..)` method takes [caeupd0::W](caeupd0::W) writer structure"]
-impl crate::Writable for CAEUPD0 {}
-#[doc = "PWM Channel Additional Edge Update Register (ch_num = 0)"]
-pub mod caeupd0;
-#[doc = "PWM Channel Mode Update Register (ch_num = 1)\n\nThis register you can [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cmupd1](cmupd1) module"]
-pub type CMUPD1 = crate::Reg<u32, _CMUPD1>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _CMUPD1;
-#[doc = "`write(|w| ..)` method takes [cmupd1::W](cmupd1::W) writer structure"]
-impl crate::Writable for CMUPD1 {}
-#[doc = "PWM Channel Mode Update Register (ch_num = 1)"]
-pub mod cmupd1;
-#[doc = "PWM Channel Additional Edge Register (ch_num = 1)\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cae1](cae1) module"]
-pub type CAE1 = crate::Reg<u32, _CAE1>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _CAE1;
-#[doc = "`read()` method returns [cae1::R](cae1::R) reader structure"]
-impl crate::Readable for CAE1 {}
-#[doc = "`write(|w| ..)` method takes [cae1::W](cae1::W) writer structure"]
-impl crate::Writable for CAE1 {}
-#[doc = "PWM Channel Additional Edge Register (ch_num = 1)"]
-pub mod cae1;
-#[doc = "PWM Channel Additional Edge Update Register (ch_num = 1)\n\nThis register you can [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [caeupd1](caeupd1) module"]
-pub type CAEUPD1 = crate::Reg<u32, _CAEUPD1>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _CAEUPD1;
-#[doc = "`write(|w| ..)` method takes [caeupd1::W](caeupd1::W) writer structure"]
-impl crate::Writable for CAEUPD1 {}
-#[doc = "PWM Channel Additional Edge Update Register (ch_num = 1)"]
-pub mod caeupd1;
-#[doc = "PWM Channel Mode Update Register (ch_num = 2)\n\nThis register you can [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cmupd2](cmupd2) module"]
-pub type CMUPD2 = crate::Reg<u32, _CMUPD2>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _CMUPD2;
-#[doc = "`write(|w| ..)` method takes [cmupd2::W](cmupd2::W) writer structure"]
-impl crate::Writable for CMUPD2 {}
-#[doc = "PWM Channel Mode Update Register (ch_num = 2)"]
-pub mod cmupd2;
-#[doc = "PWM Channel Additional Edge Register (ch_num = 2)\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cae2](cae2) module"]
-pub type CAE2 = crate::Reg<u32, _CAE2>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _CAE2;
-#[doc = "`read()` method returns [cae2::R](cae2::R) reader structure"]
-impl crate::Readable for CAE2 {}
-#[doc = "`write(|w| ..)` method takes [cae2::W](cae2::W) writer structure"]
-impl crate::Writable for CAE2 {}
-#[doc = "PWM Channel Additional Edge Register (ch_num = 2)"]
-pub mod cae2;
-#[doc = "PWM Channel Additional Edge Update Register (ch_num = 2)\n\nThis register you can [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [caeupd2](caeupd2) module"]
-pub type CAEUPD2 = crate::Reg<u32, _CAEUPD2>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _CAEUPD2;
-#[doc = "`write(|w| ..)` method takes [caeupd2::W](caeupd2::W) writer structure"]
-impl crate::Writable for CAEUPD2 {}
-#[doc = "PWM Channel Additional Edge Update Register (ch_num = 2)"]
-pub mod caeupd2;
-#[doc = "PWM Channel Mode Update Register (ch_num = 3)\n\nThis register you can [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cmupd3](cmupd3) module"]
-pub type CMUPD3 = crate::Reg<u32, _CMUPD3>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _CMUPD3;
-#[doc = "`write(|w| ..)` method takes [cmupd3::W](cmupd3::W) writer structure"]
-impl crate::Writable for CMUPD3 {}
-#[doc = "PWM Channel Mode Update Register (ch_num = 3)"]
-pub mod cmupd3;
-#[doc = "PWM Channel Additional Edge Register (ch_num = 3)\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cae3](cae3) module"]
-pub type CAE3 = crate::Reg<u32, _CAE3>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _CAE3;
-#[doc = "`read()` method returns [cae3::R](cae3::R) reader structure"]
-impl crate::Readable for CAE3 {}
-#[doc = "`write(|w| ..)` method takes [cae3::W](cae3::W) writer structure"]
-impl crate::Writable for CAE3 {}
-#[doc = "PWM Channel Additional Edge Register (ch_num = 3)"]
-pub mod cae3;
-#[doc = "PWM Channel Additional Edge Update Register (ch_num = 3)\n\nThis register you can [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [caeupd3](caeupd3) module"]
-pub type CAEUPD3 = crate::Reg<u32, _CAEUPD3>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _CAEUPD3;
-#[doc = "`write(|w| ..)` method takes [caeupd3::W](caeupd3::W) writer structure"]
-impl crate::Writable for CAEUPD3 {}
-#[doc = "PWM Channel Additional Edge Update Register (ch_num = 3)"]
-pub mod caeupd3;
 #[doc = "Transmit Pointer Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [tpr](tpr) module"]
 pub type TPR = crate::Reg<u32, _TPR>;
 #[allow(missing_docs)]

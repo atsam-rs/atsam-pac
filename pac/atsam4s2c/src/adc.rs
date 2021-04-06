@@ -314,7 +314,7 @@ impl crate::Readable for RNCR {}
 impl crate::Writable for RNCR {}
 #[doc = "Receive Next Counter Register"]
 pub mod rncr;
-#[doc = "Transfer Control Register\n\nThis register you can [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ptcr](ptcr) module"]
+#[doc = "Transfer Control Register\n\nThis register you can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ptcr](ptcr) module"]
 pub type PTCR = crate::Reg<u32, _PTCR>;
 #[allow(missing_docs)]
 #[doc(hidden)]

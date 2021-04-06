@@ -14,17 +14,17 @@ impl R {
     pub fn drdy(&self) -> DRDY_R {
         DRDY_R::new((self.bits & 0x01) != 0)
     }
-    #[doc = "Bit 1 - Parallel Capture Mode Overrun Error"]
+    #[doc = "Bit 1 - Parallel Capture Mode Overrun Error."]
     #[inline(always)]
     pub fn ovre(&self) -> OVRE_R {
         OVRE_R::new(((self.bits >> 1) & 0x01) != 0)
     }
-    #[doc = "Bit 2"]
+    #[doc = "Bit 2 - End of Reception Transfer."]
     #[inline(always)]
     pub fn endrx(&self) -> ENDRX_R {
         ENDRX_R::new(((self.bits >> 2) & 0x01) != 0)
     }
-    #[doc = "Bit 3"]
+    #[doc = "Bit 3 - Reception Buffer Full"]
     #[inline(always)]
     pub fn rxbuff(&self) -> RXBUFF_R {
         RXBUFF_R::new(((self.bits >> 3) & 0x01) != 0)

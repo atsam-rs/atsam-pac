@@ -21,7 +21,7 @@ pub struct RegisterBlock {
     #[doc = "0x30 - Chip Select Register"]
     pub csr: [CSR; 4],
     _reserved9: [u8; 164usize],
-    #[doc = "0xe4 - Write Protection Control Register"]
+    #[doc = "0xe4 - Write Protection Mode Register"]
     pub wpmr: WPMR,
     #[doc = "0xe8 - Write Protection Status Register"]
     pub wpsr: WPSR,
@@ -132,7 +132,7 @@ impl crate::Readable for CSR {}
 impl crate::Writable for CSR {}
 #[doc = "Chip Select Register"]
 pub mod csr;
-#[doc = "Write Protection Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [wpmr](wpmr) module"]
+#[doc = "Write Protection Mode Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [wpmr](wpmr) module"]
 pub type WPMR = crate::Reg<u32, _WPMR>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -141,7 +141,7 @@ pub struct _WPMR;
 impl crate::Readable for WPMR {}
 #[doc = "`write(|w| ..)` method takes [wpmr::W](wpmr::W) writer structure"]
 impl crate::Writable for WPMR {}
-#[doc = "Write Protection Control Register"]
+#[doc = "Write Protection Mode Register"]
 pub mod wpmr;
 #[doc = "Write Protection Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [wpsr](wpsr) module"]
 pub type WPSR = crate::Reg<u32, _WPSR>;

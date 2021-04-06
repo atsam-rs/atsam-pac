@@ -40,9 +40,9 @@ pub struct RegisterBlock {
     pub pmc_sr: PMC_SR,
     #[doc = "0x6c - Interrupt Mask Register"]
     pub pmc_imr: PMC_IMR,
-    #[doc = "0x70 - Fast Startup Mode Register"]
+    #[doc = "0x70 - Fast Start-up Mode Register"]
     pub pmc_fsmr: PMC_FSMR,
-    #[doc = "0x74 - Fast Startup Polarity Register"]
+    #[doc = "0x74 - Fast Start-up Polarity Register"]
     pub pmc_fspr: PMC_FSPR,
     #[doc = "0x78 - Fault Output Clear Register"]
     pub pmc_focr: PMC_FOCR,
@@ -229,7 +229,7 @@ pub struct _PMC_IMR;
 impl crate::Readable for PMC_IMR {}
 #[doc = "Interrupt Mask Register"]
 pub mod pmc_imr;
-#[doc = "Fast Startup Mode Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pmc_fsmr](pmc_fsmr) module"]
+#[doc = "Fast Start-up Mode Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pmc_fsmr](pmc_fsmr) module"]
 pub type PMC_FSMR = crate::Reg<u32, _PMC_FSMR>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -238,9 +238,9 @@ pub struct _PMC_FSMR;
 impl crate::Readable for PMC_FSMR {}
 #[doc = "`write(|w| ..)` method takes [pmc_fsmr::W](pmc_fsmr::W) writer structure"]
 impl crate::Writable for PMC_FSMR {}
-#[doc = "Fast Startup Mode Register"]
+#[doc = "Fast Start-up Mode Register"]
 pub mod pmc_fsmr;
-#[doc = "Fast Startup Polarity Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pmc_fspr](pmc_fspr) module"]
+#[doc = "Fast Start-up Polarity Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pmc_fspr](pmc_fspr) module"]
 pub type PMC_FSPR = crate::Reg<u32, _PMC_FSPR>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -249,7 +249,7 @@ pub struct _PMC_FSPR;
 impl crate::Readable for PMC_FSPR {}
 #[doc = "`write(|w| ..)` method takes [pmc_fspr::W](pmc_fspr::W) writer structure"]
 impl crate::Writable for PMC_FSPR {}
-#[doc = "Fast Startup Polarity Register"]
+#[doc = "Fast Start-up Polarity Register"]
 pub mod pmc_fspr;
 #[doc = "Fault Output Clear Register\n\nThis register you can [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pmc_focr](pmc_focr) module"]
 pub type PMC_FOCR = crate::Reg<u32, _PMC_FOCR>;

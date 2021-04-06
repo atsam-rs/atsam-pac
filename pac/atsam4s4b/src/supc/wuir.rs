@@ -10,12 +10,12 @@ impl crate::ResetValue for super::WUIR {
         0
     }
 }
-#[doc = "Wake-up Input Enable 0 to 0\n\nValue on reset: 0"]
+#[doc = "Wake-up Input Enable 0\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WKUPEN0_A {
     #[doc = "0: The corresponding wake-up input has no wake-up effect."]
     DISABLE = 0,
-    #[doc = "1: The corresponding wake-up input is enabled for a wake-up of the core power supply."]
+    #[doc = "1: The corresponding wake-up input forces the wake-up of the core power supply."]
     ENABLE = 1,
 }
 impl From<WKUPEN0_A> for bool {
@@ -63,7 +63,7 @@ impl<'a> WKUPEN0_W<'a> {
     pub fn disable(self) -> &'a mut W {
         self.variant(WKUPEN0_A::DISABLE)
     }
-    #[doc = "The corresponding wake-up input is enabled for a wake-up of the core power supply."]
+    #[doc = "The corresponding wake-up input forces the wake-up of the core power supply."]
     #[inline(always)]
     pub fn enable(self) -> &'a mut W {
         self.variant(WKUPEN0_A::ENABLE)
@@ -85,12 +85,12 @@ impl<'a> WKUPEN0_W<'a> {
         self.w
     }
 }
-#[doc = "Wake-up Input Enable 0 to 1\n\nValue on reset: 0"]
+#[doc = "Wake-up Input Enable 1\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WKUPEN1_A {
     #[doc = "0: The corresponding wake-up input has no wake-up effect."]
     DISABLE = 0,
-    #[doc = "1: The corresponding wake-up input is enabled for a wake-up of the core power supply."]
+    #[doc = "1: The corresponding wake-up input forces the wake-up of the core power supply."]
     ENABLE = 1,
 }
 impl From<WKUPEN1_A> for bool {
@@ -138,7 +138,7 @@ impl<'a> WKUPEN1_W<'a> {
     pub fn disable(self) -> &'a mut W {
         self.variant(WKUPEN1_A::DISABLE)
     }
-    #[doc = "The corresponding wake-up input is enabled for a wake-up of the core power supply."]
+    #[doc = "The corresponding wake-up input forces the wake-up of the core power supply."]
     #[inline(always)]
     pub fn enable(self) -> &'a mut W {
         self.variant(WKUPEN1_A::ENABLE)
@@ -160,12 +160,12 @@ impl<'a> WKUPEN1_W<'a> {
         self.w
     }
 }
-#[doc = "Wake-up Input Enable 0 to 2\n\nValue on reset: 0"]
+#[doc = "Wake-up Input Enable 2\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WKUPEN2_A {
     #[doc = "0: The corresponding wake-up input has no wake-up effect."]
     DISABLE = 0,
-    #[doc = "1: The corresponding wake-up input is enabled for a wake-up of the core power supply."]
+    #[doc = "1: The corresponding wake-up input forces the wake-up of the core power supply."]
     ENABLE = 1,
 }
 impl From<WKUPEN2_A> for bool {
@@ -213,7 +213,7 @@ impl<'a> WKUPEN2_W<'a> {
     pub fn disable(self) -> &'a mut W {
         self.variant(WKUPEN2_A::DISABLE)
     }
-    #[doc = "The corresponding wake-up input is enabled for a wake-up of the core power supply."]
+    #[doc = "The corresponding wake-up input forces the wake-up of the core power supply."]
     #[inline(always)]
     pub fn enable(self) -> &'a mut W {
         self.variant(WKUPEN2_A::ENABLE)
@@ -235,12 +235,12 @@ impl<'a> WKUPEN2_W<'a> {
         self.w
     }
 }
-#[doc = "Wake-up Input Enable 0 to 3\n\nValue on reset: 0"]
+#[doc = "Wake-up Input Enable 3\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WKUPEN3_A {
     #[doc = "0: The corresponding wake-up input has no wake-up effect."]
     DISABLE = 0,
-    #[doc = "1: The corresponding wake-up input is enabled for a wake-up of the core power supply."]
+    #[doc = "1: The corresponding wake-up input forces the wake-up of the core power supply."]
     ENABLE = 1,
 }
 impl From<WKUPEN3_A> for bool {
@@ -288,7 +288,7 @@ impl<'a> WKUPEN3_W<'a> {
     pub fn disable(self) -> &'a mut W {
         self.variant(WKUPEN3_A::DISABLE)
     }
-    #[doc = "The corresponding wake-up input is enabled for a wake-up of the core power supply."]
+    #[doc = "The corresponding wake-up input forces the wake-up of the core power supply."]
     #[inline(always)]
     pub fn enable(self) -> &'a mut W {
         self.variant(WKUPEN3_A::ENABLE)
@@ -310,12 +310,12 @@ impl<'a> WKUPEN3_W<'a> {
         self.w
     }
 }
-#[doc = "Wake-up Input Enable 0 to 4\n\nValue on reset: 0"]
+#[doc = "Wake-up Input Enable 4\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WKUPEN4_A {
     #[doc = "0: The corresponding wake-up input has no wake-up effect."]
     DISABLE = 0,
-    #[doc = "1: The corresponding wake-up input is enabled for a wake-up of the core power supply."]
+    #[doc = "1: The corresponding wake-up input forces the wake-up of the core power supply."]
     ENABLE = 1,
 }
 impl From<WKUPEN4_A> for bool {
@@ -363,7 +363,7 @@ impl<'a> WKUPEN4_W<'a> {
     pub fn disable(self) -> &'a mut W {
         self.variant(WKUPEN4_A::DISABLE)
     }
-    #[doc = "The corresponding wake-up input is enabled for a wake-up of the core power supply."]
+    #[doc = "The corresponding wake-up input forces the wake-up of the core power supply."]
     #[inline(always)]
     pub fn enable(self) -> &'a mut W {
         self.variant(WKUPEN4_A::ENABLE)
@@ -385,12 +385,12 @@ impl<'a> WKUPEN4_W<'a> {
         self.w
     }
 }
-#[doc = "Wake-up Input Enable 0 to 5\n\nValue on reset: 0"]
+#[doc = "Wake-up Input Enable 5\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WKUPEN5_A {
     #[doc = "0: The corresponding wake-up input has no wake-up effect."]
     DISABLE = 0,
-    #[doc = "1: The corresponding wake-up input is enabled for a wake-up of the core power supply."]
+    #[doc = "1: The corresponding wake-up input forces the wake-up of the core power supply."]
     ENABLE = 1,
 }
 impl From<WKUPEN5_A> for bool {
@@ -438,7 +438,7 @@ impl<'a> WKUPEN5_W<'a> {
     pub fn disable(self) -> &'a mut W {
         self.variant(WKUPEN5_A::DISABLE)
     }
-    #[doc = "The corresponding wake-up input is enabled for a wake-up of the core power supply."]
+    #[doc = "The corresponding wake-up input forces the wake-up of the core power supply."]
     #[inline(always)]
     pub fn enable(self) -> &'a mut W {
         self.variant(WKUPEN5_A::ENABLE)
@@ -460,12 +460,12 @@ impl<'a> WKUPEN5_W<'a> {
         self.w
     }
 }
-#[doc = "Wake-up Input Enable 0 to 6\n\nValue on reset: 0"]
+#[doc = "Wake-up Input Enable 6\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WKUPEN6_A {
     #[doc = "0: The corresponding wake-up input has no wake-up effect."]
     DISABLE = 0,
-    #[doc = "1: The corresponding wake-up input is enabled for a wake-up of the core power supply."]
+    #[doc = "1: The corresponding wake-up input forces the wake-up of the core power supply."]
     ENABLE = 1,
 }
 impl From<WKUPEN6_A> for bool {
@@ -513,7 +513,7 @@ impl<'a> WKUPEN6_W<'a> {
     pub fn disable(self) -> &'a mut W {
         self.variant(WKUPEN6_A::DISABLE)
     }
-    #[doc = "The corresponding wake-up input is enabled for a wake-up of the core power supply."]
+    #[doc = "The corresponding wake-up input forces the wake-up of the core power supply."]
     #[inline(always)]
     pub fn enable(self) -> &'a mut W {
         self.variant(WKUPEN6_A::ENABLE)
@@ -535,12 +535,12 @@ impl<'a> WKUPEN6_W<'a> {
         self.w
     }
 }
-#[doc = "Wake-up Input Enable 0 to 7\n\nValue on reset: 0"]
+#[doc = "Wake-up Input Enable 7\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WKUPEN7_A {
     #[doc = "0: The corresponding wake-up input has no wake-up effect."]
     DISABLE = 0,
-    #[doc = "1: The corresponding wake-up input is enabled for a wake-up of the core power supply."]
+    #[doc = "1: The corresponding wake-up input forces the wake-up of the core power supply."]
     ENABLE = 1,
 }
 impl From<WKUPEN7_A> for bool {
@@ -588,7 +588,7 @@ impl<'a> WKUPEN7_W<'a> {
     pub fn disable(self) -> &'a mut W {
         self.variant(WKUPEN7_A::DISABLE)
     }
-    #[doc = "The corresponding wake-up input is enabled for a wake-up of the core power supply."]
+    #[doc = "The corresponding wake-up input forces the wake-up of the core power supply."]
     #[inline(always)]
     pub fn enable(self) -> &'a mut W {
         self.variant(WKUPEN7_A::ENABLE)
@@ -610,12 +610,12 @@ impl<'a> WKUPEN7_W<'a> {
         self.w
     }
 }
-#[doc = "Wake-up Input Enable 0 to 8\n\nValue on reset: 0"]
+#[doc = "Wake-up Input Enable 8\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WKUPEN8_A {
     #[doc = "0: The corresponding wake-up input has no wake-up effect."]
     DISABLE = 0,
-    #[doc = "1: The corresponding wake-up input is enabled for a wake-up of the core power supply."]
+    #[doc = "1: The corresponding wake-up input forces the wake-up of the core power supply."]
     ENABLE = 1,
 }
 impl From<WKUPEN8_A> for bool {
@@ -663,7 +663,7 @@ impl<'a> WKUPEN8_W<'a> {
     pub fn disable(self) -> &'a mut W {
         self.variant(WKUPEN8_A::DISABLE)
     }
-    #[doc = "The corresponding wake-up input is enabled for a wake-up of the core power supply."]
+    #[doc = "The corresponding wake-up input forces the wake-up of the core power supply."]
     #[inline(always)]
     pub fn enable(self) -> &'a mut W {
         self.variant(WKUPEN8_A::ENABLE)
@@ -685,12 +685,12 @@ impl<'a> WKUPEN8_W<'a> {
         self.w
     }
 }
-#[doc = "Wake-up Input Enable 0 to 9\n\nValue on reset: 0"]
+#[doc = "Wake-up Input Enable 9\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WKUPEN9_A {
     #[doc = "0: The corresponding wake-up input has no wake-up effect."]
     DISABLE = 0,
-    #[doc = "1: The corresponding wake-up input is enabled for a wake-up of the core power supply."]
+    #[doc = "1: The corresponding wake-up input forces the wake-up of the core power supply."]
     ENABLE = 1,
 }
 impl From<WKUPEN9_A> for bool {
@@ -738,7 +738,7 @@ impl<'a> WKUPEN9_W<'a> {
     pub fn disable(self) -> &'a mut W {
         self.variant(WKUPEN9_A::DISABLE)
     }
-    #[doc = "The corresponding wake-up input is enabled for a wake-up of the core power supply."]
+    #[doc = "The corresponding wake-up input forces the wake-up of the core power supply."]
     #[inline(always)]
     pub fn enable(self) -> &'a mut W {
         self.variant(WKUPEN9_A::ENABLE)
@@ -760,12 +760,12 @@ impl<'a> WKUPEN9_W<'a> {
         self.w
     }
 }
-#[doc = "Wake-up Input Enable 0 to 10\n\nValue on reset: 0"]
+#[doc = "Wake-up Input Enable 10\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WKUPEN10_A {
     #[doc = "0: The corresponding wake-up input has no wake-up effect."]
     DISABLE = 0,
-    #[doc = "1: The corresponding wake-up input is enabled for a wake-up of the core power supply."]
+    #[doc = "1: The corresponding wake-up input forces the wake-up of the core power supply."]
     ENABLE = 1,
 }
 impl From<WKUPEN10_A> for bool {
@@ -813,7 +813,7 @@ impl<'a> WKUPEN10_W<'a> {
     pub fn disable(self) -> &'a mut W {
         self.variant(WKUPEN10_A::DISABLE)
     }
-    #[doc = "The corresponding wake-up input is enabled for a wake-up of the core power supply."]
+    #[doc = "The corresponding wake-up input forces the wake-up of the core power supply."]
     #[inline(always)]
     pub fn enable(self) -> &'a mut W {
         self.variant(WKUPEN10_A::ENABLE)
@@ -835,12 +835,12 @@ impl<'a> WKUPEN10_W<'a> {
         self.w
     }
 }
-#[doc = "Wake-up Input Enable 0 to 11\n\nValue on reset: 0"]
+#[doc = "Wake-up Input Enable 11\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WKUPEN11_A {
     #[doc = "0: The corresponding wake-up input has no wake-up effect."]
     DISABLE = 0,
-    #[doc = "1: The corresponding wake-up input is enabled for a wake-up of the core power supply."]
+    #[doc = "1: The corresponding wake-up input forces the wake-up of the core power supply."]
     ENABLE = 1,
 }
 impl From<WKUPEN11_A> for bool {
@@ -888,7 +888,7 @@ impl<'a> WKUPEN11_W<'a> {
     pub fn disable(self) -> &'a mut W {
         self.variant(WKUPEN11_A::DISABLE)
     }
-    #[doc = "The corresponding wake-up input is enabled for a wake-up of the core power supply."]
+    #[doc = "The corresponding wake-up input forces the wake-up of the core power supply."]
     #[inline(always)]
     pub fn enable(self) -> &'a mut W {
         self.variant(WKUPEN11_A::ENABLE)
@@ -910,12 +910,12 @@ impl<'a> WKUPEN11_W<'a> {
         self.w
     }
 }
-#[doc = "Wake-up Input Enable 0 to 12\n\nValue on reset: 0"]
+#[doc = "Wake-up Input Enable 12\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WKUPEN12_A {
     #[doc = "0: The corresponding wake-up input has no wake-up effect."]
     DISABLE = 0,
-    #[doc = "1: The corresponding wake-up input is enabled for a wake-up of the core power supply."]
+    #[doc = "1: The corresponding wake-up input forces the wake-up of the core power supply."]
     ENABLE = 1,
 }
 impl From<WKUPEN12_A> for bool {
@@ -963,7 +963,7 @@ impl<'a> WKUPEN12_W<'a> {
     pub fn disable(self) -> &'a mut W {
         self.variant(WKUPEN12_A::DISABLE)
     }
-    #[doc = "The corresponding wake-up input is enabled for a wake-up of the core power supply."]
+    #[doc = "The corresponding wake-up input forces the wake-up of the core power supply."]
     #[inline(always)]
     pub fn enable(self) -> &'a mut W {
         self.variant(WKUPEN12_A::ENABLE)
@@ -985,12 +985,12 @@ impl<'a> WKUPEN12_W<'a> {
         self.w
     }
 }
-#[doc = "Wake-up Input Enable 0 to 13\n\nValue on reset: 0"]
+#[doc = "Wake-up Input Enable 13\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WKUPEN13_A {
     #[doc = "0: The corresponding wake-up input has no wake-up effect."]
     DISABLE = 0,
-    #[doc = "1: The corresponding wake-up input is enabled for a wake-up of the core power supply."]
+    #[doc = "1: The corresponding wake-up input forces the wake-up of the core power supply."]
     ENABLE = 1,
 }
 impl From<WKUPEN13_A> for bool {
@@ -1038,7 +1038,7 @@ impl<'a> WKUPEN13_W<'a> {
     pub fn disable(self) -> &'a mut W {
         self.variant(WKUPEN13_A::DISABLE)
     }
-    #[doc = "The corresponding wake-up input is enabled for a wake-up of the core power supply."]
+    #[doc = "The corresponding wake-up input forces the wake-up of the core power supply."]
     #[inline(always)]
     pub fn enable(self) -> &'a mut W {
         self.variant(WKUPEN13_A::ENABLE)
@@ -1060,12 +1060,12 @@ impl<'a> WKUPEN13_W<'a> {
         self.w
     }
 }
-#[doc = "Wake-up Input Enable 0 to 14\n\nValue on reset: 0"]
+#[doc = "Wake-up Input Enable 14\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WKUPEN14_A {
     #[doc = "0: The corresponding wake-up input has no wake-up effect."]
     DISABLE = 0,
-    #[doc = "1: The corresponding wake-up input is enabled for a wake-up of the core power supply."]
+    #[doc = "1: The corresponding wake-up input forces the wake-up of the core power supply."]
     ENABLE = 1,
 }
 impl From<WKUPEN14_A> for bool {
@@ -1113,7 +1113,7 @@ impl<'a> WKUPEN14_W<'a> {
     pub fn disable(self) -> &'a mut W {
         self.variant(WKUPEN14_A::DISABLE)
     }
-    #[doc = "The corresponding wake-up input is enabled for a wake-up of the core power supply."]
+    #[doc = "The corresponding wake-up input forces the wake-up of the core power supply."]
     #[inline(always)]
     pub fn enable(self) -> &'a mut W {
         self.variant(WKUPEN14_A::ENABLE)
@@ -1135,12 +1135,12 @@ impl<'a> WKUPEN14_W<'a> {
         self.w
     }
 }
-#[doc = "Wake-up Input Enable 0 to 15\n\nValue on reset: 0"]
+#[doc = "Wake-up Input Enable 15\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WKUPEN15_A {
     #[doc = "0: The corresponding wake-up input has no wake-up effect."]
     DISABLE = 0,
-    #[doc = "1: The corresponding wake-up input is enabled for a wake-up of the core power supply."]
+    #[doc = "1: The corresponding wake-up input forces the wake-up of the core power supply."]
     ENABLE = 1,
 }
 impl From<WKUPEN15_A> for bool {
@@ -1188,7 +1188,7 @@ impl<'a> WKUPEN15_W<'a> {
     pub fn disable(self) -> &'a mut W {
         self.variant(WKUPEN15_A::DISABLE)
     }
-    #[doc = "The corresponding wake-up input is enabled for a wake-up of the core power supply."]
+    #[doc = "The corresponding wake-up input forces the wake-up of the core power supply."]
     #[inline(always)]
     pub fn enable(self) -> &'a mut W {
         self.variant(WKUPEN15_A::ENABLE)
@@ -1210,12 +1210,12 @@ impl<'a> WKUPEN15_W<'a> {
         self.w
     }
 }
-#[doc = "Wake-up Input Type 0 to 0\n\nValue on reset: 0"]
+#[doc = "Wake-up Input Type 0\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WKUPT0_A {
-    #[doc = "0: A falling edge followed by a low level for a period defined by WKUPDBC on the corre-sponding wake-up input forces the wake-up of the core power supply."]
+    #[doc = "0: A low level for a period defined by WKUPDBC on the corresponding wake-up input forces the wake-up of the core power supply."]
     LOW = 0,
-    #[doc = "1: A rising edge followed by a high level for a period defined by WKUPDBC on the cor-responding wake-up input forces the wake-up of the core power supply."]
+    #[doc = "1: A high level for a period defined by WKUPDBC on the correspond-ing wake-up input forces the wake-up of the core power supply."]
     HIGH = 1,
 }
 impl From<WKUPT0_A> for bool {
@@ -1258,12 +1258,12 @@ impl<'a> WKUPT0_W<'a> {
             self.bit(variant.into())
         }
     }
-    #[doc = "A falling edge followed by a low level for a period defined by WKUPDBC on the corre-sponding wake-up input forces the wake-up of the core power supply."]
+    #[doc = "A low level for a period defined by WKUPDBC on the corresponding wake-up input forces the wake-up of the core power supply."]
     #[inline(always)]
     pub fn low(self) -> &'a mut W {
         self.variant(WKUPT0_A::LOW)
     }
-    #[doc = "A rising edge followed by a high level for a period defined by WKUPDBC on the cor-responding wake-up input forces the wake-up of the core power supply."]
+    #[doc = "A high level for a period defined by WKUPDBC on the correspond-ing wake-up input forces the wake-up of the core power supply."]
     #[inline(always)]
     pub fn high(self) -> &'a mut W {
         self.variant(WKUPT0_A::HIGH)
@@ -1285,12 +1285,12 @@ impl<'a> WKUPT0_W<'a> {
         self.w
     }
 }
-#[doc = "Wake-up Input Type 0 to 1\n\nValue on reset: 0"]
+#[doc = "Wake-up Input Type 1\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WKUPT1_A {
-    #[doc = "0: A falling edge followed by a low level for a period defined by WKUPDBC on the corre-sponding wake-up input forces the wake-up of the core power supply."]
+    #[doc = "0: A low level for a period defined by WKUPDBC on the corresponding wake-up input forces the wake-up of the core power supply."]
     LOW = 0,
-    #[doc = "1: A rising edge followed by a high level for a period defined by WKUPDBC on the cor-responding wake-up input forces the wake-up of the core power supply."]
+    #[doc = "1: A high level for a period defined by WKUPDBC on the correspond-ing wake-up input forces the wake-up of the core power supply."]
     HIGH = 1,
 }
 impl From<WKUPT1_A> for bool {
@@ -1333,12 +1333,12 @@ impl<'a> WKUPT1_W<'a> {
             self.bit(variant.into())
         }
     }
-    #[doc = "A falling edge followed by a low level for a period defined by WKUPDBC on the corre-sponding wake-up input forces the wake-up of the core power supply."]
+    #[doc = "A low level for a period defined by WKUPDBC on the corresponding wake-up input forces the wake-up of the core power supply."]
     #[inline(always)]
     pub fn low(self) -> &'a mut W {
         self.variant(WKUPT1_A::LOW)
     }
-    #[doc = "A rising edge followed by a high level for a period defined by WKUPDBC on the cor-responding wake-up input forces the wake-up of the core power supply."]
+    #[doc = "A high level for a period defined by WKUPDBC on the correspond-ing wake-up input forces the wake-up of the core power supply."]
     #[inline(always)]
     pub fn high(self) -> &'a mut W {
         self.variant(WKUPT1_A::HIGH)
@@ -1360,12 +1360,12 @@ impl<'a> WKUPT1_W<'a> {
         self.w
     }
 }
-#[doc = "Wake-up Input Type 0 to 2\n\nValue on reset: 0"]
+#[doc = "Wake-up Input Type 2\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WKUPT2_A {
-    #[doc = "0: A falling edge followed by a low level for a period defined by WKUPDBC on the corre-sponding wake-up input forces the wake-up of the core power supply."]
+    #[doc = "0: A low level for a period defined by WKUPDBC on the corresponding wake-up input forces the wake-up of the core power supply."]
     LOW = 0,
-    #[doc = "1: A rising edge followed by a high level for a period defined by WKUPDBC on the cor-responding wake-up input forces the wake-up of the core power supply."]
+    #[doc = "1: A high level for a period defined by WKUPDBC on the correspond-ing wake-up input forces the wake-up of the core power supply."]
     HIGH = 1,
 }
 impl From<WKUPT2_A> for bool {
@@ -1408,12 +1408,12 @@ impl<'a> WKUPT2_W<'a> {
             self.bit(variant.into())
         }
     }
-    #[doc = "A falling edge followed by a low level for a period defined by WKUPDBC on the corre-sponding wake-up input forces the wake-up of the core power supply."]
+    #[doc = "A low level for a period defined by WKUPDBC on the corresponding wake-up input forces the wake-up of the core power supply."]
     #[inline(always)]
     pub fn low(self) -> &'a mut W {
         self.variant(WKUPT2_A::LOW)
     }
-    #[doc = "A rising edge followed by a high level for a period defined by WKUPDBC on the cor-responding wake-up input forces the wake-up of the core power supply."]
+    #[doc = "A high level for a period defined by WKUPDBC on the correspond-ing wake-up input forces the wake-up of the core power supply."]
     #[inline(always)]
     pub fn high(self) -> &'a mut W {
         self.variant(WKUPT2_A::HIGH)
@@ -1435,12 +1435,12 @@ impl<'a> WKUPT2_W<'a> {
         self.w
     }
 }
-#[doc = "Wake-up Input Type 0 to 3\n\nValue on reset: 0"]
+#[doc = "Wake-up Input Type 3\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WKUPT3_A {
-    #[doc = "0: A falling edge followed by a low level for a period defined by WKUPDBC on the corre-sponding wake-up input forces the wake-up of the core power supply."]
+    #[doc = "0: A low level for a period defined by WKUPDBC on the corresponding wake-up input forces the wake-up of the core power supply."]
     LOW = 0,
-    #[doc = "1: A rising edge followed by a high level for a period defined by WKUPDBC on the cor-responding wake-up input forces the wake-up of the core power supply."]
+    #[doc = "1: A high level for a period defined by WKUPDBC on the correspond-ing wake-up input forces the wake-up of the core power supply."]
     HIGH = 1,
 }
 impl From<WKUPT3_A> for bool {
@@ -1483,12 +1483,12 @@ impl<'a> WKUPT3_W<'a> {
             self.bit(variant.into())
         }
     }
-    #[doc = "A falling edge followed by a low level for a period defined by WKUPDBC on the corre-sponding wake-up input forces the wake-up of the core power supply."]
+    #[doc = "A low level for a period defined by WKUPDBC on the corresponding wake-up input forces the wake-up of the core power supply."]
     #[inline(always)]
     pub fn low(self) -> &'a mut W {
         self.variant(WKUPT3_A::LOW)
     }
-    #[doc = "A rising edge followed by a high level for a period defined by WKUPDBC on the cor-responding wake-up input forces the wake-up of the core power supply."]
+    #[doc = "A high level for a period defined by WKUPDBC on the correspond-ing wake-up input forces the wake-up of the core power supply."]
     #[inline(always)]
     pub fn high(self) -> &'a mut W {
         self.variant(WKUPT3_A::HIGH)
@@ -1510,12 +1510,12 @@ impl<'a> WKUPT3_W<'a> {
         self.w
     }
 }
-#[doc = "Wake-up Input Type 0 to 4\n\nValue on reset: 0"]
+#[doc = "Wake-up Input Type 4\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WKUPT4_A {
-    #[doc = "0: A falling edge followed by a low level for a period defined by WKUPDBC on the corre-sponding wake-up input forces the wake-up of the core power supply."]
+    #[doc = "0: A low level for a period defined by WKUPDBC on the corresponding wake-up input forces the wake-up of the core power supply."]
     LOW = 0,
-    #[doc = "1: A rising edge followed by a high level for a period defined by WKUPDBC on the cor-responding wake-up input forces the wake-up of the core power supply."]
+    #[doc = "1: A high level for a period defined by WKUPDBC on the correspond-ing wake-up input forces the wake-up of the core power supply."]
     HIGH = 1,
 }
 impl From<WKUPT4_A> for bool {
@@ -1558,12 +1558,12 @@ impl<'a> WKUPT4_W<'a> {
             self.bit(variant.into())
         }
     }
-    #[doc = "A falling edge followed by a low level for a period defined by WKUPDBC on the corre-sponding wake-up input forces the wake-up of the core power supply."]
+    #[doc = "A low level for a period defined by WKUPDBC on the corresponding wake-up input forces the wake-up of the core power supply."]
     #[inline(always)]
     pub fn low(self) -> &'a mut W {
         self.variant(WKUPT4_A::LOW)
     }
-    #[doc = "A rising edge followed by a high level for a period defined by WKUPDBC on the cor-responding wake-up input forces the wake-up of the core power supply."]
+    #[doc = "A high level for a period defined by WKUPDBC on the correspond-ing wake-up input forces the wake-up of the core power supply."]
     #[inline(always)]
     pub fn high(self) -> &'a mut W {
         self.variant(WKUPT4_A::HIGH)
@@ -1585,12 +1585,12 @@ impl<'a> WKUPT4_W<'a> {
         self.w
     }
 }
-#[doc = "Wake-up Input Type 0 to 5\n\nValue on reset: 0"]
+#[doc = "Wake-up Input Type 5\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WKUPT5_A {
-    #[doc = "0: A falling edge followed by a low level for a period defined by WKUPDBC on the corre-sponding wake-up input forces the wake-up of the core power supply."]
+    #[doc = "0: A low level for a period defined by WKUPDBC on the corresponding wake-up input forces the wake-up of the core power supply."]
     LOW = 0,
-    #[doc = "1: A rising edge followed by a high level for a period defined by WKUPDBC on the cor-responding wake-up input forces the wake-up of the core power supply."]
+    #[doc = "1: A high level for a period defined by WKUPDBC on the correspond-ing wake-up input forces the wake-up of the core power supply."]
     HIGH = 1,
 }
 impl From<WKUPT5_A> for bool {
@@ -1633,12 +1633,12 @@ impl<'a> WKUPT5_W<'a> {
             self.bit(variant.into())
         }
     }
-    #[doc = "A falling edge followed by a low level for a period defined by WKUPDBC on the corre-sponding wake-up input forces the wake-up of the core power supply."]
+    #[doc = "A low level for a period defined by WKUPDBC on the corresponding wake-up input forces the wake-up of the core power supply."]
     #[inline(always)]
     pub fn low(self) -> &'a mut W {
         self.variant(WKUPT5_A::LOW)
     }
-    #[doc = "A rising edge followed by a high level for a period defined by WKUPDBC on the cor-responding wake-up input forces the wake-up of the core power supply."]
+    #[doc = "A high level for a period defined by WKUPDBC on the correspond-ing wake-up input forces the wake-up of the core power supply."]
     #[inline(always)]
     pub fn high(self) -> &'a mut W {
         self.variant(WKUPT5_A::HIGH)
@@ -1660,12 +1660,12 @@ impl<'a> WKUPT5_W<'a> {
         self.w
     }
 }
-#[doc = "Wake-up Input Type 0 to 6\n\nValue on reset: 0"]
+#[doc = "Wake-up Input Type 6\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WKUPT6_A {
-    #[doc = "0: A falling edge followed by a low level for a period defined by WKUPDBC on the corre-sponding wake-up input forces the wake-up of the core power supply."]
+    #[doc = "0: A low level for a period defined by WKUPDBC on the corresponding wake-up input forces the wake-up of the core power supply."]
     LOW = 0,
-    #[doc = "1: A rising edge followed by a high level for a period defined by WKUPDBC on the cor-responding wake-up input forces the wake-up of the core power supply."]
+    #[doc = "1: A high level for a period defined by WKUPDBC on the correspond-ing wake-up input forces the wake-up of the core power supply."]
     HIGH = 1,
 }
 impl From<WKUPT6_A> for bool {
@@ -1708,12 +1708,12 @@ impl<'a> WKUPT6_W<'a> {
             self.bit(variant.into())
         }
     }
-    #[doc = "A falling edge followed by a low level for a period defined by WKUPDBC on the corre-sponding wake-up input forces the wake-up of the core power supply."]
+    #[doc = "A low level for a period defined by WKUPDBC on the corresponding wake-up input forces the wake-up of the core power supply."]
     #[inline(always)]
     pub fn low(self) -> &'a mut W {
         self.variant(WKUPT6_A::LOW)
     }
-    #[doc = "A rising edge followed by a high level for a period defined by WKUPDBC on the cor-responding wake-up input forces the wake-up of the core power supply."]
+    #[doc = "A high level for a period defined by WKUPDBC on the correspond-ing wake-up input forces the wake-up of the core power supply."]
     #[inline(always)]
     pub fn high(self) -> &'a mut W {
         self.variant(WKUPT6_A::HIGH)
@@ -1735,12 +1735,12 @@ impl<'a> WKUPT6_W<'a> {
         self.w
     }
 }
-#[doc = "Wake-up Input Type 0 to 7\n\nValue on reset: 0"]
+#[doc = "Wake-up Input Type 7\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WKUPT7_A {
-    #[doc = "0: A falling edge followed by a low level for a period defined by WKUPDBC on the corre-sponding wake-up input forces the wake-up of the core power supply."]
+    #[doc = "0: A low level for a period defined by WKUPDBC on the corresponding wake-up input forces the wake-up of the core power supply."]
     LOW = 0,
-    #[doc = "1: A rising edge followed by a high level for a period defined by WKUPDBC on the cor-responding wake-up input forces the wake-up of the core power supply."]
+    #[doc = "1: A high level for a period defined by WKUPDBC on the correspond-ing wake-up input forces the wake-up of the core power supply."]
     HIGH = 1,
 }
 impl From<WKUPT7_A> for bool {
@@ -1783,12 +1783,12 @@ impl<'a> WKUPT7_W<'a> {
             self.bit(variant.into())
         }
     }
-    #[doc = "A falling edge followed by a low level for a period defined by WKUPDBC on the corre-sponding wake-up input forces the wake-up of the core power supply."]
+    #[doc = "A low level for a period defined by WKUPDBC on the corresponding wake-up input forces the wake-up of the core power supply."]
     #[inline(always)]
     pub fn low(self) -> &'a mut W {
         self.variant(WKUPT7_A::LOW)
     }
-    #[doc = "A rising edge followed by a high level for a period defined by WKUPDBC on the cor-responding wake-up input forces the wake-up of the core power supply."]
+    #[doc = "A high level for a period defined by WKUPDBC on the correspond-ing wake-up input forces the wake-up of the core power supply."]
     #[inline(always)]
     pub fn high(self) -> &'a mut W {
         self.variant(WKUPT7_A::HIGH)
@@ -1810,12 +1810,12 @@ impl<'a> WKUPT7_W<'a> {
         self.w
     }
 }
-#[doc = "Wake-up Input Type 0 to 8\n\nValue on reset: 0"]
+#[doc = "Wake-up Input Type 8\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WKUPT8_A {
-    #[doc = "0: A falling edge followed by a low level for a period defined by WKUPDBC on the corre-sponding wake-up input forces the wake-up of the core power supply."]
+    #[doc = "0: A low level for a period defined by WKUPDBC on the corresponding wake-up input forces the wake-up of the core power supply."]
     LOW = 0,
-    #[doc = "1: A rising edge followed by a high level for a period defined by WKUPDBC on the cor-responding wake-up input forces the wake-up of the core power supply."]
+    #[doc = "1: A high level for a period defined by WKUPDBC on the correspond-ing wake-up input forces the wake-up of the core power supply."]
     HIGH = 1,
 }
 impl From<WKUPT8_A> for bool {
@@ -1858,12 +1858,12 @@ impl<'a> WKUPT8_W<'a> {
             self.bit(variant.into())
         }
     }
-    #[doc = "A falling edge followed by a low level for a period defined by WKUPDBC on the corre-sponding wake-up input forces the wake-up of the core power supply."]
+    #[doc = "A low level for a period defined by WKUPDBC on the corresponding wake-up input forces the wake-up of the core power supply."]
     #[inline(always)]
     pub fn low(self) -> &'a mut W {
         self.variant(WKUPT8_A::LOW)
     }
-    #[doc = "A rising edge followed by a high level for a period defined by WKUPDBC on the cor-responding wake-up input forces the wake-up of the core power supply."]
+    #[doc = "A high level for a period defined by WKUPDBC on the correspond-ing wake-up input forces the wake-up of the core power supply."]
     #[inline(always)]
     pub fn high(self) -> &'a mut W {
         self.variant(WKUPT8_A::HIGH)
@@ -1885,12 +1885,12 @@ impl<'a> WKUPT8_W<'a> {
         self.w
     }
 }
-#[doc = "Wake-up Input Type 0 to 9\n\nValue on reset: 0"]
+#[doc = "Wake-up Input Type 9\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WKUPT9_A {
-    #[doc = "0: A falling edge followed by a low level for a period defined by WKUPDBC on the corre-sponding wake-up input forces the wake-up of the core power supply."]
+    #[doc = "0: A low level for a period defined by WKUPDBC on the corresponding wake-up input forces the wake-up of the core power supply."]
     LOW = 0,
-    #[doc = "1: A rising edge followed by a high level for a period defined by WKUPDBC on the cor-responding wake-up input forces the wake-up of the core power supply."]
+    #[doc = "1: A high level for a period defined by WKUPDBC on the correspond-ing wake-up input forces the wake-up of the core power supply."]
     HIGH = 1,
 }
 impl From<WKUPT9_A> for bool {
@@ -1933,12 +1933,12 @@ impl<'a> WKUPT9_W<'a> {
             self.bit(variant.into())
         }
     }
-    #[doc = "A falling edge followed by a low level for a period defined by WKUPDBC on the corre-sponding wake-up input forces the wake-up of the core power supply."]
+    #[doc = "A low level for a period defined by WKUPDBC on the corresponding wake-up input forces the wake-up of the core power supply."]
     #[inline(always)]
     pub fn low(self) -> &'a mut W {
         self.variant(WKUPT9_A::LOW)
     }
-    #[doc = "A rising edge followed by a high level for a period defined by WKUPDBC on the cor-responding wake-up input forces the wake-up of the core power supply."]
+    #[doc = "A high level for a period defined by WKUPDBC on the correspond-ing wake-up input forces the wake-up of the core power supply."]
     #[inline(always)]
     pub fn high(self) -> &'a mut W {
         self.variant(WKUPT9_A::HIGH)
@@ -1960,12 +1960,12 @@ impl<'a> WKUPT9_W<'a> {
         self.w
     }
 }
-#[doc = "Wake-up Input Type 0 to 10\n\nValue on reset: 0"]
+#[doc = "Wake-up Input Type 10\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WKUPT10_A {
-    #[doc = "0: A falling edge followed by a low level for a period defined by WKUPDBC on the corre-sponding wake-up input forces the wake-up of the core power supply."]
+    #[doc = "0: A low level for a period defined by WKUPDBC on the corresponding wake-up input forces the wake-up of the core power supply."]
     LOW = 0,
-    #[doc = "1: A rising edge followed by a high level for a period defined by WKUPDBC on the cor-responding wake-up input forces the wake-up of the core power supply."]
+    #[doc = "1: A high level for a period defined by WKUPDBC on the correspond-ing wake-up input forces the wake-up of the core power supply."]
     HIGH = 1,
 }
 impl From<WKUPT10_A> for bool {
@@ -2008,12 +2008,12 @@ impl<'a> WKUPT10_W<'a> {
             self.bit(variant.into())
         }
     }
-    #[doc = "A falling edge followed by a low level for a period defined by WKUPDBC on the corre-sponding wake-up input forces the wake-up of the core power supply."]
+    #[doc = "A low level for a period defined by WKUPDBC on the corresponding wake-up input forces the wake-up of the core power supply."]
     #[inline(always)]
     pub fn low(self) -> &'a mut W {
         self.variant(WKUPT10_A::LOW)
     }
-    #[doc = "A rising edge followed by a high level for a period defined by WKUPDBC on the cor-responding wake-up input forces the wake-up of the core power supply."]
+    #[doc = "A high level for a period defined by WKUPDBC on the correspond-ing wake-up input forces the wake-up of the core power supply."]
     #[inline(always)]
     pub fn high(self) -> &'a mut W {
         self.variant(WKUPT10_A::HIGH)
@@ -2035,12 +2035,12 @@ impl<'a> WKUPT10_W<'a> {
         self.w
     }
 }
-#[doc = "Wake-up Input Type 0 to 11\n\nValue on reset: 0"]
+#[doc = "Wake-up Input Type 11\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WKUPT11_A {
-    #[doc = "0: A falling edge followed by a low level for a period defined by WKUPDBC on the corre-sponding wake-up input forces the wake-up of the core power supply."]
+    #[doc = "0: A low level for a period defined by WKUPDBC on the corresponding wake-up input forces the wake-up of the core power supply."]
     LOW = 0,
-    #[doc = "1: A rising edge followed by a high level for a period defined by WKUPDBC on the cor-responding wake-up input forces the wake-up of the core power supply."]
+    #[doc = "1: A high level for a period defined by WKUPDBC on the correspond-ing wake-up input forces the wake-up of the core power supply."]
     HIGH = 1,
 }
 impl From<WKUPT11_A> for bool {
@@ -2083,12 +2083,12 @@ impl<'a> WKUPT11_W<'a> {
             self.bit(variant.into())
         }
     }
-    #[doc = "A falling edge followed by a low level for a period defined by WKUPDBC on the corre-sponding wake-up input forces the wake-up of the core power supply."]
+    #[doc = "A low level for a period defined by WKUPDBC on the corresponding wake-up input forces the wake-up of the core power supply."]
     #[inline(always)]
     pub fn low(self) -> &'a mut W {
         self.variant(WKUPT11_A::LOW)
     }
-    #[doc = "A rising edge followed by a high level for a period defined by WKUPDBC on the cor-responding wake-up input forces the wake-up of the core power supply."]
+    #[doc = "A high level for a period defined by WKUPDBC on the correspond-ing wake-up input forces the wake-up of the core power supply."]
     #[inline(always)]
     pub fn high(self) -> &'a mut W {
         self.variant(WKUPT11_A::HIGH)
@@ -2110,12 +2110,12 @@ impl<'a> WKUPT11_W<'a> {
         self.w
     }
 }
-#[doc = "Wake-up Input Type 0 to 12\n\nValue on reset: 0"]
+#[doc = "Wake-up Input Type 12\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WKUPT12_A {
-    #[doc = "0: A falling edge followed by a low level for a period defined by WKUPDBC on the corre-sponding wake-up input forces the wake-up of the core power supply."]
+    #[doc = "0: A low level for a period defined by WKUPDBC on the corresponding wake-up input forces the wake-up of the core power supply."]
     LOW = 0,
-    #[doc = "1: A rising edge followed by a high level for a period defined by WKUPDBC on the cor-responding wake-up input forces the wake-up of the core power supply."]
+    #[doc = "1: A high level for a period defined by WKUPDBC on the correspond-ing wake-up input forces the wake-up of the core power supply."]
     HIGH = 1,
 }
 impl From<WKUPT12_A> for bool {
@@ -2158,12 +2158,12 @@ impl<'a> WKUPT12_W<'a> {
             self.bit(variant.into())
         }
     }
-    #[doc = "A falling edge followed by a low level for a period defined by WKUPDBC on the corre-sponding wake-up input forces the wake-up of the core power supply."]
+    #[doc = "A low level for a period defined by WKUPDBC on the corresponding wake-up input forces the wake-up of the core power supply."]
     #[inline(always)]
     pub fn low(self) -> &'a mut W {
         self.variant(WKUPT12_A::LOW)
     }
-    #[doc = "A rising edge followed by a high level for a period defined by WKUPDBC on the cor-responding wake-up input forces the wake-up of the core power supply."]
+    #[doc = "A high level for a period defined by WKUPDBC on the correspond-ing wake-up input forces the wake-up of the core power supply."]
     #[inline(always)]
     pub fn high(self) -> &'a mut W {
         self.variant(WKUPT12_A::HIGH)
@@ -2185,12 +2185,12 @@ impl<'a> WKUPT12_W<'a> {
         self.w
     }
 }
-#[doc = "Wake-up Input Type 0 to 13\n\nValue on reset: 0"]
+#[doc = "Wake-up Input Type 13\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WKUPT13_A {
-    #[doc = "0: A falling edge followed by a low level for a period defined by WKUPDBC on the corre-sponding wake-up input forces the wake-up of the core power supply."]
+    #[doc = "0: A low level for a period defined by WKUPDBC on the corresponding wake-up input forces the wake-up of the core power supply."]
     LOW = 0,
-    #[doc = "1: A rising edge followed by a high level for a period defined by WKUPDBC on the cor-responding wake-up input forces the wake-up of the core power supply."]
+    #[doc = "1: A high level for a period defined by WKUPDBC on the correspond-ing wake-up input forces the wake-up of the core power supply."]
     HIGH = 1,
 }
 impl From<WKUPT13_A> for bool {
@@ -2233,12 +2233,12 @@ impl<'a> WKUPT13_W<'a> {
             self.bit(variant.into())
         }
     }
-    #[doc = "A falling edge followed by a low level for a period defined by WKUPDBC on the corre-sponding wake-up input forces the wake-up of the core power supply."]
+    #[doc = "A low level for a period defined by WKUPDBC on the corresponding wake-up input forces the wake-up of the core power supply."]
     #[inline(always)]
     pub fn low(self) -> &'a mut W {
         self.variant(WKUPT13_A::LOW)
     }
-    #[doc = "A rising edge followed by a high level for a period defined by WKUPDBC on the cor-responding wake-up input forces the wake-up of the core power supply."]
+    #[doc = "A high level for a period defined by WKUPDBC on the correspond-ing wake-up input forces the wake-up of the core power supply."]
     #[inline(always)]
     pub fn high(self) -> &'a mut W {
         self.variant(WKUPT13_A::HIGH)
@@ -2260,12 +2260,12 @@ impl<'a> WKUPT13_W<'a> {
         self.w
     }
 }
-#[doc = "Wake-up Input Type 0 to 14\n\nValue on reset: 0"]
+#[doc = "Wake-up Input Type 14\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WKUPT14_A {
-    #[doc = "0: A falling edge followed by a low level for a period defined by WKUPDBC on the corre-sponding wake-up input forces the wake-up of the core power supply."]
+    #[doc = "0: A low level for a period defined by WKUPDBC on the corresponding wake-up input forces the wake-up of the core power supply."]
     LOW = 0,
-    #[doc = "1: A rising edge followed by a high level for a period defined by WKUPDBC on the cor-responding wake-up input forces the wake-up of the core power supply."]
+    #[doc = "1: A high level for a period defined by WKUPDBC on the correspond-ing wake-up input forces the wake-up of the core power supply."]
     HIGH = 1,
 }
 impl From<WKUPT14_A> for bool {
@@ -2308,12 +2308,12 @@ impl<'a> WKUPT14_W<'a> {
             self.bit(variant.into())
         }
     }
-    #[doc = "A falling edge followed by a low level for a period defined by WKUPDBC on the corre-sponding wake-up input forces the wake-up of the core power supply."]
+    #[doc = "A low level for a period defined by WKUPDBC on the corresponding wake-up input forces the wake-up of the core power supply."]
     #[inline(always)]
     pub fn low(self) -> &'a mut W {
         self.variant(WKUPT14_A::LOW)
     }
-    #[doc = "A rising edge followed by a high level for a period defined by WKUPDBC on the cor-responding wake-up input forces the wake-up of the core power supply."]
+    #[doc = "A high level for a period defined by WKUPDBC on the correspond-ing wake-up input forces the wake-up of the core power supply."]
     #[inline(always)]
     pub fn high(self) -> &'a mut W {
         self.variant(WKUPT14_A::HIGH)
@@ -2335,12 +2335,12 @@ impl<'a> WKUPT14_W<'a> {
         self.w
     }
 }
-#[doc = "Wake-up Input Type 0 to 15\n\nValue on reset: 0"]
+#[doc = "Wake-up Input Type 15\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WKUPT15_A {
-    #[doc = "0: A falling edge followed by a low level for a period defined by WKUPDBC on the corre-sponding wake-up input forces the wake-up of the core power supply."]
+    #[doc = "0: A low level for a period defined by WKUPDBC on the corresponding wake-up input forces the wake-up of the core power supply."]
     LOW = 0,
-    #[doc = "1: A rising edge followed by a high level for a period defined by WKUPDBC on the cor-responding wake-up input forces the wake-up of the core power supply."]
+    #[doc = "1: A high level for a period defined by WKUPDBC on the correspond-ing wake-up input forces the wake-up of the core power supply."]
     HIGH = 1,
 }
 impl From<WKUPT15_A> for bool {
@@ -2383,12 +2383,12 @@ impl<'a> WKUPT15_W<'a> {
             self.bit(variant.into())
         }
     }
-    #[doc = "A falling edge followed by a low level for a period defined by WKUPDBC on the corre-sponding wake-up input forces the wake-up of the core power supply."]
+    #[doc = "A low level for a period defined by WKUPDBC on the corresponding wake-up input forces the wake-up of the core power supply."]
     #[inline(always)]
     pub fn low(self) -> &'a mut W {
         self.variant(WKUPT15_A::LOW)
     }
-    #[doc = "A rising edge followed by a high level for a period defined by WKUPDBC on the cor-responding wake-up input forces the wake-up of the core power supply."]
+    #[doc = "A high level for a period defined by WKUPDBC on the correspond-ing wake-up input forces the wake-up of the core power supply."]
     #[inline(always)]
     pub fn high(self) -> &'a mut W {
         self.variant(WKUPT15_A::HIGH)
@@ -2411,324 +2411,324 @@ impl<'a> WKUPT15_W<'a> {
     }
 }
 impl R {
-    #[doc = "Bit 0 - Wake-up Input Enable 0 to 0"]
+    #[doc = "Bit 0 - Wake-up Input Enable 0"]
     #[inline(always)]
     pub fn wkupen0(&self) -> WKUPEN0_R {
         WKUPEN0_R::new((self.bits & 0x01) != 0)
     }
-    #[doc = "Bit 1 - Wake-up Input Enable 0 to 1"]
+    #[doc = "Bit 1 - Wake-up Input Enable 1"]
     #[inline(always)]
     pub fn wkupen1(&self) -> WKUPEN1_R {
         WKUPEN1_R::new(((self.bits >> 1) & 0x01) != 0)
     }
-    #[doc = "Bit 2 - Wake-up Input Enable 0 to 2"]
+    #[doc = "Bit 2 - Wake-up Input Enable 2"]
     #[inline(always)]
     pub fn wkupen2(&self) -> WKUPEN2_R {
         WKUPEN2_R::new(((self.bits >> 2) & 0x01) != 0)
     }
-    #[doc = "Bit 3 - Wake-up Input Enable 0 to 3"]
+    #[doc = "Bit 3 - Wake-up Input Enable 3"]
     #[inline(always)]
     pub fn wkupen3(&self) -> WKUPEN3_R {
         WKUPEN3_R::new(((self.bits >> 3) & 0x01) != 0)
     }
-    #[doc = "Bit 4 - Wake-up Input Enable 0 to 4"]
+    #[doc = "Bit 4 - Wake-up Input Enable 4"]
     #[inline(always)]
     pub fn wkupen4(&self) -> WKUPEN4_R {
         WKUPEN4_R::new(((self.bits >> 4) & 0x01) != 0)
     }
-    #[doc = "Bit 5 - Wake-up Input Enable 0 to 5"]
+    #[doc = "Bit 5 - Wake-up Input Enable 5"]
     #[inline(always)]
     pub fn wkupen5(&self) -> WKUPEN5_R {
         WKUPEN5_R::new(((self.bits >> 5) & 0x01) != 0)
     }
-    #[doc = "Bit 6 - Wake-up Input Enable 0 to 6"]
+    #[doc = "Bit 6 - Wake-up Input Enable 6"]
     #[inline(always)]
     pub fn wkupen6(&self) -> WKUPEN6_R {
         WKUPEN6_R::new(((self.bits >> 6) & 0x01) != 0)
     }
-    #[doc = "Bit 7 - Wake-up Input Enable 0 to 7"]
+    #[doc = "Bit 7 - Wake-up Input Enable 7"]
     #[inline(always)]
     pub fn wkupen7(&self) -> WKUPEN7_R {
         WKUPEN7_R::new(((self.bits >> 7) & 0x01) != 0)
     }
-    #[doc = "Bit 8 - Wake-up Input Enable 0 to 8"]
+    #[doc = "Bit 8 - Wake-up Input Enable 8"]
     #[inline(always)]
     pub fn wkupen8(&self) -> WKUPEN8_R {
         WKUPEN8_R::new(((self.bits >> 8) & 0x01) != 0)
     }
-    #[doc = "Bit 9 - Wake-up Input Enable 0 to 9"]
+    #[doc = "Bit 9 - Wake-up Input Enable 9"]
     #[inline(always)]
     pub fn wkupen9(&self) -> WKUPEN9_R {
         WKUPEN9_R::new(((self.bits >> 9) & 0x01) != 0)
     }
-    #[doc = "Bit 10 - Wake-up Input Enable 0 to 10"]
+    #[doc = "Bit 10 - Wake-up Input Enable 10"]
     #[inline(always)]
     pub fn wkupen10(&self) -> WKUPEN10_R {
         WKUPEN10_R::new(((self.bits >> 10) & 0x01) != 0)
     }
-    #[doc = "Bit 11 - Wake-up Input Enable 0 to 11"]
+    #[doc = "Bit 11 - Wake-up Input Enable 11"]
     #[inline(always)]
     pub fn wkupen11(&self) -> WKUPEN11_R {
         WKUPEN11_R::new(((self.bits >> 11) & 0x01) != 0)
     }
-    #[doc = "Bit 12 - Wake-up Input Enable 0 to 12"]
+    #[doc = "Bit 12 - Wake-up Input Enable 12"]
     #[inline(always)]
     pub fn wkupen12(&self) -> WKUPEN12_R {
         WKUPEN12_R::new(((self.bits >> 12) & 0x01) != 0)
     }
-    #[doc = "Bit 13 - Wake-up Input Enable 0 to 13"]
+    #[doc = "Bit 13 - Wake-up Input Enable 13"]
     #[inline(always)]
     pub fn wkupen13(&self) -> WKUPEN13_R {
         WKUPEN13_R::new(((self.bits >> 13) & 0x01) != 0)
     }
-    #[doc = "Bit 14 - Wake-up Input Enable 0 to 14"]
+    #[doc = "Bit 14 - Wake-up Input Enable 14"]
     #[inline(always)]
     pub fn wkupen14(&self) -> WKUPEN14_R {
         WKUPEN14_R::new(((self.bits >> 14) & 0x01) != 0)
     }
-    #[doc = "Bit 15 - Wake-up Input Enable 0 to 15"]
+    #[doc = "Bit 15 - Wake-up Input Enable 15"]
     #[inline(always)]
     pub fn wkupen15(&self) -> WKUPEN15_R {
         WKUPEN15_R::new(((self.bits >> 15) & 0x01) != 0)
     }
-    #[doc = "Bit 16 - Wake-up Input Type 0 to 0"]
+    #[doc = "Bit 16 - Wake-up Input Type 0"]
     #[inline(always)]
     pub fn wkupt0(&self) -> WKUPT0_R {
         WKUPT0_R::new(((self.bits >> 16) & 0x01) != 0)
     }
-    #[doc = "Bit 17 - Wake-up Input Type 0 to 1"]
+    #[doc = "Bit 17 - Wake-up Input Type 1"]
     #[inline(always)]
     pub fn wkupt1(&self) -> WKUPT1_R {
         WKUPT1_R::new(((self.bits >> 17) & 0x01) != 0)
     }
-    #[doc = "Bit 18 - Wake-up Input Type 0 to 2"]
+    #[doc = "Bit 18 - Wake-up Input Type 2"]
     #[inline(always)]
     pub fn wkupt2(&self) -> WKUPT2_R {
         WKUPT2_R::new(((self.bits >> 18) & 0x01) != 0)
     }
-    #[doc = "Bit 19 - Wake-up Input Type 0 to 3"]
+    #[doc = "Bit 19 - Wake-up Input Type 3"]
     #[inline(always)]
     pub fn wkupt3(&self) -> WKUPT3_R {
         WKUPT3_R::new(((self.bits >> 19) & 0x01) != 0)
     }
-    #[doc = "Bit 20 - Wake-up Input Type 0 to 4"]
+    #[doc = "Bit 20 - Wake-up Input Type 4"]
     #[inline(always)]
     pub fn wkupt4(&self) -> WKUPT4_R {
         WKUPT4_R::new(((self.bits >> 20) & 0x01) != 0)
     }
-    #[doc = "Bit 21 - Wake-up Input Type 0 to 5"]
+    #[doc = "Bit 21 - Wake-up Input Type 5"]
     #[inline(always)]
     pub fn wkupt5(&self) -> WKUPT5_R {
         WKUPT5_R::new(((self.bits >> 21) & 0x01) != 0)
     }
-    #[doc = "Bit 22 - Wake-up Input Type 0 to 6"]
+    #[doc = "Bit 22 - Wake-up Input Type 6"]
     #[inline(always)]
     pub fn wkupt6(&self) -> WKUPT6_R {
         WKUPT6_R::new(((self.bits >> 22) & 0x01) != 0)
     }
-    #[doc = "Bit 23 - Wake-up Input Type 0 to 7"]
+    #[doc = "Bit 23 - Wake-up Input Type 7"]
     #[inline(always)]
     pub fn wkupt7(&self) -> WKUPT7_R {
         WKUPT7_R::new(((self.bits >> 23) & 0x01) != 0)
     }
-    #[doc = "Bit 24 - Wake-up Input Type 0 to 8"]
+    #[doc = "Bit 24 - Wake-up Input Type 8"]
     #[inline(always)]
     pub fn wkupt8(&self) -> WKUPT8_R {
         WKUPT8_R::new(((self.bits >> 24) & 0x01) != 0)
     }
-    #[doc = "Bit 25 - Wake-up Input Type 0 to 9"]
+    #[doc = "Bit 25 - Wake-up Input Type 9"]
     #[inline(always)]
     pub fn wkupt9(&self) -> WKUPT9_R {
         WKUPT9_R::new(((self.bits >> 25) & 0x01) != 0)
     }
-    #[doc = "Bit 26 - Wake-up Input Type 0 to 10"]
+    #[doc = "Bit 26 - Wake-up Input Type 10"]
     #[inline(always)]
     pub fn wkupt10(&self) -> WKUPT10_R {
         WKUPT10_R::new(((self.bits >> 26) & 0x01) != 0)
     }
-    #[doc = "Bit 27 - Wake-up Input Type 0 to 11"]
+    #[doc = "Bit 27 - Wake-up Input Type 11"]
     #[inline(always)]
     pub fn wkupt11(&self) -> WKUPT11_R {
         WKUPT11_R::new(((self.bits >> 27) & 0x01) != 0)
     }
-    #[doc = "Bit 28 - Wake-up Input Type 0 to 12"]
+    #[doc = "Bit 28 - Wake-up Input Type 12"]
     #[inline(always)]
     pub fn wkupt12(&self) -> WKUPT12_R {
         WKUPT12_R::new(((self.bits >> 28) & 0x01) != 0)
     }
-    #[doc = "Bit 29 - Wake-up Input Type 0 to 13"]
+    #[doc = "Bit 29 - Wake-up Input Type 13"]
     #[inline(always)]
     pub fn wkupt13(&self) -> WKUPT13_R {
         WKUPT13_R::new(((self.bits >> 29) & 0x01) != 0)
     }
-    #[doc = "Bit 30 - Wake-up Input Type 0 to 14"]
+    #[doc = "Bit 30 - Wake-up Input Type 14"]
     #[inline(always)]
     pub fn wkupt14(&self) -> WKUPT14_R {
         WKUPT14_R::new(((self.bits >> 30) & 0x01) != 0)
     }
-    #[doc = "Bit 31 - Wake-up Input Type 0 to 15"]
+    #[doc = "Bit 31 - Wake-up Input Type 15"]
     #[inline(always)]
     pub fn wkupt15(&self) -> WKUPT15_R {
         WKUPT15_R::new(((self.bits >> 31) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = "Bit 0 - Wake-up Input Enable 0 to 0"]
+    #[doc = "Bit 0 - Wake-up Input Enable 0"]
     #[inline(always)]
     pub fn wkupen0(&mut self) -> WKUPEN0_W {
         WKUPEN0_W { w: self }
     }
-    #[doc = "Bit 1 - Wake-up Input Enable 0 to 1"]
+    #[doc = "Bit 1 - Wake-up Input Enable 1"]
     #[inline(always)]
     pub fn wkupen1(&mut self) -> WKUPEN1_W {
         WKUPEN1_W { w: self }
     }
-    #[doc = "Bit 2 - Wake-up Input Enable 0 to 2"]
+    #[doc = "Bit 2 - Wake-up Input Enable 2"]
     #[inline(always)]
     pub fn wkupen2(&mut self) -> WKUPEN2_W {
         WKUPEN2_W { w: self }
     }
-    #[doc = "Bit 3 - Wake-up Input Enable 0 to 3"]
+    #[doc = "Bit 3 - Wake-up Input Enable 3"]
     #[inline(always)]
     pub fn wkupen3(&mut self) -> WKUPEN3_W {
         WKUPEN3_W { w: self }
     }
-    #[doc = "Bit 4 - Wake-up Input Enable 0 to 4"]
+    #[doc = "Bit 4 - Wake-up Input Enable 4"]
     #[inline(always)]
     pub fn wkupen4(&mut self) -> WKUPEN4_W {
         WKUPEN4_W { w: self }
     }
-    #[doc = "Bit 5 - Wake-up Input Enable 0 to 5"]
+    #[doc = "Bit 5 - Wake-up Input Enable 5"]
     #[inline(always)]
     pub fn wkupen5(&mut self) -> WKUPEN5_W {
         WKUPEN5_W { w: self }
     }
-    #[doc = "Bit 6 - Wake-up Input Enable 0 to 6"]
+    #[doc = "Bit 6 - Wake-up Input Enable 6"]
     #[inline(always)]
     pub fn wkupen6(&mut self) -> WKUPEN6_W {
         WKUPEN6_W { w: self }
     }
-    #[doc = "Bit 7 - Wake-up Input Enable 0 to 7"]
+    #[doc = "Bit 7 - Wake-up Input Enable 7"]
     #[inline(always)]
     pub fn wkupen7(&mut self) -> WKUPEN7_W {
         WKUPEN7_W { w: self }
     }
-    #[doc = "Bit 8 - Wake-up Input Enable 0 to 8"]
+    #[doc = "Bit 8 - Wake-up Input Enable 8"]
     #[inline(always)]
     pub fn wkupen8(&mut self) -> WKUPEN8_W {
         WKUPEN8_W { w: self }
     }
-    #[doc = "Bit 9 - Wake-up Input Enable 0 to 9"]
+    #[doc = "Bit 9 - Wake-up Input Enable 9"]
     #[inline(always)]
     pub fn wkupen9(&mut self) -> WKUPEN9_W {
         WKUPEN9_W { w: self }
     }
-    #[doc = "Bit 10 - Wake-up Input Enable 0 to 10"]
+    #[doc = "Bit 10 - Wake-up Input Enable 10"]
     #[inline(always)]
     pub fn wkupen10(&mut self) -> WKUPEN10_W {
         WKUPEN10_W { w: self }
     }
-    #[doc = "Bit 11 - Wake-up Input Enable 0 to 11"]
+    #[doc = "Bit 11 - Wake-up Input Enable 11"]
     #[inline(always)]
     pub fn wkupen11(&mut self) -> WKUPEN11_W {
         WKUPEN11_W { w: self }
     }
-    #[doc = "Bit 12 - Wake-up Input Enable 0 to 12"]
+    #[doc = "Bit 12 - Wake-up Input Enable 12"]
     #[inline(always)]
     pub fn wkupen12(&mut self) -> WKUPEN12_W {
         WKUPEN12_W { w: self }
     }
-    #[doc = "Bit 13 - Wake-up Input Enable 0 to 13"]
+    #[doc = "Bit 13 - Wake-up Input Enable 13"]
     #[inline(always)]
     pub fn wkupen13(&mut self) -> WKUPEN13_W {
         WKUPEN13_W { w: self }
     }
-    #[doc = "Bit 14 - Wake-up Input Enable 0 to 14"]
+    #[doc = "Bit 14 - Wake-up Input Enable 14"]
     #[inline(always)]
     pub fn wkupen14(&mut self) -> WKUPEN14_W {
         WKUPEN14_W { w: self }
     }
-    #[doc = "Bit 15 - Wake-up Input Enable 0 to 15"]
+    #[doc = "Bit 15 - Wake-up Input Enable 15"]
     #[inline(always)]
     pub fn wkupen15(&mut self) -> WKUPEN15_W {
         WKUPEN15_W { w: self }
     }
-    #[doc = "Bit 16 - Wake-up Input Type 0 to 0"]
+    #[doc = "Bit 16 - Wake-up Input Type 0"]
     #[inline(always)]
     pub fn wkupt0(&mut self) -> WKUPT0_W {
         WKUPT0_W { w: self }
     }
-    #[doc = "Bit 17 - Wake-up Input Type 0 to 1"]
+    #[doc = "Bit 17 - Wake-up Input Type 1"]
     #[inline(always)]
     pub fn wkupt1(&mut self) -> WKUPT1_W {
         WKUPT1_W { w: self }
     }
-    #[doc = "Bit 18 - Wake-up Input Type 0 to 2"]
+    #[doc = "Bit 18 - Wake-up Input Type 2"]
     #[inline(always)]
     pub fn wkupt2(&mut self) -> WKUPT2_W {
         WKUPT2_W { w: self }
     }
-    #[doc = "Bit 19 - Wake-up Input Type 0 to 3"]
+    #[doc = "Bit 19 - Wake-up Input Type 3"]
     #[inline(always)]
     pub fn wkupt3(&mut self) -> WKUPT3_W {
         WKUPT3_W { w: self }
     }
-    #[doc = "Bit 20 - Wake-up Input Type 0 to 4"]
+    #[doc = "Bit 20 - Wake-up Input Type 4"]
     #[inline(always)]
     pub fn wkupt4(&mut self) -> WKUPT4_W {
         WKUPT4_W { w: self }
     }
-    #[doc = "Bit 21 - Wake-up Input Type 0 to 5"]
+    #[doc = "Bit 21 - Wake-up Input Type 5"]
     #[inline(always)]
     pub fn wkupt5(&mut self) -> WKUPT5_W {
         WKUPT5_W { w: self }
     }
-    #[doc = "Bit 22 - Wake-up Input Type 0 to 6"]
+    #[doc = "Bit 22 - Wake-up Input Type 6"]
     #[inline(always)]
     pub fn wkupt6(&mut self) -> WKUPT6_W {
         WKUPT6_W { w: self }
     }
-    #[doc = "Bit 23 - Wake-up Input Type 0 to 7"]
+    #[doc = "Bit 23 - Wake-up Input Type 7"]
     #[inline(always)]
     pub fn wkupt7(&mut self) -> WKUPT7_W {
         WKUPT7_W { w: self }
     }
-    #[doc = "Bit 24 - Wake-up Input Type 0 to 8"]
+    #[doc = "Bit 24 - Wake-up Input Type 8"]
     #[inline(always)]
     pub fn wkupt8(&mut self) -> WKUPT8_W {
         WKUPT8_W { w: self }
     }
-    #[doc = "Bit 25 - Wake-up Input Type 0 to 9"]
+    #[doc = "Bit 25 - Wake-up Input Type 9"]
     #[inline(always)]
     pub fn wkupt9(&mut self) -> WKUPT9_W {
         WKUPT9_W { w: self }
     }
-    #[doc = "Bit 26 - Wake-up Input Type 0 to 10"]
+    #[doc = "Bit 26 - Wake-up Input Type 10"]
     #[inline(always)]
     pub fn wkupt10(&mut self) -> WKUPT10_W {
         WKUPT10_W { w: self }
     }
-    #[doc = "Bit 27 - Wake-up Input Type 0 to 11"]
+    #[doc = "Bit 27 - Wake-up Input Type 11"]
     #[inline(always)]
     pub fn wkupt11(&mut self) -> WKUPT11_W {
         WKUPT11_W { w: self }
     }
-    #[doc = "Bit 28 - Wake-up Input Type 0 to 12"]
+    #[doc = "Bit 28 - Wake-up Input Type 12"]
     #[inline(always)]
     pub fn wkupt12(&mut self) -> WKUPT12_W {
         WKUPT12_W { w: self }
     }
-    #[doc = "Bit 29 - Wake-up Input Type 0 to 13"]
+    #[doc = "Bit 29 - Wake-up Input Type 13"]
     #[inline(always)]
     pub fn wkupt13(&mut self) -> WKUPT13_W {
         WKUPT13_W { w: self }
     }
-    #[doc = "Bit 30 - Wake-up Input Type 0 to 14"]
+    #[doc = "Bit 30 - Wake-up Input Type 14"]
     #[inline(always)]
     pub fn wkupt14(&mut self) -> WKUPT14_W {
         WKUPT14_W { w: self }
     }
-    #[doc = "Bit 31 - Wake-up Input Type 0 to 15"]
+    #[doc = "Bit 31 - Wake-up Input Type 15"]
     #[inline(always)]
     pub fn wkupt15(&mut self) -> WKUPT15_W {
         WKUPT15_W { w: self }
