@@ -35,13 +35,13 @@ EOF
     # Create a Cargo.toml from a template.
     cat > "${TOP}/pac/${chip}/Cargo.toml" <<-EOF
 [package]
-authors = ["John Terrell <john.terrell@outlook.com>"]
+authors = ["John Terrell <john@coolpeoplenetworks.com>", "Jacob Alexander <haata@kiibohd.com>"]
 categories = ["embedded", "hardware-support", "no-std"]
 description = "Peripheral access crate for the ${CHIP} microcontroller"
 keywords = ["arm", "cortex-m", "${chip}", "svd2rust"]
 license = "MIT OR Apache-2.0"
 name = "${chip}-pac"
-repository = "https://github.com/atsam4-rs/atsam-pac"
+repository = "https://github.com/atsam-rs/atsam-pac"
 version = "0.1.0"
 
 [dependencies]

@@ -1,11 +1,11 @@
 [package]
-authors = ["John Terrell <john.terrell@outlook.com>"]
+authors = ["John Terrell <john@coolpeoplenetworks.com>", "Jacob Alexander <haata@kiibohd.com>"]
 categories = ["embedded", "hardware-support", "no-std"]
 description = "Peripheral access crate for the ATSAM4S16C microcontroller"
 keywords = ["arm", "cortex-m", "atsam4s16c", "svd2rust"]
 license = "MIT OR Apache-2.0"
 name = "atsam4s16c-pac"
-repository = "https://github.com/atsam4-rs/atsam-pac"
+repository = "https://github.com/atsam-rs/atsam-pac"
 version = "0.1.0"
 
 [dependencies]
