@@ -50,9 +50,6 @@ function generate {
         svds=("${modified_svds}")
     fi
 
-    echo "${svds[@]}"
-    exit 1
-
     for svd in "${svds[@]}"; do
         CHIP=$(basename "${svd}" .svd)
         chip=$(echo "${CHIP}" | tr '[:upper:]' '[:lower:]')
