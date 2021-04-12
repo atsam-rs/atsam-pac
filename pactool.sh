@@ -2,7 +2,7 @@
 set -e
 
 function log {
-    printf "$@"
+    printf "%s" "$@"
 }
 
 function usage {
@@ -10,8 +10,22 @@ function usage {
 }
 
 function generate {
+    # Parse any args
+    while [[ $# -gt 0 ]]
+    do
+        key="$1"
+        case $key in
+            *)
+                INPUT_SVD="$1"
+                shift
+                break   # The rest of the args will go to the handler
+                ;;
+        esac
+    done
+
     if [ "$(which svd2rust)" == "" ]; then 
-        cargo install svd2rust --version 0.10.0
+        cargo install --force --git https://github.com/gkelly/svd2rust --branch \
+            bleeding-edge --rev 2bbb60590096bcb67c91f38bedd1f63f98132abe svd2rust
     fi
 
     if [ "$(which form)" == "" ]; then 
@@ -23,11 +37,22 @@ function generate {
     # 
     # Run through a first pass and create skeleton PAC crates for any that are missing.
     #
-    if [ "${FORCE}" == "true" ]; then
-        svds=($(find svd -name '*.svd'))
+    svds=()
+    if [ "${INPUT_SVD}" != "" ]; then
+        # Process the specific svds given
+        while IFS='' read -r line; do svds+=("$line"); done < <(find "${TOP}/svd" -name "${INPUT_SVD}")
+    elif [ "${FORCE}" == "true" ]; then
+        # If forced, process all SVD files
+        while IFS='' read -r line; do svds+=("$line"); done < <(find "${TOP}/svd" -name '*.svd')
     else
-        svds=($(git status --porcelain | grep -e ".svd$" | perl -n -e'/\s*(\S*)\s*(\S+)/ && print "$2 "'))
+        # We only process SVDs that git says are new or changed.
+        modified_svds=$(git status --porcelain | grep -e ".svd$" | perl -n -e'/\s*(\S*)\s*(\S+)/ && print $2')
+        svds=("${modified_svds}")
     fi
+
+    echo "${svds[@]}"
+    exit 1
+
     for svd in "${svds[@]}"; do
         CHIP=$(basename "${svd}" .svd)
         chip=$(echo "${CHIP}" | tr '[:upper:]' '[:lower:]')
@@ -83,13 +108,15 @@ EOF
     # Create the crates using svd2rust
     #
     for svd in "${svds[@]}"; do
+        echo "SVD: ${svd}"
+
         CHIP=$(basename "${svd}" .svd)
         chip=$(echo "${CHIP}" | tr '[:upper:]' '[:lower:]')
         xsl=svd/devices/${chip}.xsl
 
         pushd "${TOP}/pac/${chip}"
 
-        xsltproc "${TOP}/${xsl}" "${TOP}/${svd}" | svd2rust
+        xsltproc "${TOP}/${xsl}" "${svd}" | svd2rust
 
         rm -rf src/
         form -i lib.rs -o src
@@ -104,14 +131,14 @@ EOF
 function publish {
     log "Looking for unpublished crates...\n"
     for p in pac/*; do
-        pushd ${p} > /dev/null
+        pushd "${p}" > /dev/null
         crate_name=$(grep name Cargo.toml | head -1 | perl -n -e'/(\S*)\s*=\s*(\S+)\s*/ && print $2')
         crate_version=$(grep version Cargo.toml | head -1 | perl -n -e'/(\S*)\s*=\s*(\S+)\s*/ && print $2')
-        published_version=$(cargo search ${crate_name} | perl -n -e'/(\S*)\s*=\s*(\S+)\s*/ && print $2')
+        published_version=$(cargo search "${crate_name}" | perl -n -e'/(\S*)\s*=\s*(\S+)\s*/ && print $2')
         if [ "${crate_version}" == "${published_version}" ]; then
             log "Crate ${crate_name} already published at version ${crate_version}.\n"
         else
-            echo Publishing ${crate_name} ${crate_version}...
+            echo Publishing "${crate_name}" "${crate_version}"...
             cargo publish
         fi
         popd > /dev/null
@@ -121,25 +148,19 @@ function publish {
 #
 # Parse arguments
 #
-POSITIONAL=()
+COMMAND=""
 while [[ $# -gt 0 ]]
 do
-key="$1"
-
+    key="$1"
     case $key in
-        -v|--verbose)
-            VERBOSE=true
-            shift # past argument
-            shift # past value
-            ;;
         -f|--force)
             FORCE=true
             shift
-            shift
             ;;
         *)
-            POSITIONAL+=("$1") # save it in an array for later
-            shift # past argument
+            COMMAND="$1"
+            shift
+            break   # The rest of the args will go to the handler
             ;;
     esac
 done
@@ -147,27 +168,27 @@ done
 #
 # If no argument specified, print usage info and exit.
 #
-if [ ${#POSITIONAL[@]} != 1 ]; then
+if [ "${COMMAND}" == "" ]; then
     usage
-    exit -1
+    exit 1
 fi
 
 #
 # Handle any commands
 #
-case ${POSITIONAL[0]} in
+case ${COMMAND} in
     help)
         usage
         ;;
     generate)
-        generate
+        generate "$@"
         ;;
     publish)
-        publish
+        publish "$@"
         ;;
     *)
-        echo "ERROR: Unrecognized command: ${POSITIONAL[0]}"
+        echo "ERROR: Unrecognized command: ${COMMAND}"
         usage
-        exit -1
+        exit 1
         ;;    
 esac
