@@ -11,12 +11,11 @@ function usage {
 
 function generate {
     if [ "$(which svd2rust)" == "" ]; then 
-        cargo install --force --git https://github.com/gkelly/svd2rust --branch \
-            bleeding-edge --rev 2bbb60590096bcb67c91f38bedd1f63f98132abe svd2rust
+        cargo install svd2rust --version 0.10.0
     fi
 
     if [ "$(which form)" == "" ]; then 
-        cargo install --force --version 0.7.0 form
+        cargo install form --version 0.7.0
     fi
 
     TOP="${PWD}"
@@ -24,7 +23,11 @@ function generate {
     # 
     # Run through a first pass and create skeleton PAC crates for any that are missing.
     #
-    svds=($(git status --porcelain | grep -e ".svd$" | perl -n -e'/(\S*)\s*(\S+)/ && print "$2 "'))
+    if [ "${FORCE}" == "true" ]; then
+        svds=($(find svd -name '*.svd'))
+    else
+        svds=($(git status --porcelain | grep -e ".svd$" | perl -n -e'/\s*(\S*)\s*(\S+)/ && print "$2 "'))
+    fi
     for svd in "${svds[@]}"; do
         CHIP=$(basename "${svd}" .svd)
         chip=$(echo "${CHIP}" | tr '[:upper:]' '[:lower:]')
@@ -128,6 +131,11 @@ key="$1"
             VERBOSE=true
             shift # past argument
             shift # past value
+            ;;
+        -f|--force)
+            FORCE=true
+            shift
+            shift
             ;;
         *)
             POSITIONAL+=("$1") # save it in an array for later
