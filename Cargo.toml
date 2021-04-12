@@ -9,6 +9,7 @@ members = [
     "pac/atsam4n8a",
     "pac/atsam4n8b",
     "pac/atsam4n8c",
+    "pac/atsam4lc2a",
     "pac/atsam4s2a",
     "pac/atsam4s2b",
     "pac/atsam4s2c",
