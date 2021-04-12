@@ -1,10 +1,6 @@
 #!/usr/bin/env bash
 set -e
 
-function log {
-    printf "%s" "$@"
-}
-
 function usage {
     printf 'Usage: pactool.sh <command>\nWhere <command> is\n\tgenerate - (re)generate all PACs from their respective SVD source files.\n\tpublish  - (re)publish all PACs to crates.io.\n'
 }
@@ -124,14 +120,14 @@ EOF
 }
 
 function publish {
-    log "Looking for unpublished crates...\n"
+    echo "Looking for unpublished crates..."
     for p in pac/*; do
         pushd "${p}" > /dev/null
         crate_name=$(grep name Cargo.toml | head -1 | perl -n -e'/(\S*)\s*=\s*(\S+)\s*/ && print $2')
         crate_version=$(grep version Cargo.toml | head -1 | perl -n -e'/(\S*)\s*=\s*(\S+)\s*/ && print $2')
         published_version=$(cargo search "${crate_name}" | perl -n -e'/(\S*)\s*=\s*(\S+)\s*/ && print $2')
         if [ "${crate_version}" == "${published_version}" ]; then
-            log "Crate ${crate_name} already published at version ${crate_version}.\n"
+            echo "Crate ${crate_name} already published at version ${crate_version}."
         else
             echo Publishing "${crate_name}" "${crate_version}"...
             cargo publish
