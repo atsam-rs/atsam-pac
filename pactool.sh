@@ -46,7 +46,7 @@ function generate {
         while IFS='' read -r line; do svds+=("$line"); done < <(find "${TOP}/svd" -name '*.svd')
     else
         # We only process SVDs that git says are new or changed.
-        modified_svds=$(git status --porcelain | grep -e ".svd$" | perl -n -e'/\s*(\S*)\s*(\S+)/ && print $2')
+        modified_svds=$(git status --porcelain | grep -e ".svd$" | perl -n -e'/\s*(\S*)\s*(\S+)/ && print $2' | awk '{print "'"${TOP}"'/"$1}')
         svds=("${modified_svds}")
     fi
 
@@ -105,8 +105,6 @@ EOF
     # Create the crates using svd2rust
     #
     for svd in "${svds[@]}"; do
-        echo "SVD: ${svd}"
-
         CHIP=$(basename "${svd}" .svd)
         chip=$(echo "${CHIP}" | tr '[:upper:]' '[:lower:]')
         xsl=svd/devices/${chip}.xsl
