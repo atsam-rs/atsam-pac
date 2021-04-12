@@ -1,3 +1,8 @@
+PROVIDE(SUPC = DefaultHandler);
+PROVIDE(RSTC = DefaultHandler);
+PROVIDE(RTC = DefaultHandler);
+PROVIDE(RTT = DefaultHandler);
+PROVIDE(WDT = DefaultHandler);
 PROVIDE(PMC = DefaultHandler);
 PROVIDE(EFC = DefaultHandler);
 PROVIDE(UART0 = DefaultHandler);

@@ -29,6 +29,11 @@ use core::ops::Deref;
 pub const NVIC_PRIO_BITS: u8 = 4;
 #[cfg(feature = "rt")]
 extern "C" {
+    fn SUPC();
+    fn RSTC();
+    fn RTC();
+    fn RTT();
+    fn WDT();
     fn PMC();
     fn EFC();
     fn UART0();
@@ -75,11 +80,11 @@ pub union Vector {
 #[link_section = ".vector_table.interrupts"]
 #[no_mangle]
 pub static __INTERRUPTS: [Vector; 46] = [
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
+    Vector { _handler: SUPC },
+    Vector { _handler: RSTC },
+    Vector { _handler: RTC },
+    Vector { _handler: RTT },
+    Vector { _handler: WDT },
     Vector { _handler: PMC },
     Vector { _handler: EFC },
     Vector { _handler: UART0 },
@@ -126,6 +131,16 @@ pub static __INTERRUPTS: [Vector; 46] = [
 #[derive(Copy, Clone, Debug)]
 #[repr(u8)]
 pub enum Interrupt {
+    #[doc = "0 - SUPC"]
+    SUPC = 0,
+    #[doc = "1 - RSTC"]
+    RSTC = 1,
+    #[doc = "2 - RTC"]
+    RTC = 2,
+    #[doc = "3 - RTT"]
+    RTT = 3,
+    #[doc = "4 - WDT"]
+    WDT = 4,
     #[doc = "5 - PMC"]
     PMC = 5,
     #[doc = "6 - EFC"]
