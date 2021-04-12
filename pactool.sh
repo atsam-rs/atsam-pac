@@ -45,12 +45,12 @@ function generate {
         # If forced, process all SVD files
         while IFS='' read -r line; do svds+=("$line"); done < <(find "${TOP}/svd" -name '*.svd')
     else
-        # We only process SVDs that git says are new or changed.
-        modified_svds=$(git status --porcelain | grep -e ".svd$" | perl -n -e'/\s*(\S*)\s*(\S+)/ && print $2' | awk '{print "'"${TOP}"'/"$1}')
-        svds=("${modified_svds}")
+        # Only process SVDs that git says are new or changed.
+        while IFS=$'\n' read -r line; do svds+=("$line"); done < <(git status --porcelain | grep -e ".svd$" | perl -n -e'/\s*(\S*)\s*(\S+)/ && printf "'"${TOP}"'/%s\n",$2')
     fi
 
     for svd in "${svds[@]}"; do
+        echo "Processing: ${svd}..."
         CHIP=$(basename "${svd}" .svd)
         chip=$(echo "${CHIP}" | tr '[:upper:]' '[:lower:]')
         xsl=svd/devices/${chip}.xsl
