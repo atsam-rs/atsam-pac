@@ -25,6 +25,7 @@ members = [
     "pac/atsam4sd16c",
     "pac/atsam4sd32b",
     "pac/atsam4sd32c",
+    "pac/atsam4sp32a",
     "pac/atsame51g18a",
     "pac/atsame51g19a",
     "pac/atsame51j18a",
