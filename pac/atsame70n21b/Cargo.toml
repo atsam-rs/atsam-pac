@@ -1,0 +1,24 @@
+[package]
+authors = ["John Terrell <john@coolpeoplenetworks.com>", "Jacob Alexander <haata@kiibohd.com>"]
+categories = ["embedded", "hardware-support", "no-std"]
+description = "Peripheral access crate for the ATSAME70N21B microcontroller"
+keywords = ["arm", "cortex-m", "atsame70n21b", "svd2rust"]
+license = "MIT OR Apache-2.0"
+name = "atsame70n21b-pac"
+repository = "https://github.com/atsam-rs/atsam-pac"
+version = "0.1.0"
+
+[dependencies]
+bare-metal = "0.2.4"
+cortex-m = "0.6.3"
+vcell = "0.1.2"
+
+[dependencies.cortex-m-rt]
+optional = true
+version = "0.6.13"
+
+[features]
+rt = ["cortex-m-rt/device"]
+
+[package.metadata.docs.rs]
+features = ["rt"]
