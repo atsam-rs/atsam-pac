@@ -1,4 +1,4 @@
-# Microchip/Atmel ATSAM4E, ATSAM4N, ATSAM4S, ATSAME5x, and ATSAME70 PACs for Rust
+# Microchip/Atmel ATSAM4E, ATSAM4L, ATSAM4N, ATSAM4S, ATSAME5x, and ATSAME70 PACs for Rust
 
 This repository holds the Peripheral Access Crates (PAC) for various Microchip/Atmel `ATSAM` microcontrollers.
 
@@ -12,6 +12,24 @@ This repository holds the Peripheral Access Crates (PAC) for various Microchip/A
 |          | ATSAM4E8E    |                                                                                    |
 |          | ATSAM4E16C   |                                                                                    |
 |          | ATSAM4E16E   |                                                                                    |
+| ATSAM4N  | ATSAM4LC2A   | [1.6.1 (2018-05-07)](https://keilpack.azureedge.net/pack/Keil.SAM4_DFP.1.6.1.pack) |
+|          | ATSAM4LC2B   |                                                                                    |
+|          | ATSAM4LC2C   |                                                                                    |
+|          | ATSAM4LC4A   |                                                                                    |
+|          | ATSAM4LC4B   |                                                                                    |
+|          | ATSAM4LC4C   |                                                                                    |
+|          | ATSAM4LC8A   |                                                                                    |
+|          | ATSAM4LC8B   |                                                                                    |
+|          | ATSAM4LC8C   |                                                                                    |
+|          | ATSAM4LS2A   |                                                                                    |
+|          | ATSAM4LS2B   |                                                                                    |
+|          | ATSAM4LS2C   |                                                                                    |
+|          | ATSAM4LS4A   |                                                                                    |
+|          | ATSAM4LS4B   |                                                                                    |
+|          | ATSAM4LS4C   |                                                                                    |
+|          | ATSAM4LS8A   |                                                                                    |
+|          | ATSAM4LS8B   |                                                                                    |
+|          | ATSAM4LS8C   |                                                                                    |
 | ATSAM4N  | ATSAM4N8A    | [1.6.1 (2018-05-07)](https://keilpack.azureedge.net/pack/Keil.SAM4_DFP.1.6.1.pack) |
 |          | ATSAM4N8B    |                                                                                    |
 |          | ATSAM4N8C    |                                                                                    |
