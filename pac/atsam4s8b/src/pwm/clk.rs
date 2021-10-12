@@ -1,18 +1,54 @@
-#[doc = "Reader of register CLK"]
-pub type R = crate::R<u32, super::CLK>;
-#[doc = "Writer for register CLK"]
-pub type W = crate::W<u32, super::CLK>;
-#[doc = "Register CLK `reset()`'s with value 0"]
-impl crate::ResetValue for super::CLK {
-    type Type = u32;
+#[doc = "Register `CLK` reader"]
+pub struct R(crate::R<CLK_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<CLK_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `DIVA`"]
-pub type DIVA_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `DIVA`"]
+impl From<crate::R<CLK_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<CLK_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `CLK` writer"]
+pub struct W(crate::W<CLK_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<CLK_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<CLK_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<CLK_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `DIVA` reader - CLKA, CLKB Divide Factor"]
+pub struct DIVA_R(crate::FieldReader<u8, u8>);
+impl DIVA_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        DIVA_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for DIVA_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `DIVA` writer - CLKA, CLKB Divide Factor"]
 pub struct DIVA_W<'a> {
     w: &'a mut W,
 }
@@ -20,13 +56,25 @@ impl<'a> DIVA_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xff) | ((value as u32) & 0xff);
+        self.w.bits = (self.w.bits & !0xff) | (value as u32 & 0xff);
         self.w
     }
 }
-#[doc = "Reader of field `PREA`"]
-pub type PREA_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `PREA`"]
+#[doc = "Field `PREA` reader - CLKA, CLKB Source Clock Selection"]
+pub struct PREA_R(crate::FieldReader<u8, u8>);
+impl PREA_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        PREA_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for PREA_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PREA` writer - CLKA, CLKB Source Clock Selection"]
 pub struct PREA_W<'a> {
     w: &'a mut W,
 }
@@ -34,13 +82,25 @@ impl<'a> PREA_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 8)) | (((value as u32) & 0x0f) << 8);
+        self.w.bits = (self.w.bits & !(0x0f << 8)) | ((value as u32 & 0x0f) << 8);
         self.w
     }
 }
-#[doc = "Reader of field `DIVB`"]
-pub type DIVB_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `DIVB`"]
+#[doc = "Field `DIVB` reader - CLKA, CLKB Divide Factor"]
+pub struct DIVB_R(crate::FieldReader<u8, u8>);
+impl DIVB_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        DIVB_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for DIVB_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `DIVB` writer - CLKA, CLKB Divide Factor"]
 pub struct DIVB_W<'a> {
     w: &'a mut W,
 }
@@ -48,13 +108,25 @@ impl<'a> DIVB_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0xff << 16)) | (((value as u32) & 0xff) << 16);
+        self.w.bits = (self.w.bits & !(0xff << 16)) | ((value as u32 & 0xff) << 16);
         self.w
     }
 }
-#[doc = "Reader of field `PREB`"]
-pub type PREB_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `PREB`"]
+#[doc = "Field `PREB` reader - CLKA, CLKB Source Clock Selection"]
+pub struct PREB_R(crate::FieldReader<u8, u8>);
+impl PREB_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        PREB_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for PREB_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PREB` writer - CLKA, CLKB Source Clock Selection"]
 pub struct PREB_W<'a> {
     w: &'a mut W,
 }
@@ -62,7 +134,7 @@ impl<'a> PREB_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 24)) | (((value as u32) & 0x0f) << 24);
+        self.w.bits = (self.w.bits & !(0x0f << 24)) | ((value as u32 & 0x0f) << 24);
         self.w
     }
 }
@@ -108,5 +180,31 @@ impl W {
     #[inline(always)]
     pub fn preb(&mut self) -> PREB_W {
         PREB_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "PWM Clock Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [clk](index.html) module"]
+pub struct CLK_SPEC;
+impl crate::RegisterSpec for CLK_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [clk::R](R) reader structure"]
+impl crate::Readable for CLK_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [clk::W](W) writer structure"]
+impl crate::Writable for CLK_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets CLK to value 0"]
+impl crate::Resettable for CLK_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

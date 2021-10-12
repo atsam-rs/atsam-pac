@@ -1,37 +1,242 @@
-#[doc = "Reader of register UECON3"]
-pub type R = crate::R<u32, super::UECON3>;
-#[doc = "Reader of field `TXINE`"]
-pub type TXINE_R = crate::R<bool, bool>;
-#[doc = "Reader of field `RXOUTE`"]
-pub type RXOUTE_R = crate::R<bool, bool>;
-#[doc = "Reader of field `RXSTPE`"]
-pub type RXSTPE_R = crate::R<bool, bool>;
-#[doc = "Reader of field `NAKOUTE`"]
-pub type NAKOUTE_R = crate::R<bool, bool>;
-#[doc = "Reader of field `NAKINE`"]
-pub type NAKINE_R = crate::R<bool, bool>;
-#[doc = "Reader of field `STALLEDE`"]
-pub type STALLEDE_R = crate::R<bool, bool>;
-#[doc = "Reader of field `NREPLY`"]
-pub type NREPLY_R = crate::R<bool, bool>;
-#[doc = "Reader of field `RAMACERE`"]
-pub type RAMACERE_R = crate::R<bool, bool>;
-#[doc = "Reader of field `NBUSYBKE`"]
-pub type NBUSYBKE_R = crate::R<bool, bool>;
-#[doc = "Reader of field `KILLBK`"]
-pub type KILLBK_R = crate::R<bool, bool>;
-#[doc = "Reader of field `FIFOCON`"]
-pub type FIFOCON_R = crate::R<bool, bool>;
-#[doc = "Reader of field `NYETDIS`"]
-pub type NYETDIS_R = crate::R<bool, bool>;
-#[doc = "Reader of field `RSTDT`"]
-pub type RSTDT_R = crate::R<bool, bool>;
-#[doc = "Reader of field `STALLRQ`"]
-pub type STALLRQ_R = crate::R<bool, bool>;
-#[doc = "Reader of field `BUSY0`"]
-pub type BUSY0_R = crate::R<bool, bool>;
-#[doc = "Reader of field `BUSY1`"]
-pub type BUSY1_R = crate::R<bool, bool>;
+#[doc = "Register `UECON3` reader"]
+pub struct R(crate::R<UECON3_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<UECON3_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<UECON3_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<UECON3_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Field `TXINE` reader - TXIN Interrupt Enable"]
+pub struct TXINE_R(crate::FieldReader<bool, bool>);
+impl TXINE_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        TXINE_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for TXINE_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `RXOUTE` reader - RXOUT Interrupt Enable"]
+pub struct RXOUTE_R(crate::FieldReader<bool, bool>);
+impl RXOUTE_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        RXOUTE_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for RXOUTE_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `RXSTPE` reader - RXSTP Interrupt Enable"]
+pub struct RXSTPE_R(crate::FieldReader<bool, bool>);
+impl RXSTPE_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        RXSTPE_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for RXSTPE_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `NAKOUTE` reader - NAKOUT Interrupt Enable"]
+pub struct NAKOUTE_R(crate::FieldReader<bool, bool>);
+impl NAKOUTE_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        NAKOUTE_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for NAKOUTE_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `NAKINE` reader - NAKIN Interrupt Enable"]
+pub struct NAKINE_R(crate::FieldReader<bool, bool>);
+impl NAKINE_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        NAKINE_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for NAKINE_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `STALLEDE` reader - STALLED Interrupt Enable"]
+pub struct STALLEDE_R(crate::FieldReader<bool, bool>);
+impl STALLEDE_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        STALLEDE_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for STALLEDE_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `NREPLY` reader - No Reply"]
+pub struct NREPLY_R(crate::FieldReader<bool, bool>);
+impl NREPLY_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        NREPLY_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for NREPLY_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `RAMACERE` reader - RAMACER Interrupt Enable"]
+pub struct RAMACERE_R(crate::FieldReader<bool, bool>);
+impl RAMACERE_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        RAMACERE_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for RAMACERE_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `NBUSYBKE` reader - Number of Busy Banks Interrupt Enable"]
+pub struct NBUSYBKE_R(crate::FieldReader<bool, bool>);
+impl NBUSYBKE_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        NBUSYBKE_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for NBUSYBKE_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `KILLBK` reader - Kill IN Bank"]
+pub struct KILLBK_R(crate::FieldReader<bool, bool>);
+impl KILLBK_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        KILLBK_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for KILLBK_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `FIFOCON` reader - FIFO Control"]
+pub struct FIFOCON_R(crate::FieldReader<bool, bool>);
+impl FIFOCON_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        FIFOCON_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for FIFOCON_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `NYETDIS` reader - NYET Token Enable"]
+pub struct NYETDIS_R(crate::FieldReader<bool, bool>);
+impl NYETDIS_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        NYETDIS_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for NYETDIS_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `RSTDT` reader - Reset Data Toggle"]
+pub struct RSTDT_R(crate::FieldReader<bool, bool>);
+impl RSTDT_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        RSTDT_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for RSTDT_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `STALLRQ` reader - STALL Request"]
+pub struct STALLRQ_R(crate::FieldReader<bool, bool>);
+impl STALLRQ_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        STALLRQ_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for STALLRQ_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `BUSY0` reader - Busy Bank1 Enable"]
+pub struct BUSY0_R(crate::FieldReader<bool, bool>);
+impl BUSY0_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        BUSY0_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for BUSY0_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `BUSY1` reader - Busy Bank0 Enable"]
+pub struct BUSY1_R(crate::FieldReader<bool, bool>);
+impl BUSY1_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        BUSY1_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for BUSY1_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
 impl R {
     #[doc = "Bit 0 - TXIN Interrupt Enable"]
     #[inline(always)]
@@ -112,5 +317,21 @@ impl R {
     #[inline(always)]
     pub fn busy1(&self) -> BUSY1_R {
         BUSY1_R::new(((self.bits >> 25) & 0x01) != 0)
+    }
+}
+#[doc = "Endpoint Control Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [uecon3](index.html) module"]
+pub struct UECON3_SPEC;
+impl crate::RegisterSpec for UECON3_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [uecon3::R](R) reader structure"]
+impl crate::Readable for UECON3_SPEC {
+    type Reader = R;
+}
+#[doc = "`reset()` method sets UECON3 to value 0"]
+impl crate::Resettable for UECON3_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

@@ -1,18 +1,54 @@
-#[doc = "Reader of register FMR"]
-pub type R = crate::R<u32, super::FMR>;
-#[doc = "Writer for register FMR"]
-pub type W = crate::W<u32, super::FMR>;
-#[doc = "Register FMR `reset()`'s with value 0"]
-impl crate::ResetValue for super::FMR {
-    type Type = u32;
+#[doc = "Register `FMR` reader"]
+pub struct R(crate::R<FMR_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<FMR_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `FPOL`"]
-pub type FPOL_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `FPOL`"]
+impl From<crate::R<FMR_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<FMR_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `FMR` writer"]
+pub struct W(crate::W<FMR_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<FMR_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<FMR_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<FMR_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `FPOL` reader - Fault Polarity"]
+pub struct FPOL_R(crate::FieldReader<u8, u8>);
+impl FPOL_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        FPOL_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for FPOL_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `FPOL` writer - Fault Polarity"]
 pub struct FPOL_W<'a> {
     w: &'a mut W,
 }
@@ -20,13 +56,25 @@ impl<'a> FPOL_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xff) | ((value as u32) & 0xff);
+        self.w.bits = (self.w.bits & !0xff) | (value as u32 & 0xff);
         self.w
     }
 }
-#[doc = "Reader of field `FMOD`"]
-pub type FMOD_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `FMOD`"]
+#[doc = "Field `FMOD` reader - Fault Activation Mode"]
+pub struct FMOD_R(crate::FieldReader<u8, u8>);
+impl FMOD_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        FMOD_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for FMOD_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `FMOD` writer - Fault Activation Mode"]
 pub struct FMOD_W<'a> {
     w: &'a mut W,
 }
@@ -34,13 +82,25 @@ impl<'a> FMOD_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0xff << 8)) | (((value as u32) & 0xff) << 8);
+        self.w.bits = (self.w.bits & !(0xff << 8)) | ((value as u32 & 0xff) << 8);
         self.w
     }
 }
-#[doc = "Reader of field `FFIL`"]
-pub type FFIL_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `FFIL`"]
+#[doc = "Field `FFIL` reader - Fault Filtering"]
+pub struct FFIL_R(crate::FieldReader<u8, u8>);
+impl FFIL_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        FFIL_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for FFIL_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `FFIL` writer - Fault Filtering"]
 pub struct FFIL_W<'a> {
     w: &'a mut W,
 }
@@ -48,7 +108,7 @@ impl<'a> FFIL_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0xff << 16)) | (((value as u32) & 0xff) << 16);
+        self.w.bits = (self.w.bits & !(0xff << 16)) | ((value as u32 & 0xff) << 16);
         self.w
     }
 }
@@ -84,5 +144,31 @@ impl W {
     #[inline(always)]
     pub fn ffil(&mut self) -> FFIL_W {
         FFIL_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "PWM Fault Mode Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [fmr](index.html) module"]
+pub struct FMR_SPEC;
+impl crate::RegisterSpec for FMR_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [fmr::R](R) reader structure"]
+impl crate::Readable for FMR_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [fmr::W](W) writer structure"]
+impl crate::Writable for FMR_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets FMR to value 0"]
+impl crate::Resettable for FMR_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

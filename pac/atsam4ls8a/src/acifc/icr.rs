@@ -1,14 +1,25 @@
-#[doc = "Writer for register ICR"]
-pub type W = crate::W<u32, super::ICR>;
-#[doc = "Register ICR `reset()`'s with value 0"]
-impl crate::ResetValue for super::ICR {
-    type Type = u32;
+#[doc = "Register `ICR` writer"]
+pub struct W(crate::W<ICR_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<ICR_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Write proxy for field `ACINT0`"]
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<ICR_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<ICR_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `ACINT0` writer - AC0 Interrupt Status Clear"]
 pub struct ACINT0_W<'a> {
     w: &'a mut W,
 }
@@ -26,11 +37,11 @@ impl<'a> ACINT0_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
+        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
         self.w
     }
 }
-#[doc = "Write proxy for field `SUTINT0`"]
+#[doc = "Field `SUTINT0` writer - AC0 Startup Time Interrupt Status Clear"]
 pub struct SUTINT0_W<'a> {
     w: &'a mut W,
 }
@@ -48,11 +59,11 @@ impl<'a> SUTINT0_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
         self.w
     }
 }
-#[doc = "Write proxy for field `ACINT1`"]
+#[doc = "Field `ACINT1` writer - AC1 Interrupt Status Clear"]
 pub struct ACINT1_W<'a> {
     w: &'a mut W,
 }
@@ -70,11 +81,11 @@ impl<'a> ACINT1_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
         self.w
     }
 }
-#[doc = "Write proxy for field `SUTINT1`"]
+#[doc = "Field `SUTINT1` writer - AC1 Startup Time Interrupt Status Clear"]
 pub struct SUTINT1_W<'a> {
     w: &'a mut W,
 }
@@ -92,11 +103,11 @@ impl<'a> SUTINT1_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
+        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
         self.w
     }
 }
-#[doc = "Write proxy for field `ACINT2`"]
+#[doc = "Field `ACINT2` writer - AC2 Interrupt Status Clear"]
 pub struct ACINT2_W<'a> {
     w: &'a mut W,
 }
@@ -114,11 +125,11 @@ impl<'a> ACINT2_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u32) & 0x01) << 4);
+        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
         self.w
     }
 }
-#[doc = "Write proxy for field `SUTINT2`"]
+#[doc = "Field `SUTINT2` writer - AC2 Startup Time Interrupt Status Clear"]
 pub struct SUTINT2_W<'a> {
     w: &'a mut W,
 }
@@ -136,11 +147,11 @@ impl<'a> SUTINT2_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u32) & 0x01) << 5);
+        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
         self.w
     }
 }
-#[doc = "Write proxy for field `ACINT3`"]
+#[doc = "Field `ACINT3` writer - AC3 Interrupt Status Clear"]
 pub struct ACINT3_W<'a> {
     w: &'a mut W,
 }
@@ -158,11 +169,11 @@ impl<'a> ACINT3_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | (((value as u32) & 0x01) << 6);
+        self.w.bits = (self.w.bits & !(0x01 << 6)) | ((value as u32 & 0x01) << 6);
         self.w
     }
 }
-#[doc = "Write proxy for field `SUTINT3`"]
+#[doc = "Field `SUTINT3` writer - AC3 Startup Time Interrupt Status Clear"]
 pub struct SUTINT3_W<'a> {
     w: &'a mut W,
 }
@@ -180,11 +191,11 @@ impl<'a> SUTINT3_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | (((value as u32) & 0x01) << 7);
+        self.w.bits = (self.w.bits & !(0x01 << 7)) | ((value as u32 & 0x01) << 7);
         self.w
     }
 }
-#[doc = "Write proxy for field `ACINT4`"]
+#[doc = "Field `ACINT4` writer - AC4 Interrupt Status Clear"]
 pub struct ACINT4_W<'a> {
     w: &'a mut W,
 }
@@ -202,11 +213,11 @@ impl<'a> ACINT4_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | (((value as u32) & 0x01) << 8);
+        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
         self.w
     }
 }
-#[doc = "Write proxy for field `SUTINT4`"]
+#[doc = "Field `SUTINT4` writer - AC4 Startup Time Interrupt Status Clear"]
 pub struct SUTINT4_W<'a> {
     w: &'a mut W,
 }
@@ -224,11 +235,11 @@ impl<'a> SUTINT4_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 9)) | (((value as u32) & 0x01) << 9);
+        self.w.bits = (self.w.bits & !(0x01 << 9)) | ((value as u32 & 0x01) << 9);
         self.w
     }
 }
-#[doc = "Write proxy for field `ACINT5`"]
+#[doc = "Field `ACINT5` writer - AC5 Interrupt Status Clear"]
 pub struct ACINT5_W<'a> {
     w: &'a mut W,
 }
@@ -246,11 +257,11 @@ impl<'a> ACINT5_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 10)) | (((value as u32) & 0x01) << 10);
+        self.w.bits = (self.w.bits & !(0x01 << 10)) | ((value as u32 & 0x01) << 10);
         self.w
     }
 }
-#[doc = "Write proxy for field `SUTINT5`"]
+#[doc = "Field `SUTINT5` writer - AC5 Startup Time Interrupt Status Clear"]
 pub struct SUTINT5_W<'a> {
     w: &'a mut W,
 }
@@ -268,11 +279,11 @@ impl<'a> SUTINT5_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 11)) | (((value as u32) & 0x01) << 11);
+        self.w.bits = (self.w.bits & !(0x01 << 11)) | ((value as u32 & 0x01) << 11);
         self.w
     }
 }
-#[doc = "Write proxy for field `ACINT6`"]
+#[doc = "Field `ACINT6` writer - AC6 Interrupt Status Clear"]
 pub struct ACINT6_W<'a> {
     w: &'a mut W,
 }
@@ -290,11 +301,11 @@ impl<'a> ACINT6_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 12)) | (((value as u32) & 0x01) << 12);
+        self.w.bits = (self.w.bits & !(0x01 << 12)) | ((value as u32 & 0x01) << 12);
         self.w
     }
 }
-#[doc = "Write proxy for field `SUTINT6`"]
+#[doc = "Field `SUTINT6` writer - AC6 Startup Time Interrupt Status Clear"]
 pub struct SUTINT6_W<'a> {
     w: &'a mut W,
 }
@@ -312,11 +323,11 @@ impl<'a> SUTINT6_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 13)) | (((value as u32) & 0x01) << 13);
+        self.w.bits = (self.w.bits & !(0x01 << 13)) | ((value as u32 & 0x01) << 13);
         self.w
     }
 }
-#[doc = "Write proxy for field `ACINT7`"]
+#[doc = "Field `ACINT7` writer - AC7 Interrupt Status Clear"]
 pub struct ACINT7_W<'a> {
     w: &'a mut W,
 }
@@ -334,11 +345,11 @@ impl<'a> ACINT7_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 14)) | (((value as u32) & 0x01) << 14);
+        self.w.bits = (self.w.bits & !(0x01 << 14)) | ((value as u32 & 0x01) << 14);
         self.w
     }
 }
-#[doc = "Write proxy for field `SUTINT7`"]
+#[doc = "Field `SUTINT7` writer - AC7 Startup Time Interrupt Status Clear"]
 pub struct SUTINT7_W<'a> {
     w: &'a mut W,
 }
@@ -356,11 +367,11 @@ impl<'a> SUTINT7_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 15)) | (((value as u32) & 0x01) << 15);
+        self.w.bits = (self.w.bits & !(0x01 << 15)) | ((value as u32 & 0x01) << 15);
         self.w
     }
 }
-#[doc = "Write proxy for field `WFINT0`"]
+#[doc = "Field `WFINT0` writer - Window0 Mode Interrupt Status Clear"]
 pub struct WFINT0_W<'a> {
     w: &'a mut W,
 }
@@ -378,11 +389,11 @@ impl<'a> WFINT0_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 24)) | (((value as u32) & 0x01) << 24);
+        self.w.bits = (self.w.bits & !(0x01 << 24)) | ((value as u32 & 0x01) << 24);
         self.w
     }
 }
-#[doc = "Write proxy for field `WFINT1`"]
+#[doc = "Field `WFINT1` writer - Window1 Mode Interrupt Status Clear"]
 pub struct WFINT1_W<'a> {
     w: &'a mut W,
 }
@@ -400,11 +411,11 @@ impl<'a> WFINT1_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 25)) | (((value as u32) & 0x01) << 25);
+        self.w.bits = (self.w.bits & !(0x01 << 25)) | ((value as u32 & 0x01) << 25);
         self.w
     }
 }
-#[doc = "Write proxy for field `WFINT2`"]
+#[doc = "Field `WFINT2` writer - Window2 Mode Interrupt Status Clear"]
 pub struct WFINT2_W<'a> {
     w: &'a mut W,
 }
@@ -422,11 +433,11 @@ impl<'a> WFINT2_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 26)) | (((value as u32) & 0x01) << 26);
+        self.w.bits = (self.w.bits & !(0x01 << 26)) | ((value as u32 & 0x01) << 26);
         self.w
     }
 }
-#[doc = "Write proxy for field `WFINT3`"]
+#[doc = "Field `WFINT3` writer - Window3 Mode Interrupt Status Clear"]
 pub struct WFINT3_W<'a> {
     w: &'a mut W,
 }
@@ -444,7 +455,7 @@ impl<'a> WFINT3_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 27)) | (((value as u32) & 0x01) << 27);
+        self.w.bits = (self.w.bits & !(0x01 << 27)) | ((value as u32 & 0x01) << 27);
         self.w
     }
 }
@@ -548,5 +559,27 @@ impl W {
     #[inline(always)]
     pub fn wfint3(&mut self) -> WFINT3_W {
         WFINT3_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Interrupt Status Clear Register\n\nThis register you can [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [icr](index.html) module"]
+pub struct ICR_SPEC;
+impl crate::RegisterSpec for ICR_SPEC {
+    type Ux = u32;
+}
+#[doc = "`write(|w| ..)` method takes [icr::W](W) writer structure"]
+impl crate::Writable for ICR_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets ICR to value 0"]
+impl crate::Resettable for ICR_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

@@ -1,5 +1,18 @@
-#[doc = "Reader of register IMR"]
-pub type R = crate::R<u32, super::IMR>;
+#[doc = "Register `IMR` reader"]
+pub struct R(crate::R<IMR_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<IMR_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<IMR_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<IMR_SPEC>) -> Self {
+        R(reader)
+    }
+}
 #[doc = "Transmit Ready Interrupt Mask\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TXRDY_A {
@@ -14,9 +27,12 @@ impl From<TXRDY_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `TXRDY`"]
-pub type TXRDY_R = crate::R<bool, TXRDY_A>;
+#[doc = "Field `TXRDY` reader - Transmit Ready Interrupt Mask"]
+pub struct TXRDY_R(crate::FieldReader<bool, TXRDY_A>);
 impl TXRDY_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        TXRDY_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> TXRDY_A {
@@ -28,12 +44,19 @@ impl TXRDY_R {
     #[doc = "Checks if the value of the field is `_0`"]
     #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == TXRDY_A::_0
+        **self == TXRDY_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
     #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == TXRDY_A::_1
+        **self == TXRDY_A::_1
+    }
+}
+impl core::ops::Deref for TXRDY_R {
+    type Target = crate::FieldReader<bool, TXRDY_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "Transmit Underrun Interrupt Mask\n\nValue on reset: 0"]
@@ -50,9 +73,12 @@ impl From<TXUR_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `TXUR`"]
-pub type TXUR_R = crate::R<bool, TXUR_A>;
+#[doc = "Field `TXUR` reader - Transmit Underrun Interrupt Mask"]
+pub struct TXUR_R(crate::FieldReader<bool, TXUR_A>);
 impl TXUR_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        TXUR_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> TXUR_A {
@@ -64,12 +90,19 @@ impl TXUR_R {
     #[doc = "Checks if the value of the field is `_0`"]
     #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == TXUR_A::_0
+        **self == TXUR_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
     #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == TXUR_A::_1
+        **self == TXUR_A::_1
+    }
+}
+impl core::ops::Deref for TXUR_R {
+    type Target = crate::FieldReader<bool, TXUR_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 impl R {
@@ -82,5 +115,21 @@ impl R {
     #[inline(always)]
     pub fn txur(&self) -> TXUR_R {
         TXUR_R::new(((self.bits >> 2) & 0x01) != 0)
+    }
+}
+#[doc = "Interrupt Mask Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [imr](index.html) module"]
+pub struct IMR_SPEC;
+impl crate::RegisterSpec for IMR_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [imr::R](R) reader structure"]
+impl crate::Readable for IMR_SPEC {
+    type Reader = R;
+}
+#[doc = "`reset()` method sets IMR to value 0"]
+impl crate::Resettable for IMR_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

@@ -1,13 +1,37 @@
-#[doc = "Reader of register MR"]
-pub type R = crate::R<u32, super::MR>;
-#[doc = "Writer for register MR"]
-pub type W = crate::W<u32, super::MR>;
-#[doc = "Register MR `reset()`'s with value 0"]
-impl crate::ResetValue for super::MR {
-    type Type = u32;
+#[doc = "Register `MR` reader"]
+pub struct R(crate::R<MR_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<MR_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<MR_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<MR_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `MR` writer"]
+pub struct W(crate::W<MR_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<MR_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<MR_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<MR_SPEC>) -> Self {
+        W(writer)
     }
 }
 #[doc = "CLKA, CLKB Divide Factor\n\nValue on reset: 0"]
@@ -25,31 +49,40 @@ impl From<DIVA_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `DIVA`"]
-pub type DIVA_R = crate::R<u8, DIVA_A>;
+#[doc = "Field `DIVA` reader - CLKA, CLKB Divide Factor"]
+pub struct DIVA_R(crate::FieldReader<u8, DIVA_A>);
 impl DIVA_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        DIVA_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u8, DIVA_A> {
-        use crate::Variant::*;
+    pub fn variant(&self) -> Option<DIVA_A> {
         match self.bits {
-            0 => Val(DIVA_A::CLK_OFF),
-            1 => Val(DIVA_A::CLK_DIV1),
-            i => Res(i),
+            0 => Some(DIVA_A::CLK_OFF),
+            1 => Some(DIVA_A::CLK_DIV1),
+            _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `CLK_OFF`"]
     #[inline(always)]
     pub fn is_clk_off(&self) -> bool {
-        *self == DIVA_A::CLK_OFF
+        **self == DIVA_A::CLK_OFF
     }
     #[doc = "Checks if the value of the field is `CLK_DIV1`"]
     #[inline(always)]
     pub fn is_clk_div1(&self) -> bool {
-        *self == DIVA_A::CLK_DIV1
+        **self == DIVA_A::CLK_DIV1
     }
 }
-#[doc = "Write proxy for field `DIVA`"]
+impl core::ops::Deref for DIVA_R {
+    type Target = crate::FieldReader<u8, DIVA_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `DIVA` writer - CLKA, CLKB Divide Factor"]
 pub struct DIVA_W<'a> {
     w: &'a mut W,
 }
@@ -72,7 +105,7 @@ impl<'a> DIVA_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xff) | ((value as u32) & 0xff);
+        self.w.bits = (self.w.bits & !0xff) | (value as u32 & 0xff);
         self.w
     }
 }
@@ -109,85 +142,94 @@ impl From<PREA_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `PREA`"]
-pub type PREA_R = crate::R<u8, PREA_A>;
+#[doc = "Field `PREA` reader - "]
+pub struct PREA_R(crate::FieldReader<u8, PREA_A>);
 impl PREA_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        PREA_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u8, PREA_A> {
-        use crate::Variant::*;
+    pub fn variant(&self) -> Option<PREA_A> {
         match self.bits {
-            0 => Val(PREA_A::MCK),
-            1 => Val(PREA_A::MCKDIV2),
-            2 => Val(PREA_A::MCKDIV4),
-            3 => Val(PREA_A::MCKDIV8),
-            4 => Val(PREA_A::MCKDIV16),
-            5 => Val(PREA_A::MCKDIV32),
-            6 => Val(PREA_A::MCKDIV64),
-            7 => Val(PREA_A::MCKDIV128),
-            8 => Val(PREA_A::MCKDIV256),
-            9 => Val(PREA_A::MCKDIV512),
-            10 => Val(PREA_A::MCKDIV1024),
-            i => Res(i),
+            0 => Some(PREA_A::MCK),
+            1 => Some(PREA_A::MCKDIV2),
+            2 => Some(PREA_A::MCKDIV4),
+            3 => Some(PREA_A::MCKDIV8),
+            4 => Some(PREA_A::MCKDIV16),
+            5 => Some(PREA_A::MCKDIV32),
+            6 => Some(PREA_A::MCKDIV64),
+            7 => Some(PREA_A::MCKDIV128),
+            8 => Some(PREA_A::MCKDIV256),
+            9 => Some(PREA_A::MCKDIV512),
+            10 => Some(PREA_A::MCKDIV1024),
+            _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `MCK`"]
     #[inline(always)]
     pub fn is_mck(&self) -> bool {
-        *self == PREA_A::MCK
+        **self == PREA_A::MCK
     }
     #[doc = "Checks if the value of the field is `MCKDIV2`"]
     #[inline(always)]
     pub fn is_mckdiv2(&self) -> bool {
-        *self == PREA_A::MCKDIV2
+        **self == PREA_A::MCKDIV2
     }
     #[doc = "Checks if the value of the field is `MCKDIV4`"]
     #[inline(always)]
     pub fn is_mckdiv4(&self) -> bool {
-        *self == PREA_A::MCKDIV4
+        **self == PREA_A::MCKDIV4
     }
     #[doc = "Checks if the value of the field is `MCKDIV8`"]
     #[inline(always)]
     pub fn is_mckdiv8(&self) -> bool {
-        *self == PREA_A::MCKDIV8
+        **self == PREA_A::MCKDIV8
     }
     #[doc = "Checks if the value of the field is `MCKDIV16`"]
     #[inline(always)]
     pub fn is_mckdiv16(&self) -> bool {
-        *self == PREA_A::MCKDIV16
+        **self == PREA_A::MCKDIV16
     }
     #[doc = "Checks if the value of the field is `MCKDIV32`"]
     #[inline(always)]
     pub fn is_mckdiv32(&self) -> bool {
-        *self == PREA_A::MCKDIV32
+        **self == PREA_A::MCKDIV32
     }
     #[doc = "Checks if the value of the field is `MCKDIV64`"]
     #[inline(always)]
     pub fn is_mckdiv64(&self) -> bool {
-        *self == PREA_A::MCKDIV64
+        **self == PREA_A::MCKDIV64
     }
     #[doc = "Checks if the value of the field is `MCKDIV128`"]
     #[inline(always)]
     pub fn is_mckdiv128(&self) -> bool {
-        *self == PREA_A::MCKDIV128
+        **self == PREA_A::MCKDIV128
     }
     #[doc = "Checks if the value of the field is `MCKDIV256`"]
     #[inline(always)]
     pub fn is_mckdiv256(&self) -> bool {
-        *self == PREA_A::MCKDIV256
+        **self == PREA_A::MCKDIV256
     }
     #[doc = "Checks if the value of the field is `MCKDIV512`"]
     #[inline(always)]
     pub fn is_mckdiv512(&self) -> bool {
-        *self == PREA_A::MCKDIV512
+        **self == PREA_A::MCKDIV512
     }
     #[doc = "Checks if the value of the field is `MCKDIV1024`"]
     #[inline(always)]
     pub fn is_mckdiv1024(&self) -> bool {
-        *self == PREA_A::MCKDIV1024
+        **self == PREA_A::MCKDIV1024
     }
 }
-#[doc = "Write proxy for field `PREA`"]
+impl core::ops::Deref for PREA_R {
+    type Target = crate::FieldReader<u8, PREA_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PREA` writer - "]
 pub struct PREA_W<'a> {
     w: &'a mut W,
 }
@@ -255,7 +297,7 @@ impl<'a> PREA_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 8)) | (((value as u32) & 0x0f) << 8);
+        self.w.bits = (self.w.bits & !(0x0f << 8)) | ((value as u32 & 0x0f) << 8);
         self.w
     }
 }
@@ -274,31 +316,40 @@ impl From<DIVB_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `DIVB`"]
-pub type DIVB_R = crate::R<u8, DIVB_A>;
+#[doc = "Field `DIVB` reader - CLKA, CLKB Divide Factor"]
+pub struct DIVB_R(crate::FieldReader<u8, DIVB_A>);
 impl DIVB_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        DIVB_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u8, DIVB_A> {
-        use crate::Variant::*;
+    pub fn variant(&self) -> Option<DIVB_A> {
         match self.bits {
-            0 => Val(DIVB_A::CLK_OFF),
-            1 => Val(DIVB_A::CLK_DIV1),
-            i => Res(i),
+            0 => Some(DIVB_A::CLK_OFF),
+            1 => Some(DIVB_A::CLK_DIV1),
+            _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `CLK_OFF`"]
     #[inline(always)]
     pub fn is_clk_off(&self) -> bool {
-        *self == DIVB_A::CLK_OFF
+        **self == DIVB_A::CLK_OFF
     }
     #[doc = "Checks if the value of the field is `CLK_DIV1`"]
     #[inline(always)]
     pub fn is_clk_div1(&self) -> bool {
-        *self == DIVB_A::CLK_DIV1
+        **self == DIVB_A::CLK_DIV1
     }
 }
-#[doc = "Write proxy for field `DIVB`"]
+impl core::ops::Deref for DIVB_R {
+    type Target = crate::FieldReader<u8, DIVB_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `DIVB` writer - CLKA, CLKB Divide Factor"]
 pub struct DIVB_W<'a> {
     w: &'a mut W,
 }
@@ -321,7 +372,7 @@ impl<'a> DIVB_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0xff << 16)) | (((value as u32) & 0xff) << 16);
+        self.w.bits = (self.w.bits & !(0xff << 16)) | ((value as u32 & 0xff) << 16);
         self.w
     }
 }
@@ -358,85 +409,94 @@ impl From<PREB_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `PREB`"]
-pub type PREB_R = crate::R<u8, PREB_A>;
+#[doc = "Field `PREB` reader - "]
+pub struct PREB_R(crate::FieldReader<u8, PREB_A>);
 impl PREB_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        PREB_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u8, PREB_A> {
-        use crate::Variant::*;
+    pub fn variant(&self) -> Option<PREB_A> {
         match self.bits {
-            0 => Val(PREB_A::MCK),
-            1 => Val(PREB_A::MCKDIV2),
-            2 => Val(PREB_A::MCKDIV4),
-            3 => Val(PREB_A::MCKDIV8),
-            4 => Val(PREB_A::MCKDIV16),
-            5 => Val(PREB_A::MCKDIV32),
-            6 => Val(PREB_A::MCKDIV64),
-            7 => Val(PREB_A::MCKDIV128),
-            8 => Val(PREB_A::MCKDIV256),
-            9 => Val(PREB_A::MCKDIV512),
-            10 => Val(PREB_A::MCKDIV1024),
-            i => Res(i),
+            0 => Some(PREB_A::MCK),
+            1 => Some(PREB_A::MCKDIV2),
+            2 => Some(PREB_A::MCKDIV4),
+            3 => Some(PREB_A::MCKDIV8),
+            4 => Some(PREB_A::MCKDIV16),
+            5 => Some(PREB_A::MCKDIV32),
+            6 => Some(PREB_A::MCKDIV64),
+            7 => Some(PREB_A::MCKDIV128),
+            8 => Some(PREB_A::MCKDIV256),
+            9 => Some(PREB_A::MCKDIV512),
+            10 => Some(PREB_A::MCKDIV1024),
+            _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `MCK`"]
     #[inline(always)]
     pub fn is_mck(&self) -> bool {
-        *self == PREB_A::MCK
+        **self == PREB_A::MCK
     }
     #[doc = "Checks if the value of the field is `MCKDIV2`"]
     #[inline(always)]
     pub fn is_mckdiv2(&self) -> bool {
-        *self == PREB_A::MCKDIV2
+        **self == PREB_A::MCKDIV2
     }
     #[doc = "Checks if the value of the field is `MCKDIV4`"]
     #[inline(always)]
     pub fn is_mckdiv4(&self) -> bool {
-        *self == PREB_A::MCKDIV4
+        **self == PREB_A::MCKDIV4
     }
     #[doc = "Checks if the value of the field is `MCKDIV8`"]
     #[inline(always)]
     pub fn is_mckdiv8(&self) -> bool {
-        *self == PREB_A::MCKDIV8
+        **self == PREB_A::MCKDIV8
     }
     #[doc = "Checks if the value of the field is `MCKDIV16`"]
     #[inline(always)]
     pub fn is_mckdiv16(&self) -> bool {
-        *self == PREB_A::MCKDIV16
+        **self == PREB_A::MCKDIV16
     }
     #[doc = "Checks if the value of the field is `MCKDIV32`"]
     #[inline(always)]
     pub fn is_mckdiv32(&self) -> bool {
-        *self == PREB_A::MCKDIV32
+        **self == PREB_A::MCKDIV32
     }
     #[doc = "Checks if the value of the field is `MCKDIV64`"]
     #[inline(always)]
     pub fn is_mckdiv64(&self) -> bool {
-        *self == PREB_A::MCKDIV64
+        **self == PREB_A::MCKDIV64
     }
     #[doc = "Checks if the value of the field is `MCKDIV128`"]
     #[inline(always)]
     pub fn is_mckdiv128(&self) -> bool {
-        *self == PREB_A::MCKDIV128
+        **self == PREB_A::MCKDIV128
     }
     #[doc = "Checks if the value of the field is `MCKDIV256`"]
     #[inline(always)]
     pub fn is_mckdiv256(&self) -> bool {
-        *self == PREB_A::MCKDIV256
+        **self == PREB_A::MCKDIV256
     }
     #[doc = "Checks if the value of the field is `MCKDIV512`"]
     #[inline(always)]
     pub fn is_mckdiv512(&self) -> bool {
-        *self == PREB_A::MCKDIV512
+        **self == PREB_A::MCKDIV512
     }
     #[doc = "Checks if the value of the field is `MCKDIV1024`"]
     #[inline(always)]
     pub fn is_mckdiv1024(&self) -> bool {
-        *self == PREB_A::MCKDIV1024
+        **self == PREB_A::MCKDIV1024
     }
 }
-#[doc = "Write proxy for field `PREB`"]
+impl core::ops::Deref for PREB_R {
+    type Target = crate::FieldReader<u8, PREB_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PREB` writer - "]
 pub struct PREB_W<'a> {
     w: &'a mut W,
 }
@@ -504,7 +564,7 @@ impl<'a> PREB_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 24)) | (((value as u32) & 0x0f) << 24);
+        self.w.bits = (self.w.bits & !(0x0f << 24)) | ((value as u32 & 0x0f) << 24);
         self.w
     }
 }
@@ -550,5 +610,31 @@ impl W {
     #[inline(always)]
     pub fn preb(&mut self) -> PREB_W {
         PREB_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "PWM Mode Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [mr](index.html) module"]
+pub struct MR_SPEC;
+impl crate::RegisterSpec for MR_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [mr::R](R) reader structure"]
+impl crate::Readable for MR_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [mr::W](W) writer structure"]
+impl crate::Writable for MR_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets MR to value 0"]
+impl crate::Resettable for MR_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

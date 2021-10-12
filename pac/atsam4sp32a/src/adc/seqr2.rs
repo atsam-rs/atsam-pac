@@ -1,18 +1,54 @@
-#[doc = "Reader of register SEQR2"]
-pub type R = crate::R<u32, super::SEQR2>;
-#[doc = "Writer for register SEQR2"]
-pub type W = crate::W<u32, super::SEQR2>;
-#[doc = "Register SEQR2 `reset()`'s with value 0"]
-impl crate::ResetValue for super::SEQR2 {
-    type Type = u32;
+#[doc = "Register `SEQR2` reader"]
+pub struct R(crate::R<SEQR2_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<SEQR2_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `USCH9`"]
-pub type USCH9_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `USCH9`"]
+impl From<crate::R<SEQR2_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<SEQR2_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `SEQR2` writer"]
+pub struct W(crate::W<SEQR2_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<SEQR2_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<SEQR2_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<SEQR2_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `USCH9` reader - User Sequence Number 9"]
+pub struct USCH9_R(crate::FieldReader<u8, u8>);
+impl USCH9_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        USCH9_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for USCH9_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `USCH9` writer - User Sequence Number 9"]
 pub struct USCH9_W<'a> {
     w: &'a mut W,
 }
@@ -20,13 +56,25 @@ impl<'a> USCH9_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x07) | ((value as u32) & 0x07);
+        self.w.bits = (self.w.bits & !0x07) | (value as u32 & 0x07);
         self.w
     }
 }
-#[doc = "Reader of field `USCH10`"]
-pub type USCH10_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `USCH10`"]
+#[doc = "Field `USCH10` reader - User Sequence Number 10"]
+pub struct USCH10_R(crate::FieldReader<u8, u8>);
+impl USCH10_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        USCH10_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for USCH10_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `USCH10` writer - User Sequence Number 10"]
 pub struct USCH10_W<'a> {
     w: &'a mut W,
 }
@@ -34,13 +82,25 @@ impl<'a> USCH10_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 4)) | (((value as u32) & 0x07) << 4);
+        self.w.bits = (self.w.bits & !(0x07 << 4)) | ((value as u32 & 0x07) << 4);
         self.w
     }
 }
-#[doc = "Reader of field `USCH11`"]
-pub type USCH11_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `USCH11`"]
+#[doc = "Field `USCH11` reader - User Sequence Number 11"]
+pub struct USCH11_R(crate::FieldReader<u8, u8>);
+impl USCH11_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        USCH11_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for USCH11_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `USCH11` writer - User Sequence Number 11"]
 pub struct USCH11_W<'a> {
     w: &'a mut W,
 }
@@ -48,13 +108,25 @@ impl<'a> USCH11_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 8)) | (((value as u32) & 0x07) << 8);
+        self.w.bits = (self.w.bits & !(0x07 << 8)) | ((value as u32 & 0x07) << 8);
         self.w
     }
 }
-#[doc = "Reader of field `USCH12`"]
-pub type USCH12_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `USCH12`"]
+#[doc = "Field `USCH12` reader - User Sequence Number 12"]
+pub struct USCH12_R(crate::FieldReader<u8, u8>);
+impl USCH12_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        USCH12_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for USCH12_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `USCH12` writer - User Sequence Number 12"]
 pub struct USCH12_W<'a> {
     w: &'a mut W,
 }
@@ -62,13 +134,25 @@ impl<'a> USCH12_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 12)) | (((value as u32) & 0x07) << 12);
+        self.w.bits = (self.w.bits & !(0x07 << 12)) | ((value as u32 & 0x07) << 12);
         self.w
     }
 }
-#[doc = "Reader of field `USCH13`"]
-pub type USCH13_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `USCH13`"]
+#[doc = "Field `USCH13` reader - User Sequence Number 13"]
+pub struct USCH13_R(crate::FieldReader<u8, u8>);
+impl USCH13_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        USCH13_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for USCH13_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `USCH13` writer - User Sequence Number 13"]
 pub struct USCH13_W<'a> {
     w: &'a mut W,
 }
@@ -76,13 +160,25 @@ impl<'a> USCH13_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 16)) | (((value as u32) & 0x07) << 16);
+        self.w.bits = (self.w.bits & !(0x07 << 16)) | ((value as u32 & 0x07) << 16);
         self.w
     }
 }
-#[doc = "Reader of field `USCH14`"]
-pub type USCH14_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `USCH14`"]
+#[doc = "Field `USCH14` reader - User Sequence Number 14"]
+pub struct USCH14_R(crate::FieldReader<u8, u8>);
+impl USCH14_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        USCH14_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for USCH14_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `USCH14` writer - User Sequence Number 14"]
 pub struct USCH14_W<'a> {
     w: &'a mut W,
 }
@@ -90,13 +186,25 @@ impl<'a> USCH14_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 20)) | (((value as u32) & 0x07) << 20);
+        self.w.bits = (self.w.bits & !(0x07 << 20)) | ((value as u32 & 0x07) << 20);
         self.w
     }
 }
-#[doc = "Reader of field `USCH15`"]
-pub type USCH15_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `USCH15`"]
+#[doc = "Field `USCH15` reader - User Sequence Number 15"]
+pub struct USCH15_R(crate::FieldReader<u8, u8>);
+impl USCH15_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        USCH15_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for USCH15_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `USCH15` writer - User Sequence Number 15"]
 pub struct USCH15_W<'a> {
     w: &'a mut W,
 }
@@ -104,13 +212,25 @@ impl<'a> USCH15_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 24)) | (((value as u32) & 0x07) << 24);
+        self.w.bits = (self.w.bits & !(0x07 << 24)) | ((value as u32 & 0x07) << 24);
         self.w
     }
 }
-#[doc = "Reader of field `USCH16`"]
-pub type USCH16_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `USCH16`"]
+#[doc = "Field `USCH16` reader - User Sequence Number 16"]
+pub struct USCH16_R(crate::FieldReader<u8, u8>);
+impl USCH16_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        USCH16_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for USCH16_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `USCH16` writer - User Sequence Number 16"]
 pub struct USCH16_W<'a> {
     w: &'a mut W,
 }
@@ -118,7 +238,7 @@ impl<'a> USCH16_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 28)) | (((value as u32) & 0x07) << 28);
+        self.w.bits = (self.w.bits & !(0x07 << 28)) | ((value as u32 & 0x07) << 28);
         self.w
     }
 }
@@ -204,5 +324,31 @@ impl W {
     #[inline(always)]
     pub fn usch16(&mut self) -> USCH16_W {
         USCH16_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Channel Sequence Register 2\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [seqr2](index.html) module"]
+pub struct SEQR2_SPEC;
+impl crate::RegisterSpec for SEQR2_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [seqr2::R](R) reader structure"]
+impl crate::Readable for SEQR2_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [seqr2::W](W) writer structure"]
+impl crate::Writable for SEQR2_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets SEQR2 to value 0"]
+impl crate::Resettable for SEQR2_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

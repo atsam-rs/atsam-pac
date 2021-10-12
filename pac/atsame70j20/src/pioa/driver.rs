@@ -1,13 +1,37 @@
-#[doc = "Reader of register DRIVER"]
-pub type R = crate::R<u32, super::DRIVER>;
-#[doc = "Writer for register DRIVER"]
-pub type W = crate::W<u32, super::DRIVER>;
-#[doc = "Register DRIVER `reset()`'s with value 0"]
-impl crate::ResetValue for super::DRIVER {
-    type Type = u32;
+#[doc = "Register `DRIVER` reader"]
+pub struct R(crate::R<DRIVER_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<DRIVER_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<DRIVER_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<DRIVER_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `DRIVER` writer"]
+pub struct W(crate::W<DRIVER_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<DRIVER_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<DRIVER_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<DRIVER_SPEC>) -> Self {
+        W(writer)
     }
 }
 #[doc = "Drive of PIO Line 0\n\nValue on reset: 0"]
@@ -24,9 +48,12 @@ impl From<LINE0_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `LINE0`"]
-pub type LINE0_R = crate::R<bool, LINE0_A>;
+#[doc = "Field `LINE0` reader - Drive of PIO Line 0"]
+pub struct LINE0_R(crate::FieldReader<bool, LINE0_A>);
 impl LINE0_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        LINE0_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> LINE0_A {
@@ -38,15 +65,22 @@ impl LINE0_R {
     #[doc = "Checks if the value of the field is `LOW_DRIVE`"]
     #[inline(always)]
     pub fn is_low_drive(&self) -> bool {
-        *self == LINE0_A::LOW_DRIVE
+        **self == LINE0_A::LOW_DRIVE
     }
     #[doc = "Checks if the value of the field is `HIGH_DRIVE`"]
     #[inline(always)]
     pub fn is_high_drive(&self) -> bool {
-        *self == LINE0_A::HIGH_DRIVE
+        **self == LINE0_A::HIGH_DRIVE
     }
 }
-#[doc = "Write proxy for field `LINE0`"]
+impl core::ops::Deref for LINE0_R {
+    type Target = crate::FieldReader<bool, LINE0_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `LINE0` writer - Drive of PIO Line 0"]
 pub struct LINE0_W<'a> {
     w: &'a mut W,
 }
@@ -54,9 +88,7 @@ impl<'a> LINE0_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: LINE0_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Lowest drive"]
     #[inline(always)]
@@ -81,7 +113,7 @@ impl<'a> LINE0_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
+        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
         self.w
     }
 }
@@ -99,9 +131,12 @@ impl From<LINE1_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `LINE1`"]
-pub type LINE1_R = crate::R<bool, LINE1_A>;
+#[doc = "Field `LINE1` reader - Drive of PIO Line 1"]
+pub struct LINE1_R(crate::FieldReader<bool, LINE1_A>);
 impl LINE1_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        LINE1_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> LINE1_A {
@@ -113,15 +148,22 @@ impl LINE1_R {
     #[doc = "Checks if the value of the field is `LOW_DRIVE`"]
     #[inline(always)]
     pub fn is_low_drive(&self) -> bool {
-        *self == LINE1_A::LOW_DRIVE
+        **self == LINE1_A::LOW_DRIVE
     }
     #[doc = "Checks if the value of the field is `HIGH_DRIVE`"]
     #[inline(always)]
     pub fn is_high_drive(&self) -> bool {
-        *self == LINE1_A::HIGH_DRIVE
+        **self == LINE1_A::HIGH_DRIVE
     }
 }
-#[doc = "Write proxy for field `LINE1`"]
+impl core::ops::Deref for LINE1_R {
+    type Target = crate::FieldReader<bool, LINE1_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `LINE1` writer - Drive of PIO Line 1"]
 pub struct LINE1_W<'a> {
     w: &'a mut W,
 }
@@ -129,9 +171,7 @@ impl<'a> LINE1_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: LINE1_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Lowest drive"]
     #[inline(always)]
@@ -156,7 +196,7 @@ impl<'a> LINE1_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
         self.w
     }
 }
@@ -174,9 +214,12 @@ impl From<LINE2_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `LINE2`"]
-pub type LINE2_R = crate::R<bool, LINE2_A>;
+#[doc = "Field `LINE2` reader - Drive of PIO Line 2"]
+pub struct LINE2_R(crate::FieldReader<bool, LINE2_A>);
 impl LINE2_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        LINE2_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> LINE2_A {
@@ -188,15 +231,22 @@ impl LINE2_R {
     #[doc = "Checks if the value of the field is `LOW_DRIVE`"]
     #[inline(always)]
     pub fn is_low_drive(&self) -> bool {
-        *self == LINE2_A::LOW_DRIVE
+        **self == LINE2_A::LOW_DRIVE
     }
     #[doc = "Checks if the value of the field is `HIGH_DRIVE`"]
     #[inline(always)]
     pub fn is_high_drive(&self) -> bool {
-        *self == LINE2_A::HIGH_DRIVE
+        **self == LINE2_A::HIGH_DRIVE
     }
 }
-#[doc = "Write proxy for field `LINE2`"]
+impl core::ops::Deref for LINE2_R {
+    type Target = crate::FieldReader<bool, LINE2_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `LINE2` writer - Drive of PIO Line 2"]
 pub struct LINE2_W<'a> {
     w: &'a mut W,
 }
@@ -204,9 +254,7 @@ impl<'a> LINE2_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: LINE2_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Lowest drive"]
     #[inline(always)]
@@ -231,7 +279,7 @@ impl<'a> LINE2_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
         self.w
     }
 }
@@ -249,9 +297,12 @@ impl From<LINE3_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `LINE3`"]
-pub type LINE3_R = crate::R<bool, LINE3_A>;
+#[doc = "Field `LINE3` reader - Drive of PIO Line 3"]
+pub struct LINE3_R(crate::FieldReader<bool, LINE3_A>);
 impl LINE3_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        LINE3_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> LINE3_A {
@@ -263,15 +314,22 @@ impl LINE3_R {
     #[doc = "Checks if the value of the field is `LOW_DRIVE`"]
     #[inline(always)]
     pub fn is_low_drive(&self) -> bool {
-        *self == LINE3_A::LOW_DRIVE
+        **self == LINE3_A::LOW_DRIVE
     }
     #[doc = "Checks if the value of the field is `HIGH_DRIVE`"]
     #[inline(always)]
     pub fn is_high_drive(&self) -> bool {
-        *self == LINE3_A::HIGH_DRIVE
+        **self == LINE3_A::HIGH_DRIVE
     }
 }
-#[doc = "Write proxy for field `LINE3`"]
+impl core::ops::Deref for LINE3_R {
+    type Target = crate::FieldReader<bool, LINE3_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `LINE3` writer - Drive of PIO Line 3"]
 pub struct LINE3_W<'a> {
     w: &'a mut W,
 }
@@ -279,9 +337,7 @@ impl<'a> LINE3_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: LINE3_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Lowest drive"]
     #[inline(always)]
@@ -306,7 +362,7 @@ impl<'a> LINE3_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
+        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
         self.w
     }
 }
@@ -324,9 +380,12 @@ impl From<LINE4_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `LINE4`"]
-pub type LINE4_R = crate::R<bool, LINE4_A>;
+#[doc = "Field `LINE4` reader - Drive of PIO Line 4"]
+pub struct LINE4_R(crate::FieldReader<bool, LINE4_A>);
 impl LINE4_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        LINE4_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> LINE4_A {
@@ -338,15 +397,22 @@ impl LINE4_R {
     #[doc = "Checks if the value of the field is `LOW_DRIVE`"]
     #[inline(always)]
     pub fn is_low_drive(&self) -> bool {
-        *self == LINE4_A::LOW_DRIVE
+        **self == LINE4_A::LOW_DRIVE
     }
     #[doc = "Checks if the value of the field is `HIGH_DRIVE`"]
     #[inline(always)]
     pub fn is_high_drive(&self) -> bool {
-        *self == LINE4_A::HIGH_DRIVE
+        **self == LINE4_A::HIGH_DRIVE
     }
 }
-#[doc = "Write proxy for field `LINE4`"]
+impl core::ops::Deref for LINE4_R {
+    type Target = crate::FieldReader<bool, LINE4_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `LINE4` writer - Drive of PIO Line 4"]
 pub struct LINE4_W<'a> {
     w: &'a mut W,
 }
@@ -354,9 +420,7 @@ impl<'a> LINE4_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: LINE4_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Lowest drive"]
     #[inline(always)]
@@ -381,7 +445,7 @@ impl<'a> LINE4_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u32) & 0x01) << 4);
+        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
         self.w
     }
 }
@@ -399,9 +463,12 @@ impl From<LINE5_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `LINE5`"]
-pub type LINE5_R = crate::R<bool, LINE5_A>;
+#[doc = "Field `LINE5` reader - Drive of PIO Line 5"]
+pub struct LINE5_R(crate::FieldReader<bool, LINE5_A>);
 impl LINE5_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        LINE5_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> LINE5_A {
@@ -413,15 +480,22 @@ impl LINE5_R {
     #[doc = "Checks if the value of the field is `LOW_DRIVE`"]
     #[inline(always)]
     pub fn is_low_drive(&self) -> bool {
-        *self == LINE5_A::LOW_DRIVE
+        **self == LINE5_A::LOW_DRIVE
     }
     #[doc = "Checks if the value of the field is `HIGH_DRIVE`"]
     #[inline(always)]
     pub fn is_high_drive(&self) -> bool {
-        *self == LINE5_A::HIGH_DRIVE
+        **self == LINE5_A::HIGH_DRIVE
     }
 }
-#[doc = "Write proxy for field `LINE5`"]
+impl core::ops::Deref for LINE5_R {
+    type Target = crate::FieldReader<bool, LINE5_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `LINE5` writer - Drive of PIO Line 5"]
 pub struct LINE5_W<'a> {
     w: &'a mut W,
 }
@@ -429,9 +503,7 @@ impl<'a> LINE5_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: LINE5_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Lowest drive"]
     #[inline(always)]
@@ -456,7 +528,7 @@ impl<'a> LINE5_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u32) & 0x01) << 5);
+        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
         self.w
     }
 }
@@ -474,9 +546,12 @@ impl From<LINE6_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `LINE6`"]
-pub type LINE6_R = crate::R<bool, LINE6_A>;
+#[doc = "Field `LINE6` reader - Drive of PIO Line 6"]
+pub struct LINE6_R(crate::FieldReader<bool, LINE6_A>);
 impl LINE6_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        LINE6_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> LINE6_A {
@@ -488,15 +563,22 @@ impl LINE6_R {
     #[doc = "Checks if the value of the field is `LOW_DRIVE`"]
     #[inline(always)]
     pub fn is_low_drive(&self) -> bool {
-        *self == LINE6_A::LOW_DRIVE
+        **self == LINE6_A::LOW_DRIVE
     }
     #[doc = "Checks if the value of the field is `HIGH_DRIVE`"]
     #[inline(always)]
     pub fn is_high_drive(&self) -> bool {
-        *self == LINE6_A::HIGH_DRIVE
+        **self == LINE6_A::HIGH_DRIVE
     }
 }
-#[doc = "Write proxy for field `LINE6`"]
+impl core::ops::Deref for LINE6_R {
+    type Target = crate::FieldReader<bool, LINE6_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `LINE6` writer - Drive of PIO Line 6"]
 pub struct LINE6_W<'a> {
     w: &'a mut W,
 }
@@ -504,9 +586,7 @@ impl<'a> LINE6_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: LINE6_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Lowest drive"]
     #[inline(always)]
@@ -531,7 +611,7 @@ impl<'a> LINE6_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | (((value as u32) & 0x01) << 6);
+        self.w.bits = (self.w.bits & !(0x01 << 6)) | ((value as u32 & 0x01) << 6);
         self.w
     }
 }
@@ -549,9 +629,12 @@ impl From<LINE7_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `LINE7`"]
-pub type LINE7_R = crate::R<bool, LINE7_A>;
+#[doc = "Field `LINE7` reader - Drive of PIO Line 7"]
+pub struct LINE7_R(crate::FieldReader<bool, LINE7_A>);
 impl LINE7_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        LINE7_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> LINE7_A {
@@ -563,15 +646,22 @@ impl LINE7_R {
     #[doc = "Checks if the value of the field is `LOW_DRIVE`"]
     #[inline(always)]
     pub fn is_low_drive(&self) -> bool {
-        *self == LINE7_A::LOW_DRIVE
+        **self == LINE7_A::LOW_DRIVE
     }
     #[doc = "Checks if the value of the field is `HIGH_DRIVE`"]
     #[inline(always)]
     pub fn is_high_drive(&self) -> bool {
-        *self == LINE7_A::HIGH_DRIVE
+        **self == LINE7_A::HIGH_DRIVE
     }
 }
-#[doc = "Write proxy for field `LINE7`"]
+impl core::ops::Deref for LINE7_R {
+    type Target = crate::FieldReader<bool, LINE7_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `LINE7` writer - Drive of PIO Line 7"]
 pub struct LINE7_W<'a> {
     w: &'a mut W,
 }
@@ -579,9 +669,7 @@ impl<'a> LINE7_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: LINE7_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Lowest drive"]
     #[inline(always)]
@@ -606,7 +694,7 @@ impl<'a> LINE7_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | (((value as u32) & 0x01) << 7);
+        self.w.bits = (self.w.bits & !(0x01 << 7)) | ((value as u32 & 0x01) << 7);
         self.w
     }
 }
@@ -624,9 +712,12 @@ impl From<LINE8_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `LINE8`"]
-pub type LINE8_R = crate::R<bool, LINE8_A>;
+#[doc = "Field `LINE8` reader - Drive of PIO Line 8"]
+pub struct LINE8_R(crate::FieldReader<bool, LINE8_A>);
 impl LINE8_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        LINE8_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> LINE8_A {
@@ -638,15 +729,22 @@ impl LINE8_R {
     #[doc = "Checks if the value of the field is `LOW_DRIVE`"]
     #[inline(always)]
     pub fn is_low_drive(&self) -> bool {
-        *self == LINE8_A::LOW_DRIVE
+        **self == LINE8_A::LOW_DRIVE
     }
     #[doc = "Checks if the value of the field is `HIGH_DRIVE`"]
     #[inline(always)]
     pub fn is_high_drive(&self) -> bool {
-        *self == LINE8_A::HIGH_DRIVE
+        **self == LINE8_A::HIGH_DRIVE
     }
 }
-#[doc = "Write proxy for field `LINE8`"]
+impl core::ops::Deref for LINE8_R {
+    type Target = crate::FieldReader<bool, LINE8_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `LINE8` writer - Drive of PIO Line 8"]
 pub struct LINE8_W<'a> {
     w: &'a mut W,
 }
@@ -654,9 +752,7 @@ impl<'a> LINE8_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: LINE8_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Lowest drive"]
     #[inline(always)]
@@ -681,7 +777,7 @@ impl<'a> LINE8_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | (((value as u32) & 0x01) << 8);
+        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
         self.w
     }
 }
@@ -699,9 +795,12 @@ impl From<LINE9_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `LINE9`"]
-pub type LINE9_R = crate::R<bool, LINE9_A>;
+#[doc = "Field `LINE9` reader - Drive of PIO Line 9"]
+pub struct LINE9_R(crate::FieldReader<bool, LINE9_A>);
 impl LINE9_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        LINE9_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> LINE9_A {
@@ -713,15 +812,22 @@ impl LINE9_R {
     #[doc = "Checks if the value of the field is `LOW_DRIVE`"]
     #[inline(always)]
     pub fn is_low_drive(&self) -> bool {
-        *self == LINE9_A::LOW_DRIVE
+        **self == LINE9_A::LOW_DRIVE
     }
     #[doc = "Checks if the value of the field is `HIGH_DRIVE`"]
     #[inline(always)]
     pub fn is_high_drive(&self) -> bool {
-        *self == LINE9_A::HIGH_DRIVE
+        **self == LINE9_A::HIGH_DRIVE
     }
 }
-#[doc = "Write proxy for field `LINE9`"]
+impl core::ops::Deref for LINE9_R {
+    type Target = crate::FieldReader<bool, LINE9_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `LINE9` writer - Drive of PIO Line 9"]
 pub struct LINE9_W<'a> {
     w: &'a mut W,
 }
@@ -729,9 +835,7 @@ impl<'a> LINE9_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: LINE9_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Lowest drive"]
     #[inline(always)]
@@ -756,7 +860,7 @@ impl<'a> LINE9_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 9)) | (((value as u32) & 0x01) << 9);
+        self.w.bits = (self.w.bits & !(0x01 << 9)) | ((value as u32 & 0x01) << 9);
         self.w
     }
 }
@@ -774,9 +878,12 @@ impl From<LINE10_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `LINE10`"]
-pub type LINE10_R = crate::R<bool, LINE10_A>;
+#[doc = "Field `LINE10` reader - Drive of PIO Line 10"]
+pub struct LINE10_R(crate::FieldReader<bool, LINE10_A>);
 impl LINE10_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        LINE10_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> LINE10_A {
@@ -788,15 +895,22 @@ impl LINE10_R {
     #[doc = "Checks if the value of the field is `LOW_DRIVE`"]
     #[inline(always)]
     pub fn is_low_drive(&self) -> bool {
-        *self == LINE10_A::LOW_DRIVE
+        **self == LINE10_A::LOW_DRIVE
     }
     #[doc = "Checks if the value of the field is `HIGH_DRIVE`"]
     #[inline(always)]
     pub fn is_high_drive(&self) -> bool {
-        *self == LINE10_A::HIGH_DRIVE
+        **self == LINE10_A::HIGH_DRIVE
     }
 }
-#[doc = "Write proxy for field `LINE10`"]
+impl core::ops::Deref for LINE10_R {
+    type Target = crate::FieldReader<bool, LINE10_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `LINE10` writer - Drive of PIO Line 10"]
 pub struct LINE10_W<'a> {
     w: &'a mut W,
 }
@@ -804,9 +918,7 @@ impl<'a> LINE10_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: LINE10_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Lowest drive"]
     #[inline(always)]
@@ -831,7 +943,7 @@ impl<'a> LINE10_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 10)) | (((value as u32) & 0x01) << 10);
+        self.w.bits = (self.w.bits & !(0x01 << 10)) | ((value as u32 & 0x01) << 10);
         self.w
     }
 }
@@ -849,9 +961,12 @@ impl From<LINE11_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `LINE11`"]
-pub type LINE11_R = crate::R<bool, LINE11_A>;
+#[doc = "Field `LINE11` reader - Drive of PIO Line 11"]
+pub struct LINE11_R(crate::FieldReader<bool, LINE11_A>);
 impl LINE11_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        LINE11_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> LINE11_A {
@@ -863,15 +978,22 @@ impl LINE11_R {
     #[doc = "Checks if the value of the field is `LOW_DRIVE`"]
     #[inline(always)]
     pub fn is_low_drive(&self) -> bool {
-        *self == LINE11_A::LOW_DRIVE
+        **self == LINE11_A::LOW_DRIVE
     }
     #[doc = "Checks if the value of the field is `HIGH_DRIVE`"]
     #[inline(always)]
     pub fn is_high_drive(&self) -> bool {
-        *self == LINE11_A::HIGH_DRIVE
+        **self == LINE11_A::HIGH_DRIVE
     }
 }
-#[doc = "Write proxy for field `LINE11`"]
+impl core::ops::Deref for LINE11_R {
+    type Target = crate::FieldReader<bool, LINE11_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `LINE11` writer - Drive of PIO Line 11"]
 pub struct LINE11_W<'a> {
     w: &'a mut W,
 }
@@ -879,9 +1001,7 @@ impl<'a> LINE11_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: LINE11_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Lowest drive"]
     #[inline(always)]
@@ -906,7 +1026,7 @@ impl<'a> LINE11_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 11)) | (((value as u32) & 0x01) << 11);
+        self.w.bits = (self.w.bits & !(0x01 << 11)) | ((value as u32 & 0x01) << 11);
         self.w
     }
 }
@@ -924,9 +1044,12 @@ impl From<LINE12_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `LINE12`"]
-pub type LINE12_R = crate::R<bool, LINE12_A>;
+#[doc = "Field `LINE12` reader - Drive of PIO Line 12"]
+pub struct LINE12_R(crate::FieldReader<bool, LINE12_A>);
 impl LINE12_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        LINE12_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> LINE12_A {
@@ -938,15 +1061,22 @@ impl LINE12_R {
     #[doc = "Checks if the value of the field is `LOW_DRIVE`"]
     #[inline(always)]
     pub fn is_low_drive(&self) -> bool {
-        *self == LINE12_A::LOW_DRIVE
+        **self == LINE12_A::LOW_DRIVE
     }
     #[doc = "Checks if the value of the field is `HIGH_DRIVE`"]
     #[inline(always)]
     pub fn is_high_drive(&self) -> bool {
-        *self == LINE12_A::HIGH_DRIVE
+        **self == LINE12_A::HIGH_DRIVE
     }
 }
-#[doc = "Write proxy for field `LINE12`"]
+impl core::ops::Deref for LINE12_R {
+    type Target = crate::FieldReader<bool, LINE12_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `LINE12` writer - Drive of PIO Line 12"]
 pub struct LINE12_W<'a> {
     w: &'a mut W,
 }
@@ -954,9 +1084,7 @@ impl<'a> LINE12_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: LINE12_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Lowest drive"]
     #[inline(always)]
@@ -981,7 +1109,7 @@ impl<'a> LINE12_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 12)) | (((value as u32) & 0x01) << 12);
+        self.w.bits = (self.w.bits & !(0x01 << 12)) | ((value as u32 & 0x01) << 12);
         self.w
     }
 }
@@ -999,9 +1127,12 @@ impl From<LINE13_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `LINE13`"]
-pub type LINE13_R = crate::R<bool, LINE13_A>;
+#[doc = "Field `LINE13` reader - Drive of PIO Line 13"]
+pub struct LINE13_R(crate::FieldReader<bool, LINE13_A>);
 impl LINE13_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        LINE13_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> LINE13_A {
@@ -1013,15 +1144,22 @@ impl LINE13_R {
     #[doc = "Checks if the value of the field is `LOW_DRIVE`"]
     #[inline(always)]
     pub fn is_low_drive(&self) -> bool {
-        *self == LINE13_A::LOW_DRIVE
+        **self == LINE13_A::LOW_DRIVE
     }
     #[doc = "Checks if the value of the field is `HIGH_DRIVE`"]
     #[inline(always)]
     pub fn is_high_drive(&self) -> bool {
-        *self == LINE13_A::HIGH_DRIVE
+        **self == LINE13_A::HIGH_DRIVE
     }
 }
-#[doc = "Write proxy for field `LINE13`"]
+impl core::ops::Deref for LINE13_R {
+    type Target = crate::FieldReader<bool, LINE13_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `LINE13` writer - Drive of PIO Line 13"]
 pub struct LINE13_W<'a> {
     w: &'a mut W,
 }
@@ -1029,9 +1167,7 @@ impl<'a> LINE13_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: LINE13_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Lowest drive"]
     #[inline(always)]
@@ -1056,7 +1192,7 @@ impl<'a> LINE13_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 13)) | (((value as u32) & 0x01) << 13);
+        self.w.bits = (self.w.bits & !(0x01 << 13)) | ((value as u32 & 0x01) << 13);
         self.w
     }
 }
@@ -1074,9 +1210,12 @@ impl From<LINE14_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `LINE14`"]
-pub type LINE14_R = crate::R<bool, LINE14_A>;
+#[doc = "Field `LINE14` reader - Drive of PIO Line 14"]
+pub struct LINE14_R(crate::FieldReader<bool, LINE14_A>);
 impl LINE14_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        LINE14_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> LINE14_A {
@@ -1088,15 +1227,22 @@ impl LINE14_R {
     #[doc = "Checks if the value of the field is `LOW_DRIVE`"]
     #[inline(always)]
     pub fn is_low_drive(&self) -> bool {
-        *self == LINE14_A::LOW_DRIVE
+        **self == LINE14_A::LOW_DRIVE
     }
     #[doc = "Checks if the value of the field is `HIGH_DRIVE`"]
     #[inline(always)]
     pub fn is_high_drive(&self) -> bool {
-        *self == LINE14_A::HIGH_DRIVE
+        **self == LINE14_A::HIGH_DRIVE
     }
 }
-#[doc = "Write proxy for field `LINE14`"]
+impl core::ops::Deref for LINE14_R {
+    type Target = crate::FieldReader<bool, LINE14_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `LINE14` writer - Drive of PIO Line 14"]
 pub struct LINE14_W<'a> {
     w: &'a mut W,
 }
@@ -1104,9 +1250,7 @@ impl<'a> LINE14_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: LINE14_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Lowest drive"]
     #[inline(always)]
@@ -1131,7 +1275,7 @@ impl<'a> LINE14_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 14)) | (((value as u32) & 0x01) << 14);
+        self.w.bits = (self.w.bits & !(0x01 << 14)) | ((value as u32 & 0x01) << 14);
         self.w
     }
 }
@@ -1149,9 +1293,12 @@ impl From<LINE15_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `LINE15`"]
-pub type LINE15_R = crate::R<bool, LINE15_A>;
+#[doc = "Field `LINE15` reader - Drive of PIO Line 15"]
+pub struct LINE15_R(crate::FieldReader<bool, LINE15_A>);
 impl LINE15_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        LINE15_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> LINE15_A {
@@ -1163,15 +1310,22 @@ impl LINE15_R {
     #[doc = "Checks if the value of the field is `LOW_DRIVE`"]
     #[inline(always)]
     pub fn is_low_drive(&self) -> bool {
-        *self == LINE15_A::LOW_DRIVE
+        **self == LINE15_A::LOW_DRIVE
     }
     #[doc = "Checks if the value of the field is `HIGH_DRIVE`"]
     #[inline(always)]
     pub fn is_high_drive(&self) -> bool {
-        *self == LINE15_A::HIGH_DRIVE
+        **self == LINE15_A::HIGH_DRIVE
     }
 }
-#[doc = "Write proxy for field `LINE15`"]
+impl core::ops::Deref for LINE15_R {
+    type Target = crate::FieldReader<bool, LINE15_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `LINE15` writer - Drive of PIO Line 15"]
 pub struct LINE15_W<'a> {
     w: &'a mut W,
 }
@@ -1179,9 +1333,7 @@ impl<'a> LINE15_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: LINE15_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Lowest drive"]
     #[inline(always)]
@@ -1206,7 +1358,7 @@ impl<'a> LINE15_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 15)) | (((value as u32) & 0x01) << 15);
+        self.w.bits = (self.w.bits & !(0x01 << 15)) | ((value as u32 & 0x01) << 15);
         self.w
     }
 }
@@ -1224,9 +1376,12 @@ impl From<LINE16_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `LINE16`"]
-pub type LINE16_R = crate::R<bool, LINE16_A>;
+#[doc = "Field `LINE16` reader - Drive of PIO Line 16"]
+pub struct LINE16_R(crate::FieldReader<bool, LINE16_A>);
 impl LINE16_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        LINE16_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> LINE16_A {
@@ -1238,15 +1393,22 @@ impl LINE16_R {
     #[doc = "Checks if the value of the field is `LOW_DRIVE`"]
     #[inline(always)]
     pub fn is_low_drive(&self) -> bool {
-        *self == LINE16_A::LOW_DRIVE
+        **self == LINE16_A::LOW_DRIVE
     }
     #[doc = "Checks if the value of the field is `HIGH_DRIVE`"]
     #[inline(always)]
     pub fn is_high_drive(&self) -> bool {
-        *self == LINE16_A::HIGH_DRIVE
+        **self == LINE16_A::HIGH_DRIVE
     }
 }
-#[doc = "Write proxy for field `LINE16`"]
+impl core::ops::Deref for LINE16_R {
+    type Target = crate::FieldReader<bool, LINE16_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `LINE16` writer - Drive of PIO Line 16"]
 pub struct LINE16_W<'a> {
     w: &'a mut W,
 }
@@ -1254,9 +1416,7 @@ impl<'a> LINE16_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: LINE16_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Lowest drive"]
     #[inline(always)]
@@ -1281,7 +1441,7 @@ impl<'a> LINE16_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 16)) | (((value as u32) & 0x01) << 16);
+        self.w.bits = (self.w.bits & !(0x01 << 16)) | ((value as u32 & 0x01) << 16);
         self.w
     }
 }
@@ -1299,9 +1459,12 @@ impl From<LINE17_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `LINE17`"]
-pub type LINE17_R = crate::R<bool, LINE17_A>;
+#[doc = "Field `LINE17` reader - Drive of PIO Line 17"]
+pub struct LINE17_R(crate::FieldReader<bool, LINE17_A>);
 impl LINE17_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        LINE17_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> LINE17_A {
@@ -1313,15 +1476,22 @@ impl LINE17_R {
     #[doc = "Checks if the value of the field is `LOW_DRIVE`"]
     #[inline(always)]
     pub fn is_low_drive(&self) -> bool {
-        *self == LINE17_A::LOW_DRIVE
+        **self == LINE17_A::LOW_DRIVE
     }
     #[doc = "Checks if the value of the field is `HIGH_DRIVE`"]
     #[inline(always)]
     pub fn is_high_drive(&self) -> bool {
-        *self == LINE17_A::HIGH_DRIVE
+        **self == LINE17_A::HIGH_DRIVE
     }
 }
-#[doc = "Write proxy for field `LINE17`"]
+impl core::ops::Deref for LINE17_R {
+    type Target = crate::FieldReader<bool, LINE17_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `LINE17` writer - Drive of PIO Line 17"]
 pub struct LINE17_W<'a> {
     w: &'a mut W,
 }
@@ -1329,9 +1499,7 @@ impl<'a> LINE17_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: LINE17_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Lowest drive"]
     #[inline(always)]
@@ -1356,7 +1524,7 @@ impl<'a> LINE17_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 17)) | (((value as u32) & 0x01) << 17);
+        self.w.bits = (self.w.bits & !(0x01 << 17)) | ((value as u32 & 0x01) << 17);
         self.w
     }
 }
@@ -1374,9 +1542,12 @@ impl From<LINE18_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `LINE18`"]
-pub type LINE18_R = crate::R<bool, LINE18_A>;
+#[doc = "Field `LINE18` reader - Drive of PIO Line 18"]
+pub struct LINE18_R(crate::FieldReader<bool, LINE18_A>);
 impl LINE18_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        LINE18_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> LINE18_A {
@@ -1388,15 +1559,22 @@ impl LINE18_R {
     #[doc = "Checks if the value of the field is `LOW_DRIVE`"]
     #[inline(always)]
     pub fn is_low_drive(&self) -> bool {
-        *self == LINE18_A::LOW_DRIVE
+        **self == LINE18_A::LOW_DRIVE
     }
     #[doc = "Checks if the value of the field is `HIGH_DRIVE`"]
     #[inline(always)]
     pub fn is_high_drive(&self) -> bool {
-        *self == LINE18_A::HIGH_DRIVE
+        **self == LINE18_A::HIGH_DRIVE
     }
 }
-#[doc = "Write proxy for field `LINE18`"]
+impl core::ops::Deref for LINE18_R {
+    type Target = crate::FieldReader<bool, LINE18_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `LINE18` writer - Drive of PIO Line 18"]
 pub struct LINE18_W<'a> {
     w: &'a mut W,
 }
@@ -1404,9 +1582,7 @@ impl<'a> LINE18_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: LINE18_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Lowest drive"]
     #[inline(always)]
@@ -1431,7 +1607,7 @@ impl<'a> LINE18_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 18)) | (((value as u32) & 0x01) << 18);
+        self.w.bits = (self.w.bits & !(0x01 << 18)) | ((value as u32 & 0x01) << 18);
         self.w
     }
 }
@@ -1449,9 +1625,12 @@ impl From<LINE19_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `LINE19`"]
-pub type LINE19_R = crate::R<bool, LINE19_A>;
+#[doc = "Field `LINE19` reader - Drive of PIO Line 19"]
+pub struct LINE19_R(crate::FieldReader<bool, LINE19_A>);
 impl LINE19_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        LINE19_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> LINE19_A {
@@ -1463,15 +1642,22 @@ impl LINE19_R {
     #[doc = "Checks if the value of the field is `LOW_DRIVE`"]
     #[inline(always)]
     pub fn is_low_drive(&self) -> bool {
-        *self == LINE19_A::LOW_DRIVE
+        **self == LINE19_A::LOW_DRIVE
     }
     #[doc = "Checks if the value of the field is `HIGH_DRIVE`"]
     #[inline(always)]
     pub fn is_high_drive(&self) -> bool {
-        *self == LINE19_A::HIGH_DRIVE
+        **self == LINE19_A::HIGH_DRIVE
     }
 }
-#[doc = "Write proxy for field `LINE19`"]
+impl core::ops::Deref for LINE19_R {
+    type Target = crate::FieldReader<bool, LINE19_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `LINE19` writer - Drive of PIO Line 19"]
 pub struct LINE19_W<'a> {
     w: &'a mut W,
 }
@@ -1479,9 +1665,7 @@ impl<'a> LINE19_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: LINE19_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Lowest drive"]
     #[inline(always)]
@@ -1506,7 +1690,7 @@ impl<'a> LINE19_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 19)) | (((value as u32) & 0x01) << 19);
+        self.w.bits = (self.w.bits & !(0x01 << 19)) | ((value as u32 & 0x01) << 19);
         self.w
     }
 }
@@ -1524,9 +1708,12 @@ impl From<LINE20_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `LINE20`"]
-pub type LINE20_R = crate::R<bool, LINE20_A>;
+#[doc = "Field `LINE20` reader - Drive of PIO Line 20"]
+pub struct LINE20_R(crate::FieldReader<bool, LINE20_A>);
 impl LINE20_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        LINE20_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> LINE20_A {
@@ -1538,15 +1725,22 @@ impl LINE20_R {
     #[doc = "Checks if the value of the field is `LOW_DRIVE`"]
     #[inline(always)]
     pub fn is_low_drive(&self) -> bool {
-        *self == LINE20_A::LOW_DRIVE
+        **self == LINE20_A::LOW_DRIVE
     }
     #[doc = "Checks if the value of the field is `HIGH_DRIVE`"]
     #[inline(always)]
     pub fn is_high_drive(&self) -> bool {
-        *self == LINE20_A::HIGH_DRIVE
+        **self == LINE20_A::HIGH_DRIVE
     }
 }
-#[doc = "Write proxy for field `LINE20`"]
+impl core::ops::Deref for LINE20_R {
+    type Target = crate::FieldReader<bool, LINE20_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `LINE20` writer - Drive of PIO Line 20"]
 pub struct LINE20_W<'a> {
     w: &'a mut W,
 }
@@ -1554,9 +1748,7 @@ impl<'a> LINE20_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: LINE20_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Lowest drive"]
     #[inline(always)]
@@ -1581,7 +1773,7 @@ impl<'a> LINE20_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 20)) | (((value as u32) & 0x01) << 20);
+        self.w.bits = (self.w.bits & !(0x01 << 20)) | ((value as u32 & 0x01) << 20);
         self.w
     }
 }
@@ -1599,9 +1791,12 @@ impl From<LINE21_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `LINE21`"]
-pub type LINE21_R = crate::R<bool, LINE21_A>;
+#[doc = "Field `LINE21` reader - Drive of PIO Line 21"]
+pub struct LINE21_R(crate::FieldReader<bool, LINE21_A>);
 impl LINE21_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        LINE21_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> LINE21_A {
@@ -1613,15 +1808,22 @@ impl LINE21_R {
     #[doc = "Checks if the value of the field is `LOW_DRIVE`"]
     #[inline(always)]
     pub fn is_low_drive(&self) -> bool {
-        *self == LINE21_A::LOW_DRIVE
+        **self == LINE21_A::LOW_DRIVE
     }
     #[doc = "Checks if the value of the field is `HIGH_DRIVE`"]
     #[inline(always)]
     pub fn is_high_drive(&self) -> bool {
-        *self == LINE21_A::HIGH_DRIVE
+        **self == LINE21_A::HIGH_DRIVE
     }
 }
-#[doc = "Write proxy for field `LINE21`"]
+impl core::ops::Deref for LINE21_R {
+    type Target = crate::FieldReader<bool, LINE21_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `LINE21` writer - Drive of PIO Line 21"]
 pub struct LINE21_W<'a> {
     w: &'a mut W,
 }
@@ -1629,9 +1831,7 @@ impl<'a> LINE21_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: LINE21_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Lowest drive"]
     #[inline(always)]
@@ -1656,7 +1856,7 @@ impl<'a> LINE21_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 21)) | (((value as u32) & 0x01) << 21);
+        self.w.bits = (self.w.bits & !(0x01 << 21)) | ((value as u32 & 0x01) << 21);
         self.w
     }
 }
@@ -1674,9 +1874,12 @@ impl From<LINE22_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `LINE22`"]
-pub type LINE22_R = crate::R<bool, LINE22_A>;
+#[doc = "Field `LINE22` reader - Drive of PIO Line 22"]
+pub struct LINE22_R(crate::FieldReader<bool, LINE22_A>);
 impl LINE22_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        LINE22_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> LINE22_A {
@@ -1688,15 +1891,22 @@ impl LINE22_R {
     #[doc = "Checks if the value of the field is `LOW_DRIVE`"]
     #[inline(always)]
     pub fn is_low_drive(&self) -> bool {
-        *self == LINE22_A::LOW_DRIVE
+        **self == LINE22_A::LOW_DRIVE
     }
     #[doc = "Checks if the value of the field is `HIGH_DRIVE`"]
     #[inline(always)]
     pub fn is_high_drive(&self) -> bool {
-        *self == LINE22_A::HIGH_DRIVE
+        **self == LINE22_A::HIGH_DRIVE
     }
 }
-#[doc = "Write proxy for field `LINE22`"]
+impl core::ops::Deref for LINE22_R {
+    type Target = crate::FieldReader<bool, LINE22_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `LINE22` writer - Drive of PIO Line 22"]
 pub struct LINE22_W<'a> {
     w: &'a mut W,
 }
@@ -1704,9 +1914,7 @@ impl<'a> LINE22_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: LINE22_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Lowest drive"]
     #[inline(always)]
@@ -1731,7 +1939,7 @@ impl<'a> LINE22_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 22)) | (((value as u32) & 0x01) << 22);
+        self.w.bits = (self.w.bits & !(0x01 << 22)) | ((value as u32 & 0x01) << 22);
         self.w
     }
 }
@@ -1749,9 +1957,12 @@ impl From<LINE23_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `LINE23`"]
-pub type LINE23_R = crate::R<bool, LINE23_A>;
+#[doc = "Field `LINE23` reader - Drive of PIO Line 23"]
+pub struct LINE23_R(crate::FieldReader<bool, LINE23_A>);
 impl LINE23_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        LINE23_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> LINE23_A {
@@ -1763,15 +1974,22 @@ impl LINE23_R {
     #[doc = "Checks if the value of the field is `LOW_DRIVE`"]
     #[inline(always)]
     pub fn is_low_drive(&self) -> bool {
-        *self == LINE23_A::LOW_DRIVE
+        **self == LINE23_A::LOW_DRIVE
     }
     #[doc = "Checks if the value of the field is `HIGH_DRIVE`"]
     #[inline(always)]
     pub fn is_high_drive(&self) -> bool {
-        *self == LINE23_A::HIGH_DRIVE
+        **self == LINE23_A::HIGH_DRIVE
     }
 }
-#[doc = "Write proxy for field `LINE23`"]
+impl core::ops::Deref for LINE23_R {
+    type Target = crate::FieldReader<bool, LINE23_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `LINE23` writer - Drive of PIO Line 23"]
 pub struct LINE23_W<'a> {
     w: &'a mut W,
 }
@@ -1779,9 +1997,7 @@ impl<'a> LINE23_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: LINE23_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Lowest drive"]
     #[inline(always)]
@@ -1806,7 +2022,7 @@ impl<'a> LINE23_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 23)) | (((value as u32) & 0x01) << 23);
+        self.w.bits = (self.w.bits & !(0x01 << 23)) | ((value as u32 & 0x01) << 23);
         self.w
     }
 }
@@ -1824,9 +2040,12 @@ impl From<LINE24_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `LINE24`"]
-pub type LINE24_R = crate::R<bool, LINE24_A>;
+#[doc = "Field `LINE24` reader - Drive of PIO Line 24"]
+pub struct LINE24_R(crate::FieldReader<bool, LINE24_A>);
 impl LINE24_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        LINE24_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> LINE24_A {
@@ -1838,15 +2057,22 @@ impl LINE24_R {
     #[doc = "Checks if the value of the field is `LOW_DRIVE`"]
     #[inline(always)]
     pub fn is_low_drive(&self) -> bool {
-        *self == LINE24_A::LOW_DRIVE
+        **self == LINE24_A::LOW_DRIVE
     }
     #[doc = "Checks if the value of the field is `HIGH_DRIVE`"]
     #[inline(always)]
     pub fn is_high_drive(&self) -> bool {
-        *self == LINE24_A::HIGH_DRIVE
+        **self == LINE24_A::HIGH_DRIVE
     }
 }
-#[doc = "Write proxy for field `LINE24`"]
+impl core::ops::Deref for LINE24_R {
+    type Target = crate::FieldReader<bool, LINE24_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `LINE24` writer - Drive of PIO Line 24"]
 pub struct LINE24_W<'a> {
     w: &'a mut W,
 }
@@ -1854,9 +2080,7 @@ impl<'a> LINE24_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: LINE24_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Lowest drive"]
     #[inline(always)]
@@ -1881,7 +2105,7 @@ impl<'a> LINE24_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 24)) | (((value as u32) & 0x01) << 24);
+        self.w.bits = (self.w.bits & !(0x01 << 24)) | ((value as u32 & 0x01) << 24);
         self.w
     }
 }
@@ -1899,9 +2123,12 @@ impl From<LINE25_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `LINE25`"]
-pub type LINE25_R = crate::R<bool, LINE25_A>;
+#[doc = "Field `LINE25` reader - Drive of PIO Line 25"]
+pub struct LINE25_R(crate::FieldReader<bool, LINE25_A>);
 impl LINE25_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        LINE25_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> LINE25_A {
@@ -1913,15 +2140,22 @@ impl LINE25_R {
     #[doc = "Checks if the value of the field is `LOW_DRIVE`"]
     #[inline(always)]
     pub fn is_low_drive(&self) -> bool {
-        *self == LINE25_A::LOW_DRIVE
+        **self == LINE25_A::LOW_DRIVE
     }
     #[doc = "Checks if the value of the field is `HIGH_DRIVE`"]
     #[inline(always)]
     pub fn is_high_drive(&self) -> bool {
-        *self == LINE25_A::HIGH_DRIVE
+        **self == LINE25_A::HIGH_DRIVE
     }
 }
-#[doc = "Write proxy for field `LINE25`"]
+impl core::ops::Deref for LINE25_R {
+    type Target = crate::FieldReader<bool, LINE25_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `LINE25` writer - Drive of PIO Line 25"]
 pub struct LINE25_W<'a> {
     w: &'a mut W,
 }
@@ -1929,9 +2163,7 @@ impl<'a> LINE25_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: LINE25_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Lowest drive"]
     #[inline(always)]
@@ -1956,7 +2188,7 @@ impl<'a> LINE25_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 25)) | (((value as u32) & 0x01) << 25);
+        self.w.bits = (self.w.bits & !(0x01 << 25)) | ((value as u32 & 0x01) << 25);
         self.w
     }
 }
@@ -1974,9 +2206,12 @@ impl From<LINE26_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `LINE26`"]
-pub type LINE26_R = crate::R<bool, LINE26_A>;
+#[doc = "Field `LINE26` reader - Drive of PIO Line 26"]
+pub struct LINE26_R(crate::FieldReader<bool, LINE26_A>);
 impl LINE26_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        LINE26_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> LINE26_A {
@@ -1988,15 +2223,22 @@ impl LINE26_R {
     #[doc = "Checks if the value of the field is `LOW_DRIVE`"]
     #[inline(always)]
     pub fn is_low_drive(&self) -> bool {
-        *self == LINE26_A::LOW_DRIVE
+        **self == LINE26_A::LOW_DRIVE
     }
     #[doc = "Checks if the value of the field is `HIGH_DRIVE`"]
     #[inline(always)]
     pub fn is_high_drive(&self) -> bool {
-        *self == LINE26_A::HIGH_DRIVE
+        **self == LINE26_A::HIGH_DRIVE
     }
 }
-#[doc = "Write proxy for field `LINE26`"]
+impl core::ops::Deref for LINE26_R {
+    type Target = crate::FieldReader<bool, LINE26_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `LINE26` writer - Drive of PIO Line 26"]
 pub struct LINE26_W<'a> {
     w: &'a mut W,
 }
@@ -2004,9 +2246,7 @@ impl<'a> LINE26_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: LINE26_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Lowest drive"]
     #[inline(always)]
@@ -2031,7 +2271,7 @@ impl<'a> LINE26_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 26)) | (((value as u32) & 0x01) << 26);
+        self.w.bits = (self.w.bits & !(0x01 << 26)) | ((value as u32 & 0x01) << 26);
         self.w
     }
 }
@@ -2049,9 +2289,12 @@ impl From<LINE27_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `LINE27`"]
-pub type LINE27_R = crate::R<bool, LINE27_A>;
+#[doc = "Field `LINE27` reader - Drive of PIO Line 27"]
+pub struct LINE27_R(crate::FieldReader<bool, LINE27_A>);
 impl LINE27_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        LINE27_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> LINE27_A {
@@ -2063,15 +2306,22 @@ impl LINE27_R {
     #[doc = "Checks if the value of the field is `LOW_DRIVE`"]
     #[inline(always)]
     pub fn is_low_drive(&self) -> bool {
-        *self == LINE27_A::LOW_DRIVE
+        **self == LINE27_A::LOW_DRIVE
     }
     #[doc = "Checks if the value of the field is `HIGH_DRIVE`"]
     #[inline(always)]
     pub fn is_high_drive(&self) -> bool {
-        *self == LINE27_A::HIGH_DRIVE
+        **self == LINE27_A::HIGH_DRIVE
     }
 }
-#[doc = "Write proxy for field `LINE27`"]
+impl core::ops::Deref for LINE27_R {
+    type Target = crate::FieldReader<bool, LINE27_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `LINE27` writer - Drive of PIO Line 27"]
 pub struct LINE27_W<'a> {
     w: &'a mut W,
 }
@@ -2079,9 +2329,7 @@ impl<'a> LINE27_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: LINE27_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Lowest drive"]
     #[inline(always)]
@@ -2106,7 +2354,7 @@ impl<'a> LINE27_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 27)) | (((value as u32) & 0x01) << 27);
+        self.w.bits = (self.w.bits & !(0x01 << 27)) | ((value as u32 & 0x01) << 27);
         self.w
     }
 }
@@ -2124,9 +2372,12 @@ impl From<LINE28_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `LINE28`"]
-pub type LINE28_R = crate::R<bool, LINE28_A>;
+#[doc = "Field `LINE28` reader - Drive of PIO Line 28"]
+pub struct LINE28_R(crate::FieldReader<bool, LINE28_A>);
 impl LINE28_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        LINE28_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> LINE28_A {
@@ -2138,15 +2389,22 @@ impl LINE28_R {
     #[doc = "Checks if the value of the field is `LOW_DRIVE`"]
     #[inline(always)]
     pub fn is_low_drive(&self) -> bool {
-        *self == LINE28_A::LOW_DRIVE
+        **self == LINE28_A::LOW_DRIVE
     }
     #[doc = "Checks if the value of the field is `HIGH_DRIVE`"]
     #[inline(always)]
     pub fn is_high_drive(&self) -> bool {
-        *self == LINE28_A::HIGH_DRIVE
+        **self == LINE28_A::HIGH_DRIVE
     }
 }
-#[doc = "Write proxy for field `LINE28`"]
+impl core::ops::Deref for LINE28_R {
+    type Target = crate::FieldReader<bool, LINE28_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `LINE28` writer - Drive of PIO Line 28"]
 pub struct LINE28_W<'a> {
     w: &'a mut W,
 }
@@ -2154,9 +2412,7 @@ impl<'a> LINE28_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: LINE28_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Lowest drive"]
     #[inline(always)]
@@ -2181,7 +2437,7 @@ impl<'a> LINE28_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 28)) | (((value as u32) & 0x01) << 28);
+        self.w.bits = (self.w.bits & !(0x01 << 28)) | ((value as u32 & 0x01) << 28);
         self.w
     }
 }
@@ -2199,9 +2455,12 @@ impl From<LINE29_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `LINE29`"]
-pub type LINE29_R = crate::R<bool, LINE29_A>;
+#[doc = "Field `LINE29` reader - Drive of PIO Line 29"]
+pub struct LINE29_R(crate::FieldReader<bool, LINE29_A>);
 impl LINE29_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        LINE29_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> LINE29_A {
@@ -2213,15 +2472,22 @@ impl LINE29_R {
     #[doc = "Checks if the value of the field is `LOW_DRIVE`"]
     #[inline(always)]
     pub fn is_low_drive(&self) -> bool {
-        *self == LINE29_A::LOW_DRIVE
+        **self == LINE29_A::LOW_DRIVE
     }
     #[doc = "Checks if the value of the field is `HIGH_DRIVE`"]
     #[inline(always)]
     pub fn is_high_drive(&self) -> bool {
-        *self == LINE29_A::HIGH_DRIVE
+        **self == LINE29_A::HIGH_DRIVE
     }
 }
-#[doc = "Write proxy for field `LINE29`"]
+impl core::ops::Deref for LINE29_R {
+    type Target = crate::FieldReader<bool, LINE29_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `LINE29` writer - Drive of PIO Line 29"]
 pub struct LINE29_W<'a> {
     w: &'a mut W,
 }
@@ -2229,9 +2495,7 @@ impl<'a> LINE29_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: LINE29_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Lowest drive"]
     #[inline(always)]
@@ -2256,7 +2520,7 @@ impl<'a> LINE29_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 29)) | (((value as u32) & 0x01) << 29);
+        self.w.bits = (self.w.bits & !(0x01 << 29)) | ((value as u32 & 0x01) << 29);
         self.w
     }
 }
@@ -2274,9 +2538,12 @@ impl From<LINE30_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `LINE30`"]
-pub type LINE30_R = crate::R<bool, LINE30_A>;
+#[doc = "Field `LINE30` reader - Drive of PIO Line 30"]
+pub struct LINE30_R(crate::FieldReader<bool, LINE30_A>);
 impl LINE30_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        LINE30_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> LINE30_A {
@@ -2288,15 +2555,22 @@ impl LINE30_R {
     #[doc = "Checks if the value of the field is `LOW_DRIVE`"]
     #[inline(always)]
     pub fn is_low_drive(&self) -> bool {
-        *self == LINE30_A::LOW_DRIVE
+        **self == LINE30_A::LOW_DRIVE
     }
     #[doc = "Checks if the value of the field is `HIGH_DRIVE`"]
     #[inline(always)]
     pub fn is_high_drive(&self) -> bool {
-        *self == LINE30_A::HIGH_DRIVE
+        **self == LINE30_A::HIGH_DRIVE
     }
 }
-#[doc = "Write proxy for field `LINE30`"]
+impl core::ops::Deref for LINE30_R {
+    type Target = crate::FieldReader<bool, LINE30_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `LINE30` writer - Drive of PIO Line 30"]
 pub struct LINE30_W<'a> {
     w: &'a mut W,
 }
@@ -2304,9 +2578,7 @@ impl<'a> LINE30_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: LINE30_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Lowest drive"]
     #[inline(always)]
@@ -2331,7 +2603,7 @@ impl<'a> LINE30_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 30)) | (((value as u32) & 0x01) << 30);
+        self.w.bits = (self.w.bits & !(0x01 << 30)) | ((value as u32 & 0x01) << 30);
         self.w
     }
 }
@@ -2349,9 +2621,12 @@ impl From<LINE31_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `LINE31`"]
-pub type LINE31_R = crate::R<bool, LINE31_A>;
+#[doc = "Field `LINE31` reader - Drive of PIO Line 31"]
+pub struct LINE31_R(crate::FieldReader<bool, LINE31_A>);
 impl LINE31_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        LINE31_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> LINE31_A {
@@ -2363,15 +2638,22 @@ impl LINE31_R {
     #[doc = "Checks if the value of the field is `LOW_DRIVE`"]
     #[inline(always)]
     pub fn is_low_drive(&self) -> bool {
-        *self == LINE31_A::LOW_DRIVE
+        **self == LINE31_A::LOW_DRIVE
     }
     #[doc = "Checks if the value of the field is `HIGH_DRIVE`"]
     #[inline(always)]
     pub fn is_high_drive(&self) -> bool {
-        *self == LINE31_A::HIGH_DRIVE
+        **self == LINE31_A::HIGH_DRIVE
     }
 }
-#[doc = "Write proxy for field `LINE31`"]
+impl core::ops::Deref for LINE31_R {
+    type Target = crate::FieldReader<bool, LINE31_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `LINE31` writer - Drive of PIO Line 31"]
 pub struct LINE31_W<'a> {
     w: &'a mut W,
 }
@@ -2379,9 +2661,7 @@ impl<'a> LINE31_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: LINE31_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Lowest drive"]
     #[inline(always)]
@@ -2406,7 +2686,7 @@ impl<'a> LINE31_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 31)) | (((value as u32) & 0x01) << 31);
+        self.w.bits = (self.w.bits & !(0x01 << 31)) | ((value as u32 & 0x01) << 31);
         self.w
     }
 }
@@ -2732,5 +3012,31 @@ impl W {
     #[inline(always)]
     pub fn line31(&mut self) -> LINE31_W {
         LINE31_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "I/O Drive Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [driver](index.html) module"]
+pub struct DRIVER_SPEC;
+impl crate::RegisterSpec for DRIVER_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [driver::R](R) reader structure"]
+impl crate::Readable for DRIVER_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [driver::W](W) writer structure"]
+impl crate::Writable for DRIVER_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets DRIVER to value 0"]
+impl crate::Resettable for DRIVER_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

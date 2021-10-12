@@ -1,13 +1,37 @@
-#[doc = "Reader of register UECFG0"]
-pub type R = crate::R<u32, super::UECFG0>;
-#[doc = "Writer for register UECFG0"]
-pub type W = crate::W<u32, super::UECFG0>;
-#[doc = "Register UECFG0 `reset()`'s with value 0"]
-impl crate::ResetValue for super::UECFG0 {
-    type Type = u32;
+#[doc = "Register `UECFG0` reader"]
+pub struct R(crate::R<UECFG0_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<UECFG0_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<UECFG0_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<UECFG0_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `UECFG0` writer"]
+pub struct W(crate::W<UECFG0_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<UECFG0_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<UECFG0_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<UECFG0_SPEC>) -> Self {
+        W(writer)
     }
 }
 #[doc = "Endpoint Bank\n\nValue on reset: 0"]
@@ -24,9 +48,12 @@ impl From<EPBK_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `EPBK`"]
-pub type EPBK_R = crate::R<bool, EPBK_A>;
+#[doc = "Field `EPBK` reader - Endpoint Bank"]
+pub struct EPBK_R(crate::FieldReader<bool, EPBK_A>);
 impl EPBK_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        EPBK_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> EPBK_A {
@@ -38,15 +65,22 @@ impl EPBK_R {
     #[doc = "Checks if the value of the field is `SINGLE`"]
     #[inline(always)]
     pub fn is_single(&self) -> bool {
-        *self == EPBK_A::SINGLE
+        **self == EPBK_A::SINGLE
     }
     #[doc = "Checks if the value of the field is `DOUBLE`"]
     #[inline(always)]
     pub fn is_double(&self) -> bool {
-        *self == EPBK_A::DOUBLE
+        **self == EPBK_A::DOUBLE
     }
 }
-#[doc = "Write proxy for field `EPBK`"]
+impl core::ops::Deref for EPBK_R {
+    type Target = crate::FieldReader<bool, EPBK_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `EPBK` writer - Endpoint Bank"]
 pub struct EPBK_W<'a> {
     w: &'a mut W,
 }
@@ -54,9 +88,7 @@ impl<'a> EPBK_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: EPBK_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "`0`"]
     #[inline(always)]
@@ -81,7 +113,7 @@ impl<'a> EPBK_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
         self.w
     }
 }
@@ -112,9 +144,12 @@ impl From<EPSIZE_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `EPSIZE`"]
-pub type EPSIZE_R = crate::R<u8, EPSIZE_A>;
+#[doc = "Field `EPSIZE` reader - Endpoint Size"]
+pub struct EPSIZE_R(crate::FieldReader<u8, EPSIZE_A>);
 impl EPSIZE_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        EPSIZE_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> EPSIZE_A {
@@ -133,45 +168,52 @@ impl EPSIZE_R {
     #[doc = "Checks if the value of the field is `_8`"]
     #[inline(always)]
     pub fn is_8(&self) -> bool {
-        *self == EPSIZE_A::_8
+        **self == EPSIZE_A::_8
     }
     #[doc = "Checks if the value of the field is `_16`"]
     #[inline(always)]
     pub fn is_16(&self) -> bool {
-        *self == EPSIZE_A::_16
+        **self == EPSIZE_A::_16
     }
     #[doc = "Checks if the value of the field is `_32`"]
     #[inline(always)]
     pub fn is_32(&self) -> bool {
-        *self == EPSIZE_A::_32
+        **self == EPSIZE_A::_32
     }
     #[doc = "Checks if the value of the field is `_64`"]
     #[inline(always)]
     pub fn is_64(&self) -> bool {
-        *self == EPSIZE_A::_64
+        **self == EPSIZE_A::_64
     }
     #[doc = "Checks if the value of the field is `_128`"]
     #[inline(always)]
     pub fn is_128(&self) -> bool {
-        *self == EPSIZE_A::_128
+        **self == EPSIZE_A::_128
     }
     #[doc = "Checks if the value of the field is `_256`"]
     #[inline(always)]
     pub fn is_256(&self) -> bool {
-        *self == EPSIZE_A::_256
+        **self == EPSIZE_A::_256
     }
     #[doc = "Checks if the value of the field is `_512`"]
     #[inline(always)]
     pub fn is_512(&self) -> bool {
-        *self == EPSIZE_A::_512
+        **self == EPSIZE_A::_512
     }
     #[doc = "Checks if the value of the field is `_1024`"]
     #[inline(always)]
     pub fn is_1024(&self) -> bool {
-        *self == EPSIZE_A::_1024
+        **self == EPSIZE_A::_1024
     }
 }
-#[doc = "Write proxy for field `EPSIZE`"]
+impl core::ops::Deref for EPSIZE_R {
+    type Target = crate::FieldReader<u8, EPSIZE_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `EPSIZE` writer - Endpoint Size"]
 pub struct EPSIZE_W<'a> {
     w: &'a mut W,
 }
@@ -179,9 +221,7 @@ impl<'a> EPSIZE_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: EPSIZE_A) -> &'a mut W {
-        {
-            self.bits(variant.into())
-        }
+        self.bits(variant.into())
     }
     #[doc = "`0`"]
     #[inline(always)]
@@ -226,7 +266,7 @@ impl<'a> EPSIZE_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 4)) | (((value as u32) & 0x07) << 4);
+        self.w.bits = (self.w.bits & !(0x07 << 4)) | ((value as u32 & 0x07) << 4);
         self.w
     }
 }
@@ -244,9 +284,12 @@ impl From<EPDIR_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `EPDIR`"]
-pub type EPDIR_R = crate::R<bool, EPDIR_A>;
+#[doc = "Field `EPDIR` reader - Endpoint Direction"]
+pub struct EPDIR_R(crate::FieldReader<bool, EPDIR_A>);
 impl EPDIR_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        EPDIR_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> EPDIR_A {
@@ -258,15 +301,22 @@ impl EPDIR_R {
     #[doc = "Checks if the value of the field is `OUT`"]
     #[inline(always)]
     pub fn is_out(&self) -> bool {
-        *self == EPDIR_A::OUT
+        **self == EPDIR_A::OUT
     }
     #[doc = "Checks if the value of the field is `IN`"]
     #[inline(always)]
-    pub fn is_in_(&self) -> bool {
-        *self == EPDIR_A::IN
+    pub fn is_in(&self) -> bool {
+        **self == EPDIR_A::IN
     }
 }
-#[doc = "Write proxy for field `EPDIR`"]
+impl core::ops::Deref for EPDIR_R {
+    type Target = crate::FieldReader<bool, EPDIR_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `EPDIR` writer - Endpoint Direction"]
 pub struct EPDIR_W<'a> {
     w: &'a mut W,
 }
@@ -274,9 +324,7 @@ impl<'a> EPDIR_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: EPDIR_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "`0`"]
     #[inline(always)]
@@ -301,7 +349,7 @@ impl<'a> EPDIR_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | (((value as u32) & 0x01) << 8);
+        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
         self.w
     }
 }
@@ -324,9 +372,12 @@ impl From<EPTYPE_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `EPTYPE`"]
-pub type EPTYPE_R = crate::R<u8, EPTYPE_A>;
+#[doc = "Field `EPTYPE` reader - Endpoint Type"]
+pub struct EPTYPE_R(crate::FieldReader<u8, EPTYPE_A>);
 impl EPTYPE_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        EPTYPE_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> EPTYPE_A {
@@ -341,25 +392,32 @@ impl EPTYPE_R {
     #[doc = "Checks if the value of the field is `CONTROL`"]
     #[inline(always)]
     pub fn is_control(&self) -> bool {
-        *self == EPTYPE_A::CONTROL
+        **self == EPTYPE_A::CONTROL
     }
     #[doc = "Checks if the value of the field is `ISOCHRONOUS`"]
     #[inline(always)]
     pub fn is_isochronous(&self) -> bool {
-        *self == EPTYPE_A::ISOCHRONOUS
+        **self == EPTYPE_A::ISOCHRONOUS
     }
     #[doc = "Checks if the value of the field is `BULK`"]
     #[inline(always)]
     pub fn is_bulk(&self) -> bool {
-        *self == EPTYPE_A::BULK
+        **self == EPTYPE_A::BULK
     }
     #[doc = "Checks if the value of the field is `INTERRUPT`"]
     #[inline(always)]
     pub fn is_interrupt(&self) -> bool {
-        *self == EPTYPE_A::INTERRUPT
+        **self == EPTYPE_A::INTERRUPT
     }
 }
-#[doc = "Write proxy for field `EPTYPE`"]
+impl core::ops::Deref for EPTYPE_R {
+    type Target = crate::FieldReader<u8, EPTYPE_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `EPTYPE` writer - Endpoint Type"]
 pub struct EPTYPE_W<'a> {
     w: &'a mut W,
 }
@@ -367,9 +425,7 @@ impl<'a> EPTYPE_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: EPTYPE_A) -> &'a mut W {
-        {
-            self.bits(variant.into())
-        }
+        self.bits(variant.into())
     }
     #[doc = "`0`"]
     #[inline(always)]
@@ -394,13 +450,25 @@ impl<'a> EPTYPE_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 11)) | (((value as u32) & 0x03) << 11);
+        self.w.bits = (self.w.bits & !(0x03 << 11)) | ((value as u32 & 0x03) << 11);
         self.w
     }
 }
-#[doc = "Reader of field `REPNB`"]
-pub type REPNB_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `REPNB`"]
+#[doc = "Field `REPNB` reader - Redirected Endpoint Number"]
+pub struct REPNB_R(crate::FieldReader<u8, u8>);
+impl REPNB_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        REPNB_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for REPNB_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `REPNB` writer - Redirected Endpoint Number"]
 pub struct REPNB_W<'a> {
     w: &'a mut W,
 }
@@ -408,7 +476,7 @@ impl<'a> REPNB_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 16)) | (((value as u32) & 0x0f) << 16);
+        self.w.bits = (self.w.bits & !(0x0f << 16)) | ((value as u32 & 0x0f) << 16);
         self.w
     }
 }
@@ -464,5 +532,31 @@ impl W {
     #[inline(always)]
     pub fn repnb(&mut self) -> REPNB_W {
         REPNB_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Endpoint Configuration Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [uecfg0](index.html) module"]
+pub struct UECFG0_SPEC;
+impl crate::RegisterSpec for UECFG0_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [uecfg0::R](R) reader structure"]
+impl crate::Readable for UECFG0_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [uecfg0::W](W) writer structure"]
+impl crate::Writable for UECFG0_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets UECFG0 to value 0"]
+impl crate::Resettable for UECFG0_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

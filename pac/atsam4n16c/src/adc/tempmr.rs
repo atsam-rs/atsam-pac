@@ -1,18 +1,54 @@
-#[doc = "Reader of register TEMPMR"]
-pub type R = crate::R<u32, super::TEMPMR>;
-#[doc = "Writer for register TEMPMR"]
-pub type W = crate::W<u32, super::TEMPMR>;
-#[doc = "Register TEMPMR `reset()`'s with value 0"]
-impl crate::ResetValue for super::TEMPMR {
-    type Type = u32;
+#[doc = "Register `TEMPMR` reader"]
+pub struct R(crate::R<TEMPMR_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<TEMPMR_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `TEMPON`"]
-pub type TEMPON_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `TEMPON`"]
+impl From<crate::R<TEMPMR_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<TEMPMR_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `TEMPMR` writer"]
+pub struct W(crate::W<TEMPMR_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<TEMPMR_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<TEMPMR_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<TEMPMR_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `TEMPON` reader - Temperature Sensor ON"]
+pub struct TEMPON_R(crate::FieldReader<bool, bool>);
+impl TEMPON_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        TEMPON_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for TEMPON_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `TEMPON` writer - Temperature Sensor ON"]
 pub struct TEMPON_W<'a> {
     w: &'a mut W,
 }
@@ -30,7 +66,7 @@ impl<'a> TEMPON_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
+        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
         self.w
     }
 }
@@ -53,9 +89,12 @@ impl From<TEMPCMPMOD_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `TEMPCMPMOD`"]
-pub type TEMPCMPMOD_R = crate::R<u8, TEMPCMPMOD_A>;
+#[doc = "Field `TEMPCMPMOD` reader - Temperature Comparison Mode"]
+pub struct TEMPCMPMOD_R(crate::FieldReader<u8, TEMPCMPMOD_A>);
 impl TEMPCMPMOD_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        TEMPCMPMOD_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> TEMPCMPMOD_A {
@@ -70,25 +109,32 @@ impl TEMPCMPMOD_R {
     #[doc = "Checks if the value of the field is `LOW`"]
     #[inline(always)]
     pub fn is_low(&self) -> bool {
-        *self == TEMPCMPMOD_A::LOW
+        **self == TEMPCMPMOD_A::LOW
     }
     #[doc = "Checks if the value of the field is `HIGH`"]
     #[inline(always)]
     pub fn is_high(&self) -> bool {
-        *self == TEMPCMPMOD_A::HIGH
+        **self == TEMPCMPMOD_A::HIGH
     }
     #[doc = "Checks if the value of the field is `IN`"]
     #[inline(always)]
-    pub fn is_in_(&self) -> bool {
-        *self == TEMPCMPMOD_A::IN
+    pub fn is_in(&self) -> bool {
+        **self == TEMPCMPMOD_A::IN
     }
     #[doc = "Checks if the value of the field is `OUT`"]
     #[inline(always)]
     pub fn is_out(&self) -> bool {
-        *self == TEMPCMPMOD_A::OUT
+        **self == TEMPCMPMOD_A::OUT
     }
 }
-#[doc = "Write proxy for field `TEMPCMPMOD`"]
+impl core::ops::Deref for TEMPCMPMOD_R {
+    type Target = crate::FieldReader<u8, TEMPCMPMOD_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `TEMPCMPMOD` writer - Temperature Comparison Mode"]
 pub struct TEMPCMPMOD_W<'a> {
     w: &'a mut W,
 }
@@ -96,9 +142,7 @@ impl<'a> TEMPCMPMOD_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: TEMPCMPMOD_A) -> &'a mut W {
-        {
-            self.bits(variant.into())
-        }
+        self.bits(variant.into())
     }
     #[doc = "Generates an event when the converted data is lower than the low threshold of the window."]
     #[inline(always)]
@@ -123,7 +167,7 @@ impl<'a> TEMPCMPMOD_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 4)) | (((value as u32) & 0x03) << 4);
+        self.w.bits = (self.w.bits & !(0x03 << 4)) | ((value as u32 & 0x03) << 4);
         self.w
     }
 }
@@ -149,5 +193,31 @@ impl W {
     #[inline(always)]
     pub fn tempcmpmod(&mut self) -> TEMPCMPMOD_W {
         TEMPCMPMOD_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Temperature Sensor Mode Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [tempmr](index.html) module"]
+pub struct TEMPMR_SPEC;
+impl crate::RegisterSpec for TEMPMR_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [tempmr::R](R) reader structure"]
+impl crate::Readable for TEMPMR_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [tempmr::W](W) writer structure"]
+impl crate::Writable for TEMPMR_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets TEMPMR to value 0"]
+impl crate::Resettable for TEMPMR_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

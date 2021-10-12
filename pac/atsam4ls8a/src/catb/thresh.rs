@@ -1,18 +1,54 @@
-#[doc = "Reader of register THRESH"]
-pub type R = crate::R<u32, super::THRESH>;
-#[doc = "Writer for register THRESH"]
-pub type W = crate::W<u32, super::THRESH>;
-#[doc = "Register THRESH `reset()`'s with value 0"]
-impl crate::ResetValue for super::THRESH {
-    type Type = u32;
+#[doc = "Register `THRESH` reader"]
+pub struct R(crate::R<THRESH_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<THRESH_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `FTHRESH`"]
-pub type FTHRESH_R = crate::R<u16, u16>;
-#[doc = "Write proxy for field `FTHRESH`"]
+impl From<crate::R<THRESH_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<THRESH_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `THRESH` writer"]
+pub struct W(crate::W<THRESH_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<THRESH_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<THRESH_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<THRESH_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `FTHRESH` reader - Fractional part of Threshold Value"]
+pub struct FTHRESH_R(crate::FieldReader<u16, u16>);
+impl FTHRESH_R {
+    pub(crate) fn new(bits: u16) -> Self {
+        FTHRESH_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for FTHRESH_R {
+    type Target = crate::FieldReader<u16, u16>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `FTHRESH` writer - Fractional part of Threshold Value"]
 pub struct FTHRESH_W<'a> {
     w: &'a mut W,
 }
@@ -20,13 +56,25 @@ impl<'a> FTHRESH_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x0fff) | ((value as u32) & 0x0fff);
+        self.w.bits = (self.w.bits & !0x0fff) | (value as u32 & 0x0fff);
         self.w
     }
 }
-#[doc = "Reader of field `RTHRESH`"]
-pub type RTHRESH_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `RTHRESH`"]
+#[doc = "Field `RTHRESH` reader - Rational part of Threshold Value"]
+pub struct RTHRESH_R(crate::FieldReader<u8, u8>);
+impl RTHRESH_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        RTHRESH_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for RTHRESH_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `RTHRESH` writer - Rational part of Threshold Value"]
 pub struct RTHRESH_W<'a> {
     w: &'a mut W,
 }
@@ -34,13 +82,25 @@ impl<'a> RTHRESH_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0xff << 12)) | (((value as u32) & 0xff) << 12);
+        self.w.bits = (self.w.bits & !(0xff << 12)) | ((value as u32 & 0xff) << 12);
         self.w
     }
 }
-#[doc = "Reader of field `DIR`"]
-pub type DIR_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `DIR`"]
+#[doc = "Field `DIR` reader - Threshold Direction"]
+pub struct DIR_R(crate::FieldReader<bool, bool>);
+impl DIR_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        DIR_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for DIR_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `DIR` writer - Threshold Direction"]
 pub struct DIR_W<'a> {
     w: &'a mut W,
 }
@@ -58,13 +118,25 @@ impl<'a> DIR_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 23)) | (((value as u32) & 0x01) << 23);
+        self.w.bits = (self.w.bits & !(0x01 << 23)) | ((value as u32 & 0x01) << 23);
         self.w
     }
 }
-#[doc = "Reader of field `LENGTH`"]
-pub type LENGTH_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `LENGTH`"]
+#[doc = "Field `LENGTH` reader - Threshold Length"]
+pub struct LENGTH_R(crate::FieldReader<u8, u8>);
+impl LENGTH_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        LENGTH_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for LENGTH_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `LENGTH` writer - Threshold Length"]
 pub struct LENGTH_W<'a> {
     w: &'a mut W,
 }
@@ -72,7 +144,7 @@ impl<'a> LENGTH_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x1f << 24)) | (((value as u32) & 0x1f) << 24);
+        self.w.bits = (self.w.bits & !(0x1f << 24)) | ((value as u32 & 0x1f) << 24);
         self.w
     }
 }
@@ -118,5 +190,31 @@ impl W {
     #[inline(always)]
     pub fn length(&mut self) -> LENGTH_W {
         LENGTH_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Threshold Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [thresh](index.html) module"]
+pub struct THRESH_SPEC;
+impl crate::RegisterSpec for THRESH_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [thresh::R](R) reader structure"]
+impl crate::Readable for THRESH_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [thresh::W](W) writer structure"]
+impl crate::Writable for THRESH_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets THRESH to value 0"]
+impl crate::Resettable for THRESH_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

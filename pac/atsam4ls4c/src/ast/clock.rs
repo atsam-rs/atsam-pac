@@ -1,13 +1,37 @@
-#[doc = "Reader of register CLOCK"]
-pub type R = crate::R<u32, super::CLOCK>;
-#[doc = "Writer for register CLOCK"]
-pub type W = crate::W<u32, super::CLOCK>;
-#[doc = "Register CLOCK `reset()`'s with value 0"]
-impl crate::ResetValue for super::CLOCK {
-    type Type = u32;
+#[doc = "Register `CLOCK` reader"]
+pub struct R(crate::R<CLOCK_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<CLOCK_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<CLOCK_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<CLOCK_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `CLOCK` writer"]
+pub struct W(crate::W<CLOCK_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<CLOCK_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<CLOCK_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<CLOCK_SPEC>) -> Self {
+        W(writer)
     }
 }
 #[doc = "Clock Enable\n\nValue on reset: 0"]
@@ -24,9 +48,12 @@ impl From<CEN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `CEN`"]
-pub type CEN_R = crate::R<bool, CEN_A>;
+#[doc = "Field `CEN` reader - Clock Enable"]
+pub struct CEN_R(crate::FieldReader<bool, CEN_A>);
 impl CEN_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        CEN_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CEN_A {
@@ -38,15 +65,22 @@ impl CEN_R {
     #[doc = "Checks if the value of the field is `_0`"]
     #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == CEN_A::_0
+        **self == CEN_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
     #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == CEN_A::_1
+        **self == CEN_A::_1
     }
 }
-#[doc = "Write proxy for field `CEN`"]
+impl core::ops::Deref for CEN_R {
+    type Target = crate::FieldReader<bool, CEN_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CEN` writer - Clock Enable"]
 pub struct CEN_W<'a> {
     w: &'a mut W,
 }
@@ -54,9 +88,7 @@ impl<'a> CEN_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: CEN_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "The clock is disabled"]
     #[inline(always)]
@@ -81,7 +113,7 @@ impl<'a> CEN_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
+        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
         self.w
     }
 }
@@ -106,49 +138,58 @@ impl From<CSSEL_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `CSSEL`"]
-pub type CSSEL_R = crate::R<u8, CSSEL_A>;
+#[doc = "Field `CSSEL` reader - Clock Source Selection"]
+pub struct CSSEL_R(crate::FieldReader<u8, CSSEL_A>);
 impl CSSEL_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        CSSEL_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u8, CSSEL_A> {
-        use crate::Variant::*;
+    pub fn variant(&self) -> Option<CSSEL_A> {
         match self.bits {
-            0 => Val(CSSEL_A::SLOWCLOCK),
-            1 => Val(CSSEL_A::_32KHZCLK),
-            2 => Val(CSSEL_A::PBCLOCK),
-            3 => Val(CSSEL_A::GCLK),
-            4 => Val(CSSEL_A::_1KHZCLK),
-            i => Res(i),
+            0 => Some(CSSEL_A::SLOWCLOCK),
+            1 => Some(CSSEL_A::_32KHZCLK),
+            2 => Some(CSSEL_A::PBCLOCK),
+            3 => Some(CSSEL_A::GCLK),
+            4 => Some(CSSEL_A::_1KHZCLK),
+            _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `SLOWCLOCK`"]
     #[inline(always)]
     pub fn is_slowclock(&self) -> bool {
-        *self == CSSEL_A::SLOWCLOCK
+        **self == CSSEL_A::SLOWCLOCK
     }
     #[doc = "Checks if the value of the field is `_32KHZCLK`"]
     #[inline(always)]
     pub fn is_32khzclk(&self) -> bool {
-        *self == CSSEL_A::_32KHZCLK
+        **self == CSSEL_A::_32KHZCLK
     }
     #[doc = "Checks if the value of the field is `PBCLOCK`"]
     #[inline(always)]
     pub fn is_pbclock(&self) -> bool {
-        *self == CSSEL_A::PBCLOCK
+        **self == CSSEL_A::PBCLOCK
     }
     #[doc = "Checks if the value of the field is `GCLK`"]
     #[inline(always)]
     pub fn is_gclk(&self) -> bool {
-        *self == CSSEL_A::GCLK
+        **self == CSSEL_A::GCLK
     }
     #[doc = "Checks if the value of the field is `_1KHZCLK`"]
     #[inline(always)]
     pub fn is_1khzclk(&self) -> bool {
-        *self == CSSEL_A::_1KHZCLK
+        **self == CSSEL_A::_1KHZCLK
     }
 }
-#[doc = "Write proxy for field `CSSEL`"]
+impl core::ops::Deref for CSSEL_R {
+    type Target = crate::FieldReader<u8, CSSEL_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CSSEL` writer - Clock Source Selection"]
 pub struct CSSEL_W<'a> {
     w: &'a mut W,
 }
@@ -186,7 +227,7 @@ impl<'a> CSSEL_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 8)) | (((value as u32) & 0x07) << 8);
+        self.w.bits = (self.w.bits & !(0x07 << 8)) | ((value as u32 & 0x07) << 8);
         self.w
     }
 }
@@ -212,5 +253,31 @@ impl W {
     #[inline(always)]
     pub fn cssel(&mut self) -> CSSEL_W {
         CSSEL_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Clock Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [clock](index.html) module"]
+pub struct CLOCK_SPEC;
+impl crate::RegisterSpec for CLOCK_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [clock::R](R) reader structure"]
+impl crate::Readable for CLOCK_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [clock::W](W) writer structure"]
+impl crate::Writable for CLOCK_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets CLOCK to value 0"]
+impl crate::Resettable for CLOCK_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

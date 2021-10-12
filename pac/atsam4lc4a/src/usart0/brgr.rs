@@ -1,13 +1,37 @@
-#[doc = "Reader of register BRGR"]
-pub type R = crate::R<u32, super::BRGR>;
-#[doc = "Writer for register BRGR"]
-pub type W = crate::W<u32, super::BRGR>;
-#[doc = "Register BRGR `reset()`'s with value 0"]
-impl crate::ResetValue for super::BRGR {
-    type Type = u32;
+#[doc = "Register `BRGR` reader"]
+pub struct R(crate::R<BRGR_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<BRGR_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<BRGR_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<BRGR_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `BRGR` writer"]
+pub struct W(crate::W<BRGR_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<BRGR_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<BRGR_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<BRGR_SPEC>) -> Self {
+        W(writer)
     }
 }
 #[doc = "Clock Divisor\n\nValue on reset: 0"]
@@ -27,37 +51,46 @@ impl From<CD_A> for u16 {
         variant as _
     }
 }
-#[doc = "Reader of field `CD`"]
-pub type CD_R = crate::R<u16, CD_A>;
+#[doc = "Field `CD` reader - Clock Divisor"]
+pub struct CD_R(crate::FieldReader<u16, CD_A>);
 impl CD_R {
+    pub(crate) fn new(bits: u16) -> Self {
+        CD_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u16, CD_A> {
-        use crate::Variant::*;
+    pub fn variant(&self) -> Option<CD_A> {
         match self.bits {
-            0 => Val(CD_A::DISABLE),
-            1 => Val(CD_A::BYPASS),
-            2 => Val(CD_A::_2),
-            i => Res(i),
+            0 => Some(CD_A::DISABLE),
+            1 => Some(CD_A::BYPASS),
+            2 => Some(CD_A::_2),
+            _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `DISABLE`"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        *self == CD_A::DISABLE
+        **self == CD_A::DISABLE
     }
     #[doc = "Checks if the value of the field is `BYPASS`"]
     #[inline(always)]
     pub fn is_bypass(&self) -> bool {
-        *self == CD_A::BYPASS
+        **self == CD_A::BYPASS
     }
     #[doc = "Checks if the value of the field is `_2`"]
     #[inline(always)]
     pub fn is_2(&self) -> bool {
-        *self == CD_A::_2
+        **self == CD_A::_2
     }
 }
-#[doc = "Write proxy for field `CD`"]
+impl core::ops::Deref for CD_R {
+    type Target = crate::FieldReader<u16, CD_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CD` writer - Clock Divisor"]
 pub struct CD_W<'a> {
     w: &'a mut W,
 }
@@ -85,7 +118,7 @@ impl<'a> CD_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xffff) | ((value as u32) & 0xffff);
+        self.w.bits = (self.w.bits & !0xffff) | (value as u32 & 0xffff);
         self.w
     }
 }
@@ -102,25 +135,34 @@ impl From<FP_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `FP`"]
-pub type FP_R = crate::R<u8, FP_A>;
+#[doc = "Field `FP` reader - Fractional Part"]
+pub struct FP_R(crate::FieldReader<u8, FP_A>);
 impl FP_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        FP_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u8, FP_A> {
-        use crate::Variant::*;
+    pub fn variant(&self) -> Option<FP_A> {
         match self.bits {
-            0 => Val(FP_A::_0),
-            i => Res(i),
+            0 => Some(FP_A::_0),
+            _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `_0`"]
     #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == FP_A::_0
+        **self == FP_A::_0
     }
 }
-#[doc = "Write proxy for field `FP`"]
+impl core::ops::Deref for FP_R {
+    type Target = crate::FieldReader<u8, FP_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `FP` writer - Fractional Part"]
 pub struct FP_W<'a> {
     w: &'a mut W,
 }
@@ -138,7 +180,7 @@ impl<'a> FP_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 16)) | (((value as u32) & 0x07) << 16);
+        self.w.bits = (self.w.bits & !(0x07 << 16)) | ((value as u32 & 0x07) << 16);
         self.w
     }
 }
@@ -164,5 +206,31 @@ impl W {
     #[inline(always)]
     pub fn fp(&mut self) -> FP_W {
         FP_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Baud Rate Generator Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [brgr](index.html) module"]
+pub struct BRGR_SPEC;
+impl crate::RegisterSpec for BRGR_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [brgr::R](R) reader structure"]
+impl crate::Readable for BRGR_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [brgr::W](W) writer structure"]
+impl crate::Writable for BRGR_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets BRGR to value 0"]
+impl crate::Resettable for BRGR_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

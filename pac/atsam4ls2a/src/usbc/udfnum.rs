@@ -1,11 +1,60 @@
-#[doc = "Reader of register UDFNUM"]
-pub type R = crate::R<u32, super::UDFNUM>;
-#[doc = "Reader of field `MFNUM`"]
-pub type MFNUM_R = crate::R<u8, u8>;
-#[doc = "Reader of field `FNUM`"]
-pub type FNUM_R = crate::R<u16, u16>;
-#[doc = "Reader of field `FNCERR`"]
-pub type FNCERR_R = crate::R<bool, bool>;
+#[doc = "Register `UDFNUM` reader"]
+pub struct R(crate::R<UDFNUM_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<UDFNUM_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<UDFNUM_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<UDFNUM_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Field `MFNUM` reader - Micro Frame Number"]
+pub struct MFNUM_R(crate::FieldReader<u8, u8>);
+impl MFNUM_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        MFNUM_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for MFNUM_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `FNUM` reader - Frame Number"]
+pub struct FNUM_R(crate::FieldReader<u16, u16>);
+impl FNUM_R {
+    pub(crate) fn new(bits: u16) -> Self {
+        FNUM_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for FNUM_R {
+    type Target = crate::FieldReader<u16, u16>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `FNCERR` reader - Frame Number CRC Error"]
+pub struct FNCERR_R(crate::FieldReader<bool, bool>);
+impl FNCERR_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        FNCERR_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for FNCERR_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
 impl R {
     #[doc = "Bits 0:2 - Micro Frame Number"]
     #[inline(always)]
@@ -21,5 +70,21 @@ impl R {
     #[inline(always)]
     pub fn fncerr(&self) -> FNCERR_R {
         FNCERR_R::new(((self.bits >> 15) & 0x01) != 0)
+    }
+}
+#[doc = "Device Frame Number Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [udfnum](index.html) module"]
+pub struct UDFNUM_SPEC;
+impl crate::RegisterSpec for UDFNUM_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [udfnum::R](R) reader structure"]
+impl crate::Readable for UDFNUM_SPEC {
+    type Reader = R;
+}
+#[doc = "`reset()` method sets UDFNUM to value 0"]
+impl crate::Resettable for UDFNUM_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

@@ -1,18 +1,54 @@
-#[doc = "Reader of register FASTSLEEP"]
-pub type R = crate::R<u32, super::FASTSLEEP>;
-#[doc = "Writer for register FASTSLEEP"]
-pub type W = crate::W<u32, super::FASTSLEEP>;
-#[doc = "Register FASTSLEEP `reset()`'s with value 0"]
-impl crate::ResetValue for super::FASTSLEEP {
-    type Type = u32;
+#[doc = "Register `FASTSLEEP` reader"]
+pub struct R(crate::R<FASTSLEEP_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<FASTSLEEP_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `OSC`"]
-pub type OSC_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `OSC`"]
+impl From<crate::R<FASTSLEEP_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<FASTSLEEP_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `FASTSLEEP` writer"]
+pub struct W(crate::W<FASTSLEEP_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<FASTSLEEP_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<FASTSLEEP_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<FASTSLEEP_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `OSC` reader - Oscillator"]
+pub struct OSC_R(crate::FieldReader<bool, bool>);
+impl OSC_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        OSC_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for OSC_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `OSC` writer - Oscillator"]
 pub struct OSC_W<'a> {
     w: &'a mut W,
 }
@@ -30,13 +66,25 @@ impl<'a> OSC_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
+        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
         self.w
     }
 }
-#[doc = "Reader of field `PLL`"]
-pub type PLL_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `PLL`"]
+#[doc = "Field `PLL` reader - PLL"]
+pub struct PLL_R(crate::FieldReader<bool, bool>);
+impl PLL_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PLL_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for PLL_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PLL` writer - PLL"]
 pub struct PLL_W<'a> {
     w: &'a mut W,
 }
@@ -54,13 +102,25 @@ impl<'a> PLL_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | (((value as u32) & 0x01) << 8);
+        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
         self.w
     }
 }
-#[doc = "Reader of field `FASTRCOSC`"]
-pub type FASTRCOSC_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `FASTRCOSC`"]
+#[doc = "Field `FASTRCOSC` reader - RC80 or FLO"]
+pub struct FASTRCOSC_R(crate::FieldReader<u8, u8>);
+impl FASTRCOSC_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        FASTRCOSC_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for FASTRCOSC_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `FASTRCOSC` writer - RC80 or FLO"]
 pub struct FASTRCOSC_W<'a> {
     w: &'a mut W,
 }
@@ -68,13 +128,25 @@ impl<'a> FASTRCOSC_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x1f << 16)) | (((value as u32) & 0x1f) << 16);
+        self.w.bits = (self.w.bits & !(0x1f << 16)) | ((value as u32 & 0x1f) << 16);
         self.w
     }
 }
-#[doc = "Reader of field `DFLL`"]
-pub type DFLL_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `DFLL`"]
+#[doc = "Field `DFLL` reader - DFLL"]
+pub struct DFLL_R(crate::FieldReader<bool, bool>);
+impl DFLL_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        DFLL_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for DFLL_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `DFLL` writer - DFLL"]
 pub struct DFLL_W<'a> {
     w: &'a mut W,
 }
@@ -92,7 +164,7 @@ impl<'a> DFLL_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 24)) | (((value as u32) & 0x01) << 24);
+        self.w.bits = (self.w.bits & !(0x01 << 24)) | ((value as u32 & 0x01) << 24);
         self.w
     }
 }
@@ -138,5 +210,31 @@ impl W {
     #[inline(always)]
     pub fn dfll(&mut self) -> DFLL_W {
         DFLL_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Fast Sleep Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [fastsleep](index.html) module"]
+pub struct FASTSLEEP_SPEC;
+impl crate::RegisterSpec for FASTSLEEP_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [fastsleep::R](R) reader structure"]
+impl crate::Readable for FASTSLEEP_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [fastsleep::W](W) writer structure"]
+impl crate::Writable for FASTSLEEP_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets FASTSLEEP to value 0"]
+impl crate::Resettable for FASTSLEEP_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

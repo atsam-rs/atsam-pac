@@ -1,18 +1,54 @@
-#[doc = "Reader of register SCHMITT"]
-pub type R = crate::R<u32, super::SCHMITT>;
-#[doc = "Writer for register SCHMITT"]
-pub type W = crate::W<u32, super::SCHMITT>;
-#[doc = "Register SCHMITT `reset()`'s with value 0"]
-impl crate::ResetValue for super::SCHMITT {
-    type Type = u32;
+#[doc = "Register `SCHMITT` reader"]
+pub struct R(crate::R<SCHMITT_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<SCHMITT_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `SCHMITT0`"]
-pub type SCHMITT0_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `SCHMITT0`"]
+impl From<crate::R<SCHMITT_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<SCHMITT_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `SCHMITT` writer"]
+pub struct W(crate::W<SCHMITT_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<SCHMITT_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<SCHMITT_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<SCHMITT_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `SCHMITT0` reader - "]
+pub struct SCHMITT0_R(crate::FieldReader<bool, bool>);
+impl SCHMITT0_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        SCHMITT0_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for SCHMITT0_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `SCHMITT0` writer - "]
 pub struct SCHMITT0_W<'a> {
     w: &'a mut W,
 }
@@ -30,13 +66,25 @@ impl<'a> SCHMITT0_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
+        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
         self.w
     }
 }
-#[doc = "Reader of field `SCHMITT1`"]
-pub type SCHMITT1_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `SCHMITT1`"]
+#[doc = "Field `SCHMITT1` reader - "]
+pub struct SCHMITT1_R(crate::FieldReader<bool, bool>);
+impl SCHMITT1_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        SCHMITT1_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for SCHMITT1_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `SCHMITT1` writer - "]
 pub struct SCHMITT1_W<'a> {
     w: &'a mut W,
 }
@@ -54,13 +102,25 @@ impl<'a> SCHMITT1_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
         self.w
     }
 }
-#[doc = "Reader of field `SCHMITT2`"]
-pub type SCHMITT2_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `SCHMITT2`"]
+#[doc = "Field `SCHMITT2` reader - "]
+pub struct SCHMITT2_R(crate::FieldReader<bool, bool>);
+impl SCHMITT2_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        SCHMITT2_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for SCHMITT2_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `SCHMITT2` writer - "]
 pub struct SCHMITT2_W<'a> {
     w: &'a mut W,
 }
@@ -78,13 +138,25 @@ impl<'a> SCHMITT2_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
         self.w
     }
 }
-#[doc = "Reader of field `SCHMITT3`"]
-pub type SCHMITT3_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `SCHMITT3`"]
+#[doc = "Field `SCHMITT3` reader - "]
+pub struct SCHMITT3_R(crate::FieldReader<bool, bool>);
+impl SCHMITT3_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        SCHMITT3_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for SCHMITT3_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `SCHMITT3` writer - "]
 pub struct SCHMITT3_W<'a> {
     w: &'a mut W,
 }
@@ -102,13 +174,25 @@ impl<'a> SCHMITT3_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
+        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
         self.w
     }
 }
-#[doc = "Reader of field `SCHMITT4`"]
-pub type SCHMITT4_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `SCHMITT4`"]
+#[doc = "Field `SCHMITT4` reader - "]
+pub struct SCHMITT4_R(crate::FieldReader<bool, bool>);
+impl SCHMITT4_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        SCHMITT4_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for SCHMITT4_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `SCHMITT4` writer - "]
 pub struct SCHMITT4_W<'a> {
     w: &'a mut W,
 }
@@ -126,13 +210,25 @@ impl<'a> SCHMITT4_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u32) & 0x01) << 4);
+        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
         self.w
     }
 }
-#[doc = "Reader of field `SCHMITT5`"]
-pub type SCHMITT5_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `SCHMITT5`"]
+#[doc = "Field `SCHMITT5` reader - "]
+pub struct SCHMITT5_R(crate::FieldReader<bool, bool>);
+impl SCHMITT5_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        SCHMITT5_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for SCHMITT5_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `SCHMITT5` writer - "]
 pub struct SCHMITT5_W<'a> {
     w: &'a mut W,
 }
@@ -150,13 +246,25 @@ impl<'a> SCHMITT5_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u32) & 0x01) << 5);
+        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
         self.w
     }
 }
-#[doc = "Reader of field `SCHMITT6`"]
-pub type SCHMITT6_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `SCHMITT6`"]
+#[doc = "Field `SCHMITT6` reader - "]
+pub struct SCHMITT6_R(crate::FieldReader<bool, bool>);
+impl SCHMITT6_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        SCHMITT6_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for SCHMITT6_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `SCHMITT6` writer - "]
 pub struct SCHMITT6_W<'a> {
     w: &'a mut W,
 }
@@ -174,13 +282,25 @@ impl<'a> SCHMITT6_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | (((value as u32) & 0x01) << 6);
+        self.w.bits = (self.w.bits & !(0x01 << 6)) | ((value as u32 & 0x01) << 6);
         self.w
     }
 }
-#[doc = "Reader of field `SCHMITT7`"]
-pub type SCHMITT7_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `SCHMITT7`"]
+#[doc = "Field `SCHMITT7` reader - "]
+pub struct SCHMITT7_R(crate::FieldReader<bool, bool>);
+impl SCHMITT7_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        SCHMITT7_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for SCHMITT7_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `SCHMITT7` writer - "]
 pub struct SCHMITT7_W<'a> {
     w: &'a mut W,
 }
@@ -198,13 +318,25 @@ impl<'a> SCHMITT7_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | (((value as u32) & 0x01) << 7);
+        self.w.bits = (self.w.bits & !(0x01 << 7)) | ((value as u32 & 0x01) << 7);
         self.w
     }
 }
-#[doc = "Reader of field `SCHMITT8`"]
-pub type SCHMITT8_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `SCHMITT8`"]
+#[doc = "Field `SCHMITT8` reader - "]
+pub struct SCHMITT8_R(crate::FieldReader<bool, bool>);
+impl SCHMITT8_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        SCHMITT8_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for SCHMITT8_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `SCHMITT8` writer - "]
 pub struct SCHMITT8_W<'a> {
     w: &'a mut W,
 }
@@ -222,13 +354,25 @@ impl<'a> SCHMITT8_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | (((value as u32) & 0x01) << 8);
+        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
         self.w
     }
 }
-#[doc = "Reader of field `SCHMITT9`"]
-pub type SCHMITT9_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `SCHMITT9`"]
+#[doc = "Field `SCHMITT9` reader - "]
+pub struct SCHMITT9_R(crate::FieldReader<bool, bool>);
+impl SCHMITT9_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        SCHMITT9_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for SCHMITT9_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `SCHMITT9` writer - "]
 pub struct SCHMITT9_W<'a> {
     w: &'a mut W,
 }
@@ -246,13 +390,25 @@ impl<'a> SCHMITT9_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 9)) | (((value as u32) & 0x01) << 9);
+        self.w.bits = (self.w.bits & !(0x01 << 9)) | ((value as u32 & 0x01) << 9);
         self.w
     }
 }
-#[doc = "Reader of field `SCHMITT10`"]
-pub type SCHMITT10_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `SCHMITT10`"]
+#[doc = "Field `SCHMITT10` reader - "]
+pub struct SCHMITT10_R(crate::FieldReader<bool, bool>);
+impl SCHMITT10_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        SCHMITT10_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for SCHMITT10_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `SCHMITT10` writer - "]
 pub struct SCHMITT10_W<'a> {
     w: &'a mut W,
 }
@@ -270,13 +426,25 @@ impl<'a> SCHMITT10_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 10)) | (((value as u32) & 0x01) << 10);
+        self.w.bits = (self.w.bits & !(0x01 << 10)) | ((value as u32 & 0x01) << 10);
         self.w
     }
 }
-#[doc = "Reader of field `SCHMITT11`"]
-pub type SCHMITT11_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `SCHMITT11`"]
+#[doc = "Field `SCHMITT11` reader - "]
+pub struct SCHMITT11_R(crate::FieldReader<bool, bool>);
+impl SCHMITT11_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        SCHMITT11_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for SCHMITT11_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `SCHMITT11` writer - "]
 pub struct SCHMITT11_W<'a> {
     w: &'a mut W,
 }
@@ -294,13 +462,25 @@ impl<'a> SCHMITT11_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 11)) | (((value as u32) & 0x01) << 11);
+        self.w.bits = (self.w.bits & !(0x01 << 11)) | ((value as u32 & 0x01) << 11);
         self.w
     }
 }
-#[doc = "Reader of field `SCHMITT12`"]
-pub type SCHMITT12_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `SCHMITT12`"]
+#[doc = "Field `SCHMITT12` reader - "]
+pub struct SCHMITT12_R(crate::FieldReader<bool, bool>);
+impl SCHMITT12_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        SCHMITT12_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for SCHMITT12_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `SCHMITT12` writer - "]
 pub struct SCHMITT12_W<'a> {
     w: &'a mut W,
 }
@@ -318,13 +498,25 @@ impl<'a> SCHMITT12_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 12)) | (((value as u32) & 0x01) << 12);
+        self.w.bits = (self.w.bits & !(0x01 << 12)) | ((value as u32 & 0x01) << 12);
         self.w
     }
 }
-#[doc = "Reader of field `SCHMITT13`"]
-pub type SCHMITT13_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `SCHMITT13`"]
+#[doc = "Field `SCHMITT13` reader - "]
+pub struct SCHMITT13_R(crate::FieldReader<bool, bool>);
+impl SCHMITT13_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        SCHMITT13_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for SCHMITT13_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `SCHMITT13` writer - "]
 pub struct SCHMITT13_W<'a> {
     w: &'a mut W,
 }
@@ -342,13 +534,25 @@ impl<'a> SCHMITT13_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 13)) | (((value as u32) & 0x01) << 13);
+        self.w.bits = (self.w.bits & !(0x01 << 13)) | ((value as u32 & 0x01) << 13);
         self.w
     }
 }
-#[doc = "Reader of field `SCHMITT14`"]
-pub type SCHMITT14_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `SCHMITT14`"]
+#[doc = "Field `SCHMITT14` reader - "]
+pub struct SCHMITT14_R(crate::FieldReader<bool, bool>);
+impl SCHMITT14_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        SCHMITT14_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for SCHMITT14_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `SCHMITT14` writer - "]
 pub struct SCHMITT14_W<'a> {
     w: &'a mut W,
 }
@@ -366,13 +570,25 @@ impl<'a> SCHMITT14_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 14)) | (((value as u32) & 0x01) << 14);
+        self.w.bits = (self.w.bits & !(0x01 << 14)) | ((value as u32 & 0x01) << 14);
         self.w
     }
 }
-#[doc = "Reader of field `SCHMITT15`"]
-pub type SCHMITT15_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `SCHMITT15`"]
+#[doc = "Field `SCHMITT15` reader - "]
+pub struct SCHMITT15_R(crate::FieldReader<bool, bool>);
+impl SCHMITT15_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        SCHMITT15_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for SCHMITT15_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `SCHMITT15` writer - "]
 pub struct SCHMITT15_W<'a> {
     w: &'a mut W,
 }
@@ -390,13 +606,25 @@ impl<'a> SCHMITT15_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 15)) | (((value as u32) & 0x01) << 15);
+        self.w.bits = (self.w.bits & !(0x01 << 15)) | ((value as u32 & 0x01) << 15);
         self.w
     }
 }
-#[doc = "Reader of field `SCHMITT16`"]
-pub type SCHMITT16_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `SCHMITT16`"]
+#[doc = "Field `SCHMITT16` reader - "]
+pub struct SCHMITT16_R(crate::FieldReader<bool, bool>);
+impl SCHMITT16_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        SCHMITT16_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for SCHMITT16_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `SCHMITT16` writer - "]
 pub struct SCHMITT16_W<'a> {
     w: &'a mut W,
 }
@@ -414,13 +642,25 @@ impl<'a> SCHMITT16_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 16)) | (((value as u32) & 0x01) << 16);
+        self.w.bits = (self.w.bits & !(0x01 << 16)) | ((value as u32 & 0x01) << 16);
         self.w
     }
 }
-#[doc = "Reader of field `SCHMITT17`"]
-pub type SCHMITT17_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `SCHMITT17`"]
+#[doc = "Field `SCHMITT17` reader - "]
+pub struct SCHMITT17_R(crate::FieldReader<bool, bool>);
+impl SCHMITT17_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        SCHMITT17_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for SCHMITT17_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `SCHMITT17` writer - "]
 pub struct SCHMITT17_W<'a> {
     w: &'a mut W,
 }
@@ -438,13 +678,25 @@ impl<'a> SCHMITT17_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 17)) | (((value as u32) & 0x01) << 17);
+        self.w.bits = (self.w.bits & !(0x01 << 17)) | ((value as u32 & 0x01) << 17);
         self.w
     }
 }
-#[doc = "Reader of field `SCHMITT18`"]
-pub type SCHMITT18_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `SCHMITT18`"]
+#[doc = "Field `SCHMITT18` reader - "]
+pub struct SCHMITT18_R(crate::FieldReader<bool, bool>);
+impl SCHMITT18_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        SCHMITT18_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for SCHMITT18_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `SCHMITT18` writer - "]
 pub struct SCHMITT18_W<'a> {
     w: &'a mut W,
 }
@@ -462,13 +714,25 @@ impl<'a> SCHMITT18_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 18)) | (((value as u32) & 0x01) << 18);
+        self.w.bits = (self.w.bits & !(0x01 << 18)) | ((value as u32 & 0x01) << 18);
         self.w
     }
 }
-#[doc = "Reader of field `SCHMITT19`"]
-pub type SCHMITT19_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `SCHMITT19`"]
+#[doc = "Field `SCHMITT19` reader - "]
+pub struct SCHMITT19_R(crate::FieldReader<bool, bool>);
+impl SCHMITT19_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        SCHMITT19_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for SCHMITT19_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `SCHMITT19` writer - "]
 pub struct SCHMITT19_W<'a> {
     w: &'a mut W,
 }
@@ -486,13 +750,25 @@ impl<'a> SCHMITT19_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 19)) | (((value as u32) & 0x01) << 19);
+        self.w.bits = (self.w.bits & !(0x01 << 19)) | ((value as u32 & 0x01) << 19);
         self.w
     }
 }
-#[doc = "Reader of field `SCHMITT20`"]
-pub type SCHMITT20_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `SCHMITT20`"]
+#[doc = "Field `SCHMITT20` reader - "]
+pub struct SCHMITT20_R(crate::FieldReader<bool, bool>);
+impl SCHMITT20_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        SCHMITT20_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for SCHMITT20_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `SCHMITT20` writer - "]
 pub struct SCHMITT20_W<'a> {
     w: &'a mut W,
 }
@@ -510,13 +786,25 @@ impl<'a> SCHMITT20_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 20)) | (((value as u32) & 0x01) << 20);
+        self.w.bits = (self.w.bits & !(0x01 << 20)) | ((value as u32 & 0x01) << 20);
         self.w
     }
 }
-#[doc = "Reader of field `SCHMITT21`"]
-pub type SCHMITT21_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `SCHMITT21`"]
+#[doc = "Field `SCHMITT21` reader - "]
+pub struct SCHMITT21_R(crate::FieldReader<bool, bool>);
+impl SCHMITT21_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        SCHMITT21_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for SCHMITT21_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `SCHMITT21` writer - "]
 pub struct SCHMITT21_W<'a> {
     w: &'a mut W,
 }
@@ -534,13 +822,25 @@ impl<'a> SCHMITT21_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 21)) | (((value as u32) & 0x01) << 21);
+        self.w.bits = (self.w.bits & !(0x01 << 21)) | ((value as u32 & 0x01) << 21);
         self.w
     }
 }
-#[doc = "Reader of field `SCHMITT22`"]
-pub type SCHMITT22_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `SCHMITT22`"]
+#[doc = "Field `SCHMITT22` reader - "]
+pub struct SCHMITT22_R(crate::FieldReader<bool, bool>);
+impl SCHMITT22_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        SCHMITT22_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for SCHMITT22_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `SCHMITT22` writer - "]
 pub struct SCHMITT22_W<'a> {
     w: &'a mut W,
 }
@@ -558,13 +858,25 @@ impl<'a> SCHMITT22_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 22)) | (((value as u32) & 0x01) << 22);
+        self.w.bits = (self.w.bits & !(0x01 << 22)) | ((value as u32 & 0x01) << 22);
         self.w
     }
 }
-#[doc = "Reader of field `SCHMITT23`"]
-pub type SCHMITT23_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `SCHMITT23`"]
+#[doc = "Field `SCHMITT23` reader - "]
+pub struct SCHMITT23_R(crate::FieldReader<bool, bool>);
+impl SCHMITT23_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        SCHMITT23_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for SCHMITT23_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `SCHMITT23` writer - "]
 pub struct SCHMITT23_W<'a> {
     w: &'a mut W,
 }
@@ -582,13 +894,25 @@ impl<'a> SCHMITT23_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 23)) | (((value as u32) & 0x01) << 23);
+        self.w.bits = (self.w.bits & !(0x01 << 23)) | ((value as u32 & 0x01) << 23);
         self.w
     }
 }
-#[doc = "Reader of field `SCHMITT24`"]
-pub type SCHMITT24_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `SCHMITT24`"]
+#[doc = "Field `SCHMITT24` reader - "]
+pub struct SCHMITT24_R(crate::FieldReader<bool, bool>);
+impl SCHMITT24_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        SCHMITT24_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for SCHMITT24_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `SCHMITT24` writer - "]
 pub struct SCHMITT24_W<'a> {
     w: &'a mut W,
 }
@@ -606,13 +930,25 @@ impl<'a> SCHMITT24_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 24)) | (((value as u32) & 0x01) << 24);
+        self.w.bits = (self.w.bits & !(0x01 << 24)) | ((value as u32 & 0x01) << 24);
         self.w
     }
 }
-#[doc = "Reader of field `SCHMITT25`"]
-pub type SCHMITT25_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `SCHMITT25`"]
+#[doc = "Field `SCHMITT25` reader - "]
+pub struct SCHMITT25_R(crate::FieldReader<bool, bool>);
+impl SCHMITT25_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        SCHMITT25_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for SCHMITT25_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `SCHMITT25` writer - "]
 pub struct SCHMITT25_W<'a> {
     w: &'a mut W,
 }
@@ -630,13 +966,25 @@ impl<'a> SCHMITT25_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 25)) | (((value as u32) & 0x01) << 25);
+        self.w.bits = (self.w.bits & !(0x01 << 25)) | ((value as u32 & 0x01) << 25);
         self.w
     }
 }
-#[doc = "Reader of field `SCHMITT26`"]
-pub type SCHMITT26_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `SCHMITT26`"]
+#[doc = "Field `SCHMITT26` reader - "]
+pub struct SCHMITT26_R(crate::FieldReader<bool, bool>);
+impl SCHMITT26_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        SCHMITT26_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for SCHMITT26_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `SCHMITT26` writer - "]
 pub struct SCHMITT26_W<'a> {
     w: &'a mut W,
 }
@@ -654,13 +1002,25 @@ impl<'a> SCHMITT26_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 26)) | (((value as u32) & 0x01) << 26);
+        self.w.bits = (self.w.bits & !(0x01 << 26)) | ((value as u32 & 0x01) << 26);
         self.w
     }
 }
-#[doc = "Reader of field `SCHMITT27`"]
-pub type SCHMITT27_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `SCHMITT27`"]
+#[doc = "Field `SCHMITT27` reader - "]
+pub struct SCHMITT27_R(crate::FieldReader<bool, bool>);
+impl SCHMITT27_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        SCHMITT27_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for SCHMITT27_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `SCHMITT27` writer - "]
 pub struct SCHMITT27_W<'a> {
     w: &'a mut W,
 }
@@ -678,13 +1038,25 @@ impl<'a> SCHMITT27_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 27)) | (((value as u32) & 0x01) << 27);
+        self.w.bits = (self.w.bits & !(0x01 << 27)) | ((value as u32 & 0x01) << 27);
         self.w
     }
 }
-#[doc = "Reader of field `SCHMITT28`"]
-pub type SCHMITT28_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `SCHMITT28`"]
+#[doc = "Field `SCHMITT28` reader - "]
+pub struct SCHMITT28_R(crate::FieldReader<bool, bool>);
+impl SCHMITT28_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        SCHMITT28_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for SCHMITT28_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `SCHMITT28` writer - "]
 pub struct SCHMITT28_W<'a> {
     w: &'a mut W,
 }
@@ -702,13 +1074,25 @@ impl<'a> SCHMITT28_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 28)) | (((value as u32) & 0x01) << 28);
+        self.w.bits = (self.w.bits & !(0x01 << 28)) | ((value as u32 & 0x01) << 28);
         self.w
     }
 }
-#[doc = "Reader of field `SCHMITT29`"]
-pub type SCHMITT29_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `SCHMITT29`"]
+#[doc = "Field `SCHMITT29` reader - "]
+pub struct SCHMITT29_R(crate::FieldReader<bool, bool>);
+impl SCHMITT29_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        SCHMITT29_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for SCHMITT29_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `SCHMITT29` writer - "]
 pub struct SCHMITT29_W<'a> {
     w: &'a mut W,
 }
@@ -726,13 +1110,25 @@ impl<'a> SCHMITT29_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 29)) | (((value as u32) & 0x01) << 29);
+        self.w.bits = (self.w.bits & !(0x01 << 29)) | ((value as u32 & 0x01) << 29);
         self.w
     }
 }
-#[doc = "Reader of field `SCHMITT30`"]
-pub type SCHMITT30_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `SCHMITT30`"]
+#[doc = "Field `SCHMITT30` reader - "]
+pub struct SCHMITT30_R(crate::FieldReader<bool, bool>);
+impl SCHMITT30_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        SCHMITT30_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for SCHMITT30_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `SCHMITT30` writer - "]
 pub struct SCHMITT30_W<'a> {
     w: &'a mut W,
 }
@@ -750,13 +1146,25 @@ impl<'a> SCHMITT30_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 30)) | (((value as u32) & 0x01) << 30);
+        self.w.bits = (self.w.bits & !(0x01 << 30)) | ((value as u32 & 0x01) << 30);
         self.w
     }
 }
-#[doc = "Reader of field `SCHMITT31`"]
-pub type SCHMITT31_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `SCHMITT31`"]
+#[doc = "Field `SCHMITT31` reader - "]
+pub struct SCHMITT31_R(crate::FieldReader<bool, bool>);
+impl SCHMITT31_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        SCHMITT31_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for SCHMITT31_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `SCHMITT31` writer - "]
 pub struct SCHMITT31_W<'a> {
     w: &'a mut W,
 }
@@ -774,7 +1182,7 @@ impl<'a> SCHMITT31_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 31)) | (((value as u32) & 0x01) << 31);
+        self.w.bits = (self.w.bits & !(0x01 << 31)) | ((value as u32 & 0x01) << 31);
         self.w
     }
 }
@@ -1100,5 +1508,31 @@ impl W {
     #[inline(always)]
     pub fn schmitt31(&mut self) -> SCHMITT31_W {
         SCHMITT31_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Schmitt Trigger Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [schmitt](index.html) module"]
+pub struct SCHMITT_SPEC;
+impl crate::RegisterSpec for SCHMITT_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [schmitt::R](R) reader structure"]
+impl crate::Readable for SCHMITT_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [schmitt::W](W) writer structure"]
+impl crate::Writable for SCHMITT_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets SCHMITT to value 0"]
+impl crate::Resettable for SCHMITT_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

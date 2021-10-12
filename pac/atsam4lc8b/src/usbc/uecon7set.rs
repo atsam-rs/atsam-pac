@@ -1,14 +1,25 @@
-#[doc = "Writer for register UECON7SET"]
-pub type W = crate::W<u32, super::UECON7SET>;
-#[doc = "Register UECON7SET `reset()`'s with value 0"]
-impl crate::ResetValue for super::UECON7SET {
-    type Type = u32;
+#[doc = "Register `UECON7SET` writer"]
+pub struct W(crate::W<UECON7SET_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<UECON7SET_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Write proxy for field `TXINES`"]
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<UECON7SET_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<UECON7SET_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `TXINES` writer - TXINE Set"]
 pub struct TXINES_W<'a> {
     w: &'a mut W,
 }
@@ -26,11 +37,11 @@ impl<'a> TXINES_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
+        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
         self.w
     }
 }
-#[doc = "Write proxy for field `RXOUTES`"]
+#[doc = "Field `RXOUTES` writer - RXOUTE Set"]
 pub struct RXOUTES_W<'a> {
     w: &'a mut W,
 }
@@ -48,11 +59,11 @@ impl<'a> RXOUTES_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
         self.w
     }
 }
-#[doc = "Write proxy for field `RXSTPES`"]
+#[doc = "Field `RXSTPES` writer - RXSTPE Set"]
 pub struct RXSTPES_W<'a> {
     w: &'a mut W,
 }
@@ -70,11 +81,11 @@ impl<'a> RXSTPES_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
         self.w
     }
 }
-#[doc = "Write proxy for field `NAKOUTES`"]
+#[doc = "Field `NAKOUTES` writer - NAKOUTE Set"]
 pub struct NAKOUTES_W<'a> {
     w: &'a mut W,
 }
@@ -92,11 +103,11 @@ impl<'a> NAKOUTES_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
+        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
         self.w
     }
 }
-#[doc = "Write proxy for field `NAKINES`"]
+#[doc = "Field `NAKINES` writer - NAKINE Set"]
 pub struct NAKINES_W<'a> {
     w: &'a mut W,
 }
@@ -114,11 +125,11 @@ impl<'a> NAKINES_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u32) & 0x01) << 4);
+        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
         self.w
     }
 }
-#[doc = "Write proxy for field `STALLEDES`"]
+#[doc = "Field `STALLEDES` writer - STALLEDE Set"]
 pub struct STALLEDES_W<'a> {
     w: &'a mut W,
 }
@@ -136,11 +147,11 @@ impl<'a> STALLEDES_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | (((value as u32) & 0x01) << 6);
+        self.w.bits = (self.w.bits & !(0x01 << 6)) | ((value as u32 & 0x01) << 6);
         self.w
     }
 }
-#[doc = "Write proxy for field `NREPLYS`"]
+#[doc = "Field `NREPLYS` writer - NREPLY Set"]
 pub struct NREPLYS_W<'a> {
     w: &'a mut W,
 }
@@ -158,11 +169,11 @@ impl<'a> NREPLYS_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | (((value as u32) & 0x01) << 8);
+        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
         self.w
     }
 }
-#[doc = "Write proxy for field `RAMACERES`"]
+#[doc = "Field `RAMACERES` writer - RAMACERE Set"]
 pub struct RAMACERES_W<'a> {
     w: &'a mut W,
 }
@@ -180,11 +191,11 @@ impl<'a> RAMACERES_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 11)) | (((value as u32) & 0x01) << 11);
+        self.w.bits = (self.w.bits & !(0x01 << 11)) | ((value as u32 & 0x01) << 11);
         self.w
     }
 }
-#[doc = "Write proxy for field `NBUSYBKES`"]
+#[doc = "Field `NBUSYBKES` writer - NBUSYBKE Set"]
 pub struct NBUSYBKES_W<'a> {
     w: &'a mut W,
 }
@@ -202,11 +213,11 @@ impl<'a> NBUSYBKES_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 12)) | (((value as u32) & 0x01) << 12);
+        self.w.bits = (self.w.bits & !(0x01 << 12)) | ((value as u32 & 0x01) << 12);
         self.w
     }
 }
-#[doc = "Write proxy for field `KILLBKS`"]
+#[doc = "Field `KILLBKS` writer - KILLBK Set"]
 pub struct KILLBKS_W<'a> {
     w: &'a mut W,
 }
@@ -224,11 +235,11 @@ impl<'a> KILLBKS_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 13)) | (((value as u32) & 0x01) << 13);
+        self.w.bits = (self.w.bits & !(0x01 << 13)) | ((value as u32 & 0x01) << 13);
         self.w
     }
 }
-#[doc = "Write proxy for field `NYETDISS`"]
+#[doc = "Field `NYETDISS` writer - NYETDIS Set"]
 pub struct NYETDISS_W<'a> {
     w: &'a mut W,
 }
@@ -246,11 +257,11 @@ impl<'a> NYETDISS_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 17)) | (((value as u32) & 0x01) << 17);
+        self.w.bits = (self.w.bits & !(0x01 << 17)) | ((value as u32 & 0x01) << 17);
         self.w
     }
 }
-#[doc = "Write proxy for field `RSTDTS`"]
+#[doc = "Field `RSTDTS` writer - RSTDT Set"]
 pub struct RSTDTS_W<'a> {
     w: &'a mut W,
 }
@@ -268,11 +279,11 @@ impl<'a> RSTDTS_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 18)) | (((value as u32) & 0x01) << 18);
+        self.w.bits = (self.w.bits & !(0x01 << 18)) | ((value as u32 & 0x01) << 18);
         self.w
     }
 }
-#[doc = "Write proxy for field `STALLRQS`"]
+#[doc = "Field `STALLRQS` writer - STALLRQ Set"]
 pub struct STALLRQS_W<'a> {
     w: &'a mut W,
 }
@@ -290,11 +301,11 @@ impl<'a> STALLRQS_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 19)) | (((value as u32) & 0x01) << 19);
+        self.w.bits = (self.w.bits & !(0x01 << 19)) | ((value as u32 & 0x01) << 19);
         self.w
     }
 }
-#[doc = "Write proxy for field `BUSY0S`"]
+#[doc = "Field `BUSY0S` writer - BUSY0 Set"]
 pub struct BUSY0S_W<'a> {
     w: &'a mut W,
 }
@@ -312,11 +323,11 @@ impl<'a> BUSY0S_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 24)) | (((value as u32) & 0x01) << 24);
+        self.w.bits = (self.w.bits & !(0x01 << 24)) | ((value as u32 & 0x01) << 24);
         self.w
     }
 }
-#[doc = "Write proxy for field `BUSY1S`"]
+#[doc = "Field `BUSY1S` writer - BUSY1 Set"]
 pub struct BUSY1S_W<'a> {
     w: &'a mut W,
 }
@@ -334,7 +345,7 @@ impl<'a> BUSY1S_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 25)) | (((value as u32) & 0x01) << 25);
+        self.w.bits = (self.w.bits & !(0x01 << 25)) | ((value as u32 & 0x01) << 25);
         self.w
     }
 }
@@ -413,5 +424,27 @@ impl W {
     #[inline(always)]
     pub fn busy1s(&mut self) -> BUSY1S_W {
         BUSY1S_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Endpoint Control Set Register\n\nThis register you can [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [uecon7set](index.html) module"]
+pub struct UECON7SET_SPEC;
+impl crate::RegisterSpec for UECON7SET_SPEC {
+    type Ux = u32;
+}
+#[doc = "`write(|w| ..)` method takes [uecon7set::W](W) writer structure"]
+impl crate::Writable for UECON7SET_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets UECON7SET to value 0"]
+impl crate::Resettable for UECON7SET_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

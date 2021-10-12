@@ -1,18 +1,54 @@
-#[doc = "Reader of register BOD18LEVEL"]
-pub type R = crate::R<u32, super::BOD18LEVEL>;
-#[doc = "Writer for register BOD18LEVEL"]
-pub type W = crate::W<u32, super::BOD18LEVEL>;
-#[doc = "Register BOD18LEVEL `reset()`'s with value 0"]
-impl crate::ResetValue for super::BOD18LEVEL {
-    type Type = u32;
+#[doc = "Register `BOD18LEVEL` reader"]
+pub struct R(crate::R<BOD18LEVEL_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<BOD18LEVEL_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `VAL`"]
-pub type VAL_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `VAL`"]
+impl From<crate::R<BOD18LEVEL_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<BOD18LEVEL_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `BOD18LEVEL` writer"]
+pub struct W(crate::W<BOD18LEVEL_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<BOD18LEVEL_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<BOD18LEVEL_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<BOD18LEVEL_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `VAL` reader - BOD Value"]
+pub struct VAL_R(crate::FieldReader<u8, u8>);
+impl VAL_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        VAL_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for VAL_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `VAL` writer - BOD Value"]
 pub struct VAL_W<'a> {
     w: &'a mut W,
 }
@@ -20,13 +56,25 @@ impl<'a> VAL_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x3f) | ((value as u32) & 0x3f);
+        self.w.bits = (self.w.bits & !0x3f) | (value as u32 & 0x3f);
         self.w
     }
 }
-#[doc = "Reader of field `RANGE`"]
-pub type RANGE_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `RANGE`"]
+#[doc = "Field `RANGE` reader - BOD Threshold Range"]
+pub struct RANGE_R(crate::FieldReader<bool, bool>);
+impl RANGE_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        RANGE_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for RANGE_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `RANGE` writer - BOD Threshold Range"]
 pub struct RANGE_W<'a> {
     w: &'a mut W,
 }
@@ -44,7 +92,7 @@ impl<'a> RANGE_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 31)) | (((value as u32) & 0x01) << 31);
+        self.w.bits = (self.w.bits & !(0x01 << 31)) | ((value as u32 & 0x01) << 31);
         self.w
     }
 }
@@ -70,5 +118,31 @@ impl W {
     #[inline(always)]
     pub fn range(&mut self) -> RANGE_W {
         RANGE_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "BOD18 Level Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [bod18level](index.html) module"]
+pub struct BOD18LEVEL_SPEC;
+impl crate::RegisterSpec for BOD18LEVEL_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [bod18level::R](R) reader structure"]
+impl crate::Readable for BOD18LEVEL_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [bod18level::W](W) writer structure"]
+impl crate::Writable for BOD18LEVEL_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets BOD18LEVEL to value 0"]
+impl crate::Resettable for BOD18LEVEL_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

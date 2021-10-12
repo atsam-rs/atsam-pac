@@ -1,6 +1,25 @@
-#[doc = "Writer for register CHDR"]
-pub type W = crate::W<u32, super::CHDR>;
-#[doc = "Write proxy for field `CH0`"]
+#[doc = "Register `CHDR` writer"]
+pub struct W(crate::W<CHDR_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<CHDR_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<CHDR_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<CHDR_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `CH0` writer - Channel 0 Disable"]
 pub struct CH0_W<'a> {
     w: &'a mut W,
 }
@@ -18,11 +37,11 @@ impl<'a> CH0_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
+        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
         self.w
     }
 }
-#[doc = "Write proxy for field `CH1`"]
+#[doc = "Field `CH1` writer - Channel 1 Disable"]
 pub struct CH1_W<'a> {
     w: &'a mut W,
 }
@@ -40,11 +59,11 @@ impl<'a> CH1_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
         self.w
     }
 }
-#[doc = "Write proxy for field `CH2`"]
+#[doc = "Field `CH2` writer - Channel 2 Disable"]
 pub struct CH2_W<'a> {
     w: &'a mut W,
 }
@@ -62,11 +81,11 @@ impl<'a> CH2_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
         self.w
     }
 }
-#[doc = "Write proxy for field `CH3`"]
+#[doc = "Field `CH3` writer - Channel 3 Disable"]
 pub struct CH3_W<'a> {
     w: &'a mut W,
 }
@@ -84,11 +103,11 @@ impl<'a> CH3_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
+        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
         self.w
     }
 }
-#[doc = "Write proxy for field `CH4`"]
+#[doc = "Field `CH4` writer - Channel 4 Disable"]
 pub struct CH4_W<'a> {
     w: &'a mut W,
 }
@@ -106,11 +125,11 @@ impl<'a> CH4_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u32) & 0x01) << 4);
+        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
         self.w
     }
 }
-#[doc = "Write proxy for field `CH5`"]
+#[doc = "Field `CH5` writer - Channel 5 Disable"]
 pub struct CH5_W<'a> {
     w: &'a mut W,
 }
@@ -128,11 +147,11 @@ impl<'a> CH5_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u32) & 0x01) << 5);
+        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
         self.w
     }
 }
-#[doc = "Write proxy for field `CH6`"]
+#[doc = "Field `CH6` writer - Channel 6 Disable"]
 pub struct CH6_W<'a> {
     w: &'a mut W,
 }
@@ -150,11 +169,11 @@ impl<'a> CH6_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | (((value as u32) & 0x01) << 6);
+        self.w.bits = (self.w.bits & !(0x01 << 6)) | ((value as u32 & 0x01) << 6);
         self.w
     }
 }
-#[doc = "Write proxy for field `CH7`"]
+#[doc = "Field `CH7` writer - Channel 7 Disable"]
 pub struct CH7_W<'a> {
     w: &'a mut W,
 }
@@ -172,11 +191,11 @@ impl<'a> CH7_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | (((value as u32) & 0x01) << 7);
+        self.w.bits = (self.w.bits & !(0x01 << 7)) | ((value as u32 & 0x01) << 7);
         self.w
     }
 }
-#[doc = "Write proxy for field `CH8`"]
+#[doc = "Field `CH8` writer - Channel 8 Disable"]
 pub struct CH8_W<'a> {
     w: &'a mut W,
 }
@@ -194,11 +213,11 @@ impl<'a> CH8_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | (((value as u32) & 0x01) << 8);
+        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
         self.w
     }
 }
-#[doc = "Write proxy for field `CH9`"]
+#[doc = "Field `CH9` writer - Channel 9 Disable"]
 pub struct CH9_W<'a> {
     w: &'a mut W,
 }
@@ -216,7 +235,7 @@ impl<'a> CH9_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 9)) | (((value as u32) & 0x01) << 9);
+        self.w.bits = (self.w.bits & !(0x01 << 9)) | ((value as u32 & 0x01) << 9);
         self.w
     }
 }
@@ -271,4 +290,19 @@ impl W {
     pub fn ch9(&mut self) -> CH9_W {
         CH9_W { w: self }
     }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Channel Disable Register\n\nThis register you can [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [chdr](index.html) module"]
+pub struct CHDR_SPEC;
+impl crate::RegisterSpec for CHDR_SPEC {
+    type Ux = u32;
+}
+#[doc = "`write(|w| ..)` method takes [chdr::W](W) writer structure"]
+impl crate::Writable for CHDR_SPEC {
+    type Writer = W;
 }

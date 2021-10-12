@@ -1,7 +1,32 @@
-#[doc = "Reader of register FWRUNPS"]
-pub type R = crate::R<u32, super::FWRUNPS>;
-#[doc = "Reader of field `REGLEVEL`"]
-pub type REGLEVEL_R = crate::R<u8, u8>;
+#[doc = "Register `FWRUNPS` reader"]
+pub struct R(crate::R<FWRUNPS_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<FWRUNPS_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<FWRUNPS_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<FWRUNPS_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Field `REGLEVEL` reader - Regulator Voltage Level"]
+pub struct REGLEVEL_R(crate::FieldReader<u8, u8>);
+impl REGLEVEL_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        REGLEVEL_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for REGLEVEL_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
 #[doc = "Regulator Type\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -19,34 +44,43 @@ impl From<REGTYPE_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `REGTYPE`"]
-pub type REGTYPE_R = crate::R<u8, REGTYPE_A>;
+#[doc = "Field `REGTYPE` reader - Regulator Type"]
+pub struct REGTYPE_R(crate::FieldReader<u8, REGTYPE_A>);
 impl REGTYPE_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        REGTYPE_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u8, REGTYPE_A> {
-        use crate::Variant::*;
+    pub fn variant(&self) -> Option<REGTYPE_A> {
         match self.bits {
-            0 => Val(REGTYPE_A::NORMAL),
-            1 => Val(REGTYPE_A::LP),
-            2 => Val(REGTYPE_A::XULP),
-            i => Res(i),
+            0 => Some(REGTYPE_A::NORMAL),
+            1 => Some(REGTYPE_A::LP),
+            2 => Some(REGTYPE_A::XULP),
+            _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `NORMAL`"]
     #[inline(always)]
     pub fn is_normal(&self) -> bool {
-        *self == REGTYPE_A::NORMAL
+        **self == REGTYPE_A::NORMAL
     }
     #[doc = "Checks if the value of the field is `LP`"]
     #[inline(always)]
     pub fn is_lp(&self) -> bool {
-        *self == REGTYPE_A::LP
+        **self == REGTYPE_A::LP
     }
     #[doc = "Checks if the value of the field is `XULP`"]
     #[inline(always)]
     pub fn is_xulp(&self) -> bool {
-        *self == REGTYPE_A::XULP
+        **self == REGTYPE_A::XULP
+    }
+}
+impl core::ops::Deref for REGTYPE_R {
+    type Target = crate::FieldReader<u8, REGTYPE_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "Reference Type\n\nValue on reset: 0"]
@@ -68,9 +102,12 @@ impl From<REFTYPE_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `REFTYPE`"]
-pub type REFTYPE_R = crate::R<u8, REFTYPE_A>;
+#[doc = "Field `REFTYPE` reader - Reference Type"]
+pub struct REFTYPE_R(crate::FieldReader<u8, REFTYPE_A>);
 impl REFTYPE_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        REFTYPE_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> REFTYPE_A {
@@ -85,34 +122,101 @@ impl REFTYPE_R {
     #[doc = "Checks if the value of the field is `BOTH`"]
     #[inline(always)]
     pub fn is_both(&self) -> bool {
-        *self == REFTYPE_A::BOTH
+        **self == REFTYPE_A::BOTH
     }
     #[doc = "Checks if the value of the field is `BG`"]
     #[inline(always)]
     pub fn is_bg(&self) -> bool {
-        *self == REFTYPE_A::BG
+        **self == REFTYPE_A::BG
     }
     #[doc = "Checks if the value of the field is `LPBG`"]
     #[inline(always)]
     pub fn is_lpbg(&self) -> bool {
-        *self == REFTYPE_A::LPBG
+        **self == REFTYPE_A::LPBG
     }
     #[doc = "Checks if the value of the field is `INTERNAL`"]
     #[inline(always)]
     pub fn is_internal(&self) -> bool {
-        *self == REFTYPE_A::INTERNAL
+        **self == REFTYPE_A::INTERNAL
     }
 }
-#[doc = "Reader of field `FLASHLATDEL`"]
-pub type FLASHLATDEL_R = crate::R<u8, u8>;
-#[doc = "Reader of field `FLASHBIAS`"]
-pub type FLASHBIAS_R = crate::R<u8, u8>;
-#[doc = "Reader of field `FPPW`"]
-pub type FPPW_R = crate::R<bool, bool>;
-#[doc = "Reader of field `RC115`"]
-pub type RC115_R = crate::R<u8, u8>;
-#[doc = "Reader of field `RCFAST`"]
-pub type RCFAST_R = crate::R<u8, u8>;
+impl core::ops::Deref for REFTYPE_R {
+    type Target = crate::FieldReader<u8, REFTYPE_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `FLASHLATDEL` reader - Flash Latch Delay Value"]
+pub struct FLASHLATDEL_R(crate::FieldReader<u8, u8>);
+impl FLASHLATDEL_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        FLASHLATDEL_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for FLASHLATDEL_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `FLASHBIAS` reader - Flash Bias Value"]
+pub struct FLASHBIAS_R(crate::FieldReader<u8, u8>);
+impl FLASHBIAS_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        FLASHBIAS_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for FLASHBIAS_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `FPPW` reader - Flash Pico Power Mode"]
+pub struct FPPW_R(crate::FieldReader<bool, bool>);
+impl FPPW_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        FPPW_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for FPPW_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `RC115` reader - RC 115KHZ Calibration Value"]
+pub struct RC115_R(crate::FieldReader<u8, u8>);
+impl RC115_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        RC115_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for RC115_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `RCFAST` reader - RCFAST Calibration Value"]
+pub struct RCFAST_R(crate::FieldReader<u8, u8>);
+impl RCFAST_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        RCFAST_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for RCFAST_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
 impl R {
     #[doc = "Bits 0:3 - Regulator Voltage Level"]
     #[inline(always)]
@@ -153,5 +257,21 @@ impl R {
     #[inline(always)]
     pub fn rcfast(&self) -> RCFAST_R {
         RCFAST_R::new(((self.bits >> 25) & 0x7f) as u8)
+    }
+}
+#[doc = "Factory Word Run PS Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [fwrunps](index.html) module"]
+pub struct FWRUNPS_SPEC;
+impl crate::RegisterSpec for FWRUNPS_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [fwrunps::R](R) reader structure"]
+impl crate::Readable for FWRUNPS_SPEC {
+    type Reader = R;
+}
+#[doc = "`reset()` method sets FWRUNPS to value 0"]
+impl crate::Resettable for FWRUNPS_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

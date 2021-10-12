@@ -1,9 +1,46 @@
-#[doc = "Reader of register IMR"]
-pub type R = crate::R<u32, super::IMR>;
-#[doc = "Reader of field `PSOK`"]
-pub type PSOK_R = crate::R<bool, bool>;
-#[doc = "Reader of field `AE`"]
-pub type AE_R = crate::R<bool, bool>;
+#[doc = "Register `IMR` reader"]
+pub struct R(crate::R<IMR_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<IMR_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<IMR_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<IMR_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Field `PSOK` reader - Power Scaling OK Interrupt Mask"]
+pub struct PSOK_R(crate::FieldReader<bool, bool>);
+impl PSOK_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PSOK_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for PSOK_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `AE` reader - Access Error Interrupt Mask"]
+pub struct AE_R(crate::FieldReader<bool, bool>);
+impl AE_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        AE_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for AE_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
 impl R {
     #[doc = "Bit 0 - Power Scaling OK Interrupt Mask"]
     #[inline(always)]
@@ -14,5 +51,21 @@ impl R {
     #[inline(always)]
     pub fn ae(&self) -> AE_R {
         AE_R::new(((self.bits >> 31) & 0x01) != 0)
+    }
+}
+#[doc = "Interrupt Mask Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [imr](index.html) module"]
+pub struct IMR_SPEC;
+impl crate::RegisterSpec for IMR_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [imr::R](R) reader structure"]
+impl crate::Readable for IMR_SPEC {
+    type Reader = R;
+}
+#[doc = "`reset()` method sets IMR to value 0"]
+impl crate::Resettable for IMR_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

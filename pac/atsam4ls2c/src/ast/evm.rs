@@ -1,15 +1,88 @@
-#[doc = "Reader of register EVM"]
-pub type R = crate::R<u32, super::EVM>;
-#[doc = "Reader of field `OVF`"]
-pub type OVF_R = crate::R<bool, bool>;
-#[doc = "Reader of field `ALARM0`"]
-pub type ALARM0_R = crate::R<bool, bool>;
-#[doc = "Reader of field `ALARM1`"]
-pub type ALARM1_R = crate::R<bool, bool>;
-#[doc = "Reader of field `PER0`"]
-pub type PER0_R = crate::R<bool, bool>;
-#[doc = "Reader of field `PER1`"]
-pub type PER1_R = crate::R<bool, bool>;
+#[doc = "Register `EVM` reader"]
+pub struct R(crate::R<EVM_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<EVM_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<EVM_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<EVM_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Field `OVF` reader - Overflow"]
+pub struct OVF_R(crate::FieldReader<bool, bool>);
+impl OVF_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        OVF_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for OVF_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `ALARM0` reader - Alarm 0"]
+pub struct ALARM0_R(crate::FieldReader<bool, bool>);
+impl ALARM0_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        ALARM0_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for ALARM0_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `ALARM1` reader - Alarm 1"]
+pub struct ALARM1_R(crate::FieldReader<bool, bool>);
+impl ALARM1_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        ALARM1_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for ALARM1_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PER0` reader - Perioidc 0"]
+pub struct PER0_R(crate::FieldReader<bool, bool>);
+impl PER0_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PER0_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for PER0_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PER1` reader - Periodic 1"]
+pub struct PER1_R(crate::FieldReader<bool, bool>);
+impl PER1_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PER1_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for PER1_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
 impl R {
     #[doc = "Bit 0 - Overflow"]
     #[inline(always)]
@@ -35,5 +108,21 @@ impl R {
     #[inline(always)]
     pub fn per1(&self) -> PER1_R {
         PER1_R::new(((self.bits >> 17) & 0x01) != 0)
+    }
+}
+#[doc = "Event Mask Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [evm](index.html) module"]
+pub struct EVM_SPEC;
+impl crate::RegisterSpec for EVM_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [evm::R](R) reader structure"]
+impl crate::Readable for EVM_SPEC {
+    type Reader = R;
+}
+#[doc = "`reset()` method sets EVM to value 0"]
+impl crate::Resettable for EVM_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

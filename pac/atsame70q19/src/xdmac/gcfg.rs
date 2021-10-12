@@ -1,15 +1,88 @@
-#[doc = "Reader of register GCFG"]
-pub type R = crate::R<u32, super::GCFG>;
-#[doc = "Reader of field `CGDISREG`"]
-pub type CGDISREG_R = crate::R<bool, bool>;
-#[doc = "Reader of field `CGDISPIPE`"]
-pub type CGDISPIPE_R = crate::R<bool, bool>;
-#[doc = "Reader of field `CGDISFIFO`"]
-pub type CGDISFIFO_R = crate::R<bool, bool>;
-#[doc = "Reader of field `CGDISIF`"]
-pub type CGDISIF_R = crate::R<bool, bool>;
-#[doc = "Reader of field `BXKBEN`"]
-pub type BXKBEN_R = crate::R<bool, bool>;
+#[doc = "Register `GCFG` reader"]
+pub struct R(crate::R<GCFG_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<GCFG_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<GCFG_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<GCFG_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Field `CGDISREG` reader - Configuration Registers Clock Gating Disable"]
+pub struct CGDISREG_R(crate::FieldReader<bool, bool>);
+impl CGDISREG_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        CGDISREG_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for CGDISREG_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CGDISPIPE` reader - Pipeline Clock Gating Disable"]
+pub struct CGDISPIPE_R(crate::FieldReader<bool, bool>);
+impl CGDISPIPE_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        CGDISPIPE_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for CGDISPIPE_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CGDISFIFO` reader - FIFO Clock Gating Disable"]
+pub struct CGDISFIFO_R(crate::FieldReader<bool, bool>);
+impl CGDISFIFO_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        CGDISFIFO_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for CGDISFIFO_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CGDISIF` reader - Bus Interface Clock Gating Disable"]
+pub struct CGDISIF_R(crate::FieldReader<bool, bool>);
+impl CGDISIF_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        CGDISIF_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for CGDISIF_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `BXKBEN` reader - Boundary X Kilobyte Enable"]
+pub struct BXKBEN_R(crate::FieldReader<bool, bool>);
+impl BXKBEN_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        BXKBEN_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for BXKBEN_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
 impl R {
     #[doc = "Bit 0 - Configuration Registers Clock Gating Disable"]
     #[inline(always)]
@@ -35,5 +108,21 @@ impl R {
     #[inline(always)]
     pub fn bxkben(&self) -> BXKBEN_R {
         BXKBEN_R::new(((self.bits >> 8) & 0x01) != 0)
+    }
+}
+#[doc = "Global Configuration Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [gcfg](index.html) module"]
+pub struct GCFG_SPEC;
+impl crate::RegisterSpec for GCFG_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [gcfg::R](R) reader structure"]
+impl crate::Readable for GCFG_SPEC {
+    type Reader = R;
+}
+#[doc = "`reset()` method sets GCFG to value 0"]
+impl crate::Resettable for GCFG_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

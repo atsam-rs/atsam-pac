@@ -1,33 +1,214 @@
-#[doc = "Reader of register IMR"]
-pub type R = crate::R<u32, super::IMR>;
-#[doc = "Reader of field `TXCOMP`"]
-pub type TXCOMP_R = crate::R<bool, bool>;
-#[doc = "Reader of field `RXRDY`"]
-pub type RXRDY_R = crate::R<bool, bool>;
-#[doc = "Reader of field `TXRDY`"]
-pub type TXRDY_R = crate::R<bool, bool>;
-#[doc = "Reader of field `SVACC`"]
-pub type SVACC_R = crate::R<bool, bool>;
-#[doc = "Reader of field `GACC`"]
-pub type GACC_R = crate::R<bool, bool>;
-#[doc = "Reader of field `OVRE`"]
-pub type OVRE_R = crate::R<bool, bool>;
-#[doc = "Reader of field `NACK`"]
-pub type NACK_R = crate::R<bool, bool>;
-#[doc = "Reader of field `ARBLST`"]
-pub type ARBLST_R = crate::R<bool, bool>;
-#[doc = "Reader of field `SCL_WS`"]
-pub type SCL_WS_R = crate::R<bool, bool>;
-#[doc = "Reader of field `EOSACC`"]
-pub type EOSACC_R = crate::R<bool, bool>;
-#[doc = "Reader of field `ENDRX`"]
-pub type ENDRX_R = crate::R<bool, bool>;
-#[doc = "Reader of field `ENDTX`"]
-pub type ENDTX_R = crate::R<bool, bool>;
-#[doc = "Reader of field `RXBUFF`"]
-pub type RXBUFF_R = crate::R<bool, bool>;
-#[doc = "Reader of field `TXBUFE`"]
-pub type TXBUFE_R = crate::R<bool, bool>;
+#[doc = "Register `IMR` reader"]
+pub struct R(crate::R<IMR_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<IMR_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<IMR_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<IMR_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Field `TXCOMP` reader - Transmission Completed Interrupt Mask"]
+pub struct TXCOMP_R(crate::FieldReader<bool, bool>);
+impl TXCOMP_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        TXCOMP_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for TXCOMP_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `RXRDY` reader - Receive Holding Register Ready Interrupt Mask"]
+pub struct RXRDY_R(crate::FieldReader<bool, bool>);
+impl RXRDY_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        RXRDY_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for RXRDY_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `TXRDY` reader - Transmit Holding Register Ready Interrupt Mask"]
+pub struct TXRDY_R(crate::FieldReader<bool, bool>);
+impl TXRDY_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        TXRDY_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for TXRDY_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `SVACC` reader - Slave Access Interrupt Mask"]
+pub struct SVACC_R(crate::FieldReader<bool, bool>);
+impl SVACC_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        SVACC_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for SVACC_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `GACC` reader - General Call Access Interrupt Mask"]
+pub struct GACC_R(crate::FieldReader<bool, bool>);
+impl GACC_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        GACC_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for GACC_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `OVRE` reader - Overrun Error Interrupt Mask"]
+pub struct OVRE_R(crate::FieldReader<bool, bool>);
+impl OVRE_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        OVRE_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for OVRE_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `NACK` reader - Not Acknowledge Interrupt Mask"]
+pub struct NACK_R(crate::FieldReader<bool, bool>);
+impl NACK_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        NACK_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for NACK_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `ARBLST` reader - Arbitration Lost Interrupt Mask"]
+pub struct ARBLST_R(crate::FieldReader<bool, bool>);
+impl ARBLST_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        ARBLST_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for ARBLST_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `SCL_WS` reader - Clock Wait State Interrupt Mask"]
+pub struct SCL_WS_R(crate::FieldReader<bool, bool>);
+impl SCL_WS_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        SCL_WS_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for SCL_WS_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `EOSACC` reader - End Of Slave Access Interrupt Mask"]
+pub struct EOSACC_R(crate::FieldReader<bool, bool>);
+impl EOSACC_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        EOSACC_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for EOSACC_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `ENDRX` reader - End of Receive Buffer Interrupt Mask"]
+pub struct ENDRX_R(crate::FieldReader<bool, bool>);
+impl ENDRX_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        ENDRX_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for ENDRX_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `ENDTX` reader - End of Transmit Buffer Interrupt Mask"]
+pub struct ENDTX_R(crate::FieldReader<bool, bool>);
+impl ENDTX_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        ENDTX_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for ENDTX_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `RXBUFF` reader - Receive Buffer Full Interrupt Mask"]
+pub struct RXBUFF_R(crate::FieldReader<bool, bool>);
+impl RXBUFF_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        RXBUFF_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for RXBUFF_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `TXBUFE` reader - Transmit Buffer Empty Interrupt Mask"]
+pub struct TXBUFE_R(crate::FieldReader<bool, bool>);
+impl TXBUFE_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        TXBUFE_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for TXBUFE_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
 impl R {
     #[doc = "Bit 0 - Transmission Completed Interrupt Mask"]
     #[inline(always)]
@@ -98,5 +279,21 @@ impl R {
     #[inline(always)]
     pub fn txbufe(&self) -> TXBUFE_R {
         TXBUFE_R::new(((self.bits >> 15) & 0x01) != 0)
+    }
+}
+#[doc = "Interrupt Mask Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [imr](index.html) module"]
+pub struct IMR_SPEC;
+impl crate::RegisterSpec for IMR_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [imr::R](R) reader structure"]
+impl crate::Readable for IMR_SPEC {
+    type Reader = R;
+}
+#[doc = "`reset()` method sets IMR to value 0"]
+impl crate::Resettable for IMR_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

@@ -1,18 +1,54 @@
-#[doc = "Reader of register CECR"]
-pub type R = crate::R<u32, super::CECR>;
-#[doc = "Writer for register CECR"]
-pub type W = crate::W<u32, super::CECR>;
-#[doc = "Register CECR `reset()`'s with value 0"]
-impl crate::ResetValue for super::CECR {
-    type Type = u32;
+#[doc = "Register `CECR` reader"]
+pub struct R(crate::R<CECR_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<CECR_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `ECORR0`"]
-pub type ECORR0_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `ECORR0`"]
+impl From<crate::R<CECR_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<CECR_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `CECR` writer"]
+pub struct W(crate::W<CECR_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<CECR_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<CECR_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<CECR_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `ECORR0` reader - Error Correction Enable for channel 0"]
+pub struct ECORR0_R(crate::FieldReader<bool, bool>);
+impl ECORR0_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        ECORR0_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for ECORR0_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `ECORR0` writer - Error Correction Enable for channel 0"]
 pub struct ECORR0_W<'a> {
     w: &'a mut W,
 }
@@ -30,13 +66,25 @@ impl<'a> ECORR0_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
+        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
         self.w
     }
 }
-#[doc = "Reader of field `ECORR1`"]
-pub type ECORR1_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `ECORR1`"]
+#[doc = "Field `ECORR1` reader - Error Correction Enable for channel 1"]
+pub struct ECORR1_R(crate::FieldReader<bool, bool>);
+impl ECORR1_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        ECORR1_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for ECORR1_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `ECORR1` writer - Error Correction Enable for channel 1"]
 pub struct ECORR1_W<'a> {
     w: &'a mut W,
 }
@@ -54,13 +102,25 @@ impl<'a> ECORR1_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
         self.w
     }
 }
-#[doc = "Reader of field `ECORR2`"]
-pub type ECORR2_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `ECORR2`"]
+#[doc = "Field `ECORR2` reader - Error Correction Enable for channel 2"]
+pub struct ECORR2_R(crate::FieldReader<bool, bool>);
+impl ECORR2_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        ECORR2_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for ECORR2_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `ECORR2` writer - Error Correction Enable for channel 2"]
 pub struct ECORR2_W<'a> {
     w: &'a mut W,
 }
@@ -78,13 +138,25 @@ impl<'a> ECORR2_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
         self.w
     }
 }
-#[doc = "Reader of field `ECORR3`"]
-pub type ECORR3_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `ECORR3`"]
+#[doc = "Field `ECORR3` reader - Error Correction Enable for channel 3"]
+pub struct ECORR3_R(crate::FieldReader<bool, bool>);
+impl ECORR3_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        ECORR3_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for ECORR3_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `ECORR3` writer - Error Correction Enable for channel 3"]
 pub struct ECORR3_W<'a> {
     w: &'a mut W,
 }
@@ -102,13 +174,25 @@ impl<'a> ECORR3_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
+        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
         self.w
     }
 }
-#[doc = "Reader of field `ECORR4`"]
-pub type ECORR4_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `ECORR4`"]
+#[doc = "Field `ECORR4` reader - Error Correction Enable for channel 4"]
+pub struct ECORR4_R(crate::FieldReader<bool, bool>);
+impl ECORR4_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        ECORR4_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for ECORR4_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `ECORR4` writer - Error Correction Enable for channel 4"]
 pub struct ECORR4_W<'a> {
     w: &'a mut W,
 }
@@ -126,13 +210,25 @@ impl<'a> ECORR4_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u32) & 0x01) << 4);
+        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
         self.w
     }
 }
-#[doc = "Reader of field `ECORR5`"]
-pub type ECORR5_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `ECORR5`"]
+#[doc = "Field `ECORR5` reader - Error Correction Enable for channel 5"]
+pub struct ECORR5_R(crate::FieldReader<bool, bool>);
+impl ECORR5_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        ECORR5_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for ECORR5_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `ECORR5` writer - Error Correction Enable for channel 5"]
 pub struct ECORR5_W<'a> {
     w: &'a mut W,
 }
@@ -150,13 +246,25 @@ impl<'a> ECORR5_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u32) & 0x01) << 5);
+        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
         self.w
     }
 }
-#[doc = "Reader of field `ECORR6`"]
-pub type ECORR6_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `ECORR6`"]
+#[doc = "Field `ECORR6` reader - Error Correction Enable for channel 6"]
+pub struct ECORR6_R(crate::FieldReader<bool, bool>);
+impl ECORR6_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        ECORR6_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for ECORR6_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `ECORR6` writer - Error Correction Enable for channel 6"]
 pub struct ECORR6_W<'a> {
     w: &'a mut W,
 }
@@ -174,13 +282,25 @@ impl<'a> ECORR6_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | (((value as u32) & 0x01) << 6);
+        self.w.bits = (self.w.bits & !(0x01 << 6)) | ((value as u32 & 0x01) << 6);
         self.w
     }
 }
-#[doc = "Reader of field `ECORR7`"]
-pub type ECORR7_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `ECORR7`"]
+#[doc = "Field `ECORR7` reader - Error Correction Enable for channel 7"]
+pub struct ECORR7_R(crate::FieldReader<bool, bool>);
+impl ECORR7_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        ECORR7_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for ECORR7_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `ECORR7` writer - Error Correction Enable for channel 7"]
 pub struct ECORR7_W<'a> {
     w: &'a mut W,
 }
@@ -198,13 +318,25 @@ impl<'a> ECORR7_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | (((value as u32) & 0x01) << 7);
+        self.w.bits = (self.w.bits & !(0x01 << 7)) | ((value as u32 & 0x01) << 7);
         self.w
     }
 }
-#[doc = "Reader of field `ECORR8`"]
-pub type ECORR8_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `ECORR8`"]
+#[doc = "Field `ECORR8` reader - Error Correction Enable for channel 8"]
+pub struct ECORR8_R(crate::FieldReader<bool, bool>);
+impl ECORR8_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        ECORR8_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for ECORR8_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `ECORR8` writer - Error Correction Enable for channel 8"]
 pub struct ECORR8_W<'a> {
     w: &'a mut W,
 }
@@ -222,13 +354,25 @@ impl<'a> ECORR8_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | (((value as u32) & 0x01) << 8);
+        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
         self.w
     }
 }
-#[doc = "Reader of field `ECORR9`"]
-pub type ECORR9_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `ECORR9`"]
+#[doc = "Field `ECORR9` reader - Error Correction Enable for channel 9"]
+pub struct ECORR9_R(crate::FieldReader<bool, bool>);
+impl ECORR9_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        ECORR9_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for ECORR9_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `ECORR9` writer - Error Correction Enable for channel 9"]
 pub struct ECORR9_W<'a> {
     w: &'a mut W,
 }
@@ -246,13 +390,25 @@ impl<'a> ECORR9_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 9)) | (((value as u32) & 0x01) << 9);
+        self.w.bits = (self.w.bits & !(0x01 << 9)) | ((value as u32 & 0x01) << 9);
         self.w
     }
 }
-#[doc = "Reader of field `ECORR10`"]
-pub type ECORR10_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `ECORR10`"]
+#[doc = "Field `ECORR10` reader - Error Correction Enable for channel 10"]
+pub struct ECORR10_R(crate::FieldReader<bool, bool>);
+impl ECORR10_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        ECORR10_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for ECORR10_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `ECORR10` writer - Error Correction Enable for channel 10"]
 pub struct ECORR10_W<'a> {
     w: &'a mut W,
 }
@@ -270,13 +426,25 @@ impl<'a> ECORR10_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 10)) | (((value as u32) & 0x01) << 10);
+        self.w.bits = (self.w.bits & !(0x01 << 10)) | ((value as u32 & 0x01) << 10);
         self.w
     }
 }
-#[doc = "Reader of field `ECORR11`"]
-pub type ECORR11_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `ECORR11`"]
+#[doc = "Field `ECORR11` reader - Error Correction Enable for channel 11"]
+pub struct ECORR11_R(crate::FieldReader<bool, bool>);
+impl ECORR11_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        ECORR11_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for ECORR11_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `ECORR11` writer - Error Correction Enable for channel 11"]
 pub struct ECORR11_W<'a> {
     w: &'a mut W,
 }
@@ -294,7 +462,7 @@ impl<'a> ECORR11_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 11)) | (((value as u32) & 0x01) << 11);
+        self.w.bits = (self.w.bits & !(0x01 << 11)) | ((value as u32 & 0x01) << 11);
         self.w
     }
 }
@@ -420,5 +588,31 @@ impl W {
     #[inline(always)]
     pub fn ecorr11(&mut self) -> ECORR11_W {
         ECORR11_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "AFEC Channel Error Correction Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cecr](index.html) module"]
+pub struct CECR_SPEC;
+impl crate::RegisterSpec for CECR_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [cecr::R](R) reader structure"]
+impl crate::Readable for CECR_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [cecr::W](W) writer structure"]
+impl crate::Writable for CECR_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets CECR to value 0"]
+impl crate::Resettable for CECR_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

@@ -1,14 +1,25 @@
-#[doc = "Writer for register USBSTACLR"]
-pub type W = crate::W<u32, super::USBSTACLR>;
-#[doc = "Register USBSTACLR `reset()`'s with value 0"]
-impl crate::ResetValue for super::USBSTACLR {
-    type Type = u32;
+#[doc = "Register `USBSTACLR` writer"]
+pub struct W(crate::W<USBSTACLR_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<USBSTACLR_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Write proxy for field `RAMACERIC`"]
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<USBSTACLR_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<USBSTACLR_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `RAMACERIC` writer - RAMACERI Clear"]
 pub struct RAMACERIC_W<'a> {
     w: &'a mut W,
 }
@@ -26,11 +37,11 @@ impl<'a> RAMACERIC_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | (((value as u32) & 0x01) << 8);
+        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
         self.w
     }
 }
-#[doc = "Write proxy for field `VBUSRQC`"]
+#[doc = "Field `VBUSRQC` writer - VBUSRQ Clear"]
 pub struct VBUSRQC_W<'a> {
     w: &'a mut W,
 }
@@ -48,7 +59,7 @@ impl<'a> VBUSRQC_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 9)) | (((value as u32) & 0x01) << 9);
+        self.w.bits = (self.w.bits & !(0x01 << 9)) | ((value as u32 & 0x01) << 9);
         self.w
     }
 }
@@ -62,5 +73,27 @@ impl W {
     #[inline(always)]
     pub fn vbusrqc(&mut self) -> VBUSRQC_W {
         VBUSRQC_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "General Status Clear Register\n\nThis register you can [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [usbstaclr](index.html) module"]
+pub struct USBSTACLR_SPEC;
+impl crate::RegisterSpec for USBSTACLR_SPEC {
+    type Ux = u32;
+}
+#[doc = "`write(|w| ..)` method takes [usbstaclr::W](W) writer structure"]
+impl crate::Writable for USBSTACLR_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets USBSTACLR to value 0"]
+impl crate::Resettable for USBSTACLR_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

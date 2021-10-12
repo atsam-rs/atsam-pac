@@ -19,18 +19,17 @@ function generate {
         esac
     done
 
-    if [ "$(which svd2rust)" == "" ]; then 
-        cargo install --force --git https://github.com/gkelly/svd2rust --branch \
-            bleeding-edge --rev 2bbb60590096bcb67c91f38bedd1f63f98132abe svd2rust
+    if [ "$(which svd2rust)" == "" ]; then
+        cargo install svd2rust --version 0.19.0
     fi
 
-    if [ "$(which form)" == "" ]; then 
+    if [ "$(which form)" == "" ]; then
         cargo install form --version 0.7.0
     fi
 
     TOP="${PWD}"
 
-    # 
+    #
     # Run through a first pass and create skeleton PAC crates for any that are missing.
     #
     svds=()
@@ -80,13 +79,13 @@ repository = "https://github.com/atsam-rs/atsam-pac"
 version = "0.1.0"
 
 [dependencies]
-bare-metal = "0.2.4"
-cortex-m = "0.6.3"
-vcell = "0.1.2"
+bare-metal = "1.0.0"
+cortex-m = "0.7.3"
+vcell = "0.1.3"
 
 [dependencies.cortex-m-rt]
 optional = true
-version = "0.6.13"
+version = "0.7.0"
 
 [features]
 rt = ["cortex-m-rt/device"]
@@ -181,5 +180,5 @@ case ${COMMAND} in
         echo "ERROR: Unrecognized command: ${COMMAND}"
         usage
         exit 1
-        ;;    
+        ;;
 esac

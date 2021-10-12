@@ -1,13 +1,37 @@
-#[doc = "Reader of register CMR0"]
-pub type R = crate::R<u32, super::CMR0>;
-#[doc = "Writer for register CMR0"]
-pub type W = crate::W<u32, super::CMR0>;
-#[doc = "Register CMR0 `reset()`'s with value 0"]
-impl crate::ResetValue for super::CMR0 {
-    type Type = u32;
+#[doc = "Register `CMR0` reader"]
+pub struct R(crate::R<CMR0_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<CMR0_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<CMR0_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<CMR0_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `CMR0` writer"]
+pub struct W(crate::W<CMR0_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<CMR0_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<CMR0_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<CMR0_SPEC>) -> Self {
+        W(writer)
     }
 }
 #[doc = "Channel Pre-scaler\n\nValue on reset: 0"]
@@ -47,97 +71,106 @@ impl From<CPRE_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `CPRE`"]
-pub type CPRE_R = crate::R<u8, CPRE_A>;
+#[doc = "Field `CPRE` reader - Channel Pre-scaler"]
+pub struct CPRE_R(crate::FieldReader<u8, CPRE_A>);
 impl CPRE_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        CPRE_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u8, CPRE_A> {
-        use crate::Variant::*;
+    pub fn variant(&self) -> Option<CPRE_A> {
         match self.bits {
-            0 => Val(CPRE_A::MCK),
-            1 => Val(CPRE_A::MCKDIV2),
-            2 => Val(CPRE_A::MCKDIV4),
-            3 => Val(CPRE_A::MCKDIV8),
-            4 => Val(CPRE_A::MCKDIV16),
-            5 => Val(CPRE_A::MCKDIV32),
-            6 => Val(CPRE_A::MCKDIV64),
-            7 => Val(CPRE_A::MCKDIV128),
-            8 => Val(CPRE_A::MCKDIV256),
-            9 => Val(CPRE_A::MCKDIV512),
-            10 => Val(CPRE_A::MCKDIV1024),
-            11 => Val(CPRE_A::CLKA),
-            12 => Val(CPRE_A::CLKB),
-            i => Res(i),
+            0 => Some(CPRE_A::MCK),
+            1 => Some(CPRE_A::MCKDIV2),
+            2 => Some(CPRE_A::MCKDIV4),
+            3 => Some(CPRE_A::MCKDIV8),
+            4 => Some(CPRE_A::MCKDIV16),
+            5 => Some(CPRE_A::MCKDIV32),
+            6 => Some(CPRE_A::MCKDIV64),
+            7 => Some(CPRE_A::MCKDIV128),
+            8 => Some(CPRE_A::MCKDIV256),
+            9 => Some(CPRE_A::MCKDIV512),
+            10 => Some(CPRE_A::MCKDIV1024),
+            11 => Some(CPRE_A::CLKA),
+            12 => Some(CPRE_A::CLKB),
+            _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `MCK`"]
     #[inline(always)]
     pub fn is_mck(&self) -> bool {
-        *self == CPRE_A::MCK
+        **self == CPRE_A::MCK
     }
     #[doc = "Checks if the value of the field is `MCKDIV2`"]
     #[inline(always)]
     pub fn is_mckdiv2(&self) -> bool {
-        *self == CPRE_A::MCKDIV2
+        **self == CPRE_A::MCKDIV2
     }
     #[doc = "Checks if the value of the field is `MCKDIV4`"]
     #[inline(always)]
     pub fn is_mckdiv4(&self) -> bool {
-        *self == CPRE_A::MCKDIV4
+        **self == CPRE_A::MCKDIV4
     }
     #[doc = "Checks if the value of the field is `MCKDIV8`"]
     #[inline(always)]
     pub fn is_mckdiv8(&self) -> bool {
-        *self == CPRE_A::MCKDIV8
+        **self == CPRE_A::MCKDIV8
     }
     #[doc = "Checks if the value of the field is `MCKDIV16`"]
     #[inline(always)]
     pub fn is_mckdiv16(&self) -> bool {
-        *self == CPRE_A::MCKDIV16
+        **self == CPRE_A::MCKDIV16
     }
     #[doc = "Checks if the value of the field is `MCKDIV32`"]
     #[inline(always)]
     pub fn is_mckdiv32(&self) -> bool {
-        *self == CPRE_A::MCKDIV32
+        **self == CPRE_A::MCKDIV32
     }
     #[doc = "Checks if the value of the field is `MCKDIV64`"]
     #[inline(always)]
     pub fn is_mckdiv64(&self) -> bool {
-        *self == CPRE_A::MCKDIV64
+        **self == CPRE_A::MCKDIV64
     }
     #[doc = "Checks if the value of the field is `MCKDIV128`"]
     #[inline(always)]
     pub fn is_mckdiv128(&self) -> bool {
-        *self == CPRE_A::MCKDIV128
+        **self == CPRE_A::MCKDIV128
     }
     #[doc = "Checks if the value of the field is `MCKDIV256`"]
     #[inline(always)]
     pub fn is_mckdiv256(&self) -> bool {
-        *self == CPRE_A::MCKDIV256
+        **self == CPRE_A::MCKDIV256
     }
     #[doc = "Checks if the value of the field is `MCKDIV512`"]
     #[inline(always)]
     pub fn is_mckdiv512(&self) -> bool {
-        *self == CPRE_A::MCKDIV512
+        **self == CPRE_A::MCKDIV512
     }
     #[doc = "Checks if the value of the field is `MCKDIV1024`"]
     #[inline(always)]
     pub fn is_mckdiv1024(&self) -> bool {
-        *self == CPRE_A::MCKDIV1024
+        **self == CPRE_A::MCKDIV1024
     }
     #[doc = "Checks if the value of the field is `CLKA`"]
     #[inline(always)]
     pub fn is_clka(&self) -> bool {
-        *self == CPRE_A::CLKA
+        **self == CPRE_A::CLKA
     }
     #[doc = "Checks if the value of the field is `CLKB`"]
     #[inline(always)]
     pub fn is_clkb(&self) -> bool {
-        *self == CPRE_A::CLKB
+        **self == CPRE_A::CLKB
     }
 }
-#[doc = "Write proxy for field `CPRE`"]
+impl core::ops::Deref for CPRE_R {
+    type Target = crate::FieldReader<u8, CPRE_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CPRE` writer - Channel Pre-scaler"]
 pub struct CPRE_W<'a> {
     w: &'a mut W,
 }
@@ -215,13 +248,25 @@ impl<'a> CPRE_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x0f) | ((value as u32) & 0x0f);
+        self.w.bits = (self.w.bits & !0x0f) | (value as u32 & 0x0f);
         self.w
     }
 }
-#[doc = "Reader of field `CALG`"]
-pub type CALG_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `CALG`"]
+#[doc = "Field `CALG` reader - Channel Alignment"]
+pub struct CALG_R(crate::FieldReader<bool, bool>);
+impl CALG_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        CALG_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for CALG_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CALG` writer - Channel Alignment"]
 pub struct CALG_W<'a> {
     w: &'a mut W,
 }
@@ -239,13 +284,25 @@ impl<'a> CALG_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | (((value as u32) & 0x01) << 8);
+        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
         self.w
     }
 }
-#[doc = "Reader of field `CPOL`"]
-pub type CPOL_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `CPOL`"]
+#[doc = "Field `CPOL` reader - Channel Polarity"]
+pub struct CPOL_R(crate::FieldReader<bool, bool>);
+impl CPOL_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        CPOL_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for CPOL_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CPOL` writer - Channel Polarity"]
 pub struct CPOL_W<'a> {
     w: &'a mut W,
 }
@@ -263,13 +320,25 @@ impl<'a> CPOL_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 9)) | (((value as u32) & 0x01) << 9);
+        self.w.bits = (self.w.bits & !(0x01 << 9)) | ((value as u32 & 0x01) << 9);
         self.w
     }
 }
-#[doc = "Reader of field `CPD`"]
-pub type CPD_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `CPD`"]
+#[doc = "Field `CPD` reader - Channel Update Period"]
+pub struct CPD_R(crate::FieldReader<bool, bool>);
+impl CPD_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        CPD_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for CPD_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CPD` writer - Channel Update Period"]
 pub struct CPD_W<'a> {
     w: &'a mut W,
 }
@@ -287,7 +356,7 @@ impl<'a> CPD_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 10)) | (((value as u32) & 0x01) << 10);
+        self.w.bits = (self.w.bits & !(0x01 << 10)) | ((value as u32 & 0x01) << 10);
         self.w
     }
 }
@@ -333,5 +402,31 @@ impl W {
     #[inline(always)]
     pub fn cpd(&mut self) -> CPD_W {
         CPD_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "PWM Channel Mode Register (ch_num = 0)\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cmr0](index.html) module"]
+pub struct CMR0_SPEC;
+impl crate::RegisterSpec for CMR0_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [cmr0::R](R) reader structure"]
+impl crate::Readable for CMR0_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [cmr0::W](W) writer structure"]
+impl crate::Writable for CMR0_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets CMR0 to value 0"]
+impl crate::Resettable for CMR0_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

@@ -1,5 +1,18 @@
-#[doc = "Reader of register SR"]
-pub type R = crate::R<u32, super::SR>;
+#[doc = "Register `SR` reader"]
+pub struct R(crate::R<SR_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<SR_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<SR_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<SR_SPEC>) -> Self {
+        R(reader)
+    }
+}
 #[doc = "Acknowledge for Update\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ACKUPD_A {
@@ -14,9 +27,12 @@ impl From<ACKUPD_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `ACKUPD`"]
-pub type ACKUPD_R = crate::R<bool, ACKUPD_A>;
+#[doc = "Field `ACKUPD` reader - Acknowledge for Update"]
+pub struct ACKUPD_R(crate::FieldReader<bool, ACKUPD_A>);
 impl ACKUPD_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        ACKUPD_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> ACKUPD_A {
@@ -28,12 +44,19 @@ impl ACKUPD_R {
     #[doc = "Checks if the value of the field is `FREERUN`"]
     #[inline(always)]
     pub fn is_freerun(&self) -> bool {
-        *self == ACKUPD_A::FREERUN
+        **self == ACKUPD_A::FREERUN
     }
     #[doc = "Checks if the value of the field is `UPDATE`"]
     #[inline(always)]
     pub fn is_update(&self) -> bool {
-        *self == ACKUPD_A::UPDATE
+        **self == ACKUPD_A::UPDATE
+    }
+}
+impl core::ops::Deref for ACKUPD_R {
+    type Target = crate::FieldReader<bool, ACKUPD_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "Alarm Flag\n\nValue on reset: 0"]
@@ -50,9 +73,12 @@ impl From<ALARM_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `ALARM`"]
-pub type ALARM_R = crate::R<bool, ALARM_A>;
+#[doc = "Field `ALARM` reader - Alarm Flag"]
+pub struct ALARM_R(crate::FieldReader<bool, ALARM_A>);
 impl ALARM_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        ALARM_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> ALARM_A {
@@ -64,12 +90,19 @@ impl ALARM_R {
     #[doc = "Checks if the value of the field is `NO_ALARMEVENT`"]
     #[inline(always)]
     pub fn is_no_alarmevent(&self) -> bool {
-        *self == ALARM_A::NO_ALARMEVENT
+        **self == ALARM_A::NO_ALARMEVENT
     }
     #[doc = "Checks if the value of the field is `ALARMEVENT`"]
     #[inline(always)]
     pub fn is_alarmevent(&self) -> bool {
-        *self == ALARM_A::ALARMEVENT
+        **self == ALARM_A::ALARMEVENT
+    }
+}
+impl core::ops::Deref for ALARM_R {
+    type Target = crate::FieldReader<bool, ALARM_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "Second Event\n\nValue on reset: 0"]
@@ -86,9 +119,12 @@ impl From<SEC_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `SEC`"]
-pub type SEC_R = crate::R<bool, SEC_A>;
+#[doc = "Field `SEC` reader - Second Event"]
+pub struct SEC_R(crate::FieldReader<bool, SEC_A>);
 impl SEC_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        SEC_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> SEC_A {
@@ -100,12 +136,19 @@ impl SEC_R {
     #[doc = "Checks if the value of the field is `NO_SECEVENT`"]
     #[inline(always)]
     pub fn is_no_secevent(&self) -> bool {
-        *self == SEC_A::NO_SECEVENT
+        **self == SEC_A::NO_SECEVENT
     }
     #[doc = "Checks if the value of the field is `SECEVENT`"]
     #[inline(always)]
     pub fn is_secevent(&self) -> bool {
-        *self == SEC_A::SECEVENT
+        **self == SEC_A::SECEVENT
+    }
+}
+impl core::ops::Deref for SEC_R {
+    type Target = crate::FieldReader<bool, SEC_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "Time Event\n\nValue on reset: 0"]
@@ -122,9 +165,12 @@ impl From<TIMEV_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `TIMEV`"]
-pub type TIMEV_R = crate::R<bool, TIMEV_A>;
+#[doc = "Field `TIMEV` reader - Time Event"]
+pub struct TIMEV_R(crate::FieldReader<bool, TIMEV_A>);
 impl TIMEV_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        TIMEV_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> TIMEV_A {
@@ -136,12 +182,19 @@ impl TIMEV_R {
     #[doc = "Checks if the value of the field is `NO_TIMEVENT`"]
     #[inline(always)]
     pub fn is_no_timevent(&self) -> bool {
-        *self == TIMEV_A::NO_TIMEVENT
+        **self == TIMEV_A::NO_TIMEVENT
     }
     #[doc = "Checks if the value of the field is `TIMEVENT`"]
     #[inline(always)]
     pub fn is_timevent(&self) -> bool {
-        *self == TIMEV_A::TIMEVENT
+        **self == TIMEV_A::TIMEVENT
+    }
+}
+impl core::ops::Deref for TIMEV_R {
+    type Target = crate::FieldReader<bool, TIMEV_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "Calendar Event\n\nValue on reset: 0"]
@@ -158,9 +211,12 @@ impl From<CALEV_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `CALEV`"]
-pub type CALEV_R = crate::R<bool, CALEV_A>;
+#[doc = "Field `CALEV` reader - Calendar Event"]
+pub struct CALEV_R(crate::FieldReader<bool, CALEV_A>);
 impl CALEV_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        CALEV_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CALEV_A {
@@ -172,12 +228,19 @@ impl CALEV_R {
     #[doc = "Checks if the value of the field is `NO_CALEVENT`"]
     #[inline(always)]
     pub fn is_no_calevent(&self) -> bool {
-        *self == CALEV_A::NO_CALEVENT
+        **self == CALEV_A::NO_CALEVENT
     }
     #[doc = "Checks if the value of the field is `CALEVENT`"]
     #[inline(always)]
     pub fn is_calevent(&self) -> bool {
-        *self == CALEV_A::CALEVENT
+        **self == CALEV_A::CALEVENT
+    }
+}
+impl core::ops::Deref for CALEV_R {
+    type Target = crate::FieldReader<bool, CALEV_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "Time and/or Date Free Running Error\n\nValue on reset: 0"]
@@ -194,9 +257,12 @@ impl From<TDERR_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `TDERR`"]
-pub type TDERR_R = crate::R<bool, TDERR_A>;
+#[doc = "Field `TDERR` reader - Time and/or Date Free Running Error"]
+pub struct TDERR_R(crate::FieldReader<bool, TDERR_A>);
 impl TDERR_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        TDERR_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> TDERR_A {
@@ -208,12 +274,19 @@ impl TDERR_R {
     #[doc = "Checks if the value of the field is `CORRECT`"]
     #[inline(always)]
     pub fn is_correct(&self) -> bool {
-        *self == TDERR_A::CORRECT
+        **self == TDERR_A::CORRECT
     }
     #[doc = "Checks if the value of the field is `ERR_TIMEDATE`"]
     #[inline(always)]
     pub fn is_err_timedate(&self) -> bool {
-        *self == TDERR_A::ERR_TIMEDATE
+        **self == TDERR_A::ERR_TIMEDATE
+    }
+}
+impl core::ops::Deref for TDERR_R {
+    type Target = crate::FieldReader<bool, TDERR_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 impl R {
@@ -246,5 +319,21 @@ impl R {
     #[inline(always)]
     pub fn tderr(&self) -> TDERR_R {
         TDERR_R::new(((self.bits >> 5) & 0x01) != 0)
+    }
+}
+#[doc = "Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sr](index.html) module"]
+pub struct SR_SPEC;
+impl crate::RegisterSpec for SR_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [sr::R](R) reader structure"]
+impl crate::Readable for SR_SPEC {
+    type Reader = R;
+}
+#[doc = "`reset()` method sets SR to value 0"]
+impl crate::Resettable for SR_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

@@ -1,18 +1,54 @@
-#[doc = "Reader of register MR"]
-pub type R = crate::R<u32, super::MR>;
-#[doc = "Writer for register MR"]
-pub type W = crate::W<u32, super::MR>;
-#[doc = "Register MR `reset()`'s with value 0"]
-impl crate::ResetValue for super::MR {
-    type Type = u32;
+#[doc = "Register `MR` reader"]
+pub struct R(crate::R<MR_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<MR_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `CANEN`"]
-pub type CANEN_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `CANEN`"]
+impl From<crate::R<MR_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<MR_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `MR` writer"]
+pub struct W(crate::W<MR_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<MR_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<MR_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<MR_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `CANEN` reader - CAN Controller Enable"]
+pub struct CANEN_R(crate::FieldReader<bool, bool>);
+impl CANEN_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        CANEN_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for CANEN_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CANEN` writer - CAN Controller Enable"]
 pub struct CANEN_W<'a> {
     w: &'a mut W,
 }
@@ -30,13 +66,25 @@ impl<'a> CANEN_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
+        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
         self.w
     }
 }
-#[doc = "Reader of field `LPM`"]
-pub type LPM_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `LPM`"]
+#[doc = "Field `LPM` reader - Disable/Enable Low Power Mode"]
+pub struct LPM_R(crate::FieldReader<bool, bool>);
+impl LPM_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        LPM_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for LPM_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `LPM` writer - Disable/Enable Low Power Mode"]
 pub struct LPM_W<'a> {
     w: &'a mut W,
 }
@@ -54,13 +102,25 @@ impl<'a> LPM_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
         self.w
     }
 }
-#[doc = "Reader of field `ABM`"]
-pub type ABM_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `ABM`"]
+#[doc = "Field `ABM` reader - Disable/Enable Autobaud/Listen mode"]
+pub struct ABM_R(crate::FieldReader<bool, bool>);
+impl ABM_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        ABM_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for ABM_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `ABM` writer - Disable/Enable Autobaud/Listen mode"]
 pub struct ABM_W<'a> {
     w: &'a mut W,
 }
@@ -78,13 +138,25 @@ impl<'a> ABM_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
         self.w
     }
 }
-#[doc = "Reader of field `OVL`"]
-pub type OVL_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `OVL`"]
+#[doc = "Field `OVL` reader - Disable/Enable Overload Frame"]
+pub struct OVL_R(crate::FieldReader<bool, bool>);
+impl OVL_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        OVL_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for OVL_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `OVL` writer - Disable/Enable Overload Frame"]
 pub struct OVL_W<'a> {
     w: &'a mut W,
 }
@@ -102,13 +174,25 @@ impl<'a> OVL_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
+        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
         self.w
     }
 }
-#[doc = "Reader of field `TEOF`"]
-pub type TEOF_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `TEOF`"]
+#[doc = "Field `TEOF` reader - Timestamp messages at each end of Frame"]
+pub struct TEOF_R(crate::FieldReader<bool, bool>);
+impl TEOF_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        TEOF_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for TEOF_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `TEOF` writer - Timestamp messages at each end of Frame"]
 pub struct TEOF_W<'a> {
     w: &'a mut W,
 }
@@ -126,13 +210,25 @@ impl<'a> TEOF_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u32) & 0x01) << 4);
+        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
         self.w
     }
 }
-#[doc = "Reader of field `TTM`"]
-pub type TTM_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `TTM`"]
+#[doc = "Field `TTM` reader - Disable/Enable Time Triggered Mode"]
+pub struct TTM_R(crate::FieldReader<bool, bool>);
+impl TTM_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        TTM_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for TTM_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `TTM` writer - Disable/Enable Time Triggered Mode"]
 pub struct TTM_W<'a> {
     w: &'a mut W,
 }
@@ -150,13 +246,25 @@ impl<'a> TTM_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u32) & 0x01) << 5);
+        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
         self.w
     }
 }
-#[doc = "Reader of field `TIMFRZ`"]
-pub type TIMFRZ_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `TIMFRZ`"]
+#[doc = "Field `TIMFRZ` reader - Enable Timer Freeze"]
+pub struct TIMFRZ_R(crate::FieldReader<bool, bool>);
+impl TIMFRZ_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        TIMFRZ_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for TIMFRZ_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `TIMFRZ` writer - Enable Timer Freeze"]
 pub struct TIMFRZ_W<'a> {
     w: &'a mut W,
 }
@@ -174,13 +282,25 @@ impl<'a> TIMFRZ_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | (((value as u32) & 0x01) << 6);
+        self.w.bits = (self.w.bits & !(0x01 << 6)) | ((value as u32 & 0x01) << 6);
         self.w
     }
 }
-#[doc = "Reader of field `DRPT`"]
-pub type DRPT_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `DRPT`"]
+#[doc = "Field `DRPT` reader - Disable Repeat"]
+pub struct DRPT_R(crate::FieldReader<bool, bool>);
+impl DRPT_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        DRPT_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for DRPT_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `DRPT` writer - Disable Repeat"]
 pub struct DRPT_W<'a> {
     w: &'a mut W,
 }
@@ -198,7 +318,7 @@ impl<'a> DRPT_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | (((value as u32) & 0x01) << 7);
+        self.w.bits = (self.w.bits & !(0x01 << 7)) | ((value as u32 & 0x01) << 7);
         self.w
     }
 }
@@ -284,5 +404,31 @@ impl W {
     #[inline(always)]
     pub fn drpt(&mut self) -> DRPT_W {
         DRPT_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Mode Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [mr](index.html) module"]
+pub struct MR_SPEC;
+impl crate::RegisterSpec for MR_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [mr::R](R) reader structure"]
+impl crate::Readable for MR_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [mr::W](W) writer structure"]
+impl crate::Writable for MR_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets MR to value 0"]
+impl crate::Resettable for MR_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

@@ -1,13 +1,37 @@
-#[doc = "Reader of register CPUSEL"]
-pub type R = crate::R<u32, super::CPUSEL>;
-#[doc = "Writer for register CPUSEL"]
-pub type W = crate::W<u32, super::CPUSEL>;
-#[doc = "Register CPUSEL `reset()`'s with value 0"]
-impl crate::ResetValue for super::CPUSEL {
-    type Type = u32;
+#[doc = "Register `CPUSEL` reader"]
+pub struct R(crate::R<CPUSEL_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<CPUSEL_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<CPUSEL_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<CPUSEL_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `CPUSEL` writer"]
+pub struct W(crate::W<CPUSEL_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<CPUSEL_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<CPUSEL_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<CPUSEL_SPEC>) -> Self {
+        W(writer)
     }
 }
 #[doc = "CPU Clock Select\n\nValue on reset: 0"]
@@ -25,31 +49,40 @@ impl From<CPUSEL_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `CPUSEL`"]
-pub type CPUSEL_R = crate::R<u8, CPUSEL_A>;
+#[doc = "Field `CPUSEL` reader - CPU Clock Select"]
+pub struct CPUSEL_R(crate::FieldReader<u8, CPUSEL_A>);
 impl CPUSEL_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        CPUSEL_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u8, CPUSEL_A> {
-        use crate::Variant::*;
+    pub fn variant(&self) -> Option<CPUSEL_A> {
         match self.bits {
-            0 => Val(CPUSEL_A::_0),
-            1 => Val(CPUSEL_A::_1),
-            i => Res(i),
+            0 => Some(CPUSEL_A::_0),
+            1 => Some(CPUSEL_A::_1),
+            _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `_0`"]
     #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == CPUSEL_A::_0
+        **self == CPUSEL_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
     #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == CPUSEL_A::_1
+        **self == CPUSEL_A::_1
     }
 }
-#[doc = "Write proxy for field `CPUSEL`"]
+impl core::ops::Deref for CPUSEL_R {
+    type Target = crate::FieldReader<u8, CPUSEL_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CPUSEL` writer - CPU Clock Select"]
 pub struct CPUSEL_W<'a> {
     w: &'a mut W,
 }
@@ -72,13 +105,25 @@ impl<'a> CPUSEL_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x07) | ((value as u32) & 0x07);
+        self.w.bits = (self.w.bits & !0x07) | (value as u32 & 0x07);
         self.w
     }
 }
-#[doc = "Reader of field `CPUDIV`"]
-pub type CPUDIV_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `CPUDIV`"]
+#[doc = "Field `CPUDIV` reader - CPU Division"]
+pub struct CPUDIV_R(crate::FieldReader<bool, bool>);
+impl CPUDIV_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        CPUDIV_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for CPUDIV_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CPUDIV` writer - CPU Division"]
 pub struct CPUDIV_W<'a> {
     w: &'a mut W,
 }
@@ -96,7 +141,7 @@ impl<'a> CPUDIV_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | (((value as u32) & 0x01) << 7);
+        self.w.bits = (self.w.bits & !(0x01 << 7)) | ((value as u32 & 0x01) << 7);
         self.w
     }
 }
@@ -122,5 +167,31 @@ impl W {
     #[inline(always)]
     pub fn cpudiv(&mut self) -> CPUDIV_W {
         CPUDIV_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "CPU Clock Select\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cpusel](index.html) module"]
+pub struct CPUSEL_SPEC;
+impl crate::RegisterSpec for CPUSEL_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [cpusel::R](R) reader structure"]
+impl crate::Readable for CPUSEL_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [cpusel::W](W) writer structure"]
+impl crate::Writable for CPUSEL_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets CPUSEL to value 0"]
+impl crate::Resettable for CPUSEL_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

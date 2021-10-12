@@ -1,18 +1,54 @@
-#[doc = "Reader of register CALIB"]
-pub type R = crate::R<u32, super::CALIB>;
-#[doc = "Writer for register CALIB"]
-pub type W = crate::W<u32, super::CALIB>;
-#[doc = "Register CALIB `reset()`'s with value 0"]
-impl crate::ResetValue for super::CALIB {
-    type Type = u32;
+#[doc = "Register `CALIB` reader"]
+pub struct R(crate::R<CALIB_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<CALIB_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `CALIB`"]
-pub type CALIB_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `CALIB`"]
+impl From<crate::R<CALIB_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<CALIB_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `CALIB` writer"]
+pub struct W(crate::W<CALIB_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<CALIB_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<CALIB_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<CALIB_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `CALIB` reader - Calibration Value"]
+pub struct CALIB_R(crate::FieldReader<u8, u8>);
+impl CALIB_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        CALIB_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for CALIB_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CALIB` writer - Calibration Value"]
 pub struct CALIB_W<'a> {
     w: &'a mut W,
 }
@@ -20,13 +56,25 @@ impl<'a> CALIB_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xff) | ((value as u32) & 0xff);
+        self.w.bits = (self.w.bits & !0xff) | (value as u32 & 0xff);
         self.w
     }
 }
-#[doc = "Reader of field `BIASSEL`"]
-pub type BIASSEL_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `BIASSEL`"]
+#[doc = "Field `BIASSEL` reader - Select bias mode"]
+pub struct BIASSEL_R(crate::FieldReader<bool, bool>);
+impl BIASSEL_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        BIASSEL_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for BIASSEL_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `BIASSEL` writer - Select bias mode"]
 pub struct BIASSEL_W<'a> {
     w: &'a mut W,
 }
@@ -44,13 +92,25 @@ impl<'a> BIASSEL_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | (((value as u32) & 0x01) << 8);
+        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
         self.w
     }
 }
-#[doc = "Reader of field `BIASCAL`"]
-pub type BIASCAL_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `BIASCAL`"]
+#[doc = "Field `BIASCAL` reader - Bias Calibration"]
+pub struct BIASCAL_R(crate::FieldReader<u8, u8>);
+impl BIASCAL_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        BIASCAL_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for BIASCAL_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `BIASCAL` writer - Bias Calibration"]
 pub struct BIASCAL_W<'a> {
     w: &'a mut W,
 }
@@ -58,13 +118,25 @@ impl<'a> BIASCAL_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 12)) | (((value as u32) & 0x0f) << 12);
+        self.w.bits = (self.w.bits & !(0x0f << 12)) | ((value as u32 & 0x0f) << 12);
         self.w
     }
 }
-#[doc = "Reader of field `FCD`"]
-pub type FCD_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `FCD`"]
+#[doc = "Field `FCD` reader - Flash Calibration Done"]
+pub struct FCD_R(crate::FieldReader<bool, bool>);
+impl FCD_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        FCD_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for FCD_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `FCD` writer - Flash Calibration Done"]
 pub struct FCD_W<'a> {
     w: &'a mut W,
 }
@@ -82,7 +154,7 @@ impl<'a> FCD_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 16)) | (((value as u32) & 0x01) << 16);
+        self.w.bits = (self.w.bits & !(0x01 << 16)) | ((value as u32 & 0x01) << 16);
         self.w
     }
 }
@@ -128,5 +200,31 @@ impl W {
     #[inline(always)]
     pub fn fcd(&mut self) -> FCD_W {
         FCD_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Calibration Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [calib](index.html) module"]
+pub struct CALIB_SPEC;
+impl crate::RegisterSpec for CALIB_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [calib::R](R) reader structure"]
+impl crate::Readable for CALIB_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [calib::W](W) writer structure"]
+impl crate::Writable for CALIB_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets CALIB to value 0"]
+impl crate::Resettable for CALIB_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }
