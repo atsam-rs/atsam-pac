@@ -1,18 +1,54 @@
-#[doc = "Reader of register SCFG%s"]
-pub type R = crate::R<u32, super::SCFG>;
-#[doc = "Writer for register SCFG%s"]
-pub type W = crate::W<u32, super::SCFG>;
-#[doc = "Register SCFG%s `reset()`'s with value 0x10"]
-impl crate::ResetValue for super::SCFG {
-    type Type = u32;
+#[doc = "Register `SCFG%s` reader"]
+pub struct R(crate::R<SCFG_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<SCFG_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0x10
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `SLOT_CYCLE`"]
-pub type SLOT_CYCLE_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `SLOT_CYCLE`"]
+impl From<crate::R<SCFG_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<SCFG_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `SCFG%s` writer"]
+pub struct W(crate::W<SCFG_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<SCFG_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<SCFG_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<SCFG_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `SLOT_CYCLE` reader - Maximum Number of Allowed Cycles for a Burst"]
+pub struct SLOT_CYCLE_R(crate::FieldReader<u8, u8>);
+impl SLOT_CYCLE_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        SLOT_CYCLE_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for SLOT_CYCLE_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `SLOT_CYCLE` writer - Maximum Number of Allowed Cycles for a Burst"]
 pub struct SLOT_CYCLE_W<'a> {
     w: &'a mut W,
 }
@@ -20,7 +56,7 @@ impl<'a> SLOT_CYCLE_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xff) | ((value as u32) & 0xff);
+        self.w.bits = (self.w.bits & !0xff) | (value as u32 & 0xff);
         self.w
     }
 }
@@ -41,37 +77,46 @@ impl From<DEFMSTR_TYPE_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `DEFMSTR_TYPE`"]
-pub type DEFMSTR_TYPE_R = crate::R<u8, DEFMSTR_TYPE_A>;
+#[doc = "Field `DEFMSTR_TYPE` reader - Default Master Type"]
+pub struct DEFMSTR_TYPE_R(crate::FieldReader<u8, DEFMSTR_TYPE_A>);
 impl DEFMSTR_TYPE_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        DEFMSTR_TYPE_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u8, DEFMSTR_TYPE_A> {
-        use crate::Variant::*;
+    pub fn variant(&self) -> Option<DEFMSTR_TYPE_A> {
         match self.bits {
-            0 => Val(DEFMSTR_TYPE_A::NO_DEFAULT),
-            1 => Val(DEFMSTR_TYPE_A::LAST_DEFAULT),
-            2 => Val(DEFMSTR_TYPE_A::FIXED_DEFAULT),
-            i => Res(i),
+            0 => Some(DEFMSTR_TYPE_A::NO_DEFAULT),
+            1 => Some(DEFMSTR_TYPE_A::LAST_DEFAULT),
+            2 => Some(DEFMSTR_TYPE_A::FIXED_DEFAULT),
+            _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `NO_DEFAULT`"]
     #[inline(always)]
     pub fn is_no_default(&self) -> bool {
-        *self == DEFMSTR_TYPE_A::NO_DEFAULT
+        **self == DEFMSTR_TYPE_A::NO_DEFAULT
     }
     #[doc = "Checks if the value of the field is `LAST_DEFAULT`"]
     #[inline(always)]
     pub fn is_last_default(&self) -> bool {
-        *self == DEFMSTR_TYPE_A::LAST_DEFAULT
+        **self == DEFMSTR_TYPE_A::LAST_DEFAULT
     }
     #[doc = "Checks if the value of the field is `FIXED_DEFAULT`"]
     #[inline(always)]
     pub fn is_fixed_default(&self) -> bool {
-        *self == DEFMSTR_TYPE_A::FIXED_DEFAULT
+        **self == DEFMSTR_TYPE_A::FIXED_DEFAULT
     }
 }
-#[doc = "Write proxy for field `DEFMSTR_TYPE`"]
+impl core::ops::Deref for DEFMSTR_TYPE_R {
+    type Target = crate::FieldReader<u8, DEFMSTR_TYPE_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `DEFMSTR_TYPE` writer - Default Master Type"]
 pub struct DEFMSTR_TYPE_W<'a> {
     w: &'a mut W,
 }
@@ -99,13 +144,25 @@ impl<'a> DEFMSTR_TYPE_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 16)) | (((value as u32) & 0x03) << 16);
+        self.w.bits = (self.w.bits & !(0x03 << 16)) | ((value as u32 & 0x03) << 16);
         self.w
     }
 }
-#[doc = "Reader of field `FIXED_DEFMSTR`"]
-pub type FIXED_DEFMSTR_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `FIXED_DEFMSTR`"]
+#[doc = "Field `FIXED_DEFMSTR` reader - Fixed Index of Default Master"]
+pub struct FIXED_DEFMSTR_R(crate::FieldReader<u8, u8>);
+impl FIXED_DEFMSTR_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        FIXED_DEFMSTR_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for FIXED_DEFMSTR_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `FIXED_DEFMSTR` writer - Fixed Index of Default Master"]
 pub struct FIXED_DEFMSTR_W<'a> {
     w: &'a mut W,
 }
@@ -113,7 +170,7 @@ impl<'a> FIXED_DEFMSTR_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 18)) | (((value as u32) & 0x0f) << 18);
+        self.w.bits = (self.w.bits & !(0x0f << 18)) | ((value as u32 & 0x0f) << 18);
         self.w
     }
 }
@@ -131,9 +188,12 @@ impl From<ARBT_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `ARBT`"]
-pub type ARBT_R = crate::R<bool, ARBT_A>;
+#[doc = "Field `ARBT` reader - Arbitration Type"]
+pub struct ARBT_R(crate::FieldReader<bool, ARBT_A>);
 impl ARBT_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        ARBT_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> ARBT_A {
@@ -145,15 +205,22 @@ impl ARBT_R {
     #[doc = "Checks if the value of the field is `ROUND_ROBIN`"]
     #[inline(always)]
     pub fn is_round_robin(&self) -> bool {
-        *self == ARBT_A::ROUND_ROBIN
+        **self == ARBT_A::ROUND_ROBIN
     }
     #[doc = "Checks if the value of the field is `FIXED_PRIORITY`"]
     #[inline(always)]
     pub fn is_fixed_priority(&self) -> bool {
-        *self == ARBT_A::FIXED_PRIORITY
+        **self == ARBT_A::FIXED_PRIORITY
     }
 }
-#[doc = "Write proxy for field `ARBT`"]
+impl core::ops::Deref for ARBT_R {
+    type Target = crate::FieldReader<bool, ARBT_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `ARBT` writer - Arbitration Type"]
 pub struct ARBT_W<'a> {
     w: &'a mut W,
 }
@@ -161,9 +228,7 @@ impl<'a> ARBT_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: ARBT_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Round-Robin Arbitration"]
     #[inline(always)]
@@ -188,7 +253,7 @@ impl<'a> ARBT_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 24)) | (((value as u32) & 0x01) << 24);
+        self.w.bits = (self.w.bits & !(0x01 << 24)) | ((value as u32 & 0x01) << 24);
         self.w
     }
 }
@@ -234,5 +299,31 @@ impl W {
     #[inline(always)]
     pub fn arbt(&mut self) -> ARBT_W {
         ARBT_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Slave Configuration Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [scfg](index.html) module"]
+pub struct SCFG_SPEC;
+impl crate::RegisterSpec for SCFG_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [scfg::R](R) reader structure"]
+impl crate::Readable for SCFG_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [scfg::W](W) writer structure"]
+impl crate::Writable for SCFG_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets SCFG%s to value 0x10"]
+impl crate::Resettable for SCFG_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0x10
     }
 }

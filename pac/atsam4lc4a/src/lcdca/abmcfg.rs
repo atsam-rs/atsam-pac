@@ -1,18 +1,54 @@
-#[doc = "Reader of register ABMCFG"]
-pub type R = crate::R<u32, super::ABMCFG>;
-#[doc = "Writer for register ABMCFG"]
-pub type W = crate::W<u32, super::ABMCFG>;
-#[doc = "Register ABMCFG `reset()`'s with value 0"]
-impl crate::ResetValue for super::ABMCFG {
-    type Type = u32;
+#[doc = "Register `ABMCFG` reader"]
+pub struct R(crate::R<ABMCFG_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<ABMCFG_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `EN`"]
-pub type EN_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `EN`"]
+impl From<crate::R<ABMCFG_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<ABMCFG_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `ABMCFG` writer"]
+pub struct W(crate::W<ABMCFG_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<ABMCFG_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<ABMCFG_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<ABMCFG_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `EN` reader - Enable"]
+pub struct EN_R(crate::FieldReader<bool, bool>);
+impl EN_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        EN_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for EN_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `EN` writer - Enable"]
 pub struct EN_W<'a> {
     w: &'a mut W,
 }
@@ -30,13 +66,25 @@ impl<'a> EN_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
+        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
         self.w
     }
 }
-#[doc = "Reader of field `FCS`"]
-pub type FCS_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `FCS`"]
+#[doc = "Field `FCS` reader - Frame Counter Selection"]
+pub struct FCS_R(crate::FieldReader<u8, u8>);
+impl FCS_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        FCS_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for FCS_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `FCS` writer - Frame Counter Selection"]
 pub struct FCS_W<'a> {
     w: &'a mut W,
 }
@@ -44,13 +92,25 @@ impl<'a> FCS_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 1)) | (((value as u32) & 0x03) << 1);
+        self.w.bits = (self.w.bits & !(0x03 << 1)) | ((value as u32 & 0x03) << 1);
         self.w
     }
 }
-#[doc = "Reader of field `SIZE`"]
-pub type SIZE_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `SIZE`"]
+#[doc = "Field `SIZE` reader - Size"]
+pub struct SIZE_R(crate::FieldReader<u8, u8>);
+impl SIZE_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        SIZE_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for SIZE_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `SIZE` writer - Size"]
 pub struct SIZE_W<'a> {
     w: &'a mut W,
 }
@@ -58,7 +118,7 @@ impl<'a> SIZE_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x1f << 8)) | (((value as u32) & 0x1f) << 8);
+        self.w.bits = (self.w.bits & !(0x1f << 8)) | ((value as u32 & 0x1f) << 8);
         self.w
     }
 }
@@ -94,5 +154,31 @@ impl W {
     #[inline(always)]
     pub fn size(&mut self) -> SIZE_W {
         SIZE_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Automated Bit Mapping Configuration Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [abmcfg](index.html) module"]
+pub struct ABMCFG_SPEC;
+impl crate::RegisterSpec for ABMCFG_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [abmcfg::R](R) reader structure"]
+impl crate::Readable for ABMCFG_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [abmcfg::W](W) writer structure"]
+impl crate::Writable for ABMCFG_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets ABMCFG to value 0"]
+impl crate::Resettable for ABMCFG_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

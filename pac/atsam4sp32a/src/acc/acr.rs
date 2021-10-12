@@ -1,13 +1,37 @@
-#[doc = "Reader of register ACR"]
-pub type R = crate::R<u32, super::ACR>;
-#[doc = "Writer for register ACR"]
-pub type W = crate::W<u32, super::ACR>;
-#[doc = "Register ACR `reset()`'s with value 0"]
-impl crate::ResetValue for super::ACR {
-    type Type = u32;
+#[doc = "Register `ACR` reader"]
+pub struct R(crate::R<ACR_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<ACR_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<ACR_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<ACR_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `ACR` writer"]
+pub struct W(crate::W<ACR_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<ACR_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<ACR_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<ACR_SPEC>) -> Self {
+        W(writer)
     }
 }
 #[doc = "Current SELection\n\nValue on reset: 0"]
@@ -24,9 +48,12 @@ impl From<ISEL_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `ISEL`"]
-pub type ISEL_R = crate::R<bool, ISEL_A>;
+#[doc = "Field `ISEL` reader - Current SELection"]
+pub struct ISEL_R(crate::FieldReader<bool, ISEL_A>);
 impl ISEL_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        ISEL_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> ISEL_A {
@@ -38,15 +65,22 @@ impl ISEL_R {
     #[doc = "Checks if the value of the field is `LOPW`"]
     #[inline(always)]
     pub fn is_lopw(&self) -> bool {
-        *self == ISEL_A::LOPW
+        **self == ISEL_A::LOPW
     }
     #[doc = "Checks if the value of the field is `HISP`"]
     #[inline(always)]
     pub fn is_hisp(&self) -> bool {
-        *self == ISEL_A::HISP
+        **self == ISEL_A::HISP
     }
 }
-#[doc = "Write proxy for field `ISEL`"]
+impl core::ops::Deref for ISEL_R {
+    type Target = crate::FieldReader<bool, ISEL_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `ISEL` writer - Current SELection"]
 pub struct ISEL_W<'a> {
     w: &'a mut W,
 }
@@ -54,9 +88,7 @@ impl<'a> ISEL_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: ISEL_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "low power option."]
     #[inline(always)]
@@ -81,13 +113,25 @@ impl<'a> ISEL_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
+        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
         self.w
     }
 }
-#[doc = "Reader of field `HYST`"]
-pub type HYST_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `HYST`"]
+#[doc = "Field `HYST` reader - HYSTeresis selection"]
+pub struct HYST_R(crate::FieldReader<u8, u8>);
+impl HYST_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        HYST_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for HYST_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `HYST` writer - HYSTeresis selection"]
 pub struct HYST_W<'a> {
     w: &'a mut W,
 }
@@ -95,7 +139,7 @@ impl<'a> HYST_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 1)) | (((value as u32) & 0x03) << 1);
+        self.w.bits = (self.w.bits & !(0x03 << 1)) | ((value as u32 & 0x03) << 1);
         self.w
     }
 }
@@ -121,5 +165,31 @@ impl W {
     #[inline(always)]
     pub fn hyst(&mut self) -> HYST_W {
         HYST_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Analog Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [acr](index.html) module"]
+pub struct ACR_SPEC;
+impl crate::RegisterSpec for ACR_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [acr::R](R) reader structure"]
+impl crate::Readable for ACR_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [acr::W](W) writer structure"]
+impl crate::Writable for ACR_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets ACR to value 0"]
+impl crate::Resettable for ACR_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

@@ -1,18 +1,54 @@
-#[doc = "Reader of register MMR5"]
-pub type R = crate::R<u32, super::MMR5>;
-#[doc = "Writer for register MMR5"]
-pub type W = crate::W<u32, super::MMR5>;
-#[doc = "Register MMR5 `reset()`'s with value 0"]
-impl crate::ResetValue for super::MMR5 {
-    type Type = u32;
+#[doc = "Register `MMR5` reader"]
+pub struct R(crate::R<MMR5_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<MMR5_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `MTIMEMARK`"]
-pub type MTIMEMARK_R = crate::R<u16, u16>;
-#[doc = "Write proxy for field `MTIMEMARK`"]
+impl From<crate::R<MMR5_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<MMR5_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `MMR5` writer"]
+pub struct W(crate::W<MMR5_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<MMR5_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<MMR5_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<MMR5_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `MTIMEMARK` reader - Mailbox Timemark"]
+pub struct MTIMEMARK_R(crate::FieldReader<u16, u16>);
+impl MTIMEMARK_R {
+    pub(crate) fn new(bits: u16) -> Self {
+        MTIMEMARK_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for MTIMEMARK_R {
+    type Target = crate::FieldReader<u16, u16>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `MTIMEMARK` writer - Mailbox Timemark"]
 pub struct MTIMEMARK_W<'a> {
     w: &'a mut W,
 }
@@ -20,13 +56,25 @@ impl<'a> MTIMEMARK_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xffff) | ((value as u32) & 0xffff);
+        self.w.bits = (self.w.bits & !0xffff) | (value as u32 & 0xffff);
         self.w
     }
 }
-#[doc = "Reader of field `PRIOR`"]
-pub type PRIOR_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `PRIOR`"]
+#[doc = "Field `PRIOR` reader - Mailbox Priority"]
+pub struct PRIOR_R(crate::FieldReader<u8, u8>);
+impl PRIOR_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        PRIOR_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for PRIOR_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PRIOR` writer - Mailbox Priority"]
 pub struct PRIOR_W<'a> {
     w: &'a mut W,
 }
@@ -34,7 +82,7 @@ impl<'a> PRIOR_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 16)) | (((value as u32) & 0x0f) << 16);
+        self.w.bits = (self.w.bits & !(0x0f << 16)) | ((value as u32 & 0x0f) << 16);
         self.w
     }
 }
@@ -61,55 +109,64 @@ impl From<MOT_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `MOT`"]
-pub type MOT_R = crate::R<u8, MOT_A>;
+#[doc = "Field `MOT` reader - Mailbox Object Type"]
+pub struct MOT_R(crate::FieldReader<u8, MOT_A>);
 impl MOT_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        MOT_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u8, MOT_A> {
-        use crate::Variant::*;
+    pub fn variant(&self) -> Option<MOT_A> {
         match self.bits {
-            0 => Val(MOT_A::MB_DISABLED),
-            1 => Val(MOT_A::MB_RX),
-            2 => Val(MOT_A::MB_RX_OVERWRITE),
-            3 => Val(MOT_A::MB_TX),
-            4 => Val(MOT_A::MB_CONSUMER),
-            5 => Val(MOT_A::MB_PRODUCER),
-            i => Res(i),
+            0 => Some(MOT_A::MB_DISABLED),
+            1 => Some(MOT_A::MB_RX),
+            2 => Some(MOT_A::MB_RX_OVERWRITE),
+            3 => Some(MOT_A::MB_TX),
+            4 => Some(MOT_A::MB_CONSUMER),
+            5 => Some(MOT_A::MB_PRODUCER),
+            _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `MB_DISABLED`"]
     #[inline(always)]
     pub fn is_mb_disabled(&self) -> bool {
-        *self == MOT_A::MB_DISABLED
+        **self == MOT_A::MB_DISABLED
     }
     #[doc = "Checks if the value of the field is `MB_RX`"]
     #[inline(always)]
     pub fn is_mb_rx(&self) -> bool {
-        *self == MOT_A::MB_RX
+        **self == MOT_A::MB_RX
     }
     #[doc = "Checks if the value of the field is `MB_RX_OVERWRITE`"]
     #[inline(always)]
     pub fn is_mb_rx_overwrite(&self) -> bool {
-        *self == MOT_A::MB_RX_OVERWRITE
+        **self == MOT_A::MB_RX_OVERWRITE
     }
     #[doc = "Checks if the value of the field is `MB_TX`"]
     #[inline(always)]
     pub fn is_mb_tx(&self) -> bool {
-        *self == MOT_A::MB_TX
+        **self == MOT_A::MB_TX
     }
     #[doc = "Checks if the value of the field is `MB_CONSUMER`"]
     #[inline(always)]
     pub fn is_mb_consumer(&self) -> bool {
-        *self == MOT_A::MB_CONSUMER
+        **self == MOT_A::MB_CONSUMER
     }
     #[doc = "Checks if the value of the field is `MB_PRODUCER`"]
     #[inline(always)]
     pub fn is_mb_producer(&self) -> bool {
-        *self == MOT_A::MB_PRODUCER
+        **self == MOT_A::MB_PRODUCER
     }
 }
-#[doc = "Write proxy for field `MOT`"]
+impl core::ops::Deref for MOT_R {
+    type Target = crate::FieldReader<u8, MOT_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `MOT` writer - Mailbox Object Type"]
 pub struct MOT_W<'a> {
     w: &'a mut W,
 }
@@ -152,7 +209,7 @@ impl<'a> MOT_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 24)) | (((value as u32) & 0x07) << 24);
+        self.w.bits = (self.w.bits & !(0x07 << 24)) | ((value as u32 & 0x07) << 24);
         self.w
     }
 }
@@ -188,5 +245,31 @@ impl W {
     #[inline(always)]
     pub fn mot(&mut self) -> MOT_W {
         MOT_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Mailbox Mode Register (MB = 5)\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [mmr5](index.html) module"]
+pub struct MMR5_SPEC;
+impl crate::RegisterSpec for MMR5_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [mmr5::R](R) reader structure"]
+impl crate::Readable for MMR5_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [mmr5::W](W) writer structure"]
+impl crate::Writable for MMR5_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets MMR5 to value 0"]
+impl crate::Resettable for MMR5_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

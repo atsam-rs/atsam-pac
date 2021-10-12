@@ -1,14 +1,25 @@
-#[doc = "Writer for register CR%s"]
-pub type W = crate::W<u32, super::CR>;
-#[doc = "Register CR%s `reset()`'s with value 0"]
-impl crate::ResetValue for super::CR {
-    type Type = u32;
+#[doc = "Register `CR%s` writer"]
+pub struct W(crate::W<CR_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<CR_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Write proxy for field `TEN`"]
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<CR_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<CR_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `TEN` writer - Transfer Enable"]
 pub struct TEN_W<'a> {
     w: &'a mut W,
 }
@@ -26,11 +37,11 @@ impl<'a> TEN_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
+        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
         self.w
     }
 }
-#[doc = "Write proxy for field `TDIS`"]
+#[doc = "Field `TDIS` writer - Transfer Disable"]
 pub struct TDIS_W<'a> {
     w: &'a mut W,
 }
@@ -48,11 +59,11 @@ impl<'a> TDIS_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
         self.w
     }
 }
-#[doc = "Write proxy for field `ECLR`"]
+#[doc = "Field `ECLR` writer - Error Clear"]
 pub struct ECLR_W<'a> {
     w: &'a mut W,
 }
@@ -70,7 +81,7 @@ impl<'a> ECLR_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | (((value as u32) & 0x01) << 8);
+        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
         self.w
     }
 }
@@ -89,5 +100,27 @@ impl W {
     #[inline(always)]
     pub fn eclr(&mut self) -> ECLR_W {
         ECLR_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Control Register\n\nThis register you can [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cr](index.html) module"]
+pub struct CR_SPEC;
+impl crate::RegisterSpec for CR_SPEC {
+    type Ux = u32;
+}
+#[doc = "`write(|w| ..)` method takes [cr::W](W) writer structure"]
+impl crate::Writable for CR_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets CR%s to value 0"]
+impl crate::Resettable for CR_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

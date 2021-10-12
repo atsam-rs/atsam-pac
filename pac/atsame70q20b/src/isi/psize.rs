@@ -1,18 +1,54 @@
-#[doc = "Reader of register PSIZE"]
-pub type R = crate::R<u32, super::PSIZE>;
-#[doc = "Writer for register PSIZE"]
-pub type W = crate::W<u32, super::PSIZE>;
-#[doc = "Register PSIZE `reset()`'s with value 0"]
-impl crate::ResetValue for super::PSIZE {
-    type Type = u32;
+#[doc = "Register `PSIZE` reader"]
+pub struct R(crate::R<PSIZE_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<PSIZE_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `PREV_VSIZE`"]
-pub type PREV_VSIZE_R = crate::R<u16, u16>;
-#[doc = "Write proxy for field `PREV_VSIZE`"]
+impl From<crate::R<PSIZE_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<PSIZE_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `PSIZE` writer"]
+pub struct W(crate::W<PSIZE_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<PSIZE_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<PSIZE_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<PSIZE_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `PREV_VSIZE` reader - Vertical Size for the Preview Path"]
+pub struct PREV_VSIZE_R(crate::FieldReader<u16, u16>);
+impl PREV_VSIZE_R {
+    pub(crate) fn new(bits: u16) -> Self {
+        PREV_VSIZE_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for PREV_VSIZE_R {
+    type Target = crate::FieldReader<u16, u16>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PREV_VSIZE` writer - Vertical Size for the Preview Path"]
 pub struct PREV_VSIZE_W<'a> {
     w: &'a mut W,
 }
@@ -20,13 +56,25 @@ impl<'a> PREV_VSIZE_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x03ff) | ((value as u32) & 0x03ff);
+        self.w.bits = (self.w.bits & !0x03ff) | (value as u32 & 0x03ff);
         self.w
     }
 }
-#[doc = "Reader of field `PREV_HSIZE`"]
-pub type PREV_HSIZE_R = crate::R<u16, u16>;
-#[doc = "Write proxy for field `PREV_HSIZE`"]
+#[doc = "Field `PREV_HSIZE` reader - Horizontal Size for the Preview Path"]
+pub struct PREV_HSIZE_R(crate::FieldReader<u16, u16>);
+impl PREV_HSIZE_R {
+    pub(crate) fn new(bits: u16) -> Self {
+        PREV_HSIZE_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for PREV_HSIZE_R {
+    type Target = crate::FieldReader<u16, u16>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PREV_HSIZE` writer - Horizontal Size for the Preview Path"]
 pub struct PREV_HSIZE_W<'a> {
     w: &'a mut W,
 }
@@ -34,7 +82,7 @@ impl<'a> PREV_HSIZE_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03ff << 16)) | (((value as u32) & 0x03ff) << 16);
+        self.w.bits = (self.w.bits & !(0x03ff << 16)) | ((value as u32 & 0x03ff) << 16);
         self.w
     }
 }
@@ -60,5 +108,31 @@ impl W {
     #[inline(always)]
     pub fn prev_hsize(&mut self) -> PREV_HSIZE_W {
         PREV_HSIZE_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "ISI Preview Size Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [psize](index.html) module"]
+pub struct PSIZE_SPEC;
+impl crate::RegisterSpec for PSIZE_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [psize::R](R) reader structure"]
+impl crate::Readable for PSIZE_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [psize::W](W) writer structure"]
+impl crate::Writable for PSIZE_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets PSIZE to value 0"]
+impl crate::Resettable for PSIZE_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

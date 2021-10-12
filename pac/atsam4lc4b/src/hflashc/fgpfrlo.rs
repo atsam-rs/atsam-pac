@@ -1,69 +1,466 @@
-#[doc = "Reader of register FGPFRLO"]
-pub type R = crate::R<u32, super::FGPFRLO>;
-#[doc = "Reader of field `LOCK0`"]
-pub type LOCK0_R = crate::R<bool, bool>;
-#[doc = "Reader of field `LOCK1`"]
-pub type LOCK1_R = crate::R<bool, bool>;
-#[doc = "Reader of field `LOCK2`"]
-pub type LOCK2_R = crate::R<bool, bool>;
-#[doc = "Reader of field `LOCK3`"]
-pub type LOCK3_R = crate::R<bool, bool>;
-#[doc = "Reader of field `LOCK4`"]
-pub type LOCK4_R = crate::R<bool, bool>;
-#[doc = "Reader of field `LOCK5`"]
-pub type LOCK5_R = crate::R<bool, bool>;
-#[doc = "Reader of field `LOCK6`"]
-pub type LOCK6_R = crate::R<bool, bool>;
-#[doc = "Reader of field `LOCK7`"]
-pub type LOCK7_R = crate::R<bool, bool>;
-#[doc = "Reader of field `LOCK8`"]
-pub type LOCK8_R = crate::R<bool, bool>;
-#[doc = "Reader of field `LOCK9`"]
-pub type LOCK9_R = crate::R<bool, bool>;
-#[doc = "Reader of field `LOCK10`"]
-pub type LOCK10_R = crate::R<bool, bool>;
-#[doc = "Reader of field `LOCK11`"]
-pub type LOCK11_R = crate::R<bool, bool>;
-#[doc = "Reader of field `LOCK12`"]
-pub type LOCK12_R = crate::R<bool, bool>;
-#[doc = "Reader of field `LOCK13`"]
-pub type LOCK13_R = crate::R<bool, bool>;
-#[doc = "Reader of field `LOCK14`"]
-pub type LOCK14_R = crate::R<bool, bool>;
-#[doc = "Reader of field `LOCK15`"]
-pub type LOCK15_R = crate::R<bool, bool>;
-#[doc = "Reader of field `GPF16`"]
-pub type GPF16_R = crate::R<bool, bool>;
-#[doc = "Reader of field `GPF17`"]
-pub type GPF17_R = crate::R<bool, bool>;
-#[doc = "Reader of field `GPF18`"]
-pub type GPF18_R = crate::R<bool, bool>;
-#[doc = "Reader of field `GPF19`"]
-pub type GPF19_R = crate::R<bool, bool>;
-#[doc = "Reader of field `GPF20`"]
-pub type GPF20_R = crate::R<bool, bool>;
-#[doc = "Reader of field `GPF21`"]
-pub type GPF21_R = crate::R<bool, bool>;
-#[doc = "Reader of field `GPF22`"]
-pub type GPF22_R = crate::R<bool, bool>;
-#[doc = "Reader of field `GPF23`"]
-pub type GPF23_R = crate::R<bool, bool>;
-#[doc = "Reader of field `GPF24`"]
-pub type GPF24_R = crate::R<bool, bool>;
-#[doc = "Reader of field `GPF25`"]
-pub type GPF25_R = crate::R<bool, bool>;
-#[doc = "Reader of field `GPF26`"]
-pub type GPF26_R = crate::R<bool, bool>;
-#[doc = "Reader of field `GPF27`"]
-pub type GPF27_R = crate::R<bool, bool>;
-#[doc = "Reader of field `GPF28`"]
-pub type GPF28_R = crate::R<bool, bool>;
-#[doc = "Reader of field `GPF29`"]
-pub type GPF29_R = crate::R<bool, bool>;
-#[doc = "Reader of field `GPF30`"]
-pub type GPF30_R = crate::R<bool, bool>;
-#[doc = "Reader of field `GPF31`"]
-pub type GPF31_R = crate::R<bool, bool>;
+#[doc = "Register `FGPFRLO` reader"]
+pub struct R(crate::R<FGPFRLO_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<FGPFRLO_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<FGPFRLO_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<FGPFRLO_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Field `LOCK0` reader - Lock Bit 0"]
+pub struct LOCK0_R(crate::FieldReader<bool, bool>);
+impl LOCK0_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        LOCK0_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for LOCK0_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `LOCK1` reader - Lock Bit 1"]
+pub struct LOCK1_R(crate::FieldReader<bool, bool>);
+impl LOCK1_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        LOCK1_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for LOCK1_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `LOCK2` reader - Lock Bit 2"]
+pub struct LOCK2_R(crate::FieldReader<bool, bool>);
+impl LOCK2_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        LOCK2_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for LOCK2_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `LOCK3` reader - Lock Bit 3"]
+pub struct LOCK3_R(crate::FieldReader<bool, bool>);
+impl LOCK3_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        LOCK3_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for LOCK3_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `LOCK4` reader - Lock Bit 4"]
+pub struct LOCK4_R(crate::FieldReader<bool, bool>);
+impl LOCK4_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        LOCK4_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for LOCK4_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `LOCK5` reader - Lock Bit 5"]
+pub struct LOCK5_R(crate::FieldReader<bool, bool>);
+impl LOCK5_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        LOCK5_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for LOCK5_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `LOCK6` reader - Lock Bit 6"]
+pub struct LOCK6_R(crate::FieldReader<bool, bool>);
+impl LOCK6_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        LOCK6_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for LOCK6_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `LOCK7` reader - Lock Bit 7"]
+pub struct LOCK7_R(crate::FieldReader<bool, bool>);
+impl LOCK7_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        LOCK7_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for LOCK7_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `LOCK8` reader - Lock Bit 8"]
+pub struct LOCK8_R(crate::FieldReader<bool, bool>);
+impl LOCK8_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        LOCK8_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for LOCK8_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `LOCK9` reader - Lock Bit 9"]
+pub struct LOCK9_R(crate::FieldReader<bool, bool>);
+impl LOCK9_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        LOCK9_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for LOCK9_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `LOCK10` reader - Lock Bit 10"]
+pub struct LOCK10_R(crate::FieldReader<bool, bool>);
+impl LOCK10_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        LOCK10_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for LOCK10_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `LOCK11` reader - Lock Bit 11"]
+pub struct LOCK11_R(crate::FieldReader<bool, bool>);
+impl LOCK11_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        LOCK11_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for LOCK11_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `LOCK12` reader - Lock Bit 12"]
+pub struct LOCK12_R(crate::FieldReader<bool, bool>);
+impl LOCK12_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        LOCK12_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for LOCK12_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `LOCK13` reader - Lock Bit 13"]
+pub struct LOCK13_R(crate::FieldReader<bool, bool>);
+impl LOCK13_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        LOCK13_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for LOCK13_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `LOCK14` reader - Lock Bit 14"]
+pub struct LOCK14_R(crate::FieldReader<bool, bool>);
+impl LOCK14_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        LOCK14_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for LOCK14_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `LOCK15` reader - Lock Bit 15"]
+pub struct LOCK15_R(crate::FieldReader<bool, bool>);
+impl LOCK15_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        LOCK15_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for LOCK15_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `GPF16` reader - General Purpose Fuse 16"]
+pub struct GPF16_R(crate::FieldReader<bool, bool>);
+impl GPF16_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        GPF16_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for GPF16_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `GPF17` reader - General Purpose Fuse 17"]
+pub struct GPF17_R(crate::FieldReader<bool, bool>);
+impl GPF17_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        GPF17_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for GPF17_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `GPF18` reader - General Purpose Fuse 18"]
+pub struct GPF18_R(crate::FieldReader<bool, bool>);
+impl GPF18_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        GPF18_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for GPF18_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `GPF19` reader - General Purpose Fuse 19"]
+pub struct GPF19_R(crate::FieldReader<bool, bool>);
+impl GPF19_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        GPF19_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for GPF19_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `GPF20` reader - General Purpose Fuse 20"]
+pub struct GPF20_R(crate::FieldReader<bool, bool>);
+impl GPF20_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        GPF20_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for GPF20_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `GPF21` reader - General Purpose Fuse 21"]
+pub struct GPF21_R(crate::FieldReader<bool, bool>);
+impl GPF21_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        GPF21_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for GPF21_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `GPF22` reader - General Purpose Fuse 22"]
+pub struct GPF22_R(crate::FieldReader<bool, bool>);
+impl GPF22_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        GPF22_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for GPF22_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `GPF23` reader - General Purpose Fuse 23"]
+pub struct GPF23_R(crate::FieldReader<bool, bool>);
+impl GPF23_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        GPF23_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for GPF23_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `GPF24` reader - General Purpose Fuse 24"]
+pub struct GPF24_R(crate::FieldReader<bool, bool>);
+impl GPF24_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        GPF24_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for GPF24_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `GPF25` reader - General Purpose Fuse 25"]
+pub struct GPF25_R(crate::FieldReader<bool, bool>);
+impl GPF25_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        GPF25_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for GPF25_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `GPF26` reader - General Purpose Fuse 26"]
+pub struct GPF26_R(crate::FieldReader<bool, bool>);
+impl GPF26_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        GPF26_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for GPF26_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `GPF27` reader - General Purpose Fuse 27"]
+pub struct GPF27_R(crate::FieldReader<bool, bool>);
+impl GPF27_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        GPF27_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for GPF27_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `GPF28` reader - General Purpose Fuse 28"]
+pub struct GPF28_R(crate::FieldReader<bool, bool>);
+impl GPF28_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        GPF28_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for GPF28_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `GPF29` reader - General Purpose Fuse 29"]
+pub struct GPF29_R(crate::FieldReader<bool, bool>);
+impl GPF29_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        GPF29_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for GPF29_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `GPF30` reader - General Purpose Fuse 30"]
+pub struct GPF30_R(crate::FieldReader<bool, bool>);
+impl GPF30_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        GPF30_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for GPF30_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `GPF31` reader - General Purpose Fuse 31"]
+pub struct GPF31_R(crate::FieldReader<bool, bool>);
+impl GPF31_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        GPF31_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for GPF31_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
 impl R {
     #[doc = "Bit 0 - Lock Bit 0"]
     #[inline(always)]
@@ -224,5 +621,21 @@ impl R {
     #[inline(always)]
     pub fn gpf31(&self) -> GPF31_R {
         GPF31_R::new(((self.bits >> 31) & 0x01) != 0)
+    }
+}
+#[doc = "Flash Controller General Purpose Fuse Register Low\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [fgpfrlo](index.html) module"]
+pub struct FGPFRLO_SPEC;
+impl crate::RegisterSpec for FGPFRLO_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [fgpfrlo::R](R) reader structure"]
+impl crate::Readable for FGPFRLO_SPEC {
+    type Reader = R;
+}
+#[doc = "`reset()` method sets FGPFRLO to value 0"]
+impl crate::Resettable for FGPFRLO_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

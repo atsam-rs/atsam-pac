@@ -1,18 +1,54 @@
-#[doc = "Reader of register PINSEL"]
-pub type R = crate::R<u32, super::PINSEL>;
-#[doc = "Writer for register PINSEL"]
-pub type W = crate::W<u32, super::PINSEL>;
-#[doc = "Register PINSEL `reset()`'s with value 0"]
-impl crate::ResetValue for super::PINSEL {
-    type Type = u32;
+#[doc = "Register `PINSEL` reader"]
+pub struct R(crate::R<PINSEL_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<PINSEL_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `PINSEL`"]
-pub type PINSEL_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `PINSEL`"]
+impl From<crate::R<PINSEL_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<PINSEL_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `PINSEL` writer"]
+pub struct W(crate::W<PINSEL_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<PINSEL_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<PINSEL_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<PINSEL_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `PINSEL` reader - Pin Select"]
+pub struct PINSEL_R(crate::FieldReader<u8, u8>);
+impl PINSEL_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        PINSEL_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for PINSEL_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PINSEL` writer - Pin Select"]
 pub struct PINSEL_W<'a> {
     w: &'a mut W,
 }
@@ -20,7 +56,7 @@ impl<'a> PINSEL_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xff) | ((value as u32) & 0xff);
+        self.w.bits = (self.w.bits & !0xff) | (value as u32 & 0xff);
         self.w
     }
 }
@@ -36,5 +72,31 @@ impl W {
     #[inline(always)]
     pub fn pinsel(&mut self) -> PINSEL_W {
         PINSEL_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Pin Selection Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pinsel](index.html) module"]
+pub struct PINSEL_SPEC;
+impl crate::RegisterSpec for PINSEL_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [pinsel::R](R) reader structure"]
+impl crate::Readable for PINSEL_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [pinsel::W](W) writer structure"]
+impl crate::Writable for PINSEL_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets PINSEL to value 0"]
+impl crate::Resettable for PINSEL_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

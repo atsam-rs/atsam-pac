@@ -2,305 +2,212 @@
 #[repr(C)]
 pub struct RegisterBlock {
     #[doc = "0x00 - Global Type Register"]
-    pub gtype: GTYPE,
+    pub gtype: crate::Reg<gtype::GTYPE_SPEC>,
     #[doc = "0x04 - Global Configuration Register"]
-    pub gcfg: GCFG,
+    pub gcfg: crate::Reg<gcfg::GCFG_SPEC>,
     #[doc = "0x08 - Global Weighted Arbiter Configuration Register"]
-    pub gwac: GWAC,
+    pub gwac: crate::Reg<gwac::GWAC_SPEC>,
     #[doc = "0x0c - Global Interrupt Enable Register"]
-    pub gie: GIE,
+    pub gie: crate::Reg<gie::GIE_SPEC>,
     #[doc = "0x10 - Global Interrupt Disable Register"]
-    pub gid: GID,
+    pub gid: crate::Reg<gid::GID_SPEC>,
     #[doc = "0x14 - Global Interrupt Mask Register"]
-    pub gim: GIM,
+    pub gim: crate::Reg<gim::GIM_SPEC>,
     #[doc = "0x18 - Global Interrupt Status Register"]
-    pub gis: GIS,
+    pub gis: crate::Reg<gis::GIS_SPEC>,
     #[doc = "0x1c - Global Channel Enable Register"]
-    pub ge: GE,
+    pub ge: crate::Reg<ge::GE_SPEC>,
     #[doc = "0x20 - Global Channel Disable Register"]
-    pub gd: GD,
+    pub gd: crate::Reg<gd::GD_SPEC>,
     #[doc = "0x24 - Global Channel Status Register"]
-    pub gs: GS,
+    pub gs: crate::Reg<gs::GS_SPEC>,
     #[doc = "0x28 - Global Channel Read Suspend Register"]
-    pub grs: GRS,
+    pub grs: crate::Reg<grs::GRS_SPEC>,
     #[doc = "0x2c - Global Channel Write Suspend Register"]
-    pub gws: GWS,
+    pub gws: crate::Reg<gws::GWS_SPEC>,
     #[doc = "0x30 - Global Channel Read Write Suspend Register"]
-    pub grws: GRWS,
+    pub grws: crate::Reg<grws::GRWS_SPEC>,
     #[doc = "0x34 - Global Channel Read Write Resume Register"]
-    pub grwr: GRWR,
+    pub grwr: crate::Reg<grwr::GRWR_SPEC>,
     #[doc = "0x38 - Global Channel Software Request Register"]
-    pub gswr: GSWR,
+    pub gswr: crate::Reg<gswr::GSWR_SPEC>,
     #[doc = "0x3c - Global Channel Software Request Status Register"]
-    pub gsws: GSWS,
+    pub gsws: crate::Reg<gsws::GSWS_SPEC>,
     #[doc = "0x40 - Global Channel Software Flush Request Register"]
-    pub gswf: GSWF,
-    _reserved17: [u8; 12usize],
-    #[doc = "0x50 - Channel Interrupt Enable Register"]
+    pub gswf: crate::Reg<gswf::GSWF_SPEC>,
+    _reserved17: [u8; 0x0c],
+    #[doc = "0x50..0x88 - Channel Interrupt Enable Register"]
     pub xdmac_chid0: XDMAC_CHID,
-    _reserved18: [u8; 8usize],
-    #[doc = "0x90 - Channel Interrupt Enable Register"]
+    _reserved18: [u8; 0x08],
+    #[doc = "0x90..0xc8 - Channel Interrupt Enable Register"]
     pub xdmac_chid1: XDMAC_CHID,
-    _reserved19: [u8; 8usize],
-    #[doc = "0xd0 - Channel Interrupt Enable Register"]
+    _reserved19: [u8; 0x08],
+    #[doc = "0xd0..0x108 - Channel Interrupt Enable Register"]
     pub xdmac_chid2: XDMAC_CHID,
-    _reserved20: [u8; 8usize],
-    #[doc = "0x110 - Channel Interrupt Enable Register"]
+    _reserved20: [u8; 0x08],
+    #[doc = "0x110..0x148 - Channel Interrupt Enable Register"]
     pub xdmac_chid3: XDMAC_CHID,
-    _reserved21: [u8; 8usize],
-    #[doc = "0x150 - Channel Interrupt Enable Register"]
+    _reserved21: [u8; 0x08],
+    #[doc = "0x150..0x188 - Channel Interrupt Enable Register"]
     pub xdmac_chid4: XDMAC_CHID,
-    _reserved22: [u8; 8usize],
-    #[doc = "0x190 - Channel Interrupt Enable Register"]
+    _reserved22: [u8; 0x08],
+    #[doc = "0x190..0x1c8 - Channel Interrupt Enable Register"]
     pub xdmac_chid5: XDMAC_CHID,
-    _reserved23: [u8; 8usize],
-    #[doc = "0x1d0 - Channel Interrupt Enable Register"]
+    _reserved23: [u8; 0x08],
+    #[doc = "0x1d0..0x208 - Channel Interrupt Enable Register"]
     pub xdmac_chid6: XDMAC_CHID,
-    _reserved24: [u8; 8usize],
-    #[doc = "0x210 - Channel Interrupt Enable Register"]
+    _reserved24: [u8; 0x08],
+    #[doc = "0x210..0x248 - Channel Interrupt Enable Register"]
     pub xdmac_chid7: XDMAC_CHID,
-    _reserved25: [u8; 8usize],
-    #[doc = "0x250 - Channel Interrupt Enable Register"]
+    _reserved25: [u8; 0x08],
+    #[doc = "0x250..0x288 - Channel Interrupt Enable Register"]
     pub xdmac_chid8: XDMAC_CHID,
-    _reserved26: [u8; 8usize],
-    #[doc = "0x290 - Channel Interrupt Enable Register"]
+    _reserved26: [u8; 0x08],
+    #[doc = "0x290..0x2c8 - Channel Interrupt Enable Register"]
     pub xdmac_chid9: XDMAC_CHID,
-    _reserved27: [u8; 8usize],
-    #[doc = "0x2d0 - Channel Interrupt Enable Register"]
+    _reserved27: [u8; 0x08],
+    #[doc = "0x2d0..0x308 - Channel Interrupt Enable Register"]
     pub xdmac_chid10: XDMAC_CHID,
-    _reserved28: [u8; 8usize],
-    #[doc = "0x310 - Channel Interrupt Enable Register"]
+    _reserved28: [u8; 0x08],
+    #[doc = "0x310..0x348 - Channel Interrupt Enable Register"]
     pub xdmac_chid11: XDMAC_CHID,
-    _reserved29: [u8; 8usize],
-    #[doc = "0x350 - Channel Interrupt Enable Register"]
+    _reserved29: [u8; 0x08],
+    #[doc = "0x350..0x388 - Channel Interrupt Enable Register"]
     pub xdmac_chid12: XDMAC_CHID,
-    _reserved30: [u8; 8usize],
-    #[doc = "0x390 - Channel Interrupt Enable Register"]
+    _reserved30: [u8; 0x08],
+    #[doc = "0x390..0x3c8 - Channel Interrupt Enable Register"]
     pub xdmac_chid13: XDMAC_CHID,
-    _reserved31: [u8; 8usize],
-    #[doc = "0x3d0 - Channel Interrupt Enable Register"]
+    _reserved31: [u8; 0x08],
+    #[doc = "0x3d0..0x408 - Channel Interrupt Enable Register"]
     pub xdmac_chid14: XDMAC_CHID,
-    _reserved32: [u8; 8usize],
-    #[doc = "0x410 - Channel Interrupt Enable Register"]
+    _reserved32: [u8; 0x08],
+    #[doc = "0x410..0x448 - Channel Interrupt Enable Register"]
     pub xdmac_chid15: XDMAC_CHID,
-    _reserved33: [u8; 8usize],
-    #[doc = "0x450 - Channel Interrupt Enable Register"]
+    _reserved33: [u8; 0x08],
+    #[doc = "0x450..0x488 - Channel Interrupt Enable Register"]
     pub xdmac_chid16: XDMAC_CHID,
-    _reserved34: [u8; 8usize],
-    #[doc = "0x490 - Channel Interrupt Enable Register"]
+    _reserved34: [u8; 0x08],
+    #[doc = "0x490..0x4c8 - Channel Interrupt Enable Register"]
     pub xdmac_chid17: XDMAC_CHID,
-    _reserved35: [u8; 8usize],
-    #[doc = "0x4d0 - Channel Interrupt Enable Register"]
+    _reserved35: [u8; 0x08],
+    #[doc = "0x4d0..0x508 - Channel Interrupt Enable Register"]
     pub xdmac_chid18: XDMAC_CHID,
-    _reserved36: [u8; 8usize],
-    #[doc = "0x510 - Channel Interrupt Enable Register"]
+    _reserved36: [u8; 0x08],
+    #[doc = "0x510..0x548 - Channel Interrupt Enable Register"]
     pub xdmac_chid19: XDMAC_CHID,
-    _reserved37: [u8; 8usize],
-    #[doc = "0x550 - Channel Interrupt Enable Register"]
+    _reserved37: [u8; 0x08],
+    #[doc = "0x550..0x588 - Channel Interrupt Enable Register"]
     pub xdmac_chid20: XDMAC_CHID,
-    _reserved38: [u8; 8usize],
-    #[doc = "0x590 - Channel Interrupt Enable Register"]
+    _reserved38: [u8; 0x08],
+    #[doc = "0x590..0x5c8 - Channel Interrupt Enable Register"]
     pub xdmac_chid21: XDMAC_CHID,
-    _reserved39: [u8; 8usize],
-    #[doc = "0x5d0 - Channel Interrupt Enable Register"]
+    _reserved39: [u8; 0x08],
+    #[doc = "0x5d0..0x608 - Channel Interrupt Enable Register"]
     pub xdmac_chid22: XDMAC_CHID,
-    _reserved40: [u8; 8usize],
-    #[doc = "0x610 - Channel Interrupt Enable Register"]
+    _reserved40: [u8; 0x08],
+    #[doc = "0x610..0x648 - Channel Interrupt Enable Register"]
     pub xdmac_chid23: XDMAC_CHID,
 }
 #[doc = r"Register block"]
 #[repr(C)]
 pub struct XDMAC_CHID {
     #[doc = "0x00 - Channel Interrupt Enable Register"]
-    pub cie: self::xdmac_chid::CIE,
+    pub cie: crate::Reg<self::xdmac_chid::cie::CIE_SPEC>,
     #[doc = "0x04 - Channel Interrupt Disable Register"]
-    pub cid: self::xdmac_chid::CID,
+    pub cid: crate::Reg<self::xdmac_chid::cid::CID_SPEC>,
     #[doc = "0x08 - Channel Interrupt Mask Register"]
-    pub cim: self::xdmac_chid::CIM,
+    pub cim: crate::Reg<self::xdmac_chid::cim::CIM_SPEC>,
     #[doc = "0x0c - Channel Interrupt Status Register"]
-    pub cis: self::xdmac_chid::CIS,
+    pub cis: crate::Reg<self::xdmac_chid::cis::CIS_SPEC>,
     #[doc = "0x10 - Channel Source Address Register"]
-    pub csa: self::xdmac_chid::CSA,
+    pub csa: crate::Reg<self::xdmac_chid::csa::CSA_SPEC>,
     #[doc = "0x14 - Channel Destination Address Register"]
-    pub cda: self::xdmac_chid::CDA,
+    pub cda: crate::Reg<self::xdmac_chid::cda::CDA_SPEC>,
     #[doc = "0x18 - Channel Next Descriptor Address Register"]
-    pub cnda: self::xdmac_chid::CNDA,
+    pub cnda: crate::Reg<self::xdmac_chid::cnda::CNDA_SPEC>,
     #[doc = "0x1c - Channel Next Descriptor Control Register"]
-    pub cndc: self::xdmac_chid::CNDC,
+    pub cndc: crate::Reg<self::xdmac_chid::cndc::CNDC_SPEC>,
     #[doc = "0x20 - Channel Microblock Control Register"]
-    pub cubc: self::xdmac_chid::CUBC,
+    pub cubc: crate::Reg<self::xdmac_chid::cubc::CUBC_SPEC>,
     #[doc = "0x24 - Channel Block Control Register"]
-    pub cbc: self::xdmac_chid::CBC,
+    pub cbc: crate::Reg<self::xdmac_chid::cbc::CBC_SPEC>,
     #[doc = "0x28 - Channel Configuration Register"]
-    pub cc: self::xdmac_chid::CC,
+    pub cc: crate::Reg<self::xdmac_chid::cc::CC_SPEC>,
     #[doc = "0x2c - Channel Data Stride Memory Set Pattern"]
-    pub cds_msp: self::xdmac_chid::CDS_MSP,
+    pub cds_msp: crate::Reg<self::xdmac_chid::cds_msp::CDS_MSP_SPEC>,
     #[doc = "0x30 - Channel Source Microblock Stride"]
-    pub csus: self::xdmac_chid::CSUS,
+    pub csus: crate::Reg<self::xdmac_chid::csus::CSUS_SPEC>,
     #[doc = "0x34 - Channel Destination Microblock Stride"]
-    pub cdus: self::xdmac_chid::CDUS,
+    pub cdus: crate::Reg<self::xdmac_chid::cdus::CDUS_SPEC>,
 }
 #[doc = r"Register block"]
 #[doc = "Channel Interrupt Enable Register"]
 pub mod xdmac_chid;
-#[doc = "Global Type Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [gtype](gtype) module"]
-pub type GTYPE = crate::Reg<u32, _GTYPE>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _GTYPE;
-#[doc = "`read()` method returns [gtype::R](gtype::R) reader structure"]
-impl crate::Readable for GTYPE {}
+#[doc = "GTYPE register accessor: an alias for `Reg<GTYPE_SPEC>`"]
+pub type GTYPE = crate::Reg<gtype::GTYPE_SPEC>;
 #[doc = "Global Type Register"]
 pub mod gtype;
-#[doc = "Global Configuration Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [gcfg](gcfg) module"]
-pub type GCFG = crate::Reg<u32, _GCFG>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _GCFG;
-#[doc = "`read()` method returns [gcfg::R](gcfg::R) reader structure"]
-impl crate::Readable for GCFG {}
-#[doc = "`write(|w| ..)` method takes [gcfg::W](gcfg::W) writer structure"]
-impl crate::Writable for GCFG {}
+#[doc = "GCFG register accessor: an alias for `Reg<GCFG_SPEC>`"]
+pub type GCFG = crate::Reg<gcfg::GCFG_SPEC>;
 #[doc = "Global Configuration Register"]
 pub mod gcfg;
-#[doc = "Global Weighted Arbiter Configuration Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [gwac](gwac) module"]
-pub type GWAC = crate::Reg<u32, _GWAC>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _GWAC;
-#[doc = "`read()` method returns [gwac::R](gwac::R) reader structure"]
-impl crate::Readable for GWAC {}
-#[doc = "`write(|w| ..)` method takes [gwac::W](gwac::W) writer structure"]
-impl crate::Writable for GWAC {}
+#[doc = "GWAC register accessor: an alias for `Reg<GWAC_SPEC>`"]
+pub type GWAC = crate::Reg<gwac::GWAC_SPEC>;
 #[doc = "Global Weighted Arbiter Configuration Register"]
 pub mod gwac;
-#[doc = "Global Interrupt Enable Register\n\nThis register you can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [gie](gie) module"]
-pub type GIE = crate::Reg<u32, _GIE>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _GIE;
-#[doc = "`write(|w| ..)` method takes [gie::W](gie::W) writer structure"]
-impl crate::Writable for GIE {}
+#[doc = "GIE register accessor: an alias for `Reg<GIE_SPEC>`"]
+pub type GIE = crate::Reg<gie::GIE_SPEC>;
 #[doc = "Global Interrupt Enable Register"]
 pub mod gie;
-#[doc = "Global Interrupt Disable Register\n\nThis register you can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [gid](gid) module"]
-pub type GID = crate::Reg<u32, _GID>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _GID;
-#[doc = "`write(|w| ..)` method takes [gid::W](gid::W) writer structure"]
-impl crate::Writable for GID {}
+#[doc = "GID register accessor: an alias for `Reg<GID_SPEC>`"]
+pub type GID = crate::Reg<gid::GID_SPEC>;
 #[doc = "Global Interrupt Disable Register"]
 pub mod gid;
-#[doc = "Global Interrupt Mask Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [gim](gim) module"]
-pub type GIM = crate::Reg<u32, _GIM>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _GIM;
-#[doc = "`read()` method returns [gim::R](gim::R) reader structure"]
-impl crate::Readable for GIM {}
+#[doc = "GIM register accessor: an alias for `Reg<GIM_SPEC>`"]
+pub type GIM = crate::Reg<gim::GIM_SPEC>;
 #[doc = "Global Interrupt Mask Register"]
 pub mod gim;
-#[doc = "Global Interrupt Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [gis](gis) module"]
-pub type GIS = crate::Reg<u32, _GIS>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _GIS;
-#[doc = "`read()` method returns [gis::R](gis::R) reader structure"]
-impl crate::Readable for GIS {}
+#[doc = "GIS register accessor: an alias for `Reg<GIS_SPEC>`"]
+pub type GIS = crate::Reg<gis::GIS_SPEC>;
 #[doc = "Global Interrupt Status Register"]
 pub mod gis;
-#[doc = "Global Channel Enable Register\n\nThis register you can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ge](ge) module"]
-pub type GE = crate::Reg<u32, _GE>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _GE;
-#[doc = "`write(|w| ..)` method takes [ge::W](ge::W) writer structure"]
-impl crate::Writable for GE {}
+#[doc = "GE register accessor: an alias for `Reg<GE_SPEC>`"]
+pub type GE = crate::Reg<ge::GE_SPEC>;
 #[doc = "Global Channel Enable Register"]
 pub mod ge;
-#[doc = "Global Channel Disable Register\n\nThis register you can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [gd](gd) module"]
-pub type GD = crate::Reg<u32, _GD>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _GD;
-#[doc = "`write(|w| ..)` method takes [gd::W](gd::W) writer structure"]
-impl crate::Writable for GD {}
+#[doc = "GD register accessor: an alias for `Reg<GD_SPEC>`"]
+pub type GD = crate::Reg<gd::GD_SPEC>;
 #[doc = "Global Channel Disable Register"]
 pub mod gd;
-#[doc = "Global Channel Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [gs](gs) module"]
-pub type GS = crate::Reg<u32, _GS>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _GS;
-#[doc = "`read()` method returns [gs::R](gs::R) reader structure"]
-impl crate::Readable for GS {}
+#[doc = "GS register accessor: an alias for `Reg<GS_SPEC>`"]
+pub type GS = crate::Reg<gs::GS_SPEC>;
 #[doc = "Global Channel Status Register"]
 pub mod gs;
-#[doc = "Global Channel Read Suspend Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [grs](grs) module"]
-pub type GRS = crate::Reg<u32, _GRS>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _GRS;
-#[doc = "`read()` method returns [grs::R](grs::R) reader structure"]
-impl crate::Readable for GRS {}
-#[doc = "`write(|w| ..)` method takes [grs::W](grs::W) writer structure"]
-impl crate::Writable for GRS {}
+#[doc = "GRS register accessor: an alias for `Reg<GRS_SPEC>`"]
+pub type GRS = crate::Reg<grs::GRS_SPEC>;
 #[doc = "Global Channel Read Suspend Register"]
 pub mod grs;
-#[doc = "Global Channel Write Suspend Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [gws](gws) module"]
-pub type GWS = crate::Reg<u32, _GWS>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _GWS;
-#[doc = "`read()` method returns [gws::R](gws::R) reader structure"]
-impl crate::Readable for GWS {}
-#[doc = "`write(|w| ..)` method takes [gws::W](gws::W) writer structure"]
-impl crate::Writable for GWS {}
+#[doc = "GWS register accessor: an alias for `Reg<GWS_SPEC>`"]
+pub type GWS = crate::Reg<gws::GWS_SPEC>;
 #[doc = "Global Channel Write Suspend Register"]
 pub mod gws;
-#[doc = "Global Channel Read Write Suspend Register\n\nThis register you can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [grws](grws) module"]
-pub type GRWS = crate::Reg<u32, _GRWS>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _GRWS;
-#[doc = "`write(|w| ..)` method takes [grws::W](grws::W) writer structure"]
-impl crate::Writable for GRWS {}
+#[doc = "GRWS register accessor: an alias for `Reg<GRWS_SPEC>`"]
+pub type GRWS = crate::Reg<grws::GRWS_SPEC>;
 #[doc = "Global Channel Read Write Suspend Register"]
 pub mod grws;
-#[doc = "Global Channel Read Write Resume Register\n\nThis register you can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [grwr](grwr) module"]
-pub type GRWR = crate::Reg<u32, _GRWR>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _GRWR;
-#[doc = "`write(|w| ..)` method takes [grwr::W](grwr::W) writer structure"]
-impl crate::Writable for GRWR {}
+#[doc = "GRWR register accessor: an alias for `Reg<GRWR_SPEC>`"]
+pub type GRWR = crate::Reg<grwr::GRWR_SPEC>;
 #[doc = "Global Channel Read Write Resume Register"]
 pub mod grwr;
-#[doc = "Global Channel Software Request Register\n\nThis register you can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [gswr](gswr) module"]
-pub type GSWR = crate::Reg<u32, _GSWR>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _GSWR;
-#[doc = "`write(|w| ..)` method takes [gswr::W](gswr::W) writer structure"]
-impl crate::Writable for GSWR {}
+#[doc = "GSWR register accessor: an alias for `Reg<GSWR_SPEC>`"]
+pub type GSWR = crate::Reg<gswr::GSWR_SPEC>;
 #[doc = "Global Channel Software Request Register"]
 pub mod gswr;
-#[doc = "Global Channel Software Request Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [gsws](gsws) module"]
-pub type GSWS = crate::Reg<u32, _GSWS>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _GSWS;
-#[doc = "`read()` method returns [gsws::R](gsws::R) reader structure"]
-impl crate::Readable for GSWS {}
+#[doc = "GSWS register accessor: an alias for `Reg<GSWS_SPEC>`"]
+pub type GSWS = crate::Reg<gsws::GSWS_SPEC>;
 #[doc = "Global Channel Software Request Status Register"]
 pub mod gsws;
-#[doc = "Global Channel Software Flush Request Register\n\nThis register you can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [gswf](gswf) module"]
-pub type GSWF = crate::Reg<u32, _GSWF>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _GSWF;
-#[doc = "`write(|w| ..)` method takes [gswf::W](gswf::W) writer structure"]
-impl crate::Writable for GSWF {}
+#[doc = "GSWF register accessor: an alias for `Reg<GSWF_SPEC>`"]
+pub type GSWF = crate::Reg<gswf::GSWF_SPEC>;
 #[doc = "Global Channel Software Flush Request Register"]
 pub mod gswf;

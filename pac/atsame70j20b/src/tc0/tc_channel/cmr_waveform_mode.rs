@@ -1,13 +1,37 @@
-#[doc = "Reader of register CMR_WAVEFORM_MODE"]
-pub type R = crate::R<u32, super::CMR_WAVEFORM_MODE>;
-#[doc = "Writer for register CMR_WAVEFORM_MODE"]
-pub type W = crate::W<u32, super::CMR_WAVEFORM_MODE>;
-#[doc = "Register CMR_WAVEFORM_MODE `reset()`'s with value 0"]
-impl crate::ResetValue for super::CMR_WAVEFORM_MODE {
-    type Type = u32;
+#[doc = "Register `CMR_WAVEFORM_MODE` reader"]
+pub struct R(crate::R<CMR_WAVEFORM_MODE_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<CMR_WAVEFORM_MODE_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<CMR_WAVEFORM_MODE_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<CMR_WAVEFORM_MODE_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `CMR_WAVEFORM_MODE` writer"]
+pub struct W(crate::W<CMR_WAVEFORM_MODE_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<CMR_WAVEFORM_MODE_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<CMR_WAVEFORM_MODE_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<CMR_WAVEFORM_MODE_SPEC>) -> Self {
+        W(writer)
     }
 }
 #[doc = "Clock Selection\n\nValue on reset: 0"]
@@ -37,9 +61,12 @@ impl From<TCCLKS_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `TCCLKS`"]
-pub type TCCLKS_R = crate::R<u8, TCCLKS_A>;
+#[doc = "Field `TCCLKS` reader - Clock Selection"]
+pub struct TCCLKS_R(crate::FieldReader<u8, TCCLKS_A>);
 impl TCCLKS_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        TCCLKS_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> TCCLKS_A {
@@ -58,45 +85,52 @@ impl TCCLKS_R {
     #[doc = "Checks if the value of the field is `TIMER_CLOCK1`"]
     #[inline(always)]
     pub fn is_timer_clock1(&self) -> bool {
-        *self == TCCLKS_A::TIMER_CLOCK1
+        **self == TCCLKS_A::TIMER_CLOCK1
     }
     #[doc = "Checks if the value of the field is `TIMER_CLOCK2`"]
     #[inline(always)]
     pub fn is_timer_clock2(&self) -> bool {
-        *self == TCCLKS_A::TIMER_CLOCK2
+        **self == TCCLKS_A::TIMER_CLOCK2
     }
     #[doc = "Checks if the value of the field is `TIMER_CLOCK3`"]
     #[inline(always)]
     pub fn is_timer_clock3(&self) -> bool {
-        *self == TCCLKS_A::TIMER_CLOCK3
+        **self == TCCLKS_A::TIMER_CLOCK3
     }
     #[doc = "Checks if the value of the field is `TIMER_CLOCK4`"]
     #[inline(always)]
     pub fn is_timer_clock4(&self) -> bool {
-        *self == TCCLKS_A::TIMER_CLOCK4
+        **self == TCCLKS_A::TIMER_CLOCK4
     }
     #[doc = "Checks if the value of the field is `TIMER_CLOCK5`"]
     #[inline(always)]
     pub fn is_timer_clock5(&self) -> bool {
-        *self == TCCLKS_A::TIMER_CLOCK5
+        **self == TCCLKS_A::TIMER_CLOCK5
     }
     #[doc = "Checks if the value of the field is `XC0`"]
     #[inline(always)]
     pub fn is_xc0(&self) -> bool {
-        *self == TCCLKS_A::XC0
+        **self == TCCLKS_A::XC0
     }
     #[doc = "Checks if the value of the field is `XC1`"]
     #[inline(always)]
     pub fn is_xc1(&self) -> bool {
-        *self == TCCLKS_A::XC1
+        **self == TCCLKS_A::XC1
     }
     #[doc = "Checks if the value of the field is `XC2`"]
     #[inline(always)]
     pub fn is_xc2(&self) -> bool {
-        *self == TCCLKS_A::XC2
+        **self == TCCLKS_A::XC2
     }
 }
-#[doc = "Write proxy for field `TCCLKS`"]
+impl core::ops::Deref for TCCLKS_R {
+    type Target = crate::FieldReader<u8, TCCLKS_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `TCCLKS` writer - Clock Selection"]
 pub struct TCCLKS_W<'a> {
     w: &'a mut W,
 }
@@ -104,9 +138,7 @@ impl<'a> TCCLKS_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: TCCLKS_A) -> &'a mut W {
-        {
-            self.bits(variant.into())
-        }
+        self.bits(variant.into())
     }
     #[doc = "Clock selected: internal PCK6 clock signal (from PMC)"]
     #[inline(always)]
@@ -151,13 +183,25 @@ impl<'a> TCCLKS_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x07) | ((value as u32) & 0x07);
+        self.w.bits = (self.w.bits & !0x07) | (value as u32 & 0x07);
         self.w
     }
 }
-#[doc = "Reader of field `CLKI`"]
-pub type CLKI_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `CLKI`"]
+#[doc = "Field `CLKI` reader - Clock Invert"]
+pub struct CLKI_R(crate::FieldReader<bool, bool>);
+impl CLKI_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        CLKI_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for CLKI_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CLKI` writer - Clock Invert"]
 pub struct CLKI_W<'a> {
     w: &'a mut W,
 }
@@ -175,7 +219,7 @@ impl<'a> CLKI_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
+        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
         self.w
     }
 }
@@ -198,9 +242,12 @@ impl From<BURST_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `BURST`"]
-pub type BURST_R = crate::R<u8, BURST_A>;
+#[doc = "Field `BURST` reader - Burst Signal Selection"]
+pub struct BURST_R(crate::FieldReader<u8, BURST_A>);
 impl BURST_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        BURST_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> BURST_A {
@@ -215,25 +262,32 @@ impl BURST_R {
     #[doc = "Checks if the value of the field is `NONE`"]
     #[inline(always)]
     pub fn is_none(&self) -> bool {
-        *self == BURST_A::NONE
+        **self == BURST_A::NONE
     }
     #[doc = "Checks if the value of the field is `XC0`"]
     #[inline(always)]
     pub fn is_xc0(&self) -> bool {
-        *self == BURST_A::XC0
+        **self == BURST_A::XC0
     }
     #[doc = "Checks if the value of the field is `XC1`"]
     #[inline(always)]
     pub fn is_xc1(&self) -> bool {
-        *self == BURST_A::XC1
+        **self == BURST_A::XC1
     }
     #[doc = "Checks if the value of the field is `XC2`"]
     #[inline(always)]
     pub fn is_xc2(&self) -> bool {
-        *self == BURST_A::XC2
+        **self == BURST_A::XC2
     }
 }
-#[doc = "Write proxy for field `BURST`"]
+impl core::ops::Deref for BURST_R {
+    type Target = crate::FieldReader<u8, BURST_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `BURST` writer - Burst Signal Selection"]
 pub struct BURST_W<'a> {
     w: &'a mut W,
 }
@@ -241,9 +295,7 @@ impl<'a> BURST_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: BURST_A) -> &'a mut W {
-        {
-            self.bits(variant.into())
-        }
+        self.bits(variant.into())
     }
     #[doc = "The clock is not gated by an external signal."]
     #[inline(always)]
@@ -268,13 +320,25 @@ impl<'a> BURST_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 4)) | (((value as u32) & 0x03) << 4);
+        self.w.bits = (self.w.bits & !(0x03 << 4)) | ((value as u32 & 0x03) << 4);
         self.w
     }
 }
-#[doc = "Reader of field `CPCSTOP`"]
-pub type CPCSTOP_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `CPCSTOP`"]
+#[doc = "Field `CPCSTOP` reader - Counter Clock Stopped with RC Compare"]
+pub struct CPCSTOP_R(crate::FieldReader<bool, bool>);
+impl CPCSTOP_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        CPCSTOP_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for CPCSTOP_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CPCSTOP` writer - Counter Clock Stopped with RC Compare"]
 pub struct CPCSTOP_W<'a> {
     w: &'a mut W,
 }
@@ -292,13 +356,25 @@ impl<'a> CPCSTOP_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | (((value as u32) & 0x01) << 6);
+        self.w.bits = (self.w.bits & !(0x01 << 6)) | ((value as u32 & 0x01) << 6);
         self.w
     }
 }
-#[doc = "Reader of field `CPCDIS`"]
-pub type CPCDIS_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `CPCDIS`"]
+#[doc = "Field `CPCDIS` reader - Counter Clock Disable with RC Loading"]
+pub struct CPCDIS_R(crate::FieldReader<bool, bool>);
+impl CPCDIS_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        CPCDIS_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for CPCDIS_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CPCDIS` writer - Counter Clock Disable with RC Loading"]
 pub struct CPCDIS_W<'a> {
     w: &'a mut W,
 }
@@ -316,7 +392,7 @@ impl<'a> CPCDIS_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | (((value as u32) & 0x01) << 7);
+        self.w.bits = (self.w.bits & !(0x01 << 7)) | ((value as u32 & 0x01) << 7);
         self.w
     }
 }
@@ -339,9 +415,12 @@ impl From<EEVTEDG_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `EEVTEDG`"]
-pub type EEVTEDG_R = crate::R<u8, EEVTEDG_A>;
+#[doc = "Field `EEVTEDG` reader - External Event Edge Selection"]
+pub struct EEVTEDG_R(crate::FieldReader<u8, EEVTEDG_A>);
 impl EEVTEDG_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        EEVTEDG_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> EEVTEDG_A {
@@ -356,25 +435,32 @@ impl EEVTEDG_R {
     #[doc = "Checks if the value of the field is `NONE`"]
     #[inline(always)]
     pub fn is_none(&self) -> bool {
-        *self == EEVTEDG_A::NONE
+        **self == EEVTEDG_A::NONE
     }
     #[doc = "Checks if the value of the field is `RISING`"]
     #[inline(always)]
     pub fn is_rising(&self) -> bool {
-        *self == EEVTEDG_A::RISING
+        **self == EEVTEDG_A::RISING
     }
     #[doc = "Checks if the value of the field is `FALLING`"]
     #[inline(always)]
     pub fn is_falling(&self) -> bool {
-        *self == EEVTEDG_A::FALLING
+        **self == EEVTEDG_A::FALLING
     }
     #[doc = "Checks if the value of the field is `EDGE`"]
     #[inline(always)]
     pub fn is_edge(&self) -> bool {
-        *self == EEVTEDG_A::EDGE
+        **self == EEVTEDG_A::EDGE
     }
 }
-#[doc = "Write proxy for field `EEVTEDG`"]
+impl core::ops::Deref for EEVTEDG_R {
+    type Target = crate::FieldReader<u8, EEVTEDG_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `EEVTEDG` writer - External Event Edge Selection"]
 pub struct EEVTEDG_W<'a> {
     w: &'a mut W,
 }
@@ -382,9 +468,7 @@ impl<'a> EEVTEDG_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: EEVTEDG_A) -> &'a mut W {
-        {
-            self.bits(variant.into())
-        }
+        self.bits(variant.into())
     }
     #[doc = "None"]
     #[inline(always)]
@@ -409,7 +493,7 @@ impl<'a> EEVTEDG_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 8)) | (((value as u32) & 0x03) << 8);
+        self.w.bits = (self.w.bits & !(0x03 << 8)) | ((value as u32 & 0x03) << 8);
         self.w
     }
 }
@@ -432,9 +516,12 @@ impl From<EEVT_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `EEVT`"]
-pub type EEVT_R = crate::R<u8, EEVT_A>;
+#[doc = "Field `EEVT` reader - External Event Selection"]
+pub struct EEVT_R(crate::FieldReader<u8, EEVT_A>);
 impl EEVT_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        EEVT_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> EEVT_A {
@@ -449,25 +536,32 @@ impl EEVT_R {
     #[doc = "Checks if the value of the field is `TIOB`"]
     #[inline(always)]
     pub fn is_tiob(&self) -> bool {
-        *self == EEVT_A::TIOB
+        **self == EEVT_A::TIOB
     }
     #[doc = "Checks if the value of the field is `XC0`"]
     #[inline(always)]
     pub fn is_xc0(&self) -> bool {
-        *self == EEVT_A::XC0
+        **self == EEVT_A::XC0
     }
     #[doc = "Checks if the value of the field is `XC1`"]
     #[inline(always)]
     pub fn is_xc1(&self) -> bool {
-        *self == EEVT_A::XC1
+        **self == EEVT_A::XC1
     }
     #[doc = "Checks if the value of the field is `XC2`"]
     #[inline(always)]
     pub fn is_xc2(&self) -> bool {
-        *self == EEVT_A::XC2
+        **self == EEVT_A::XC2
     }
 }
-#[doc = "Write proxy for field `EEVT`"]
+impl core::ops::Deref for EEVT_R {
+    type Target = crate::FieldReader<u8, EEVT_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `EEVT` writer - External Event Selection"]
 pub struct EEVT_W<'a> {
     w: &'a mut W,
 }
@@ -475,9 +569,7 @@ impl<'a> EEVT_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: EEVT_A) -> &'a mut W {
-        {
-            self.bits(variant.into())
-        }
+        self.bits(variant.into())
     }
     #[doc = "TIOB"]
     #[inline(always)]
@@ -502,13 +594,25 @@ impl<'a> EEVT_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 10)) | (((value as u32) & 0x03) << 10);
+        self.w.bits = (self.w.bits & !(0x03 << 10)) | ((value as u32 & 0x03) << 10);
         self.w
     }
 }
-#[doc = "Reader of field `ENETRG`"]
-pub type ENETRG_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `ENETRG`"]
+#[doc = "Field `ENETRG` reader - External Event Trigger Enable"]
+pub struct ENETRG_R(crate::FieldReader<bool, bool>);
+impl ENETRG_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        ENETRG_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for ENETRG_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `ENETRG` writer - External Event Trigger Enable"]
 pub struct ENETRG_W<'a> {
     w: &'a mut W,
 }
@@ -526,7 +630,7 @@ impl<'a> ENETRG_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 12)) | (((value as u32) & 0x01) << 12);
+        self.w.bits = (self.w.bits & !(0x01 << 12)) | ((value as u32 & 0x01) << 12);
         self.w
     }
 }
@@ -549,9 +653,12 @@ impl From<WAVSEL_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `WAVSEL`"]
-pub type WAVSEL_R = crate::R<u8, WAVSEL_A>;
+#[doc = "Field `WAVSEL` reader - Waveform Selection"]
+pub struct WAVSEL_R(crate::FieldReader<u8, WAVSEL_A>);
 impl WAVSEL_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        WAVSEL_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> WAVSEL_A {
@@ -566,25 +673,32 @@ impl WAVSEL_R {
     #[doc = "Checks if the value of the field is `UP`"]
     #[inline(always)]
     pub fn is_up(&self) -> bool {
-        *self == WAVSEL_A::UP
+        **self == WAVSEL_A::UP
     }
     #[doc = "Checks if the value of the field is `UPDOWN`"]
     #[inline(always)]
     pub fn is_updown(&self) -> bool {
-        *self == WAVSEL_A::UPDOWN
+        **self == WAVSEL_A::UPDOWN
     }
     #[doc = "Checks if the value of the field is `UP_RC`"]
     #[inline(always)]
     pub fn is_up_rc(&self) -> bool {
-        *self == WAVSEL_A::UP_RC
+        **self == WAVSEL_A::UP_RC
     }
     #[doc = "Checks if the value of the field is `UPDOWN_RC`"]
     #[inline(always)]
     pub fn is_updown_rc(&self) -> bool {
-        *self == WAVSEL_A::UPDOWN_RC
+        **self == WAVSEL_A::UPDOWN_RC
     }
 }
-#[doc = "Write proxy for field `WAVSEL`"]
+impl core::ops::Deref for WAVSEL_R {
+    type Target = crate::FieldReader<u8, WAVSEL_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `WAVSEL` writer - Waveform Selection"]
 pub struct WAVSEL_W<'a> {
     w: &'a mut W,
 }
@@ -592,9 +706,7 @@ impl<'a> WAVSEL_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: WAVSEL_A) -> &'a mut W {
-        {
-            self.bits(variant.into())
-        }
+        self.bits(variant.into())
     }
     #[doc = "UP mode without automatic trigger on RC Compare"]
     #[inline(always)]
@@ -619,13 +731,25 @@ impl<'a> WAVSEL_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 13)) | (((value as u32) & 0x03) << 13);
+        self.w.bits = (self.w.bits & !(0x03 << 13)) | ((value as u32 & 0x03) << 13);
         self.w
     }
 }
-#[doc = "Reader of field `WAVE`"]
-pub type WAVE_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `WAVE`"]
+#[doc = "Field `WAVE` reader - Waveform Mode"]
+pub struct WAVE_R(crate::FieldReader<bool, bool>);
+impl WAVE_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        WAVE_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for WAVE_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `WAVE` writer - Waveform Mode"]
 pub struct WAVE_W<'a> {
     w: &'a mut W,
 }
@@ -643,7 +767,7 @@ impl<'a> WAVE_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 15)) | (((value as u32) & 0x01) << 15);
+        self.w.bits = (self.w.bits & !(0x01 << 15)) | ((value as u32 & 0x01) << 15);
         self.w
     }
 }
@@ -666,9 +790,12 @@ impl From<ACPA_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `ACPA`"]
-pub type ACPA_R = crate::R<u8, ACPA_A>;
+#[doc = "Field `ACPA` reader - RA Compare Effect on TIOAx"]
+pub struct ACPA_R(crate::FieldReader<u8, ACPA_A>);
 impl ACPA_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        ACPA_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> ACPA_A {
@@ -683,25 +810,32 @@ impl ACPA_R {
     #[doc = "Checks if the value of the field is `NONE`"]
     #[inline(always)]
     pub fn is_none(&self) -> bool {
-        *self == ACPA_A::NONE
+        **self == ACPA_A::NONE
     }
     #[doc = "Checks if the value of the field is `SET`"]
     #[inline(always)]
     pub fn is_set(&self) -> bool {
-        *self == ACPA_A::SET
+        **self == ACPA_A::SET
     }
     #[doc = "Checks if the value of the field is `CLEAR`"]
     #[inline(always)]
     pub fn is_clear(&self) -> bool {
-        *self == ACPA_A::CLEAR
+        **self == ACPA_A::CLEAR
     }
     #[doc = "Checks if the value of the field is `TOGGLE`"]
     #[inline(always)]
     pub fn is_toggle(&self) -> bool {
-        *self == ACPA_A::TOGGLE
+        **self == ACPA_A::TOGGLE
     }
 }
-#[doc = "Write proxy for field `ACPA`"]
+impl core::ops::Deref for ACPA_R {
+    type Target = crate::FieldReader<u8, ACPA_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `ACPA` writer - RA Compare Effect on TIOAx"]
 pub struct ACPA_W<'a> {
     w: &'a mut W,
 }
@@ -709,9 +843,7 @@ impl<'a> ACPA_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: ACPA_A) -> &'a mut W {
-        {
-            self.bits(variant.into())
-        }
+        self.bits(variant.into())
     }
     #[doc = "NONE"]
     #[inline(always)]
@@ -736,7 +868,7 @@ impl<'a> ACPA_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 16)) | (((value as u32) & 0x03) << 16);
+        self.w.bits = (self.w.bits & !(0x03 << 16)) | ((value as u32 & 0x03) << 16);
         self.w
     }
 }
@@ -759,9 +891,12 @@ impl From<ACPC_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `ACPC`"]
-pub type ACPC_R = crate::R<u8, ACPC_A>;
+#[doc = "Field `ACPC` reader - RC Compare Effect on TIOAx"]
+pub struct ACPC_R(crate::FieldReader<u8, ACPC_A>);
 impl ACPC_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        ACPC_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> ACPC_A {
@@ -776,25 +911,32 @@ impl ACPC_R {
     #[doc = "Checks if the value of the field is `NONE`"]
     #[inline(always)]
     pub fn is_none(&self) -> bool {
-        *self == ACPC_A::NONE
+        **self == ACPC_A::NONE
     }
     #[doc = "Checks if the value of the field is `SET`"]
     #[inline(always)]
     pub fn is_set(&self) -> bool {
-        *self == ACPC_A::SET
+        **self == ACPC_A::SET
     }
     #[doc = "Checks if the value of the field is `CLEAR`"]
     #[inline(always)]
     pub fn is_clear(&self) -> bool {
-        *self == ACPC_A::CLEAR
+        **self == ACPC_A::CLEAR
     }
     #[doc = "Checks if the value of the field is `TOGGLE`"]
     #[inline(always)]
     pub fn is_toggle(&self) -> bool {
-        *self == ACPC_A::TOGGLE
+        **self == ACPC_A::TOGGLE
     }
 }
-#[doc = "Write proxy for field `ACPC`"]
+impl core::ops::Deref for ACPC_R {
+    type Target = crate::FieldReader<u8, ACPC_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `ACPC` writer - RC Compare Effect on TIOAx"]
 pub struct ACPC_W<'a> {
     w: &'a mut W,
 }
@@ -802,9 +944,7 @@ impl<'a> ACPC_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: ACPC_A) -> &'a mut W {
-        {
-            self.bits(variant.into())
-        }
+        self.bits(variant.into())
     }
     #[doc = "NONE"]
     #[inline(always)]
@@ -829,7 +969,7 @@ impl<'a> ACPC_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 18)) | (((value as u32) & 0x03) << 18);
+        self.w.bits = (self.w.bits & !(0x03 << 18)) | ((value as u32 & 0x03) << 18);
         self.w
     }
 }
@@ -852,9 +992,12 @@ impl From<AEEVT_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `AEEVT`"]
-pub type AEEVT_R = crate::R<u8, AEEVT_A>;
+#[doc = "Field `AEEVT` reader - External Event Effect on TIOAx"]
+pub struct AEEVT_R(crate::FieldReader<u8, AEEVT_A>);
 impl AEEVT_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        AEEVT_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> AEEVT_A {
@@ -869,25 +1012,32 @@ impl AEEVT_R {
     #[doc = "Checks if the value of the field is `NONE`"]
     #[inline(always)]
     pub fn is_none(&self) -> bool {
-        *self == AEEVT_A::NONE
+        **self == AEEVT_A::NONE
     }
     #[doc = "Checks if the value of the field is `SET`"]
     #[inline(always)]
     pub fn is_set(&self) -> bool {
-        *self == AEEVT_A::SET
+        **self == AEEVT_A::SET
     }
     #[doc = "Checks if the value of the field is `CLEAR`"]
     #[inline(always)]
     pub fn is_clear(&self) -> bool {
-        *self == AEEVT_A::CLEAR
+        **self == AEEVT_A::CLEAR
     }
     #[doc = "Checks if the value of the field is `TOGGLE`"]
     #[inline(always)]
     pub fn is_toggle(&self) -> bool {
-        *self == AEEVT_A::TOGGLE
+        **self == AEEVT_A::TOGGLE
     }
 }
-#[doc = "Write proxy for field `AEEVT`"]
+impl core::ops::Deref for AEEVT_R {
+    type Target = crate::FieldReader<u8, AEEVT_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `AEEVT` writer - External Event Effect on TIOAx"]
 pub struct AEEVT_W<'a> {
     w: &'a mut W,
 }
@@ -895,9 +1045,7 @@ impl<'a> AEEVT_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: AEEVT_A) -> &'a mut W {
-        {
-            self.bits(variant.into())
-        }
+        self.bits(variant.into())
     }
     #[doc = "NONE"]
     #[inline(always)]
@@ -922,7 +1070,7 @@ impl<'a> AEEVT_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 20)) | (((value as u32) & 0x03) << 20);
+        self.w.bits = (self.w.bits & !(0x03 << 20)) | ((value as u32 & 0x03) << 20);
         self.w
     }
 }
@@ -945,9 +1093,12 @@ impl From<ASWTRG_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `ASWTRG`"]
-pub type ASWTRG_R = crate::R<u8, ASWTRG_A>;
+#[doc = "Field `ASWTRG` reader - Software Trigger Effect on TIOAx"]
+pub struct ASWTRG_R(crate::FieldReader<u8, ASWTRG_A>);
 impl ASWTRG_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        ASWTRG_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> ASWTRG_A {
@@ -962,25 +1113,32 @@ impl ASWTRG_R {
     #[doc = "Checks if the value of the field is `NONE`"]
     #[inline(always)]
     pub fn is_none(&self) -> bool {
-        *self == ASWTRG_A::NONE
+        **self == ASWTRG_A::NONE
     }
     #[doc = "Checks if the value of the field is `SET`"]
     #[inline(always)]
     pub fn is_set(&self) -> bool {
-        *self == ASWTRG_A::SET
+        **self == ASWTRG_A::SET
     }
     #[doc = "Checks if the value of the field is `CLEAR`"]
     #[inline(always)]
     pub fn is_clear(&self) -> bool {
-        *self == ASWTRG_A::CLEAR
+        **self == ASWTRG_A::CLEAR
     }
     #[doc = "Checks if the value of the field is `TOGGLE`"]
     #[inline(always)]
     pub fn is_toggle(&self) -> bool {
-        *self == ASWTRG_A::TOGGLE
+        **self == ASWTRG_A::TOGGLE
     }
 }
-#[doc = "Write proxy for field `ASWTRG`"]
+impl core::ops::Deref for ASWTRG_R {
+    type Target = crate::FieldReader<u8, ASWTRG_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `ASWTRG` writer - Software Trigger Effect on TIOAx"]
 pub struct ASWTRG_W<'a> {
     w: &'a mut W,
 }
@@ -988,9 +1146,7 @@ impl<'a> ASWTRG_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: ASWTRG_A) -> &'a mut W {
-        {
-            self.bits(variant.into())
-        }
+        self.bits(variant.into())
     }
     #[doc = "NONE"]
     #[inline(always)]
@@ -1015,7 +1171,7 @@ impl<'a> ASWTRG_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 22)) | (((value as u32) & 0x03) << 22);
+        self.w.bits = (self.w.bits & !(0x03 << 22)) | ((value as u32 & 0x03) << 22);
         self.w
     }
 }
@@ -1038,9 +1194,12 @@ impl From<BCPB_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `BCPB`"]
-pub type BCPB_R = crate::R<u8, BCPB_A>;
+#[doc = "Field `BCPB` reader - RB Compare Effect on TIOBx"]
+pub struct BCPB_R(crate::FieldReader<u8, BCPB_A>);
 impl BCPB_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        BCPB_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> BCPB_A {
@@ -1055,25 +1214,32 @@ impl BCPB_R {
     #[doc = "Checks if the value of the field is `NONE`"]
     #[inline(always)]
     pub fn is_none(&self) -> bool {
-        *self == BCPB_A::NONE
+        **self == BCPB_A::NONE
     }
     #[doc = "Checks if the value of the field is `SET`"]
     #[inline(always)]
     pub fn is_set(&self) -> bool {
-        *self == BCPB_A::SET
+        **self == BCPB_A::SET
     }
     #[doc = "Checks if the value of the field is `CLEAR`"]
     #[inline(always)]
     pub fn is_clear(&self) -> bool {
-        *self == BCPB_A::CLEAR
+        **self == BCPB_A::CLEAR
     }
     #[doc = "Checks if the value of the field is `TOGGLE`"]
     #[inline(always)]
     pub fn is_toggle(&self) -> bool {
-        *self == BCPB_A::TOGGLE
+        **self == BCPB_A::TOGGLE
     }
 }
-#[doc = "Write proxy for field `BCPB`"]
+impl core::ops::Deref for BCPB_R {
+    type Target = crate::FieldReader<u8, BCPB_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `BCPB` writer - RB Compare Effect on TIOBx"]
 pub struct BCPB_W<'a> {
     w: &'a mut W,
 }
@@ -1081,9 +1247,7 @@ impl<'a> BCPB_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: BCPB_A) -> &'a mut W {
-        {
-            self.bits(variant.into())
-        }
+        self.bits(variant.into())
     }
     #[doc = "NONE"]
     #[inline(always)]
@@ -1108,7 +1272,7 @@ impl<'a> BCPB_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 24)) | (((value as u32) & 0x03) << 24);
+        self.w.bits = (self.w.bits & !(0x03 << 24)) | ((value as u32 & 0x03) << 24);
         self.w
     }
 }
@@ -1131,9 +1295,12 @@ impl From<BCPC_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `BCPC`"]
-pub type BCPC_R = crate::R<u8, BCPC_A>;
+#[doc = "Field `BCPC` reader - RC Compare Effect on TIOBx"]
+pub struct BCPC_R(crate::FieldReader<u8, BCPC_A>);
 impl BCPC_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        BCPC_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> BCPC_A {
@@ -1148,25 +1315,32 @@ impl BCPC_R {
     #[doc = "Checks if the value of the field is `NONE`"]
     #[inline(always)]
     pub fn is_none(&self) -> bool {
-        *self == BCPC_A::NONE
+        **self == BCPC_A::NONE
     }
     #[doc = "Checks if the value of the field is `SET`"]
     #[inline(always)]
     pub fn is_set(&self) -> bool {
-        *self == BCPC_A::SET
+        **self == BCPC_A::SET
     }
     #[doc = "Checks if the value of the field is `CLEAR`"]
     #[inline(always)]
     pub fn is_clear(&self) -> bool {
-        *self == BCPC_A::CLEAR
+        **self == BCPC_A::CLEAR
     }
     #[doc = "Checks if the value of the field is `TOGGLE`"]
     #[inline(always)]
     pub fn is_toggle(&self) -> bool {
-        *self == BCPC_A::TOGGLE
+        **self == BCPC_A::TOGGLE
     }
 }
-#[doc = "Write proxy for field `BCPC`"]
+impl core::ops::Deref for BCPC_R {
+    type Target = crate::FieldReader<u8, BCPC_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `BCPC` writer - RC Compare Effect on TIOBx"]
 pub struct BCPC_W<'a> {
     w: &'a mut W,
 }
@@ -1174,9 +1348,7 @@ impl<'a> BCPC_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: BCPC_A) -> &'a mut W {
-        {
-            self.bits(variant.into())
-        }
+        self.bits(variant.into())
     }
     #[doc = "NONE"]
     #[inline(always)]
@@ -1201,7 +1373,7 @@ impl<'a> BCPC_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 26)) | (((value as u32) & 0x03) << 26);
+        self.w.bits = (self.w.bits & !(0x03 << 26)) | ((value as u32 & 0x03) << 26);
         self.w
     }
 }
@@ -1224,9 +1396,12 @@ impl From<BEEVT_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `BEEVT`"]
-pub type BEEVT_R = crate::R<u8, BEEVT_A>;
+#[doc = "Field `BEEVT` reader - External Event Effect on TIOBx"]
+pub struct BEEVT_R(crate::FieldReader<u8, BEEVT_A>);
 impl BEEVT_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        BEEVT_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> BEEVT_A {
@@ -1241,25 +1416,32 @@ impl BEEVT_R {
     #[doc = "Checks if the value of the field is `NONE`"]
     #[inline(always)]
     pub fn is_none(&self) -> bool {
-        *self == BEEVT_A::NONE
+        **self == BEEVT_A::NONE
     }
     #[doc = "Checks if the value of the field is `SET`"]
     #[inline(always)]
     pub fn is_set(&self) -> bool {
-        *self == BEEVT_A::SET
+        **self == BEEVT_A::SET
     }
     #[doc = "Checks if the value of the field is `CLEAR`"]
     #[inline(always)]
     pub fn is_clear(&self) -> bool {
-        *self == BEEVT_A::CLEAR
+        **self == BEEVT_A::CLEAR
     }
     #[doc = "Checks if the value of the field is `TOGGLE`"]
     #[inline(always)]
     pub fn is_toggle(&self) -> bool {
-        *self == BEEVT_A::TOGGLE
+        **self == BEEVT_A::TOGGLE
     }
 }
-#[doc = "Write proxy for field `BEEVT`"]
+impl core::ops::Deref for BEEVT_R {
+    type Target = crate::FieldReader<u8, BEEVT_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `BEEVT` writer - External Event Effect on TIOBx"]
 pub struct BEEVT_W<'a> {
     w: &'a mut W,
 }
@@ -1267,9 +1449,7 @@ impl<'a> BEEVT_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: BEEVT_A) -> &'a mut W {
-        {
-            self.bits(variant.into())
-        }
+        self.bits(variant.into())
     }
     #[doc = "NONE"]
     #[inline(always)]
@@ -1294,7 +1474,7 @@ impl<'a> BEEVT_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 28)) | (((value as u32) & 0x03) << 28);
+        self.w.bits = (self.w.bits & !(0x03 << 28)) | ((value as u32 & 0x03) << 28);
         self.w
     }
 }
@@ -1317,9 +1497,12 @@ impl From<BSWTRG_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `BSWTRG`"]
-pub type BSWTRG_R = crate::R<u8, BSWTRG_A>;
+#[doc = "Field `BSWTRG` reader - Software Trigger Effect on TIOBx"]
+pub struct BSWTRG_R(crate::FieldReader<u8, BSWTRG_A>);
 impl BSWTRG_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        BSWTRG_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> BSWTRG_A {
@@ -1334,25 +1517,32 @@ impl BSWTRG_R {
     #[doc = "Checks if the value of the field is `NONE`"]
     #[inline(always)]
     pub fn is_none(&self) -> bool {
-        *self == BSWTRG_A::NONE
+        **self == BSWTRG_A::NONE
     }
     #[doc = "Checks if the value of the field is `SET`"]
     #[inline(always)]
     pub fn is_set(&self) -> bool {
-        *self == BSWTRG_A::SET
+        **self == BSWTRG_A::SET
     }
     #[doc = "Checks if the value of the field is `CLEAR`"]
     #[inline(always)]
     pub fn is_clear(&self) -> bool {
-        *self == BSWTRG_A::CLEAR
+        **self == BSWTRG_A::CLEAR
     }
     #[doc = "Checks if the value of the field is `TOGGLE`"]
     #[inline(always)]
     pub fn is_toggle(&self) -> bool {
-        *self == BSWTRG_A::TOGGLE
+        **self == BSWTRG_A::TOGGLE
     }
 }
-#[doc = "Write proxy for field `BSWTRG`"]
+impl core::ops::Deref for BSWTRG_R {
+    type Target = crate::FieldReader<u8, BSWTRG_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `BSWTRG` writer - Software Trigger Effect on TIOBx"]
 pub struct BSWTRG_W<'a> {
     w: &'a mut W,
 }
@@ -1360,9 +1550,7 @@ impl<'a> BSWTRG_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: BSWTRG_A) -> &'a mut W {
-        {
-            self.bits(variant.into())
-        }
+        self.bits(variant.into())
     }
     #[doc = "NONE"]
     #[inline(always)]
@@ -1387,7 +1575,7 @@ impl<'a> BSWTRG_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 30)) | (((value as u32) & 0x03) << 30);
+        self.w.bits = (self.w.bits & !(0x03 << 30)) | ((value as u32 & 0x03) << 30);
         self.w
     }
 }
@@ -1573,5 +1761,31 @@ impl W {
     #[inline(always)]
     pub fn bswtrg(&mut self) -> BSWTRG_W {
         BSWTRG_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Channel Mode Register (channel = 0)\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cmr_waveform_mode](index.html) module"]
+pub struct CMR_WAVEFORM_MODE_SPEC;
+impl crate::RegisterSpec for CMR_WAVEFORM_MODE_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [cmr_waveform_mode::R](R) reader structure"]
+impl crate::Readable for CMR_WAVEFORM_MODE_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [cmr_waveform_mode::W](W) writer structure"]
+impl crate::Writable for CMR_WAVEFORM_MODE_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets CMR_WAVEFORM_MODE to value 0"]
+impl crate::Resettable for CMR_WAVEFORM_MODE_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

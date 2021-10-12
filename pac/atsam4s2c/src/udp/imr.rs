@@ -1,33 +1,214 @@
-#[doc = "Reader of register IMR"]
-pub type R = crate::R<u32, super::IMR>;
-#[doc = "Reader of field `EP0INT`"]
-pub type EP0INT_R = crate::R<bool, bool>;
-#[doc = "Reader of field `EP1INT`"]
-pub type EP1INT_R = crate::R<bool, bool>;
-#[doc = "Reader of field `EP2INT`"]
-pub type EP2INT_R = crate::R<bool, bool>;
-#[doc = "Reader of field `EP3INT`"]
-pub type EP3INT_R = crate::R<bool, bool>;
-#[doc = "Reader of field `EP4INT`"]
-pub type EP4INT_R = crate::R<bool, bool>;
-#[doc = "Reader of field `EP5INT`"]
-pub type EP5INT_R = crate::R<bool, bool>;
-#[doc = "Reader of field `EP6INT`"]
-pub type EP6INT_R = crate::R<bool, bool>;
-#[doc = "Reader of field `EP7INT`"]
-pub type EP7INT_R = crate::R<bool, bool>;
-#[doc = "Reader of field `RXSUSP`"]
-pub type RXSUSP_R = crate::R<bool, bool>;
-#[doc = "Reader of field `RXRSM`"]
-pub type RXRSM_R = crate::R<bool, bool>;
-#[doc = "Reader of field `EXTRSM`"]
-pub type EXTRSM_R = crate::R<bool, bool>;
-#[doc = "Reader of field `SOFINT`"]
-pub type SOFINT_R = crate::R<bool, bool>;
-#[doc = "Reader of field `BIT12`"]
-pub type BIT12_R = crate::R<bool, bool>;
-#[doc = "Reader of field `WAKEUP`"]
-pub type WAKEUP_R = crate::R<bool, bool>;
+#[doc = "Register `IMR` reader"]
+pub struct R(crate::R<IMR_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<IMR_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<IMR_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<IMR_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Field `EP0INT` reader - Mask Endpoint 0 Interrupt"]
+pub struct EP0INT_R(crate::FieldReader<bool, bool>);
+impl EP0INT_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        EP0INT_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for EP0INT_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `EP1INT` reader - Mask Endpoint 1 Interrupt"]
+pub struct EP1INT_R(crate::FieldReader<bool, bool>);
+impl EP1INT_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        EP1INT_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for EP1INT_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `EP2INT` reader - Mask Endpoint 2 Interrupt"]
+pub struct EP2INT_R(crate::FieldReader<bool, bool>);
+impl EP2INT_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        EP2INT_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for EP2INT_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `EP3INT` reader - Mask Endpoint 3 Interrupt"]
+pub struct EP3INT_R(crate::FieldReader<bool, bool>);
+impl EP3INT_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        EP3INT_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for EP3INT_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `EP4INT` reader - Mask Endpoint 4 Interrupt"]
+pub struct EP4INT_R(crate::FieldReader<bool, bool>);
+impl EP4INT_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        EP4INT_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for EP4INT_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `EP5INT` reader - Mask Endpoint 5 Interrupt"]
+pub struct EP5INT_R(crate::FieldReader<bool, bool>);
+impl EP5INT_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        EP5INT_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for EP5INT_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `EP6INT` reader - Mask Endpoint 6 Interrupt"]
+pub struct EP6INT_R(crate::FieldReader<bool, bool>);
+impl EP6INT_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        EP6INT_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for EP6INT_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `EP7INT` reader - Mask Endpoint 7 Interrupt"]
+pub struct EP7INT_R(crate::FieldReader<bool, bool>);
+impl EP7INT_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        EP7INT_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for EP7INT_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `RXSUSP` reader - Mask UDP Suspend Interrupt"]
+pub struct RXSUSP_R(crate::FieldReader<bool, bool>);
+impl RXSUSP_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        RXSUSP_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for RXSUSP_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `RXRSM` reader - Mask UDP Resume Interrupt."]
+pub struct RXRSM_R(crate::FieldReader<bool, bool>);
+impl RXRSM_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        RXRSM_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for RXRSM_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `EXTRSM` reader - "]
+pub struct EXTRSM_R(crate::FieldReader<bool, bool>);
+impl EXTRSM_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        EXTRSM_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for EXTRSM_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `SOFINT` reader - Mask Start Of Frame Interrupt"]
+pub struct SOFINT_R(crate::FieldReader<bool, bool>);
+impl SOFINT_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        SOFINT_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for SOFINT_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `BIT12` reader - UDP_IMR Bit 12"]
+pub struct BIT12_R(crate::FieldReader<bool, bool>);
+impl BIT12_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        BIT12_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for BIT12_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `WAKEUP` reader - USB Bus WAKEUP Interrupt"]
+pub struct WAKEUP_R(crate::FieldReader<bool, bool>);
+impl WAKEUP_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        WAKEUP_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for WAKEUP_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
 impl R {
     #[doc = "Bit 0 - Mask Endpoint 0 Interrupt"]
     #[inline(always)]
@@ -98,5 +279,21 @@ impl R {
     #[inline(always)]
     pub fn wakeup(&self) -> WAKEUP_R {
         WAKEUP_R::new(((self.bits >> 13) & 0x01) != 0)
+    }
+}
+#[doc = "Interrupt Mask Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [imr](index.html) module"]
+pub struct IMR_SPEC;
+impl crate::RegisterSpec for IMR_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [imr::R](R) reader structure"]
+impl crate::Readable for IMR_SPEC {
+    type Reader = R;
+}
+#[doc = "`reset()` method sets IMR to value 0x1200"]
+impl crate::Resettable for IMR_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0x1200
     }
 }

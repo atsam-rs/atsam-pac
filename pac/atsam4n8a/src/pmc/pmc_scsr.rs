@@ -1,11 +1,60 @@
-#[doc = "Reader of register PMC_SCSR"]
-pub type R = crate::R<u32, super::PMC_SCSR>;
-#[doc = "Reader of field `PCK0`"]
-pub type PCK0_R = crate::R<bool, bool>;
-#[doc = "Reader of field `PCK1`"]
-pub type PCK1_R = crate::R<bool, bool>;
-#[doc = "Reader of field `PCK2`"]
-pub type PCK2_R = crate::R<bool, bool>;
+#[doc = "Register `PMC_SCSR` reader"]
+pub struct R(crate::R<PMC_SCSR_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<PMC_SCSR_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<PMC_SCSR_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<PMC_SCSR_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Field `PCK0` reader - Programmable Clock 0 Output Status"]
+pub struct PCK0_R(crate::FieldReader<bool, bool>);
+impl PCK0_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PCK0_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for PCK0_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PCK1` reader - Programmable Clock 1 Output Status"]
+pub struct PCK1_R(crate::FieldReader<bool, bool>);
+impl PCK1_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PCK1_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for PCK1_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PCK2` reader - Programmable Clock 2 Output Status"]
+pub struct PCK2_R(crate::FieldReader<bool, bool>);
+impl PCK2_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PCK2_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for PCK2_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
 impl R {
     #[doc = "Bit 8 - Programmable Clock 0 Output Status"]
     #[inline(always)]
@@ -21,5 +70,21 @@ impl R {
     #[inline(always)]
     pub fn pck2(&self) -> PCK2_R {
         PCK2_R::new(((self.bits >> 10) & 0x01) != 0)
+    }
+}
+#[doc = "System Clock Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pmc_scsr](index.html) module"]
+pub struct PMC_SCSR_SPEC;
+impl crate::RegisterSpec for PMC_SCSR_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [pmc_scsr::R](R) reader structure"]
+impl crate::Readable for PMC_SCSR_SPEC {
+    type Reader = R;
+}
+#[doc = "`reset()` method sets PMC_SCSR to value 0x01"]
+impl crate::Resettable for PMC_SCSR_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0x01
     }
 }

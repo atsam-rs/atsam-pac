@@ -2,238 +2,132 @@
 #[repr(C)]
 pub struct RegisterBlock {
     #[doc = "0x00 - Channel Status Register"]
-    pub chsr: CHSR,
+    pub chsr: crate::Reg<chsr::CHSR_SPEC>,
     #[doc = "0x04 - Channel Enable Register"]
-    pub cher: CHER,
+    pub cher: crate::Reg<cher::CHER_SPEC>,
     #[doc = "0x08 - Channel Disable Register"]
-    pub chdr: CHDR,
-    _reserved3: [u8; 4usize],
+    pub chdr: crate::Reg<chdr::CHDR_SPEC>,
+    _reserved3: [u8; 0x04],
     #[doc = "0x10 - Software Event"]
-    pub sev: SEV,
+    pub sev: crate::Reg<sev::SEV_SPEC>,
     #[doc = "0x14 - Channel / User Busy"]
-    pub busy: BUSY,
-    _reserved5: [u8; 8usize],
+    pub busy: crate::Reg<busy::BUSY_SPEC>,
+    _reserved5: [u8; 0x08],
     #[doc = "0x20 - Trigger Interrupt Mask Enable Register"]
-    pub trier: TRIER,
+    pub trier: crate::Reg<trier::TRIER_SPEC>,
     #[doc = "0x24 - Trigger Interrupt Mask Disable Register"]
-    pub tridr: TRIDR,
+    pub tridr: crate::Reg<tridr::TRIDR_SPEC>,
     #[doc = "0x28 - Trigger Interrupt Mask Register"]
-    pub trimr: TRIMR,
-    _reserved8: [u8; 4usize],
+    pub trimr: crate::Reg<trimr::TRIMR_SPEC>,
+    _reserved8: [u8; 0x04],
     #[doc = "0x30 - Trigger Status Register"]
-    pub trsr: TRSR,
+    pub trsr: crate::Reg<trsr::TRSR_SPEC>,
     #[doc = "0x34 - Trigger Status Clear Register"]
-    pub trscr: TRSCR,
-    _reserved10: [u8; 8usize],
+    pub trscr: crate::Reg<trscr::TRSCR_SPEC>,
+    _reserved10: [u8; 0x08],
     #[doc = "0x40 - Overrun Interrupt Mask Enable Register"]
-    pub ovier: OVIER,
+    pub ovier: crate::Reg<ovier::OVIER_SPEC>,
     #[doc = "0x44 - Overrun Interrupt Mask Disable Register"]
-    pub ovidr: OVIDR,
+    pub ovidr: crate::Reg<ovidr::OVIDR_SPEC>,
     #[doc = "0x48 - Overrun Interrupt Mask Register"]
-    pub ovimr: OVIMR,
-    _reserved13: [u8; 4usize],
+    pub ovimr: crate::Reg<ovimr::OVIMR_SPEC>,
+    _reserved13: [u8; 0x04],
     #[doc = "0x50 - Overrun Status Register"]
-    pub ovsr: OVSR,
+    pub ovsr: crate::Reg<ovsr::OVSR_SPEC>,
     #[doc = "0x54 - Overrun Status Clear Register"]
-    pub ovscr: OVSCR,
-    _reserved15: [u8; 168usize],
-    #[doc = "0x100 - Channel Multiplexer"]
-    pub chmx: [CHMX; 19],
-    _reserved16: [u8; 180usize],
-    #[doc = "0x200 - Event Shaper"]
-    pub evs: [EVS; 31],
-    _reserved17: [u8; 132usize],
+    pub ovscr: crate::Reg<ovscr::OVSCR_SPEC>,
+    _reserved15: [u8; 0xa8],
+    #[doc = "0x100..0x14c - Channel Multiplexer"]
+    pub chmx: [crate::Reg<chmx::CHMX_SPEC>; 19],
+    _reserved16: [u8; 0xb4],
+    #[doc = "0x200..0x27c - Event Shaper"]
+    pub evs: [crate::Reg<evs::EVS_SPEC>; 31],
+    _reserved17: [u8; 0x84],
     #[doc = "0x300 - Input Glitch Filter Divider Register"]
-    pub igfdr: IGFDR,
-    _reserved18: [u8; 244usize],
+    pub igfdr: crate::Reg<igfdr::IGFDR_SPEC>,
+    _reserved18: [u8; 0xf4],
     #[doc = "0x3f8 - Parameter"]
-    pub parameter: PARAMETER,
+    pub parameter: crate::Reg<parameter::PARAMETER_SPEC>,
     #[doc = "0x3fc - Version"]
-    pub version: VERSION,
+    pub version: crate::Reg<version::VERSION_SPEC>,
 }
-#[doc = "Channel / User Busy\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [busy](busy) module"]
-pub type BUSY = crate::Reg<u32, _BUSY>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _BUSY;
-#[doc = "`read()` method returns [busy::R](busy::R) reader structure"]
-impl crate::Readable for BUSY {}
+#[doc = "BUSY register accessor: an alias for `Reg<BUSY_SPEC>`"]
+pub type BUSY = crate::Reg<busy::BUSY_SPEC>;
 #[doc = "Channel / User Busy"]
 pub mod busy;
-#[doc = "Channel Disable Register\n\nThis register you can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [chdr](chdr) module"]
-pub type CHDR = crate::Reg<u32, _CHDR>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _CHDR;
-#[doc = "`write(|w| ..)` method takes [chdr::W](chdr::W) writer structure"]
-impl crate::Writable for CHDR {}
+#[doc = "CHDR register accessor: an alias for `Reg<CHDR_SPEC>`"]
+pub type CHDR = crate::Reg<chdr::CHDR_SPEC>;
 #[doc = "Channel Disable Register"]
 pub mod chdr;
-#[doc = "Channel Enable Register\n\nThis register you can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cher](cher) module"]
-pub type CHER = crate::Reg<u32, _CHER>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _CHER;
-#[doc = "`write(|w| ..)` method takes [cher::W](cher::W) writer structure"]
-impl crate::Writable for CHER {}
+#[doc = "CHER register accessor: an alias for `Reg<CHER_SPEC>`"]
+pub type CHER = crate::Reg<cher::CHER_SPEC>;
 #[doc = "Channel Enable Register"]
 pub mod cher;
-#[doc = "Channel Multiplexer\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [chmx](chmx) module"]
-pub type CHMX = crate::Reg<u32, _CHMX>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _CHMX;
-#[doc = "`read()` method returns [chmx::R](chmx::R) reader structure"]
-impl crate::Readable for CHMX {}
-#[doc = "`write(|w| ..)` method takes [chmx::W](chmx::W) writer structure"]
-impl crate::Writable for CHMX {}
+#[doc = "CHMX register accessor: an alias for `Reg<CHMX_SPEC>`"]
+pub type CHMX = crate::Reg<chmx::CHMX_SPEC>;
 #[doc = "Channel Multiplexer"]
 pub mod chmx;
-#[doc = "Channel Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [chsr](chsr) module"]
-pub type CHSR = crate::Reg<u32, _CHSR>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _CHSR;
-#[doc = "`read()` method returns [chsr::R](chsr::R) reader structure"]
-impl crate::Readable for CHSR {}
+#[doc = "CHSR register accessor: an alias for `Reg<CHSR_SPEC>`"]
+pub type CHSR = crate::Reg<chsr::CHSR_SPEC>;
 #[doc = "Channel Status Register"]
 pub mod chsr;
-#[doc = "Event Shaper\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [evs](evs) module"]
-pub type EVS = crate::Reg<u32, _EVS>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _EVS;
-#[doc = "`read()` method returns [evs::R](evs::R) reader structure"]
-impl crate::Readable for EVS {}
-#[doc = "`write(|w| ..)` method takes [evs::W](evs::W) writer structure"]
-impl crate::Writable for EVS {}
+#[doc = "EVS register accessor: an alias for `Reg<EVS_SPEC>`"]
+pub type EVS = crate::Reg<evs::EVS_SPEC>;
 #[doc = "Event Shaper"]
 pub mod evs;
-#[doc = "Input Glitch Filter Divider Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [igfdr](igfdr) module"]
-pub type IGFDR = crate::Reg<u32, _IGFDR>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _IGFDR;
-#[doc = "`read()` method returns [igfdr::R](igfdr::R) reader structure"]
-impl crate::Readable for IGFDR {}
-#[doc = "`write(|w| ..)` method takes [igfdr::W](igfdr::W) writer structure"]
-impl crate::Writable for IGFDR {}
+#[doc = "IGFDR register accessor: an alias for `Reg<IGFDR_SPEC>`"]
+pub type IGFDR = crate::Reg<igfdr::IGFDR_SPEC>;
 #[doc = "Input Glitch Filter Divider Register"]
 pub mod igfdr;
-#[doc = "Overrun Interrupt Mask Disable Register\n\nThis register you can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ovidr](ovidr) module"]
-pub type OVIDR = crate::Reg<u32, _OVIDR>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _OVIDR;
-#[doc = "`write(|w| ..)` method takes [ovidr::W](ovidr::W) writer structure"]
-impl crate::Writable for OVIDR {}
+#[doc = "OVIDR register accessor: an alias for `Reg<OVIDR_SPEC>`"]
+pub type OVIDR = crate::Reg<ovidr::OVIDR_SPEC>;
 #[doc = "Overrun Interrupt Mask Disable Register"]
 pub mod ovidr;
-#[doc = "Overrun Interrupt Mask Enable Register\n\nThis register you can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ovier](ovier) module"]
-pub type OVIER = crate::Reg<u32, _OVIER>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _OVIER;
-#[doc = "`write(|w| ..)` method takes [ovier::W](ovier::W) writer structure"]
-impl crate::Writable for OVIER {}
+#[doc = "OVIER register accessor: an alias for `Reg<OVIER_SPEC>`"]
+pub type OVIER = crate::Reg<ovier::OVIER_SPEC>;
 #[doc = "Overrun Interrupt Mask Enable Register"]
 pub mod ovier;
-#[doc = "Overrun Interrupt Mask Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ovimr](ovimr) module"]
-pub type OVIMR = crate::Reg<u32, _OVIMR>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _OVIMR;
-#[doc = "`read()` method returns [ovimr::R](ovimr::R) reader structure"]
-impl crate::Readable for OVIMR {}
+#[doc = "OVIMR register accessor: an alias for `Reg<OVIMR_SPEC>`"]
+pub type OVIMR = crate::Reg<ovimr::OVIMR_SPEC>;
 #[doc = "Overrun Interrupt Mask Register"]
 pub mod ovimr;
-#[doc = "Overrun Status Clear Register\n\nThis register you can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ovscr](ovscr) module"]
-pub type OVSCR = crate::Reg<u32, _OVSCR>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _OVSCR;
-#[doc = "`write(|w| ..)` method takes [ovscr::W](ovscr::W) writer structure"]
-impl crate::Writable for OVSCR {}
+#[doc = "OVSCR register accessor: an alias for `Reg<OVSCR_SPEC>`"]
+pub type OVSCR = crate::Reg<ovscr::OVSCR_SPEC>;
 #[doc = "Overrun Status Clear Register"]
 pub mod ovscr;
-#[doc = "Overrun Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ovsr](ovsr) module"]
-pub type OVSR = crate::Reg<u32, _OVSR>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _OVSR;
-#[doc = "`read()` method returns [ovsr::R](ovsr::R) reader structure"]
-impl crate::Readable for OVSR {}
+#[doc = "OVSR register accessor: an alias for `Reg<OVSR_SPEC>`"]
+pub type OVSR = crate::Reg<ovsr::OVSR_SPEC>;
 #[doc = "Overrun Status Register"]
 pub mod ovsr;
-#[doc = "Parameter\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [parameter](parameter) module"]
-pub type PARAMETER = crate::Reg<u32, _PARAMETER>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _PARAMETER;
-#[doc = "`read()` method returns [parameter::R](parameter::R) reader structure"]
-impl crate::Readable for PARAMETER {}
+#[doc = "PARAMETER register accessor: an alias for `Reg<PARAMETER_SPEC>`"]
+pub type PARAMETER = crate::Reg<parameter::PARAMETER_SPEC>;
 #[doc = "Parameter"]
 pub mod parameter;
-#[doc = "Software Event\n\nThis register you can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sev](sev) module"]
-pub type SEV = crate::Reg<u32, _SEV>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _SEV;
-#[doc = "`write(|w| ..)` method takes [sev::W](sev::W) writer structure"]
-impl crate::Writable for SEV {}
+#[doc = "SEV register accessor: an alias for `Reg<SEV_SPEC>`"]
+pub type SEV = crate::Reg<sev::SEV_SPEC>;
 #[doc = "Software Event"]
 pub mod sev;
-#[doc = "Trigger Interrupt Mask Disable Register\n\nThis register you can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [tridr](tridr) module"]
-pub type TRIDR = crate::Reg<u32, _TRIDR>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _TRIDR;
-#[doc = "`write(|w| ..)` method takes [tridr::W](tridr::W) writer structure"]
-impl crate::Writable for TRIDR {}
+#[doc = "TRIDR register accessor: an alias for `Reg<TRIDR_SPEC>`"]
+pub type TRIDR = crate::Reg<tridr::TRIDR_SPEC>;
 #[doc = "Trigger Interrupt Mask Disable Register"]
 pub mod tridr;
-#[doc = "Trigger Interrupt Mask Enable Register\n\nThis register you can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [trier](trier) module"]
-pub type TRIER = crate::Reg<u32, _TRIER>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _TRIER;
-#[doc = "`write(|w| ..)` method takes [trier::W](trier::W) writer structure"]
-impl crate::Writable for TRIER {}
+#[doc = "TRIER register accessor: an alias for `Reg<TRIER_SPEC>`"]
+pub type TRIER = crate::Reg<trier::TRIER_SPEC>;
 #[doc = "Trigger Interrupt Mask Enable Register"]
 pub mod trier;
-#[doc = "Trigger Interrupt Mask Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [trimr](trimr) module"]
-pub type TRIMR = crate::Reg<u32, _TRIMR>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _TRIMR;
-#[doc = "`read()` method returns [trimr::R](trimr::R) reader structure"]
-impl crate::Readable for TRIMR {}
+#[doc = "TRIMR register accessor: an alias for `Reg<TRIMR_SPEC>`"]
+pub type TRIMR = crate::Reg<trimr::TRIMR_SPEC>;
 #[doc = "Trigger Interrupt Mask Register"]
 pub mod trimr;
-#[doc = "Trigger Status Clear Register\n\nThis register you can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [trscr](trscr) module"]
-pub type TRSCR = crate::Reg<u32, _TRSCR>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _TRSCR;
-#[doc = "`write(|w| ..)` method takes [trscr::W](trscr::W) writer structure"]
-impl crate::Writable for TRSCR {}
+#[doc = "TRSCR register accessor: an alias for `Reg<TRSCR_SPEC>`"]
+pub type TRSCR = crate::Reg<trscr::TRSCR_SPEC>;
 #[doc = "Trigger Status Clear Register"]
 pub mod trscr;
-#[doc = "Trigger Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [trsr](trsr) module"]
-pub type TRSR = crate::Reg<u32, _TRSR>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _TRSR;
-#[doc = "`read()` method returns [trsr::R](trsr::R) reader structure"]
-impl crate::Readable for TRSR {}
+#[doc = "TRSR register accessor: an alias for `Reg<TRSR_SPEC>`"]
+pub type TRSR = crate::Reg<trsr::TRSR_SPEC>;
 #[doc = "Trigger Status Register"]
 pub mod trsr;
-#[doc = "Version\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [version](version) module"]
-pub type VERSION = crate::Reg<u32, _VERSION>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _VERSION;
-#[doc = "`read()` method returns [version::R](version::R) reader structure"]
-impl crate::Readable for VERSION {}
+#[doc = "VERSION register accessor: an alias for `Reg<VERSION_SPEC>`"]
+pub type VERSION = crate::Reg<version::VERSION_SPEC>;
 #[doc = "Version"]
 pub mod version;

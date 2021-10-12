@@ -1,6 +1,25 @@
-#[doc = "Writer for register IER"]
-pub type W = crate::W<u32, super::IER>;
-#[doc = "Write proxy for field `EOC0`"]
+#[doc = "Register `IER` writer"]
+pub struct W(crate::W<IER_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<IER_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<IER_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<IER_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `EOC0` writer - End of Conversion Interrupt Enable 0"]
 pub struct EOC0_W<'a> {
     w: &'a mut W,
 }
@@ -18,11 +37,11 @@ impl<'a> EOC0_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
+        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
         self.w
     }
 }
-#[doc = "Write proxy for field `EOC1`"]
+#[doc = "Field `EOC1` writer - End of Conversion Interrupt Enable 1"]
 pub struct EOC1_W<'a> {
     w: &'a mut W,
 }
@@ -40,11 +59,11 @@ impl<'a> EOC1_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
         self.w
     }
 }
-#[doc = "Write proxy for field `EOC2`"]
+#[doc = "Field `EOC2` writer - End of Conversion Interrupt Enable 2"]
 pub struct EOC2_W<'a> {
     w: &'a mut W,
 }
@@ -62,11 +81,11 @@ impl<'a> EOC2_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
         self.w
     }
 }
-#[doc = "Write proxy for field `EOC3`"]
+#[doc = "Field `EOC3` writer - End of Conversion Interrupt Enable 3"]
 pub struct EOC3_W<'a> {
     w: &'a mut W,
 }
@@ -84,11 +103,11 @@ impl<'a> EOC3_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
+        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
         self.w
     }
 }
-#[doc = "Write proxy for field `EOC4`"]
+#[doc = "Field `EOC4` writer - End of Conversion Interrupt Enable 4"]
 pub struct EOC4_W<'a> {
     w: &'a mut W,
 }
@@ -106,11 +125,11 @@ impl<'a> EOC4_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u32) & 0x01) << 4);
+        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
         self.w
     }
 }
-#[doc = "Write proxy for field `EOC5`"]
+#[doc = "Field `EOC5` writer - End of Conversion Interrupt Enable 5"]
 pub struct EOC5_W<'a> {
     w: &'a mut W,
 }
@@ -128,11 +147,11 @@ impl<'a> EOC5_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u32) & 0x01) << 5);
+        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
         self.w
     }
 }
-#[doc = "Write proxy for field `EOC6`"]
+#[doc = "Field `EOC6` writer - End of Conversion Interrupt Enable 6"]
 pub struct EOC6_W<'a> {
     w: &'a mut W,
 }
@@ -150,11 +169,11 @@ impl<'a> EOC6_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | (((value as u32) & 0x01) << 6);
+        self.w.bits = (self.w.bits & !(0x01 << 6)) | ((value as u32 & 0x01) << 6);
         self.w
     }
 }
-#[doc = "Write proxy for field `EOC7`"]
+#[doc = "Field `EOC7` writer - End of Conversion Interrupt Enable 7"]
 pub struct EOC7_W<'a> {
     w: &'a mut W,
 }
@@ -172,11 +191,11 @@ impl<'a> EOC7_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | (((value as u32) & 0x01) << 7);
+        self.w.bits = (self.w.bits & !(0x01 << 7)) | ((value as u32 & 0x01) << 7);
         self.w
     }
 }
-#[doc = "Write proxy for field `EOC8`"]
+#[doc = "Field `EOC8` writer - End of Conversion Interrupt Enable 8"]
 pub struct EOC8_W<'a> {
     w: &'a mut W,
 }
@@ -194,11 +213,11 @@ impl<'a> EOC8_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | (((value as u32) & 0x01) << 8);
+        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
         self.w
     }
 }
-#[doc = "Write proxy for field `EOC9`"]
+#[doc = "Field `EOC9` writer - End of Conversion Interrupt Enable 9"]
 pub struct EOC9_W<'a> {
     w: &'a mut W,
 }
@@ -216,11 +235,11 @@ impl<'a> EOC9_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 9)) | (((value as u32) & 0x01) << 9);
+        self.w.bits = (self.w.bits & !(0x01 << 9)) | ((value as u32 & 0x01) << 9);
         self.w
     }
 }
-#[doc = "Write proxy for field `EOCAL`"]
+#[doc = "Field `EOCAL` writer - End of Calibration Sequence"]
 pub struct EOCAL_W<'a> {
     w: &'a mut W,
 }
@@ -238,11 +257,11 @@ impl<'a> EOCAL_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 23)) | (((value as u32) & 0x01) << 23);
+        self.w.bits = (self.w.bits & !(0x01 << 23)) | ((value as u32 & 0x01) << 23);
         self.w
     }
 }
-#[doc = "Write proxy for field `DRDY`"]
+#[doc = "Field `DRDY` writer - Data Ready Interrupt Enable"]
 pub struct DRDY_W<'a> {
     w: &'a mut W,
 }
@@ -260,11 +279,11 @@ impl<'a> DRDY_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 24)) | (((value as u32) & 0x01) << 24);
+        self.w.bits = (self.w.bits & !(0x01 << 24)) | ((value as u32 & 0x01) << 24);
         self.w
     }
 }
-#[doc = "Write proxy for field `GOVRE`"]
+#[doc = "Field `GOVRE` writer - General Overrun Error Interrupt Enable"]
 pub struct GOVRE_W<'a> {
     w: &'a mut W,
 }
@@ -282,11 +301,11 @@ impl<'a> GOVRE_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 25)) | (((value as u32) & 0x01) << 25);
+        self.w.bits = (self.w.bits & !(0x01 << 25)) | ((value as u32 & 0x01) << 25);
         self.w
     }
 }
-#[doc = "Write proxy for field `COMPE`"]
+#[doc = "Field `COMPE` writer - Comparison Event Interrupt Enable"]
 pub struct COMPE_W<'a> {
     w: &'a mut W,
 }
@@ -304,11 +323,11 @@ impl<'a> COMPE_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 26)) | (((value as u32) & 0x01) << 26);
+        self.w.bits = (self.w.bits & !(0x01 << 26)) | ((value as u32 & 0x01) << 26);
         self.w
     }
 }
-#[doc = "Write proxy for field `ENDRX`"]
+#[doc = "Field `ENDRX` writer - End of Receive Buffer Interrupt Enable"]
 pub struct ENDRX_W<'a> {
     w: &'a mut W,
 }
@@ -326,11 +345,11 @@ impl<'a> ENDRX_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 27)) | (((value as u32) & 0x01) << 27);
+        self.w.bits = (self.w.bits & !(0x01 << 27)) | ((value as u32 & 0x01) << 27);
         self.w
     }
 }
-#[doc = "Write proxy for field `RXBUFF`"]
+#[doc = "Field `RXBUFF` writer - Receive Buffer Full Interrupt Enable"]
 pub struct RXBUFF_W<'a> {
     w: &'a mut W,
 }
@@ -348,7 +367,7 @@ impl<'a> RXBUFF_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 28)) | (((value as u32) & 0x01) << 28);
+        self.w.bits = (self.w.bits & !(0x01 << 28)) | ((value as u32 & 0x01) << 28);
         self.w
     }
 }
@@ -433,4 +452,19 @@ impl W {
     pub fn rxbuff(&mut self) -> RXBUFF_W {
         RXBUFF_W { w: self }
     }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Interrupt Enable Register\n\nThis register you can [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ier](index.html) module"]
+pub struct IER_SPEC;
+impl crate::RegisterSpec for IER_SPEC {
+    type Ux = u32;
+}
+#[doc = "`write(|w| ..)` method takes [ier::W](W) writer structure"]
+impl crate::Writable for IER_SPEC {
+    type Writer = W;
 }

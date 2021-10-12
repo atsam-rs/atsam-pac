@@ -1,31 +1,200 @@
-#[doc = "Reader of register ISR"]
-pub type R = crate::R<u32, super::ISR>;
-#[doc = "Reader of field `OSC32RDY`"]
-pub type OSC32RDY_R = crate::R<bool, bool>;
-#[doc = "Reader of field `RC32KRDY`"]
-pub type RC32KRDY_R = crate::R<bool, bool>;
-#[doc = "Reader of field `RC32KLOCK`"]
-pub type RC32KLOCK_R = crate::R<bool, bool>;
-#[doc = "Reader of field `RC32KREFE`"]
-pub type RC32KREFE_R = crate::R<bool, bool>;
-#[doc = "Reader of field `RC32KSAT`"]
-pub type RC32KSAT_R = crate::R<bool, bool>;
-#[doc = "Reader of field `BOD33DET`"]
-pub type BOD33DET_R = crate::R<bool, bool>;
-#[doc = "Reader of field `BOD18DET`"]
-pub type BOD18DET_R = crate::R<bool, bool>;
-#[doc = "Reader of field `BOD33SYNRDY`"]
-pub type BOD33SYNRDY_R = crate::R<bool, bool>;
-#[doc = "Reader of field `BOD18SYNRDY`"]
-pub type BOD18SYNRDY_R = crate::R<bool, bool>;
-#[doc = "Reader of field `SSWRDY`"]
-pub type SSWRDY_R = crate::R<bool, bool>;
-#[doc = "Reader of field `VREGOK`"]
-pub type VREGOK_R = crate::R<bool, bool>;
-#[doc = "Reader of field `LPBGRDY`"]
-pub type LPBGRDY_R = crate::R<bool, bool>;
-#[doc = "Reader of field `AE`"]
-pub type AE_R = crate::R<bool, bool>;
+#[doc = "Register `ISR` reader"]
+pub struct R(crate::R<ISR_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<ISR_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<ISR_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<ISR_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Field `OSC32RDY` reader - 32kHz Oscillator Ready"]
+pub struct OSC32RDY_R(crate::FieldReader<bool, bool>);
+impl OSC32RDY_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        OSC32RDY_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for OSC32RDY_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `RC32KRDY` reader - 32kHz RC Oscillator Ready"]
+pub struct RC32KRDY_R(crate::FieldReader<bool, bool>);
+impl RC32KRDY_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        RC32KRDY_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for RC32KRDY_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `RC32KLOCK` reader - 32kHz RC Oscillator Lock"]
+pub struct RC32KLOCK_R(crate::FieldReader<bool, bool>);
+impl RC32KLOCK_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        RC32KLOCK_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for RC32KLOCK_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `RC32KREFE` reader - 32kHz RC Oscillator Reference Error"]
+pub struct RC32KREFE_R(crate::FieldReader<bool, bool>);
+impl RC32KREFE_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        RC32KREFE_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for RC32KREFE_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `RC32KSAT` reader - 32kHz RC Oscillator Saturation"]
+pub struct RC32KSAT_R(crate::FieldReader<bool, bool>);
+impl RC32KSAT_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        RC32KSAT_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for RC32KSAT_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `BOD33DET` reader - BOD33 Detected"]
+pub struct BOD33DET_R(crate::FieldReader<bool, bool>);
+impl BOD33DET_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        BOD33DET_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for BOD33DET_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `BOD18DET` reader - BOD18 Detected"]
+pub struct BOD18DET_R(crate::FieldReader<bool, bool>);
+impl BOD18DET_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        BOD18DET_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for BOD18DET_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `BOD33SYNRDY` reader - BOD33 Synchronization Ready"]
+pub struct BOD33SYNRDY_R(crate::FieldReader<bool, bool>);
+impl BOD33SYNRDY_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        BOD33SYNRDY_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for BOD33SYNRDY_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `BOD18SYNRDY` reader - BOD18 Synchronization Ready"]
+pub struct BOD18SYNRDY_R(crate::FieldReader<bool, bool>);
+impl BOD18SYNRDY_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        BOD18SYNRDY_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for BOD18SYNRDY_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `SSWRDY` reader - VREG Stop Switching Ready"]
+pub struct SSWRDY_R(crate::FieldReader<bool, bool>);
+impl SSWRDY_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        SSWRDY_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for SSWRDY_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `VREGOK` reader - Main VREG OK"]
+pub struct VREGOK_R(crate::FieldReader<bool, bool>);
+impl VREGOK_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        VREGOK_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for VREGOK_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `LPBGRDY` reader - Low Power Bandgap Voltage Reference Ready"]
+pub struct LPBGRDY_R(crate::FieldReader<bool, bool>);
+impl LPBGRDY_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        LPBGRDY_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for LPBGRDY_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `AE` reader - Access Error"]
+pub struct AE_R(crate::FieldReader<bool, bool>);
+impl AE_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        AE_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for AE_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
 impl R {
     #[doc = "Bit 0 - 32kHz Oscillator Ready"]
     #[inline(always)]
@@ -91,5 +260,21 @@ impl R {
     #[inline(always)]
     pub fn ae(&self) -> AE_R {
         AE_R::new(((self.bits >> 31) & 0x01) != 0)
+    }
+}
+#[doc = "Interrupt Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [isr](index.html) module"]
+pub struct ISR_SPEC;
+impl crate::RegisterSpec for ISR_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [isr::R](R) reader structure"]
+impl crate::Readable for ISR_SPEC {
+    type Reader = R;
+}
+#[doc = "`reset()` method sets ISR to value 0"]
+impl crate::Resettable for ISR_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

@@ -1,14 +1,25 @@
-#[doc = "Writer for register UDINTECLR"]
-pub type W = crate::W<u32, super::UDINTECLR>;
-#[doc = "Register UDINTECLR `reset()`'s with value 0"]
-impl crate::ResetValue for super::UDINTECLR {
-    type Type = u32;
+#[doc = "Register `UDINTECLR` writer"]
+pub struct W(crate::W<UDINTECLR_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<UDINTECLR_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Write proxy for field `SUSPEC`"]
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<UDINTECLR_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<UDINTECLR_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `SUSPEC` writer - SUSP Interrupt Enable Clear"]
 pub struct SUSPEC_W<'a> {
     w: &'a mut W,
 }
@@ -26,11 +37,11 @@ impl<'a> SUSPEC_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
+        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
         self.w
     }
 }
-#[doc = "Write proxy for field `MSOFEC`"]
+#[doc = "Field `MSOFEC` writer - MSOF Interrupt Enable Clear"]
 pub struct MSOFEC_W<'a> {
     w: &'a mut W,
 }
@@ -48,11 +59,11 @@ impl<'a> MSOFEC_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
         self.w
     }
 }
-#[doc = "Write proxy for field `SOFEC`"]
+#[doc = "Field `SOFEC` writer - SOF Interrupt Enable Clear"]
 pub struct SOFEC_W<'a> {
     w: &'a mut W,
 }
@@ -70,11 +81,11 @@ impl<'a> SOFEC_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
         self.w
     }
 }
-#[doc = "Write proxy for field `EORSTEC`"]
+#[doc = "Field `EORSTEC` writer - EORST Interrupt Enable Clear"]
 pub struct EORSTEC_W<'a> {
     w: &'a mut W,
 }
@@ -92,11 +103,11 @@ impl<'a> EORSTEC_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
+        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
         self.w
     }
 }
-#[doc = "Write proxy for field `WAKEUPEC`"]
+#[doc = "Field `WAKEUPEC` writer - WAKEUP Interrupt Enable Clear"]
 pub struct WAKEUPEC_W<'a> {
     w: &'a mut W,
 }
@@ -114,11 +125,11 @@ impl<'a> WAKEUPEC_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u32) & 0x01) << 4);
+        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
         self.w
     }
 }
-#[doc = "Write proxy for field `EORSMEC`"]
+#[doc = "Field `EORSMEC` writer - EORSM Interrupt Enable Clear"]
 pub struct EORSMEC_W<'a> {
     w: &'a mut W,
 }
@@ -136,11 +147,11 @@ impl<'a> EORSMEC_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u32) & 0x01) << 5);
+        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
         self.w
     }
 }
-#[doc = "Write proxy for field `UPRSMEC`"]
+#[doc = "Field `UPRSMEC` writer - UPRSM Interrupt Enable Clear"]
 pub struct UPRSMEC_W<'a> {
     w: &'a mut W,
 }
@@ -158,11 +169,11 @@ impl<'a> UPRSMEC_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | (((value as u32) & 0x01) << 6);
+        self.w.bits = (self.w.bits & !(0x01 << 6)) | ((value as u32 & 0x01) << 6);
         self.w
     }
 }
-#[doc = "Write proxy for field `EP0INTEC`"]
+#[doc = "Field `EP0INTEC` writer - EP0INT Interrupt Enable Clear"]
 pub struct EP0INTEC_W<'a> {
     w: &'a mut W,
 }
@@ -180,11 +191,11 @@ impl<'a> EP0INTEC_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 12)) | (((value as u32) & 0x01) << 12);
+        self.w.bits = (self.w.bits & !(0x01 << 12)) | ((value as u32 & 0x01) << 12);
         self.w
     }
 }
-#[doc = "Write proxy for field `EP1INTEC`"]
+#[doc = "Field `EP1INTEC` writer - EP1INT Interrupt Enable Clear"]
 pub struct EP1INTEC_W<'a> {
     w: &'a mut W,
 }
@@ -202,11 +213,11 @@ impl<'a> EP1INTEC_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 13)) | (((value as u32) & 0x01) << 13);
+        self.w.bits = (self.w.bits & !(0x01 << 13)) | ((value as u32 & 0x01) << 13);
         self.w
     }
 }
-#[doc = "Write proxy for field `EP2INTEC`"]
+#[doc = "Field `EP2INTEC` writer - EP2INT Interrupt Enable Clear"]
 pub struct EP2INTEC_W<'a> {
     w: &'a mut W,
 }
@@ -224,11 +235,11 @@ impl<'a> EP2INTEC_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 14)) | (((value as u32) & 0x01) << 14);
+        self.w.bits = (self.w.bits & !(0x01 << 14)) | ((value as u32 & 0x01) << 14);
         self.w
     }
 }
-#[doc = "Write proxy for field `EP3INTEC`"]
+#[doc = "Field `EP3INTEC` writer - EP3INT Interrupt Enable Clear"]
 pub struct EP3INTEC_W<'a> {
     w: &'a mut W,
 }
@@ -246,11 +257,11 @@ impl<'a> EP3INTEC_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 15)) | (((value as u32) & 0x01) << 15);
+        self.w.bits = (self.w.bits & !(0x01 << 15)) | ((value as u32 & 0x01) << 15);
         self.w
     }
 }
-#[doc = "Write proxy for field `EP4INTEC`"]
+#[doc = "Field `EP4INTEC` writer - EP4INT Interrupt Enable Clear"]
 pub struct EP4INTEC_W<'a> {
     w: &'a mut W,
 }
@@ -268,11 +279,11 @@ impl<'a> EP4INTEC_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 16)) | (((value as u32) & 0x01) << 16);
+        self.w.bits = (self.w.bits & !(0x01 << 16)) | ((value as u32 & 0x01) << 16);
         self.w
     }
 }
-#[doc = "Write proxy for field `EP5INTEC`"]
+#[doc = "Field `EP5INTEC` writer - EP5INT Interrupt Enable Clear"]
 pub struct EP5INTEC_W<'a> {
     w: &'a mut W,
 }
@@ -290,11 +301,11 @@ impl<'a> EP5INTEC_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 17)) | (((value as u32) & 0x01) << 17);
+        self.w.bits = (self.w.bits & !(0x01 << 17)) | ((value as u32 & 0x01) << 17);
         self.w
     }
 }
-#[doc = "Write proxy for field `EP6INTEC`"]
+#[doc = "Field `EP6INTEC` writer - EP6INT Interrupt Enable Clear"]
 pub struct EP6INTEC_W<'a> {
     w: &'a mut W,
 }
@@ -312,11 +323,11 @@ impl<'a> EP6INTEC_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 18)) | (((value as u32) & 0x01) << 18);
+        self.w.bits = (self.w.bits & !(0x01 << 18)) | ((value as u32 & 0x01) << 18);
         self.w
     }
 }
-#[doc = "Write proxy for field `EP7INTEC`"]
+#[doc = "Field `EP7INTEC` writer - EP7INT Interrupt Enable Clear"]
 pub struct EP7INTEC_W<'a> {
     w: &'a mut W,
 }
@@ -334,7 +345,7 @@ impl<'a> EP7INTEC_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 19)) | (((value as u32) & 0x01) << 19);
+        self.w.bits = (self.w.bits & !(0x01 << 19)) | ((value as u32 & 0x01) << 19);
         self.w
     }
 }
@@ -413,5 +424,27 @@ impl W {
     #[inline(always)]
     pub fn ep7intec(&mut self) -> EP7INTEC_W {
         EP7INTEC_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Device Global Interrupt Enable Clear Register\n\nThis register you can [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [udinteclr](index.html) module"]
+pub struct UDINTECLR_SPEC;
+impl crate::RegisterSpec for UDINTECLR_SPEC {
+    type Ux = u32;
+}
+#[doc = "`write(|w| ..)` method takes [udinteclr::W](W) writer structure"]
+impl crate::Writable for UDINTECLR_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets UDINTECLR to value 0"]
+impl crate::Resettable for UDINTECLR_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

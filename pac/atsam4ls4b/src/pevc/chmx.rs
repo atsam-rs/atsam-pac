@@ -1,13 +1,37 @@
-#[doc = "Reader of register CHMX%s"]
-pub type R = crate::R<u32, super::CHMX>;
-#[doc = "Writer for register CHMX%s"]
-pub type W = crate::W<u32, super::CHMX>;
-#[doc = "Register CHMX%s `reset()`'s with value 0"]
-impl crate::ResetValue for super::CHMX {
-    type Type = u32;
+#[doc = "Register `CHMX%s` reader"]
+pub struct R(crate::R<CHMX_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<CHMX_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<CHMX_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<CHMX_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `CHMX%s` writer"]
+pub struct W(crate::W<CHMX_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<CHMX_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<CHMX_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<CHMX_SPEC>) -> Self {
+        W(writer)
     }
 }
 #[doc = "Event Multiplexer\n\nValue on reset: 0"]
@@ -25,31 +49,40 @@ impl From<EVMX_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `EVMX`"]
-pub type EVMX_R = crate::R<u8, EVMX_A>;
+#[doc = "Field `EVMX` reader - Event Multiplexer"]
+pub struct EVMX_R(crate::FieldReader<u8, EVMX_A>);
 impl EVMX_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        EVMX_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u8, EVMX_A> {
-        use crate::Variant::*;
+    pub fn variant(&self) -> Option<EVMX_A> {
         match self.bits {
-            0 => Val(EVMX_A::_0X00),
-            1 => Val(EVMX_A::_0X01),
-            i => Res(i),
+            0 => Some(EVMX_A::_0X00),
+            1 => Some(EVMX_A::_0X01),
+            _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `_0X00`"]
     #[inline(always)]
     pub fn is_0x00(&self) -> bool {
-        *self == EVMX_A::_0X00
+        **self == EVMX_A::_0X00
     }
     #[doc = "Checks if the value of the field is `_0X01`"]
     #[inline(always)]
     pub fn is_0x01(&self) -> bool {
-        *self == EVMX_A::_0X01
+        **self == EVMX_A::_0X01
     }
 }
-#[doc = "Write proxy for field `EVMX`"]
+impl core::ops::Deref for EVMX_R {
+    type Target = crate::FieldReader<u8, EVMX_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `EVMX` writer - Event Multiplexer"]
 pub struct EVMX_W<'a> {
     w: &'a mut W,
 }
@@ -72,7 +105,7 @@ impl<'a> EVMX_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x3f) | ((value as u32) & 0x3f);
+        self.w.bits = (self.w.bits & !0x3f) | (value as u32 & 0x3f);
         self.w
     }
 }
@@ -90,9 +123,12 @@ impl From<SMX_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `SMX`"]
-pub type SMX_R = crate::R<bool, SMX_A>;
+#[doc = "Field `SMX` reader - Software Event Multiplexer"]
+pub struct SMX_R(crate::FieldReader<bool, SMX_A>);
 impl SMX_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        SMX_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> SMX_A {
@@ -104,15 +140,22 @@ impl SMX_R {
     #[doc = "Checks if the value of the field is `_0`"]
     #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == SMX_A::_0
+        **self == SMX_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
     #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == SMX_A::_1
+        **self == SMX_A::_1
     }
 }
-#[doc = "Write proxy for field `SMX`"]
+impl core::ops::Deref for SMX_R {
+    type Target = crate::FieldReader<bool, SMX_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `SMX` writer - Software Event Multiplexer"]
 pub struct SMX_W<'a> {
     w: &'a mut W,
 }
@@ -120,9 +163,7 @@ impl<'a> SMX_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: SMX_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Hardware events"]
     #[inline(always)]
@@ -147,7 +188,7 @@ impl<'a> SMX_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | (((value as u32) & 0x01) << 8);
+        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
         self.w
     }
 }
@@ -173,5 +214,31 @@ impl W {
     #[inline(always)]
     pub fn smx(&mut self) -> SMX_W {
         SMX_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Channel Multiplexer\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [chmx](index.html) module"]
+pub struct CHMX_SPEC;
+impl crate::RegisterSpec for CHMX_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [chmx::R](R) reader structure"]
+impl crate::Readable for CHMX_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [chmx::W](W) writer structure"]
+impl crate::Writable for CHMX_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets CHMX%s to value 0"]
+impl crate::Resettable for CHMX_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

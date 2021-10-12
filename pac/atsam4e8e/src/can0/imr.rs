@@ -1,47 +1,312 @@
-#[doc = "Reader of register IMR"]
-pub type R = crate::R<u32, super::IMR>;
-#[doc = "Reader of field `MB0`"]
-pub type MB0_R = crate::R<bool, bool>;
-#[doc = "Reader of field `MB1`"]
-pub type MB1_R = crate::R<bool, bool>;
-#[doc = "Reader of field `MB2`"]
-pub type MB2_R = crate::R<bool, bool>;
-#[doc = "Reader of field `MB3`"]
-pub type MB3_R = crate::R<bool, bool>;
-#[doc = "Reader of field `MB4`"]
-pub type MB4_R = crate::R<bool, bool>;
-#[doc = "Reader of field `MB5`"]
-pub type MB5_R = crate::R<bool, bool>;
-#[doc = "Reader of field `MB6`"]
-pub type MB6_R = crate::R<bool, bool>;
-#[doc = "Reader of field `MB7`"]
-pub type MB7_R = crate::R<bool, bool>;
-#[doc = "Reader of field `ERRA`"]
-pub type ERRA_R = crate::R<bool, bool>;
-#[doc = "Reader of field `WARN`"]
-pub type WARN_R = crate::R<bool, bool>;
-#[doc = "Reader of field `ERRP`"]
-pub type ERRP_R = crate::R<bool, bool>;
-#[doc = "Reader of field `BOFF`"]
-pub type BOFF_R = crate::R<bool, bool>;
-#[doc = "Reader of field `SLEEP`"]
-pub type SLEEP_R = crate::R<bool, bool>;
-#[doc = "Reader of field `WAKEUP`"]
-pub type WAKEUP_R = crate::R<bool, bool>;
-#[doc = "Reader of field `TOVF`"]
-pub type TOVF_R = crate::R<bool, bool>;
-#[doc = "Reader of field `TSTP`"]
-pub type TSTP_R = crate::R<bool, bool>;
-#[doc = "Reader of field `CERR`"]
-pub type CERR_R = crate::R<bool, bool>;
-#[doc = "Reader of field `SERR`"]
-pub type SERR_R = crate::R<bool, bool>;
-#[doc = "Reader of field `AERR`"]
-pub type AERR_R = crate::R<bool, bool>;
-#[doc = "Reader of field `FERR`"]
-pub type FERR_R = crate::R<bool, bool>;
-#[doc = "Reader of field `BERR`"]
-pub type BERR_R = crate::R<bool, bool>;
+#[doc = "Register `IMR` reader"]
+pub struct R(crate::R<IMR_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<IMR_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<IMR_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<IMR_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Field `MB0` reader - Mailbox 0 Interrupt Mask"]
+pub struct MB0_R(crate::FieldReader<bool, bool>);
+impl MB0_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        MB0_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for MB0_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `MB1` reader - Mailbox 1 Interrupt Mask"]
+pub struct MB1_R(crate::FieldReader<bool, bool>);
+impl MB1_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        MB1_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for MB1_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `MB2` reader - Mailbox 2 Interrupt Mask"]
+pub struct MB2_R(crate::FieldReader<bool, bool>);
+impl MB2_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        MB2_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for MB2_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `MB3` reader - Mailbox 3 Interrupt Mask"]
+pub struct MB3_R(crate::FieldReader<bool, bool>);
+impl MB3_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        MB3_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for MB3_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `MB4` reader - Mailbox 4 Interrupt Mask"]
+pub struct MB4_R(crate::FieldReader<bool, bool>);
+impl MB4_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        MB4_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for MB4_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `MB5` reader - Mailbox 5 Interrupt Mask"]
+pub struct MB5_R(crate::FieldReader<bool, bool>);
+impl MB5_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        MB5_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for MB5_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `MB6` reader - Mailbox 6 Interrupt Mask"]
+pub struct MB6_R(crate::FieldReader<bool, bool>);
+impl MB6_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        MB6_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for MB6_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `MB7` reader - Mailbox 7 Interrupt Mask"]
+pub struct MB7_R(crate::FieldReader<bool, bool>);
+impl MB7_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        MB7_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for MB7_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `ERRA` reader - Error Active Mode Interrupt Mask"]
+pub struct ERRA_R(crate::FieldReader<bool, bool>);
+impl ERRA_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        ERRA_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for ERRA_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `WARN` reader - Warning Limit Interrupt Mask"]
+pub struct WARN_R(crate::FieldReader<bool, bool>);
+impl WARN_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        WARN_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for WARN_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `ERRP` reader - Error Passive Mode Interrupt Mask"]
+pub struct ERRP_R(crate::FieldReader<bool, bool>);
+impl ERRP_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        ERRP_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for ERRP_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `BOFF` reader - Bus Off Mode Interrupt Mask"]
+pub struct BOFF_R(crate::FieldReader<bool, bool>);
+impl BOFF_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        BOFF_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for BOFF_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `SLEEP` reader - Sleep Interrupt Mask"]
+pub struct SLEEP_R(crate::FieldReader<bool, bool>);
+impl SLEEP_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        SLEEP_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for SLEEP_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `WAKEUP` reader - Wakeup Interrupt Mask"]
+pub struct WAKEUP_R(crate::FieldReader<bool, bool>);
+impl WAKEUP_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        WAKEUP_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for WAKEUP_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `TOVF` reader - Timer Overflow Interrupt Mask"]
+pub struct TOVF_R(crate::FieldReader<bool, bool>);
+impl TOVF_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        TOVF_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for TOVF_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `TSTP` reader - Timestamp Interrupt Mask"]
+pub struct TSTP_R(crate::FieldReader<bool, bool>);
+impl TSTP_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        TSTP_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for TSTP_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CERR` reader - CRC Error Interrupt Mask"]
+pub struct CERR_R(crate::FieldReader<bool, bool>);
+impl CERR_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        CERR_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for CERR_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `SERR` reader - Stuffing Error Interrupt Mask"]
+pub struct SERR_R(crate::FieldReader<bool, bool>);
+impl SERR_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        SERR_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for SERR_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `AERR` reader - Acknowledgment Error Interrupt Mask"]
+pub struct AERR_R(crate::FieldReader<bool, bool>);
+impl AERR_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        AERR_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for AERR_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `FERR` reader - Form Error Interrupt Mask"]
+pub struct FERR_R(crate::FieldReader<bool, bool>);
+impl FERR_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        FERR_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for FERR_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `BERR` reader - Bit Error Interrupt Mask"]
+pub struct BERR_R(crate::FieldReader<bool, bool>);
+impl BERR_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        BERR_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for BERR_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
 impl R {
     #[doc = "Bit 0 - Mailbox 0 Interrupt Mask"]
     #[inline(always)]
@@ -147,5 +412,21 @@ impl R {
     #[inline(always)]
     pub fn berr(&self) -> BERR_R {
         BERR_R::new(((self.bits >> 28) & 0x01) != 0)
+    }
+}
+#[doc = "Interrupt Mask Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [imr](index.html) module"]
+pub struct IMR_SPEC;
+impl crate::RegisterSpec for IMR_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [imr::R](R) reader structure"]
+impl crate::Readable for IMR_SPEC {
+    type Reader = R;
+}
+#[doc = "`reset()` method sets IMR to value 0"]
+impl crate::Resettable for IMR_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

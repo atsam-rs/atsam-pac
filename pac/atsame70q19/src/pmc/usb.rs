@@ -1,18 +1,54 @@
-#[doc = "Reader of register USB"]
-pub type R = crate::R<u32, super::USB>;
-#[doc = "Writer for register USB"]
-pub type W = crate::W<u32, super::USB>;
-#[doc = "Register USB `reset()`'s with value 0"]
-impl crate::ResetValue for super::USB {
-    type Type = u32;
+#[doc = "Register `USB` reader"]
+pub struct R(crate::R<USB_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<USB_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `USBS`"]
-pub type USBS_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `USBS`"]
+impl From<crate::R<USB_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<USB_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `USB` writer"]
+pub struct W(crate::W<USB_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<USB_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<USB_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<USB_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `USBS` reader - USB Input Clock Selection"]
+pub struct USBS_R(crate::FieldReader<bool, bool>);
+impl USBS_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        USBS_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for USBS_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `USBS` writer - USB Input Clock Selection"]
 pub struct USBS_W<'a> {
     w: &'a mut W,
 }
@@ -30,13 +66,25 @@ impl<'a> USBS_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
+        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
         self.w
     }
 }
-#[doc = "Reader of field `USBDIV`"]
-pub type USBDIV_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `USBDIV`"]
+#[doc = "Field `USBDIV` reader - Divider for USB_48M"]
+pub struct USBDIV_R(crate::FieldReader<u8, u8>);
+impl USBDIV_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        USBDIV_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for USBDIV_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `USBDIV` writer - Divider for USB_48M"]
 pub struct USBDIV_W<'a> {
     w: &'a mut W,
 }
@@ -44,7 +92,7 @@ impl<'a> USBDIV_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 8)) | (((value as u32) & 0x0f) << 8);
+        self.w.bits = (self.w.bits & !(0x0f << 8)) | ((value as u32 & 0x0f) << 8);
         self.w
     }
 }
@@ -70,5 +118,31 @@ impl W {
     #[inline(always)]
     pub fn usbdiv(&mut self) -> USBDIV_W {
         USBDIV_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "USB Clock Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [usb](index.html) module"]
+pub struct USB_SPEC;
+impl crate::RegisterSpec for USB_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [usb::R](R) reader structure"]
+impl crate::Readable for USB_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [usb::W](W) writer structure"]
+impl crate::Writable for USB_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets USB to value 0"]
+impl crate::Resettable for USB_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

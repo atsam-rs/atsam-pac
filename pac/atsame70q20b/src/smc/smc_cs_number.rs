@@ -1,44 +1,16 @@
-#[doc = "SMC Setup Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [setup](setup) module"]
-pub type SETUP = crate::Reg<u32, _SETUP>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _SETUP;
-#[doc = "`read()` method returns [setup::R](setup::R) reader structure"]
-impl crate::Readable for SETUP {}
-#[doc = "`write(|w| ..)` method takes [setup::W](setup::W) writer structure"]
-impl crate::Writable for SETUP {}
+#[doc = "SETUP register accessor: an alias for `Reg<SETUP_SPEC>`"]
+pub type SETUP = crate::Reg<setup::SETUP_SPEC>;
 #[doc = "SMC Setup Register"]
 pub mod setup;
-#[doc = "SMC Pulse Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pulse](pulse) module"]
-pub type PULSE = crate::Reg<u32, _PULSE>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _PULSE;
-#[doc = "`read()` method returns [pulse::R](pulse::R) reader structure"]
-impl crate::Readable for PULSE {}
-#[doc = "`write(|w| ..)` method takes [pulse::W](pulse::W) writer structure"]
-impl crate::Writable for PULSE {}
+#[doc = "PULSE register accessor: an alias for `Reg<PULSE_SPEC>`"]
+pub type PULSE = crate::Reg<pulse::PULSE_SPEC>;
 #[doc = "SMC Pulse Register"]
 pub mod pulse;
-#[doc = "SMC Cycle Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cycle](cycle) module"]
-pub type CYCLE = crate::Reg<u32, _CYCLE>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _CYCLE;
-#[doc = "`read()` method returns [cycle::R](cycle::R) reader structure"]
-impl crate::Readable for CYCLE {}
-#[doc = "`write(|w| ..)` method takes [cycle::W](cycle::W) writer structure"]
-impl crate::Writable for CYCLE {}
+#[doc = "CYCLE register accessor: an alias for `Reg<CYCLE_SPEC>`"]
+pub type CYCLE = crate::Reg<cycle::CYCLE_SPEC>;
 #[doc = "SMC Cycle Register"]
 pub mod cycle;
-#[doc = "SMC Mode Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [mode](mode) module"]
-pub type MODE = crate::Reg<u32, _MODE>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _MODE;
-#[doc = "`read()` method returns [mode::R](mode::R) reader structure"]
-impl crate::Readable for MODE {}
-#[doc = "`write(|w| ..)` method takes [mode::W](mode::W) writer structure"]
-impl crate::Writable for MODE {}
+#[doc = "MODE register accessor: an alias for `Reg<MODE_SPEC>`"]
+pub type MODE = crate::Reg<mode::MODE_SPEC>;
 #[doc = "SMC Mode Register"]
 pub mod mode;

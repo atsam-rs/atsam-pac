@@ -1,174 +1,116 @@
 #[doc = r"Register block"]
 #[repr(C)]
 pub struct RegisterBlock {
-    #[doc = "0x00 - Channel Control Register (channel = 0)"]
+    #[doc = "0x00..0x34 - Channel Control Register (channel = 0)"]
     pub tc_channel0: TC_CHANNEL,
-    _reserved1: [u8; 12usize],
-    #[doc = "0x40 - Channel Control Register (channel = 0)"]
+    _reserved1: [u8; 0x0c],
+    #[doc = "0x40..0x74 - Channel Control Register (channel = 0)"]
     pub tc_channel1: TC_CHANNEL,
-    _reserved2: [u8; 12usize],
-    #[doc = "0x80 - Channel Control Register (channel = 0)"]
+    _reserved2: [u8; 0x0c],
+    #[doc = "0x80..0xb4 - Channel Control Register (channel = 0)"]
     pub tc_channel2: TC_CHANNEL,
-    _reserved3: [u8; 12usize],
+    _reserved3: [u8; 0x0c],
     #[doc = "0xc0 - Block Control Register"]
-    pub bcr: BCR,
+    pub bcr: crate::Reg<bcr::BCR_SPEC>,
     #[doc = "0xc4 - Block Mode Register"]
-    pub bmr: BMR,
+    pub bmr: crate::Reg<bmr::BMR_SPEC>,
     #[doc = "0xc8 - QDEC Interrupt Enable Register"]
-    pub qier: QIER,
+    pub qier: crate::Reg<qier::QIER_SPEC>,
     #[doc = "0xcc - QDEC Interrupt Disable Register"]
-    pub qidr: QIDR,
+    pub qidr: crate::Reg<qidr::QIDR_SPEC>,
     #[doc = "0xd0 - QDEC Interrupt Mask Register"]
-    pub qimr: QIMR,
+    pub qimr: crate::Reg<qimr::QIMR_SPEC>,
     #[doc = "0xd4 - QDEC Interrupt Status Register"]
-    pub qisr: QISR,
+    pub qisr: crate::Reg<qisr::QISR_SPEC>,
     #[doc = "0xd8 - Fault Mode Register"]
-    pub fmr: FMR,
-    _reserved10: [u8; 8usize],
+    pub fmr: crate::Reg<fmr::FMR_SPEC>,
+    _reserved10: [u8; 0x08],
     #[doc = "0xe4 - Write Protection Mode Register"]
-    pub wpmr: WPMR,
+    pub wpmr: crate::Reg<wpmr::WPMR_SPEC>,
 }
 #[doc = r"Register block"]
 #[repr(C)]
 pub struct TC_CHANNEL {
     #[doc = "0x00 - Channel Control Register (channel = 0)"]
-    pub ccr: self::tc_channel::CCR,
-    _reserved_1_cmr: [u8; 4usize],
+    pub ccr: crate::Reg<self::tc_channel::ccr::CCR_SPEC>,
+    _reserved_1_cmr: [u8; 0x04],
     #[doc = "0x08 - Stepper Motor Mode Register (channel = 0)"]
-    pub smmr: self::tc_channel::SMMR,
+    pub smmr: crate::Reg<self::tc_channel::smmr::SMMR_SPEC>,
     #[doc = "0x0c - Register AB (channel = 0)"]
-    pub rab: self::tc_channel::RAB,
+    pub rab: crate::Reg<self::tc_channel::rab::RAB_SPEC>,
     #[doc = "0x10 - Counter Value (channel = 0)"]
-    pub cv: self::tc_channel::CV,
+    pub cv: crate::Reg<self::tc_channel::cv::CV_SPEC>,
     #[doc = "0x14 - Register A (channel = 0)"]
-    pub ra: self::tc_channel::RA,
+    pub ra: crate::Reg<self::tc_channel::ra::RA_SPEC>,
     #[doc = "0x18 - Register B (channel = 0)"]
-    pub rb: self::tc_channel::RB,
+    pub rb: crate::Reg<self::tc_channel::rb::RB_SPEC>,
     #[doc = "0x1c - Register C (channel = 0)"]
-    pub rc: self::tc_channel::RC,
+    pub rc: crate::Reg<self::tc_channel::rc::RC_SPEC>,
     #[doc = "0x20 - Status Register (channel = 0)"]
-    pub sr: self::tc_channel::SR,
+    pub sr: crate::Reg<self::tc_channel::sr::SR_SPEC>,
     #[doc = "0x24 - Interrupt Enable Register (channel = 0)"]
-    pub ier: self::tc_channel::IER,
+    pub ier: crate::Reg<self::tc_channel::ier::IER_SPEC>,
     #[doc = "0x28 - Interrupt Disable Register (channel = 0)"]
-    pub idr: self::tc_channel::IDR,
+    pub idr: crate::Reg<self::tc_channel::idr::IDR_SPEC>,
     #[doc = "0x2c - Interrupt Mask Register (channel = 0)"]
-    pub imr: self::tc_channel::IMR,
+    pub imr: crate::Reg<self::tc_channel::imr::IMR_SPEC>,
     #[doc = "0x30 - Extended Mode Register (channel = 0)"]
-    pub emr: self::tc_channel::EMR,
+    pub emr: crate::Reg<self::tc_channel::emr::EMR_SPEC>,
 }
 impl TC_CHANNEL {
     #[doc = "0x04 - Channel Mode Register (channel = 0)"]
     #[inline(always)]
-    pub fn cmr_waveform_mode(&self) -> &self::tc_channel::CMR_WAVEFORM_MODE {
+    pub fn cmr_waveform_mode(
+        &self,
+    ) -> &crate::Reg<self::tc_channel::cmr_waveform_mode::CMR_WAVEFORM_MODE_SPEC> {
         unsafe {
             &*(((self as *const Self) as *const u8).add(4usize)
-                as *const self::tc_channel::CMR_WAVEFORM_MODE)
+                as *const crate::Reg<self::tc_channel::cmr_waveform_mode::CMR_WAVEFORM_MODE_SPEC>)
         }
     }
     #[doc = "0x04 - Channel Mode Register (channel = 0)"]
     #[inline(always)]
-    pub fn cmr_waveform_mode_mut(&self) -> &mut self::tc_channel::CMR_WAVEFORM_MODE {
-        unsafe {
-            &mut *(((self as *const Self) as *mut u8).add(4usize)
-                as *mut self::tc_channel::CMR_WAVEFORM_MODE)
-        }
-    }
-    #[doc = "0x04 - Channel Mode Register (channel = 0)"]
-    #[inline(always)]
-    pub fn cmr_capture_mode(&self) -> &self::tc_channel::CMR_CAPTURE_MODE {
+    pub fn cmr_capture_mode(
+        &self,
+    ) -> &crate::Reg<self::tc_channel::cmr_capture_mode::CMR_CAPTURE_MODE_SPEC> {
         unsafe {
             &*(((self as *const Self) as *const u8).add(4usize)
-                as *const self::tc_channel::CMR_CAPTURE_MODE)
-        }
-    }
-    #[doc = "0x04 - Channel Mode Register (channel = 0)"]
-    #[inline(always)]
-    pub fn cmr_capture_mode_mut(&self) -> &mut self::tc_channel::CMR_CAPTURE_MODE {
-        unsafe {
-            &mut *(((self as *const Self) as *mut u8).add(4usize)
-                as *mut self::tc_channel::CMR_CAPTURE_MODE)
+                as *const crate::Reg<self::tc_channel::cmr_capture_mode::CMR_CAPTURE_MODE_SPEC>)
         }
     }
 }
 #[doc = r"Register block"]
 #[doc = "Channel Control Register (channel = 0)"]
 pub mod tc_channel;
-#[doc = "Block Control Register\n\nThis register you can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [bcr](bcr) module"]
-pub type BCR = crate::Reg<u32, _BCR>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _BCR;
-#[doc = "`write(|w| ..)` method takes [bcr::W](bcr::W) writer structure"]
-impl crate::Writable for BCR {}
+#[doc = "BCR register accessor: an alias for `Reg<BCR_SPEC>`"]
+pub type BCR = crate::Reg<bcr::BCR_SPEC>;
 #[doc = "Block Control Register"]
 pub mod bcr;
-#[doc = "Block Mode Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [bmr](bmr) module"]
-pub type BMR = crate::Reg<u32, _BMR>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _BMR;
-#[doc = "`read()` method returns [bmr::R](bmr::R) reader structure"]
-impl crate::Readable for BMR {}
-#[doc = "`write(|w| ..)` method takes [bmr::W](bmr::W) writer structure"]
-impl crate::Writable for BMR {}
+#[doc = "BMR register accessor: an alias for `Reg<BMR_SPEC>`"]
+pub type BMR = crate::Reg<bmr::BMR_SPEC>;
 #[doc = "Block Mode Register"]
 pub mod bmr;
-#[doc = "QDEC Interrupt Enable Register\n\nThis register you can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [qier](qier) module"]
-pub type QIER = crate::Reg<u32, _QIER>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _QIER;
-#[doc = "`write(|w| ..)` method takes [qier::W](qier::W) writer structure"]
-impl crate::Writable for QIER {}
+#[doc = "QIER register accessor: an alias for `Reg<QIER_SPEC>`"]
+pub type QIER = crate::Reg<qier::QIER_SPEC>;
 #[doc = "QDEC Interrupt Enable Register"]
 pub mod qier;
-#[doc = "QDEC Interrupt Disable Register\n\nThis register you can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [qidr](qidr) module"]
-pub type QIDR = crate::Reg<u32, _QIDR>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _QIDR;
-#[doc = "`write(|w| ..)` method takes [qidr::W](qidr::W) writer structure"]
-impl crate::Writable for QIDR {}
+#[doc = "QIDR register accessor: an alias for `Reg<QIDR_SPEC>`"]
+pub type QIDR = crate::Reg<qidr::QIDR_SPEC>;
 #[doc = "QDEC Interrupt Disable Register"]
 pub mod qidr;
-#[doc = "QDEC Interrupt Mask Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [qimr](qimr) module"]
-pub type QIMR = crate::Reg<u32, _QIMR>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _QIMR;
-#[doc = "`read()` method returns [qimr::R](qimr::R) reader structure"]
-impl crate::Readable for QIMR {}
+#[doc = "QIMR register accessor: an alias for `Reg<QIMR_SPEC>`"]
+pub type QIMR = crate::Reg<qimr::QIMR_SPEC>;
 #[doc = "QDEC Interrupt Mask Register"]
 pub mod qimr;
-#[doc = "QDEC Interrupt Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [qisr](qisr) module"]
-pub type QISR = crate::Reg<u32, _QISR>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _QISR;
-#[doc = "`read()` method returns [qisr::R](qisr::R) reader structure"]
-impl crate::Readable for QISR {}
+#[doc = "QISR register accessor: an alias for `Reg<QISR_SPEC>`"]
+pub type QISR = crate::Reg<qisr::QISR_SPEC>;
 #[doc = "QDEC Interrupt Status Register"]
 pub mod qisr;
-#[doc = "Fault Mode Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [fmr](fmr) module"]
-pub type FMR = crate::Reg<u32, _FMR>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _FMR;
-#[doc = "`read()` method returns [fmr::R](fmr::R) reader structure"]
-impl crate::Readable for FMR {}
-#[doc = "`write(|w| ..)` method takes [fmr::W](fmr::W) writer structure"]
-impl crate::Writable for FMR {}
+#[doc = "FMR register accessor: an alias for `Reg<FMR_SPEC>`"]
+pub type FMR = crate::Reg<fmr::FMR_SPEC>;
 #[doc = "Fault Mode Register"]
 pub mod fmr;
-#[doc = "Write Protection Mode Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [wpmr](wpmr) module"]
-pub type WPMR = crate::Reg<u32, _WPMR>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _WPMR;
-#[doc = "`read()` method returns [wpmr::R](wpmr::R) reader structure"]
-impl crate::Readable for WPMR {}
-#[doc = "`write(|w| ..)` method takes [wpmr::W](wpmr::W) writer structure"]
-impl crate::Writable for WPMR {}
+#[doc = "WPMR register accessor: an alias for `Reg<WPMR_SPEC>`"]
+pub type WPMR = crate::Reg<wpmr::WPMR_SPEC>;
 #[doc = "Write Protection Mode Register"]
 pub mod wpmr;

@@ -1,143 +1,101 @@
 #[doc = r"Register block"]
 #[repr(C)]
 pub struct RegisterBlock {
-    #[doc = "0x00 - Master Configuration Register"]
-    pub mcfg: [MCFG; 16],
-    #[doc = "0x40 - Slave Configuration Register"]
-    pub scfg: [SCFG; 16],
+    #[doc = "0x00..0x40 - Master Configuration Register"]
+    pub mcfg: [crate::Reg<mcfg::MCFG_SPEC>; 16],
+    #[doc = "0x40..0x80 - Slave Configuration Register"]
+    pub scfg: [crate::Reg<scfg::SCFG_SPEC>; 16],
     #[doc = "0x80 - Priority Register A for Slave"]
-    pub pras0: PRAS,
+    pub pras0: crate::Reg<pras::PRAS_SPEC>,
     #[doc = "0x84 - Priority Register B for Slave"]
-    pub prbs0: PRBS,
+    pub prbs0: crate::Reg<prbs::PRBS_SPEC>,
     #[doc = "0x88 - Priority Register A for Slave"]
-    pub pras1: PRAS,
+    pub pras1: crate::Reg<pras::PRAS_SPEC>,
     #[doc = "0x8c - Priority Register B for Slave"]
-    pub prbs1: PRBS,
+    pub prbs1: crate::Reg<prbs::PRBS_SPEC>,
     #[doc = "0x90 - Priority Register A for Slave"]
-    pub pras2: PRAS,
+    pub pras2: crate::Reg<pras::PRAS_SPEC>,
     #[doc = "0x94 - Priority Register B for Slave"]
-    pub prbs2: PRBS,
+    pub prbs2: crate::Reg<prbs::PRBS_SPEC>,
     #[doc = "0x98 - Priority Register A for Slave"]
-    pub pras3: PRAS,
+    pub pras3: crate::Reg<pras::PRAS_SPEC>,
     #[doc = "0x9c - Priority Register B for Slave"]
-    pub prbs3: PRBS,
+    pub prbs3: crate::Reg<prbs::PRBS_SPEC>,
     #[doc = "0xa0 - Priority Register A for Slave"]
-    pub pras4: PRAS,
+    pub pras4: crate::Reg<pras::PRAS_SPEC>,
     #[doc = "0xa4 - Priority Register B for Slave"]
-    pub prbs4: PRBS,
+    pub prbs4: crate::Reg<prbs::PRBS_SPEC>,
     #[doc = "0xa8 - Priority Register A for Slave"]
-    pub pras5: PRAS,
+    pub pras5: crate::Reg<pras::PRAS_SPEC>,
     #[doc = "0xac - Priority Register B for Slave"]
-    pub prbs5: PRBS,
+    pub prbs5: crate::Reg<prbs::PRBS_SPEC>,
     #[doc = "0xb0 - Priority Register A for Slave"]
-    pub pras6: PRAS,
+    pub pras6: crate::Reg<pras::PRAS_SPEC>,
     #[doc = "0xb4 - Priority Register B for Slave"]
-    pub prbs6: PRBS,
+    pub prbs6: crate::Reg<prbs::PRBS_SPEC>,
     #[doc = "0xb8 - Priority Register A for Slave"]
-    pub pras7: PRAS,
+    pub pras7: crate::Reg<pras::PRAS_SPEC>,
     #[doc = "0xbc - Priority Register B for Slave"]
-    pub prbs7: PRBS,
+    pub prbs7: crate::Reg<prbs::PRBS_SPEC>,
     #[doc = "0xc0 - Priority Register A for Slave"]
-    pub pras8: PRAS,
+    pub pras8: crate::Reg<pras::PRAS_SPEC>,
     #[doc = "0xc4 - Priority Register B for Slave"]
-    pub prbs8: PRBS,
+    pub prbs8: crate::Reg<prbs::PRBS_SPEC>,
     #[doc = "0xc8 - Priority Register A for Slave"]
-    pub pras9: PRAS,
+    pub pras9: crate::Reg<pras::PRAS_SPEC>,
     #[doc = "0xcc - Priority Register B for Slave"]
-    pub prbs9: PRBS,
+    pub prbs9: crate::Reg<prbs::PRBS_SPEC>,
     #[doc = "0xd0 - Priority Register A for Slave"]
-    pub pras10: PRAS,
+    pub pras10: crate::Reg<pras::PRAS_SPEC>,
     #[doc = "0xd4 - Priority Register B for Slave"]
-    pub prbs10: PRBS,
+    pub prbs10: crate::Reg<prbs::PRBS_SPEC>,
     #[doc = "0xd8 - Priority Register A for Slave"]
-    pub pras11: PRAS,
+    pub pras11: crate::Reg<pras::PRAS_SPEC>,
     #[doc = "0xdc - Priority Register B for Slave"]
-    pub prbs11: PRBS,
+    pub prbs11: crate::Reg<prbs::PRBS_SPEC>,
     #[doc = "0xe0 - Priority Register A for Slave"]
-    pub pras12: PRAS,
+    pub pras12: crate::Reg<pras::PRAS_SPEC>,
     #[doc = "0xe4 - Priority Register B for Slave"]
-    pub prbs12: PRBS,
+    pub prbs12: crate::Reg<prbs::PRBS_SPEC>,
     #[doc = "0xe8 - Priority Register A for Slave"]
-    pub pras13: PRAS,
+    pub pras13: crate::Reg<pras::PRAS_SPEC>,
     #[doc = "0xec - Priority Register B for Slave"]
-    pub prbs13: PRBS,
+    pub prbs13: crate::Reg<prbs::PRBS_SPEC>,
     #[doc = "0xf0 - Priority Register A for Slave"]
-    pub pras14: PRAS,
+    pub pras14: crate::Reg<pras::PRAS_SPEC>,
     #[doc = "0xf4 - Priority Register B for Slave"]
-    pub prbs14: PRBS,
+    pub prbs14: crate::Reg<prbs::PRBS_SPEC>,
     #[doc = "0xf8 - Priority Register A for Slave"]
-    pub pras15: PRAS,
+    pub pras15: crate::Reg<pras::PRAS_SPEC>,
     #[doc = "0xfc - Priority Register B for Slave"]
-    pub prbs15: PRBS,
+    pub prbs15: crate::Reg<prbs::PRBS_SPEC>,
     #[doc = "0x100 - Master Remap Control Register"]
-    pub mrcr: MRCR,
-    _reserved35: [u8; 12usize],
-    #[doc = "0x110 - Special Function Register"]
-    pub sfr: [SFR; 16],
+    pub mrcr: crate::Reg<mrcr::MRCR_SPEC>,
+    _reserved35: [u8; 0x0c],
+    #[doc = "0x110..0x150 - Special Function Register"]
+    pub sfr: [crate::Reg<sfr::SFR_SPEC>; 16],
 }
-#[doc = "Master Configuration Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [mcfg](mcfg) module"]
-pub type MCFG = crate::Reg<u32, _MCFG>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _MCFG;
-#[doc = "`read()` method returns [mcfg::R](mcfg::R) reader structure"]
-impl crate::Readable for MCFG {}
-#[doc = "`write(|w| ..)` method takes [mcfg::W](mcfg::W) writer structure"]
-impl crate::Writable for MCFG {}
+#[doc = "MCFG register accessor: an alias for `Reg<MCFG_SPEC>`"]
+pub type MCFG = crate::Reg<mcfg::MCFG_SPEC>;
 #[doc = "Master Configuration Register"]
 pub mod mcfg;
-#[doc = "Master Remap Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [mrcr](mrcr) module"]
-pub type MRCR = crate::Reg<u32, _MRCR>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _MRCR;
-#[doc = "`read()` method returns [mrcr::R](mrcr::R) reader structure"]
-impl crate::Readable for MRCR {}
-#[doc = "`write(|w| ..)` method takes [mrcr::W](mrcr::W) writer structure"]
-impl crate::Writable for MRCR {}
+#[doc = "MRCR register accessor: an alias for `Reg<MRCR_SPEC>`"]
+pub type MRCR = crate::Reg<mrcr::MRCR_SPEC>;
 #[doc = "Master Remap Control Register"]
 pub mod mrcr;
-#[doc = "Priority Register A for Slave\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pras](pras) module"]
-pub type PRAS = crate::Reg<u32, _PRAS>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _PRAS;
-#[doc = "`read()` method returns [pras::R](pras::R) reader structure"]
-impl crate::Readable for PRAS {}
-#[doc = "`write(|w| ..)` method takes [pras::W](pras::W) writer structure"]
-impl crate::Writable for PRAS {}
+#[doc = "PRAS register accessor: an alias for `Reg<PRAS_SPEC>`"]
+pub type PRAS = crate::Reg<pras::PRAS_SPEC>;
 #[doc = "Priority Register A for Slave"]
 pub mod pras;
-#[doc = "Priority Register B for Slave\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [prbs](prbs) module"]
-pub type PRBS = crate::Reg<u32, _PRBS>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _PRBS;
-#[doc = "`read()` method returns [prbs::R](prbs::R) reader structure"]
-impl crate::Readable for PRBS {}
-#[doc = "`write(|w| ..)` method takes [prbs::W](prbs::W) writer structure"]
-impl crate::Writable for PRBS {}
+#[doc = "PRBS register accessor: an alias for `Reg<PRBS_SPEC>`"]
+pub type PRBS = crate::Reg<prbs::PRBS_SPEC>;
 #[doc = "Priority Register B for Slave"]
 pub mod prbs;
-#[doc = "Slave Configuration Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [scfg](scfg) module"]
-pub type SCFG = crate::Reg<u32, _SCFG>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _SCFG;
-#[doc = "`read()` method returns [scfg::R](scfg::R) reader structure"]
-impl crate::Readable for SCFG {}
-#[doc = "`write(|w| ..)` method takes [scfg::W](scfg::W) writer structure"]
-impl crate::Writable for SCFG {}
+#[doc = "SCFG register accessor: an alias for `Reg<SCFG_SPEC>`"]
+pub type SCFG = crate::Reg<scfg::SCFG_SPEC>;
 #[doc = "Slave Configuration Register"]
 pub mod scfg;
-#[doc = "Special Function Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sfr](sfr) module"]
-pub type SFR = crate::Reg<u32, _SFR>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _SFR;
-#[doc = "`read()` method returns [sfr::R](sfr::R) reader structure"]
-impl crate::Readable for SFR {}
-#[doc = "`write(|w| ..)` method takes [sfr::W](sfr::W) writer structure"]
-impl crate::Writable for SFR {}
+#[doc = "SFR register accessor: an alias for `Reg<SFR_SPEC>`"]
+pub type SFR = crate::Reg<sfr::SFR_SPEC>;
 #[doc = "Special Function Register"]
 pub mod sfr;

@@ -1,39 +1,256 @@
-#[doc = "Reader of register CSR"]
-pub type R = crate::R<u32, super::CSR>;
-#[doc = "Reader of field `RXRDY`"]
-pub type RXRDY_R = crate::R<bool, bool>;
-#[doc = "Reader of field `TXRDY`"]
-pub type TXRDY_R = crate::R<bool, bool>;
-#[doc = "Reader of field `RXBRK`"]
-pub type RXBRK_R = crate::R<bool, bool>;
-#[doc = "Reader of field `ENDRX`"]
-pub type ENDRX_R = crate::R<bool, bool>;
-#[doc = "Reader of field `ENDTX`"]
-pub type ENDTX_R = crate::R<bool, bool>;
-#[doc = "Reader of field `OVRE`"]
-pub type OVRE_R = crate::R<bool, bool>;
-#[doc = "Reader of field `FRAME`"]
-pub type FRAME_R = crate::R<bool, bool>;
-#[doc = "Reader of field `PARE`"]
-pub type PARE_R = crate::R<bool, bool>;
-#[doc = "Reader of field `TIMEOUT`"]
-pub type TIMEOUT_R = crate::R<bool, bool>;
-#[doc = "Reader of field `TXEMPTY`"]
-pub type TXEMPTY_R = crate::R<bool, bool>;
-#[doc = "Reader of field `ITER`"]
-pub type ITER_R = crate::R<bool, bool>;
-#[doc = "Reader of field `TXBUFE`"]
-pub type TXBUFE_R = crate::R<bool, bool>;
-#[doc = "Reader of field `RXBUFF`"]
-pub type RXBUFF_R = crate::R<bool, bool>;
-#[doc = "Reader of field `NACK`"]
-pub type NACK_R = crate::R<bool, bool>;
-#[doc = "Reader of field `CTSIC`"]
-pub type CTSIC_R = crate::R<bool, bool>;
-#[doc = "Reader of field `CTS`"]
-pub type CTS_R = crate::R<bool, bool>;
-#[doc = "Reader of field `MANERR`"]
-pub type MANERR_R = crate::R<bool, bool>;
+#[doc = "Register `CSR` reader"]
+pub struct R(crate::R<CSR_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<CSR_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<CSR_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<CSR_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Field `RXRDY` reader - Receiver Ready"]
+pub struct RXRDY_R(crate::FieldReader<bool, bool>);
+impl RXRDY_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        RXRDY_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for RXRDY_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `TXRDY` reader - Transmitter Ready"]
+pub struct TXRDY_R(crate::FieldReader<bool, bool>);
+impl TXRDY_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        TXRDY_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for TXRDY_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `RXBRK` reader - Break Received/End of Break"]
+pub struct RXBRK_R(crate::FieldReader<bool, bool>);
+impl RXBRK_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        RXBRK_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for RXBRK_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `ENDRX` reader - End of Receiver Transfer"]
+pub struct ENDRX_R(crate::FieldReader<bool, bool>);
+impl ENDRX_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        ENDRX_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for ENDRX_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `ENDTX` reader - End of Transmitter Transfer"]
+pub struct ENDTX_R(crate::FieldReader<bool, bool>);
+impl ENDTX_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        ENDTX_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for ENDTX_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `OVRE` reader - Overrun Error"]
+pub struct OVRE_R(crate::FieldReader<bool, bool>);
+impl OVRE_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        OVRE_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for OVRE_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `FRAME` reader - Framing Error"]
+pub struct FRAME_R(crate::FieldReader<bool, bool>);
+impl FRAME_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        FRAME_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for FRAME_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PARE` reader - Parity Error"]
+pub struct PARE_R(crate::FieldReader<bool, bool>);
+impl PARE_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PARE_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for PARE_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `TIMEOUT` reader - Receiver Time-out"]
+pub struct TIMEOUT_R(crate::FieldReader<bool, bool>);
+impl TIMEOUT_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        TIMEOUT_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for TIMEOUT_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `TXEMPTY` reader - Transmitter Empty"]
+pub struct TXEMPTY_R(crate::FieldReader<bool, bool>);
+impl TXEMPTY_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        TXEMPTY_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for TXEMPTY_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `ITER` reader - MaxNumber of Repetitions Reached"]
+pub struct ITER_R(crate::FieldReader<bool, bool>);
+impl ITER_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        ITER_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for ITER_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `TXBUFE` reader - Transmission Buffer Empty"]
+pub struct TXBUFE_R(crate::FieldReader<bool, bool>);
+impl TXBUFE_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        TXBUFE_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for TXBUFE_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `RXBUFF` reader - Reception Buffer Full"]
+pub struct RXBUFF_R(crate::FieldReader<bool, bool>);
+impl RXBUFF_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        RXBUFF_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for RXBUFF_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `NACK` reader - Non AcknowledgeInterrupt"]
+pub struct NACK_R(crate::FieldReader<bool, bool>);
+impl NACK_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        NACK_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for NACK_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CTSIC` reader - Clear to Send Input Change Flag"]
+pub struct CTSIC_R(crate::FieldReader<bool, bool>);
+impl CTSIC_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        CTSIC_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for CTSIC_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CTS` reader - Image of CTS Input"]
+pub struct CTS_R(crate::FieldReader<bool, bool>);
+impl CTS_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        CTS_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for CTS_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `MANERR` reader - Manchester Error"]
+pub struct MANERR_R(crate::FieldReader<bool, bool>);
+impl MANERR_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        MANERR_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for MANERR_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
 impl R {
     #[doc = "Bit 0 - Receiver Ready"]
     #[inline(always)]
@@ -120,4 +337,13 @@ impl R {
     pub fn manerr(&self) -> MANERR_R {
         MANERR_R::new(((self.bits >> 24) & 0x01) != 0)
     }
+}
+#[doc = "Channel Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [csr](index.html) module"]
+pub struct CSR_SPEC;
+impl crate::RegisterSpec for CSR_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [csr::R](R) reader structure"]
+impl crate::Readable for CSR_SPEC {
+    type Reader = R;
 }

@@ -1,6 +1,25 @@
-#[doc = "Writer for register PMC_IER"]
-pub type W = crate::W<u32, super::PMC_IER>;
-#[doc = "Write proxy for field `MOSCXTS`"]
+#[doc = "Register `PMC_IER` writer"]
+pub struct W(crate::W<PMC_IER_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<PMC_IER_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<PMC_IER_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<PMC_IER_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `MOSCXTS` writer - Main Crystal Oscillator Status Interrupt Enable"]
 pub struct MOSCXTS_W<'a> {
     w: &'a mut W,
 }
@@ -18,11 +37,11 @@ impl<'a> MOSCXTS_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
+        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
         self.w
     }
 }
-#[doc = "Write proxy for field `LOCKA`"]
+#[doc = "Field `LOCKA` writer - PLLA Lock Interrupt Enable"]
 pub struct LOCKA_W<'a> {
     w: &'a mut W,
 }
@@ -40,11 +59,11 @@ impl<'a> LOCKA_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
         self.w
     }
 }
-#[doc = "Write proxy for field `MCKRDY`"]
+#[doc = "Field `MCKRDY` writer - Master Clock Ready Interrupt Enable"]
 pub struct MCKRDY_W<'a> {
     w: &'a mut W,
 }
@@ -62,11 +81,11 @@ impl<'a> MCKRDY_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
+        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
         self.w
     }
 }
-#[doc = "Write proxy for field `PCKRDY0`"]
+#[doc = "Field `PCKRDY0` writer - Programmable Clock Ready 0 Interrupt Enable"]
 pub struct PCKRDY0_W<'a> {
     w: &'a mut W,
 }
@@ -84,11 +103,11 @@ impl<'a> PCKRDY0_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | (((value as u32) & 0x01) << 8);
+        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
         self.w
     }
 }
-#[doc = "Write proxy for field `PCKRDY1`"]
+#[doc = "Field `PCKRDY1` writer - Programmable Clock Ready 1 Interrupt Enable"]
 pub struct PCKRDY1_W<'a> {
     w: &'a mut W,
 }
@@ -106,11 +125,11 @@ impl<'a> PCKRDY1_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 9)) | (((value as u32) & 0x01) << 9);
+        self.w.bits = (self.w.bits & !(0x01 << 9)) | ((value as u32 & 0x01) << 9);
         self.w
     }
 }
-#[doc = "Write proxy for field `PCKRDY2`"]
+#[doc = "Field `PCKRDY2` writer - Programmable Clock Ready 2 Interrupt Enable"]
 pub struct PCKRDY2_W<'a> {
     w: &'a mut W,
 }
@@ -128,11 +147,11 @@ impl<'a> PCKRDY2_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 10)) | (((value as u32) & 0x01) << 10);
+        self.w.bits = (self.w.bits & !(0x01 << 10)) | ((value as u32 & 0x01) << 10);
         self.w
     }
 }
-#[doc = "Write proxy for field `MOSCSELS`"]
+#[doc = "Field `MOSCSELS` writer - Main Oscillator Selection Status Interrupt Enable"]
 pub struct MOSCSELS_W<'a> {
     w: &'a mut W,
 }
@@ -150,11 +169,11 @@ impl<'a> MOSCSELS_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 16)) | (((value as u32) & 0x01) << 16);
+        self.w.bits = (self.w.bits & !(0x01 << 16)) | ((value as u32 & 0x01) << 16);
         self.w
     }
 }
-#[doc = "Write proxy for field `MOSCRCS`"]
+#[doc = "Field `MOSCRCS` writer - Main On-Chip RC Status Interrupt Enable"]
 pub struct MOSCRCS_W<'a> {
     w: &'a mut W,
 }
@@ -172,11 +191,11 @@ impl<'a> MOSCRCS_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 17)) | (((value as u32) & 0x01) << 17);
+        self.w.bits = (self.w.bits & !(0x01 << 17)) | ((value as u32 & 0x01) << 17);
         self.w
     }
 }
-#[doc = "Write proxy for field `CFDEV`"]
+#[doc = "Field `CFDEV` writer - Clock Failure Detector Event Interrupt Enable"]
 pub struct CFDEV_W<'a> {
     w: &'a mut W,
 }
@@ -194,11 +213,11 @@ impl<'a> CFDEV_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 18)) | (((value as u32) & 0x01) << 18);
+        self.w.bits = (self.w.bits & !(0x01 << 18)) | ((value as u32 & 0x01) << 18);
         self.w
     }
 }
-#[doc = "Write proxy for field `XT32KERR`"]
+#[doc = "Field `XT32KERR` writer - Slow Crystal Oscillator Error Interrupt Enable"]
 pub struct XT32KERR_W<'a> {
     w: &'a mut W,
 }
@@ -216,7 +235,7 @@ impl<'a> XT32KERR_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 21)) | (((value as u32) & 0x01) << 21);
+        self.w.bits = (self.w.bits & !(0x01 << 21)) | ((value as u32 & 0x01) << 21);
         self.w
     }
 }
@@ -271,4 +290,19 @@ impl W {
     pub fn xt32kerr(&mut self) -> XT32KERR_W {
         XT32KERR_W { w: self }
     }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Interrupt Enable Register\n\nThis register you can [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pmc_ier](index.html) module"]
+pub struct PMC_IER_SPEC;
+impl crate::RegisterSpec for PMC_IER_SPEC {
+    type Ux = u32;
+}
+#[doc = "`write(|w| ..)` method takes [pmc_ier::W](W) writer structure"]
+impl crate::Writable for PMC_IER_SPEC {
+    type Writer = W;
 }

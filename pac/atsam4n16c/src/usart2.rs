@@ -1,496 +1,289 @@
 #[doc = r"Register block"]
 #[repr(C)]
 pub struct RegisterBlock {
-    _reserved_0_cr: [u8; 4usize],
-    _reserved_1_mr: [u8; 4usize],
-    _reserved_2_ier: [u8; 4usize],
-    _reserved_3_idr: [u8; 4usize],
-    _reserved_4_imr: [u8; 4usize],
-    _reserved_5_csr: [u8; 4usize],
+    _reserved_0_cr: [u8; 0x04],
+    _reserved_1_mr: [u8; 0x04],
+    _reserved_2_ier: [u8; 0x04],
+    _reserved_3_idr: [u8; 0x04],
+    _reserved_4_imr: [u8; 0x04],
+    _reserved_5_csr: [u8; 0x04],
     #[doc = "0x18 - Receiver Holding Register"]
-    pub rhr: RHR,
+    pub rhr: crate::Reg<rhr::RHR_SPEC>,
     #[doc = "0x1c - Transmitter Holding Register"]
-    pub thr: THR,
+    pub thr: crate::Reg<thr::THR_SPEC>,
     #[doc = "0x20 - Baud Rate Generator Register"]
-    pub brgr: BRGR,
+    pub brgr: crate::Reg<brgr::BRGR_SPEC>,
     #[doc = "0x24 - Receiver Time-out Register"]
-    pub rtor: RTOR,
+    pub rtor: crate::Reg<rtor::RTOR_SPEC>,
     #[doc = "0x28 - Transmitter Timeguard Register"]
-    pub ttgr: TTGR,
-    _reserved11: [u8; 20usize],
+    pub ttgr: crate::Reg<ttgr::TTGR_SPEC>,
+    _reserved11: [u8; 0x14],
     #[doc = "0x40 - FI DI Ratio Register"]
-    pub fidi: FIDI,
+    pub fidi: crate::Reg<fidi::FIDI_SPEC>,
     #[doc = "0x44 - Number of Errors Register"]
-    pub ner: NER,
-    _reserved13: [u8; 4usize],
+    pub ner: crate::Reg<ner::NER_SPEC>,
+    _reserved13: [u8; 0x04],
     #[doc = "0x4c - IrDA Filter Register"]
-    pub if_: IF,
-    _reserved14: [u8; 148usize],
+    pub if_: crate::Reg<if_::IF_SPEC>,
+    _reserved14: [u8; 0x94],
     #[doc = "0xe4 - Write Protect Mode Register"]
-    pub wpmr: WPMR,
+    pub wpmr: crate::Reg<wpmr::WPMR_SPEC>,
     #[doc = "0xe8 - Write Protect Status Register"]
-    pub wpsr: WPSR,
-    _reserved16: [u8; 20usize],
+    pub wpsr: crate::Reg<wpsr::WPSR_SPEC>,
+    _reserved16: [u8; 0x14],
     #[doc = "0x100 - Receive Pointer Register"]
-    pub rpr: RPR,
+    pub rpr: crate::Reg<rpr::RPR_SPEC>,
     #[doc = "0x104 - Receive Counter Register"]
-    pub rcr: RCR,
+    pub rcr: crate::Reg<rcr::RCR_SPEC>,
     #[doc = "0x108 - Transmit Pointer Register"]
-    pub tpr: TPR,
+    pub tpr: crate::Reg<tpr::TPR_SPEC>,
     #[doc = "0x10c - Transmit Counter Register"]
-    pub tcr: TCR,
+    pub tcr: crate::Reg<tcr::TCR_SPEC>,
     #[doc = "0x110 - Receive Next Pointer Register"]
-    pub rnpr: RNPR,
+    pub rnpr: crate::Reg<rnpr::RNPR_SPEC>,
     #[doc = "0x114 - Receive Next Counter Register"]
-    pub rncr: RNCR,
+    pub rncr: crate::Reg<rncr::RNCR_SPEC>,
     #[doc = "0x118 - Transmit Next Pointer Register"]
-    pub tnpr: TNPR,
+    pub tnpr: crate::Reg<tnpr::TNPR_SPEC>,
     #[doc = "0x11c - Transmit Next Counter Register"]
-    pub tncr: TNCR,
+    pub tncr: crate::Reg<tncr::TNCR_SPEC>,
     #[doc = "0x120 - Transfer Control Register"]
-    pub ptcr: PTCR,
+    pub ptcr: crate::Reg<ptcr::PTCR_SPEC>,
     #[doc = "0x124 - Transfer Status Register"]
-    pub ptsr: PTSR,
+    pub ptsr: crate::Reg<ptsr::PTSR_SPEC>,
 }
 impl RegisterBlock {
     #[doc = "0x00 - Control Register"]
     #[inline(always)]
-    pub fn cr_spi_mode(&self) -> &CR_SPI_MODE {
-        unsafe { &*(((self as *const Self) as *const u8).add(0usize) as *const CR_SPI_MODE) }
+    pub fn spi_mode_cr_spi_mode(
+        &self,
+    ) -> &crate::Reg<spi_mode_cr_spi_mode::SPI_MODE_CR_SPI_MODE_SPEC> {
+        unsafe {
+            &*(((self as *const Self) as *const u8).add(0usize)
+                as *const crate::Reg<spi_mode_cr_spi_mode::SPI_MODE_CR_SPI_MODE_SPEC>)
+        }
     }
     #[doc = "0x00 - Control Register"]
     #[inline(always)]
-    pub fn cr_spi_mode_mut(&self) -> &mut CR_SPI_MODE {
-        unsafe { &mut *(((self as *const Self) as *mut u8).add(0usize) as *mut CR_SPI_MODE) }
-    }
-    #[doc = "0x00 - Control Register"]
-    #[inline(always)]
-    pub fn cr(&self) -> &CR {
-        unsafe { &*(((self as *const Self) as *const u8).add(0usize) as *const CR) }
-    }
-    #[doc = "0x00 - Control Register"]
-    #[inline(always)]
-    pub fn cr_mut(&self) -> &mut CR {
-        unsafe { &mut *(((self as *const Self) as *mut u8).add(0usize) as *mut CR) }
+    pub fn cr(&self) -> &crate::Reg<cr::CR_SPEC> {
+        unsafe {
+            &*(((self as *const Self) as *const u8).add(0usize) as *const crate::Reg<cr::CR_SPEC>)
+        }
     }
     #[doc = "0x04 - Mode Register"]
     #[inline(always)]
-    pub fn mr_spi_mode(&self) -> &MR_SPI_MODE {
-        unsafe { &*(((self as *const Self) as *const u8).add(4usize) as *const MR_SPI_MODE) }
+    pub fn spi_mode_mr_spi_mode(
+        &self,
+    ) -> &crate::Reg<spi_mode_mr_spi_mode::SPI_MODE_MR_SPI_MODE_SPEC> {
+        unsafe {
+            &*(((self as *const Self) as *const u8).add(4usize)
+                as *const crate::Reg<spi_mode_mr_spi_mode::SPI_MODE_MR_SPI_MODE_SPEC>)
+        }
     }
     #[doc = "0x04 - Mode Register"]
     #[inline(always)]
-    pub fn mr_spi_mode_mut(&self) -> &mut MR_SPI_MODE {
-        unsafe { &mut *(((self as *const Self) as *mut u8).add(4usize) as *mut MR_SPI_MODE) }
-    }
-    #[doc = "0x04 - Mode Register"]
-    #[inline(always)]
-    pub fn mr(&self) -> &MR {
-        unsafe { &*(((self as *const Self) as *const u8).add(4usize) as *const MR) }
-    }
-    #[doc = "0x04 - Mode Register"]
-    #[inline(always)]
-    pub fn mr_mut(&self) -> &mut MR {
-        unsafe { &mut *(((self as *const Self) as *mut u8).add(4usize) as *mut MR) }
+    pub fn mr(&self) -> &crate::Reg<mr::MR_SPEC> {
+        unsafe {
+            &*(((self as *const Self) as *const u8).add(4usize) as *const crate::Reg<mr::MR_SPEC>)
+        }
     }
     #[doc = "0x08 - Interrupt Enable Register"]
     #[inline(always)]
-    pub fn ier_spi_mode(&self) -> &IER_SPI_MODE {
-        unsafe { &*(((self as *const Self) as *const u8).add(8usize) as *const IER_SPI_MODE) }
+    pub fn spi_mode_ier_spi_mode(
+        &self,
+    ) -> &crate::Reg<spi_mode_ier_spi_mode::SPI_MODE_IER_SPI_MODE_SPEC> {
+        unsafe {
+            &*(((self as *const Self) as *const u8).add(8usize)
+                as *const crate::Reg<spi_mode_ier_spi_mode::SPI_MODE_IER_SPI_MODE_SPEC>)
+        }
     }
     #[doc = "0x08 - Interrupt Enable Register"]
     #[inline(always)]
-    pub fn ier_spi_mode_mut(&self) -> &mut IER_SPI_MODE {
-        unsafe { &mut *(((self as *const Self) as *mut u8).add(8usize) as *mut IER_SPI_MODE) }
-    }
-    #[doc = "0x08 - Interrupt Enable Register"]
-    #[inline(always)]
-    pub fn ier(&self) -> &IER {
-        unsafe { &*(((self as *const Self) as *const u8).add(8usize) as *const IER) }
-    }
-    #[doc = "0x08 - Interrupt Enable Register"]
-    #[inline(always)]
-    pub fn ier_mut(&self) -> &mut IER {
-        unsafe { &mut *(((self as *const Self) as *mut u8).add(8usize) as *mut IER) }
+    pub fn ier(&self) -> &crate::Reg<ier::IER_SPEC> {
+        unsafe {
+            &*(((self as *const Self) as *const u8).add(8usize) as *const crate::Reg<ier::IER_SPEC>)
+        }
     }
     #[doc = "0x0c - Interrupt Disable Register"]
     #[inline(always)]
-    pub fn idr_spi_mode(&self) -> &IDR_SPI_MODE {
-        unsafe { &*(((self as *const Self) as *const u8).add(12usize) as *const IDR_SPI_MODE) }
+    pub fn spi_mode_idr_spi_mode(
+        &self,
+    ) -> &crate::Reg<spi_mode_idr_spi_mode::SPI_MODE_IDR_SPI_MODE_SPEC> {
+        unsafe {
+            &*(((self as *const Self) as *const u8).add(12usize)
+                as *const crate::Reg<spi_mode_idr_spi_mode::SPI_MODE_IDR_SPI_MODE_SPEC>)
+        }
     }
     #[doc = "0x0c - Interrupt Disable Register"]
     #[inline(always)]
-    pub fn idr_spi_mode_mut(&self) -> &mut IDR_SPI_MODE {
-        unsafe { &mut *(((self as *const Self) as *mut u8).add(12usize) as *mut IDR_SPI_MODE) }
-    }
-    #[doc = "0x0c - Interrupt Disable Register"]
-    #[inline(always)]
-    pub fn idr(&self) -> &IDR {
-        unsafe { &*(((self as *const Self) as *const u8).add(12usize) as *const IDR) }
-    }
-    #[doc = "0x0c - Interrupt Disable Register"]
-    #[inline(always)]
-    pub fn idr_mut(&self) -> &mut IDR {
-        unsafe { &mut *(((self as *const Self) as *mut u8).add(12usize) as *mut IDR) }
+    pub fn idr(&self) -> &crate::Reg<idr::IDR_SPEC> {
+        unsafe {
+            &*(((self as *const Self) as *const u8).add(12usize)
+                as *const crate::Reg<idr::IDR_SPEC>)
+        }
     }
     #[doc = "0x10 - Interrupt Mask Register"]
     #[inline(always)]
-    pub fn imr_spi_mode(&self) -> &IMR_SPI_MODE {
-        unsafe { &*(((self as *const Self) as *const u8).add(16usize) as *const IMR_SPI_MODE) }
+    pub fn spi_mode_imr_spi_mode(
+        &self,
+    ) -> &crate::Reg<spi_mode_imr_spi_mode::SPI_MODE_IMR_SPI_MODE_SPEC> {
+        unsafe {
+            &*(((self as *const Self) as *const u8).add(16usize)
+                as *const crate::Reg<spi_mode_imr_spi_mode::SPI_MODE_IMR_SPI_MODE_SPEC>)
+        }
     }
     #[doc = "0x10 - Interrupt Mask Register"]
     #[inline(always)]
-    pub fn imr_spi_mode_mut(&self) -> &mut IMR_SPI_MODE {
-        unsafe { &mut *(((self as *const Self) as *mut u8).add(16usize) as *mut IMR_SPI_MODE) }
-    }
-    #[doc = "0x10 - Interrupt Mask Register"]
-    #[inline(always)]
-    pub fn imr(&self) -> &IMR {
-        unsafe { &*(((self as *const Self) as *const u8).add(16usize) as *const IMR) }
-    }
-    #[doc = "0x10 - Interrupt Mask Register"]
-    #[inline(always)]
-    pub fn imr_mut(&self) -> &mut IMR {
-        unsafe { &mut *(((self as *const Self) as *mut u8).add(16usize) as *mut IMR) }
+    pub fn imr(&self) -> &crate::Reg<imr::IMR_SPEC> {
+        unsafe {
+            &*(((self as *const Self) as *const u8).add(16usize)
+                as *const crate::Reg<imr::IMR_SPEC>)
+        }
     }
     #[doc = "0x14 - Channel Status Register"]
     #[inline(always)]
-    pub fn csr_spi_mode(&self) -> &CSR_SPI_MODE {
-        unsafe { &*(((self as *const Self) as *const u8).add(20usize) as *const CSR_SPI_MODE) }
+    pub fn spi_mode_csr_spi_mode(
+        &self,
+    ) -> &crate::Reg<spi_mode_csr_spi_mode::SPI_MODE_CSR_SPI_MODE_SPEC> {
+        unsafe {
+            &*(((self as *const Self) as *const u8).add(20usize)
+                as *const crate::Reg<spi_mode_csr_spi_mode::SPI_MODE_CSR_SPI_MODE_SPEC>)
+        }
     }
     #[doc = "0x14 - Channel Status Register"]
     #[inline(always)]
-    pub fn csr_spi_mode_mut(&self) -> &mut CSR_SPI_MODE {
-        unsafe { &mut *(((self as *const Self) as *mut u8).add(20usize) as *mut CSR_SPI_MODE) }
-    }
-    #[doc = "0x14 - Channel Status Register"]
-    #[inline(always)]
-    pub fn csr(&self) -> &CSR {
-        unsafe { &*(((self as *const Self) as *const u8).add(20usize) as *const CSR) }
-    }
-    #[doc = "0x14 - Channel Status Register"]
-    #[inline(always)]
-    pub fn csr_mut(&self) -> &mut CSR {
-        unsafe { &mut *(((self as *const Self) as *mut u8).add(20usize) as *mut CSR) }
+    pub fn csr(&self) -> &crate::Reg<csr::CSR_SPEC> {
+        unsafe {
+            &*(((self as *const Self) as *const u8).add(20usize)
+                as *const crate::Reg<csr::CSR_SPEC>)
+        }
     }
 }
-#[doc = "Control Register\n\nThis register you can [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cr](cr) module"]
-pub type CR = crate::Reg<u32, _CR>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _CR;
-#[doc = "`write(|w| ..)` method takes [cr::W](cr::W) writer structure"]
-impl crate::Writable for CR {}
+#[doc = "CR register accessor: an alias for `Reg<CR_SPEC>`"]
+pub type CR = crate::Reg<cr::CR_SPEC>;
 #[doc = "Control Register"]
 pub mod cr;
-#[doc = "Control Register\n\nThis register you can [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cr_spi_mode](cr_spi_mode) module"]
-pub type CR_SPI_MODE = crate::Reg<u32, _CR_SPI_MODE>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _CR_SPI_MODE;
-#[doc = "`write(|w| ..)` method takes [cr_spi_mode::W](cr_spi_mode::W) writer structure"]
-impl crate::Writable for CR_SPI_MODE {}
+#[doc = "SPI_MODE_CR_SPI_MODE register accessor: an alias for `Reg<SPI_MODE_CR_SPI_MODE_SPEC>`"]
+pub type SPI_MODE_CR_SPI_MODE = crate::Reg<spi_mode_cr_spi_mode::SPI_MODE_CR_SPI_MODE_SPEC>;
 #[doc = "Control Register"]
-pub mod cr_spi_mode;
-#[doc = "Mode Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [mr](mr) module"]
-pub type MR = crate::Reg<u32, _MR>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _MR;
-#[doc = "`read()` method returns [mr::R](mr::R) reader structure"]
-impl crate::Readable for MR {}
-#[doc = "`write(|w| ..)` method takes [mr::W](mr::W) writer structure"]
-impl crate::Writable for MR {}
+pub mod spi_mode_cr_spi_mode;
+#[doc = "MR register accessor: an alias for `Reg<MR_SPEC>`"]
+pub type MR = crate::Reg<mr::MR_SPEC>;
 #[doc = "Mode Register"]
 pub mod mr;
-#[doc = "Mode Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [mr_spi_mode](mr_spi_mode) module"]
-pub type MR_SPI_MODE = crate::Reg<u32, _MR_SPI_MODE>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _MR_SPI_MODE;
-#[doc = "`read()` method returns [mr_spi_mode::R](mr_spi_mode::R) reader structure"]
-impl crate::Readable for MR_SPI_MODE {}
-#[doc = "`write(|w| ..)` method takes [mr_spi_mode::W](mr_spi_mode::W) writer structure"]
-impl crate::Writable for MR_SPI_MODE {}
+#[doc = "SPI_MODE_MR_SPI_MODE register accessor: an alias for `Reg<SPI_MODE_MR_SPI_MODE_SPEC>`"]
+pub type SPI_MODE_MR_SPI_MODE = crate::Reg<spi_mode_mr_spi_mode::SPI_MODE_MR_SPI_MODE_SPEC>;
 #[doc = "Mode Register"]
-pub mod mr_spi_mode;
-#[doc = "Interrupt Enable Register\n\nThis register you can [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ier](ier) module"]
-pub type IER = crate::Reg<u32, _IER>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _IER;
-#[doc = "`write(|w| ..)` method takes [ier::W](ier::W) writer structure"]
-impl crate::Writable for IER {}
+pub mod spi_mode_mr_spi_mode;
+#[doc = "IER register accessor: an alias for `Reg<IER_SPEC>`"]
+pub type IER = crate::Reg<ier::IER_SPEC>;
 #[doc = "Interrupt Enable Register"]
 pub mod ier;
-#[doc = "Interrupt Enable Register\n\nThis register you can [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ier_spi_mode](ier_spi_mode) module"]
-pub type IER_SPI_MODE = crate::Reg<u32, _IER_SPI_MODE>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _IER_SPI_MODE;
-#[doc = "`write(|w| ..)` method takes [ier_spi_mode::W](ier_spi_mode::W) writer structure"]
-impl crate::Writable for IER_SPI_MODE {}
+#[doc = "SPI_MODE_IER_SPI_MODE register accessor: an alias for `Reg<SPI_MODE_IER_SPI_MODE_SPEC>`"]
+pub type SPI_MODE_IER_SPI_MODE = crate::Reg<spi_mode_ier_spi_mode::SPI_MODE_IER_SPI_MODE_SPEC>;
 #[doc = "Interrupt Enable Register"]
-pub mod ier_spi_mode;
-#[doc = "Interrupt Disable Register\n\nThis register you can [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [idr](idr) module"]
-pub type IDR = crate::Reg<u32, _IDR>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _IDR;
-#[doc = "`write(|w| ..)` method takes [idr::W](idr::W) writer structure"]
-impl crate::Writable for IDR {}
+pub mod spi_mode_ier_spi_mode;
+#[doc = "IDR register accessor: an alias for `Reg<IDR_SPEC>`"]
+pub type IDR = crate::Reg<idr::IDR_SPEC>;
 #[doc = "Interrupt Disable Register"]
 pub mod idr;
-#[doc = "Interrupt Disable Register\n\nThis register you can [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [idr_spi_mode](idr_spi_mode) module"]
-pub type IDR_SPI_MODE = crate::Reg<u32, _IDR_SPI_MODE>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _IDR_SPI_MODE;
-#[doc = "`write(|w| ..)` method takes [idr_spi_mode::W](idr_spi_mode::W) writer structure"]
-impl crate::Writable for IDR_SPI_MODE {}
+#[doc = "SPI_MODE_IDR_SPI_MODE register accessor: an alias for `Reg<SPI_MODE_IDR_SPI_MODE_SPEC>`"]
+pub type SPI_MODE_IDR_SPI_MODE = crate::Reg<spi_mode_idr_spi_mode::SPI_MODE_IDR_SPI_MODE_SPEC>;
 #[doc = "Interrupt Disable Register"]
-pub mod idr_spi_mode;
-#[doc = "Interrupt Mask Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [imr](imr) module"]
-pub type IMR = crate::Reg<u32, _IMR>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _IMR;
-#[doc = "`read()` method returns [imr::R](imr::R) reader structure"]
-impl crate::Readable for IMR {}
+pub mod spi_mode_idr_spi_mode;
+#[doc = "IMR register accessor: an alias for `Reg<IMR_SPEC>`"]
+pub type IMR = crate::Reg<imr::IMR_SPEC>;
 #[doc = "Interrupt Mask Register"]
 pub mod imr;
-#[doc = "Interrupt Mask Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [imr_spi_mode](imr_spi_mode) module"]
-pub type IMR_SPI_MODE = crate::Reg<u32, _IMR_SPI_MODE>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _IMR_SPI_MODE;
-#[doc = "`read()` method returns [imr_spi_mode::R](imr_spi_mode::R) reader structure"]
-impl crate::Readable for IMR_SPI_MODE {}
+#[doc = "SPI_MODE_IMR_SPI_MODE register accessor: an alias for `Reg<SPI_MODE_IMR_SPI_MODE_SPEC>`"]
+pub type SPI_MODE_IMR_SPI_MODE = crate::Reg<spi_mode_imr_spi_mode::SPI_MODE_IMR_SPI_MODE_SPEC>;
 #[doc = "Interrupt Mask Register"]
-pub mod imr_spi_mode;
-#[doc = "Channel Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [csr](csr) module"]
-pub type CSR = crate::Reg<u32, _CSR>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _CSR;
-#[doc = "`read()` method returns [csr::R](csr::R) reader structure"]
-impl crate::Readable for CSR {}
+pub mod spi_mode_imr_spi_mode;
+#[doc = "CSR register accessor: an alias for `Reg<CSR_SPEC>`"]
+pub type CSR = crate::Reg<csr::CSR_SPEC>;
 #[doc = "Channel Status Register"]
 pub mod csr;
-#[doc = "Channel Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [csr_spi_mode](csr_spi_mode) module"]
-pub type CSR_SPI_MODE = crate::Reg<u32, _CSR_SPI_MODE>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _CSR_SPI_MODE;
-#[doc = "`read()` method returns [csr_spi_mode::R](csr_spi_mode::R) reader structure"]
-impl crate::Readable for CSR_SPI_MODE {}
+#[doc = "SPI_MODE_CSR_SPI_MODE register accessor: an alias for `Reg<SPI_MODE_CSR_SPI_MODE_SPEC>`"]
+pub type SPI_MODE_CSR_SPI_MODE = crate::Reg<spi_mode_csr_spi_mode::SPI_MODE_CSR_SPI_MODE_SPEC>;
 #[doc = "Channel Status Register"]
-pub mod csr_spi_mode;
-#[doc = "Receiver Holding Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [rhr](rhr) module"]
-pub type RHR = crate::Reg<u32, _RHR>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _RHR;
-#[doc = "`read()` method returns [rhr::R](rhr::R) reader structure"]
-impl crate::Readable for RHR {}
+pub mod spi_mode_csr_spi_mode;
+#[doc = "RHR register accessor: an alias for `Reg<RHR_SPEC>`"]
+pub type RHR = crate::Reg<rhr::RHR_SPEC>;
 #[doc = "Receiver Holding Register"]
 pub mod rhr;
-#[doc = "Transmitter Holding Register\n\nThis register you can [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [thr](thr) module"]
-pub type THR = crate::Reg<u32, _THR>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _THR;
-#[doc = "`write(|w| ..)` method takes [thr::W](thr::W) writer structure"]
-impl crate::Writable for THR {}
+#[doc = "THR register accessor: an alias for `Reg<THR_SPEC>`"]
+pub type THR = crate::Reg<thr::THR_SPEC>;
 #[doc = "Transmitter Holding Register"]
 pub mod thr;
-#[doc = "Baud Rate Generator Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [brgr](brgr) module"]
-pub type BRGR = crate::Reg<u32, _BRGR>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _BRGR;
-#[doc = "`read()` method returns [brgr::R](brgr::R) reader structure"]
-impl crate::Readable for BRGR {}
-#[doc = "`write(|w| ..)` method takes [brgr::W](brgr::W) writer structure"]
-impl crate::Writable for BRGR {}
+#[doc = "BRGR register accessor: an alias for `Reg<BRGR_SPEC>`"]
+pub type BRGR = crate::Reg<brgr::BRGR_SPEC>;
 #[doc = "Baud Rate Generator Register"]
 pub mod brgr;
-#[doc = "Receiver Time-out Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [rtor](rtor) module"]
-pub type RTOR = crate::Reg<u32, _RTOR>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _RTOR;
-#[doc = "`read()` method returns [rtor::R](rtor::R) reader structure"]
-impl crate::Readable for RTOR {}
-#[doc = "`write(|w| ..)` method takes [rtor::W](rtor::W) writer structure"]
-impl crate::Writable for RTOR {}
+#[doc = "RTOR register accessor: an alias for `Reg<RTOR_SPEC>`"]
+pub type RTOR = crate::Reg<rtor::RTOR_SPEC>;
 #[doc = "Receiver Time-out Register"]
 pub mod rtor;
-#[doc = "Transmitter Timeguard Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ttgr](ttgr) module"]
-pub type TTGR = crate::Reg<u32, _TTGR>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _TTGR;
-#[doc = "`read()` method returns [ttgr::R](ttgr::R) reader structure"]
-impl crate::Readable for TTGR {}
-#[doc = "`write(|w| ..)` method takes [ttgr::W](ttgr::W) writer structure"]
-impl crate::Writable for TTGR {}
+#[doc = "TTGR register accessor: an alias for `Reg<TTGR_SPEC>`"]
+pub type TTGR = crate::Reg<ttgr::TTGR_SPEC>;
 #[doc = "Transmitter Timeguard Register"]
 pub mod ttgr;
-#[doc = "FI DI Ratio Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [fidi](fidi) module"]
-pub type FIDI = crate::Reg<u32, _FIDI>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _FIDI;
-#[doc = "`read()` method returns [fidi::R](fidi::R) reader structure"]
-impl crate::Readable for FIDI {}
-#[doc = "`write(|w| ..)` method takes [fidi::W](fidi::W) writer structure"]
-impl crate::Writable for FIDI {}
+#[doc = "FIDI register accessor: an alias for `Reg<FIDI_SPEC>`"]
+pub type FIDI = crate::Reg<fidi::FIDI_SPEC>;
 #[doc = "FI DI Ratio Register"]
 pub mod fidi;
-#[doc = "Number of Errors Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ner](ner) module"]
-pub type NER = crate::Reg<u32, _NER>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _NER;
-#[doc = "`read()` method returns [ner::R](ner::R) reader structure"]
-impl crate::Readable for NER {}
+#[doc = "NER register accessor: an alias for `Reg<NER_SPEC>`"]
+pub type NER = crate::Reg<ner::NER_SPEC>;
 #[doc = "Number of Errors Register"]
 pub mod ner;
-#[doc = "IrDA Filter Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [if_](if_) module"]
-pub type IF = crate::Reg<u32, _IF>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _IF;
-#[doc = "`read()` method returns [if_::R](if_::R) reader structure"]
-impl crate::Readable for IF {}
-#[doc = "`write(|w| ..)` method takes [if_::W](if_::W) writer structure"]
-impl crate::Writable for IF {}
+#[doc = "IF register accessor: an alias for `Reg<IF_SPEC>`"]
+pub type IF = crate::Reg<if_::IF_SPEC>;
 #[doc = "IrDA Filter Register"]
 pub mod if_;
-#[doc = "Write Protect Mode Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [wpmr](wpmr) module"]
-pub type WPMR = crate::Reg<u32, _WPMR>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _WPMR;
-#[doc = "`read()` method returns [wpmr::R](wpmr::R) reader structure"]
-impl crate::Readable for WPMR {}
-#[doc = "`write(|w| ..)` method takes [wpmr::W](wpmr::W) writer structure"]
-impl crate::Writable for WPMR {}
+#[doc = "WPMR register accessor: an alias for `Reg<WPMR_SPEC>`"]
+pub type WPMR = crate::Reg<wpmr::WPMR_SPEC>;
 #[doc = "Write Protect Mode Register"]
 pub mod wpmr;
-#[doc = "Write Protect Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [wpsr](wpsr) module"]
-pub type WPSR = crate::Reg<u32, _WPSR>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _WPSR;
-#[doc = "`read()` method returns [wpsr::R](wpsr::R) reader structure"]
-impl crate::Readable for WPSR {}
+#[doc = "WPSR register accessor: an alias for `Reg<WPSR_SPEC>`"]
+pub type WPSR = crate::Reg<wpsr::WPSR_SPEC>;
 #[doc = "Write Protect Status Register"]
 pub mod wpsr;
-#[doc = "Receive Pointer Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [rpr](rpr) module"]
-pub type RPR = crate::Reg<u32, _RPR>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _RPR;
-#[doc = "`read()` method returns [rpr::R](rpr::R) reader structure"]
-impl crate::Readable for RPR {}
-#[doc = "`write(|w| ..)` method takes [rpr::W](rpr::W) writer structure"]
-impl crate::Writable for RPR {}
+#[doc = "RPR register accessor: an alias for `Reg<RPR_SPEC>`"]
+pub type RPR = crate::Reg<rpr::RPR_SPEC>;
 #[doc = "Receive Pointer Register"]
 pub mod rpr;
-#[doc = "Receive Counter Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [rcr](rcr) module"]
-pub type RCR = crate::Reg<u32, _RCR>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _RCR;
-#[doc = "`read()` method returns [rcr::R](rcr::R) reader structure"]
-impl crate::Readable for RCR {}
-#[doc = "`write(|w| ..)` method takes [rcr::W](rcr::W) writer structure"]
-impl crate::Writable for RCR {}
+#[doc = "RCR register accessor: an alias for `Reg<RCR_SPEC>`"]
+pub type RCR = crate::Reg<rcr::RCR_SPEC>;
 #[doc = "Receive Counter Register"]
 pub mod rcr;
-#[doc = "Transmit Pointer Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [tpr](tpr) module"]
-pub type TPR = crate::Reg<u32, _TPR>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _TPR;
-#[doc = "`read()` method returns [tpr::R](tpr::R) reader structure"]
-impl crate::Readable for TPR {}
-#[doc = "`write(|w| ..)` method takes [tpr::W](tpr::W) writer structure"]
-impl crate::Writable for TPR {}
+#[doc = "TPR register accessor: an alias for `Reg<TPR_SPEC>`"]
+pub type TPR = crate::Reg<tpr::TPR_SPEC>;
 #[doc = "Transmit Pointer Register"]
 pub mod tpr;
-#[doc = "Transmit Counter Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [tcr](tcr) module"]
-pub type TCR = crate::Reg<u32, _TCR>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _TCR;
-#[doc = "`read()` method returns [tcr::R](tcr::R) reader structure"]
-impl crate::Readable for TCR {}
-#[doc = "`write(|w| ..)` method takes [tcr::W](tcr::W) writer structure"]
-impl crate::Writable for TCR {}
+#[doc = "TCR register accessor: an alias for `Reg<TCR_SPEC>`"]
+pub type TCR = crate::Reg<tcr::TCR_SPEC>;
 #[doc = "Transmit Counter Register"]
 pub mod tcr;
-#[doc = "Receive Next Pointer Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [rnpr](rnpr) module"]
-pub type RNPR = crate::Reg<u32, _RNPR>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _RNPR;
-#[doc = "`read()` method returns [rnpr::R](rnpr::R) reader structure"]
-impl crate::Readable for RNPR {}
-#[doc = "`write(|w| ..)` method takes [rnpr::W](rnpr::W) writer structure"]
-impl crate::Writable for RNPR {}
+#[doc = "RNPR register accessor: an alias for `Reg<RNPR_SPEC>`"]
+pub type RNPR = crate::Reg<rnpr::RNPR_SPEC>;
 #[doc = "Receive Next Pointer Register"]
 pub mod rnpr;
-#[doc = "Receive Next Counter Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [rncr](rncr) module"]
-pub type RNCR = crate::Reg<u32, _RNCR>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _RNCR;
-#[doc = "`read()` method returns [rncr::R](rncr::R) reader structure"]
-impl crate::Readable for RNCR {}
-#[doc = "`write(|w| ..)` method takes [rncr::W](rncr::W) writer structure"]
-impl crate::Writable for RNCR {}
+#[doc = "RNCR register accessor: an alias for `Reg<RNCR_SPEC>`"]
+pub type RNCR = crate::Reg<rncr::RNCR_SPEC>;
 #[doc = "Receive Next Counter Register"]
 pub mod rncr;
-#[doc = "Transmit Next Pointer Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [tnpr](tnpr) module"]
-pub type TNPR = crate::Reg<u32, _TNPR>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _TNPR;
-#[doc = "`read()` method returns [tnpr::R](tnpr::R) reader structure"]
-impl crate::Readable for TNPR {}
-#[doc = "`write(|w| ..)` method takes [tnpr::W](tnpr::W) writer structure"]
-impl crate::Writable for TNPR {}
+#[doc = "TNPR register accessor: an alias for `Reg<TNPR_SPEC>`"]
+pub type TNPR = crate::Reg<tnpr::TNPR_SPEC>;
 #[doc = "Transmit Next Pointer Register"]
 pub mod tnpr;
-#[doc = "Transmit Next Counter Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [tncr](tncr) module"]
-pub type TNCR = crate::Reg<u32, _TNCR>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _TNCR;
-#[doc = "`read()` method returns [tncr::R](tncr::R) reader structure"]
-impl crate::Readable for TNCR {}
-#[doc = "`write(|w| ..)` method takes [tncr::W](tncr::W) writer structure"]
-impl crate::Writable for TNCR {}
+#[doc = "TNCR register accessor: an alias for `Reg<TNCR_SPEC>`"]
+pub type TNCR = crate::Reg<tncr::TNCR_SPEC>;
 #[doc = "Transmit Next Counter Register"]
 pub mod tncr;
-#[doc = "Transfer Control Register\n\nThis register you can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ptcr](ptcr) module"]
-pub type PTCR = crate::Reg<u32, _PTCR>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _PTCR;
-#[doc = "`write(|w| ..)` method takes [ptcr::W](ptcr::W) writer structure"]
-impl crate::Writable for PTCR {}
+#[doc = "PTCR register accessor: an alias for `Reg<PTCR_SPEC>`"]
+pub type PTCR = crate::Reg<ptcr::PTCR_SPEC>;
 #[doc = "Transfer Control Register"]
 pub mod ptcr;
-#[doc = "Transfer Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ptsr](ptsr) module"]
-pub type PTSR = crate::Reg<u32, _PTSR>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _PTSR;
-#[doc = "`read()` method returns [ptsr::R](ptsr::R) reader structure"]
-impl crate::Readable for PTSR {}
+#[doc = "PTSR register accessor: an alias for `Reg<PTSR_SPEC>`"]
+pub type PTSR = crate::Reg<ptsr::PTSR_SPEC>;
 #[doc = "Transfer Status Register"]
 pub mod ptsr;

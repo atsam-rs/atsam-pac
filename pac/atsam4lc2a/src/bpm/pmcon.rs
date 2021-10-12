@@ -1,18 +1,54 @@
-#[doc = "Reader of register PMCON"]
-pub type R = crate::R<u32, super::PMCON>;
-#[doc = "Writer for register PMCON"]
-pub type W = crate::W<u32, super::PMCON>;
-#[doc = "Register PMCON `reset()`'s with value 0"]
-impl crate::ResetValue for super::PMCON {
-    type Type = u32;
+#[doc = "Register `PMCON` reader"]
+pub struct R(crate::R<PMCON_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<PMCON_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `PS`"]
-pub type PS_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `PS`"]
+impl From<crate::R<PMCON_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<PMCON_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `PMCON` writer"]
+pub struct W(crate::W<PMCON_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<PMCON_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<PMCON_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<PMCON_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `PS` reader - Power Scaling Configuration Value"]
+pub struct PS_R(crate::FieldReader<u8, u8>);
+impl PS_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        PS_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for PS_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PS` writer - Power Scaling Configuration Value"]
 pub struct PS_W<'a> {
     w: &'a mut W,
 }
@@ -20,13 +56,25 @@ impl<'a> PS_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x03) | ((value as u32) & 0x03);
+        self.w.bits = (self.w.bits & !0x03) | (value as u32 & 0x03);
         self.w
     }
 }
-#[doc = "Reader of field `PSCREQ`"]
-pub type PSCREQ_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `PSCREQ`"]
+#[doc = "Field `PSCREQ` reader - Power Scaling Change Request"]
+pub struct PSCREQ_R(crate::FieldReader<bool, bool>);
+impl PSCREQ_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PSCREQ_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for PSCREQ_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PSCREQ` writer - Power Scaling Change Request"]
 pub struct PSCREQ_W<'a> {
     w: &'a mut W,
 }
@@ -44,13 +92,25 @@ impl<'a> PSCREQ_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
         self.w
     }
 }
-#[doc = "Reader of field `PSCM`"]
-pub type PSCM_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `PSCM`"]
+#[doc = "Field `PSCM` reader - Power Scaling Change Mode"]
+pub struct PSCM_R(crate::FieldReader<bool, bool>);
+impl PSCM_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PSCM_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for PSCM_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PSCM` writer - Power Scaling Change Mode"]
 pub struct PSCM_W<'a> {
     w: &'a mut W,
 }
@@ -68,13 +128,25 @@ impl<'a> PSCM_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
+        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
         self.w
     }
 }
-#[doc = "Reader of field `BKUP`"]
-pub type BKUP_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `BKUP`"]
+#[doc = "Field `BKUP` reader - BACKUP Mode"]
+pub struct BKUP_R(crate::FieldReader<bool, bool>);
+impl BKUP_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        BKUP_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for BKUP_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `BKUP` writer - BACKUP Mode"]
 pub struct BKUP_W<'a> {
     w: &'a mut W,
 }
@@ -92,13 +164,25 @@ impl<'a> BKUP_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | (((value as u32) & 0x01) << 8);
+        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
         self.w
     }
 }
-#[doc = "Reader of field `RET`"]
-pub type RET_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `RET`"]
+#[doc = "Field `RET` reader - RETENTION Mode"]
+pub struct RET_R(crate::FieldReader<bool, bool>);
+impl RET_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        RET_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for RET_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `RET` writer - RETENTION Mode"]
 pub struct RET_W<'a> {
     w: &'a mut W,
 }
@@ -116,13 +200,25 @@ impl<'a> RET_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 9)) | (((value as u32) & 0x01) << 9);
+        self.w.bits = (self.w.bits & !(0x01 << 9)) | ((value as u32 & 0x01) << 9);
         self.w
     }
 }
-#[doc = "Reader of field `SLEEP`"]
-pub type SLEEP_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `SLEEP`"]
+#[doc = "Field `SLEEP` reader - SLEEP mode Configuration"]
+pub struct SLEEP_R(crate::FieldReader<u8, u8>);
+impl SLEEP_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        SLEEP_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for SLEEP_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `SLEEP` writer - SLEEP mode Configuration"]
 pub struct SLEEP_W<'a> {
     w: &'a mut W,
 }
@@ -130,13 +226,25 @@ impl<'a> SLEEP_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 12)) | (((value as u32) & 0x03) << 12);
+        self.w.bits = (self.w.bits & !(0x03 << 12)) | ((value as u32 & 0x03) << 12);
         self.w
     }
 }
-#[doc = "Reader of field `CK32S`"]
-pub type CK32S_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `CK32S`"]
+#[doc = "Field `CK32S` reader - 32Khz-1Khz Clock Source Selection"]
+pub struct CK32S_R(crate::FieldReader<bool, bool>);
+impl CK32S_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        CK32S_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for CK32S_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CK32S` writer - 32Khz-1Khz Clock Source Selection"]
 pub struct CK32S_W<'a> {
     w: &'a mut W,
 }
@@ -154,13 +262,25 @@ impl<'a> CK32S_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 16)) | (((value as u32) & 0x01) << 16);
+        self.w.bits = (self.w.bits & !(0x01 << 16)) | ((value as u32 & 0x01) << 16);
         self.w
     }
 }
-#[doc = "Reader of field `FASTWKUP`"]
-pub type FASTWKUP_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `FASTWKUP`"]
+#[doc = "Field `FASTWKUP` reader - Fast Wakeup"]
+pub struct FASTWKUP_R(crate::FieldReader<bool, bool>);
+impl FASTWKUP_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        FASTWKUP_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for FASTWKUP_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `FASTWKUP` writer - Fast Wakeup"]
 pub struct FASTWKUP_W<'a> {
     w: &'a mut W,
 }
@@ -178,7 +298,7 @@ impl<'a> FASTWKUP_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 24)) | (((value as u32) & 0x01) << 24);
+        self.w.bits = (self.w.bits & !(0x01 << 24)) | ((value as u32 & 0x01) << 24);
         self.w
     }
 }
@@ -264,5 +384,31 @@ impl W {
     #[inline(always)]
     pub fn fastwkup(&mut self) -> FASTWKUP_W {
         FASTWKUP_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Power Mode Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pmcon](index.html) module"]
+pub struct PMCON_SPEC;
+impl crate::RegisterSpec for PMCON_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [pmcon::R](R) reader structure"]
+impl crate::Readable for PMCON_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [pmcon::W](W) writer structure"]
+impl crate::Writable for PMCON_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets PMCON to value 0"]
+impl crate::Resettable for PMCON_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

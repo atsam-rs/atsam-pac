@@ -1,49 +1,326 @@
-#[doc = "Reader of register ISR"]
-pub type R = crate::R<u32, super::ISR>;
-#[doc = "Reader of field `EOC0`"]
-pub type EOC0_R = crate::R<bool, bool>;
-#[doc = "Reader of field `EOC1`"]
-pub type EOC1_R = crate::R<bool, bool>;
-#[doc = "Reader of field `EOC2`"]
-pub type EOC2_R = crate::R<bool, bool>;
-#[doc = "Reader of field `EOC3`"]
-pub type EOC3_R = crate::R<bool, bool>;
-#[doc = "Reader of field `EOC4`"]
-pub type EOC4_R = crate::R<bool, bool>;
-#[doc = "Reader of field `EOC5`"]
-pub type EOC5_R = crate::R<bool, bool>;
-#[doc = "Reader of field `EOC6`"]
-pub type EOC6_R = crate::R<bool, bool>;
-#[doc = "Reader of field `EOC7`"]
-pub type EOC7_R = crate::R<bool, bool>;
-#[doc = "Reader of field `EOC8`"]
-pub type EOC8_R = crate::R<bool, bool>;
-#[doc = "Reader of field `EOC9`"]
-pub type EOC9_R = crate::R<bool, bool>;
-#[doc = "Reader of field `EOC10`"]
-pub type EOC10_R = crate::R<bool, bool>;
-#[doc = "Reader of field `EOC11`"]
-pub type EOC11_R = crate::R<bool, bool>;
-#[doc = "Reader of field `EOC12`"]
-pub type EOC12_R = crate::R<bool, bool>;
-#[doc = "Reader of field `EOC13`"]
-pub type EOC13_R = crate::R<bool, bool>;
-#[doc = "Reader of field `EOC14`"]
-pub type EOC14_R = crate::R<bool, bool>;
-#[doc = "Reader of field `EOC15`"]
-pub type EOC15_R = crate::R<bool, bool>;
-#[doc = "Reader of field `EOCAL`"]
-pub type EOCAL_R = crate::R<bool, bool>;
-#[doc = "Reader of field `DRDY`"]
-pub type DRDY_R = crate::R<bool, bool>;
-#[doc = "Reader of field `GOVRE`"]
-pub type GOVRE_R = crate::R<bool, bool>;
-#[doc = "Reader of field `COMPE`"]
-pub type COMPE_R = crate::R<bool, bool>;
-#[doc = "Reader of field `ENDRX`"]
-pub type ENDRX_R = crate::R<bool, bool>;
-#[doc = "Reader of field `RXBUFF`"]
-pub type RXBUFF_R = crate::R<bool, bool>;
+#[doc = "Register `ISR` reader"]
+pub struct R(crate::R<ISR_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<ISR_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<ISR_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<ISR_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Field `EOC0` reader - End of Conversion 0"]
+pub struct EOC0_R(crate::FieldReader<bool, bool>);
+impl EOC0_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        EOC0_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for EOC0_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `EOC1` reader - End of Conversion 1"]
+pub struct EOC1_R(crate::FieldReader<bool, bool>);
+impl EOC1_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        EOC1_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for EOC1_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `EOC2` reader - End of Conversion 2"]
+pub struct EOC2_R(crate::FieldReader<bool, bool>);
+impl EOC2_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        EOC2_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for EOC2_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `EOC3` reader - End of Conversion 3"]
+pub struct EOC3_R(crate::FieldReader<bool, bool>);
+impl EOC3_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        EOC3_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for EOC3_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `EOC4` reader - End of Conversion 4"]
+pub struct EOC4_R(crate::FieldReader<bool, bool>);
+impl EOC4_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        EOC4_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for EOC4_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `EOC5` reader - End of Conversion 5"]
+pub struct EOC5_R(crate::FieldReader<bool, bool>);
+impl EOC5_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        EOC5_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for EOC5_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `EOC6` reader - End of Conversion 6"]
+pub struct EOC6_R(crate::FieldReader<bool, bool>);
+impl EOC6_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        EOC6_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for EOC6_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `EOC7` reader - End of Conversion 7"]
+pub struct EOC7_R(crate::FieldReader<bool, bool>);
+impl EOC7_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        EOC7_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for EOC7_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `EOC8` reader - End of Conversion 8"]
+pub struct EOC8_R(crate::FieldReader<bool, bool>);
+impl EOC8_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        EOC8_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for EOC8_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `EOC9` reader - End of Conversion 9"]
+pub struct EOC9_R(crate::FieldReader<bool, bool>);
+impl EOC9_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        EOC9_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for EOC9_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `EOC10` reader - End of Conversion 10"]
+pub struct EOC10_R(crate::FieldReader<bool, bool>);
+impl EOC10_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        EOC10_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for EOC10_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `EOC11` reader - End of Conversion 11"]
+pub struct EOC11_R(crate::FieldReader<bool, bool>);
+impl EOC11_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        EOC11_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for EOC11_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `EOC12` reader - End of Conversion 12"]
+pub struct EOC12_R(crate::FieldReader<bool, bool>);
+impl EOC12_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        EOC12_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for EOC12_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `EOC13` reader - End of Conversion 13"]
+pub struct EOC13_R(crate::FieldReader<bool, bool>);
+impl EOC13_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        EOC13_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for EOC13_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `EOC14` reader - End of Conversion 14"]
+pub struct EOC14_R(crate::FieldReader<bool, bool>);
+impl EOC14_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        EOC14_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for EOC14_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `EOC15` reader - End of Conversion 15"]
+pub struct EOC15_R(crate::FieldReader<bool, bool>);
+impl EOC15_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        EOC15_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for EOC15_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `EOCAL` reader - End of Calibration Sequence"]
+pub struct EOCAL_R(crate::FieldReader<bool, bool>);
+impl EOCAL_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        EOCAL_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for EOCAL_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `DRDY` reader - Data Ready"]
+pub struct DRDY_R(crate::FieldReader<bool, bool>);
+impl DRDY_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        DRDY_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for DRDY_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `GOVRE` reader - General Overrun Error"]
+pub struct GOVRE_R(crate::FieldReader<bool, bool>);
+impl GOVRE_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        GOVRE_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for GOVRE_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `COMPE` reader - Comparison Error"]
+pub struct COMPE_R(crate::FieldReader<bool, bool>);
+impl COMPE_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        COMPE_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for COMPE_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `ENDRX` reader - End of Receiver Transfer"]
+pub struct ENDRX_R(crate::FieldReader<bool, bool>);
+impl ENDRX_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        ENDRX_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for ENDRX_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `RXBUFF` reader - Reception Buffer Full"]
+pub struct RXBUFF_R(crate::FieldReader<bool, bool>);
+impl RXBUFF_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        RXBUFF_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for RXBUFF_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
 impl R {
     #[doc = "Bit 0 - End of Conversion 0"]
     #[inline(always)]
@@ -154,5 +431,21 @@ impl R {
     #[inline(always)]
     pub fn rxbuff(&self) -> RXBUFF_R {
         RXBUFF_R::new(((self.bits >> 28) & 0x01) != 0)
+    }
+}
+#[doc = "Interrupt Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [isr](index.html) module"]
+pub struct ISR_SPEC;
+impl crate::RegisterSpec for ISR_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [isr::R](R) reader structure"]
+impl crate::Readable for ISR_SPEC {
+    type Reader = R;
+}
+#[doc = "`reset()` method sets ISR to value 0"]
+impl crate::Resettable for ISR_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

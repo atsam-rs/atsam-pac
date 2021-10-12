@@ -1,18 +1,54 @@
-#[doc = "Reader of register IFR"]
-pub type R = crate::R<u32, super::IFR>;
-#[doc = "Writer for register IFR"]
-pub type W = crate::W<u32, super::IFR>;
-#[doc = "Register IFR `reset()`'s with value 0"]
-impl crate::ResetValue for super::IFR {
-    type Type = u32;
+#[doc = "Register `IFR` reader"]
+pub struct R(crate::R<IFR_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<IFR_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `IRDA_FILTER`"]
-pub type IRDA_FILTER_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `IRDA_FILTER`"]
+impl From<crate::R<IFR_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<IFR_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `IFR` writer"]
+pub struct W(crate::W<IFR_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<IFR_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<IFR_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<IFR_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `IRDA_FILTER` reader - Irda filter"]
+pub struct IRDA_FILTER_R(crate::FieldReader<u8, u8>);
+impl IRDA_FILTER_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        IRDA_FILTER_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for IRDA_FILTER_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `IRDA_FILTER` writer - Irda filter"]
 pub struct IRDA_FILTER_W<'a> {
     w: &'a mut W,
 }
@@ -20,7 +56,7 @@ impl<'a> IRDA_FILTER_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xff) | ((value as u32) & 0xff);
+        self.w.bits = (self.w.bits & !0xff) | (value as u32 & 0xff);
         self.w
     }
 }
@@ -36,5 +72,31 @@ impl W {
     #[inline(always)]
     pub fn irda_filter(&mut self) -> IRDA_FILTER_W {
         IRDA_FILTER_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "IrDA Filter Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ifr](index.html) module"]
+pub struct IFR_SPEC;
+impl crate::RegisterSpec for IFR_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [ifr::R](R) reader structure"]
+impl crate::Readable for IFR_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [ifr::W](W) writer structure"]
+impl crate::Writable for IFR_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets IFR to value 0"]
+impl crate::Resettable for IFR_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

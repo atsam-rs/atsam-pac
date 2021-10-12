@@ -1,5 +1,24 @@
-#[doc = "Writer for register WPCR"]
-pub type W = crate::W<u32, super::WPCR>;
+#[doc = "Register `WPCR` writer"]
+pub struct W(crate::W<WPCR_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<WPCR_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<WPCR_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<WPCR_SPEC>) -> Self {
+        W(writer)
+    }
+}
 #[doc = "Write Protection Command"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -17,7 +36,7 @@ impl From<WPCMD_AW> for u8 {
         variant as _
     }
 }
-#[doc = "Write proxy for field `WPCMD`"]
+#[doc = "Field `WPCMD` writer - Write Protection Command"]
 pub struct WPCMD_W<'a> {
     w: &'a mut W,
 }
@@ -45,11 +64,11 @@ impl<'a> WPCMD_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x03) | ((value as u32) & 0x03);
+        self.w.bits = (self.w.bits & !0x03) | (value as u32 & 0x03);
         self.w
     }
 }
-#[doc = "Write proxy for field `WPRG0`"]
+#[doc = "Field `WPRG0` writer - Write Protection Register Group 0"]
 pub struct WPRG0_W<'a> {
     w: &'a mut W,
 }
@@ -67,11 +86,11 @@ impl<'a> WPRG0_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
         self.w
     }
 }
-#[doc = "Write proxy for field `WPRG1`"]
+#[doc = "Field `WPRG1` writer - Write Protection Register Group 1"]
 pub struct WPRG1_W<'a> {
     w: &'a mut W,
 }
@@ -89,11 +108,11 @@ impl<'a> WPRG1_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
+        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
         self.w
     }
 }
-#[doc = "Write proxy for field `WPRG2`"]
+#[doc = "Field `WPRG2` writer - Write Protection Register Group 2"]
 pub struct WPRG2_W<'a> {
     w: &'a mut W,
 }
@@ -111,11 +130,11 @@ impl<'a> WPRG2_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u32) & 0x01) << 4);
+        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
         self.w
     }
 }
-#[doc = "Write proxy for field `WPRG3`"]
+#[doc = "Field `WPRG3` writer - Write Protection Register Group 3"]
 pub struct WPRG3_W<'a> {
     w: &'a mut W,
 }
@@ -133,11 +152,11 @@ impl<'a> WPRG3_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u32) & 0x01) << 5);
+        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
         self.w
     }
 }
-#[doc = "Write proxy for field `WPRG4`"]
+#[doc = "Field `WPRG4` writer - Write Protection Register Group 4"]
 pub struct WPRG4_W<'a> {
     w: &'a mut W,
 }
@@ -155,11 +174,11 @@ impl<'a> WPRG4_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | (((value as u32) & 0x01) << 6);
+        self.w.bits = (self.w.bits & !(0x01 << 6)) | ((value as u32 & 0x01) << 6);
         self.w
     }
 }
-#[doc = "Write proxy for field `WPRG5`"]
+#[doc = "Field `WPRG5` writer - Write Protection Register Group 5"]
 pub struct WPRG5_W<'a> {
     w: &'a mut W,
 }
@@ -177,7 +196,7 @@ impl<'a> WPRG5_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | (((value as u32) & 0x01) << 7);
+        self.w.bits = (self.w.bits & !(0x01 << 7)) | ((value as u32 & 0x01) << 7);
         self.w
     }
 }
@@ -194,7 +213,7 @@ impl From<WPKEY_AW> for u32 {
         variant as _
     }
 }
-#[doc = "Write proxy for field `WPKEY`"]
+#[doc = "Field `WPKEY` writer - Write Protection Key"]
 pub struct WPKEY_W<'a> {
     w: &'a mut W,
 }
@@ -212,7 +231,7 @@ impl<'a> WPKEY_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x00ff_ffff << 8)) | (((value as u32) & 0x00ff_ffff) << 8);
+        self.w.bits = (self.w.bits & !(0x00ff_ffff << 8)) | ((value as u32 & 0x00ff_ffff) << 8);
         self.w
     }
 }
@@ -257,4 +276,19 @@ impl W {
     pub fn wpkey(&mut self) -> WPKEY_W {
         WPKEY_W { w: self }
     }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "PWM Write Protection Control Register\n\nThis register you can [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [wpcr](index.html) module"]
+pub struct WPCR_SPEC;
+impl crate::RegisterSpec for WPCR_SPEC {
+    type Ux = u32;
+}
+#[doc = "`write(|w| ..)` method takes [wpcr::W](W) writer structure"]
+impl crate::Writable for WPCR_SPEC {
+    type Writer = W;
 }

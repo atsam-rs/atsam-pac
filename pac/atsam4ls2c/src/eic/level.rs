@@ -1,18 +1,54 @@
-#[doc = "Reader of register LEVEL"]
-pub type R = crate::R<u32, super::LEVEL>;
-#[doc = "Writer for register LEVEL"]
-pub type W = crate::W<u32, super::LEVEL>;
-#[doc = "Register LEVEL `reset()`'s with value 0"]
-impl crate::ResetValue for super::LEVEL {
-    type Type = u32;
+#[doc = "Register `LEVEL` reader"]
+pub struct R(crate::R<LEVEL_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<LEVEL_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `NMI`"]
-pub type NMI_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `NMI`"]
+impl From<crate::R<LEVEL_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<LEVEL_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `LEVEL` writer"]
+pub struct W(crate::W<LEVEL_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<LEVEL_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<LEVEL_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<LEVEL_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `NMI` reader - External Non Maskable CPU interrupt"]
+pub struct NMI_R(crate::FieldReader<bool, bool>);
+impl NMI_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        NMI_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for NMI_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `NMI` writer - External Non Maskable CPU interrupt"]
 pub struct NMI_W<'a> {
     w: &'a mut W,
 }
@@ -30,13 +66,25 @@ impl<'a> NMI_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
+        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
         self.w
     }
 }
-#[doc = "Reader of field `INT1`"]
-pub type INT1_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `INT1`"]
+#[doc = "Field `INT1` reader - External Interrupt 1"]
+pub struct INT1_R(crate::FieldReader<bool, bool>);
+impl INT1_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        INT1_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for INT1_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `INT1` writer - External Interrupt 1"]
 pub struct INT1_W<'a> {
     w: &'a mut W,
 }
@@ -54,13 +102,25 @@ impl<'a> INT1_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
         self.w
     }
 }
-#[doc = "Reader of field `INT2`"]
-pub type INT2_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `INT2`"]
+#[doc = "Field `INT2` reader - External Interrupt 2"]
+pub struct INT2_R(crate::FieldReader<bool, bool>);
+impl INT2_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        INT2_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for INT2_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `INT2` writer - External Interrupt 2"]
 pub struct INT2_W<'a> {
     w: &'a mut W,
 }
@@ -78,13 +138,25 @@ impl<'a> INT2_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
         self.w
     }
 }
-#[doc = "Reader of field `INT3`"]
-pub type INT3_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `INT3`"]
+#[doc = "Field `INT3` reader - External Interrupt 3"]
+pub struct INT3_R(crate::FieldReader<bool, bool>);
+impl INT3_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        INT3_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for INT3_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `INT3` writer - External Interrupt 3"]
 pub struct INT3_W<'a> {
     w: &'a mut W,
 }
@@ -102,13 +174,25 @@ impl<'a> INT3_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
+        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
         self.w
     }
 }
-#[doc = "Reader of field `INT4`"]
-pub type INT4_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `INT4`"]
+#[doc = "Field `INT4` reader - External Interrupt 4"]
+pub struct INT4_R(crate::FieldReader<bool, bool>);
+impl INT4_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        INT4_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for INT4_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `INT4` writer - External Interrupt 4"]
 pub struct INT4_W<'a> {
     w: &'a mut W,
 }
@@ -126,13 +210,25 @@ impl<'a> INT4_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u32) & 0x01) << 4);
+        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
         self.w
     }
 }
-#[doc = "Reader of field `INT5`"]
-pub type INT5_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `INT5`"]
+#[doc = "Field `INT5` reader - External Interrupt 5"]
+pub struct INT5_R(crate::FieldReader<bool, bool>);
+impl INT5_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        INT5_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for INT5_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `INT5` writer - External Interrupt 5"]
 pub struct INT5_W<'a> {
     w: &'a mut W,
 }
@@ -150,13 +246,25 @@ impl<'a> INT5_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u32) & 0x01) << 5);
+        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
         self.w
     }
 }
-#[doc = "Reader of field `INT6`"]
-pub type INT6_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `INT6`"]
+#[doc = "Field `INT6` reader - External Interrupt 6"]
+pub struct INT6_R(crate::FieldReader<bool, bool>);
+impl INT6_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        INT6_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for INT6_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `INT6` writer - External Interrupt 6"]
 pub struct INT6_W<'a> {
     w: &'a mut W,
 }
@@ -174,13 +282,25 @@ impl<'a> INT6_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | (((value as u32) & 0x01) << 6);
+        self.w.bits = (self.w.bits & !(0x01 << 6)) | ((value as u32 & 0x01) << 6);
         self.w
     }
 }
-#[doc = "Reader of field `INT7`"]
-pub type INT7_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `INT7`"]
+#[doc = "Field `INT7` reader - External Interrupt 7"]
+pub struct INT7_R(crate::FieldReader<bool, bool>);
+impl INT7_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        INT7_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for INT7_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `INT7` writer - External Interrupt 7"]
 pub struct INT7_W<'a> {
     w: &'a mut W,
 }
@@ -198,13 +318,25 @@ impl<'a> INT7_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | (((value as u32) & 0x01) << 7);
+        self.w.bits = (self.w.bits & !(0x01 << 7)) | ((value as u32 & 0x01) << 7);
         self.w
     }
 }
-#[doc = "Reader of field `INT8`"]
-pub type INT8_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `INT8`"]
+#[doc = "Field `INT8` reader - External Interrupt 8"]
+pub struct INT8_R(crate::FieldReader<bool, bool>);
+impl INT8_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        INT8_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for INT8_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `INT8` writer - External Interrupt 8"]
 pub struct INT8_W<'a> {
     w: &'a mut W,
 }
@@ -222,13 +354,25 @@ impl<'a> INT8_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | (((value as u32) & 0x01) << 8);
+        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
         self.w
     }
 }
-#[doc = "Reader of field `INT9`"]
-pub type INT9_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `INT9`"]
+#[doc = "Field `INT9` reader - External Interrupt 9"]
+pub struct INT9_R(crate::FieldReader<bool, bool>);
+impl INT9_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        INT9_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for INT9_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `INT9` writer - External Interrupt 9"]
 pub struct INT9_W<'a> {
     w: &'a mut W,
 }
@@ -246,13 +390,25 @@ impl<'a> INT9_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 9)) | (((value as u32) & 0x01) << 9);
+        self.w.bits = (self.w.bits & !(0x01 << 9)) | ((value as u32 & 0x01) << 9);
         self.w
     }
 }
-#[doc = "Reader of field `INT10`"]
-pub type INT10_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `INT10`"]
+#[doc = "Field `INT10` reader - External Interrupt 10"]
+pub struct INT10_R(crate::FieldReader<bool, bool>);
+impl INT10_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        INT10_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for INT10_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `INT10` writer - External Interrupt 10"]
 pub struct INT10_W<'a> {
     w: &'a mut W,
 }
@@ -270,13 +426,25 @@ impl<'a> INT10_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 10)) | (((value as u32) & 0x01) << 10);
+        self.w.bits = (self.w.bits & !(0x01 << 10)) | ((value as u32 & 0x01) << 10);
         self.w
     }
 }
-#[doc = "Reader of field `INT11`"]
-pub type INT11_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `INT11`"]
+#[doc = "Field `INT11` reader - External Interrupt 11"]
+pub struct INT11_R(crate::FieldReader<bool, bool>);
+impl INT11_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        INT11_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for INT11_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `INT11` writer - External Interrupt 11"]
 pub struct INT11_W<'a> {
     w: &'a mut W,
 }
@@ -294,13 +462,25 @@ impl<'a> INT11_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 11)) | (((value as u32) & 0x01) << 11);
+        self.w.bits = (self.w.bits & !(0x01 << 11)) | ((value as u32 & 0x01) << 11);
         self.w
     }
 }
-#[doc = "Reader of field `INT12`"]
-pub type INT12_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `INT12`"]
+#[doc = "Field `INT12` reader - External Interrupt 12"]
+pub struct INT12_R(crate::FieldReader<bool, bool>);
+impl INT12_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        INT12_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for INT12_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `INT12` writer - External Interrupt 12"]
 pub struct INT12_W<'a> {
     w: &'a mut W,
 }
@@ -318,13 +498,25 @@ impl<'a> INT12_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 12)) | (((value as u32) & 0x01) << 12);
+        self.w.bits = (self.w.bits & !(0x01 << 12)) | ((value as u32 & 0x01) << 12);
         self.w
     }
 }
-#[doc = "Reader of field `INT13`"]
-pub type INT13_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `INT13`"]
+#[doc = "Field `INT13` reader - External Interrupt 13"]
+pub struct INT13_R(crate::FieldReader<bool, bool>);
+impl INT13_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        INT13_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for INT13_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `INT13` writer - External Interrupt 13"]
 pub struct INT13_W<'a> {
     w: &'a mut W,
 }
@@ -342,13 +534,25 @@ impl<'a> INT13_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 13)) | (((value as u32) & 0x01) << 13);
+        self.w.bits = (self.w.bits & !(0x01 << 13)) | ((value as u32 & 0x01) << 13);
         self.w
     }
 }
-#[doc = "Reader of field `INT14`"]
-pub type INT14_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `INT14`"]
+#[doc = "Field `INT14` reader - External Interrupt 14"]
+pub struct INT14_R(crate::FieldReader<bool, bool>);
+impl INT14_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        INT14_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for INT14_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `INT14` writer - External Interrupt 14"]
 pub struct INT14_W<'a> {
     w: &'a mut W,
 }
@@ -366,13 +570,25 @@ impl<'a> INT14_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 14)) | (((value as u32) & 0x01) << 14);
+        self.w.bits = (self.w.bits & !(0x01 << 14)) | ((value as u32 & 0x01) << 14);
         self.w
     }
 }
-#[doc = "Reader of field `INT15`"]
-pub type INT15_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `INT15`"]
+#[doc = "Field `INT15` reader - External Interrupt 15"]
+pub struct INT15_R(crate::FieldReader<bool, bool>);
+impl INT15_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        INT15_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for INT15_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `INT15` writer - External Interrupt 15"]
 pub struct INT15_W<'a> {
     w: &'a mut W,
 }
@@ -390,7 +606,7 @@ impl<'a> INT15_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 15)) | (((value as u32) & 0x01) << 15);
+        self.w.bits = (self.w.bits & !(0x01 << 15)) | ((value as u32 & 0x01) << 15);
         self.w
     }
 }
@@ -556,5 +772,31 @@ impl W {
     #[inline(always)]
     pub fn int15(&mut self) -> INT15_W {
         INT15_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Level Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [level](index.html) module"]
+pub struct LEVEL_SPEC;
+impl crate::RegisterSpec for LEVEL_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [level::R](R) reader structure"]
+impl crate::Readable for LEVEL_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [level::W](W) writer structure"]
+impl crate::Writable for LEVEL_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets LEVEL to value 0"]
+impl crate::Resettable for LEVEL_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

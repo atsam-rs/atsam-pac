@@ -1,18 +1,54 @@
-#[doc = "Reader of register LAST"]
-pub type R = crate::R<u32, super::LAST>;
-#[doc = "Writer for register LAST"]
-pub type W = crate::W<u32, super::LAST>;
-#[doc = "Register LAST `reset()`'s with value 0"]
-impl crate::ResetValue for super::LAST {
-    type Type = u32;
+#[doc = "Register `LAST` reader"]
+pub struct R(crate::R<LAST_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<LAST_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `SLAST0`"]
-pub type SLAST0_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `SLAST0`"]
+impl From<crate::R<LAST_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<LAST_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `LAST` writer"]
+pub struct W(crate::W<LAST_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<LAST_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<LAST_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<LAST_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `SLAST0` reader - Source Last"]
+pub struct SLAST0_R(crate::FieldReader<bool, bool>);
+impl SLAST0_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        SLAST0_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for SLAST0_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `SLAST0` writer - Source Last"]
 pub struct SLAST0_W<'a> {
     w: &'a mut W,
 }
@@ -30,13 +66,25 @@ impl<'a> SLAST0_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
+        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
         self.w
     }
 }
-#[doc = "Reader of field `DLAST0`"]
-pub type DLAST0_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `DLAST0`"]
+#[doc = "Field `DLAST0` reader - Destination Last"]
+pub struct DLAST0_R(crate::FieldReader<bool, bool>);
+impl DLAST0_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        DLAST0_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for DLAST0_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `DLAST0` writer - Destination Last"]
 pub struct DLAST0_W<'a> {
     w: &'a mut W,
 }
@@ -54,13 +102,25 @@ impl<'a> DLAST0_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
         self.w
     }
 }
-#[doc = "Reader of field `SLAST1`"]
-pub type SLAST1_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `SLAST1`"]
+#[doc = "Field `SLAST1` reader - Source Last"]
+pub struct SLAST1_R(crate::FieldReader<bool, bool>);
+impl SLAST1_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        SLAST1_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for SLAST1_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `SLAST1` writer - Source Last"]
 pub struct SLAST1_W<'a> {
     w: &'a mut W,
 }
@@ -78,13 +138,25 @@ impl<'a> SLAST1_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
         self.w
     }
 }
-#[doc = "Reader of field `DLAST1`"]
-pub type DLAST1_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `DLAST1`"]
+#[doc = "Field `DLAST1` reader - Destination Last"]
+pub struct DLAST1_R(crate::FieldReader<bool, bool>);
+impl DLAST1_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        DLAST1_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for DLAST1_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `DLAST1` writer - Destination Last"]
 pub struct DLAST1_W<'a> {
     w: &'a mut W,
 }
@@ -102,13 +174,25 @@ impl<'a> DLAST1_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
+        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
         self.w
     }
 }
-#[doc = "Reader of field `SLAST2`"]
-pub type SLAST2_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `SLAST2`"]
+#[doc = "Field `SLAST2` reader - Source Last"]
+pub struct SLAST2_R(crate::FieldReader<bool, bool>);
+impl SLAST2_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        SLAST2_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for SLAST2_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `SLAST2` writer - Source Last"]
 pub struct SLAST2_W<'a> {
     w: &'a mut W,
 }
@@ -126,13 +210,25 @@ impl<'a> SLAST2_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u32) & 0x01) << 4);
+        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
         self.w
     }
 }
-#[doc = "Reader of field `DLAST2`"]
-pub type DLAST2_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `DLAST2`"]
+#[doc = "Field `DLAST2` reader - Destination Last"]
+pub struct DLAST2_R(crate::FieldReader<bool, bool>);
+impl DLAST2_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        DLAST2_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for DLAST2_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `DLAST2` writer - Destination Last"]
 pub struct DLAST2_W<'a> {
     w: &'a mut W,
 }
@@ -150,13 +246,25 @@ impl<'a> DLAST2_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u32) & 0x01) << 5);
+        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
         self.w
     }
 }
-#[doc = "Reader of field `SLAST3`"]
-pub type SLAST3_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `SLAST3`"]
+#[doc = "Field `SLAST3` reader - Source Last"]
+pub struct SLAST3_R(crate::FieldReader<bool, bool>);
+impl SLAST3_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        SLAST3_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for SLAST3_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `SLAST3` writer - Source Last"]
 pub struct SLAST3_W<'a> {
     w: &'a mut W,
 }
@@ -174,13 +282,25 @@ impl<'a> SLAST3_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | (((value as u32) & 0x01) << 6);
+        self.w.bits = (self.w.bits & !(0x01 << 6)) | ((value as u32 & 0x01) << 6);
         self.w
     }
 }
-#[doc = "Reader of field `DLAST3`"]
-pub type DLAST3_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `DLAST3`"]
+#[doc = "Field `DLAST3` reader - Destination Last"]
+pub struct DLAST3_R(crate::FieldReader<bool, bool>);
+impl DLAST3_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        DLAST3_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for DLAST3_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `DLAST3` writer - Destination Last"]
 pub struct DLAST3_W<'a> {
     w: &'a mut W,
 }
@@ -198,7 +318,7 @@ impl<'a> DLAST3_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | (((value as u32) & 0x01) << 7);
+        self.w.bits = (self.w.bits & !(0x01 << 7)) | ((value as u32 & 0x01) << 7);
         self.w
     }
 }
@@ -284,5 +404,31 @@ impl W {
     #[inline(always)]
     pub fn dlast3(&mut self) -> DLAST3_W {
         DLAST3_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "DMAC Software Last Transfer Flag Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [last](index.html) module"]
+pub struct LAST_SPEC;
+impl crate::RegisterSpec for LAST_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [last::R](R) reader structure"]
+impl crate::Readable for LAST_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [last::W](W) writer structure"]
+impl crate::Writable for LAST_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets LAST to value 0"]
+impl crate::Resettable for LAST_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

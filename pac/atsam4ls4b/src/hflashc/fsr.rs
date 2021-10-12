@@ -1,17 +1,102 @@
-#[doc = "Reader of register FSR"]
-pub type R = crate::R<u32, super::FSR>;
-#[doc = "Reader of field `FRDY`"]
-pub type FRDY_R = crate::R<bool, bool>;
-#[doc = "Reader of field `LOCKE`"]
-pub type LOCKE_R = crate::R<bool, bool>;
-#[doc = "Reader of field `PROGE`"]
-pub type PROGE_R = crate::R<bool, bool>;
-#[doc = "Reader of field `SECURITY`"]
-pub type SECURITY_R = crate::R<bool, bool>;
-#[doc = "Reader of field `QPRR`"]
-pub type QPRR_R = crate::R<bool, bool>;
-#[doc = "Reader of field `HSMODE`"]
-pub type HSMODE_R = crate::R<bool, bool>;
+#[doc = "Register `FSR` reader"]
+pub struct R(crate::R<FSR_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<FSR_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<FSR_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<FSR_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Field `FRDY` reader - Flash Ready Status"]
+pub struct FRDY_R(crate::FieldReader<bool, bool>);
+impl FRDY_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        FRDY_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for FRDY_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `LOCKE` reader - Lock Error Status"]
+pub struct LOCKE_R(crate::FieldReader<bool, bool>);
+impl LOCKE_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        LOCKE_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for LOCKE_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PROGE` reader - Programming Error Status"]
+pub struct PROGE_R(crate::FieldReader<bool, bool>);
+impl PROGE_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PROGE_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for PROGE_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `SECURITY` reader - Security Bit Status"]
+pub struct SECURITY_R(crate::FieldReader<bool, bool>);
+impl SECURITY_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        SECURITY_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for SECURITY_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `QPRR` reader - Quick Page Read Result"]
+pub struct QPRR_R(crate::FieldReader<bool, bool>);
+impl QPRR_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        QPRR_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for QPRR_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `HSMODE` reader - High Speed Mode"]
+pub struct HSMODE_R(crate::FieldReader<bool, bool>);
+impl HSMODE_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        HSMODE_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for HSMODE_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
 #[doc = "ECC Error Status\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -29,68 +114,269 @@ impl From<ECCERR_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `ECCERR`"]
-pub type ECCERR_R = crate::R<u8, ECCERR_A>;
+#[doc = "Field `ECCERR` reader - ECC Error Status"]
+pub struct ECCERR_R(crate::FieldReader<u8, ECCERR_A>);
 impl ECCERR_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        ECCERR_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u8, ECCERR_A> {
-        use crate::Variant::*;
+    pub fn variant(&self) -> Option<ECCERR_A> {
         match self.bits {
-            0 => Val(ECCERR_A::NOERROR),
-            1 => Val(ECCERR_A::ONEECCERR),
-            2 => Val(ECCERR_A::TWOECCERR),
-            i => Res(i),
+            0 => Some(ECCERR_A::NOERROR),
+            1 => Some(ECCERR_A::ONEECCERR),
+            2 => Some(ECCERR_A::TWOECCERR),
+            _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `NOERROR`"]
     #[inline(always)]
     pub fn is_noerror(&self) -> bool {
-        *self == ECCERR_A::NOERROR
+        **self == ECCERR_A::NOERROR
     }
     #[doc = "Checks if the value of the field is `ONEECCERR`"]
     #[inline(always)]
     pub fn is_oneeccerr(&self) -> bool {
-        *self == ECCERR_A::ONEECCERR
+        **self == ECCERR_A::ONEECCERR
     }
     #[doc = "Checks if the value of the field is `TWOECCERR`"]
     #[inline(always)]
     pub fn is_twoeccerr(&self) -> bool {
-        *self == ECCERR_A::TWOECCERR
+        **self == ECCERR_A::TWOECCERR
     }
 }
-#[doc = "Reader of field `LOCK0`"]
-pub type LOCK0_R = crate::R<bool, bool>;
-#[doc = "Reader of field `LOCK1`"]
-pub type LOCK1_R = crate::R<bool, bool>;
-#[doc = "Reader of field `LOCK2`"]
-pub type LOCK2_R = crate::R<bool, bool>;
-#[doc = "Reader of field `LOCK3`"]
-pub type LOCK3_R = crate::R<bool, bool>;
-#[doc = "Reader of field `LOCK4`"]
-pub type LOCK4_R = crate::R<bool, bool>;
-#[doc = "Reader of field `LOCK5`"]
-pub type LOCK5_R = crate::R<bool, bool>;
-#[doc = "Reader of field `LOCK6`"]
-pub type LOCK6_R = crate::R<bool, bool>;
-#[doc = "Reader of field `LOCK7`"]
-pub type LOCK7_R = crate::R<bool, bool>;
-#[doc = "Reader of field `LOCK8`"]
-pub type LOCK8_R = crate::R<bool, bool>;
-#[doc = "Reader of field `LOCK9`"]
-pub type LOCK9_R = crate::R<bool, bool>;
-#[doc = "Reader of field `LOCK10`"]
-pub type LOCK10_R = crate::R<bool, bool>;
-#[doc = "Reader of field `LOCK11`"]
-pub type LOCK11_R = crate::R<bool, bool>;
-#[doc = "Reader of field `LOCK12`"]
-pub type LOCK12_R = crate::R<bool, bool>;
-#[doc = "Reader of field `LOCK13`"]
-pub type LOCK13_R = crate::R<bool, bool>;
-#[doc = "Reader of field `LOCK14`"]
-pub type LOCK14_R = crate::R<bool, bool>;
-#[doc = "Reader of field `LOCK15`"]
-pub type LOCK15_R = crate::R<bool, bool>;
+impl core::ops::Deref for ECCERR_R {
+    type Target = crate::FieldReader<u8, ECCERR_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `LOCK0` reader - Lock Region 0 Lock Status"]
+pub struct LOCK0_R(crate::FieldReader<bool, bool>);
+impl LOCK0_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        LOCK0_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for LOCK0_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `LOCK1` reader - Lock Region 1 Lock Status"]
+pub struct LOCK1_R(crate::FieldReader<bool, bool>);
+impl LOCK1_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        LOCK1_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for LOCK1_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `LOCK2` reader - Lock Region 2 Lock Status"]
+pub struct LOCK2_R(crate::FieldReader<bool, bool>);
+impl LOCK2_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        LOCK2_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for LOCK2_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `LOCK3` reader - Lock Region 3 Lock Status"]
+pub struct LOCK3_R(crate::FieldReader<bool, bool>);
+impl LOCK3_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        LOCK3_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for LOCK3_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `LOCK4` reader - Lock Region 4 Lock Status"]
+pub struct LOCK4_R(crate::FieldReader<bool, bool>);
+impl LOCK4_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        LOCK4_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for LOCK4_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `LOCK5` reader - Lock Region 5 Lock Status"]
+pub struct LOCK5_R(crate::FieldReader<bool, bool>);
+impl LOCK5_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        LOCK5_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for LOCK5_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `LOCK6` reader - Lock Region 6 Lock Status"]
+pub struct LOCK6_R(crate::FieldReader<bool, bool>);
+impl LOCK6_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        LOCK6_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for LOCK6_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `LOCK7` reader - Lock Region 7 Lock Status"]
+pub struct LOCK7_R(crate::FieldReader<bool, bool>);
+impl LOCK7_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        LOCK7_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for LOCK7_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `LOCK8` reader - Lock Region 8 Lock Status"]
+pub struct LOCK8_R(crate::FieldReader<bool, bool>);
+impl LOCK8_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        LOCK8_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for LOCK8_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `LOCK9` reader - Lock Region 9 Lock Status"]
+pub struct LOCK9_R(crate::FieldReader<bool, bool>);
+impl LOCK9_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        LOCK9_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for LOCK9_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `LOCK10` reader - Lock Region 10 Lock Status"]
+pub struct LOCK10_R(crate::FieldReader<bool, bool>);
+impl LOCK10_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        LOCK10_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for LOCK10_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `LOCK11` reader - Lock Region 11 Lock Status"]
+pub struct LOCK11_R(crate::FieldReader<bool, bool>);
+impl LOCK11_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        LOCK11_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for LOCK11_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `LOCK12` reader - Lock Region 12 Lock Status"]
+pub struct LOCK12_R(crate::FieldReader<bool, bool>);
+impl LOCK12_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        LOCK12_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for LOCK12_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `LOCK13` reader - Lock Region 13 Lock Status"]
+pub struct LOCK13_R(crate::FieldReader<bool, bool>);
+impl LOCK13_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        LOCK13_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for LOCK13_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `LOCK14` reader - Lock Region 14 Lock Status"]
+pub struct LOCK14_R(crate::FieldReader<bool, bool>);
+impl LOCK14_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        LOCK14_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for LOCK14_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `LOCK15` reader - Lock Region 15 Lock Status"]
+pub struct LOCK15_R(crate::FieldReader<bool, bool>);
+impl LOCK15_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        LOCK15_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for LOCK15_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
 impl R {
     #[doc = "Bit 0 - Flash Ready Status"]
     #[inline(always)]
@@ -206,5 +492,21 @@ impl R {
     #[inline(always)]
     pub fn lock15(&self) -> LOCK15_R {
         LOCK15_R::new(((self.bits >> 31) & 0x01) != 0)
+    }
+}
+#[doc = "Flash Controller Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [fsr](index.html) module"]
+pub struct FSR_SPEC;
+impl crate::RegisterSpec for FSR_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [fsr::R](R) reader structure"]
+impl crate::Readable for FSR_SPEC {
+    type Reader = R;
+}
+#[doc = "`reset()` method sets FSR to value 0"]
+impl crate::Resettable for FSR_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

@@ -1,14 +1,37 @@
-#[doc = "Reader of register PCK[%s]"]
-pub type R = crate::R<u32, super::PCK>;
-#[doc = "Writer for register PCK[%s]"]
-pub type W = crate::W<u32, super::PCK>;
-#[doc = "Register PCK[%s]
-`reset()`'s with value 0"]
-impl crate::ResetValue for super::PCK {
-    type Type = u32;
+#[doc = "Register `PCK[%s]` reader"]
+pub struct R(crate::R<PCK_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<PCK_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<PCK_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<PCK_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `PCK[%s]` writer"]
+pub struct W(crate::W<PCK_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<PCK_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<PCK_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<PCK_SPEC>) -> Self {
+        W(writer)
     }
 }
 #[doc = "Programmable Clock Source Selection\n\nValue on reset: 0"]
@@ -32,49 +55,58 @@ impl From<CSS_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `CSS`"]
-pub type CSS_R = crate::R<u8, CSS_A>;
+#[doc = "Field `CSS` reader - Programmable Clock Source Selection"]
+pub struct CSS_R(crate::FieldReader<u8, CSS_A>);
 impl CSS_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        CSS_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u8, CSS_A> {
-        use crate::Variant::*;
+    pub fn variant(&self) -> Option<CSS_A> {
         match self.bits {
-            0 => Val(CSS_A::SLOW_CLK),
-            1 => Val(CSS_A::MAIN_CLK),
-            2 => Val(CSS_A::PLLA_CLK),
-            3 => Val(CSS_A::UPLL_CLK),
-            4 => Val(CSS_A::MCK),
-            i => Res(i),
+            0 => Some(CSS_A::SLOW_CLK),
+            1 => Some(CSS_A::MAIN_CLK),
+            2 => Some(CSS_A::PLLA_CLK),
+            3 => Some(CSS_A::UPLL_CLK),
+            4 => Some(CSS_A::MCK),
+            _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `SLOW_CLK`"]
     #[inline(always)]
     pub fn is_slow_clk(&self) -> bool {
-        *self == CSS_A::SLOW_CLK
+        **self == CSS_A::SLOW_CLK
     }
     #[doc = "Checks if the value of the field is `MAIN_CLK`"]
     #[inline(always)]
     pub fn is_main_clk(&self) -> bool {
-        *self == CSS_A::MAIN_CLK
+        **self == CSS_A::MAIN_CLK
     }
     #[doc = "Checks if the value of the field is `PLLA_CLK`"]
     #[inline(always)]
     pub fn is_plla_clk(&self) -> bool {
-        *self == CSS_A::PLLA_CLK
+        **self == CSS_A::PLLA_CLK
     }
     #[doc = "Checks if the value of the field is `UPLL_CLK`"]
     #[inline(always)]
     pub fn is_upll_clk(&self) -> bool {
-        *self == CSS_A::UPLL_CLK
+        **self == CSS_A::UPLL_CLK
     }
     #[doc = "Checks if the value of the field is `MCK`"]
     #[inline(always)]
     pub fn is_mck(&self) -> bool {
-        *self == CSS_A::MCK
+        **self == CSS_A::MCK
     }
 }
-#[doc = "Write proxy for field `CSS`"]
+impl core::ops::Deref for CSS_R {
+    type Target = crate::FieldReader<u8, CSS_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CSS` writer - Programmable Clock Source Selection"]
 pub struct CSS_W<'a> {
     w: &'a mut W,
 }
@@ -112,13 +144,25 @@ impl<'a> CSS_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x07) | ((value as u32) & 0x07);
+        self.w.bits = (self.w.bits & !0x07) | (value as u32 & 0x07);
         self.w
     }
 }
-#[doc = "Reader of field `PRES`"]
-pub type PRES_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `PRES`"]
+#[doc = "Field `PRES` reader - Programmable Clock Prescaler"]
+pub struct PRES_R(crate::FieldReader<u8, u8>);
+impl PRES_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        PRES_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for PRES_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PRES` writer - Programmable Clock Prescaler"]
 pub struct PRES_W<'a> {
     w: &'a mut W,
 }
@@ -126,7 +170,7 @@ impl<'a> PRES_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0xff << 4)) | (((value as u32) & 0xff) << 4);
+        self.w.bits = (self.w.bits & !(0xff << 4)) | ((value as u32 & 0xff) << 4);
         self.w
     }
 }
@@ -152,5 +196,32 @@ impl W {
     #[inline(always)]
     pub fn pres(&mut self) -> PRES_W {
         PRES_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Programmable Clock Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pck](index.html) module"]
+pub struct PCK_SPEC;
+impl crate::RegisterSpec for PCK_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [pck::R](R) reader structure"]
+impl crate::Readable for PCK_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [pck::W](W) writer structure"]
+impl crate::Writable for PCK_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets PCK[%s]
+to value 0"]
+impl crate::Resettable for PCK_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

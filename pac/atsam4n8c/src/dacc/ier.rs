@@ -1,6 +1,25 @@
-#[doc = "Writer for register IER"]
-pub type W = crate::W<u32, super::IER>;
-#[doc = "Write proxy for field `TXRDY`"]
+#[doc = "Register `IER` writer"]
+pub struct W(crate::W<IER_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<IER_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<IER_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<IER_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `TXRDY` writer - Transmission Ready Interrupt Enable"]
 pub struct TXRDY_W<'a> {
     w: &'a mut W,
 }
@@ -18,11 +37,11 @@ impl<'a> TXRDY_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
+        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
         self.w
     }
 }
-#[doc = "Write proxy for field `ENDTX`"]
+#[doc = "Field `ENDTX` writer - End of PDC Interrupt Enable"]
 pub struct ENDTX_W<'a> {
     w: &'a mut W,
 }
@@ -40,11 +59,11 @@ impl<'a> ENDTX_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
         self.w
     }
 }
-#[doc = "Write proxy for field `TXBUFE`"]
+#[doc = "Field `TXBUFE` writer - Buffer Empty Interrupt Enable"]
 pub struct TXBUFE_W<'a> {
     w: &'a mut W,
 }
@@ -62,7 +81,7 @@ impl<'a> TXBUFE_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
         self.w
     }
 }
@@ -82,4 +101,19 @@ impl W {
     pub fn txbufe(&mut self) -> TXBUFE_W {
         TXBUFE_W { w: self }
     }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Interrupt Enable Register\n\nThis register you can [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ier](index.html) module"]
+pub struct IER_SPEC;
+impl crate::RegisterSpec for IER_SPEC {
+    type Ux = u32;
+}
+#[doc = "`write(|w| ..)` method takes [ier::W](W) writer structure"]
+impl crate::Writable for IER_SPEC {
+    type Writer = W;
 }

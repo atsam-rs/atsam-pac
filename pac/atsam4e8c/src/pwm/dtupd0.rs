@@ -1,6 +1,25 @@
-#[doc = "Writer for register DTUPD0"]
-pub type W = crate::W<u32, super::DTUPD0>;
-#[doc = "Write proxy for field `DTHUPD`"]
+#[doc = "Register `DTUPD0` writer"]
+pub struct W(crate::W<DTUPD0_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<DTUPD0_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<DTUPD0_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<DTUPD0_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `DTHUPD` writer - Dead-Time Value Update for PWMHx Output"]
 pub struct DTHUPD_W<'a> {
     w: &'a mut W,
 }
@@ -8,11 +27,11 @@ impl<'a> DTHUPD_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xffff) | ((value as u32) & 0xffff);
+        self.w.bits = (self.w.bits & !0xffff) | (value as u32 & 0xffff);
         self.w
     }
 }
-#[doc = "Write proxy for field `DTLUPD`"]
+#[doc = "Field `DTLUPD` writer - Dead-Time Value Update for PWMLx Output"]
 pub struct DTLUPD_W<'a> {
     w: &'a mut W,
 }
@@ -20,7 +39,7 @@ impl<'a> DTLUPD_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0xffff << 16)) | (((value as u32) & 0xffff) << 16);
+        self.w.bits = (self.w.bits & !(0xffff << 16)) | ((value as u32 & 0xffff) << 16);
         self.w
     }
 }
@@ -35,4 +54,19 @@ impl W {
     pub fn dtlupd(&mut self) -> DTLUPD_W {
         DTLUPD_W { w: self }
     }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "PWM Channel Dead Time Update Register (ch_num = 0)\n\nThis register you can [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [dtupd0](index.html) module"]
+pub struct DTUPD0_SPEC;
+impl crate::RegisterSpec for DTUPD0_SPEC {
+    type Ux = u32;
+}
+#[doc = "`write(|w| ..)` method takes [dtupd0::W](W) writer structure"]
+impl crate::Writable for DTUPD0_SPEC {
+    type Writer = W;
 }

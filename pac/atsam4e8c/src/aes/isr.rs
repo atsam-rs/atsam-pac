@@ -1,9 +1,46 @@
-#[doc = "Reader of register ISR"]
-pub type R = crate::R<u32, super::ISR>;
-#[doc = "Reader of field `DATRDY`"]
-pub type DATRDY_R = crate::R<bool, bool>;
-#[doc = "Reader of field `URAD`"]
-pub type URAD_R = crate::R<bool, bool>;
+#[doc = "Register `ISR` reader"]
+pub struct R(crate::R<ISR_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<ISR_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<ISR_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<ISR_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Field `DATRDY` reader - Data Ready"]
+pub struct DATRDY_R(crate::FieldReader<bool, bool>);
+impl DATRDY_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        DATRDY_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for DATRDY_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `URAD` reader - Unspecified Register Access Detection Status"]
+pub struct URAD_R(crate::FieldReader<bool, bool>);
+impl URAD_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        URAD_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for URAD_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
 #[doc = "Unspecified Register Access\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -27,52 +64,61 @@ impl From<URAT_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `URAT`"]
-pub type URAT_R = crate::R<u8, URAT_A>;
+#[doc = "Field `URAT` reader - Unspecified Register Access"]
+pub struct URAT_R(crate::FieldReader<u8, URAT_A>);
 impl URAT_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        URAT_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u8, URAT_A> {
-        use crate::Variant::*;
+    pub fn variant(&self) -> Option<URAT_A> {
         match self.bits {
-            0 => Val(URAT_A::IDR_WR_PROCESSING),
-            1 => Val(URAT_A::ODR_RD_PROCESSING),
-            2 => Val(URAT_A::MR_WR_PROCESSING),
-            3 => Val(URAT_A::ODR_RD_SUBKGEN),
-            4 => Val(URAT_A::MR_WR_SUBKGEN),
-            5 => Val(URAT_A::WOR_RD_ACCESS),
-            i => Res(i),
+            0 => Some(URAT_A::IDR_WR_PROCESSING),
+            1 => Some(URAT_A::ODR_RD_PROCESSING),
+            2 => Some(URAT_A::MR_WR_PROCESSING),
+            3 => Some(URAT_A::ODR_RD_SUBKGEN),
+            4 => Some(URAT_A::MR_WR_SUBKGEN),
+            5 => Some(URAT_A::WOR_RD_ACCESS),
+            _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `IDR_WR_PROCESSING`"]
     #[inline(always)]
     pub fn is_idr_wr_processing(&self) -> bool {
-        *self == URAT_A::IDR_WR_PROCESSING
+        **self == URAT_A::IDR_WR_PROCESSING
     }
     #[doc = "Checks if the value of the field is `ODR_RD_PROCESSING`"]
     #[inline(always)]
     pub fn is_odr_rd_processing(&self) -> bool {
-        *self == URAT_A::ODR_RD_PROCESSING
+        **self == URAT_A::ODR_RD_PROCESSING
     }
     #[doc = "Checks if the value of the field is `MR_WR_PROCESSING`"]
     #[inline(always)]
     pub fn is_mr_wr_processing(&self) -> bool {
-        *self == URAT_A::MR_WR_PROCESSING
+        **self == URAT_A::MR_WR_PROCESSING
     }
     #[doc = "Checks if the value of the field is `ODR_RD_SUBKGEN`"]
     #[inline(always)]
     pub fn is_odr_rd_subkgen(&self) -> bool {
-        *self == URAT_A::ODR_RD_SUBKGEN
+        **self == URAT_A::ODR_RD_SUBKGEN
     }
     #[doc = "Checks if the value of the field is `MR_WR_SUBKGEN`"]
     #[inline(always)]
     pub fn is_mr_wr_subkgen(&self) -> bool {
-        *self == URAT_A::MR_WR_SUBKGEN
+        **self == URAT_A::MR_WR_SUBKGEN
     }
     #[doc = "Checks if the value of the field is `WOR_RD_ACCESS`"]
     #[inline(always)]
     pub fn is_wor_rd_access(&self) -> bool {
-        *self == URAT_A::WOR_RD_ACCESS
+        **self == URAT_A::WOR_RD_ACCESS
+    }
+}
+impl core::ops::Deref for URAT_R {
+    type Target = crate::FieldReader<u8, URAT_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 impl R {
@@ -90,5 +136,21 @@ impl R {
     #[inline(always)]
     pub fn urat(&self) -> URAT_R {
         URAT_R::new(((self.bits >> 12) & 0x0f) as u8)
+    }
+}
+#[doc = "Interrupt Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [isr](index.html) module"]
+pub struct ISR_SPEC;
+impl crate::RegisterSpec for ISR_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [isr::R](R) reader structure"]
+impl crate::Readable for ISR_SPEC {
+    type Reader = R;
+}
+#[doc = "`reset()` method sets ISR to value 0"]
+impl crate::Resettable for ISR_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

@@ -1,5 +1,18 @@
-#[doc = "Reader of register PARAMETER"]
-pub type R = crate::R<u32, super::PARAMETER>;
+#[doc = "Register `PARAMETER` reader"]
+pub struct R(crate::R<PARAMETER_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<PARAMETER_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<PARAMETER_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<PARAMETER_SPEC>) -> Self {
+        R(reader)
+    }
+}
 #[doc = "Digital Tuner\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DT_A {
@@ -14,9 +27,12 @@ impl From<DT_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `DT`"]
-pub type DT_R = crate::R<bool, DT_A>;
+#[doc = "Field `DT` reader - Digital Tuner"]
+pub struct DT_R(crate::FieldReader<bool, DT_A>);
 impl DT_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        DT_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> DT_A {
@@ -28,12 +44,19 @@ impl DT_R {
     #[doc = "Checks if the value of the field is `OFF`"]
     #[inline(always)]
     pub fn is_off(&self) -> bool {
-        *self == DT_A::OFF
+        **self == DT_A::OFF
     }
     #[doc = "Checks if the value of the field is `ON`"]
     #[inline(always)]
     pub fn is_on(&self) -> bool {
-        *self == DT_A::ON
+        **self == DT_A::ON
+    }
+}
+impl core::ops::Deref for DT_R {
+    type Target = crate::FieldReader<bool, DT_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "Digital Tuner Exponent Writeable\n\nValue on reset: 0"]
@@ -50,9 +73,12 @@ impl From<DTEXPWA_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `DTEXPWA`"]
-pub type DTEXPWA_R = crate::R<bool, DTEXPWA_A>;
+#[doc = "Field `DTEXPWA` reader - Digital Tuner Exponent Writeable"]
+pub struct DTEXPWA_R(crate::FieldReader<bool, DTEXPWA_A>);
 impl DTEXPWA_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        DTEXPWA_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> DTEXPWA_A {
@@ -64,16 +90,35 @@ impl DTEXPWA_R {
     #[doc = "Checks if the value of the field is `_0`"]
     #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == DTEXPWA_A::_0
+        **self == DTEXPWA_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
     #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == DTEXPWA_A::_1
+        **self == DTEXPWA_A::_1
     }
 }
-#[doc = "Reader of field `DTEXPVALUE`"]
-pub type DTEXPVALUE_R = crate::R<u8, u8>;
+impl core::ops::Deref for DTEXPWA_R {
+    type Target = crate::FieldReader<bool, DTEXPWA_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `DTEXPVALUE` reader - Digital Tuner Exponent Value"]
+pub struct DTEXPVALUE_R(crate::FieldReader<u8, u8>);
+impl DTEXPVALUE_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        DTEXPVALUE_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for DTEXPVALUE_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
 #[doc = "Number of alarm comparators\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -91,34 +136,43 @@ impl From<NUMAR_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `NUMAR`"]
-pub type NUMAR_R = crate::R<u8, NUMAR_A>;
+#[doc = "Field `NUMAR` reader - Number of alarm comparators"]
+pub struct NUMAR_R(crate::FieldReader<u8, NUMAR_A>);
 impl NUMAR_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        NUMAR_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u8, NUMAR_A> {
-        use crate::Variant::*;
+    pub fn variant(&self) -> Option<NUMAR_A> {
         match self.bits {
-            0 => Val(NUMAR_A::ZERO),
-            1 => Val(NUMAR_A::ONE),
-            2 => Val(NUMAR_A::TWO),
-            i => Res(i),
+            0 => Some(NUMAR_A::ZERO),
+            1 => Some(NUMAR_A::ONE),
+            2 => Some(NUMAR_A::TWO),
+            _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `ZERO`"]
     #[inline(always)]
     pub fn is_zero(&self) -> bool {
-        *self == NUMAR_A::ZERO
+        **self == NUMAR_A::ZERO
     }
     #[doc = "Checks if the value of the field is `ONE`"]
     #[inline(always)]
     pub fn is_one(&self) -> bool {
-        *self == NUMAR_A::ONE
+        **self == NUMAR_A::ONE
     }
     #[doc = "Checks if the value of the field is `TWO`"]
     #[inline(always)]
     pub fn is_two(&self) -> bool {
-        *self == NUMAR_A::TWO
+        **self == NUMAR_A::TWO
+    }
+}
+impl core::ops::Deref for NUMAR_R {
+    type Target = crate::FieldReader<u8, NUMAR_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "Number of periodic comparators\n\nValue on reset: 0"]
@@ -135,9 +189,12 @@ impl From<NUMPIR_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `NUMPIR`"]
-pub type NUMPIR_R = crate::R<bool, NUMPIR_A>;
+#[doc = "Field `NUMPIR` reader - Number of periodic comparators"]
+pub struct NUMPIR_R(crate::FieldReader<bool, NUMPIR_A>);
 impl NUMPIR_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        NUMPIR_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> NUMPIR_A {
@@ -149,12 +206,19 @@ impl NUMPIR_R {
     #[doc = "Checks if the value of the field is `ONE`"]
     #[inline(always)]
     pub fn is_one(&self) -> bool {
-        *self == NUMPIR_A::ONE
+        **self == NUMPIR_A::ONE
     }
     #[doc = "Checks if the value of the field is `TWO`"]
     #[inline(always)]
     pub fn is_two(&self) -> bool {
-        *self == NUMPIR_A::TWO
+        **self == NUMPIR_A::TWO
+    }
+}
+impl core::ops::Deref for NUMPIR_R {
+    type Target = crate::FieldReader<bool, NUMPIR_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "Periodic Interval 0 Writeable\n\nValue on reset: 0"]
@@ -171,9 +235,12 @@ impl From<PIR0WA_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `PIR0WA`"]
-pub type PIR0WA_R = crate::R<bool, PIR0WA_A>;
+#[doc = "Field `PIR0WA` reader - Periodic Interval 0 Writeable"]
+pub struct PIR0WA_R(crate::FieldReader<bool, PIR0WA_A>);
 impl PIR0WA_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PIR0WA_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PIR0WA_A {
@@ -185,12 +252,19 @@ impl PIR0WA_R {
     #[doc = "Checks if the value of the field is `_0`"]
     #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == PIR0WA_A::_0
+        **self == PIR0WA_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
     #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == PIR0WA_A::_1
+        **self == PIR0WA_A::_1
+    }
+}
+impl core::ops::Deref for PIR0WA_R {
+    type Target = crate::FieldReader<bool, PIR0WA_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "Periodic Interval 1 Writeable\n\nValue on reset: 0"]
@@ -207,9 +281,12 @@ impl From<PIR1WA_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `PIR1WA`"]
-pub type PIR1WA_R = crate::R<bool, PIR1WA_A>;
+#[doc = "Field `PIR1WA` reader - Periodic Interval 1 Writeable"]
+pub struct PIR1WA_R(crate::FieldReader<bool, PIR1WA_A>);
 impl PIR1WA_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PIR1WA_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PIR1WA_A {
@@ -221,18 +298,49 @@ impl PIR1WA_R {
     #[doc = "Checks if the value of the field is `_0`"]
     #[inline(always)]
     pub fn is_0(&self) -> bool {
-        *self == PIR1WA_A::_0
+        **self == PIR1WA_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
     #[inline(always)]
     pub fn is_1(&self) -> bool {
-        *self == PIR1WA_A::_1
+        **self == PIR1WA_A::_1
     }
 }
-#[doc = "Reader of field `PER0VALUE`"]
-pub type PER0VALUE_R = crate::R<u8, u8>;
-#[doc = "Reader of field `PER1VALUE`"]
-pub type PER1VALUE_R = crate::R<u8, u8>;
+impl core::ops::Deref for PIR1WA_R {
+    type Target = crate::FieldReader<bool, PIR1WA_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PER0VALUE` reader - Periodic Interval 0 Value"]
+pub struct PER0VALUE_R(crate::FieldReader<u8, u8>);
+impl PER0VALUE_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        PER0VALUE_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for PER0VALUE_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PER1VALUE` reader - Periodic Interval 1 Value"]
+pub struct PER1VALUE_R(crate::FieldReader<u8, u8>);
+impl PER1VALUE_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        PER1VALUE_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for PER1VALUE_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
 impl R {
     #[doc = "Bit 0 - Digital Tuner"]
     #[inline(always)]
@@ -278,5 +386,21 @@ impl R {
     #[inline(always)]
     pub fn per1value(&self) -> PER1VALUE_R {
         PER1VALUE_R::new(((self.bits >> 24) & 0x1f) as u8)
+    }
+}
+#[doc = "Parameter Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [parameter](index.html) module"]
+pub struct PARAMETER_SPEC;
+impl crate::RegisterSpec for PARAMETER_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [parameter::R](R) reader structure"]
+impl crate::Readable for PARAMETER_SPEC {
+    type Reader = R;
+}
+#[doc = "`reset()` method sets PARAMETER to value 0"]
+impl crate::Resettable for PARAMETER_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }
