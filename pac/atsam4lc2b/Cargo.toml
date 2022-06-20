@@ -6,17 +6,17 @@ keywords = ["arm", "cortex-m", "atsam4lc2b", "svd2rust"]
 license = "MIT OR Apache-2.0"
 name = "atsam4lc2b-pac"
 repository = "https://github.com/atsam-rs/atsam-pac"
-version = "0.2.0"
-edition = "2018"
+version = "0.2.1"
+edition = "2021"
 
 [dependencies]
 bare-metal = "1.0.0"
-cortex-m = "0.7.3"
+cortex-m = "0.7.5"
 vcell = "0.1.3"
 
 [dependencies.cortex-m-rt]
 optional = true
-version = "0.7.0"
+version = "0.7.1"
 
 [features]
 rt = ["cortex-m-rt/device"]

@@ -80,12 +80,12 @@ version = "0.1.0"
 
 [dependencies]
 bare-metal = "1.0.0"
-cortex-m = "0.7.3"
+cortex-m = "0.7.5"
 vcell = "0.1.3"
 
 [dependencies.cortex-m-rt]
 optional = true
-version = "0.7.0"
+version = "0.7.1"
 
 [features]
 rt = ["cortex-m-rt/device"]
