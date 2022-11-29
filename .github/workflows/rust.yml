@@ -6,74 +6,81 @@ jobs:
   check:
     name: Check
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v1
-      - uses: actions-rs/toolchain@v1
+      - uses: actions/checkout@v3
         with:
-          target: ${{ matrix.target }}
-          toolchain: stable
-          override: true
-      - uses: actions-rs/cargo@v1
-        with:
-          command: check
-      - uses: actions-rs/cargo@v1
-        with:
-          command: check
-          args: --features rt
+          submodules: true
+      - uses: dtolnay/rust-toolchain@stable
+      - name: Cargo Check
+        run: cargo check --all
 
   build:
     name: Build
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
-      - uses: actions-rs/toolchain@v1
+      - uses: actions/checkout@v3
         with:
-          toolchain: stable
-          override: true
-      - uses: actions-rs/cargo@v1
-        with:
-          command: build
+          submodules: true
+      - uses: dtolnay/rust-toolchain@stable
+      - name: Cargo Build
+        run: cargo build --all
 
   fmt:
     name: Rustfmt
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
-      - uses: actions-rs/toolchain@v1
+      - uses: actions/checkout@v3
         with:
-          toolchain: stable
-          override: true
-      - run: rustup component add rustfmt
-      - uses: actions-rs/cargo@v1
+          submodules: true
+      - uses: dtolnay/rust-toolchain@stable
         with:
-          command: fmt
-          args: -- --check
-
-  doc:
-    name: Doc Check
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v1
-      - uses: actions-rs/toolchain@v1
-        with:
-          toolchain: stable
-          override: true
-      - uses: actions-rs/cargo@v1
-        with:
-          command: doc
+          components: rustfmt
+      - name: Rustfmt Check
+        uses: actions-rust-lang/rustfmt@v1
 
 # Generated code currently has clippy issues
 #  clippy:
 #    name: Clippy
 #    runs-on: ubuntu-latest
 #    steps:
-#      - uses: actions/checkout@v1
-#      - uses: actions-rs/toolchain@v1
+#      - uses: actions/checkout@v3
 #        with:
-#          toolchain: stable
-#          override: true
-#      - run: rustup component add clippy
-#      - uses: actions-rs/cargo@v1
+#          submodules: true
+#      - uses: dtolnay/rust-toolchain@stable
 #        with:
-#          command: clippy
-#          args: -- -D warnings
+#          components: clippy
+#      - name: Cargo Clippy
+#        run: cargo clippy --all-targets -- -D warnings
+
+  doc:
+    name: Doc Check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          submodules: true
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          components: rust-docs
+      - name: Cargo Doc
+        env:
+          RUSTDOCFLAGS: -Dwarnings
+        run: cargo doc --all
+
+  udeps:
+    name: cargo-udeps
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          submodules: true
+      - uses: dtolnay/rust-toolchain@nightly
+      - name: cargo-binstall
+        run: |
+          mkdir -p ~/.cargo/bin
+          wget https://github.com/cargo-bins/cargo-binstall/releases/latest/download/cargo-binstall-x86_64-unknown-linux-musl.tgz
+          tar xf cargo-binstall*.tgz -C ~/.cargo/bin
+      - run: cargo binstall --no-confirm cargo-udeps
+      - name: Cargo Udeps
+        run: cargo udeps --all-targets
