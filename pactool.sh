@@ -118,20 +118,10 @@ EOF
 }
 
 function publish {
-    echo "Looking for unpublished crates..."
-    for p in pac/*; do
-        pushd "${p}" > /dev/null
-        crate_name=$(grep name Cargo.toml | head -1 | perl -n -e'/(\S*)\s*=\s*(\S+)\s*/ && print $2')
-        crate_version=$(grep version Cargo.toml | head -1 | perl -n -e'/(\S*)\s*=\s*(\S+)\s*/ && print $2')
-        published_version=$(cargo search "${crate_name}" | perl -n -e'/(\S*)\s*=\s*(\S+)\s*/ && print $2')
-        if [ "${crate_version}" == "${published_version}" ]; then
-            echo "Crate ${crate_name} already published at version ${crate_version}."
-        else
-            echo Publishing "${crate_name}" "${crate_version}"...
-            cargo publish
-        fi
-        popd > /dev/null
-    done
+    echo "Getting list of crates to pass to cargo smart-release..."
+    echo "Add --execute to actually publish the crates."
+    crates=($(ls pac | awk '{print $0"-pac"}'))
+    cargo smart-release -u ${crates[@]} $@
 }
 
 #
