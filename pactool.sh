@@ -79,7 +79,6 @@ repository = "https://github.com/atsam-rs/atsam-pac"
 version = "0.1.0"
 
 [dependencies]
-bare-metal = "1.0.0"
 cortex-m = "0.7.6"
 vcell = "0.1.3"
 

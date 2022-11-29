@@ -10,7 +10,6 @@ version = "0.2.1"
 edition = "2021"
 
 [dependencies]
-bare-metal = "1.0.0"
 cortex-m = "0.7.6"
 vcell = "0.1.3"
 
