@@ -35,113 +35,27 @@ impl From<crate::W<RC1MCR_SPEC>> for W {
     }
 }
 #[doc = "Field `CLKOE` reader - 1MHz RC Osc Clock Output Enable"]
-pub struct CLKOE_R(crate::FieldReader<bool, bool>);
-impl CLKOE_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        CLKOE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CLKOE_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CLKOE_R = crate::BitReader<bool>;
 #[doc = "Field `CLKOE` writer - 1MHz RC Osc Clock Output Enable"]
-pub struct CLKOE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CLKOE_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type CLKOE_W<'a, const O: u8> = crate::BitWriter<'a, u32, RC1MCR_SPEC, bool, O>;
 #[doc = "Field `FCD` reader - Flash Calibration Done"]
-pub struct FCD_R(crate::FieldReader<bool, bool>);
-impl FCD_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        FCD_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for FCD_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type FCD_R = crate::BitReader<bool>;
 #[doc = "Field `FCD` writer - Flash Calibration Done"]
-pub struct FCD_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> FCD_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | ((value as u32 & 0x01) << 7);
-        self.w
-    }
-}
+pub type FCD_W<'a, const O: u8> = crate::BitWriter<'a, u32, RC1MCR_SPEC, bool, O>;
 #[doc = "Field `CLKCAL` reader - 1MHz RC Osc Calibration"]
-pub struct CLKCAL_R(crate::FieldReader<u8, u8>);
-impl CLKCAL_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        CLKCAL_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CLKCAL_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CLKCAL_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `CLKCAL` writer - 1MHz RC Osc Calibration"]
-pub struct CLKCAL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CLKCAL_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x1f << 8)) | ((value as u32 & 0x1f) << 8);
-        self.w
-    }
-}
+pub type CLKCAL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, RC1MCR_SPEC, u8, u8, 5, O>;
 impl R {
     #[doc = "Bit 0 - 1MHz RC Osc Clock Output Enable"]
     #[inline(always)]
     pub fn clkoe(&self) -> CLKOE_R {
-        CLKOE_R::new((self.bits & 0x01) != 0)
+        CLKOE_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 7 - Flash Calibration Done"]
     #[inline(always)]
     pub fn fcd(&self) -> FCD_R {
-        FCD_R::new(((self.bits >> 7) & 0x01) != 0)
+        FCD_R::new(((self.bits >> 7) & 1) != 0)
     }
     #[doc = "Bits 8:12 - 1MHz RC Osc Calibration"]
     #[inline(always)]
@@ -152,18 +66,21 @@ impl R {
 impl W {
     #[doc = "Bit 0 - 1MHz RC Osc Clock Output Enable"]
     #[inline(always)]
-    pub fn clkoe(&mut self) -> CLKOE_W {
-        CLKOE_W { w: self }
+    #[must_use]
+    pub fn clkoe(&mut self) -> CLKOE_W<0> {
+        CLKOE_W::new(self)
     }
     #[doc = "Bit 7 - Flash Calibration Done"]
     #[inline(always)]
-    pub fn fcd(&mut self) -> FCD_W {
-        FCD_W { w: self }
+    #[must_use]
+    pub fn fcd(&mut self) -> FCD_W<7> {
+        FCD_W::new(self)
     }
     #[doc = "Bits 8:12 - 1MHz RC Osc Calibration"]
     #[inline(always)]
-    pub fn clkcal(&mut self) -> CLKCAL_W {
-        CLKCAL_W { w: self }
+    #[must_use]
+    pub fn clkcal(&mut self) -> CLKCAL_W<8> {
+        CLKCAL_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -184,11 +101,10 @@ impl crate::Readable for RC1MCR_SPEC {
 #[doc = "`write(|w| ..)` method takes [rc1mcr::W](W) writer structure"]
 impl crate::Writable for RC1MCR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets RC1MCR to value 0x0f00"]
 impl crate::Resettable for RC1MCR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x0f00
-    }
+    const RESET_VALUE: Self::Ux = 0x0f00;
 }

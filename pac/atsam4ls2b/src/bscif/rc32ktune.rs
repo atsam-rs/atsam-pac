@@ -35,57 +35,13 @@ impl From<crate::W<RC32KTUNE_SPEC>> for W {
     }
 }
 #[doc = "Field `FINE` reader - Fine value"]
-pub struct FINE_R(crate::FieldReader<u8, u8>);
-impl FINE_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        FINE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for FINE_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type FINE_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `FINE` writer - Fine value"]
-pub struct FINE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> FINE_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x3f) | (value as u32 & 0x3f);
-        self.w
-    }
-}
+pub type FINE_W<'a, const O: u8> = crate::FieldWriter<'a, u32, RC32KTUNE_SPEC, u8, u8, 6, O>;
 #[doc = "Field `COARSE` reader - Coarse Value"]
-pub struct COARSE_R(crate::FieldReader<u8, u8>);
-impl COARSE_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        COARSE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for COARSE_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type COARSE_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `COARSE` writer - Coarse Value"]
-pub struct COARSE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> COARSE_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x7f << 16)) | ((value as u32 & 0x7f) << 16);
-        self.w
-    }
-}
+pub type COARSE_W<'a, const O: u8> = crate::FieldWriter<'a, u32, RC32KTUNE_SPEC, u8, u8, 7, O>;
 impl R {
     #[doc = "Bits 0:5 - Fine value"]
     #[inline(always)]
@@ -101,13 +57,15 @@ impl R {
 impl W {
     #[doc = "Bits 0:5 - Fine value"]
     #[inline(always)]
-    pub fn fine(&mut self) -> FINE_W {
-        FINE_W { w: self }
+    #[must_use]
+    pub fn fine(&mut self) -> FINE_W<0> {
+        FINE_W::new(self)
     }
     #[doc = "Bits 16:22 - Coarse Value"]
     #[inline(always)]
-    pub fn coarse(&mut self) -> COARSE_W {
-        COARSE_W { w: self }
+    #[must_use]
+    pub fn coarse(&mut self) -> COARSE_W<16> {
+        COARSE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -128,11 +86,10 @@ impl crate::Readable for RC32KTUNE_SPEC {
 #[doc = "`write(|w| ..)` method takes [rc32ktune::W](W) writer structure"]
 impl crate::Writable for RC32KTUNE_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets RC32KTUNE to value 0"]
 impl crate::Resettable for RC32KTUNE_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

@@ -13,210 +13,170 @@ impl From<crate::R<IMR_SPEC>> for R {
         R(reader)
     }
 }
+#[doc = "Field `RXRDY` reader - Receive Ready Interrupt Mask"]
+pub type RXRDY_R = crate::BitReader<RXRDYSELECT_A>;
 #[doc = "Receive Ready Interrupt Mask\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum RXRDY_A {
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum RXRDYSELECT_A {
     #[doc = "0: The corresponding interrupt is disabled"]
     DISABLED = 0,
     #[doc = "1: The corresponding interrupt is enabled"]
     ENABLED = 1,
 }
-impl From<RXRDY_A> for bool {
+impl From<RXRDYSELECT_A> for bool {
     #[inline(always)]
-    fn from(variant: RXRDY_A) -> Self {
+    fn from(variant: RXRDYSELECT_A) -> Self {
         variant as u8 != 0
     }
 }
-#[doc = "Field `RXRDY` reader - Receive Ready Interrupt Mask"]
-pub struct RXRDY_R(crate::FieldReader<bool, RXRDY_A>);
 impl RXRDY_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        RXRDY_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> RXRDY_A {
+    pub fn variant(&self) -> RXRDYSELECT_A {
         match self.bits {
-            false => RXRDY_A::DISABLED,
-            true => RXRDY_A::ENABLED,
+            false => RXRDYSELECT_A::DISABLED,
+            true => RXRDYSELECT_A::ENABLED,
         }
     }
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == RXRDY_A::DISABLED
+        *self == RXRDYSELECT_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == RXRDY_A::ENABLED
-    }
-}
-impl core::ops::Deref for RXRDY_R {
-    type Target = crate::FieldReader<bool, RXRDY_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-#[doc = "Receive Overrun Interrupt Mask\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum RXOR_A {
-    #[doc = "0: The corresponding interrupt is disabled"]
-    DISABLED = 0,
-    #[doc = "1: The corresponding interrupt is enabled"]
-    ENABLED = 1,
-}
-impl From<RXOR_A> for bool {
-    #[inline(always)]
-    fn from(variant: RXOR_A) -> Self {
-        variant as u8 != 0
+        *self == RXRDYSELECT_A::ENABLED
     }
 }
 #[doc = "Field `RXOR` reader - Receive Overrun Interrupt Mask"]
-pub struct RXOR_R(crate::FieldReader<bool, RXOR_A>);
-impl RXOR_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        RXOR_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> RXOR_A {
-        match self.bits {
-            false => RXOR_A::DISABLED,
-            true => RXOR_A::ENABLED,
-        }
-    }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
-    #[inline(always)]
-    pub fn is_disabled(&self) -> bool {
-        **self == RXOR_A::DISABLED
-    }
-    #[doc = "Checks if the value of the field is `ENABLED`"]
-    #[inline(always)]
-    pub fn is_enabled(&self) -> bool {
-        **self == RXOR_A::ENABLED
-    }
-}
-impl core::ops::Deref for RXOR_R {
-    type Target = crate::FieldReader<bool, RXOR_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-#[doc = "Transmit Ready Interrupt Mask\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum TXRDY_A {
+pub type RXOR_R = crate::BitReader<RXORSELECT_A>;
+#[doc = "Receive Overrun Interrupt Mask\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum RXORSELECT_A {
     #[doc = "0: The corresponding interrupt is disabled"]
     DISABLED = 0,
     #[doc = "1: The corresponding interrupt is enabled"]
     ENABLED = 1,
 }
-impl From<TXRDY_A> for bool {
+impl From<RXORSELECT_A> for bool {
     #[inline(always)]
-    fn from(variant: TXRDY_A) -> Self {
+    fn from(variant: RXORSELECT_A) -> Self {
         variant as u8 != 0
+    }
+}
+impl RXOR_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> RXORSELECT_A {
+        match self.bits {
+            false => RXORSELECT_A::DISABLED,
+            true => RXORSELECT_A::ENABLED,
+        }
+    }
+    #[doc = "Checks if the value of the field is `DISABLED`"]
+    #[inline(always)]
+    pub fn is_disabled(&self) -> bool {
+        *self == RXORSELECT_A::DISABLED
+    }
+    #[doc = "Checks if the value of the field is `ENABLED`"]
+    #[inline(always)]
+    pub fn is_enabled(&self) -> bool {
+        *self == RXORSELECT_A::ENABLED
     }
 }
 #[doc = "Field `TXRDY` reader - Transmit Ready Interrupt Mask"]
-pub struct TXRDY_R(crate::FieldReader<bool, TXRDY_A>);
-impl TXRDY_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        TXRDY_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> TXRDY_A {
-        match self.bits {
-            false => TXRDY_A::DISABLED,
-            true => TXRDY_A::ENABLED,
-        }
-    }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
-    #[inline(always)]
-    pub fn is_disabled(&self) -> bool {
-        **self == TXRDY_A::DISABLED
-    }
-    #[doc = "Checks if the value of the field is `ENABLED`"]
-    #[inline(always)]
-    pub fn is_enabled(&self) -> bool {
-        **self == TXRDY_A::ENABLED
-    }
-}
-impl core::ops::Deref for TXRDY_R {
-    type Target = crate::FieldReader<bool, TXRDY_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-#[doc = "Transmit Underrun Interrupt Mask\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum TXUR_A {
+pub type TXRDY_R = crate::BitReader<TXRDYSELECT_A>;
+#[doc = "Transmit Ready Interrupt Mask\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum TXRDYSELECT_A {
     #[doc = "0: The corresponding interrupt is disabled"]
     DISABLED = 0,
     #[doc = "1: The corresponding interrupt is enabled"]
     ENABLED = 1,
 }
-impl From<TXUR_A> for bool {
+impl From<TXRDYSELECT_A> for bool {
     #[inline(always)]
-    fn from(variant: TXUR_A) -> Self {
+    fn from(variant: TXRDYSELECT_A) -> Self {
         variant as u8 != 0
     }
 }
-#[doc = "Field `TXUR` reader - Transmit Underrun Interrupt Mask"]
-pub struct TXUR_R(crate::FieldReader<bool, TXUR_A>);
-impl TXUR_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        TXUR_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+impl TXRDY_R {
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> TXUR_A {
+    pub fn variant(&self) -> TXRDYSELECT_A {
         match self.bits {
-            false => TXUR_A::DISABLED,
-            true => TXUR_A::ENABLED,
+            false => TXRDYSELECT_A::DISABLED,
+            true => TXRDYSELECT_A::ENABLED,
         }
     }
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == TXUR_A::DISABLED
+        *self == TXRDYSELECT_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == TXUR_A::ENABLED
+        *self == TXRDYSELECT_A::ENABLED
     }
 }
-impl core::ops::Deref for TXUR_R {
-    type Target = crate::FieldReader<bool, TXUR_A>;
+#[doc = "Field `TXUR` reader - Transmit Underrun Interrupt Mask"]
+pub type TXUR_R = crate::BitReader<TXURSELECT_A>;
+#[doc = "Transmit Underrun Interrupt Mask\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum TXURSELECT_A {
+    #[doc = "0: The corresponding interrupt is disabled"]
+    DISABLED = 0,
+    #[doc = "1: The corresponding interrupt is enabled"]
+    ENABLED = 1,
+}
+impl From<TXURSELECT_A> for bool {
     #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+    fn from(variant: TXURSELECT_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl TXUR_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> TXURSELECT_A {
+        match self.bits {
+            false => TXURSELECT_A::DISABLED,
+            true => TXURSELECT_A::ENABLED,
+        }
+    }
+    #[doc = "Checks if the value of the field is `DISABLED`"]
+    #[inline(always)]
+    pub fn is_disabled(&self) -> bool {
+        *self == TXURSELECT_A::DISABLED
+    }
+    #[doc = "Checks if the value of the field is `ENABLED`"]
+    #[inline(always)]
+    pub fn is_enabled(&self) -> bool {
+        *self == TXURSELECT_A::ENABLED
     }
 }
 impl R {
     #[doc = "Bit 1 - Receive Ready Interrupt Mask"]
     #[inline(always)]
     pub fn rxrdy(&self) -> RXRDY_R {
-        RXRDY_R::new(((self.bits >> 1) & 0x01) != 0)
+        RXRDY_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - Receive Overrun Interrupt Mask"]
     #[inline(always)]
     pub fn rxor(&self) -> RXOR_R {
-        RXOR_R::new(((self.bits >> 2) & 0x01) != 0)
+        RXOR_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 5 - Transmit Ready Interrupt Mask"]
     #[inline(always)]
     pub fn txrdy(&self) -> TXRDY_R {
-        TXRDY_R::new(((self.bits >> 5) & 0x01) != 0)
+        TXRDY_R::new(((self.bits >> 5) & 1) != 0)
     }
     #[doc = "Bit 6 - Transmit Underrun Interrupt Mask"]
     #[inline(always)]
     pub fn txur(&self) -> TXUR_R {
-        TXUR_R::new(((self.bits >> 6) & 0x01) != 0)
+        TXUR_R::new(((self.bits >> 6) & 1) != 0)
     }
 }
 #[doc = "Interrupt Mask Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [imr](index.html) module"]
@@ -230,8 +190,5 @@ impl crate::Readable for IMR_SPEC {
 }
 #[doc = "`reset()` method sets IMR to value 0"]
 impl crate::Resettable for IMR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

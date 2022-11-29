@@ -20,22 +20,14 @@ impl From<crate::W<OUTTCHCLR_SPEC>> for W {
     }
 }
 #[doc = "Field `OUTTCHCLR` writer - Out of Touch"]
-pub struct OUTTCHCLR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> OUTTCHCLR_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xffff_ffff) | (value as u32 & 0xffff_ffff);
-        self.w
-    }
-}
+pub type OUTTCHCLR_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, OUTTCHCLR_SPEC, u32, u32, 32, O>;
 impl W {
     #[doc = "Bits 0:31 - Out of Touch"]
     #[inline(always)]
-    pub fn outtchclr(&mut self) -> OUTTCHCLR_W {
-        OUTTCHCLR_W { w: self }
+    #[must_use]
+    pub fn outtchclr(&mut self) -> OUTTCHCLR_W<0> {
+        OUTTCHCLR_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -52,11 +44,10 @@ impl crate::RegisterSpec for OUTTCHCLR_SPEC {
 #[doc = "`write(|w| ..)` method takes [outtchclr::W](W) writer structure"]
 impl crate::Writable for OUTTCHCLR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets OUTTCHCLR%s to value 0"]
 impl crate::Resettable for OUTTCHCLR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

@@ -14,195 +14,75 @@ impl From<crate::R<PCLKSR_SPEC>> for R {
     }
 }
 #[doc = "Field `OSC0RDY` reader - OSC0 Ready"]
-pub struct OSC0RDY_R(crate::FieldReader<bool, bool>);
-impl OSC0RDY_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        OSC0RDY_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for OSC0RDY_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type OSC0RDY_R = crate::BitReader<bool>;
 #[doc = "Field `DFLL0LOCKC` reader - DFLL0 Locked on Coarse Value"]
-pub struct DFLL0LOCKC_R(crate::FieldReader<bool, bool>);
-impl DFLL0LOCKC_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        DFLL0LOCKC_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DFLL0LOCKC_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DFLL0LOCKC_R = crate::BitReader<bool>;
 #[doc = "Field `DFLL0LOCKF` reader - DFLL0 Locked on Fine Value"]
-pub struct DFLL0LOCKF_R(crate::FieldReader<bool, bool>);
-impl DFLL0LOCKF_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        DFLL0LOCKF_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DFLL0LOCKF_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DFLL0LOCKF_R = crate::BitReader<bool>;
 #[doc = "Field `DFLL0RDY` reader - DFLL0 Synchronization Ready"]
-pub struct DFLL0RDY_R(crate::FieldReader<bool, bool>);
-impl DFLL0RDY_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        DFLL0RDY_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DFLL0RDY_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DFLL0RDY_R = crate::BitReader<bool>;
 #[doc = "Field `DFLL0RCS` reader - DFLL0 Reference Clock Stopped"]
-pub struct DFLL0RCS_R(crate::FieldReader<bool, bool>);
-impl DFLL0RCS_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        DFLL0RCS_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DFLL0RCS_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DFLL0RCS_R = crate::BitReader<bool>;
 #[doc = "Field `DFLL0OOB` reader - DFLL0 Track Out Of Bounds"]
-pub struct DFLL0OOB_R(crate::FieldReader<bool, bool>);
-impl DFLL0OOB_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        DFLL0OOB_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DFLL0OOB_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DFLL0OOB_R = crate::BitReader<bool>;
 #[doc = "Field `PLL0LOCK` reader - PLL0 Locked on Accurate value"]
-pub struct PLL0LOCK_R(crate::FieldReader<bool, bool>);
-impl PLL0LOCK_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        PLL0LOCK_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for PLL0LOCK_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type PLL0LOCK_R = crate::BitReader<bool>;
 #[doc = "Field `PLL0LOCKLOST` reader - PLL0 lock lost value"]
-pub struct PLL0LOCKLOST_R(crate::FieldReader<bool, bool>);
-impl PLL0LOCKLOST_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        PLL0LOCKLOST_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for PLL0LOCKLOST_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type PLL0LOCKLOST_R = crate::BitReader<bool>;
 #[doc = "Field `RCFASTLOCK` reader - RCFAST Locked on Accurate value"]
-pub struct RCFASTLOCK_R(crate::FieldReader<bool, bool>);
-impl RCFASTLOCK_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        RCFASTLOCK_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for RCFASTLOCK_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type RCFASTLOCK_R = crate::BitReader<bool>;
 #[doc = "Field `RCFASTLOCKLOST` reader - RCFAST lock lost value"]
-pub struct RCFASTLOCKLOST_R(crate::FieldReader<bool, bool>);
-impl RCFASTLOCKLOST_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        RCFASTLOCKLOST_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for RCFASTLOCKLOST_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type RCFASTLOCKLOST_R = crate::BitReader<bool>;
 impl R {
     #[doc = "Bit 0 - OSC0 Ready"]
     #[inline(always)]
     pub fn osc0rdy(&self) -> OSC0RDY_R {
-        OSC0RDY_R::new((self.bits & 0x01) != 0)
+        OSC0RDY_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - DFLL0 Locked on Coarse Value"]
     #[inline(always)]
     pub fn dfll0lockc(&self) -> DFLL0LOCKC_R {
-        DFLL0LOCKC_R::new(((self.bits >> 1) & 0x01) != 0)
+        DFLL0LOCKC_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - DFLL0 Locked on Fine Value"]
     #[inline(always)]
     pub fn dfll0lockf(&self) -> DFLL0LOCKF_R {
-        DFLL0LOCKF_R::new(((self.bits >> 2) & 0x01) != 0)
+        DFLL0LOCKF_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - DFLL0 Synchronization Ready"]
     #[inline(always)]
     pub fn dfll0rdy(&self) -> DFLL0RDY_R {
-        DFLL0RDY_R::new(((self.bits >> 3) & 0x01) != 0)
+        DFLL0RDY_R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 4 - DFLL0 Reference Clock Stopped"]
     #[inline(always)]
     pub fn dfll0rcs(&self) -> DFLL0RCS_R {
-        DFLL0RCS_R::new(((self.bits >> 4) & 0x01) != 0)
+        DFLL0RCS_R::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bit 5 - DFLL0 Track Out Of Bounds"]
     #[inline(always)]
     pub fn dfll0oob(&self) -> DFLL0OOB_R {
-        DFLL0OOB_R::new(((self.bits >> 5) & 0x01) != 0)
+        DFLL0OOB_R::new(((self.bits >> 5) & 1) != 0)
     }
     #[doc = "Bit 6 - PLL0 Locked on Accurate value"]
     #[inline(always)]
     pub fn pll0lock(&self) -> PLL0LOCK_R {
-        PLL0LOCK_R::new(((self.bits >> 6) & 0x01) != 0)
+        PLL0LOCK_R::new(((self.bits >> 6) & 1) != 0)
     }
     #[doc = "Bit 7 - PLL0 lock lost value"]
     #[inline(always)]
     pub fn pll0locklost(&self) -> PLL0LOCKLOST_R {
-        PLL0LOCKLOST_R::new(((self.bits >> 7) & 0x01) != 0)
+        PLL0LOCKLOST_R::new(((self.bits >> 7) & 1) != 0)
     }
     #[doc = "Bit 13 - RCFAST Locked on Accurate value"]
     #[inline(always)]
     pub fn rcfastlock(&self) -> RCFASTLOCK_R {
-        RCFASTLOCK_R::new(((self.bits >> 13) & 0x01) != 0)
+        RCFASTLOCK_R::new(((self.bits >> 13) & 1) != 0)
     }
     #[doc = "Bit 14 - RCFAST lock lost value"]
     #[inline(always)]
     pub fn rcfastlocklost(&self) -> RCFASTLOCKLOST_R {
-        RCFASTLOCKLOST_R::new(((self.bits >> 14) & 0x01) != 0)
+        RCFASTLOCKLOST_R::new(((self.bits >> 14) & 1) != 0)
     }
 }
 #[doc = "Power and Clocks Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pclksr](index.html) module"]
@@ -216,8 +96,5 @@ impl crate::Readable for PCLKSR_SPEC {
 }
 #[doc = "`reset()` method sets PCLKSR to value 0"]
 impl crate::Resettable for PCLKSR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

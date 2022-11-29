@@ -20,410 +20,125 @@ impl From<crate::W<UHINTESET_SPEC>> for W {
     }
 }
 #[doc = "Field `DCONNIES` writer - DCONNIE Set"]
-pub struct DCONNIES_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DCONNIES_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type DCONNIES_W<'a, const O: u8> = crate::BitWriter<'a, u32, UHINTESET_SPEC, bool, O>;
 #[doc = "Field `DDISCIES` writer - DDISCIE Set"]
-pub struct DDISCIES_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DDISCIES_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
-}
+pub type DDISCIES_W<'a, const O: u8> = crate::BitWriter<'a, u32, UHINTESET_SPEC, bool, O>;
 #[doc = "Field `RSTIES` writer - RSTIE Set"]
-pub struct RSTIES_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RSTIES_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
-    }
-}
+pub type RSTIES_W<'a, const O: u8> = crate::BitWriter<'a, u32, UHINTESET_SPEC, bool, O>;
 #[doc = "Field `RSMEDIES` writer - RSMEDIE Set"]
-pub struct RSMEDIES_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RSMEDIES_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
-        self.w
-    }
-}
+pub type RSMEDIES_W<'a, const O: u8> = crate::BitWriter<'a, u32, UHINTESET_SPEC, bool, O>;
 #[doc = "Field `RXRSMIES` writer - RXRSMIE Set"]
-pub struct RXRSMIES_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RXRSMIES_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
-        self.w
-    }
-}
+pub type RXRSMIES_W<'a, const O: u8> = crate::BitWriter<'a, u32, UHINTESET_SPEC, bool, O>;
 #[doc = "Field `HSOFIES` writer - HSOFIE Set"]
-pub struct HSOFIES_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> HSOFIES_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
-        self.w
-    }
-}
+pub type HSOFIES_W<'a, const O: u8> = crate::BitWriter<'a, u32, UHINTESET_SPEC, bool, O>;
 #[doc = "Field `HWUPIES` writer - HWUPIE Set"]
-pub struct HWUPIES_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> HWUPIES_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | ((value as u32 & 0x01) << 6);
-        self.w
-    }
-}
+pub type HWUPIES_W<'a, const O: u8> = crate::BitWriter<'a, u32, UHINTESET_SPEC, bool, O>;
 #[doc = "Field `P0INTES` writer - P0INTE Set"]
-pub struct P0INTES_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> P0INTES_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
-        self.w
-    }
-}
+pub type P0INTES_W<'a, const O: u8> = crate::BitWriter<'a, u32, UHINTESET_SPEC, bool, O>;
 #[doc = "Field `P1INTES` writer - P1INTE Set"]
-pub struct P1INTES_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> P1INTES_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 9)) | ((value as u32 & 0x01) << 9);
-        self.w
-    }
-}
+pub type P1INTES_W<'a, const O: u8> = crate::BitWriter<'a, u32, UHINTESET_SPEC, bool, O>;
 #[doc = "Field `P2INTES` writer - P2INTE Set"]
-pub struct P2INTES_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> P2INTES_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 10)) | ((value as u32 & 0x01) << 10);
-        self.w
-    }
-}
+pub type P2INTES_W<'a, const O: u8> = crate::BitWriter<'a, u32, UHINTESET_SPEC, bool, O>;
 #[doc = "Field `P3INTES` writer - P3INTE Set"]
-pub struct P3INTES_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> P3INTES_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 11)) | ((value as u32 & 0x01) << 11);
-        self.w
-    }
-}
+pub type P3INTES_W<'a, const O: u8> = crate::BitWriter<'a, u32, UHINTESET_SPEC, bool, O>;
 #[doc = "Field `P4INTES` writer - P4INTE Set"]
-pub struct P4INTES_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> P4INTES_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 12)) | ((value as u32 & 0x01) << 12);
-        self.w
-    }
-}
+pub type P4INTES_W<'a, const O: u8> = crate::BitWriter<'a, u32, UHINTESET_SPEC, bool, O>;
 #[doc = "Field `P5INTES` writer - P5INTE Set"]
-pub struct P5INTES_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> P5INTES_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 13)) | ((value as u32 & 0x01) << 13);
-        self.w
-    }
-}
+pub type P5INTES_W<'a, const O: u8> = crate::BitWriter<'a, u32, UHINTESET_SPEC, bool, O>;
 #[doc = "Field `P6INTES` writer - P6INTE Set"]
-pub struct P6INTES_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> P6INTES_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 14)) | ((value as u32 & 0x01) << 14);
-        self.w
-    }
-}
+pub type P6INTES_W<'a, const O: u8> = crate::BitWriter<'a, u32, UHINTESET_SPEC, bool, O>;
 #[doc = "Field `P7INTES` writer - P7INTE Set"]
-pub struct P7INTES_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> P7INTES_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 15)) | ((value as u32 & 0x01) << 15);
-        self.w
-    }
-}
+pub type P7INTES_W<'a, const O: u8> = crate::BitWriter<'a, u32, UHINTESET_SPEC, bool, O>;
 impl W {
     #[doc = "Bit 0 - DCONNIE Set"]
     #[inline(always)]
-    pub fn dconnies(&mut self) -> DCONNIES_W {
-        DCONNIES_W { w: self }
+    #[must_use]
+    pub fn dconnies(&mut self) -> DCONNIES_W<0> {
+        DCONNIES_W::new(self)
     }
     #[doc = "Bit 1 - DDISCIE Set"]
     #[inline(always)]
-    pub fn ddiscies(&mut self) -> DDISCIES_W {
-        DDISCIES_W { w: self }
+    #[must_use]
+    pub fn ddiscies(&mut self) -> DDISCIES_W<1> {
+        DDISCIES_W::new(self)
     }
     #[doc = "Bit 2 - RSTIE Set"]
     #[inline(always)]
-    pub fn rsties(&mut self) -> RSTIES_W {
-        RSTIES_W { w: self }
+    #[must_use]
+    pub fn rsties(&mut self) -> RSTIES_W<2> {
+        RSTIES_W::new(self)
     }
     #[doc = "Bit 3 - RSMEDIE Set"]
     #[inline(always)]
-    pub fn rsmedies(&mut self) -> RSMEDIES_W {
-        RSMEDIES_W { w: self }
+    #[must_use]
+    pub fn rsmedies(&mut self) -> RSMEDIES_W<3> {
+        RSMEDIES_W::new(self)
     }
     #[doc = "Bit 4 - RXRSMIE Set"]
     #[inline(always)]
-    pub fn rxrsmies(&mut self) -> RXRSMIES_W {
-        RXRSMIES_W { w: self }
+    #[must_use]
+    pub fn rxrsmies(&mut self) -> RXRSMIES_W<4> {
+        RXRSMIES_W::new(self)
     }
     #[doc = "Bit 5 - HSOFIE Set"]
     #[inline(always)]
-    pub fn hsofies(&mut self) -> HSOFIES_W {
-        HSOFIES_W { w: self }
+    #[must_use]
+    pub fn hsofies(&mut self) -> HSOFIES_W<5> {
+        HSOFIES_W::new(self)
     }
     #[doc = "Bit 6 - HWUPIE Set"]
     #[inline(always)]
-    pub fn hwupies(&mut self) -> HWUPIES_W {
-        HWUPIES_W { w: self }
+    #[must_use]
+    pub fn hwupies(&mut self) -> HWUPIES_W<6> {
+        HWUPIES_W::new(self)
     }
     #[doc = "Bit 8 - P0INTE Set"]
     #[inline(always)]
-    pub fn p0intes(&mut self) -> P0INTES_W {
-        P0INTES_W { w: self }
+    #[must_use]
+    pub fn p0intes(&mut self) -> P0INTES_W<8> {
+        P0INTES_W::new(self)
     }
     #[doc = "Bit 9 - P1INTE Set"]
     #[inline(always)]
-    pub fn p1intes(&mut self) -> P1INTES_W {
-        P1INTES_W { w: self }
+    #[must_use]
+    pub fn p1intes(&mut self) -> P1INTES_W<9> {
+        P1INTES_W::new(self)
     }
     #[doc = "Bit 10 - P2INTE Set"]
     #[inline(always)]
-    pub fn p2intes(&mut self) -> P2INTES_W {
-        P2INTES_W { w: self }
+    #[must_use]
+    pub fn p2intes(&mut self) -> P2INTES_W<10> {
+        P2INTES_W::new(self)
     }
     #[doc = "Bit 11 - P3INTE Set"]
     #[inline(always)]
-    pub fn p3intes(&mut self) -> P3INTES_W {
-        P3INTES_W { w: self }
+    #[must_use]
+    pub fn p3intes(&mut self) -> P3INTES_W<11> {
+        P3INTES_W::new(self)
     }
     #[doc = "Bit 12 - P4INTE Set"]
     #[inline(always)]
-    pub fn p4intes(&mut self) -> P4INTES_W {
-        P4INTES_W { w: self }
+    #[must_use]
+    pub fn p4intes(&mut self) -> P4INTES_W<12> {
+        P4INTES_W::new(self)
     }
     #[doc = "Bit 13 - P5INTE Set"]
     #[inline(always)]
-    pub fn p5intes(&mut self) -> P5INTES_W {
-        P5INTES_W { w: self }
+    #[must_use]
+    pub fn p5intes(&mut self) -> P5INTES_W<13> {
+        P5INTES_W::new(self)
     }
     #[doc = "Bit 14 - P6INTE Set"]
     #[inline(always)]
-    pub fn p6intes(&mut self) -> P6INTES_W {
-        P6INTES_W { w: self }
+    #[must_use]
+    pub fn p6intes(&mut self) -> P6INTES_W<14> {
+        P6INTES_W::new(self)
     }
     #[doc = "Bit 15 - P7INTE Set"]
     #[inline(always)]
-    pub fn p7intes(&mut self) -> P7INTES_W {
-        P7INTES_W { w: self }
+    #[must_use]
+    pub fn p7intes(&mut self) -> P7INTES_W<15> {
+        P7INTES_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -440,11 +155,10 @@ impl crate::RegisterSpec for UHINTESET_SPEC {
 #[doc = "`write(|w| ..)` method takes [uhinteset::W](W) writer structure"]
 impl crate::Writable for UHINTESET_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets UHINTESET to value 0"]
 impl crate::Resettable for UHINTESET_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

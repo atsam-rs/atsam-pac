@@ -14,24 +14,12 @@ impl From<crate::R<BUSY_SPEC>> for R {
     }
 }
 #[doc = "Field `BUSY` reader - Channel Status"]
-pub struct BUSY_R(crate::FieldReader<u32, u32>);
-impl BUSY_R {
-    pub(crate) fn new(bits: u32) -> Self {
-        BUSY_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for BUSY_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type BUSY_R = crate::FieldReader<u32, u32>;
 impl R {
     #[doc = "Bits 0:31 - Channel Status"]
     #[inline(always)]
     pub fn busy(&self) -> BUSY_R {
-        BUSY_R::new((self.bits & 0xffff_ffff) as u32)
+        BUSY_R::new(self.bits)
     }
 }
 #[doc = "Channel / User Busy\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [busy](index.html) module"]
@@ -45,8 +33,5 @@ impl crate::Readable for BUSY_SPEC {
 }
 #[doc = "`reset()` method sets BUSY to value 0"]
 impl crate::Resettable for BUSY_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

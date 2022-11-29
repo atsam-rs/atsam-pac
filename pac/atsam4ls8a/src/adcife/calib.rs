@@ -35,129 +35,21 @@ impl From<crate::W<CALIB_SPEC>> for W {
     }
 }
 #[doc = "Field `CALIB` reader - Calibration Value"]
-pub struct CALIB_R(crate::FieldReader<u8, u8>);
-impl CALIB_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        CALIB_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CALIB_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CALIB_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `CALIB` writer - Calibration Value"]
-pub struct CALIB_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CALIB_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xff) | (value as u32 & 0xff);
-        self.w
-    }
-}
+pub type CALIB_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CALIB_SPEC, u8, u8, 8, O>;
 #[doc = "Field `BIASSEL` reader - Select bias mode"]
-pub struct BIASSEL_R(crate::FieldReader<bool, bool>);
-impl BIASSEL_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        BIASSEL_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for BIASSEL_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type BIASSEL_R = crate::BitReader<bool>;
 #[doc = "Field `BIASSEL` writer - Select bias mode"]
-pub struct BIASSEL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> BIASSEL_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
-        self.w
-    }
-}
+pub type BIASSEL_W<'a, const O: u8> = crate::BitWriter<'a, u32, CALIB_SPEC, bool, O>;
 #[doc = "Field `BIASCAL` reader - Bias Calibration"]
-pub struct BIASCAL_R(crate::FieldReader<u8, u8>);
-impl BIASCAL_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        BIASCAL_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for BIASCAL_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type BIASCAL_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `BIASCAL` writer - Bias Calibration"]
-pub struct BIASCAL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> BIASCAL_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 12)) | ((value as u32 & 0x0f) << 12);
-        self.w
-    }
-}
+pub type BIASCAL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CALIB_SPEC, u8, u8, 4, O>;
 #[doc = "Field `FCD` reader - Flash Calibration Done"]
-pub struct FCD_R(crate::FieldReader<bool, bool>);
-impl FCD_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        FCD_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for FCD_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type FCD_R = crate::BitReader<bool>;
 #[doc = "Field `FCD` writer - Flash Calibration Done"]
-pub struct FCD_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> FCD_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 16)) | ((value as u32 & 0x01) << 16);
-        self.w
-    }
-}
+pub type FCD_W<'a, const O: u8> = crate::BitWriter<'a, u32, CALIB_SPEC, bool, O>;
 impl R {
     #[doc = "Bits 0:7 - Calibration Value"]
     #[inline(always)]
@@ -167,7 +59,7 @@ impl R {
     #[doc = "Bit 8 - Select bias mode"]
     #[inline(always)]
     pub fn biassel(&self) -> BIASSEL_R {
-        BIASSEL_R::new(((self.bits >> 8) & 0x01) != 0)
+        BIASSEL_R::new(((self.bits >> 8) & 1) != 0)
     }
     #[doc = "Bits 12:15 - Bias Calibration"]
     #[inline(always)]
@@ -177,29 +69,33 @@ impl R {
     #[doc = "Bit 16 - Flash Calibration Done"]
     #[inline(always)]
     pub fn fcd(&self) -> FCD_R {
-        FCD_R::new(((self.bits >> 16) & 0x01) != 0)
+        FCD_R::new(((self.bits >> 16) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bits 0:7 - Calibration Value"]
     #[inline(always)]
-    pub fn calib(&mut self) -> CALIB_W {
-        CALIB_W { w: self }
+    #[must_use]
+    pub fn calib(&mut self) -> CALIB_W<0> {
+        CALIB_W::new(self)
     }
     #[doc = "Bit 8 - Select bias mode"]
     #[inline(always)]
-    pub fn biassel(&mut self) -> BIASSEL_W {
-        BIASSEL_W { w: self }
+    #[must_use]
+    pub fn biassel(&mut self) -> BIASSEL_W<8> {
+        BIASSEL_W::new(self)
     }
     #[doc = "Bits 12:15 - Bias Calibration"]
     #[inline(always)]
-    pub fn biascal(&mut self) -> BIASCAL_W {
-        BIASCAL_W { w: self }
+    #[must_use]
+    pub fn biascal(&mut self) -> BIASCAL_W<12> {
+        BIASCAL_W::new(self)
     }
     #[doc = "Bit 16 - Flash Calibration Done"]
     #[inline(always)]
-    pub fn fcd(&mut self) -> FCD_W {
-        FCD_W { w: self }
+    #[must_use]
+    pub fn fcd(&mut self) -> FCD_W<16> {
+        FCD_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -220,11 +116,10 @@ impl crate::Readable for CALIB_SPEC {
 #[doc = "`write(|w| ..)` method takes [calib::W](W) writer structure"]
 impl crate::Writable for CALIB_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets CALIB to value 0"]
 impl crate::Resettable for CALIB_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

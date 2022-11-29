@@ -34,10 +34,12 @@ impl From<crate::W<BMR_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `TC0XC0S` reader - External Clock Signal 0 Selection"]
+pub type TC0XC0S_R = crate::FieldReader<u8, TC0XC0SSELECT_A>;
 #[doc = "External Clock Signal 0 Selection\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum TC0XC0S_A {
+pub enum TC0XC0SSELECT_A {
     #[doc = "0: Select TCLK0 as clock signal 0."]
     TCLK0 = 0,
     #[doc = "1: Select no clock as clock signal 0."]
@@ -47,98 +49,76 @@ pub enum TC0XC0S_A {
     #[doc = "3: Select TIOA2 as clock signal 0."]
     TIOA2 = 3,
 }
-impl From<TC0XC0S_A> for u8 {
+impl From<TC0XC0SSELECT_A> for u8 {
     #[inline(always)]
-    fn from(variant: TC0XC0S_A) -> Self {
+    fn from(variant: TC0XC0SSELECT_A) -> Self {
         variant as _
     }
 }
-#[doc = "Field `TC0XC0S` reader - External Clock Signal 0 Selection"]
-pub struct TC0XC0S_R(crate::FieldReader<u8, TC0XC0S_A>);
 impl TC0XC0S_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        TC0XC0S_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> TC0XC0S_A {
+    pub fn variant(&self) -> TC0XC0SSELECT_A {
         match self.bits {
-            0 => TC0XC0S_A::TCLK0,
-            1 => TC0XC0S_A::NO_CLK,
-            2 => TC0XC0S_A::TIOA1,
-            3 => TC0XC0S_A::TIOA2,
+            0 => TC0XC0SSELECT_A::TCLK0,
+            1 => TC0XC0SSELECT_A::NO_CLK,
+            2 => TC0XC0SSELECT_A::TIOA1,
+            3 => TC0XC0SSELECT_A::TIOA2,
             _ => unreachable!(),
         }
     }
     #[doc = "Checks if the value of the field is `TCLK0`"]
     #[inline(always)]
     pub fn is_tclk0(&self) -> bool {
-        **self == TC0XC0S_A::TCLK0
+        *self == TC0XC0SSELECT_A::TCLK0
     }
     #[doc = "Checks if the value of the field is `NO_CLK`"]
     #[inline(always)]
     pub fn is_no_clk(&self) -> bool {
-        **self == TC0XC0S_A::NO_CLK
+        *self == TC0XC0SSELECT_A::NO_CLK
     }
     #[doc = "Checks if the value of the field is `TIOA1`"]
     #[inline(always)]
     pub fn is_tioa1(&self) -> bool {
-        **self == TC0XC0S_A::TIOA1
+        *self == TC0XC0SSELECT_A::TIOA1
     }
     #[doc = "Checks if the value of the field is `TIOA2`"]
     #[inline(always)]
     pub fn is_tioa2(&self) -> bool {
-        **self == TC0XC0S_A::TIOA2
-    }
-}
-impl core::ops::Deref for TC0XC0S_R {
-    type Target = crate::FieldReader<u8, TC0XC0S_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == TC0XC0SSELECT_A::TIOA2
     }
 }
 #[doc = "Field `TC0XC0S` writer - External Clock Signal 0 Selection"]
-pub struct TC0XC0S_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TC0XC0S_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: TC0XC0S_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
+pub type TC0XC0S_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, BMR_SPEC, u8, TC0XC0SSELECT_A, 2, O>;
+impl<'a, const O: u8> TC0XC0S_W<'a, O> {
     #[doc = "Select TCLK0 as clock signal 0."]
     #[inline(always)]
     pub fn tclk0(self) -> &'a mut W {
-        self.variant(TC0XC0S_A::TCLK0)
+        self.variant(TC0XC0SSELECT_A::TCLK0)
     }
     #[doc = "Select no clock as clock signal 0."]
     #[inline(always)]
     pub fn no_clk(self) -> &'a mut W {
-        self.variant(TC0XC0S_A::NO_CLK)
+        self.variant(TC0XC0SSELECT_A::NO_CLK)
     }
     #[doc = "Select TIOA1 as clock signal 0."]
     #[inline(always)]
     pub fn tioa1(self) -> &'a mut W {
-        self.variant(TC0XC0S_A::TIOA1)
+        self.variant(TC0XC0SSELECT_A::TIOA1)
     }
     #[doc = "Select TIOA2 as clock signal 0."]
     #[inline(always)]
     pub fn tioa2(self) -> &'a mut W {
-        self.variant(TC0XC0S_A::TIOA2)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x03) | (value as u32 & 0x03);
-        self.w
+        self.variant(TC0XC0SSELECT_A::TIOA2)
     }
 }
+#[doc = "Field `TC1XC1S` reader - External Clock Signal 1 Selection"]
+pub type TC1XC1S_R = crate::FieldReader<u8, TC1XC1SSELECT_A>;
 #[doc = "External Clock Signal 1 Selection\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum TC1XC1S_A {
+pub enum TC1XC1SSELECT_A {
     #[doc = "0: Select TCLK1 as clock signal 1."]
     TCLK1 = 0,
     #[doc = "1: Select no clock as clock signal 1."]
@@ -148,98 +128,76 @@ pub enum TC1XC1S_A {
     #[doc = "3: Select TIOA2 as clock signal 1."]
     TIOA2 = 3,
 }
-impl From<TC1XC1S_A> for u8 {
+impl From<TC1XC1SSELECT_A> for u8 {
     #[inline(always)]
-    fn from(variant: TC1XC1S_A) -> Self {
+    fn from(variant: TC1XC1SSELECT_A) -> Self {
         variant as _
     }
 }
-#[doc = "Field `TC1XC1S` reader - External Clock Signal 1 Selection"]
-pub struct TC1XC1S_R(crate::FieldReader<u8, TC1XC1S_A>);
 impl TC1XC1S_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        TC1XC1S_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> TC1XC1S_A {
+    pub fn variant(&self) -> TC1XC1SSELECT_A {
         match self.bits {
-            0 => TC1XC1S_A::TCLK1,
-            1 => TC1XC1S_A::NO_CLK,
-            2 => TC1XC1S_A::TIOA0,
-            3 => TC1XC1S_A::TIOA2,
+            0 => TC1XC1SSELECT_A::TCLK1,
+            1 => TC1XC1SSELECT_A::NO_CLK,
+            2 => TC1XC1SSELECT_A::TIOA0,
+            3 => TC1XC1SSELECT_A::TIOA2,
             _ => unreachable!(),
         }
     }
     #[doc = "Checks if the value of the field is `TCLK1`"]
     #[inline(always)]
     pub fn is_tclk1(&self) -> bool {
-        **self == TC1XC1S_A::TCLK1
+        *self == TC1XC1SSELECT_A::TCLK1
     }
     #[doc = "Checks if the value of the field is `NO_CLK`"]
     #[inline(always)]
     pub fn is_no_clk(&self) -> bool {
-        **self == TC1XC1S_A::NO_CLK
+        *self == TC1XC1SSELECT_A::NO_CLK
     }
     #[doc = "Checks if the value of the field is `TIOA0`"]
     #[inline(always)]
     pub fn is_tioa0(&self) -> bool {
-        **self == TC1XC1S_A::TIOA0
+        *self == TC1XC1SSELECT_A::TIOA0
     }
     #[doc = "Checks if the value of the field is `TIOA2`"]
     #[inline(always)]
     pub fn is_tioa2(&self) -> bool {
-        **self == TC1XC1S_A::TIOA2
-    }
-}
-impl core::ops::Deref for TC1XC1S_R {
-    type Target = crate::FieldReader<u8, TC1XC1S_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == TC1XC1SSELECT_A::TIOA2
     }
 }
 #[doc = "Field `TC1XC1S` writer - External Clock Signal 1 Selection"]
-pub struct TC1XC1S_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TC1XC1S_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: TC1XC1S_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
+pub type TC1XC1S_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, BMR_SPEC, u8, TC1XC1SSELECT_A, 2, O>;
+impl<'a, const O: u8> TC1XC1S_W<'a, O> {
     #[doc = "Select TCLK1 as clock signal 1."]
     #[inline(always)]
     pub fn tclk1(self) -> &'a mut W {
-        self.variant(TC1XC1S_A::TCLK1)
+        self.variant(TC1XC1SSELECT_A::TCLK1)
     }
     #[doc = "Select no clock as clock signal 1."]
     #[inline(always)]
     pub fn no_clk(self) -> &'a mut W {
-        self.variant(TC1XC1S_A::NO_CLK)
+        self.variant(TC1XC1SSELECT_A::NO_CLK)
     }
     #[doc = "Select TIOA0 as clock signal 1."]
     #[inline(always)]
     pub fn tioa0(self) -> &'a mut W {
-        self.variant(TC1XC1S_A::TIOA0)
+        self.variant(TC1XC1SSELECT_A::TIOA0)
     }
     #[doc = "Select TIOA2 as clock signal 1."]
     #[inline(always)]
     pub fn tioa2(self) -> &'a mut W {
-        self.variant(TC1XC1S_A::TIOA2)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 2)) | ((value as u32 & 0x03) << 2);
-        self.w
+        self.variant(TC1XC1SSELECT_A::TIOA2)
     }
 }
+#[doc = "Field `TC2XC2S` reader - External Clock Signal 2 Selection"]
+pub type TC2XC2S_R = crate::FieldReader<u8, TC2XC2SSELECT_A>;
 #[doc = "External Clock Signal 2 Selection\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum TC2XC2S_A {
+pub enum TC2XC2SSELECT_A {
     #[doc = "0: Select TCLK2 as clock signal 2."]
     TCLK2 = 0,
     #[doc = "1: Select no clock as clock signal 2."]
@@ -249,126 +207,105 @@ pub enum TC2XC2S_A {
     #[doc = "3: Select TIOA1 as clock signal 2."]
     TIOA1 = 3,
 }
-impl From<TC2XC2S_A> for u8 {
+impl From<TC2XC2SSELECT_A> for u8 {
     #[inline(always)]
-    fn from(variant: TC2XC2S_A) -> Self {
+    fn from(variant: TC2XC2SSELECT_A) -> Self {
         variant as _
     }
 }
-#[doc = "Field `TC2XC2S` reader - External Clock Signal 2 Selection"]
-pub struct TC2XC2S_R(crate::FieldReader<u8, TC2XC2S_A>);
 impl TC2XC2S_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        TC2XC2S_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> TC2XC2S_A {
+    pub fn variant(&self) -> TC2XC2SSELECT_A {
         match self.bits {
-            0 => TC2XC2S_A::TCLK2,
-            1 => TC2XC2S_A::NO_CLK,
-            2 => TC2XC2S_A::TIOA0,
-            3 => TC2XC2S_A::TIOA1,
+            0 => TC2XC2SSELECT_A::TCLK2,
+            1 => TC2XC2SSELECT_A::NO_CLK,
+            2 => TC2XC2SSELECT_A::TIOA0,
+            3 => TC2XC2SSELECT_A::TIOA1,
             _ => unreachable!(),
         }
     }
     #[doc = "Checks if the value of the field is `TCLK2`"]
     #[inline(always)]
     pub fn is_tclk2(&self) -> bool {
-        **self == TC2XC2S_A::TCLK2
+        *self == TC2XC2SSELECT_A::TCLK2
     }
     #[doc = "Checks if the value of the field is `NO_CLK`"]
     #[inline(always)]
     pub fn is_no_clk(&self) -> bool {
-        **self == TC2XC2S_A::NO_CLK
+        *self == TC2XC2SSELECT_A::NO_CLK
     }
     #[doc = "Checks if the value of the field is `TIOA0`"]
     #[inline(always)]
     pub fn is_tioa0(&self) -> bool {
-        **self == TC2XC2S_A::TIOA0
+        *self == TC2XC2SSELECT_A::TIOA0
     }
     #[doc = "Checks if the value of the field is `TIOA1`"]
     #[inline(always)]
     pub fn is_tioa1(&self) -> bool {
-        **self == TC2XC2S_A::TIOA1
-    }
-}
-impl core::ops::Deref for TC2XC2S_R {
-    type Target = crate::FieldReader<u8, TC2XC2S_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == TC2XC2SSELECT_A::TIOA1
     }
 }
 #[doc = "Field `TC2XC2S` writer - External Clock Signal 2 Selection"]
-pub struct TC2XC2S_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TC2XC2S_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: TC2XC2S_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
+pub type TC2XC2S_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, BMR_SPEC, u8, TC2XC2SSELECT_A, 2, O>;
+impl<'a, const O: u8> TC2XC2S_W<'a, O> {
     #[doc = "Select TCLK2 as clock signal 2."]
     #[inline(always)]
     pub fn tclk2(self) -> &'a mut W {
-        self.variant(TC2XC2S_A::TCLK2)
+        self.variant(TC2XC2SSELECT_A::TCLK2)
     }
     #[doc = "Select no clock as clock signal 2."]
     #[inline(always)]
     pub fn no_clk(self) -> &'a mut W {
-        self.variant(TC2XC2S_A::NO_CLK)
+        self.variant(TC2XC2SSELECT_A::NO_CLK)
     }
     #[doc = "Select TIOA0 as clock signal 2."]
     #[inline(always)]
     pub fn tioa0(self) -> &'a mut W {
-        self.variant(TC2XC2S_A::TIOA0)
+        self.variant(TC2XC2SSELECT_A::TIOA0)
     }
     #[doc = "Select TIOA1 as clock signal 2."]
     #[inline(always)]
     pub fn tioa1(self) -> &'a mut W {
-        self.variant(TC2XC2S_A::TIOA1)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 4)) | ((value as u32 & 0x03) << 4);
-        self.w
+        self.variant(TC2XC2SSELECT_A::TIOA1)
     }
 }
 impl R {
     #[doc = "Bits 0:1 - External Clock Signal 0 Selection"]
     #[inline(always)]
     pub fn tc0xc0s(&self) -> TC0XC0S_R {
-        TC0XC0S_R::new((self.bits & 0x03) as u8)
+        TC0XC0S_R::new((self.bits & 3) as u8)
     }
     #[doc = "Bits 2:3 - External Clock Signal 1 Selection"]
     #[inline(always)]
     pub fn tc1xc1s(&self) -> TC1XC1S_R {
-        TC1XC1S_R::new(((self.bits >> 2) & 0x03) as u8)
+        TC1XC1S_R::new(((self.bits >> 2) & 3) as u8)
     }
     #[doc = "Bits 4:5 - External Clock Signal 2 Selection"]
     #[inline(always)]
     pub fn tc2xc2s(&self) -> TC2XC2S_R {
-        TC2XC2S_R::new(((self.bits >> 4) & 0x03) as u8)
+        TC2XC2S_R::new(((self.bits >> 4) & 3) as u8)
     }
 }
 impl W {
     #[doc = "Bits 0:1 - External Clock Signal 0 Selection"]
     #[inline(always)]
-    pub fn tc0xc0s(&mut self) -> TC0XC0S_W {
-        TC0XC0S_W { w: self }
+    #[must_use]
+    pub fn tc0xc0s(&mut self) -> TC0XC0S_W<0> {
+        TC0XC0S_W::new(self)
     }
     #[doc = "Bits 2:3 - External Clock Signal 1 Selection"]
     #[inline(always)]
-    pub fn tc1xc1s(&mut self) -> TC1XC1S_W {
-        TC1XC1S_W { w: self }
+    #[must_use]
+    pub fn tc1xc1s(&mut self) -> TC1XC1S_W<2> {
+        TC1XC1S_W::new(self)
     }
     #[doc = "Bits 4:5 - External Clock Signal 2 Selection"]
     #[inline(always)]
-    pub fn tc2xc2s(&mut self) -> TC2XC2S_W {
-        TC2XC2S_W { w: self }
+    #[must_use]
+    pub fn tc2xc2s(&mut self) -> TC2XC2S_W<4> {
+        TC2XC2S_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -389,11 +326,10 @@ impl crate::Readable for BMR_SPEC {
 #[doc = "`write(|w| ..)` method takes [bmr::W](W) writer structure"]
 impl crate::Writable for BMR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets BMR to value 0"]
 impl crate::Resettable for BMR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

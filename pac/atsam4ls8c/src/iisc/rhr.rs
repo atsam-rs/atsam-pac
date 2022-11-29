@@ -14,24 +14,12 @@ impl From<crate::R<RHR_SPEC>> for R {
     }
 }
 #[doc = "Field `RDAT` reader - Receive Data"]
-pub struct RDAT_R(crate::FieldReader<u32, u32>);
-impl RDAT_R {
-    pub(crate) fn new(bits: u32) -> Self {
-        RDAT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for RDAT_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type RDAT_R = crate::FieldReader<u32, u32>;
 impl R {
     #[doc = "Bits 0:31 - Receive Data"]
     #[inline(always)]
     pub fn rdat(&self) -> RDAT_R {
-        RDAT_R::new((self.bits & 0xffff_ffff) as u32)
+        RDAT_R::new(self.bits)
     }
 }
 #[doc = "Receive Holding Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [rhr](index.html) module"]
@@ -45,8 +33,5 @@ impl crate::Readable for RHR_SPEC {
 }
 #[doc = "`reset()` method sets RHR to value 0"]
 impl crate::Resettable for RHR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

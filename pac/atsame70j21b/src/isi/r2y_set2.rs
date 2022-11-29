@@ -35,119 +35,21 @@ impl From<crate::W<R2Y_SET2_SPEC>> for W {
     }
 }
 #[doc = "Field `C6` reader - Color Space Conversion Matrix Coefficient C6"]
-pub struct C6_R(crate::FieldReader<u8, u8>);
-impl C6_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        C6_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for C6_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type C6_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `C6` writer - Color Space Conversion Matrix Coefficient C6"]
-pub struct C6_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> C6_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x7f) | (value as u32 & 0x7f);
-        self.w
-    }
-}
+pub type C6_W<'a, const O: u8> = crate::FieldWriter<'a, u32, R2Y_SET2_SPEC, u8, u8, 7, O>;
 #[doc = "Field `C7` reader - Color Space Conversion Matrix Coefficient C7"]
-pub struct C7_R(crate::FieldReader<u8, u8>);
-impl C7_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        C7_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for C7_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type C7_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `C7` writer - Color Space Conversion Matrix Coefficient C7"]
-pub struct C7_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> C7_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x7f << 8)) | ((value as u32 & 0x7f) << 8);
-        self.w
-    }
-}
+pub type C7_W<'a, const O: u8> = crate::FieldWriter<'a, u32, R2Y_SET2_SPEC, u8, u8, 7, O>;
 #[doc = "Field `C8` reader - Color Space Conversion Matrix Coefficient C8"]
-pub struct C8_R(crate::FieldReader<u8, u8>);
-impl C8_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        C8_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for C8_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type C8_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `C8` writer - Color Space Conversion Matrix Coefficient C8"]
-pub struct C8_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> C8_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x7f << 16)) | ((value as u32 & 0x7f) << 16);
-        self.w
-    }
-}
+pub type C8_W<'a, const O: u8> = crate::FieldWriter<'a, u32, R2Y_SET2_SPEC, u8, u8, 7, O>;
 #[doc = "Field `Boff` reader - Color Space Conversion Blue Component Offset"]
-pub struct BOFF_R(crate::FieldReader<bool, bool>);
-impl BOFF_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        BOFF_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for BOFF_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type BOFF_R = crate::BitReader<bool>;
 #[doc = "Field `Boff` writer - Color Space Conversion Blue Component Offset"]
-pub struct BOFF_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> BOFF_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 24)) | ((value as u32 & 0x01) << 24);
-        self.w
-    }
-}
+pub type BOFF_W<'a, const O: u8> = crate::BitWriter<'a, u32, R2Y_SET2_SPEC, bool, O>;
 impl R {
     #[doc = "Bits 0:6 - Color Space Conversion Matrix Coefficient C6"]
     #[inline(always)]
@@ -167,29 +69,33 @@ impl R {
     #[doc = "Bit 24 - Color Space Conversion Blue Component Offset"]
     #[inline(always)]
     pub fn boff(&self) -> BOFF_R {
-        BOFF_R::new(((self.bits >> 24) & 0x01) != 0)
+        BOFF_R::new(((self.bits >> 24) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bits 0:6 - Color Space Conversion Matrix Coefficient C6"]
     #[inline(always)]
-    pub fn c6(&mut self) -> C6_W {
-        C6_W { w: self }
+    #[must_use]
+    pub fn c6(&mut self) -> C6_W<0> {
+        C6_W::new(self)
     }
     #[doc = "Bits 8:14 - Color Space Conversion Matrix Coefficient C7"]
     #[inline(always)]
-    pub fn c7(&mut self) -> C7_W {
-        C7_W { w: self }
+    #[must_use]
+    pub fn c7(&mut self) -> C7_W<8> {
+        C7_W::new(self)
     }
     #[doc = "Bits 16:22 - Color Space Conversion Matrix Coefficient C8"]
     #[inline(always)]
-    pub fn c8(&mut self) -> C8_W {
-        C8_W { w: self }
+    #[must_use]
+    pub fn c8(&mut self) -> C8_W<16> {
+        C8_W::new(self)
     }
     #[doc = "Bit 24 - Color Space Conversion Blue Component Offset"]
     #[inline(always)]
-    pub fn boff(&mut self) -> BOFF_W {
-        BOFF_W { w: self }
+    #[must_use]
+    pub fn boff(&mut self) -> BOFF_W<24> {
+        BOFF_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -210,11 +116,10 @@ impl crate::Readable for R2Y_SET2_SPEC {
 #[doc = "`write(|w| ..)` method takes [r2y_set2::W](W) writer structure"]
 impl crate::Writable for R2Y_SET2_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets R2Y_SET2 to value 0"]
 impl crate::Resettable for R2Y_SET2_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

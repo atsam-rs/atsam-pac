@@ -35,112 +35,57 @@ impl From<crate::W<CFR1_SPEC>> for W {
     }
 }
 #[doc = "Field `TMRD` reader - Load Mode Register Command to Active or Refresh Command"]
-pub struct TMRD_R(crate::FieldReader<u8, u8>);
-impl TMRD_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        TMRD_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TMRD_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TMRD_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `TMRD` writer - Load Mode Register Command to Active or Refresh Command"]
-pub struct TMRD_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TMRD_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x0f) | (value as u32 & 0x0f);
-        self.w
-    }
-}
+pub type TMRD_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CFR1_SPEC, u8, u8, 4, O>;
+#[doc = "Field `UNAL` reader - Support Unaligned Access"]
+pub type UNAL_R = crate::BitReader<UNALSELECT_A>;
 #[doc = "Support Unaligned Access\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum UNAL_A {
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum UNALSELECT_A {
     #[doc = "0: Unaligned access is not supported."]
     UNSUPPORTED = 0,
     #[doc = "1: Unaligned access is supported."]
     SUPPORTED = 1,
 }
-impl From<UNAL_A> for bool {
+impl From<UNALSELECT_A> for bool {
     #[inline(always)]
-    fn from(variant: UNAL_A) -> Self {
+    fn from(variant: UNALSELECT_A) -> Self {
         variant as u8 != 0
     }
 }
-#[doc = "Field `UNAL` reader - Support Unaligned Access"]
-pub struct UNAL_R(crate::FieldReader<bool, UNAL_A>);
 impl UNAL_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        UNAL_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> UNAL_A {
+    pub fn variant(&self) -> UNALSELECT_A {
         match self.bits {
-            false => UNAL_A::UNSUPPORTED,
-            true => UNAL_A::SUPPORTED,
+            false => UNALSELECT_A::UNSUPPORTED,
+            true => UNALSELECT_A::SUPPORTED,
         }
     }
     #[doc = "Checks if the value of the field is `UNSUPPORTED`"]
     #[inline(always)]
     pub fn is_unsupported(&self) -> bool {
-        **self == UNAL_A::UNSUPPORTED
+        *self == UNALSELECT_A::UNSUPPORTED
     }
     #[doc = "Checks if the value of the field is `SUPPORTED`"]
     #[inline(always)]
     pub fn is_supported(&self) -> bool {
-        **self == UNAL_A::SUPPORTED
-    }
-}
-impl core::ops::Deref for UNAL_R {
-    type Target = crate::FieldReader<bool, UNAL_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == UNALSELECT_A::SUPPORTED
     }
 }
 #[doc = "Field `UNAL` writer - Support Unaligned Access"]
-pub struct UNAL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> UNAL_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: UNAL_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type UNAL_W<'a, const O: u8> = crate::BitWriter<'a, u32, CFR1_SPEC, UNALSELECT_A, O>;
+impl<'a, const O: u8> UNAL_W<'a, O> {
     #[doc = "Unaligned access is not supported."]
     #[inline(always)]
     pub fn unsupported(self) -> &'a mut W {
-        self.variant(UNAL_A::UNSUPPORTED)
+        self.variant(UNALSELECT_A::UNSUPPORTED)
     }
     #[doc = "Unaligned access is supported."]
     #[inline(always)]
     pub fn supported(self) -> &'a mut W {
-        self.variant(UNAL_A::SUPPORTED)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
-        self.w
+        self.variant(UNALSELECT_A::SUPPORTED)
     }
 }
 impl R {
@@ -152,19 +97,21 @@ impl R {
     #[doc = "Bit 8 - Support Unaligned Access"]
     #[inline(always)]
     pub fn unal(&self) -> UNAL_R {
-        UNAL_R::new(((self.bits >> 8) & 0x01) != 0)
+        UNAL_R::new(((self.bits >> 8) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bits 0:3 - Load Mode Register Command to Active or Refresh Command"]
     #[inline(always)]
-    pub fn tmrd(&mut self) -> TMRD_W {
-        TMRD_W { w: self }
+    #[must_use]
+    pub fn tmrd(&mut self) -> TMRD_W<0> {
+        TMRD_W::new(self)
     }
     #[doc = "Bit 8 - Support Unaligned Access"]
     #[inline(always)]
-    pub fn unal(&mut self) -> UNAL_W {
-        UNAL_W { w: self }
+    #[must_use]
+    pub fn unal(&mut self) -> UNAL_W<8> {
+        UNAL_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -185,11 +132,10 @@ impl crate::Readable for CFR1_SPEC {
 #[doc = "`write(|w| ..)` method takes [cfr1::W](W) writer structure"]
 impl crate::Writable for CFR1_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets CFR1 to value 0"]
 impl crate::Resettable for CFR1_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

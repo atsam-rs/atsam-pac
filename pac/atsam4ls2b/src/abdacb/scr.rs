@@ -20,117 +20,73 @@ impl From<crate::W<SCR_SPEC>> for W {
     }
 }
 #[doc = "Transmit Ready Interrupt Clear\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum TXRDY_AW {
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum TXRDYSELECT_AW {
     #[doc = "0: No effect"]
     _0 = 0,
     #[doc = "1: Clear the Audio DAC TX Ready interrupt"]
     _1 = 1,
 }
-impl From<TXRDY_AW> for bool {
+impl From<TXRDYSELECT_AW> for bool {
     #[inline(always)]
-    fn from(variant: TXRDY_AW) -> Self {
+    fn from(variant: TXRDYSELECT_AW) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `TXRDY` writer - Transmit Ready Interrupt Clear"]
-pub struct TXRDY_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TXRDY_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: TXRDY_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type TXRDY_W<'a, const O: u8> = crate::BitWriter<'a, u32, SCR_SPEC, TXRDYSELECT_AW, O>;
+impl<'a, const O: u8> TXRDY_W<'a, O> {
     #[doc = "No effect"]
     #[inline(always)]
     pub fn _0(self) -> &'a mut W {
-        self.variant(TXRDY_AW::_0)
+        self.variant(TXRDYSELECT_AW::_0)
     }
     #[doc = "Clear the Audio DAC TX Ready interrupt"]
     #[inline(always)]
     pub fn _1(self) -> &'a mut W {
-        self.variant(TXRDY_AW::_1)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
+        self.variant(TXRDYSELECT_AW::_1)
     }
 }
 #[doc = "Transmit Underrun Interrupt Clear\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum TXUR_AW {
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum TXURSELECT_AW {
     #[doc = "0: No effect"]
     _0 = 0,
     #[doc = "1: Clear the Audio DAC Underrun interrupt"]
     _1 = 1,
 }
-impl From<TXUR_AW> for bool {
+impl From<TXURSELECT_AW> for bool {
     #[inline(always)]
-    fn from(variant: TXUR_AW) -> Self {
+    fn from(variant: TXURSELECT_AW) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `TXUR` writer - Transmit Underrun Interrupt Clear"]
-pub struct TXUR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TXUR_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: TXUR_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type TXUR_W<'a, const O: u8> = crate::BitWriter<'a, u32, SCR_SPEC, TXURSELECT_AW, O>;
+impl<'a, const O: u8> TXUR_W<'a, O> {
     #[doc = "No effect"]
     #[inline(always)]
     pub fn _0(self) -> &'a mut W {
-        self.variant(TXUR_AW::_0)
+        self.variant(TXURSELECT_AW::_0)
     }
     #[doc = "Clear the Audio DAC Underrun interrupt"]
     #[inline(always)]
     pub fn _1(self) -> &'a mut W {
-        self.variant(TXUR_AW::_1)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
+        self.variant(TXURSELECT_AW::_1)
     }
 }
 impl W {
     #[doc = "Bit 1 - Transmit Ready Interrupt Clear"]
     #[inline(always)]
-    pub fn txrdy(&mut self) -> TXRDY_W {
-        TXRDY_W { w: self }
+    #[must_use]
+    pub fn txrdy(&mut self) -> TXRDY_W<1> {
+        TXRDY_W::new(self)
     }
     #[doc = "Bit 2 - Transmit Underrun Interrupt Clear"]
     #[inline(always)]
-    pub fn txur(&mut self) -> TXUR_W {
-        TXUR_W { w: self }
+    #[must_use]
+    pub fn txur(&mut self) -> TXUR_W<2> {
+        TXUR_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -147,11 +103,10 @@ impl crate::RegisterSpec for SCR_SPEC {
 #[doc = "`write(|w| ..)` method takes [scr::W](W) writer structure"]
 impl crate::Writable for SCR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets SCR to value 0"]
 impl crate::Resettable for SCR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

@@ -35,57 +35,13 @@ impl From<crate::W<PSIZE_SPEC>> for W {
     }
 }
 #[doc = "Field `PREV_VSIZE` reader - Vertical Size for the Preview Path"]
-pub struct PREV_VSIZE_R(crate::FieldReader<u16, u16>);
-impl PREV_VSIZE_R {
-    pub(crate) fn new(bits: u16) -> Self {
-        PREV_VSIZE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for PREV_VSIZE_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type PREV_VSIZE_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `PREV_VSIZE` writer - Vertical Size for the Preview Path"]
-pub struct PREV_VSIZE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PREV_VSIZE_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x03ff) | (value as u32 & 0x03ff);
-        self.w
-    }
-}
+pub type PREV_VSIZE_W<'a, const O: u8> = crate::FieldWriter<'a, u32, PSIZE_SPEC, u16, u16, 10, O>;
 #[doc = "Field `PREV_HSIZE` reader - Horizontal Size for the Preview Path"]
-pub struct PREV_HSIZE_R(crate::FieldReader<u16, u16>);
-impl PREV_HSIZE_R {
-    pub(crate) fn new(bits: u16) -> Self {
-        PREV_HSIZE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for PREV_HSIZE_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type PREV_HSIZE_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `PREV_HSIZE` writer - Horizontal Size for the Preview Path"]
-pub struct PREV_HSIZE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PREV_HSIZE_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03ff << 16)) | ((value as u32 & 0x03ff) << 16);
-        self.w
-    }
-}
+pub type PREV_HSIZE_W<'a, const O: u8> = crate::FieldWriter<'a, u32, PSIZE_SPEC, u16, u16, 10, O>;
 impl R {
     #[doc = "Bits 0:9 - Vertical Size for the Preview Path"]
     #[inline(always)]
@@ -101,13 +57,15 @@ impl R {
 impl W {
     #[doc = "Bits 0:9 - Vertical Size for the Preview Path"]
     #[inline(always)]
-    pub fn prev_vsize(&mut self) -> PREV_VSIZE_W {
-        PREV_VSIZE_W { w: self }
+    #[must_use]
+    pub fn prev_vsize(&mut self) -> PREV_VSIZE_W<0> {
+        PREV_VSIZE_W::new(self)
     }
     #[doc = "Bits 16:25 - Horizontal Size for the Preview Path"]
     #[inline(always)]
-    pub fn prev_hsize(&mut self) -> PREV_HSIZE_W {
-        PREV_HSIZE_W { w: self }
+    #[must_use]
+    pub fn prev_hsize(&mut self) -> PREV_HSIZE_W<16> {
+        PREV_HSIZE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -128,11 +86,10 @@ impl crate::Readable for PSIZE_SPEC {
 #[doc = "`write(|w| ..)` method takes [psize::W](W) writer structure"]
 impl crate::Writable for PSIZE_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets PSIZE to value 0"]
 impl crate::Resettable for PSIZE_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

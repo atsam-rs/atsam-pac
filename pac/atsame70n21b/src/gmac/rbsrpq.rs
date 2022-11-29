@@ -35,31 +35,9 @@ impl From<crate::W<RBSRPQ_SPEC>> for W {
     }
 }
 #[doc = "Field `RBS` reader - Receive Buffer Size"]
-pub struct RBS_R(crate::FieldReader<u16, u16>);
-impl RBS_R {
-    pub(crate) fn new(bits: u16) -> Self {
-        RBS_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for RBS_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type RBS_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `RBS` writer - Receive Buffer Size"]
-pub struct RBS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RBS_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xffff) | (value as u32 & 0xffff);
-        self.w
-    }
-}
+pub type RBS_W<'a, const O: u8> = crate::FieldWriter<'a, u32, RBSRPQ_SPEC, u16, u16, 16, O>;
 impl R {
     #[doc = "Bits 0:15 - Receive Buffer Size"]
     #[inline(always)]
@@ -70,8 +48,9 @@ impl R {
 impl W {
     #[doc = "Bits 0:15 - Receive Buffer Size"]
     #[inline(always)]
-    pub fn rbs(&mut self) -> RBS_W {
-        RBS_W { w: self }
+    #[must_use]
+    pub fn rbs(&mut self) -> RBS_W<0> {
+        RBS_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -92,12 +71,11 @@ impl crate::Readable for RBSRPQ_SPEC {
 #[doc = "`write(|w| ..)` method takes [rbsrpq::W](W) writer structure"]
 impl crate::Writable for RBSRPQ_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets RBSRPQ[%s]
 to value 0"]
 impl crate::Resettable for RBSRPQ_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

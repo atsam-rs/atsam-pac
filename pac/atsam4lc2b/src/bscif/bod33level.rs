@@ -35,31 +35,9 @@ impl From<crate::W<BOD33LEVEL_SPEC>> for W {
     }
 }
 #[doc = "Field `VAL` reader - BOD Value"]
-pub struct VAL_R(crate::FieldReader<u8, u8>);
-impl VAL_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        VAL_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for VAL_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type VAL_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `VAL` writer - BOD Value"]
-pub struct VAL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> VAL_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x3f) | (value as u32 & 0x3f);
-        self.w
-    }
-}
+pub type VAL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, BOD33LEVEL_SPEC, u8, u8, 6, O>;
 impl R {
     #[doc = "Bits 0:5 - BOD Value"]
     #[inline(always)]
@@ -70,8 +48,9 @@ impl R {
 impl W {
     #[doc = "Bits 0:5 - BOD Value"]
     #[inline(always)]
-    pub fn val(&mut self) -> VAL_W {
-        VAL_W { w: self }
+    #[must_use]
+    pub fn val(&mut self) -> VAL_W<0> {
+        VAL_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -92,11 +71,10 @@ impl crate::Readable for BOD33LEVEL_SPEC {
 #[doc = "`write(|w| ..)` method takes [bod33level::W](W) writer structure"]
 impl crate::Writable for BOD33LEVEL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets BOD33LEVEL to value 0"]
 impl crate::Resettable for BOD33LEVEL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

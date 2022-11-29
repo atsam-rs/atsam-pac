@@ -20,32 +20,13 @@ impl From<crate::W<DMAIDR_SPEC>> for W {
     }
 }
 #[doc = "Field `DMAIDR` writer - DMA Interrupt Disable"]
-pub struct DMAIDR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DMAIDR_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type DMAIDR_W<'a, const O: u8> = crate::BitWriter<'a, u32, DMAIDR_SPEC, bool, O>;
 impl W {
     #[doc = "Bit 0 - DMA Interrupt Disable"]
     #[inline(always)]
-    pub fn dmaidr(&mut self) -> DMAIDR_W {
-        DMAIDR_W { w: self }
+    #[must_use]
+    pub fn dmaidr(&mut self) -> DMAIDR_W<0> {
+        DMAIDR_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -62,11 +43,10 @@ impl crate::RegisterSpec for DMAIDR_SPEC {
 #[doc = "`write(|w| ..)` method takes [dmaidr::W](W) writer structure"]
 impl crate::Writable for DMAIDR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets DMAIDR to value 0"]
 impl crate::Resettable for DMAIDR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

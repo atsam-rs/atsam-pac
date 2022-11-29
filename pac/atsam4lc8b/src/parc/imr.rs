@@ -14,43 +14,19 @@ impl From<crate::R<IMR_SPEC>> for R {
     }
 }
 #[doc = "Field `DRDY` reader - Data Ready Interrupt Mask"]
-pub struct DRDY_R(crate::FieldReader<bool, bool>);
-impl DRDY_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        DRDY_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DRDY_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DRDY_R = crate::BitReader<bool>;
 #[doc = "Field `OVR` reader - Overrun Interrupt Mask"]
-pub struct OVR_R(crate::FieldReader<bool, bool>);
-impl OVR_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        OVR_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for OVR_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type OVR_R = crate::BitReader<bool>;
 impl R {
     #[doc = "Bit 2 - Data Ready Interrupt Mask"]
     #[inline(always)]
     pub fn drdy(&self) -> DRDY_R {
-        DRDY_R::new(((self.bits >> 2) & 0x01) != 0)
+        DRDY_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - Overrun Interrupt Mask"]
     #[inline(always)]
     pub fn ovr(&self) -> OVR_R {
-        OVR_R::new(((self.bits >> 3) & 0x01) != 0)
+        OVR_R::new(((self.bits >> 3) & 1) != 0)
     }
 }
 #[doc = "Interrupt Mask Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [imr](index.html) module"]
@@ -64,8 +40,5 @@ impl crate::Readable for IMR_SPEC {
 }
 #[doc = "`reset()` method sets IMR to value 0"]
 impl crate::Resettable for IMR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

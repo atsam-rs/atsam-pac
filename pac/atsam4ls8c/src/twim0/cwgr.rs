@@ -35,135 +35,25 @@ impl From<crate::W<CWGR_SPEC>> for W {
     }
 }
 #[doc = "Field `LOW` reader - Clock Low Cycles"]
-pub struct LOW_R(crate::FieldReader<u8, u8>);
-impl LOW_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        LOW_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for LOW_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type LOW_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `LOW` writer - Clock Low Cycles"]
-pub struct LOW_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> LOW_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xff) | (value as u32 & 0xff);
-        self.w
-    }
-}
+pub type LOW_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CWGR_SPEC, u8, u8, 8, O>;
 #[doc = "Field `HIGH` reader - Clock High Cycles"]
-pub struct HIGH_R(crate::FieldReader<u8, u8>);
-impl HIGH_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        HIGH_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for HIGH_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type HIGH_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `HIGH` writer - Clock High Cycles"]
-pub struct HIGH_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> HIGH_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0xff << 8)) | ((value as u32 & 0xff) << 8);
-        self.w
-    }
-}
+pub type HIGH_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CWGR_SPEC, u8, u8, 8, O>;
 #[doc = "Field `STASTO` reader - START and STOP Cycles"]
-pub struct STASTO_R(crate::FieldReader<u8, u8>);
-impl STASTO_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        STASTO_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for STASTO_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type STASTO_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `STASTO` writer - START and STOP Cycles"]
-pub struct STASTO_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> STASTO_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0xff << 16)) | ((value as u32 & 0xff) << 16);
-        self.w
-    }
-}
+pub type STASTO_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CWGR_SPEC, u8, u8, 8, O>;
 #[doc = "Field `DATA` reader - Data Setup and Hold Cycles"]
-pub struct DATA_R(crate::FieldReader<u8, u8>);
-impl DATA_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        DATA_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DATA_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DATA_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `DATA` writer - Data Setup and Hold Cycles"]
-pub struct DATA_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DATA_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 24)) | ((value as u32 & 0x0f) << 24);
-        self.w
-    }
-}
+pub type DATA_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CWGR_SPEC, u8, u8, 4, O>;
 #[doc = "Field `EXP` reader - Clock Prescaler"]
-pub struct EXP_R(crate::FieldReader<u8, u8>);
-impl EXP_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        EXP_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for EXP_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type EXP_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `EXP` writer - Clock Prescaler"]
-pub struct EXP_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> EXP_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 28)) | ((value as u32 & 0x07) << 28);
-        self.w
-    }
-}
+pub type EXP_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CWGR_SPEC, u8, u8, 3, O>;
 impl R {
     #[doc = "Bits 0:7 - Clock Low Cycles"]
     #[inline(always)]
@@ -188,34 +78,39 @@ impl R {
     #[doc = "Bits 28:30 - Clock Prescaler"]
     #[inline(always)]
     pub fn exp(&self) -> EXP_R {
-        EXP_R::new(((self.bits >> 28) & 0x07) as u8)
+        EXP_R::new(((self.bits >> 28) & 7) as u8)
     }
 }
 impl W {
     #[doc = "Bits 0:7 - Clock Low Cycles"]
     #[inline(always)]
-    pub fn low(&mut self) -> LOW_W {
-        LOW_W { w: self }
+    #[must_use]
+    pub fn low(&mut self) -> LOW_W<0> {
+        LOW_W::new(self)
     }
     #[doc = "Bits 8:15 - Clock High Cycles"]
     #[inline(always)]
-    pub fn high(&mut self) -> HIGH_W {
-        HIGH_W { w: self }
+    #[must_use]
+    pub fn high(&mut self) -> HIGH_W<8> {
+        HIGH_W::new(self)
     }
     #[doc = "Bits 16:23 - START and STOP Cycles"]
     #[inline(always)]
-    pub fn stasto(&mut self) -> STASTO_W {
-        STASTO_W { w: self }
+    #[must_use]
+    pub fn stasto(&mut self) -> STASTO_W<16> {
+        STASTO_W::new(self)
     }
     #[doc = "Bits 24:27 - Data Setup and Hold Cycles"]
     #[inline(always)]
-    pub fn data(&mut self) -> DATA_W {
-        DATA_W { w: self }
+    #[must_use]
+    pub fn data(&mut self) -> DATA_W<24> {
+        DATA_W::new(self)
     }
     #[doc = "Bits 28:30 - Clock Prescaler"]
     #[inline(always)]
-    pub fn exp(&mut self) -> EXP_W {
-        EXP_W { w: self }
+    #[must_use]
+    pub fn exp(&mut self) -> EXP_W<28> {
+        EXP_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -236,11 +131,10 @@ impl crate::Readable for CWGR_SPEC {
 #[doc = "`write(|w| ..)` method takes [cwgr::W](W) writer structure"]
 impl crate::Writable for CWGR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets CWGR to value 0"]
 impl crate::Resettable for CWGR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

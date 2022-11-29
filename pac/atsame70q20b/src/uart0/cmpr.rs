@@ -35,176 +35,67 @@ impl From<crate::W<CMPR_SPEC>> for W {
     }
 }
 #[doc = "Field `VAL1` reader - First Comparison Value for Received Character"]
-pub struct VAL1_R(crate::FieldReader<u8, u8>);
-impl VAL1_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        VAL1_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for VAL1_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type VAL1_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `VAL1` writer - First Comparison Value for Received Character"]
-pub struct VAL1_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> VAL1_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xff) | (value as u32 & 0xff);
-        self.w
-    }
-}
+pub type VAL1_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CMPR_SPEC, u8, u8, 8, O>;
+#[doc = "Field `CMPMODE` reader - Comparison Mode"]
+pub type CMPMODE_R = crate::BitReader<CMPMODESELECT_A>;
 #[doc = "Comparison Mode\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CMPMODE_A {
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum CMPMODESELECT_A {
     #[doc = "0: Any character is received and comparison function drives CMP flag."]
     FLAG_ONLY = 0,
     #[doc = "1: Comparison condition must be met to start reception."]
     START_CONDITION = 1,
 }
-impl From<CMPMODE_A> for bool {
+impl From<CMPMODESELECT_A> for bool {
     #[inline(always)]
-    fn from(variant: CMPMODE_A) -> Self {
+    fn from(variant: CMPMODESELECT_A) -> Self {
         variant as u8 != 0
     }
 }
-#[doc = "Field `CMPMODE` reader - Comparison Mode"]
-pub struct CMPMODE_R(crate::FieldReader<bool, CMPMODE_A>);
 impl CMPMODE_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        CMPMODE_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CMPMODE_A {
+    pub fn variant(&self) -> CMPMODESELECT_A {
         match self.bits {
-            false => CMPMODE_A::FLAG_ONLY,
-            true => CMPMODE_A::START_CONDITION,
+            false => CMPMODESELECT_A::FLAG_ONLY,
+            true => CMPMODESELECT_A::START_CONDITION,
         }
     }
     #[doc = "Checks if the value of the field is `FLAG_ONLY`"]
     #[inline(always)]
     pub fn is_flag_only(&self) -> bool {
-        **self == CMPMODE_A::FLAG_ONLY
+        *self == CMPMODESELECT_A::FLAG_ONLY
     }
     #[doc = "Checks if the value of the field is `START_CONDITION`"]
     #[inline(always)]
     pub fn is_start_condition(&self) -> bool {
-        **self == CMPMODE_A::START_CONDITION
-    }
-}
-impl core::ops::Deref for CMPMODE_R {
-    type Target = crate::FieldReader<bool, CMPMODE_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == CMPMODESELECT_A::START_CONDITION
     }
 }
 #[doc = "Field `CMPMODE` writer - Comparison Mode"]
-pub struct CMPMODE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CMPMODE_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CMPMODE_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type CMPMODE_W<'a, const O: u8> = crate::BitWriter<'a, u32, CMPR_SPEC, CMPMODESELECT_A, O>;
+impl<'a, const O: u8> CMPMODE_W<'a, O> {
     #[doc = "Any character is received and comparison function drives CMP flag."]
     #[inline(always)]
     pub fn flag_only(self) -> &'a mut W {
-        self.variant(CMPMODE_A::FLAG_ONLY)
+        self.variant(CMPMODESELECT_A::FLAG_ONLY)
     }
     #[doc = "Comparison condition must be met to start reception."]
     #[inline(always)]
     pub fn start_condition(self) -> &'a mut W {
-        self.variant(CMPMODE_A::START_CONDITION)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 12)) | ((value as u32 & 0x01) << 12);
-        self.w
+        self.variant(CMPMODESELECT_A::START_CONDITION)
     }
 }
 #[doc = "Field `CMPPAR` reader - Compare Parity"]
-pub struct CMPPAR_R(crate::FieldReader<bool, bool>);
-impl CMPPAR_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        CMPPAR_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CMPPAR_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CMPPAR_R = crate::BitReader<bool>;
 #[doc = "Field `CMPPAR` writer - Compare Parity"]
-pub struct CMPPAR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CMPPAR_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 14)) | ((value as u32 & 0x01) << 14);
-        self.w
-    }
-}
+pub type CMPPAR_W<'a, const O: u8> = crate::BitWriter<'a, u32, CMPR_SPEC, bool, O>;
 #[doc = "Field `VAL2` reader - Second Comparison Value for Received Character"]
-pub struct VAL2_R(crate::FieldReader<u8, u8>);
-impl VAL2_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        VAL2_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for VAL2_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type VAL2_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `VAL2` writer - Second Comparison Value for Received Character"]
-pub struct VAL2_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> VAL2_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0xff << 16)) | ((value as u32 & 0xff) << 16);
-        self.w
-    }
-}
+pub type VAL2_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CMPR_SPEC, u8, u8, 8, O>;
 impl R {
     #[doc = "Bits 0:7 - First Comparison Value for Received Character"]
     #[inline(always)]
@@ -214,12 +105,12 @@ impl R {
     #[doc = "Bit 12 - Comparison Mode"]
     #[inline(always)]
     pub fn cmpmode(&self) -> CMPMODE_R {
-        CMPMODE_R::new(((self.bits >> 12) & 0x01) != 0)
+        CMPMODE_R::new(((self.bits >> 12) & 1) != 0)
     }
     #[doc = "Bit 14 - Compare Parity"]
     #[inline(always)]
     pub fn cmppar(&self) -> CMPPAR_R {
-        CMPPAR_R::new(((self.bits >> 14) & 0x01) != 0)
+        CMPPAR_R::new(((self.bits >> 14) & 1) != 0)
     }
     #[doc = "Bits 16:23 - Second Comparison Value for Received Character"]
     #[inline(always)]
@@ -230,23 +121,27 @@ impl R {
 impl W {
     #[doc = "Bits 0:7 - First Comparison Value for Received Character"]
     #[inline(always)]
-    pub fn val1(&mut self) -> VAL1_W {
-        VAL1_W { w: self }
+    #[must_use]
+    pub fn val1(&mut self) -> VAL1_W<0> {
+        VAL1_W::new(self)
     }
     #[doc = "Bit 12 - Comparison Mode"]
     #[inline(always)]
-    pub fn cmpmode(&mut self) -> CMPMODE_W {
-        CMPMODE_W { w: self }
+    #[must_use]
+    pub fn cmpmode(&mut self) -> CMPMODE_W<12> {
+        CMPMODE_W::new(self)
     }
     #[doc = "Bit 14 - Compare Parity"]
     #[inline(always)]
-    pub fn cmppar(&mut self) -> CMPPAR_W {
-        CMPPAR_W { w: self }
+    #[must_use]
+    pub fn cmppar(&mut self) -> CMPPAR_W<14> {
+        CMPPAR_W::new(self)
     }
     #[doc = "Bits 16:23 - Second Comparison Value for Received Character"]
     #[inline(always)]
-    pub fn val2(&mut self) -> VAL2_W {
-        VAL2_W { w: self }
+    #[must_use]
+    pub fn val2(&mut self) -> VAL2_W<16> {
+        VAL2_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -267,11 +162,10 @@ impl crate::Readable for CMPR_SPEC {
 #[doc = "`write(|w| ..)` method takes [cmpr::W](W) writer structure"]
 impl crate::Writable for CMPR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets CMPR to value 0"]
 impl crate::Resettable for CMPR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

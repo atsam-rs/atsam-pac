@@ -20,86 +20,29 @@ impl From<crate::W<IER_SPEC>> for W {
     }
 }
 #[doc = "Field `DATRDY` writer - Data Ready Interrupt Enable"]
-pub struct DATRDY_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DATRDY_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type DATRDY_W<'a, const O: u8> = crate::BitWriter<'a, u32, IER_SPEC, bool, O>;
 #[doc = "Field `URAD` writer - Unspecified Register Access Detection Interrupt Enable"]
-pub struct URAD_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> URAD_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
-        self.w
-    }
-}
+pub type URAD_W<'a, const O: u8> = crate::BitWriter<'a, u32, IER_SPEC, bool, O>;
 #[doc = "Field `TAGRDY` writer - GCM Tag Ready Interrupt Enable"]
-pub struct TAGRDY_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TAGRDY_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 16)) | ((value as u32 & 0x01) << 16);
-        self.w
-    }
-}
+pub type TAGRDY_W<'a, const O: u8> = crate::BitWriter<'a, u32, IER_SPEC, bool, O>;
 impl W {
     #[doc = "Bit 0 - Data Ready Interrupt Enable"]
     #[inline(always)]
-    pub fn datrdy(&mut self) -> DATRDY_W {
-        DATRDY_W { w: self }
+    #[must_use]
+    pub fn datrdy(&mut self) -> DATRDY_W<0> {
+        DATRDY_W::new(self)
     }
     #[doc = "Bit 8 - Unspecified Register Access Detection Interrupt Enable"]
     #[inline(always)]
-    pub fn urad(&mut self) -> URAD_W {
-        URAD_W { w: self }
+    #[must_use]
+    pub fn urad(&mut self) -> URAD_W<8> {
+        URAD_W::new(self)
     }
     #[doc = "Bit 16 - GCM Tag Ready Interrupt Enable"]
     #[inline(always)]
-    pub fn tagrdy(&mut self) -> TAGRDY_W {
-        TAGRDY_W { w: self }
+    #[must_use]
+    pub fn tagrdy(&mut self) -> TAGRDY_W<16> {
+        TAGRDY_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -116,11 +59,10 @@ impl crate::RegisterSpec for IER_SPEC {
 #[doc = "`write(|w| ..)` method takes [ier::W](W) writer structure"]
 impl crate::Writable for IER_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets IER to value 0"]
 impl crate::Resettable for IER_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

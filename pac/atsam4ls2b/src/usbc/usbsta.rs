@@ -14,23 +14,13 @@ impl From<crate::R<USBSTA_SPEC>> for R {
     }
 }
 #[doc = "Field `VBUSRQ` reader - VBus Request"]
-pub struct VBUSRQ_R(crate::FieldReader<bool, bool>);
-impl VBUSRQ_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        VBUSRQ_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for VBUSRQ_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type VBUSRQ_R = crate::BitReader<bool>;
+#[doc = "Field `SPEED` reader - Speed Status"]
+pub type SPEED_R = crate::FieldReader<u8, SPEEDSELECT_A>;
 #[doc = "Speed Status\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum SPEED_A {
+pub enum SPEEDSELECT_A {
     #[doc = "0: `0`"]
     FULL = 0,
     #[doc = "1: `1`"]
@@ -38,99 +28,63 @@ pub enum SPEED_A {
     #[doc = "2: `10`"]
     LOW = 2,
 }
-impl From<SPEED_A> for u8 {
+impl From<SPEEDSELECT_A> for u8 {
     #[inline(always)]
-    fn from(variant: SPEED_A) -> Self {
+    fn from(variant: SPEEDSELECT_A) -> Self {
         variant as _
     }
 }
-#[doc = "Field `SPEED` reader - Speed Status"]
-pub struct SPEED_R(crate::FieldReader<u8, SPEED_A>);
 impl SPEED_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        SPEED_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<SPEED_A> {
+    pub fn variant(&self) -> Option<SPEEDSELECT_A> {
         match self.bits {
-            0 => Some(SPEED_A::FULL),
-            1 => Some(SPEED_A::HIGH),
-            2 => Some(SPEED_A::LOW),
+            0 => Some(SPEEDSELECT_A::FULL),
+            1 => Some(SPEEDSELECT_A::HIGH),
+            2 => Some(SPEEDSELECT_A::LOW),
             _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `FULL`"]
     #[inline(always)]
     pub fn is_full(&self) -> bool {
-        **self == SPEED_A::FULL
+        *self == SPEEDSELECT_A::FULL
     }
     #[doc = "Checks if the value of the field is `HIGH`"]
     #[inline(always)]
     pub fn is_high(&self) -> bool {
-        **self == SPEED_A::HIGH
+        *self == SPEEDSELECT_A::HIGH
     }
     #[doc = "Checks if the value of the field is `LOW`"]
     #[inline(always)]
     pub fn is_low(&self) -> bool {
-        **self == SPEED_A::LOW
-    }
-}
-impl core::ops::Deref for SPEED_R {
-    type Target = crate::FieldReader<u8, SPEED_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == SPEEDSELECT_A::LOW
     }
 }
 #[doc = "Field `CLKUSABLE` reader - USB Clock Usable"]
-pub struct CLKUSABLE_R(crate::FieldReader<bool, bool>);
-impl CLKUSABLE_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        CLKUSABLE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CLKUSABLE_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CLKUSABLE_R = crate::BitReader<bool>;
 #[doc = "Field `SUSPEND` reader - Suspend module state"]
-pub struct SUSPEND_R(crate::FieldReader<bool, bool>);
-impl SUSPEND_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        SUSPEND_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for SUSPEND_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type SUSPEND_R = crate::BitReader<bool>;
 impl R {
     #[doc = "Bit 9 - VBus Request"]
     #[inline(always)]
     pub fn vbusrq(&self) -> VBUSRQ_R {
-        VBUSRQ_R::new(((self.bits >> 9) & 0x01) != 0)
+        VBUSRQ_R::new(((self.bits >> 9) & 1) != 0)
     }
     #[doc = "Bits 12:13 - Speed Status"]
     #[inline(always)]
     pub fn speed(&self) -> SPEED_R {
-        SPEED_R::new(((self.bits >> 12) & 0x03) as u8)
+        SPEED_R::new(((self.bits >> 12) & 3) as u8)
     }
     #[doc = "Bit 14 - USB Clock Usable"]
     #[inline(always)]
     pub fn clkusable(&self) -> CLKUSABLE_R {
-        CLKUSABLE_R::new(((self.bits >> 14) & 0x01) != 0)
+        CLKUSABLE_R::new(((self.bits >> 14) & 1) != 0)
     }
     #[doc = "Bit 16 - Suspend module state"]
     #[inline(always)]
     pub fn suspend(&self) -> SUSPEND_R {
-        SUSPEND_R::new(((self.bits >> 16) & 0x01) != 0)
+        SUSPEND_R::new(((self.bits >> 16) & 1) != 0)
     }
 }
 #[doc = "General Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [usbsta](index.html) module"]
@@ -144,8 +98,5 @@ impl crate::Readable for USBSTA_SPEC {
 }
 #[doc = "`reset()` method sets USBSTA to value 0x0001_0000"]
 impl crate::Resettable for USBSTA_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x0001_0000
-    }
+    const RESET_VALUE: Self::Ux = 0x0001_0000;
 }

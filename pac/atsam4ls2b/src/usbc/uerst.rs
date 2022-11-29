@@ -35,375 +35,127 @@ impl From<crate::W<UERST_SPEC>> for W {
     }
 }
 #[doc = "Field `EPEN0` reader - Endpoint0 Enable"]
-pub struct EPEN0_R(crate::FieldReader<bool, bool>);
-impl EPEN0_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        EPEN0_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for EPEN0_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type EPEN0_R = crate::BitReader<bool>;
 #[doc = "Field `EPEN0` writer - Endpoint0 Enable"]
-pub struct EPEN0_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> EPEN0_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type EPEN0_W<'a, const O: u8> = crate::BitWriter<'a, u32, UERST_SPEC, bool, O>;
 #[doc = "Field `EPEN1` reader - Endpoint1 Enable"]
-pub struct EPEN1_R(crate::FieldReader<bool, bool>);
-impl EPEN1_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        EPEN1_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for EPEN1_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type EPEN1_R = crate::BitReader<bool>;
 #[doc = "Field `EPEN1` writer - Endpoint1 Enable"]
-pub struct EPEN1_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> EPEN1_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
-}
+pub type EPEN1_W<'a, const O: u8> = crate::BitWriter<'a, u32, UERST_SPEC, bool, O>;
 #[doc = "Field `EPEN2` reader - Endpoint2 Enable"]
-pub struct EPEN2_R(crate::FieldReader<bool, bool>);
-impl EPEN2_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        EPEN2_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for EPEN2_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type EPEN2_R = crate::BitReader<bool>;
 #[doc = "Field `EPEN2` writer - Endpoint2 Enable"]
-pub struct EPEN2_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> EPEN2_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
-    }
-}
+pub type EPEN2_W<'a, const O: u8> = crate::BitWriter<'a, u32, UERST_SPEC, bool, O>;
 #[doc = "Field `EPEN3` reader - Endpoint3 Enable"]
-pub struct EPEN3_R(crate::FieldReader<bool, bool>);
-impl EPEN3_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        EPEN3_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for EPEN3_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type EPEN3_R = crate::BitReader<bool>;
 #[doc = "Field `EPEN3` writer - Endpoint3 Enable"]
-pub struct EPEN3_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> EPEN3_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
-        self.w
-    }
-}
+pub type EPEN3_W<'a, const O: u8> = crate::BitWriter<'a, u32, UERST_SPEC, bool, O>;
 #[doc = "Field `EPEN4` reader - Endpoint4 Enable"]
-pub struct EPEN4_R(crate::FieldReader<bool, bool>);
-impl EPEN4_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        EPEN4_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for EPEN4_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type EPEN4_R = crate::BitReader<bool>;
 #[doc = "Field `EPEN4` writer - Endpoint4 Enable"]
-pub struct EPEN4_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> EPEN4_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
-        self.w
-    }
-}
+pub type EPEN4_W<'a, const O: u8> = crate::BitWriter<'a, u32, UERST_SPEC, bool, O>;
 #[doc = "Field `EPEN5` reader - Endpoint5 Enable"]
-pub struct EPEN5_R(crate::FieldReader<bool, bool>);
-impl EPEN5_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        EPEN5_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for EPEN5_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type EPEN5_R = crate::BitReader<bool>;
 #[doc = "Field `EPEN5` writer - Endpoint5 Enable"]
-pub struct EPEN5_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> EPEN5_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
-        self.w
-    }
-}
+pub type EPEN5_W<'a, const O: u8> = crate::BitWriter<'a, u32, UERST_SPEC, bool, O>;
 #[doc = "Field `EPEN6` reader - Endpoint6 Enable"]
-pub struct EPEN6_R(crate::FieldReader<bool, bool>);
-impl EPEN6_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        EPEN6_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for EPEN6_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type EPEN6_R = crate::BitReader<bool>;
 #[doc = "Field `EPEN6` writer - Endpoint6 Enable"]
-pub struct EPEN6_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> EPEN6_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | ((value as u32 & 0x01) << 6);
-        self.w
-    }
-}
+pub type EPEN6_W<'a, const O: u8> = crate::BitWriter<'a, u32, UERST_SPEC, bool, O>;
 #[doc = "Field `EPEN7` reader - Endpoint7 Enable"]
-pub struct EPEN7_R(crate::FieldReader<bool, bool>);
-impl EPEN7_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        EPEN7_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for EPEN7_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type EPEN7_R = crate::BitReader<bool>;
 #[doc = "Field `EPEN7` writer - Endpoint7 Enable"]
-pub struct EPEN7_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> EPEN7_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | ((value as u32 & 0x01) << 7);
-        self.w
-    }
-}
+pub type EPEN7_W<'a, const O: u8> = crate::BitWriter<'a, u32, UERST_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - Endpoint0 Enable"]
     #[inline(always)]
     pub fn epen0(&self) -> EPEN0_R {
-        EPEN0_R::new((self.bits & 0x01) != 0)
+        EPEN0_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Endpoint1 Enable"]
     #[inline(always)]
     pub fn epen1(&self) -> EPEN1_R {
-        EPEN1_R::new(((self.bits >> 1) & 0x01) != 0)
+        EPEN1_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - Endpoint2 Enable"]
     #[inline(always)]
     pub fn epen2(&self) -> EPEN2_R {
-        EPEN2_R::new(((self.bits >> 2) & 0x01) != 0)
+        EPEN2_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - Endpoint3 Enable"]
     #[inline(always)]
     pub fn epen3(&self) -> EPEN3_R {
-        EPEN3_R::new(((self.bits >> 3) & 0x01) != 0)
+        EPEN3_R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 4 - Endpoint4 Enable"]
     #[inline(always)]
     pub fn epen4(&self) -> EPEN4_R {
-        EPEN4_R::new(((self.bits >> 4) & 0x01) != 0)
+        EPEN4_R::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bit 5 - Endpoint5 Enable"]
     #[inline(always)]
     pub fn epen5(&self) -> EPEN5_R {
-        EPEN5_R::new(((self.bits >> 5) & 0x01) != 0)
+        EPEN5_R::new(((self.bits >> 5) & 1) != 0)
     }
     #[doc = "Bit 6 - Endpoint6 Enable"]
     #[inline(always)]
     pub fn epen6(&self) -> EPEN6_R {
-        EPEN6_R::new(((self.bits >> 6) & 0x01) != 0)
+        EPEN6_R::new(((self.bits >> 6) & 1) != 0)
     }
     #[doc = "Bit 7 - Endpoint7 Enable"]
     #[inline(always)]
     pub fn epen7(&self) -> EPEN7_R {
-        EPEN7_R::new(((self.bits >> 7) & 0x01) != 0)
+        EPEN7_R::new(((self.bits >> 7) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Endpoint0 Enable"]
     #[inline(always)]
-    pub fn epen0(&mut self) -> EPEN0_W {
-        EPEN0_W { w: self }
+    #[must_use]
+    pub fn epen0(&mut self) -> EPEN0_W<0> {
+        EPEN0_W::new(self)
     }
     #[doc = "Bit 1 - Endpoint1 Enable"]
     #[inline(always)]
-    pub fn epen1(&mut self) -> EPEN1_W {
-        EPEN1_W { w: self }
+    #[must_use]
+    pub fn epen1(&mut self) -> EPEN1_W<1> {
+        EPEN1_W::new(self)
     }
     #[doc = "Bit 2 - Endpoint2 Enable"]
     #[inline(always)]
-    pub fn epen2(&mut self) -> EPEN2_W {
-        EPEN2_W { w: self }
+    #[must_use]
+    pub fn epen2(&mut self) -> EPEN2_W<2> {
+        EPEN2_W::new(self)
     }
     #[doc = "Bit 3 - Endpoint3 Enable"]
     #[inline(always)]
-    pub fn epen3(&mut self) -> EPEN3_W {
-        EPEN3_W { w: self }
+    #[must_use]
+    pub fn epen3(&mut self) -> EPEN3_W<3> {
+        EPEN3_W::new(self)
     }
     #[doc = "Bit 4 - Endpoint4 Enable"]
     #[inline(always)]
-    pub fn epen4(&mut self) -> EPEN4_W {
-        EPEN4_W { w: self }
+    #[must_use]
+    pub fn epen4(&mut self) -> EPEN4_W<4> {
+        EPEN4_W::new(self)
     }
     #[doc = "Bit 5 - Endpoint5 Enable"]
     #[inline(always)]
-    pub fn epen5(&mut self) -> EPEN5_W {
-        EPEN5_W { w: self }
+    #[must_use]
+    pub fn epen5(&mut self) -> EPEN5_W<5> {
+        EPEN5_W::new(self)
     }
     #[doc = "Bit 6 - Endpoint6 Enable"]
     #[inline(always)]
-    pub fn epen6(&mut self) -> EPEN6_W {
-        EPEN6_W { w: self }
+    #[must_use]
+    pub fn epen6(&mut self) -> EPEN6_W<6> {
+        EPEN6_W::new(self)
     }
     #[doc = "Bit 7 - Endpoint7 Enable"]
     #[inline(always)]
-    pub fn epen7(&mut self) -> EPEN7_W {
-        EPEN7_W { w: self }
+    #[must_use]
+    pub fn epen7(&mut self) -> EPEN7_W<7> {
+        EPEN7_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -424,11 +176,10 @@ impl crate::Readable for UERST_SPEC {
 #[doc = "`write(|w| ..)` method takes [uerst::W](W) writer structure"]
 impl crate::Writable for UERST_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets UERST to value 0"]
 impl crate::Resettable for UERST_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

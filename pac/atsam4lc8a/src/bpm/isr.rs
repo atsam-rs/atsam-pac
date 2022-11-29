@@ -14,43 +14,19 @@ impl From<crate::R<ISR_SPEC>> for R {
     }
 }
 #[doc = "Field `PSOK` reader - Power Scaling OK Interrupt Status"]
-pub struct PSOK_R(crate::FieldReader<bool, bool>);
-impl PSOK_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        PSOK_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for PSOK_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type PSOK_R = crate::BitReader<bool>;
 #[doc = "Field `AE` reader - Access Error Interrupt Status"]
-pub struct AE_R(crate::FieldReader<bool, bool>);
-impl AE_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        AE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for AE_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type AE_R = crate::BitReader<bool>;
 impl R {
     #[doc = "Bit 0 - Power Scaling OK Interrupt Status"]
     #[inline(always)]
     pub fn psok(&self) -> PSOK_R {
-        PSOK_R::new((self.bits & 0x01) != 0)
+        PSOK_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 31 - Access Error Interrupt Status"]
     #[inline(always)]
     pub fn ae(&self) -> AE_R {
-        AE_R::new(((self.bits >> 31) & 0x01) != 0)
+        AE_R::new(((self.bits >> 31) & 1) != 0)
     }
 }
 #[doc = "Interrupt Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [isr](index.html) module"]
@@ -64,8 +40,5 @@ impl crate::Readable for ISR_SPEC {
 }
 #[doc = "`reset()` method sets ISR to value 0"]
 impl crate::Resettable for ISR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

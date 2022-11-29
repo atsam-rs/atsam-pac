@@ -35,161 +35,67 @@ impl From<crate::W<CFG_SPEC>> for W {
     }
 }
 #[doc = "Field `REFSEL` reader - ADC Reference Selection"]
-pub struct REFSEL_R(crate::FieldReader<u8, u8>);
-impl REFSEL_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        REFSEL_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for REFSEL_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type REFSEL_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `REFSEL` writer - ADC Reference Selection"]
-pub struct REFSEL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> REFSEL_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 1)) | ((value as u32 & 0x07) << 1);
-        self.w
-    }
-}
+pub type REFSEL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CFG_SPEC, u8, u8, 3, O>;
 #[doc = "Field `SPEED` reader - ADC current reduction"]
-pub struct SPEED_R(crate::FieldReader<u8, u8>);
-impl SPEED_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        SPEED_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for SPEED_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type SPEED_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `SPEED` writer - ADC current reduction"]
-pub struct SPEED_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SPEED_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 4)) | ((value as u32 & 0x03) << 4);
-        self.w
-    }
-}
+pub type SPEED_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CFG_SPEC, u8, u8, 2, O>;
 #[doc = "Field `CLKSEL` reader - Clock Selection for sequencer/ADC cell"]
-pub struct CLKSEL_R(crate::FieldReader<bool, bool>);
-impl CLKSEL_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        CLKSEL_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CLKSEL_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CLKSEL_R = crate::BitReader<bool>;
 #[doc = "Field `CLKSEL` writer - Clock Selection for sequencer/ADC cell"]
-pub struct CLKSEL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CLKSEL_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | ((value as u32 & 0x01) << 6);
-        self.w
-    }
-}
+pub type CLKSEL_W<'a, const O: u8> = crate::BitWriter<'a, u32, CFG_SPEC, bool, O>;
 #[doc = "Field `PRESCAL` reader - Prescaler Rate Selection"]
-pub struct PRESCAL_R(crate::FieldReader<u8, u8>);
-impl PRESCAL_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        PRESCAL_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for PRESCAL_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type PRESCAL_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `PRESCAL` writer - Prescaler Rate Selection"]
-pub struct PRESCAL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PRESCAL_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 8)) | ((value as u32 & 0x07) << 8);
-        self.w
-    }
-}
+pub type PRESCAL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CFG_SPEC, u8, u8, 3, O>;
 impl R {
     #[doc = "Bits 1:3 - ADC Reference Selection"]
     #[inline(always)]
     pub fn refsel(&self) -> REFSEL_R {
-        REFSEL_R::new(((self.bits >> 1) & 0x07) as u8)
+        REFSEL_R::new(((self.bits >> 1) & 7) as u8)
     }
     #[doc = "Bits 4:5 - ADC current reduction"]
     #[inline(always)]
     pub fn speed(&self) -> SPEED_R {
-        SPEED_R::new(((self.bits >> 4) & 0x03) as u8)
+        SPEED_R::new(((self.bits >> 4) & 3) as u8)
     }
     #[doc = "Bit 6 - Clock Selection for sequencer/ADC cell"]
     #[inline(always)]
     pub fn clksel(&self) -> CLKSEL_R {
-        CLKSEL_R::new(((self.bits >> 6) & 0x01) != 0)
+        CLKSEL_R::new(((self.bits >> 6) & 1) != 0)
     }
     #[doc = "Bits 8:10 - Prescaler Rate Selection"]
     #[inline(always)]
     pub fn prescal(&self) -> PRESCAL_R {
-        PRESCAL_R::new(((self.bits >> 8) & 0x07) as u8)
+        PRESCAL_R::new(((self.bits >> 8) & 7) as u8)
     }
 }
 impl W {
     #[doc = "Bits 1:3 - ADC Reference Selection"]
     #[inline(always)]
-    pub fn refsel(&mut self) -> REFSEL_W {
-        REFSEL_W { w: self }
+    #[must_use]
+    pub fn refsel(&mut self) -> REFSEL_W<1> {
+        REFSEL_W::new(self)
     }
     #[doc = "Bits 4:5 - ADC current reduction"]
     #[inline(always)]
-    pub fn speed(&mut self) -> SPEED_W {
-        SPEED_W { w: self }
+    #[must_use]
+    pub fn speed(&mut self) -> SPEED_W<4> {
+        SPEED_W::new(self)
     }
     #[doc = "Bit 6 - Clock Selection for sequencer/ADC cell"]
     #[inline(always)]
-    pub fn clksel(&mut self) -> CLKSEL_W {
-        CLKSEL_W { w: self }
+    #[must_use]
+    pub fn clksel(&mut self) -> CLKSEL_W<6> {
+        CLKSEL_W::new(self)
     }
     #[doc = "Bits 8:10 - Prescaler Rate Selection"]
     #[inline(always)]
-    pub fn prescal(&mut self) -> PRESCAL_W {
-        PRESCAL_W { w: self }
+    #[must_use]
+    pub fn prescal(&mut self) -> PRESCAL_W<8> {
+        PRESCAL_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -210,11 +116,10 @@ impl crate::Readable for CFG_SPEC {
 #[doc = "`write(|w| ..)` method takes [cfg::W](W) writer structure"]
 impl crate::Writable for CFG_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets CFG to value 0"]
 impl crate::Resettable for CFG_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

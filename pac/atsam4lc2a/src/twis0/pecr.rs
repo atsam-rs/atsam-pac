@@ -14,19 +14,7 @@ impl From<crate::R<PECR_SPEC>> for R {
     }
 }
 #[doc = "Field `PEC` reader - Calculated PEC Value"]
-pub struct PEC_R(crate::FieldReader<u8, u8>);
-impl PEC_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        PEC_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for PEC_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type PEC_R = crate::FieldReader<u8, u8>;
 impl R {
     #[doc = "Bits 0:7 - Calculated PEC Value"]
     #[inline(always)]
@@ -45,8 +33,5 @@ impl crate::Readable for PECR_SPEC {
 }
 #[doc = "`reset()` method sets PECR to value 0"]
 impl crate::Resettable for PECR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

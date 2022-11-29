@@ -14,33 +14,9 @@ impl From<crate::R<VERSION_SPEC>> for R {
     }
 }
 #[doc = "Field `VERSION` reader - Version Number"]
-pub struct VERSION_R(crate::FieldReader<u16, u16>);
-impl VERSION_R {
-    pub(crate) fn new(bits: u16) -> Self {
-        VERSION_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for VERSION_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type VERSION_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `VARIANT` reader - Variant Number"]
-pub struct VARIANT_R(crate::FieldReader<u8, u8>);
-impl VARIANT_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        VARIANT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for VARIANT_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type VARIANT_R = crate::FieldReader<u8, u8>;
 impl R {
     #[doc = "Bits 0:11 - Version Number"]
     #[inline(always)]
@@ -64,8 +40,5 @@ impl crate::Readable for VERSION_SPEC {
 }
 #[doc = "`reset()` method sets VERSION to value 0x0120"]
 impl crate::Resettable for VERSION_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x0120
-    }
+    const RESET_VALUE: Self::Ux = 0x0120;
 }

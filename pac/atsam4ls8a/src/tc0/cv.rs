@@ -14,19 +14,7 @@ impl From<crate::R<CV_SPEC>> for R {
     }
 }
 #[doc = "Field `CV` reader - Counter Value"]
-pub struct CV_R(crate::FieldReader<u16, u16>);
-impl CV_R {
-    pub(crate) fn new(bits: u16) -> Self {
-        CV_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CV_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CV_R = crate::FieldReader<u16, u16>;
 impl R {
     #[doc = "Bits 0:15 - Counter Value"]
     #[inline(always)]
@@ -45,8 +33,5 @@ impl crate::Readable for CV_SPEC {
 }
 #[doc = "`reset()` method sets CV%s to value 0"]
 impl crate::Resettable for CV_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

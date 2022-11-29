@@ -35,43 +35,22 @@ impl From<crate::W<US_LONB1TX_SPEC>> for W {
     }
 }
 #[doc = "Field `BETA1TX` reader - LON Beta1 Length after Transmission"]
-pub struct BETA1TX_R(crate::FieldReader<u32, u32>);
-impl BETA1TX_R {
-    pub(crate) fn new(bits: u32) -> Self {
-        BETA1TX_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for BETA1TX_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type BETA1TX_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `BETA1TX` writer - LON Beta1 Length after Transmission"]
-pub struct BETA1TX_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> BETA1TX_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x00ff_ffff) | (value as u32 & 0x00ff_ffff);
-        self.w
-    }
-}
+pub type BETA1TX_W<'a, const O: u8> = crate::FieldWriter<'a, u32, US_LONB1TX_SPEC, u32, u32, 24, O>;
 impl R {
     #[doc = "Bits 0:23 - LON Beta1 Length after Transmission"]
     #[inline(always)]
     pub fn beta1tx(&self) -> BETA1TX_R {
-        BETA1TX_R::new((self.bits & 0x00ff_ffff) as u32)
+        BETA1TX_R::new(self.bits & 0x00ff_ffff)
     }
 }
 impl W {
     #[doc = "Bits 0:23 - LON Beta1 Length after Transmission"]
     #[inline(always)]
-    pub fn beta1tx(&mut self) -> BETA1TX_W {
-        BETA1TX_W { w: self }
+    #[must_use]
+    pub fn beta1tx(&mut self) -> BETA1TX_W<0> {
+        BETA1TX_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -92,11 +71,10 @@ impl crate::Readable for US_LONB1TX_SPEC {
 #[doc = "`write(|w| ..)` method takes [us_lonb1tx::W](W) writer structure"]
 impl crate::Writable for US_LONB1TX_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets US_LONB1TX to value 0"]
 impl crate::Resettable for US_LONB1TX_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

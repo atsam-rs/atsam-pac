@@ -14,33 +14,9 @@ impl From<crate::R<UFEATURES_SPEC>> for R {
     }
 }
 #[doc = "Field `EPTNBRMAX` reader - Maximum Number of Pipes/Endpints"]
-pub struct EPTNBRMAX_R(crate::FieldReader<u8, u8>);
-impl EPTNBRMAX_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        EPTNBRMAX_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for EPTNBRMAX_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type EPTNBRMAX_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `UTMIMODE` reader - UTMI Mode"]
-pub struct UTMIMODE_R(crate::FieldReader<bool, bool>);
-impl UTMIMODE_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        UTMIMODE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for UTMIMODE_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type UTMIMODE_R = crate::BitReader<bool>;
 impl R {
     #[doc = "Bits 0:3 - Maximum Number of Pipes/Endpints"]
     #[inline(always)]
@@ -50,7 +26,7 @@ impl R {
     #[doc = "Bit 8 - UTMI Mode"]
     #[inline(always)]
     pub fn utmimode(&self) -> UTMIMODE_R {
-        UTMIMODE_R::new(((self.bits >> 8) & 0x01) != 0)
+        UTMIMODE_R::new(((self.bits >> 8) & 1) != 0)
     }
 }
 #[doc = "IP Features Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ufeatures](index.html) module"]
@@ -64,8 +40,5 @@ impl crate::Readable for UFEATURES_SPEC {
 }
 #[doc = "`reset()` method sets UFEATURES to value 0x07"]
 impl crate::Resettable for UFEATURES_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x07
-    }
+    const RESET_VALUE: Self::Ux = 0x07;
 }

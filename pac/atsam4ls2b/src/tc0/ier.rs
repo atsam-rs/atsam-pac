@@ -20,453 +20,277 @@ impl From<crate::W<IER_SPEC>> for W {
     }
 }
 #[doc = "Counter Overflow\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum COVFS_AW {
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum COVFSSELECT_AW {
     #[doc = "0: No effect."]
     _0 = 0,
     #[doc = "1: Enables the Counter Overflow Interrupt."]
     _1 = 1,
 }
-impl From<COVFS_AW> for bool {
+impl From<COVFSSELECT_AW> for bool {
     #[inline(always)]
-    fn from(variant: COVFS_AW) -> Self {
+    fn from(variant: COVFSSELECT_AW) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `COVFS` writer - Counter Overflow"]
-pub struct COVFS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> COVFS_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: COVFS_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type COVFS_W<'a, const O: u8> = crate::BitWriter<'a, u32, IER_SPEC, COVFSSELECT_AW, O>;
+impl<'a, const O: u8> COVFS_W<'a, O> {
     #[doc = "No effect."]
     #[inline(always)]
     pub fn _0(self) -> &'a mut W {
-        self.variant(COVFS_AW::_0)
+        self.variant(COVFSSELECT_AW::_0)
     }
     #[doc = "Enables the Counter Overflow Interrupt."]
     #[inline(always)]
     pub fn _1(self) -> &'a mut W {
-        self.variant(COVFS_AW::_1)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
+        self.variant(COVFSSELECT_AW::_1)
     }
 }
 #[doc = "Load Overrun\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum LOVRS_AW {
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum LOVRSSELECT_AW {
     #[doc = "0: No effect."]
     _0 = 0,
     #[doc = "1: Enables the Load Overrun Interrupt."]
     _1 = 1,
 }
-impl From<LOVRS_AW> for bool {
+impl From<LOVRSSELECT_AW> for bool {
     #[inline(always)]
-    fn from(variant: LOVRS_AW) -> Self {
+    fn from(variant: LOVRSSELECT_AW) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `LOVRS` writer - Load Overrun"]
-pub struct LOVRS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> LOVRS_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: LOVRS_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type LOVRS_W<'a, const O: u8> = crate::BitWriter<'a, u32, IER_SPEC, LOVRSSELECT_AW, O>;
+impl<'a, const O: u8> LOVRS_W<'a, O> {
     #[doc = "No effect."]
     #[inline(always)]
     pub fn _0(self) -> &'a mut W {
-        self.variant(LOVRS_AW::_0)
+        self.variant(LOVRSSELECT_AW::_0)
     }
     #[doc = "Enables the Load Overrun Interrupt."]
     #[inline(always)]
     pub fn _1(self) -> &'a mut W {
-        self.variant(LOVRS_AW::_1)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
+        self.variant(LOVRSSELECT_AW::_1)
     }
 }
 #[doc = "RA Compare\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CPAS_AW {
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum CPASSELECT_AW {
     #[doc = "0: No effect."]
     _0 = 0,
     #[doc = "1: Enables the RA Compare Interrupt."]
     _1 = 1,
 }
-impl From<CPAS_AW> for bool {
+impl From<CPASSELECT_AW> for bool {
     #[inline(always)]
-    fn from(variant: CPAS_AW) -> Self {
+    fn from(variant: CPASSELECT_AW) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `CPAS` writer - RA Compare"]
-pub struct CPAS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CPAS_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CPAS_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type CPAS_W<'a, const O: u8> = crate::BitWriter<'a, u32, IER_SPEC, CPASSELECT_AW, O>;
+impl<'a, const O: u8> CPAS_W<'a, O> {
     #[doc = "No effect."]
     #[inline(always)]
     pub fn _0(self) -> &'a mut W {
-        self.variant(CPAS_AW::_0)
+        self.variant(CPASSELECT_AW::_0)
     }
     #[doc = "Enables the RA Compare Interrupt."]
     #[inline(always)]
     pub fn _1(self) -> &'a mut W {
-        self.variant(CPAS_AW::_1)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
+        self.variant(CPASSELECT_AW::_1)
     }
 }
 #[doc = "RB Compare\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CPBS_AW {
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum CPBSSELECT_AW {
     #[doc = "0: No effect."]
     _0 = 0,
     #[doc = "1: Enables the RB Compare Interrupt."]
     _1 = 1,
 }
-impl From<CPBS_AW> for bool {
+impl From<CPBSSELECT_AW> for bool {
     #[inline(always)]
-    fn from(variant: CPBS_AW) -> Self {
+    fn from(variant: CPBSSELECT_AW) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `CPBS` writer - RB Compare"]
-pub struct CPBS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CPBS_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CPBS_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type CPBS_W<'a, const O: u8> = crate::BitWriter<'a, u32, IER_SPEC, CPBSSELECT_AW, O>;
+impl<'a, const O: u8> CPBS_W<'a, O> {
     #[doc = "No effect."]
     #[inline(always)]
     pub fn _0(self) -> &'a mut W {
-        self.variant(CPBS_AW::_0)
+        self.variant(CPBSSELECT_AW::_0)
     }
     #[doc = "Enables the RB Compare Interrupt."]
     #[inline(always)]
     pub fn _1(self) -> &'a mut W {
-        self.variant(CPBS_AW::_1)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
-        self.w
+        self.variant(CPBSSELECT_AW::_1)
     }
 }
 #[doc = "RC Compare\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CPCS_AW {
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum CPCSSELECT_AW {
     #[doc = "0: No effect."]
     _0 = 0,
     #[doc = "1: Enables the RC Compare Interrupt."]
     _1 = 1,
 }
-impl From<CPCS_AW> for bool {
+impl From<CPCSSELECT_AW> for bool {
     #[inline(always)]
-    fn from(variant: CPCS_AW) -> Self {
+    fn from(variant: CPCSSELECT_AW) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `CPCS` writer - RC Compare"]
-pub struct CPCS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CPCS_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CPCS_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type CPCS_W<'a, const O: u8> = crate::BitWriter<'a, u32, IER_SPEC, CPCSSELECT_AW, O>;
+impl<'a, const O: u8> CPCS_W<'a, O> {
     #[doc = "No effect."]
     #[inline(always)]
     pub fn _0(self) -> &'a mut W {
-        self.variant(CPCS_AW::_0)
+        self.variant(CPCSSELECT_AW::_0)
     }
     #[doc = "Enables the RC Compare Interrupt."]
     #[inline(always)]
     pub fn _1(self) -> &'a mut W {
-        self.variant(CPCS_AW::_1)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
-        self.w
+        self.variant(CPCSSELECT_AW::_1)
     }
 }
 #[doc = "RA Loading\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum LDRAS_AW {
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum LDRASSELECT_AW {
     #[doc = "0: No effect."]
     _0 = 0,
     #[doc = "1: Enables the RA Load Interrupt."]
     _1 = 1,
 }
-impl From<LDRAS_AW> for bool {
+impl From<LDRASSELECT_AW> for bool {
     #[inline(always)]
-    fn from(variant: LDRAS_AW) -> Self {
+    fn from(variant: LDRASSELECT_AW) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `LDRAS` writer - RA Loading"]
-pub struct LDRAS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> LDRAS_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: LDRAS_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type LDRAS_W<'a, const O: u8> = crate::BitWriter<'a, u32, IER_SPEC, LDRASSELECT_AW, O>;
+impl<'a, const O: u8> LDRAS_W<'a, O> {
     #[doc = "No effect."]
     #[inline(always)]
     pub fn _0(self) -> &'a mut W {
-        self.variant(LDRAS_AW::_0)
+        self.variant(LDRASSELECT_AW::_0)
     }
     #[doc = "Enables the RA Load Interrupt."]
     #[inline(always)]
     pub fn _1(self) -> &'a mut W {
-        self.variant(LDRAS_AW::_1)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
-        self.w
+        self.variant(LDRASSELECT_AW::_1)
     }
 }
 #[doc = "RB Loading\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum LDRBS_AW {
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum LDRBSSELECT_AW {
     #[doc = "0: No effect."]
     _0 = 0,
     #[doc = "1: Enables the RB Load Interrupt."]
     _1 = 1,
 }
-impl From<LDRBS_AW> for bool {
+impl From<LDRBSSELECT_AW> for bool {
     #[inline(always)]
-    fn from(variant: LDRBS_AW) -> Self {
+    fn from(variant: LDRBSSELECT_AW) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `LDRBS` writer - RB Loading"]
-pub struct LDRBS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> LDRBS_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: LDRBS_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type LDRBS_W<'a, const O: u8> = crate::BitWriter<'a, u32, IER_SPEC, LDRBSSELECT_AW, O>;
+impl<'a, const O: u8> LDRBS_W<'a, O> {
     #[doc = "No effect."]
     #[inline(always)]
     pub fn _0(self) -> &'a mut W {
-        self.variant(LDRBS_AW::_0)
+        self.variant(LDRBSSELECT_AW::_0)
     }
     #[doc = "Enables the RB Load Interrupt."]
     #[inline(always)]
     pub fn _1(self) -> &'a mut W {
-        self.variant(LDRBS_AW::_1)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | ((value as u32 & 0x01) << 6);
-        self.w
+        self.variant(LDRBSSELECT_AW::_1)
     }
 }
 #[doc = "External Trigger\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ETRGS_AW {
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum ETRGSSELECT_AW {
     #[doc = "0: No effect."]
     _0 = 0,
     #[doc = "1: Enables the External Trigger Interrupt."]
     _1 = 1,
 }
-impl From<ETRGS_AW> for bool {
+impl From<ETRGSSELECT_AW> for bool {
     #[inline(always)]
-    fn from(variant: ETRGS_AW) -> Self {
+    fn from(variant: ETRGSSELECT_AW) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `ETRGS` writer - External Trigger"]
-pub struct ETRGS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ETRGS_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: ETRGS_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type ETRGS_W<'a, const O: u8> = crate::BitWriter<'a, u32, IER_SPEC, ETRGSSELECT_AW, O>;
+impl<'a, const O: u8> ETRGS_W<'a, O> {
     #[doc = "No effect."]
     #[inline(always)]
     pub fn _0(self) -> &'a mut W {
-        self.variant(ETRGS_AW::_0)
+        self.variant(ETRGSSELECT_AW::_0)
     }
     #[doc = "Enables the External Trigger Interrupt."]
     #[inline(always)]
     pub fn _1(self) -> &'a mut W {
-        self.variant(ETRGS_AW::_1)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | ((value as u32 & 0x01) << 7);
-        self.w
+        self.variant(ETRGSSELECT_AW::_1)
     }
 }
 impl W {
     #[doc = "Bit 0 - Counter Overflow"]
     #[inline(always)]
-    pub fn covfs(&mut self) -> COVFS_W {
-        COVFS_W { w: self }
+    #[must_use]
+    pub fn covfs(&mut self) -> COVFS_W<0> {
+        COVFS_W::new(self)
     }
     #[doc = "Bit 1 - Load Overrun"]
     #[inline(always)]
-    pub fn lovrs(&mut self) -> LOVRS_W {
-        LOVRS_W { w: self }
+    #[must_use]
+    pub fn lovrs(&mut self) -> LOVRS_W<1> {
+        LOVRS_W::new(self)
     }
     #[doc = "Bit 2 - RA Compare"]
     #[inline(always)]
-    pub fn cpas(&mut self) -> CPAS_W {
-        CPAS_W { w: self }
+    #[must_use]
+    pub fn cpas(&mut self) -> CPAS_W<2> {
+        CPAS_W::new(self)
     }
     #[doc = "Bit 3 - RB Compare"]
     #[inline(always)]
-    pub fn cpbs(&mut self) -> CPBS_W {
-        CPBS_W { w: self }
+    #[must_use]
+    pub fn cpbs(&mut self) -> CPBS_W<3> {
+        CPBS_W::new(self)
     }
     #[doc = "Bit 4 - RC Compare"]
     #[inline(always)]
-    pub fn cpcs(&mut self) -> CPCS_W {
-        CPCS_W { w: self }
+    #[must_use]
+    pub fn cpcs(&mut self) -> CPCS_W<4> {
+        CPCS_W::new(self)
     }
     #[doc = "Bit 5 - RA Loading"]
     #[inline(always)]
-    pub fn ldras(&mut self) -> LDRAS_W {
-        LDRAS_W { w: self }
+    #[must_use]
+    pub fn ldras(&mut self) -> LDRAS_W<5> {
+        LDRAS_W::new(self)
     }
     #[doc = "Bit 6 - RB Loading"]
     #[inline(always)]
-    pub fn ldrbs(&mut self) -> LDRBS_W {
-        LDRBS_W { w: self }
+    #[must_use]
+    pub fn ldrbs(&mut self) -> LDRBS_W<6> {
+        LDRBS_W::new(self)
     }
     #[doc = "Bit 7 - External Trigger"]
     #[inline(always)]
-    pub fn etrgs(&mut self) -> ETRGS_W {
-        ETRGS_W { w: self }
+    #[must_use]
+    pub fn etrgs(&mut self) -> ETRGS_W<7> {
+        ETRGS_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -483,11 +307,10 @@ impl crate::RegisterSpec for IER_SPEC {
 #[doc = "`write(|w| ..)` method takes [ier::W](W) writer structure"]
 impl crate::Writable for IER_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets IER%s to value 0"]
 impl crate::Resettable for IER_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

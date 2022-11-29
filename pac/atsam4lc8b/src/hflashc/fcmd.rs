@@ -34,10 +34,12 @@ impl From<crate::W<FCMD_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `CMD` reader - Command"]
+pub type CMD_R = crate::FieldReader<u8, CMDSELECT_A>;
 #[doc = "Command\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum CMD_A {
+pub enum CMDSELECT_A {
     #[doc = "0: No Operation"]
     NOP = 0,
     #[doc = "1: Write Page"]
@@ -75,334 +77,264 @@ pub enum CMD_A {
     #[doc = "17: High Speed Mode Disable"]
     HSDIS = 17,
 }
-impl From<CMD_A> for u8 {
+impl From<CMDSELECT_A> for u8 {
     #[inline(always)]
-    fn from(variant: CMD_A) -> Self {
+    fn from(variant: CMDSELECT_A) -> Self {
         variant as _
     }
 }
-#[doc = "Field `CMD` reader - Command"]
-pub struct CMD_R(crate::FieldReader<u8, CMD_A>);
 impl CMD_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        CMD_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<CMD_A> {
+    pub fn variant(&self) -> Option<CMDSELECT_A> {
         match self.bits {
-            0 => Some(CMD_A::NOP),
-            1 => Some(CMD_A::WP),
-            2 => Some(CMD_A::EP),
-            3 => Some(CMD_A::CPB),
-            4 => Some(CMD_A::LP),
-            5 => Some(CMD_A::UP),
-            6 => Some(CMD_A::EA),
-            7 => Some(CMD_A::WGPB),
-            8 => Some(CMD_A::EGPB),
-            9 => Some(CMD_A::SSB),
-            10 => Some(CMD_A::PGPFB),
-            11 => Some(CMD_A::EAGPF),
-            12 => Some(CMD_A::QPR),
-            13 => Some(CMD_A::WUP),
-            14 => Some(CMD_A::EUP),
-            15 => Some(CMD_A::QPRUP),
-            16 => Some(CMD_A::HSEN),
-            17 => Some(CMD_A::HSDIS),
+            0 => Some(CMDSELECT_A::NOP),
+            1 => Some(CMDSELECT_A::WP),
+            2 => Some(CMDSELECT_A::EP),
+            3 => Some(CMDSELECT_A::CPB),
+            4 => Some(CMDSELECT_A::LP),
+            5 => Some(CMDSELECT_A::UP),
+            6 => Some(CMDSELECT_A::EA),
+            7 => Some(CMDSELECT_A::WGPB),
+            8 => Some(CMDSELECT_A::EGPB),
+            9 => Some(CMDSELECT_A::SSB),
+            10 => Some(CMDSELECT_A::PGPFB),
+            11 => Some(CMDSELECT_A::EAGPF),
+            12 => Some(CMDSELECT_A::QPR),
+            13 => Some(CMDSELECT_A::WUP),
+            14 => Some(CMDSELECT_A::EUP),
+            15 => Some(CMDSELECT_A::QPRUP),
+            16 => Some(CMDSELECT_A::HSEN),
+            17 => Some(CMDSELECT_A::HSDIS),
             _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `NOP`"]
     #[inline(always)]
     pub fn is_nop(&self) -> bool {
-        **self == CMD_A::NOP
+        *self == CMDSELECT_A::NOP
     }
     #[doc = "Checks if the value of the field is `WP`"]
     #[inline(always)]
     pub fn is_wp(&self) -> bool {
-        **self == CMD_A::WP
+        *self == CMDSELECT_A::WP
     }
     #[doc = "Checks if the value of the field is `EP`"]
     #[inline(always)]
     pub fn is_ep(&self) -> bool {
-        **self == CMD_A::EP
+        *self == CMDSELECT_A::EP
     }
     #[doc = "Checks if the value of the field is `CPB`"]
     #[inline(always)]
     pub fn is_cpb(&self) -> bool {
-        **self == CMD_A::CPB
+        *self == CMDSELECT_A::CPB
     }
     #[doc = "Checks if the value of the field is `LP`"]
     #[inline(always)]
     pub fn is_lp(&self) -> bool {
-        **self == CMD_A::LP
+        *self == CMDSELECT_A::LP
     }
     #[doc = "Checks if the value of the field is `UP`"]
     #[inline(always)]
     pub fn is_up(&self) -> bool {
-        **self == CMD_A::UP
+        *self == CMDSELECT_A::UP
     }
     #[doc = "Checks if the value of the field is `EA`"]
     #[inline(always)]
     pub fn is_ea(&self) -> bool {
-        **self == CMD_A::EA
+        *self == CMDSELECT_A::EA
     }
     #[doc = "Checks if the value of the field is `WGPB`"]
     #[inline(always)]
     pub fn is_wgpb(&self) -> bool {
-        **self == CMD_A::WGPB
+        *self == CMDSELECT_A::WGPB
     }
     #[doc = "Checks if the value of the field is `EGPB`"]
     #[inline(always)]
     pub fn is_egpb(&self) -> bool {
-        **self == CMD_A::EGPB
+        *self == CMDSELECT_A::EGPB
     }
     #[doc = "Checks if the value of the field is `SSB`"]
     #[inline(always)]
     pub fn is_ssb(&self) -> bool {
-        **self == CMD_A::SSB
+        *self == CMDSELECT_A::SSB
     }
     #[doc = "Checks if the value of the field is `PGPFB`"]
     #[inline(always)]
     pub fn is_pgpfb(&self) -> bool {
-        **self == CMD_A::PGPFB
+        *self == CMDSELECT_A::PGPFB
     }
     #[doc = "Checks if the value of the field is `EAGPF`"]
     #[inline(always)]
     pub fn is_eagpf(&self) -> bool {
-        **self == CMD_A::EAGPF
+        *self == CMDSELECT_A::EAGPF
     }
     #[doc = "Checks if the value of the field is `QPR`"]
     #[inline(always)]
     pub fn is_qpr(&self) -> bool {
-        **self == CMD_A::QPR
+        *self == CMDSELECT_A::QPR
     }
     #[doc = "Checks if the value of the field is `WUP`"]
     #[inline(always)]
     pub fn is_wup(&self) -> bool {
-        **self == CMD_A::WUP
+        *self == CMDSELECT_A::WUP
     }
     #[doc = "Checks if the value of the field is `EUP`"]
     #[inline(always)]
     pub fn is_eup(&self) -> bool {
-        **self == CMD_A::EUP
+        *self == CMDSELECT_A::EUP
     }
     #[doc = "Checks if the value of the field is `QPRUP`"]
     #[inline(always)]
     pub fn is_qprup(&self) -> bool {
-        **self == CMD_A::QPRUP
+        *self == CMDSELECT_A::QPRUP
     }
     #[doc = "Checks if the value of the field is `HSEN`"]
     #[inline(always)]
     pub fn is_hsen(&self) -> bool {
-        **self == CMD_A::HSEN
+        *self == CMDSELECT_A::HSEN
     }
     #[doc = "Checks if the value of the field is `HSDIS`"]
     #[inline(always)]
     pub fn is_hsdis(&self) -> bool {
-        **self == CMD_A::HSDIS
-    }
-}
-impl core::ops::Deref for CMD_R {
-    type Target = crate::FieldReader<u8, CMD_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == CMDSELECT_A::HSDIS
     }
 }
 #[doc = "Field `CMD` writer - Command"]
-pub struct CMD_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CMD_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CMD_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type CMD_W<'a, const O: u8> = crate::FieldWriter<'a, u32, FCMD_SPEC, u8, CMDSELECT_A, 6, O>;
+impl<'a, const O: u8> CMD_W<'a, O> {
     #[doc = "No Operation"]
     #[inline(always)]
     pub fn nop(self) -> &'a mut W {
-        self.variant(CMD_A::NOP)
+        self.variant(CMDSELECT_A::NOP)
     }
     #[doc = "Write Page"]
     #[inline(always)]
     pub fn wp(self) -> &'a mut W {
-        self.variant(CMD_A::WP)
+        self.variant(CMDSELECT_A::WP)
     }
     #[doc = "Erase Page"]
     #[inline(always)]
     pub fn ep(self) -> &'a mut W {
-        self.variant(CMD_A::EP)
+        self.variant(CMDSELECT_A::EP)
     }
     #[doc = "Clear Page Buffer"]
     #[inline(always)]
     pub fn cpb(self) -> &'a mut W {
-        self.variant(CMD_A::CPB)
+        self.variant(CMDSELECT_A::CPB)
     }
     #[doc = "Lock Region containing page"]
     #[inline(always)]
     pub fn lp(self) -> &'a mut W {
-        self.variant(CMD_A::LP)
+        self.variant(CMDSELECT_A::LP)
     }
     #[doc = "Unlock Region containing page"]
     #[inline(always)]
     pub fn up(self) -> &'a mut W {
-        self.variant(CMD_A::UP)
+        self.variant(CMDSELECT_A::UP)
     }
     #[doc = "Erase All, including secuity and fuse bits"]
     #[inline(always)]
     pub fn ea(self) -> &'a mut W {
-        self.variant(CMD_A::EA)
+        self.variant(CMDSELECT_A::EA)
     }
     #[doc = "Write General-Purpose fuse Bit"]
     #[inline(always)]
     pub fn wgpb(self) -> &'a mut W {
-        self.variant(CMD_A::WGPB)
+        self.variant(CMDSELECT_A::WGPB)
     }
     #[doc = "Erase General-Purpose fuse Bit"]
     #[inline(always)]
     pub fn egpb(self) -> &'a mut W {
-        self.variant(CMD_A::EGPB)
+        self.variant(CMDSELECT_A::EGPB)
     }
     #[doc = "Set Security Bit"]
     #[inline(always)]
     pub fn ssb(self) -> &'a mut W {
-        self.variant(CMD_A::SSB)
+        self.variant(CMDSELECT_A::SSB)
     }
     #[doc = "Program GPFuse Byte"]
     #[inline(always)]
     pub fn pgpfb(self) -> &'a mut W {
-        self.variant(CMD_A::PGPFB)
+        self.variant(CMDSELECT_A::PGPFB)
     }
     #[doc = "Erase All GP Fuses"]
     #[inline(always)]
     pub fn eagpf(self) -> &'a mut W {
-        self.variant(CMD_A::EAGPF)
+        self.variant(CMDSELECT_A::EAGPF)
     }
     #[doc = "Quick Page Read"]
     #[inline(always)]
     pub fn qpr(self) -> &'a mut W {
-        self.variant(CMD_A::QPR)
+        self.variant(CMDSELECT_A::QPR)
     }
     #[doc = "Write User Page"]
     #[inline(always)]
     pub fn wup(self) -> &'a mut W {
-        self.variant(CMD_A::WUP)
+        self.variant(CMDSELECT_A::WUP)
     }
     #[doc = "Erase User Page"]
     #[inline(always)]
     pub fn eup(self) -> &'a mut W {
-        self.variant(CMD_A::EUP)
+        self.variant(CMDSELECT_A::EUP)
     }
     #[doc = "Quick Page Read User Page"]
     #[inline(always)]
     pub fn qprup(self) -> &'a mut W {
-        self.variant(CMD_A::QPRUP)
+        self.variant(CMDSELECT_A::QPRUP)
     }
     #[doc = "High Speed Mode Enable"]
     #[inline(always)]
     pub fn hsen(self) -> &'a mut W {
-        self.variant(CMD_A::HSEN)
+        self.variant(CMDSELECT_A::HSEN)
     }
     #[doc = "High Speed Mode Disable"]
     #[inline(always)]
     pub fn hsdis(self) -> &'a mut W {
-        self.variant(CMD_A::HSDIS)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x3f) | (value as u32 & 0x3f);
-        self.w
+        self.variant(CMDSELECT_A::HSDIS)
     }
 }
 #[doc = "Field `PAGEN` reader - Page number"]
-pub struct PAGEN_R(crate::FieldReader<u16, u16>);
-impl PAGEN_R {
-    pub(crate) fn new(bits: u16) -> Self {
-        PAGEN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for PAGEN_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type PAGEN_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `PAGEN` writer - Page number"]
-pub struct PAGEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PAGEN_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0xffff << 8)) | ((value as u32 & 0xffff) << 8);
-        self.w
-    }
-}
+pub type PAGEN_W<'a, const O: u8> = crate::FieldWriter<'a, u32, FCMD_SPEC, u16, u16, 16, O>;
+#[doc = "Field `KEY` reader - Write protection key"]
+pub type KEY_R = crate::FieldReader<u8, KEYSELECT_A>;
 #[doc = "Write protection key\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum KEY_A {
+pub enum KEYSELECT_A {
     #[doc = "165: `10100101`"]
     KEY = 165,
 }
-impl From<KEY_A> for u8 {
+impl From<KEYSELECT_A> for u8 {
     #[inline(always)]
-    fn from(variant: KEY_A) -> Self {
+    fn from(variant: KEYSELECT_A) -> Self {
         variant as _
     }
 }
-#[doc = "Field `KEY` reader - Write protection key"]
-pub struct KEY_R(crate::FieldReader<u8, KEY_A>);
 impl KEY_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        KEY_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<KEY_A> {
+    pub fn variant(&self) -> Option<KEYSELECT_A> {
         match self.bits {
-            165 => Some(KEY_A::KEY),
+            165 => Some(KEYSELECT_A::KEY),
             _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `KEY`"]
     #[inline(always)]
     pub fn is_key(&self) -> bool {
-        **self == KEY_A::KEY
-    }
-}
-impl core::ops::Deref for KEY_R {
-    type Target = crate::FieldReader<u8, KEY_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == KEYSELECT_A::KEY
     }
 }
 #[doc = "Field `KEY` writer - Write protection key"]
-pub struct KEY_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> KEY_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: KEY_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type KEY_W<'a, const O: u8> = crate::FieldWriter<'a, u32, FCMD_SPEC, u8, KEYSELECT_A, 8, O>;
+impl<'a, const O: u8> KEY_W<'a, O> {
     #[doc = "`10100101`"]
     #[inline(always)]
     pub fn key(self) -> &'a mut W {
-        self.variant(KEY_A::KEY)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0xff << 24)) | ((value as u32 & 0xff) << 24);
-        self.w
+        self.variant(KEYSELECT_A::KEY)
     }
 }
 impl R {
@@ -425,18 +357,21 @@ impl R {
 impl W {
     #[doc = "Bits 0:5 - Command"]
     #[inline(always)]
-    pub fn cmd(&mut self) -> CMD_W {
-        CMD_W { w: self }
+    #[must_use]
+    pub fn cmd(&mut self) -> CMD_W<0> {
+        CMD_W::new(self)
     }
     #[doc = "Bits 8:23 - Page number"]
     #[inline(always)]
-    pub fn pagen(&mut self) -> PAGEN_W {
-        PAGEN_W { w: self }
+    #[must_use]
+    pub fn pagen(&mut self) -> PAGEN_W<8> {
+        PAGEN_W::new(self)
     }
     #[doc = "Bits 24:31 - Write protection key"]
     #[inline(always)]
-    pub fn key(&mut self) -> KEY_W {
-        KEY_W { w: self }
+    #[must_use]
+    pub fn key(&mut self) -> KEY_W<24> {
+        KEY_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -457,11 +392,10 @@ impl crate::Readable for FCMD_SPEC {
 #[doc = "`write(|w| ..)` method takes [fcmd::W](W) writer structure"]
 impl crate::Writable for FCMD_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets FCMD to value 0"]
 impl crate::Resettable for FCMD_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

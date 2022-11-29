@@ -2,39 +2,39 @@
 #[repr(C)]
 pub struct RegisterBlock {
     #[doc = "0x00 - Global Type Register"]
-    pub gtype: crate::Reg<gtype::GTYPE_SPEC>,
+    pub gtype: GTYPE,
     #[doc = "0x04 - Global Configuration Register"]
-    pub gcfg: crate::Reg<gcfg::GCFG_SPEC>,
+    pub gcfg: GCFG,
     #[doc = "0x08 - Global Weighted Arbiter Configuration Register"]
-    pub gwac: crate::Reg<gwac::GWAC_SPEC>,
+    pub gwac: GWAC,
     #[doc = "0x0c - Global Interrupt Enable Register"]
-    pub gie: crate::Reg<gie::GIE_SPEC>,
+    pub gie: GIE,
     #[doc = "0x10 - Global Interrupt Disable Register"]
-    pub gid: crate::Reg<gid::GID_SPEC>,
+    pub gid: GID,
     #[doc = "0x14 - Global Interrupt Mask Register"]
-    pub gim: crate::Reg<gim::GIM_SPEC>,
+    pub gim: GIM,
     #[doc = "0x18 - Global Interrupt Status Register"]
-    pub gis: crate::Reg<gis::GIS_SPEC>,
+    pub gis: GIS,
     #[doc = "0x1c - Global Channel Enable Register"]
-    pub ge: crate::Reg<ge::GE_SPEC>,
+    pub ge: GE,
     #[doc = "0x20 - Global Channel Disable Register"]
-    pub gd: crate::Reg<gd::GD_SPEC>,
+    pub gd: GD,
     #[doc = "0x24 - Global Channel Status Register"]
-    pub gs: crate::Reg<gs::GS_SPEC>,
+    pub gs: GS,
     #[doc = "0x28 - Global Channel Read Suspend Register"]
-    pub grs: crate::Reg<grs::GRS_SPEC>,
+    pub grs: GRS,
     #[doc = "0x2c - Global Channel Write Suspend Register"]
-    pub gws: crate::Reg<gws::GWS_SPEC>,
+    pub gws: GWS,
     #[doc = "0x30 - Global Channel Read Write Suspend Register"]
-    pub grws: crate::Reg<grws::GRWS_SPEC>,
+    pub grws: GRWS,
     #[doc = "0x34 - Global Channel Read Write Resume Register"]
-    pub grwr: crate::Reg<grwr::GRWR_SPEC>,
+    pub grwr: GRWR,
     #[doc = "0x38 - Global Channel Software Request Register"]
-    pub gswr: crate::Reg<gswr::GSWR_SPEC>,
+    pub gswr: GSWR,
     #[doc = "0x3c - Global Channel Software Request Status Register"]
-    pub gsws: crate::Reg<gsws::GSWS_SPEC>,
+    pub gsws: GSWS,
     #[doc = "0x40 - Global Channel Software Flush Request Register"]
-    pub gswf: crate::Reg<gswf::GSWF_SPEC>,
+    pub gswf: GSWF,
     _reserved17: [u8; 0x0c],
     #[doc = "0x50..0x88 - Channel Interrupt Enable Register (chid = 0)"]
     pub xdmac_chid0: XDMAC_CHID,
@@ -108,106 +108,76 @@ pub struct RegisterBlock {
     #[doc = "0x610..0x648 - Channel Interrupt Enable Register (chid = 0)"]
     pub xdmac_chid23: XDMAC_CHID,
 }
-#[doc = r"Register block"]
-#[repr(C)]
-pub struct XDMAC_CHID {
-    #[doc = "0x00 - Channel Interrupt Enable Register (chid = 0)"]
-    pub cie: crate::Reg<self::xdmac_chid::cie::CIE_SPEC>,
-    #[doc = "0x04 - Channel Interrupt Disable Register (chid = 0)"]
-    pub cid: crate::Reg<self::xdmac_chid::cid::CID_SPEC>,
-    #[doc = "0x08 - Channel Interrupt Mask Register (chid = 0)"]
-    pub cim: crate::Reg<self::xdmac_chid::cim::CIM_SPEC>,
-    #[doc = "0x0c - Channel Interrupt Status Register (chid = 0)"]
-    pub cis: crate::Reg<self::xdmac_chid::cis::CIS_SPEC>,
-    #[doc = "0x10 - Channel Source Address Register (chid = 0)"]
-    pub csa: crate::Reg<self::xdmac_chid::csa::CSA_SPEC>,
-    #[doc = "0x14 - Channel Destination Address Register (chid = 0)"]
-    pub cda: crate::Reg<self::xdmac_chid::cda::CDA_SPEC>,
-    #[doc = "0x18 - Channel Next Descriptor Address Register (chid = 0)"]
-    pub cnda: crate::Reg<self::xdmac_chid::cnda::CNDA_SPEC>,
-    #[doc = "0x1c - Channel Next Descriptor Control Register (chid = 0)"]
-    pub cndc: crate::Reg<self::xdmac_chid::cndc::CNDC_SPEC>,
-    #[doc = "0x20 - Channel Microblock Control Register (chid = 0)"]
-    pub cubc: crate::Reg<self::xdmac_chid::cubc::CUBC_SPEC>,
-    #[doc = "0x24 - Channel Block Control Register (chid = 0)"]
-    pub cbc: crate::Reg<self::xdmac_chid::cbc::CBC_SPEC>,
-    #[doc = "0x28 - Channel Configuration Register (chid = 0)"]
-    pub cc: crate::Reg<self::xdmac_chid::cc::CC_SPEC>,
-    #[doc = "0x2c - Channel Data Stride Memory Set Pattern (chid = 0)"]
-    pub cds_msp: crate::Reg<self::xdmac_chid::cds_msp::CDS_MSP_SPEC>,
-    #[doc = "0x30 - Channel Source Microblock Stride (chid = 0)"]
-    pub csus: crate::Reg<self::xdmac_chid::csus::CSUS_SPEC>,
-    #[doc = "0x34 - Channel Destination Microblock Stride (chid = 0)"]
-    pub cdus: crate::Reg<self::xdmac_chid::cdus::CDUS_SPEC>,
-}
-#[doc = r"Register block"]
-#[doc = "Channel Interrupt Enable Register (chid = 0)"]
-pub mod xdmac_chid;
-#[doc = "GTYPE register accessor: an alias for `Reg<GTYPE_SPEC>`"]
+#[doc = "GTYPE (rw) register accessor: an alias for `Reg<GTYPE_SPEC>`"]
 pub type GTYPE = crate::Reg<gtype::GTYPE_SPEC>;
 #[doc = "Global Type Register"]
 pub mod gtype;
-#[doc = "GCFG register accessor: an alias for `Reg<GCFG_SPEC>`"]
+#[doc = "GCFG (r) register accessor: an alias for `Reg<GCFG_SPEC>`"]
 pub type GCFG = crate::Reg<gcfg::GCFG_SPEC>;
 #[doc = "Global Configuration Register"]
 pub mod gcfg;
-#[doc = "GWAC register accessor: an alias for `Reg<GWAC_SPEC>`"]
+#[doc = "GWAC (rw) register accessor: an alias for `Reg<GWAC_SPEC>`"]
 pub type GWAC = crate::Reg<gwac::GWAC_SPEC>;
 #[doc = "Global Weighted Arbiter Configuration Register"]
 pub mod gwac;
-#[doc = "GIE register accessor: an alias for `Reg<GIE_SPEC>`"]
+#[doc = "GIE (w) register accessor: an alias for `Reg<GIE_SPEC>`"]
 pub type GIE = crate::Reg<gie::GIE_SPEC>;
 #[doc = "Global Interrupt Enable Register"]
 pub mod gie;
-#[doc = "GID register accessor: an alias for `Reg<GID_SPEC>`"]
+#[doc = "GID (w) register accessor: an alias for `Reg<GID_SPEC>`"]
 pub type GID = crate::Reg<gid::GID_SPEC>;
 #[doc = "Global Interrupt Disable Register"]
 pub mod gid;
-#[doc = "GIM register accessor: an alias for `Reg<GIM_SPEC>`"]
+#[doc = "GIM (r) register accessor: an alias for `Reg<GIM_SPEC>`"]
 pub type GIM = crate::Reg<gim::GIM_SPEC>;
 #[doc = "Global Interrupt Mask Register"]
 pub mod gim;
-#[doc = "GIS register accessor: an alias for `Reg<GIS_SPEC>`"]
+#[doc = "GIS (r) register accessor: an alias for `Reg<GIS_SPEC>`"]
 pub type GIS = crate::Reg<gis::GIS_SPEC>;
 #[doc = "Global Interrupt Status Register"]
 pub mod gis;
-#[doc = "GE register accessor: an alias for `Reg<GE_SPEC>`"]
+#[doc = "GE (w) register accessor: an alias for `Reg<GE_SPEC>`"]
 pub type GE = crate::Reg<ge::GE_SPEC>;
 #[doc = "Global Channel Enable Register"]
 pub mod ge;
-#[doc = "GD register accessor: an alias for `Reg<GD_SPEC>`"]
+#[doc = "GD (w) register accessor: an alias for `Reg<GD_SPEC>`"]
 pub type GD = crate::Reg<gd::GD_SPEC>;
 #[doc = "Global Channel Disable Register"]
 pub mod gd;
-#[doc = "GS register accessor: an alias for `Reg<GS_SPEC>`"]
+#[doc = "GS (r) register accessor: an alias for `Reg<GS_SPEC>`"]
 pub type GS = crate::Reg<gs::GS_SPEC>;
 #[doc = "Global Channel Status Register"]
 pub mod gs;
-#[doc = "GRS register accessor: an alias for `Reg<GRS_SPEC>`"]
+#[doc = "GRS (rw) register accessor: an alias for `Reg<GRS_SPEC>`"]
 pub type GRS = crate::Reg<grs::GRS_SPEC>;
 #[doc = "Global Channel Read Suspend Register"]
 pub mod grs;
-#[doc = "GWS register accessor: an alias for `Reg<GWS_SPEC>`"]
+#[doc = "GWS (rw) register accessor: an alias for `Reg<GWS_SPEC>`"]
 pub type GWS = crate::Reg<gws::GWS_SPEC>;
 #[doc = "Global Channel Write Suspend Register"]
 pub mod gws;
-#[doc = "GRWS register accessor: an alias for `Reg<GRWS_SPEC>`"]
+#[doc = "GRWS (w) register accessor: an alias for `Reg<GRWS_SPEC>`"]
 pub type GRWS = crate::Reg<grws::GRWS_SPEC>;
 #[doc = "Global Channel Read Write Suspend Register"]
 pub mod grws;
-#[doc = "GRWR register accessor: an alias for `Reg<GRWR_SPEC>`"]
+#[doc = "GRWR (w) register accessor: an alias for `Reg<GRWR_SPEC>`"]
 pub type GRWR = crate::Reg<grwr::GRWR_SPEC>;
 #[doc = "Global Channel Read Write Resume Register"]
 pub mod grwr;
-#[doc = "GSWR register accessor: an alias for `Reg<GSWR_SPEC>`"]
+#[doc = "GSWR (w) register accessor: an alias for `Reg<GSWR_SPEC>`"]
 pub type GSWR = crate::Reg<gswr::GSWR_SPEC>;
 #[doc = "Global Channel Software Request Register"]
 pub mod gswr;
-#[doc = "GSWS register accessor: an alias for `Reg<GSWS_SPEC>`"]
+#[doc = "GSWS (r) register accessor: an alias for `Reg<GSWS_SPEC>`"]
 pub type GSWS = crate::Reg<gsws::GSWS_SPEC>;
 #[doc = "Global Channel Software Request Status Register"]
 pub mod gsws;
-#[doc = "GSWF register accessor: an alias for `Reg<GSWF_SPEC>`"]
+#[doc = "GSWF (w) register accessor: an alias for `Reg<GSWF_SPEC>`"]
 pub type GSWF = crate::Reg<gswf::GSWF_SPEC>;
 #[doc = "Global Channel Software Flush Request Register"]
 pub mod gswf;
+#[doc = "Channel Interrupt Enable Register (chid = 0)"]
+pub use self::xdmac_chid::XDMAC_CHID;
+#[doc = r"Cluster"]
+#[doc = "Channel Interrupt Enable Register (chid = 0)"]
+pub mod xdmac_chid;

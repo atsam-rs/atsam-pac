@@ -14,61 +14,13 @@ impl From<crate::R<PARAMETER_SPEC>> for R {
     }
 }
 #[doc = "Field `IGF_COUNT` reader - Number of Input Glitch Filters"]
-pub struct IGF_COUNT_R(crate::FieldReader<u8, u8>);
-impl IGF_COUNT_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        IGF_COUNT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for IGF_COUNT_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type IGF_COUNT_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `EVS_COUNT` reader - Number of Event Shapers"]
-pub struct EVS_COUNT_R(crate::FieldReader<u8, u8>);
-impl EVS_COUNT_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        EVS_COUNT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for EVS_COUNT_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type EVS_COUNT_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `EVIN` reader - Number of Event Inputs / Generators"]
-pub struct EVIN_R(crate::FieldReader<u8, u8>);
-impl EVIN_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        EVIN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for EVIN_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type EVIN_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `TRIGOUT` reader - Number of Trigger Outputs / Channels / Users"]
-pub struct TRIGOUT_R(crate::FieldReader<u8, u8>);
-impl TRIGOUT_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        TRIGOUT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TRIGOUT_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TRIGOUT_R = crate::FieldReader<u8, u8>;
 impl R {
     #[doc = "Bits 0:7 - Number of Input Glitch Filters"]
     #[inline(always)]
@@ -102,8 +54,5 @@ impl crate::Readable for PARAMETER_SPEC {
 }
 #[doc = "`reset()` method sets PARAMETER to value 0x1406_1824"]
 impl crate::Resettable for PARAMETER_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x1406_1824
-    }
+    const RESET_VALUE: Self::Ux = 0x1406_1824;
 }

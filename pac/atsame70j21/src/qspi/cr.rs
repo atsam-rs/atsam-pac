@@ -20,113 +20,37 @@ impl From<crate::W<CR_SPEC>> for W {
     }
 }
 #[doc = "Field `QSPIEN` writer - QSPI Enable"]
-pub struct QSPIEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> QSPIEN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type QSPIEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CR_SPEC, bool, O>;
 #[doc = "Field `QSPIDIS` writer - QSPI Disable"]
-pub struct QSPIDIS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> QSPIDIS_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
-}
+pub type QSPIDIS_W<'a, const O: u8> = crate::BitWriter<'a, u32, CR_SPEC, bool, O>;
 #[doc = "Field `SWRST` writer - QSPI Software Reset"]
-pub struct SWRST_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SWRST_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | ((value as u32 & 0x01) << 7);
-        self.w
-    }
-}
+pub type SWRST_W<'a, const O: u8> = crate::BitWriter<'a, u32, CR_SPEC, bool, O>;
 #[doc = "Field `LASTXFER` writer - Last Transfer"]
-pub struct LASTXFER_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> LASTXFER_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 24)) | ((value as u32 & 0x01) << 24);
-        self.w
-    }
-}
+pub type LASTXFER_W<'a, const O: u8> = crate::BitWriter<'a, u32, CR_SPEC, bool, O>;
 impl W {
     #[doc = "Bit 0 - QSPI Enable"]
     #[inline(always)]
-    pub fn qspien(&mut self) -> QSPIEN_W {
-        QSPIEN_W { w: self }
+    #[must_use]
+    pub fn qspien(&mut self) -> QSPIEN_W<0> {
+        QSPIEN_W::new(self)
     }
     #[doc = "Bit 1 - QSPI Disable"]
     #[inline(always)]
-    pub fn qspidis(&mut self) -> QSPIDIS_W {
-        QSPIDIS_W { w: self }
+    #[must_use]
+    pub fn qspidis(&mut self) -> QSPIDIS_W<1> {
+        QSPIDIS_W::new(self)
     }
     #[doc = "Bit 7 - QSPI Software Reset"]
     #[inline(always)]
-    pub fn swrst(&mut self) -> SWRST_W {
-        SWRST_W { w: self }
+    #[must_use]
+    pub fn swrst(&mut self) -> SWRST_W<7> {
+        SWRST_W::new(self)
     }
     #[doc = "Bit 24 - Last Transfer"]
     #[inline(always)]
-    pub fn lastxfer(&mut self) -> LASTXFER_W {
-        LASTXFER_W { w: self }
+    #[must_use]
+    pub fn lastxfer(&mut self) -> LASTXFER_W<24> {
+        LASTXFER_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -143,11 +67,10 @@ impl crate::RegisterSpec for CR_SPEC {
 #[doc = "`write(|w| ..)` method takes [cr::W](W) writer structure"]
 impl crate::Writable for CR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets CR to value 0"]
 impl crate::Resettable for CR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

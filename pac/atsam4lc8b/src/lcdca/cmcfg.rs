@@ -35,103 +35,27 @@ impl From<crate::W<CMCFG_SPEC>> for W {
     }
 }
 #[doc = "Field `DREV` reader - Digit Reverse Mode"]
-pub struct DREV_R(crate::FieldReader<bool, bool>);
-impl DREV_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        DREV_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DREV_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DREV_R = crate::BitReader<bool>;
 #[doc = "Field `DREV` writer - Digit Reverse Mode"]
-pub struct DREV_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DREV_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type DREV_W<'a, const O: u8> = crate::BitWriter<'a, u32, CMCFG_SPEC, bool, O>;
 #[doc = "Field `TDG` reader - Type of Digit"]
-pub struct TDG_R(crate::FieldReader<u8, u8>);
-impl TDG_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        TDG_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TDG_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TDG_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `TDG` writer - Type of Digit"]
-pub struct TDG_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TDG_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 1)) | ((value as u32 & 0x03) << 1);
-        self.w
-    }
-}
+pub type TDG_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CMCFG_SPEC, u8, u8, 2, O>;
 #[doc = "Field `STSEG` reader - Start Segment"]
-pub struct STSEG_R(crate::FieldReader<u8, u8>);
-impl STSEG_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        STSEG_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for STSEG_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type STSEG_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `STSEG` writer - Start Segment"]
-pub struct STSEG_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> STSEG_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x3f << 8)) | ((value as u32 & 0x3f) << 8);
-        self.w
-    }
-}
+pub type STSEG_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CMCFG_SPEC, u8, u8, 6, O>;
 impl R {
     #[doc = "Bit 0 - Digit Reverse Mode"]
     #[inline(always)]
     pub fn drev(&self) -> DREV_R {
-        DREV_R::new((self.bits & 0x01) != 0)
+        DREV_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bits 1:2 - Type of Digit"]
     #[inline(always)]
     pub fn tdg(&self) -> TDG_R {
-        TDG_R::new(((self.bits >> 1) & 0x03) as u8)
+        TDG_R::new(((self.bits >> 1) & 3) as u8)
     }
     #[doc = "Bits 8:13 - Start Segment"]
     #[inline(always)]
@@ -142,18 +66,21 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Digit Reverse Mode"]
     #[inline(always)]
-    pub fn drev(&mut self) -> DREV_W {
-        DREV_W { w: self }
+    #[must_use]
+    pub fn drev(&mut self) -> DREV_W<0> {
+        DREV_W::new(self)
     }
     #[doc = "Bits 1:2 - Type of Digit"]
     #[inline(always)]
-    pub fn tdg(&mut self) -> TDG_W {
-        TDG_W { w: self }
+    #[must_use]
+    pub fn tdg(&mut self) -> TDG_W<1> {
+        TDG_W::new(self)
     }
     #[doc = "Bits 8:13 - Start Segment"]
     #[inline(always)]
-    pub fn stseg(&mut self) -> STSEG_W {
-        STSEG_W { w: self }
+    #[must_use]
+    pub fn stseg(&mut self) -> STSEG_W<8> {
+        STSEG_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -174,11 +101,10 @@ impl crate::Readable for CMCFG_SPEC {
 #[doc = "`write(|w| ..)` method takes [cmcfg::W](W) writer structure"]
 impl crate::Writable for CMCFG_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets CMCFG to value 0"]
 impl crate::Resettable for CMCFG_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

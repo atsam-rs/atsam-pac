@@ -35,43 +35,22 @@ impl From<crate::W<IADR_SPEC>> for W {
     }
 }
 #[doc = "Field `IADR` reader - Internal Address"]
-pub struct IADR_R(crate::FieldReader<u32, u32>);
-impl IADR_R {
-    pub(crate) fn new(bits: u32) -> Self {
-        IADR_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for IADR_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type IADR_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `IADR` writer - Internal Address"]
-pub struct IADR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> IADR_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x00ff_ffff) | (value as u32 & 0x00ff_ffff);
-        self.w
-    }
-}
+pub type IADR_W<'a, const O: u8> = crate::FieldWriter<'a, u32, IADR_SPEC, u32, u32, 24, O>;
 impl R {
     #[doc = "Bits 0:23 - Internal Address"]
     #[inline(always)]
     pub fn iadr(&self) -> IADR_R {
-        IADR_R::new((self.bits & 0x00ff_ffff) as u32)
+        IADR_R::new(self.bits & 0x00ff_ffff)
     }
 }
 impl W {
     #[doc = "Bits 0:23 - Internal Address"]
     #[inline(always)]
-    pub fn iadr(&mut self) -> IADR_W {
-        IADR_W { w: self }
+    #[must_use]
+    pub fn iadr(&mut self) -> IADR_W<0> {
+        IADR_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -92,11 +71,10 @@ impl crate::Readable for IADR_SPEC {
 #[doc = "`write(|w| ..)` method takes [iadr::W](W) writer structure"]
 impl crate::Writable for IADR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets IADR to value 0"]
 impl crate::Resettable for IADR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

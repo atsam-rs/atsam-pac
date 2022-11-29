@@ -35,134 +35,36 @@ impl From<crate::W<CSRCFG_SPEC>> for W {
     }
 }
 #[doc = "Field `DIR` reader - Direction"]
-pub struct DIR_R(crate::FieldReader<bool, bool>);
-impl DIR_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        DIR_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DIR_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DIR_R = crate::BitReader<bool>;
 #[doc = "Field `DIR` writer - Direction"]
-pub struct DIR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DIR_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type DIR_W<'a, const O: u8> = crate::BitWriter<'a, u32, CSRCFG_SPEC, bool, O>;
 #[doc = "Field `FCS` reader - Frame Counter Selection"]
-pub struct FCS_R(crate::FieldReader<u8, u8>);
-impl FCS_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        FCS_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for FCS_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type FCS_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `FCS` writer - Frame Counter Selection"]
-pub struct FCS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> FCS_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 1)) | ((value as u32 & 0x03) << 1);
-        self.w
-    }
-}
+pub type FCS_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CSRCFG_SPEC, u8, u8, 2, O>;
 #[doc = "Field `SIZE` reader - Size"]
-pub struct SIZE_R(crate::FieldReader<u8, u8>);
-impl SIZE_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        SIZE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for SIZE_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type SIZE_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `SIZE` writer - Size"]
-pub struct SIZE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SIZE_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 3)) | ((value as u32 & 0x07) << 3);
-        self.w
-    }
-}
+pub type SIZE_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CSRCFG_SPEC, u8, u8, 3, O>;
 #[doc = "Field `DATA` reader - Circular Shift Register Value"]
-pub struct DATA_R(crate::FieldReader<u8, u8>);
-impl DATA_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        DATA_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DATA_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DATA_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `DATA` writer - Circular Shift Register Value"]
-pub struct DATA_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DATA_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0xff << 8)) | ((value as u32 & 0xff) << 8);
-        self.w
-    }
-}
+pub type DATA_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CSRCFG_SPEC, u8, u8, 8, O>;
 impl R {
     #[doc = "Bit 0 - Direction"]
     #[inline(always)]
     pub fn dir(&self) -> DIR_R {
-        DIR_R::new((self.bits & 0x01) != 0)
+        DIR_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bits 1:2 - Frame Counter Selection"]
     #[inline(always)]
     pub fn fcs(&self) -> FCS_R {
-        FCS_R::new(((self.bits >> 1) & 0x03) as u8)
+        FCS_R::new(((self.bits >> 1) & 3) as u8)
     }
     #[doc = "Bits 3:5 - Size"]
     #[inline(always)]
     pub fn size(&self) -> SIZE_R {
-        SIZE_R::new(((self.bits >> 3) & 0x07) as u8)
+        SIZE_R::new(((self.bits >> 3) & 7) as u8)
     }
     #[doc = "Bits 8:15 - Circular Shift Register Value"]
     #[inline(always)]
@@ -173,23 +75,27 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Direction"]
     #[inline(always)]
-    pub fn dir(&mut self) -> DIR_W {
-        DIR_W { w: self }
+    #[must_use]
+    pub fn dir(&mut self) -> DIR_W<0> {
+        DIR_W::new(self)
     }
     #[doc = "Bits 1:2 - Frame Counter Selection"]
     #[inline(always)]
-    pub fn fcs(&mut self) -> FCS_W {
-        FCS_W { w: self }
+    #[must_use]
+    pub fn fcs(&mut self) -> FCS_W<1> {
+        FCS_W::new(self)
     }
     #[doc = "Bits 3:5 - Size"]
     #[inline(always)]
-    pub fn size(&mut self) -> SIZE_W {
-        SIZE_W { w: self }
+    #[must_use]
+    pub fn size(&mut self) -> SIZE_W<3> {
+        SIZE_W::new(self)
     }
     #[doc = "Bits 8:15 - Circular Shift Register Value"]
     #[inline(always)]
-    pub fn data(&mut self) -> DATA_W {
-        DATA_W { w: self }
+    #[must_use]
+    pub fn data(&mut self) -> DATA_W<8> {
+        DATA_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -210,11 +116,10 @@ impl crate::Readable for CSRCFG_SPEC {
 #[doc = "`write(|w| ..)` method takes [csrcfg::W](W) writer structure"]
 impl crate::Writable for CSRCFG_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets CSRCFG to value 0"]
 impl crate::Resettable for CSRCFG_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

@@ -35,43 +35,22 @@ impl From<crate::W<CDTY3_SPEC>> for W {
     }
 }
 #[doc = "Field `CDTY` reader - Channel Duty Cycle"]
-pub struct CDTY_R(crate::FieldReader<u32, u32>);
-impl CDTY_R {
-    pub(crate) fn new(bits: u32) -> Self {
-        CDTY_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CDTY_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CDTY_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `CDTY` writer - Channel Duty Cycle"]
-pub struct CDTY_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CDTY_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xffff_ffff) | (value as u32 & 0xffff_ffff);
-        self.w
-    }
-}
+pub type CDTY_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CDTY3_SPEC, u32, u32, 32, O>;
 impl R {
     #[doc = "Bits 0:31 - Channel Duty Cycle"]
     #[inline(always)]
     pub fn cdty(&self) -> CDTY_R {
-        CDTY_R::new((self.bits & 0xffff_ffff) as u32)
+        CDTY_R::new(self.bits)
     }
 }
 impl W {
     #[doc = "Bits 0:31 - Channel Duty Cycle"]
     #[inline(always)]
-    pub fn cdty(&mut self) -> CDTY_W {
-        CDTY_W { w: self }
+    #[must_use]
+    pub fn cdty(&mut self) -> CDTY_W<0> {
+        CDTY_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -92,11 +71,10 @@ impl crate::Readable for CDTY3_SPEC {
 #[doc = "`write(|w| ..)` method takes [cdty3::W](W) writer structure"]
 impl crate::Writable for CDTY3_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets CDTY3 to value 0"]
 impl crate::Resettable for CDTY3_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

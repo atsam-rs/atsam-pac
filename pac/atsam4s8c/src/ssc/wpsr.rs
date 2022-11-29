@@ -24,8 +24,5 @@ impl crate::Readable for WPSR_SPEC {
 }
 #[doc = "`reset()` method sets WPSR to value 0"]
 impl crate::Resettable for WPSR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

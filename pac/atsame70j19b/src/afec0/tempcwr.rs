@@ -35,57 +35,13 @@ impl From<crate::W<TEMPCWR_SPEC>> for W {
     }
 }
 #[doc = "Field `TLOWTHRES` reader - Temperature Low Threshold"]
-pub struct TLOWTHRES_R(crate::FieldReader<u16, u16>);
-impl TLOWTHRES_R {
-    pub(crate) fn new(bits: u16) -> Self {
-        TLOWTHRES_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TLOWTHRES_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TLOWTHRES_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `TLOWTHRES` writer - Temperature Low Threshold"]
-pub struct TLOWTHRES_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TLOWTHRES_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xffff) | (value as u32 & 0xffff);
-        self.w
-    }
-}
+pub type TLOWTHRES_W<'a, const O: u8> = crate::FieldWriter<'a, u32, TEMPCWR_SPEC, u16, u16, 16, O>;
 #[doc = "Field `THIGHTHRES` reader - Temperature High Threshold"]
-pub struct THIGHTHRES_R(crate::FieldReader<u16, u16>);
-impl THIGHTHRES_R {
-    pub(crate) fn new(bits: u16) -> Self {
-        THIGHTHRES_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for THIGHTHRES_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type THIGHTHRES_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `THIGHTHRES` writer - Temperature High Threshold"]
-pub struct THIGHTHRES_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> THIGHTHRES_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0xffff << 16)) | ((value as u32 & 0xffff) << 16);
-        self.w
-    }
-}
+pub type THIGHTHRES_W<'a, const O: u8> = crate::FieldWriter<'a, u32, TEMPCWR_SPEC, u16, u16, 16, O>;
 impl R {
     #[doc = "Bits 0:15 - Temperature Low Threshold"]
     #[inline(always)]
@@ -101,13 +57,15 @@ impl R {
 impl W {
     #[doc = "Bits 0:15 - Temperature Low Threshold"]
     #[inline(always)]
-    pub fn tlowthres(&mut self) -> TLOWTHRES_W {
-        TLOWTHRES_W { w: self }
+    #[must_use]
+    pub fn tlowthres(&mut self) -> TLOWTHRES_W<0> {
+        TLOWTHRES_W::new(self)
     }
     #[doc = "Bits 16:31 - Temperature High Threshold"]
     #[inline(always)]
-    pub fn thighthres(&mut self) -> THIGHTHRES_W {
-        THIGHTHRES_W { w: self }
+    #[must_use]
+    pub fn thighthres(&mut self) -> THIGHTHRES_W<16> {
+        THIGHTHRES_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -128,11 +86,10 @@ impl crate::Readable for TEMPCWR_SPEC {
 #[doc = "`write(|w| ..)` method takes [tempcwr::W](W) writer structure"]
 impl crate::Writable for TEMPCWR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets TEMPCWR to value 0"]
 impl crate::Resettable for TEMPCWR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

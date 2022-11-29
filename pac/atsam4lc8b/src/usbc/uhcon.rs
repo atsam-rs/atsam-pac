@@ -35,273 +35,97 @@ impl From<crate::W<UHCON_SPEC>> for W {
     }
 }
 #[doc = "Field `SOFE` reader - SOF Enable"]
-pub struct SOFE_R(crate::FieldReader<bool, bool>);
-impl SOFE_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        SOFE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for SOFE_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type SOFE_R = crate::BitReader<bool>;
 #[doc = "Field `SOFE` writer - SOF Enable"]
-pub struct SOFE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SOFE_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
-        self.w
-    }
-}
+pub type SOFE_W<'a, const O: u8> = crate::BitWriter<'a, u32, UHCON_SPEC, bool, O>;
 #[doc = "Field `RESET` reader - Send USB Reset"]
-pub struct RESET_R(crate::FieldReader<bool, bool>);
-impl RESET_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        RESET_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for RESET_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type RESET_R = crate::BitReader<bool>;
 #[doc = "Field `RESET` writer - Send USB Reset"]
-pub struct RESET_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RESET_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 9)) | ((value as u32 & 0x01) << 9);
-        self.w
-    }
-}
+pub type RESET_W<'a, const O: u8> = crate::BitWriter<'a, u32, UHCON_SPEC, bool, O>;
 #[doc = "Field `RESUME` reader - Send USB Resume"]
-pub struct RESUME_R(crate::FieldReader<bool, bool>);
-impl RESUME_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        RESUME_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for RESUME_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type RESUME_R = crate::BitReader<bool>;
 #[doc = "Field `RESUME` writer - Send USB Resume"]
-pub struct RESUME_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RESUME_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 10)) | ((value as u32 & 0x01) << 10);
-        self.w
-    }
-}
+pub type RESUME_W<'a, const O: u8> = crate::BitWriter<'a, u32, UHCON_SPEC, bool, O>;
 #[doc = "Field `SPDCONF` reader - Speed Configuration"]
-pub struct SPDCONF_R(crate::FieldReader<u8, u8>);
-impl SPDCONF_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        SPDCONF_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for SPDCONF_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type SPDCONF_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `SPDCONF` writer - Speed Configuration"]
-pub struct SPDCONF_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SPDCONF_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 12)) | ((value as u32 & 0x03) << 12);
-        self.w
-    }
-}
+pub type SPDCONF_W<'a, const O: u8> = crate::FieldWriter<'a, u32, UHCON_SPEC, u8, u8, 2, O>;
 #[doc = "Field `TSTJ` reader - Test J"]
-pub struct TSTJ_R(crate::FieldReader<bool, bool>);
-impl TSTJ_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        TSTJ_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TSTJ_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TSTJ_R = crate::BitReader<bool>;
 #[doc = "Field `TSTJ` writer - Test J"]
-pub struct TSTJ_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TSTJ_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 16)) | ((value as u32 & 0x01) << 16);
-        self.w
-    }
-}
+pub type TSTJ_W<'a, const O: u8> = crate::BitWriter<'a, u32, UHCON_SPEC, bool, O>;
 #[doc = "Field `TSTK` reader - Test K"]
-pub struct TSTK_R(crate::FieldReader<bool, bool>);
-impl TSTK_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        TSTK_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TSTK_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TSTK_R = crate::BitReader<bool>;
 #[doc = "Field `TSTK` writer - Test K"]
-pub struct TSTK_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TSTK_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 17)) | ((value as u32 & 0x01) << 17);
-        self.w
-    }
-}
+pub type TSTK_W<'a, const O: u8> = crate::BitWriter<'a, u32, UHCON_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 8 - SOF Enable"]
     #[inline(always)]
     pub fn sofe(&self) -> SOFE_R {
-        SOFE_R::new(((self.bits >> 8) & 0x01) != 0)
+        SOFE_R::new(((self.bits >> 8) & 1) != 0)
     }
     #[doc = "Bit 9 - Send USB Reset"]
     #[inline(always)]
     pub fn reset(&self) -> RESET_R {
-        RESET_R::new(((self.bits >> 9) & 0x01) != 0)
+        RESET_R::new(((self.bits >> 9) & 1) != 0)
     }
     #[doc = "Bit 10 - Send USB Resume"]
     #[inline(always)]
     pub fn resume(&self) -> RESUME_R {
-        RESUME_R::new(((self.bits >> 10) & 0x01) != 0)
+        RESUME_R::new(((self.bits >> 10) & 1) != 0)
     }
     #[doc = "Bits 12:13 - Speed Configuration"]
     #[inline(always)]
     pub fn spdconf(&self) -> SPDCONF_R {
-        SPDCONF_R::new(((self.bits >> 12) & 0x03) as u8)
+        SPDCONF_R::new(((self.bits >> 12) & 3) as u8)
     }
     #[doc = "Bit 16 - Test J"]
     #[inline(always)]
     pub fn tstj(&self) -> TSTJ_R {
-        TSTJ_R::new(((self.bits >> 16) & 0x01) != 0)
+        TSTJ_R::new(((self.bits >> 16) & 1) != 0)
     }
     #[doc = "Bit 17 - Test K"]
     #[inline(always)]
     pub fn tstk(&self) -> TSTK_R {
-        TSTK_R::new(((self.bits >> 17) & 0x01) != 0)
+        TSTK_R::new(((self.bits >> 17) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 8 - SOF Enable"]
     #[inline(always)]
-    pub fn sofe(&mut self) -> SOFE_W {
-        SOFE_W { w: self }
+    #[must_use]
+    pub fn sofe(&mut self) -> SOFE_W<8> {
+        SOFE_W::new(self)
     }
     #[doc = "Bit 9 - Send USB Reset"]
     #[inline(always)]
-    pub fn reset(&mut self) -> RESET_W {
-        RESET_W { w: self }
+    #[must_use]
+    pub fn reset(&mut self) -> RESET_W<9> {
+        RESET_W::new(self)
     }
     #[doc = "Bit 10 - Send USB Resume"]
     #[inline(always)]
-    pub fn resume(&mut self) -> RESUME_W {
-        RESUME_W { w: self }
+    #[must_use]
+    pub fn resume(&mut self) -> RESUME_W<10> {
+        RESUME_W::new(self)
     }
     #[doc = "Bits 12:13 - Speed Configuration"]
     #[inline(always)]
-    pub fn spdconf(&mut self) -> SPDCONF_W {
-        SPDCONF_W { w: self }
+    #[must_use]
+    pub fn spdconf(&mut self) -> SPDCONF_W<12> {
+        SPDCONF_W::new(self)
     }
     #[doc = "Bit 16 - Test J"]
     #[inline(always)]
-    pub fn tstj(&mut self) -> TSTJ_W {
-        TSTJ_W { w: self }
+    #[must_use]
+    pub fn tstj(&mut self) -> TSTJ_W<16> {
+        TSTJ_W::new(self)
     }
     #[doc = "Bit 17 - Test K"]
     #[inline(always)]
-    pub fn tstk(&mut self) -> TSTK_W {
-        TSTK_W { w: self }
+    #[must_use]
+    pub fn tstk(&mut self) -> TSTK_W<17> {
+        TSTK_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -322,11 +146,10 @@ impl crate::Readable for UHCON_SPEC {
 #[doc = "`write(|w| ..)` method takes [uhcon::W](W) writer structure"]
 impl crate::Writable for UHCON_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets UHCON to value 0"]
 impl crate::Resettable for UHCON_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

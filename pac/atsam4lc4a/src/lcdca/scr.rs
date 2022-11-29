@@ -20,32 +20,13 @@ impl From<crate::W<SCR_SPEC>> for W {
     }
 }
 #[doc = "Field `FC0R` writer - Frame Counter 0 Rollover"]
-pub struct FC0R_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> FC0R_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type FC0R_W<'a, const O: u8> = crate::BitWriter<'a, u32, SCR_SPEC, bool, O>;
 impl W {
     #[doc = "Bit 0 - Frame Counter 0 Rollover"]
     #[inline(always)]
-    pub fn fc0r(&mut self) -> FC0R_W {
-        FC0R_W { w: self }
+    #[must_use]
+    pub fn fc0r(&mut self) -> FC0R_W<0> {
+        FC0R_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -62,11 +43,10 @@ impl crate::RegisterSpec for SCR_SPEC {
 #[doc = "`write(|w| ..)` method takes [scr::W](W) writer structure"]
 impl crate::Writable for SCR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets SCR to value 0"]
 impl crate::Resettable for SCR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

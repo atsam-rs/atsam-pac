@@ -14,33 +14,9 @@ impl From<crate::R<ECR_SPEC>> for R {
     }
 }
 #[doc = "Field `REC` reader - Receive Error Counter"]
-pub struct REC_R(crate::FieldReader<u8, u8>);
-impl REC_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        REC_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for REC_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type REC_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `TEC` reader - Transmit Error Counter"]
-pub struct TEC_R(crate::FieldReader<u16, u16>);
-impl TEC_R {
-    pub(crate) fn new(bits: u16) -> Self {
-        TEC_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TEC_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TEC_R = crate::FieldReader<u16, u16>;
 impl R {
     #[doc = "Bits 0:7 - Receive Error Counter"]
     #[inline(always)]
@@ -64,8 +40,5 @@ impl crate::Readable for ECR_SPEC {
 }
 #[doc = "`reset()` method sets ECR to value 0"]
 impl crate::Resettable for ECR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

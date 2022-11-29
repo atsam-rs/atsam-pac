@@ -34,66 +34,44 @@ impl From<crate::W<FIDI_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `FI_DI_RATIO` reader - FI Over DI Ratio Value"]
+pub type FI_DI_RATIO_R = crate::FieldReader<u16, FI_DI_RATIOSELECT_A>;
 #[doc = "FI Over DI Ratio Value\n\nValue on reset: 372"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u16)]
-pub enum FI_DI_RATIO_A {
+pub enum FI_DI_RATIOSELECT_A {
     #[doc = "0: Baud Rate = 0"]
     DISABLE = 0,
 }
-impl From<FI_DI_RATIO_A> for u16 {
+impl From<FI_DI_RATIOSELECT_A> for u16 {
     #[inline(always)]
-    fn from(variant: FI_DI_RATIO_A) -> Self {
+    fn from(variant: FI_DI_RATIOSELECT_A) -> Self {
         variant as _
     }
 }
-#[doc = "Field `FI_DI_RATIO` reader - FI Over DI Ratio Value"]
-pub struct FI_DI_RATIO_R(crate::FieldReader<u16, FI_DI_RATIO_A>);
 impl FI_DI_RATIO_R {
-    pub(crate) fn new(bits: u16) -> Self {
-        FI_DI_RATIO_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<FI_DI_RATIO_A> {
+    pub fn variant(&self) -> Option<FI_DI_RATIOSELECT_A> {
         match self.bits {
-            0 => Some(FI_DI_RATIO_A::DISABLE),
+            0 => Some(FI_DI_RATIOSELECT_A::DISABLE),
             _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `DISABLE`"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        **self == FI_DI_RATIO_A::DISABLE
-    }
-}
-impl core::ops::Deref for FI_DI_RATIO_R {
-    type Target = crate::FieldReader<u16, FI_DI_RATIO_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == FI_DI_RATIOSELECT_A::DISABLE
     }
 }
 #[doc = "Field `FI_DI_RATIO` writer - FI Over DI Ratio Value"]
-pub struct FI_DI_RATIO_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> FI_DI_RATIO_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: FI_DI_RATIO_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type FI_DI_RATIO_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, FIDI_SPEC, u16, FI_DI_RATIOSELECT_A, 11, O>;
+impl<'a, const O: u8> FI_DI_RATIO_W<'a, O> {
     #[doc = "Baud Rate = 0"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
-        self.variant(FI_DI_RATIO_A::DISABLE)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x07ff) | (value as u32 & 0x07ff);
-        self.w
+        self.variant(FI_DI_RATIOSELECT_A::DISABLE)
     }
 }
 impl R {
@@ -106,8 +84,9 @@ impl R {
 impl W {
     #[doc = "Bits 0:10 - FI Over DI Ratio Value"]
     #[inline(always)]
-    pub fn fi_di_ratio(&mut self) -> FI_DI_RATIO_W {
-        FI_DI_RATIO_W { w: self }
+    #[must_use]
+    pub fn fi_di_ratio(&mut self) -> FI_DI_RATIO_W<0> {
+        FI_DI_RATIO_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -128,11 +107,10 @@ impl crate::Readable for FIDI_SPEC {
 #[doc = "`write(|w| ..)` method takes [fidi::W](W) writer structure"]
 impl crate::Writable for FIDI_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets FIDI to value 0x0174"]
 impl crate::Resettable for FIDI_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x0174
-    }
+    const RESET_VALUE: Self::Ux = 0x0174;
 }

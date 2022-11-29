@@ -20,22 +20,13 @@ impl From<crate::W<SKR_SPEC>> for W {
     }
 }
 #[doc = "Field `USRK` writer - User Scrambling Key"]
-pub struct USRK_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> USRK_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xffff_ffff) | (value as u32 & 0xffff_ffff);
-        self.w
-    }
-}
+pub type USRK_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SKR_SPEC, u32, u32, 32, O>;
 impl W {
     #[doc = "Bits 0:31 - User Scrambling Key"]
     #[inline(always)]
-    pub fn usrk(&mut self) -> USRK_W {
-        USRK_W { w: self }
+    #[must_use]
+    pub fn usrk(&mut self) -> USRK_W<0> {
+        USRK_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -52,11 +43,10 @@ impl crate::RegisterSpec for SKR_SPEC {
 #[doc = "`write(|w| ..)` method takes [skr::W](W) writer structure"]
 impl crate::Writable for SKR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets SKR to value 0"]
 impl crate::Resettable for SKR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

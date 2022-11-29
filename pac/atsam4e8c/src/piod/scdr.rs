@@ -35,31 +35,9 @@ impl From<crate::W<SCDR_SPEC>> for W {
     }
 }
 #[doc = "Field `DIV` reader - Slow Clock Divider Selection for Debouncing"]
-pub struct DIV_R(crate::FieldReader<u16, u16>);
-impl DIV_R {
-    pub(crate) fn new(bits: u16) -> Self {
-        DIV_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DIV_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DIV_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `DIV` writer - Slow Clock Divider Selection for Debouncing"]
-pub struct DIV_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DIV_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x3fff) | (value as u32 & 0x3fff);
-        self.w
-    }
-}
+pub type DIV_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SCDR_SPEC, u16, u16, 14, O>;
 impl R {
     #[doc = "Bits 0:13 - Slow Clock Divider Selection for Debouncing"]
     #[inline(always)]
@@ -70,8 +48,9 @@ impl R {
 impl W {
     #[doc = "Bits 0:13 - Slow Clock Divider Selection for Debouncing"]
     #[inline(always)]
-    pub fn div(&mut self) -> DIV_W {
-        DIV_W { w: self }
+    #[must_use]
+    pub fn div(&mut self) -> DIV_W<0> {
+        DIV_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -92,11 +71,10 @@ impl crate::Readable for SCDR_SPEC {
 #[doc = "`write(|w| ..)` method takes [scdr::W](W) writer structure"]
 impl crate::Writable for SCDR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets SCDR to value 0"]
 impl crate::Resettable for SCDR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

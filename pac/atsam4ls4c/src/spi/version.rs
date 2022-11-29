@@ -14,33 +14,9 @@ impl From<crate::R<VERSION_SPEC>> for R {
     }
 }
 #[doc = "Field `VERSION` reader - Version"]
-pub struct VERSION_R(crate::FieldReader<u16, u16>);
-impl VERSION_R {
-    pub(crate) fn new(bits: u16) -> Self {
-        VERSION_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for VERSION_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type VERSION_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `MFN` reader - mfn"]
-pub struct MFN_R(crate::FieldReader<u8, u8>);
-impl MFN_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        MFN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for MFN_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type MFN_R = crate::FieldReader<u8, u8>;
 impl R {
     #[doc = "Bits 0:11 - Version"]
     #[inline(always)]
@@ -50,7 +26,7 @@ impl R {
     #[doc = "Bits 16:18 - mfn"]
     #[inline(always)]
     pub fn mfn(&self) -> MFN_R {
-        MFN_R::new(((self.bits >> 16) & 0x07) as u8)
+        MFN_R::new(((self.bits >> 16) & 7) as u8)
     }
 }
 #[doc = "Version Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [version](index.html) module"]
@@ -64,8 +40,5 @@ impl crate::Readable for VERSION_SPEC {
 }
 #[doc = "`reset()` method sets VERSION to value 0x0211"]
 impl crate::Resettable for VERSION_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x0211
-    }
+    const RESET_VALUE: Self::Ux = 0x0211;
 }

@@ -20,275 +20,85 @@ impl From<crate::W<IDR0_SPEC>> for W {
     }
 }
 #[doc = "Field `COVFS` writer - Counter Overflow"]
-pub struct COVFS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> COVFS_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type COVFS_W<'a, const O: u8> = crate::BitWriter<'a, u32, IDR0_SPEC, bool, O>;
 #[doc = "Field `LOVRS` writer - Load Overrun"]
-pub struct LOVRS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> LOVRS_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
-}
+pub type LOVRS_W<'a, const O: u8> = crate::BitWriter<'a, u32, IDR0_SPEC, bool, O>;
 #[doc = "Field `CPAS` writer - RA Compare"]
-pub struct CPAS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CPAS_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
-    }
-}
+pub type CPAS_W<'a, const O: u8> = crate::BitWriter<'a, u32, IDR0_SPEC, bool, O>;
 #[doc = "Field `CPBS` writer - RB Compare"]
-pub struct CPBS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CPBS_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
-        self.w
-    }
-}
+pub type CPBS_W<'a, const O: u8> = crate::BitWriter<'a, u32, IDR0_SPEC, bool, O>;
 #[doc = "Field `CPCS` writer - RC Compare"]
-pub struct CPCS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CPCS_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
-        self.w
-    }
-}
+pub type CPCS_W<'a, const O: u8> = crate::BitWriter<'a, u32, IDR0_SPEC, bool, O>;
 #[doc = "Field `LDRAS` writer - RA Loading"]
-pub struct LDRAS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> LDRAS_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
-        self.w
-    }
-}
+pub type LDRAS_W<'a, const O: u8> = crate::BitWriter<'a, u32, IDR0_SPEC, bool, O>;
 #[doc = "Field `LDRBS` writer - RB Loading"]
-pub struct LDRBS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> LDRBS_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | ((value as u32 & 0x01) << 6);
-        self.w
-    }
-}
+pub type LDRBS_W<'a, const O: u8> = crate::BitWriter<'a, u32, IDR0_SPEC, bool, O>;
 #[doc = "Field `ETRGS` writer - External Trigger"]
-pub struct ETRGS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ETRGS_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | ((value as u32 & 0x01) << 7);
-        self.w
-    }
-}
+pub type ETRGS_W<'a, const O: u8> = crate::BitWriter<'a, u32, IDR0_SPEC, bool, O>;
 #[doc = "Field `ENDRX` writer - End of Receiver Transfer"]
-pub struct ENDRX_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ENDRX_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
-        self.w
-    }
-}
+pub type ENDRX_W<'a, const O: u8> = crate::BitWriter<'a, u32, IDR0_SPEC, bool, O>;
 #[doc = "Field `RXBUFF` writer - Reception Buffer Full"]
-pub struct RXBUFF_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RXBUFF_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 9)) | ((value as u32 & 0x01) << 9);
-        self.w
-    }
-}
+pub type RXBUFF_W<'a, const O: u8> = crate::BitWriter<'a, u32, IDR0_SPEC, bool, O>;
 impl W {
     #[doc = "Bit 0 - Counter Overflow"]
     #[inline(always)]
-    pub fn covfs(&mut self) -> COVFS_W {
-        COVFS_W { w: self }
+    #[must_use]
+    pub fn covfs(&mut self) -> COVFS_W<0> {
+        COVFS_W::new(self)
     }
     #[doc = "Bit 1 - Load Overrun"]
     #[inline(always)]
-    pub fn lovrs(&mut self) -> LOVRS_W {
-        LOVRS_W { w: self }
+    #[must_use]
+    pub fn lovrs(&mut self) -> LOVRS_W<1> {
+        LOVRS_W::new(self)
     }
     #[doc = "Bit 2 - RA Compare"]
     #[inline(always)]
-    pub fn cpas(&mut self) -> CPAS_W {
-        CPAS_W { w: self }
+    #[must_use]
+    pub fn cpas(&mut self) -> CPAS_W<2> {
+        CPAS_W::new(self)
     }
     #[doc = "Bit 3 - RB Compare"]
     #[inline(always)]
-    pub fn cpbs(&mut self) -> CPBS_W {
-        CPBS_W { w: self }
+    #[must_use]
+    pub fn cpbs(&mut self) -> CPBS_W<3> {
+        CPBS_W::new(self)
     }
     #[doc = "Bit 4 - RC Compare"]
     #[inline(always)]
-    pub fn cpcs(&mut self) -> CPCS_W {
-        CPCS_W { w: self }
+    #[must_use]
+    pub fn cpcs(&mut self) -> CPCS_W<4> {
+        CPCS_W::new(self)
     }
     #[doc = "Bit 5 - RA Loading"]
     #[inline(always)]
-    pub fn ldras(&mut self) -> LDRAS_W {
-        LDRAS_W { w: self }
+    #[must_use]
+    pub fn ldras(&mut self) -> LDRAS_W<5> {
+        LDRAS_W::new(self)
     }
     #[doc = "Bit 6 - RB Loading"]
     #[inline(always)]
-    pub fn ldrbs(&mut self) -> LDRBS_W {
-        LDRBS_W { w: self }
+    #[must_use]
+    pub fn ldrbs(&mut self) -> LDRBS_W<6> {
+        LDRBS_W::new(self)
     }
     #[doc = "Bit 7 - External Trigger"]
     #[inline(always)]
-    pub fn etrgs(&mut self) -> ETRGS_W {
-        ETRGS_W { w: self }
+    #[must_use]
+    pub fn etrgs(&mut self) -> ETRGS_W<7> {
+        ETRGS_W::new(self)
     }
     #[doc = "Bit 8 - End of Receiver Transfer"]
     #[inline(always)]
-    pub fn endrx(&mut self) -> ENDRX_W {
-        ENDRX_W { w: self }
+    #[must_use]
+    pub fn endrx(&mut self) -> ENDRX_W<8> {
+        ENDRX_W::new(self)
     }
     #[doc = "Bit 9 - Reception Buffer Full"]
     #[inline(always)]
-    pub fn rxbuff(&mut self) -> RXBUFF_W {
-        RXBUFF_W { w: self }
+    #[must_use]
+    pub fn rxbuff(&mut self) -> RXBUFF_W<9> {
+        RXBUFF_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -305,4 +115,6 @@ impl crate::RegisterSpec for IDR0_SPEC {
 #[doc = "`write(|w| ..)` method takes [idr0::W](W) writer structure"]
 impl crate::Writable for IDR0_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

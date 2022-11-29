@@ -35,31 +35,9 @@ impl From<crate::W<TSCV_SPEC>> for W {
     }
 }
 #[doc = "Field `TSC` reader - Timestamp Counter (cleared on write)"]
-pub struct TSC_R(crate::FieldReader<u16, u16>);
-impl TSC_R {
-    pub(crate) fn new(bits: u16) -> Self {
-        TSC_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TSC_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TSC_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `TSC` writer - Timestamp Counter (cleared on write)"]
-pub struct TSC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TSC_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xffff) | (value as u32 & 0xffff);
-        self.w
-    }
-}
+pub type TSC_W<'a, const O: u8> = crate::FieldWriter<'a, u32, TSCV_SPEC, u16, u16, 16, O>;
 impl R {
     #[doc = "Bits 0:15 - Timestamp Counter (cleared on write)"]
     #[inline(always)]
@@ -70,8 +48,9 @@ impl R {
 impl W {
     #[doc = "Bits 0:15 - Timestamp Counter (cleared on write)"]
     #[inline(always)]
-    pub fn tsc(&mut self) -> TSC_W {
-        TSC_W { w: self }
+    #[must_use]
+    pub fn tsc(&mut self) -> TSC_W<0> {
+        TSC_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -92,11 +71,10 @@ impl crate::Readable for TSCV_SPEC {
 #[doc = "`write(|w| ..)` method takes [tscv::W](W) writer structure"]
 impl crate::Writable for TSCV_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets TSCV to value 0"]
 impl crate::Resettable for TSCV_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

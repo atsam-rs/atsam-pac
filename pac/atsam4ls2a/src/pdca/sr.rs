@@ -14,24 +14,12 @@ impl From<crate::R<SR_SPEC>> for R {
     }
 }
 #[doc = "Field `TEN` reader - Transfer Enabled"]
-pub struct TEN_R(crate::FieldReader<bool, bool>);
-impl TEN_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        TEN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TEN_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TEN_R = crate::BitReader<bool>;
 impl R {
     #[doc = "Bit 0 - Transfer Enabled"]
     #[inline(always)]
     pub fn ten(&self) -> TEN_R {
-        TEN_R::new((self.bits & 0x01) != 0)
+        TEN_R::new((self.bits & 1) != 0)
     }
 }
 #[doc = "Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sr](index.html) module"]
@@ -45,8 +33,5 @@ impl crate::Readable for SR_SPEC {
 }
 #[doc = "`reset()` method sets SR%s to value 0"]
 impl crate::Resettable for SR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

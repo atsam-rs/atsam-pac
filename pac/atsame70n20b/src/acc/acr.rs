@@ -34,137 +34,84 @@ impl From<crate::W<ACR_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `ISEL` reader - Current Selection"]
+pub type ISEL_R = crate::BitReader<ISELSELECT_A>;
 #[doc = "Current Selection\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ISEL_A {
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum ISELSELECT_A {
     #[doc = "0: Low-power option."]
     LOPW = 0,
     #[doc = "1: High-speed option."]
     HISP = 1,
 }
-impl From<ISEL_A> for bool {
+impl From<ISELSELECT_A> for bool {
     #[inline(always)]
-    fn from(variant: ISEL_A) -> Self {
+    fn from(variant: ISELSELECT_A) -> Self {
         variant as u8 != 0
     }
 }
-#[doc = "Field `ISEL` reader - Current Selection"]
-pub struct ISEL_R(crate::FieldReader<bool, ISEL_A>);
 impl ISEL_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        ISEL_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ISEL_A {
+    pub fn variant(&self) -> ISELSELECT_A {
         match self.bits {
-            false => ISEL_A::LOPW,
-            true => ISEL_A::HISP,
+            false => ISELSELECT_A::LOPW,
+            true => ISELSELECT_A::HISP,
         }
     }
     #[doc = "Checks if the value of the field is `LOPW`"]
     #[inline(always)]
     pub fn is_lopw(&self) -> bool {
-        **self == ISEL_A::LOPW
+        *self == ISELSELECT_A::LOPW
     }
     #[doc = "Checks if the value of the field is `HISP`"]
     #[inline(always)]
     pub fn is_hisp(&self) -> bool {
-        **self == ISEL_A::HISP
-    }
-}
-impl core::ops::Deref for ISEL_R {
-    type Target = crate::FieldReader<bool, ISEL_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == ISELSELECT_A::HISP
     }
 }
 #[doc = "Field `ISEL` writer - Current Selection"]
-pub struct ISEL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ISEL_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: ISEL_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type ISEL_W<'a, const O: u8> = crate::BitWriter<'a, u32, ACR_SPEC, ISELSELECT_A, O>;
+impl<'a, const O: u8> ISEL_W<'a, O> {
     #[doc = "Low-power option."]
     #[inline(always)]
     pub fn lopw(self) -> &'a mut W {
-        self.variant(ISEL_A::LOPW)
+        self.variant(ISELSELECT_A::LOPW)
     }
     #[doc = "High-speed option."]
     #[inline(always)]
     pub fn hisp(self) -> &'a mut W {
-        self.variant(ISEL_A::HISP)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
+        self.variant(ISELSELECT_A::HISP)
     }
 }
 #[doc = "Field `HYST` reader - Hysteresis Selection"]
-pub struct HYST_R(crate::FieldReader<u8, u8>);
-impl HYST_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        HYST_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for HYST_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type HYST_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `HYST` writer - Hysteresis Selection"]
-pub struct HYST_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> HYST_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 1)) | ((value as u32 & 0x03) << 1);
-        self.w
-    }
-}
+pub type HYST_W<'a, const O: u8> = crate::FieldWriter<'a, u32, ACR_SPEC, u8, u8, 2, O>;
 impl R {
     #[doc = "Bit 0 - Current Selection"]
     #[inline(always)]
     pub fn isel(&self) -> ISEL_R {
-        ISEL_R::new((self.bits & 0x01) != 0)
+        ISEL_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bits 1:2 - Hysteresis Selection"]
     #[inline(always)]
     pub fn hyst(&self) -> HYST_R {
-        HYST_R::new(((self.bits >> 1) & 0x03) as u8)
+        HYST_R::new(((self.bits >> 1) & 3) as u8)
     }
 }
 impl W {
     #[doc = "Bit 0 - Current Selection"]
     #[inline(always)]
-    pub fn isel(&mut self) -> ISEL_W {
-        ISEL_W { w: self }
+    #[must_use]
+    pub fn isel(&mut self) -> ISEL_W<0> {
+        ISEL_W::new(self)
     }
     #[doc = "Bits 1:2 - Hysteresis Selection"]
     #[inline(always)]
-    pub fn hyst(&mut self) -> HYST_W {
-        HYST_W { w: self }
+    #[must_use]
+    pub fn hyst(&mut self) -> HYST_W<1> {
+        HYST_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -185,11 +132,10 @@ impl crate::Readable for ACR_SPEC {
 #[doc = "`write(|w| ..)` method takes [acr::W](W) writer structure"]
 impl crate::Writable for ACR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets ACR to value 0"]
 impl crate::Resettable for ACR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

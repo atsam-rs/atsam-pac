@@ -14,19 +14,7 @@ impl From<crate::R<RHR_SPEC>> for R {
     }
 }
 #[doc = "Field `RXDATA` reader - Master or Slave Receive Holding Data"]
-pub struct RXDATA_R(crate::FieldReader<u8, u8>);
-impl RXDATA_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        RXDATA_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for RXDATA_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type RXDATA_R = crate::FieldReader<u8, u8>;
 impl R {
     #[doc = "Bits 0:7 - Master or Slave Receive Holding Data"]
     #[inline(always)]
@@ -45,8 +33,5 @@ impl crate::Readable for RHR_SPEC {
 }
 #[doc = "`reset()` method sets RHR to value 0"]
 impl crate::Resettable for RHR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

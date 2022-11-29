@@ -35,237 +35,82 @@ impl From<crate::W<GCFG_SPEC>> for W {
     }
 }
 #[doc = "Field `CGDISREG` reader - Configuration Registers Clock Gating Disable"]
-pub struct CGDISREG_R(crate::FieldReader<bool, bool>);
-impl CGDISREG_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        CGDISREG_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CGDISREG_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CGDISREG_R = crate::BitReader<bool>;
 #[doc = "Field `CGDISREG` writer - Configuration Registers Clock Gating Disable"]
-pub struct CGDISREG_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CGDISREG_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type CGDISREG_W<'a, const O: u8> = crate::BitWriter<'a, u32, GCFG_SPEC, bool, O>;
 #[doc = "Field `CGDISPIPE` reader - Pipeline Clock Gating Disable"]
-pub struct CGDISPIPE_R(crate::FieldReader<bool, bool>);
-impl CGDISPIPE_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        CGDISPIPE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CGDISPIPE_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CGDISPIPE_R = crate::BitReader<bool>;
 #[doc = "Field `CGDISPIPE` writer - Pipeline Clock Gating Disable"]
-pub struct CGDISPIPE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CGDISPIPE_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
-}
+pub type CGDISPIPE_W<'a, const O: u8> = crate::BitWriter<'a, u32, GCFG_SPEC, bool, O>;
 #[doc = "Field `CGDISFIFO` reader - FIFO Clock Gating Disable"]
-pub struct CGDISFIFO_R(crate::FieldReader<bool, bool>);
-impl CGDISFIFO_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        CGDISFIFO_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CGDISFIFO_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CGDISFIFO_R = crate::BitReader<bool>;
 #[doc = "Field `CGDISFIFO` writer - FIFO Clock Gating Disable"]
-pub struct CGDISFIFO_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CGDISFIFO_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
-    }
-}
+pub type CGDISFIFO_W<'a, const O: u8> = crate::BitWriter<'a, u32, GCFG_SPEC, bool, O>;
 #[doc = "Field `CGDISIF` reader - Bus Interface Clock Gating Disable"]
-pub struct CGDISIF_R(crate::FieldReader<bool, bool>);
-impl CGDISIF_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        CGDISIF_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CGDISIF_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CGDISIF_R = crate::BitReader<bool>;
 #[doc = "Field `CGDISIF` writer - Bus Interface Clock Gating Disable"]
-pub struct CGDISIF_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CGDISIF_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
-        self.w
-    }
-}
+pub type CGDISIF_W<'a, const O: u8> = crate::BitWriter<'a, u32, GCFG_SPEC, bool, O>;
 #[doc = "Field `BXKBEN` reader - Boundary X Kilobyte Enable"]
-pub struct BXKBEN_R(crate::FieldReader<bool, bool>);
-impl BXKBEN_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        BXKBEN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for BXKBEN_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type BXKBEN_R = crate::BitReader<bool>;
 #[doc = "Field `BXKBEN` writer - Boundary X Kilobyte Enable"]
-pub struct BXKBEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> BXKBEN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
-        self.w
-    }
-}
+pub type BXKBEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, GCFG_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - Configuration Registers Clock Gating Disable"]
     #[inline(always)]
     pub fn cgdisreg(&self) -> CGDISREG_R {
-        CGDISREG_R::new((self.bits & 0x01) != 0)
+        CGDISREG_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Pipeline Clock Gating Disable"]
     #[inline(always)]
     pub fn cgdispipe(&self) -> CGDISPIPE_R {
-        CGDISPIPE_R::new(((self.bits >> 1) & 0x01) != 0)
+        CGDISPIPE_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - FIFO Clock Gating Disable"]
     #[inline(always)]
     pub fn cgdisfifo(&self) -> CGDISFIFO_R {
-        CGDISFIFO_R::new(((self.bits >> 2) & 0x01) != 0)
+        CGDISFIFO_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - Bus Interface Clock Gating Disable"]
     #[inline(always)]
     pub fn cgdisif(&self) -> CGDISIF_R {
-        CGDISIF_R::new(((self.bits >> 3) & 0x01) != 0)
+        CGDISIF_R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 8 - Boundary X Kilobyte Enable"]
     #[inline(always)]
     pub fn bxkben(&self) -> BXKBEN_R {
-        BXKBEN_R::new(((self.bits >> 8) & 0x01) != 0)
+        BXKBEN_R::new(((self.bits >> 8) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Configuration Registers Clock Gating Disable"]
     #[inline(always)]
-    pub fn cgdisreg(&mut self) -> CGDISREG_W {
-        CGDISREG_W { w: self }
+    #[must_use]
+    pub fn cgdisreg(&mut self) -> CGDISREG_W<0> {
+        CGDISREG_W::new(self)
     }
     #[doc = "Bit 1 - Pipeline Clock Gating Disable"]
     #[inline(always)]
-    pub fn cgdispipe(&mut self) -> CGDISPIPE_W {
-        CGDISPIPE_W { w: self }
+    #[must_use]
+    pub fn cgdispipe(&mut self) -> CGDISPIPE_W<1> {
+        CGDISPIPE_W::new(self)
     }
     #[doc = "Bit 2 - FIFO Clock Gating Disable"]
     #[inline(always)]
-    pub fn cgdisfifo(&mut self) -> CGDISFIFO_W {
-        CGDISFIFO_W { w: self }
+    #[must_use]
+    pub fn cgdisfifo(&mut self) -> CGDISFIFO_W<2> {
+        CGDISFIFO_W::new(self)
     }
     #[doc = "Bit 3 - Bus Interface Clock Gating Disable"]
     #[inline(always)]
-    pub fn cgdisif(&mut self) -> CGDISIF_W {
-        CGDISIF_W { w: self }
+    #[must_use]
+    pub fn cgdisif(&mut self) -> CGDISIF_W<3> {
+        CGDISIF_W::new(self)
     }
     #[doc = "Bit 8 - Boundary X Kilobyte Enable"]
     #[inline(always)]
-    pub fn bxkben(&mut self) -> BXKBEN_W {
-        BXKBEN_W { w: self }
+    #[must_use]
+    pub fn bxkben(&mut self) -> BXKBEN_W<8> {
+        BXKBEN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -286,11 +131,10 @@ impl crate::Readable for GCFG_SPEC {
 #[doc = "`write(|w| ..)` method takes [gcfg::W](W) writer structure"]
 impl crate::Writable for GCFG_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets GCFG to value 0"]
 impl crate::Resettable for GCFG_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

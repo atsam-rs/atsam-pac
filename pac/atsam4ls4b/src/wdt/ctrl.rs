@@ -34,485 +34,130 @@ impl From<crate::W<CTRL_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `EN` reader - WDT Enable"]
+pub type EN_R = crate::BitReader<ENSELECT_A>;
 #[doc = "WDT Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum EN_A {
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum ENSELECT_A {
     #[doc = "0: WDT is disabled."]
     _0 = 0,
     #[doc = "1: WDT is enabled"]
     _1 = 1,
 }
-impl From<EN_A> for bool {
+impl From<ENSELECT_A> for bool {
     #[inline(always)]
-    fn from(variant: EN_A) -> Self {
+    fn from(variant: ENSELECT_A) -> Self {
         variant as u8 != 0
     }
 }
-#[doc = "Field `EN` reader - WDT Enable"]
-pub struct EN_R(crate::FieldReader<bool, EN_A>);
 impl EN_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        EN_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> EN_A {
+    pub fn variant(&self) -> ENSELECT_A {
         match self.bits {
-            false => EN_A::_0,
-            true => EN_A::_1,
+            false => ENSELECT_A::_0,
+            true => ENSELECT_A::_1,
         }
     }
     #[doc = "Checks if the value of the field is `_0`"]
     #[inline(always)]
     pub fn is_0(&self) -> bool {
-        **self == EN_A::_0
+        *self == ENSELECT_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
     #[inline(always)]
     pub fn is_1(&self) -> bool {
-        **self == EN_A::_1
-    }
-}
-impl core::ops::Deref for EN_R {
-    type Target = crate::FieldReader<bool, EN_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == ENSELECT_A::_1
     }
 }
 #[doc = "Field `EN` writer - WDT Enable"]
-pub struct EN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> EN_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: EN_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, ENSELECT_A, O>;
+impl<'a, const O: u8> EN_W<'a, O> {
     #[doc = "WDT is disabled."]
     #[inline(always)]
     pub fn _0(self) -> &'a mut W {
-        self.variant(EN_A::_0)
+        self.variant(ENSELECT_A::_0)
     }
     #[doc = "WDT is enabled"]
     #[inline(always)]
     pub fn _1(self) -> &'a mut W {
-        self.variant(EN_A::_1)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
+        self.variant(ENSELECT_A::_1)
     }
 }
 #[doc = "Field `DAR` reader - WDT Disable After Reset"]
-pub struct DAR_R(crate::FieldReader<bool, bool>);
-impl DAR_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        DAR_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DAR_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DAR_R = crate::BitReader<bool>;
 #[doc = "Field `DAR` writer - WDT Disable After Reset"]
-pub struct DAR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DAR_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
-}
+pub type DAR_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
 #[doc = "Field `MODE` reader - WDT Mode"]
-pub struct MODE_R(crate::FieldReader<bool, bool>);
-impl MODE_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        MODE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for MODE_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type MODE_R = crate::BitReader<bool>;
 #[doc = "Field `MODE` writer - WDT Mode"]
-pub struct MODE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> MODE_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
-    }
-}
+pub type MODE_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
 #[doc = "Field `SFV` reader - WDT Store Final Value"]
-pub struct SFV_R(crate::FieldReader<bool, bool>);
-impl SFV_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        SFV_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for SFV_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type SFV_R = crate::BitReader<bool>;
 #[doc = "Field `SFV` writer - WDT Store Final Value"]
-pub struct SFV_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SFV_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
-        self.w
-    }
-}
+pub type SFV_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
 #[doc = "Field `IM` reader - WDT Interruput Mode"]
-pub struct IM_R(crate::FieldReader<bool, bool>);
-impl IM_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        IM_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for IM_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type IM_R = crate::BitReader<bool>;
 #[doc = "Field `IM` writer - WDT Interruput Mode"]
-pub struct IM_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> IM_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
-        self.w
-    }
-}
+pub type IM_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
 #[doc = "Field `FCD` reader - WDT Fuse Calibration Done"]
-pub struct FCD_R(crate::FieldReader<bool, bool>);
-impl FCD_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        FCD_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for FCD_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type FCD_R = crate::BitReader<bool>;
 #[doc = "Field `FCD` writer - WDT Fuse Calibration Done"]
-pub struct FCD_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> FCD_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | ((value as u32 & 0x01) << 7);
-        self.w
-    }
-}
+pub type FCD_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
 #[doc = "Field `PSEL` reader - Timeout Prescale Select"]
-pub struct PSEL_R(crate::FieldReader<u8, u8>);
-impl PSEL_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        PSEL_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for PSEL_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type PSEL_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `PSEL` writer - Timeout Prescale Select"]
-pub struct PSEL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PSEL_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x1f << 8)) | ((value as u32 & 0x1f) << 8);
-        self.w
-    }
-}
+pub type PSEL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CTRL_SPEC, u8, u8, 5, O>;
 #[doc = "Field `CSSEL1` reader - Clock Source Selection1"]
-pub struct CSSEL1_R(crate::FieldReader<bool, bool>);
-impl CSSEL1_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        CSSEL1_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CSSEL1_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CSSEL1_R = crate::BitReader<bool>;
 #[doc = "Field `CSSEL1` writer - Clock Source Selection1"]
-pub struct CSSEL1_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CSSEL1_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 14)) | ((value as u32 & 0x01) << 14);
-        self.w
-    }
-}
+pub type CSSEL1_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
 #[doc = "Field `CEN` reader - Clock Enable"]
-pub struct CEN_R(crate::FieldReader<bool, bool>);
-impl CEN_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        CEN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CEN_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CEN_R = crate::BitReader<bool>;
 #[doc = "Field `CEN` writer - Clock Enable"]
-pub struct CEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CEN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 16)) | ((value as u32 & 0x01) << 16);
-        self.w
-    }
-}
+pub type CEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
 #[doc = "Field `CSSEL` reader - Clock Source Selection0"]
-pub struct CSSEL_R(crate::FieldReader<bool, bool>);
-impl CSSEL_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        CSSEL_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CSSEL_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CSSEL_R = crate::BitReader<bool>;
 #[doc = "Field `CSSEL` writer - Clock Source Selection0"]
-pub struct CSSEL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CSSEL_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 17)) | ((value as u32 & 0x01) << 17);
-        self.w
-    }
-}
+pub type CSSEL_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
 #[doc = "Field `TBAN` reader - TBAN Prescale Select"]
-pub struct TBAN_R(crate::FieldReader<u8, u8>);
-impl TBAN_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        TBAN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TBAN_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TBAN_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `TBAN` writer - TBAN Prescale Select"]
-pub struct TBAN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TBAN_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x1f << 18)) | ((value as u32 & 0x1f) << 18);
-        self.w
-    }
-}
+pub type TBAN_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CTRL_SPEC, u8, u8, 5, O>;
 #[doc = "Field `KEY` reader - Key"]
-pub struct KEY_R(crate::FieldReader<u8, u8>);
-impl KEY_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        KEY_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for KEY_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type KEY_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `KEY` writer - Key"]
-pub struct KEY_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> KEY_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0xff << 24)) | ((value as u32 & 0xff) << 24);
-        self.w
-    }
-}
+pub type KEY_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CTRL_SPEC, u8, u8, 8, O>;
 impl R {
     #[doc = "Bit 0 - WDT Enable"]
     #[inline(always)]
     pub fn en(&self) -> EN_R {
-        EN_R::new((self.bits & 0x01) != 0)
+        EN_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - WDT Disable After Reset"]
     #[inline(always)]
     pub fn dar(&self) -> DAR_R {
-        DAR_R::new(((self.bits >> 1) & 0x01) != 0)
+        DAR_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - WDT Mode"]
     #[inline(always)]
     pub fn mode(&self) -> MODE_R {
-        MODE_R::new(((self.bits >> 2) & 0x01) != 0)
+        MODE_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - WDT Store Final Value"]
     #[inline(always)]
     pub fn sfv(&self) -> SFV_R {
-        SFV_R::new(((self.bits >> 3) & 0x01) != 0)
+        SFV_R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 4 - WDT Interruput Mode"]
     #[inline(always)]
     pub fn im(&self) -> IM_R {
-        IM_R::new(((self.bits >> 4) & 0x01) != 0)
+        IM_R::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bit 7 - WDT Fuse Calibration Done"]
     #[inline(always)]
     pub fn fcd(&self) -> FCD_R {
-        FCD_R::new(((self.bits >> 7) & 0x01) != 0)
+        FCD_R::new(((self.bits >> 7) & 1) != 0)
     }
     #[doc = "Bits 8:12 - Timeout Prescale Select"]
     #[inline(always)]
@@ -522,17 +167,17 @@ impl R {
     #[doc = "Bit 14 - Clock Source Selection1"]
     #[inline(always)]
     pub fn cssel1(&self) -> CSSEL1_R {
-        CSSEL1_R::new(((self.bits >> 14) & 0x01) != 0)
+        CSSEL1_R::new(((self.bits >> 14) & 1) != 0)
     }
     #[doc = "Bit 16 - Clock Enable"]
     #[inline(always)]
     pub fn cen(&self) -> CEN_R {
-        CEN_R::new(((self.bits >> 16) & 0x01) != 0)
+        CEN_R::new(((self.bits >> 16) & 1) != 0)
     }
     #[doc = "Bit 17 - Clock Source Selection0"]
     #[inline(always)]
     pub fn cssel(&self) -> CSSEL_R {
-        CSSEL_R::new(((self.bits >> 17) & 0x01) != 0)
+        CSSEL_R::new(((self.bits >> 17) & 1) != 0)
     }
     #[doc = "Bits 18:22 - TBAN Prescale Select"]
     #[inline(always)]
@@ -548,63 +193,75 @@ impl R {
 impl W {
     #[doc = "Bit 0 - WDT Enable"]
     #[inline(always)]
-    pub fn en(&mut self) -> EN_W {
-        EN_W { w: self }
+    #[must_use]
+    pub fn en(&mut self) -> EN_W<0> {
+        EN_W::new(self)
     }
     #[doc = "Bit 1 - WDT Disable After Reset"]
     #[inline(always)]
-    pub fn dar(&mut self) -> DAR_W {
-        DAR_W { w: self }
+    #[must_use]
+    pub fn dar(&mut self) -> DAR_W<1> {
+        DAR_W::new(self)
     }
     #[doc = "Bit 2 - WDT Mode"]
     #[inline(always)]
-    pub fn mode(&mut self) -> MODE_W {
-        MODE_W { w: self }
+    #[must_use]
+    pub fn mode(&mut self) -> MODE_W<2> {
+        MODE_W::new(self)
     }
     #[doc = "Bit 3 - WDT Store Final Value"]
     #[inline(always)]
-    pub fn sfv(&mut self) -> SFV_W {
-        SFV_W { w: self }
+    #[must_use]
+    pub fn sfv(&mut self) -> SFV_W<3> {
+        SFV_W::new(self)
     }
     #[doc = "Bit 4 - WDT Interruput Mode"]
     #[inline(always)]
-    pub fn im(&mut self) -> IM_W {
-        IM_W { w: self }
+    #[must_use]
+    pub fn im(&mut self) -> IM_W<4> {
+        IM_W::new(self)
     }
     #[doc = "Bit 7 - WDT Fuse Calibration Done"]
     #[inline(always)]
-    pub fn fcd(&mut self) -> FCD_W {
-        FCD_W { w: self }
+    #[must_use]
+    pub fn fcd(&mut self) -> FCD_W<7> {
+        FCD_W::new(self)
     }
     #[doc = "Bits 8:12 - Timeout Prescale Select"]
     #[inline(always)]
-    pub fn psel(&mut self) -> PSEL_W {
-        PSEL_W { w: self }
+    #[must_use]
+    pub fn psel(&mut self) -> PSEL_W<8> {
+        PSEL_W::new(self)
     }
     #[doc = "Bit 14 - Clock Source Selection1"]
     #[inline(always)]
-    pub fn cssel1(&mut self) -> CSSEL1_W {
-        CSSEL1_W { w: self }
+    #[must_use]
+    pub fn cssel1(&mut self) -> CSSEL1_W<14> {
+        CSSEL1_W::new(self)
     }
     #[doc = "Bit 16 - Clock Enable"]
     #[inline(always)]
-    pub fn cen(&mut self) -> CEN_W {
-        CEN_W { w: self }
+    #[must_use]
+    pub fn cen(&mut self) -> CEN_W<16> {
+        CEN_W::new(self)
     }
     #[doc = "Bit 17 - Clock Source Selection0"]
     #[inline(always)]
-    pub fn cssel(&mut self) -> CSSEL_W {
-        CSSEL_W { w: self }
+    #[must_use]
+    pub fn cssel(&mut self) -> CSSEL_W<17> {
+        CSSEL_W::new(self)
     }
     #[doc = "Bits 18:22 - TBAN Prescale Select"]
     #[inline(always)]
-    pub fn tban(&mut self) -> TBAN_W {
-        TBAN_W { w: self }
+    #[must_use]
+    pub fn tban(&mut self) -> TBAN_W<18> {
+        TBAN_W::new(self)
     }
     #[doc = "Bits 24:31 - Key"]
     #[inline(always)]
-    pub fn key(&mut self) -> KEY_W {
-        KEY_W { w: self }
+    #[must_use]
+    pub fn key(&mut self) -> KEY_W<24> {
+        KEY_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -625,11 +282,10 @@ impl crate::Readable for CTRL_SPEC {
 #[doc = "`write(|w| ..)` method takes [ctrl::W](W) writer structure"]
 impl crate::Writable for CTRL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets CTRL to value 0x0001_0080"]
 impl crate::Resettable for CTRL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x0001_0080
-    }
+    const RESET_VALUE: Self::Ux = 0x0001_0080;
 }

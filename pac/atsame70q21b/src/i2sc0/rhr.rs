@@ -14,24 +14,12 @@ impl From<crate::R<RHR_SPEC>> for R {
     }
 }
 #[doc = "Field `RHR` reader - Receiver Holding Register"]
-pub struct RHR_R(crate::FieldReader<u32, u32>);
-impl RHR_R {
-    pub(crate) fn new(bits: u32) -> Self {
-        RHR_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for RHR_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type RHR_R = crate::FieldReader<u32, u32>;
 impl R {
     #[doc = "Bits 0:31 - Receiver Holding Register"]
     #[inline(always)]
     pub fn rhr(&self) -> RHR_R {
-        RHR_R::new((self.bits & 0xffff_ffff) as u32)
+        RHR_R::new(self.bits)
     }
 }
 #[doc = "Receiver Holding Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [rhr](index.html) module"]
@@ -45,8 +33,5 @@ impl crate::Readable for RHR_SPEC {
 }
 #[doc = "`reset()` method sets RHR to value 0"]
 impl crate::Resettable for RHR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

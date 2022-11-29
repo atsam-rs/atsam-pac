@@ -35,349 +35,81 @@ impl From<crate::W<DFLL0CONF_SPEC>> for W {
     }
 }
 #[doc = "Field `EN` reader - Enable"]
-pub struct EN_R(crate::FieldReader<bool, bool>);
-impl EN_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        EN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for EN_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type EN_R = crate::BitReader<bool>;
 #[doc = "Field `EN` writer - Enable"]
-pub struct EN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> EN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, DFLL0CONF_SPEC, bool, O>;
 #[doc = "Field `MODE` reader - Mode Selection"]
-pub struct MODE_R(crate::FieldReader<bool, bool>);
-impl MODE_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        MODE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for MODE_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type MODE_R = crate::BitReader<bool>;
 #[doc = "Field `MODE` writer - Mode Selection"]
-pub struct MODE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> MODE_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
-}
+pub type MODE_W<'a, const O: u8> = crate::BitWriter<'a, u32, DFLL0CONF_SPEC, bool, O>;
 #[doc = "Field `STABLE` reader - Stable DFLL Frequency"]
-pub struct STABLE_R(crate::FieldReader<bool, bool>);
-impl STABLE_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        STABLE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for STABLE_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type STABLE_R = crate::BitReader<bool>;
 #[doc = "Field `STABLE` writer - Stable DFLL Frequency"]
-pub struct STABLE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> STABLE_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
-    }
-}
+pub type STABLE_W<'a, const O: u8> = crate::BitWriter<'a, u32, DFLL0CONF_SPEC, bool, O>;
 #[doc = "Field `LLAW` reader - Lose Lock After Wake"]
-pub struct LLAW_R(crate::FieldReader<bool, bool>);
-impl LLAW_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        LLAW_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for LLAW_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type LLAW_R = crate::BitReader<bool>;
 #[doc = "Field `LLAW` writer - Lose Lock After Wake"]
-pub struct LLAW_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> LLAW_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
-        self.w
-    }
-}
+pub type LLAW_W<'a, const O: u8> = crate::BitWriter<'a, u32, DFLL0CONF_SPEC, bool, O>;
 #[doc = "Field `CCDIS` reader - Chill Cycle Disable"]
-pub struct CCDIS_R(crate::FieldReader<bool, bool>);
-impl CCDIS_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        CCDIS_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CCDIS_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CCDIS_R = crate::BitReader<bool>;
 #[doc = "Field `CCDIS` writer - Chill Cycle Disable"]
-pub struct CCDIS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CCDIS_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
-        self.w
-    }
-}
+pub type CCDIS_W<'a, const O: u8> = crate::BitWriter<'a, u32, DFLL0CONF_SPEC, bool, O>;
 #[doc = "Field `QLDIS` reader - Quick Lock Disable"]
-pub struct QLDIS_R(crate::FieldReader<bool, bool>);
-impl QLDIS_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        QLDIS_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for QLDIS_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type QLDIS_R = crate::BitReader<bool>;
 #[doc = "Field `QLDIS` writer - Quick Lock Disable"]
-pub struct QLDIS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> QLDIS_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | ((value as u32 & 0x01) << 6);
-        self.w
-    }
-}
+pub type QLDIS_W<'a, const O: u8> = crate::BitWriter<'a, u32, DFLL0CONF_SPEC, bool, O>;
 #[doc = "Field `RANGE` reader - Range Value"]
-pub struct RANGE_R(crate::FieldReader<u8, u8>);
-impl RANGE_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        RANGE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for RANGE_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type RANGE_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `RANGE` writer - Range Value"]
-pub struct RANGE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RANGE_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 16)) | ((value as u32 & 0x03) << 16);
-        self.w
-    }
-}
+pub type RANGE_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DFLL0CONF_SPEC, u8, u8, 2, O>;
 #[doc = "Field `FCD` reader - Fuse Calibration Done"]
-pub struct FCD_R(crate::FieldReader<bool, bool>);
-impl FCD_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        FCD_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for FCD_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type FCD_R = crate::BitReader<bool>;
 #[doc = "Field `FCD` writer - Fuse Calibration Done"]
-pub struct FCD_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> FCD_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 23)) | ((value as u32 & 0x01) << 23);
-        self.w
-    }
-}
+pub type FCD_W<'a, const O: u8> = crate::BitWriter<'a, u32, DFLL0CONF_SPEC, bool, O>;
 #[doc = "Field `CALIB` reader - Calibration Value"]
-pub struct CALIB_R(crate::FieldReader<u8, u8>);
-impl CALIB_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        CALIB_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CALIB_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CALIB_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `CALIB` writer - Calibration Value"]
-pub struct CALIB_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CALIB_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 24)) | ((value as u32 & 0x0f) << 24);
-        self.w
-    }
-}
+pub type CALIB_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DFLL0CONF_SPEC, u8, u8, 4, O>;
 impl R {
     #[doc = "Bit 0 - Enable"]
     #[inline(always)]
     pub fn en(&self) -> EN_R {
-        EN_R::new((self.bits & 0x01) != 0)
+        EN_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Mode Selection"]
     #[inline(always)]
     pub fn mode(&self) -> MODE_R {
-        MODE_R::new(((self.bits >> 1) & 0x01) != 0)
+        MODE_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - Stable DFLL Frequency"]
     #[inline(always)]
     pub fn stable(&self) -> STABLE_R {
-        STABLE_R::new(((self.bits >> 2) & 0x01) != 0)
+        STABLE_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - Lose Lock After Wake"]
     #[inline(always)]
     pub fn llaw(&self) -> LLAW_R {
-        LLAW_R::new(((self.bits >> 3) & 0x01) != 0)
+        LLAW_R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 5 - Chill Cycle Disable"]
     #[inline(always)]
     pub fn ccdis(&self) -> CCDIS_R {
-        CCDIS_R::new(((self.bits >> 5) & 0x01) != 0)
+        CCDIS_R::new(((self.bits >> 5) & 1) != 0)
     }
     #[doc = "Bit 6 - Quick Lock Disable"]
     #[inline(always)]
     pub fn qldis(&self) -> QLDIS_R {
-        QLDIS_R::new(((self.bits >> 6) & 0x01) != 0)
+        QLDIS_R::new(((self.bits >> 6) & 1) != 0)
     }
     #[doc = "Bits 16:17 - Range Value"]
     #[inline(always)]
     pub fn range(&self) -> RANGE_R {
-        RANGE_R::new(((self.bits >> 16) & 0x03) as u8)
+        RANGE_R::new(((self.bits >> 16) & 3) as u8)
     }
     #[doc = "Bit 23 - Fuse Calibration Done"]
     #[inline(always)]
     pub fn fcd(&self) -> FCD_R {
-        FCD_R::new(((self.bits >> 23) & 0x01) != 0)
+        FCD_R::new(((self.bits >> 23) & 1) != 0)
     }
     #[doc = "Bits 24:27 - Calibration Value"]
     #[inline(always)]
@@ -388,48 +120,57 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Enable"]
     #[inline(always)]
-    pub fn en(&mut self) -> EN_W {
-        EN_W { w: self }
+    #[must_use]
+    pub fn en(&mut self) -> EN_W<0> {
+        EN_W::new(self)
     }
     #[doc = "Bit 1 - Mode Selection"]
     #[inline(always)]
-    pub fn mode(&mut self) -> MODE_W {
-        MODE_W { w: self }
+    #[must_use]
+    pub fn mode(&mut self) -> MODE_W<1> {
+        MODE_W::new(self)
     }
     #[doc = "Bit 2 - Stable DFLL Frequency"]
     #[inline(always)]
-    pub fn stable(&mut self) -> STABLE_W {
-        STABLE_W { w: self }
+    #[must_use]
+    pub fn stable(&mut self) -> STABLE_W<2> {
+        STABLE_W::new(self)
     }
     #[doc = "Bit 3 - Lose Lock After Wake"]
     #[inline(always)]
-    pub fn llaw(&mut self) -> LLAW_W {
-        LLAW_W { w: self }
+    #[must_use]
+    pub fn llaw(&mut self) -> LLAW_W<3> {
+        LLAW_W::new(self)
     }
     #[doc = "Bit 5 - Chill Cycle Disable"]
     #[inline(always)]
-    pub fn ccdis(&mut self) -> CCDIS_W {
-        CCDIS_W { w: self }
+    #[must_use]
+    pub fn ccdis(&mut self) -> CCDIS_W<5> {
+        CCDIS_W::new(self)
     }
     #[doc = "Bit 6 - Quick Lock Disable"]
     #[inline(always)]
-    pub fn qldis(&mut self) -> QLDIS_W {
-        QLDIS_W { w: self }
+    #[must_use]
+    pub fn qldis(&mut self) -> QLDIS_W<6> {
+        QLDIS_W::new(self)
     }
     #[doc = "Bits 16:17 - Range Value"]
     #[inline(always)]
-    pub fn range(&mut self) -> RANGE_W {
-        RANGE_W { w: self }
+    #[must_use]
+    pub fn range(&mut self) -> RANGE_W<16> {
+        RANGE_W::new(self)
     }
     #[doc = "Bit 23 - Fuse Calibration Done"]
     #[inline(always)]
-    pub fn fcd(&mut self) -> FCD_W {
-        FCD_W { w: self }
+    #[must_use]
+    pub fn fcd(&mut self) -> FCD_W<23> {
+        FCD_W::new(self)
     }
     #[doc = "Bits 24:27 - Calibration Value"]
     #[inline(always)]
-    pub fn calib(&mut self) -> CALIB_W {
-        CALIB_W { w: self }
+    #[must_use]
+    pub fn calib(&mut self) -> CALIB_W<24> {
+        CALIB_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -450,11 +191,10 @@ impl crate::Readable for DFLL0CONF_SPEC {
 #[doc = "`write(|w| ..)` method takes [dfll0conf::W](W) writer structure"]
 impl crate::Writable for DFLL0CONF_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets DFLL0CONF to value 0"]
 impl crate::Resettable for DFLL0CONF_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

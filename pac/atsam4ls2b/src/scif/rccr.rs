@@ -35,67 +35,13 @@ impl From<crate::W<RCCR_SPEC>> for W {
     }
 }
 #[doc = "Field `CALIB` reader - Calibration Value"]
-pub struct CALIB_R(crate::FieldReader<u16, u16>);
-impl CALIB_R {
-    pub(crate) fn new(bits: u16) -> Self {
-        CALIB_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CALIB_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CALIB_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `CALIB` writer - Calibration Value"]
-pub struct CALIB_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CALIB_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x03ff) | (value as u32 & 0x03ff);
-        self.w
-    }
-}
+pub type CALIB_W<'a, const O: u8> = crate::FieldWriter<'a, u32, RCCR_SPEC, u16, u16, 10, O>;
 #[doc = "Field `FCD` reader - Flash Calibration Done"]
-pub struct FCD_R(crate::FieldReader<bool, bool>);
-impl FCD_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        FCD_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for FCD_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type FCD_R = crate::BitReader<bool>;
 #[doc = "Field `FCD` writer - Flash Calibration Done"]
-pub struct FCD_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> FCD_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 16)) | ((value as u32 & 0x01) << 16);
-        self.w
-    }
-}
+pub type FCD_W<'a, const O: u8> = crate::BitWriter<'a, u32, RCCR_SPEC, bool, O>;
 impl R {
     #[doc = "Bits 0:9 - Calibration Value"]
     #[inline(always)]
@@ -105,19 +51,21 @@ impl R {
     #[doc = "Bit 16 - Flash Calibration Done"]
     #[inline(always)]
     pub fn fcd(&self) -> FCD_R {
-        FCD_R::new(((self.bits >> 16) & 0x01) != 0)
+        FCD_R::new(((self.bits >> 16) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bits 0:9 - Calibration Value"]
     #[inline(always)]
-    pub fn calib(&mut self) -> CALIB_W {
-        CALIB_W { w: self }
+    #[must_use]
+    pub fn calib(&mut self) -> CALIB_W<0> {
+        CALIB_W::new(self)
     }
     #[doc = "Bit 16 - Flash Calibration Done"]
     #[inline(always)]
-    pub fn fcd(&mut self) -> FCD_W {
-        FCD_W { w: self }
+    #[must_use]
+    pub fn fcd(&mut self) -> FCD_W<16> {
+        FCD_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -138,11 +86,10 @@ impl crate::Readable for RCCR_SPEC {
 #[doc = "`write(|w| ..)` method takes [rccr::W](W) writer structure"]
 impl crate::Writable for RCCR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets RCCR to value 0"]
 impl crate::Resettable for RCCR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

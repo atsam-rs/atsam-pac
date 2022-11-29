@@ -20,221 +20,69 @@ impl From<crate::W<UPSTA3SET_SPEC>> for W {
     }
 }
 #[doc = "Field `RXINIS` writer - RXINI Set"]
-pub struct RXINIS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RXINIS_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type RXINIS_W<'a, const O: u8> = crate::BitWriter<'a, u32, UPSTA3SET_SPEC, bool, O>;
 #[doc = "Field `TXOUTIS` writer - TXOUTI Set"]
-pub struct TXOUTIS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TXOUTIS_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
-}
+pub type TXOUTIS_W<'a, const O: u8> = crate::BitWriter<'a, u32, UPSTA3SET_SPEC, bool, O>;
 #[doc = "Field `TXSTPIS` writer - TXSTPI Set"]
-pub struct TXSTPIS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TXSTPIS_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
-    }
-}
+pub type TXSTPIS_W<'a, const O: u8> = crate::BitWriter<'a, u32, UPSTA3SET_SPEC, bool, O>;
 #[doc = "Field `PERRIS` writer - PERRI Set"]
-pub struct PERRIS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PERRIS_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
-        self.w
-    }
-}
+pub type PERRIS_W<'a, const O: u8> = crate::BitWriter<'a, u32, UPSTA3SET_SPEC, bool, O>;
 #[doc = "Field `NAKEDIS` writer - NAKEDI Set"]
-pub struct NAKEDIS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> NAKEDIS_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
-        self.w
-    }
-}
+pub type NAKEDIS_W<'a, const O: u8> = crate::BitWriter<'a, u32, UPSTA3SET_SPEC, bool, O>;
 #[doc = "Field `ERRORFIS` writer - ERRORFI Set"]
-pub struct ERRORFIS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ERRORFIS_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
-        self.w
-    }
-}
+pub type ERRORFIS_W<'a, const O: u8> = crate::BitWriter<'a, u32, UPSTA3SET_SPEC, bool, O>;
 #[doc = "Field `RXSTALLDIS` writer - RXSTALLDI Set"]
-pub struct RXSTALLDIS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RXSTALLDIS_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | ((value as u32 & 0x01) << 6);
-        self.w
-    }
-}
+pub type RXSTALLDIS_W<'a, const O: u8> = crate::BitWriter<'a, u32, UPSTA3SET_SPEC, bool, O>;
 #[doc = "Field `RAMACERIS` writer - RAMACERI Set"]
-pub struct RAMACERIS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RAMACERIS_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 10)) | ((value as u32 & 0x01) << 10);
-        self.w
-    }
-}
+pub type RAMACERIS_W<'a, const O: u8> = crate::BitWriter<'a, u32, UPSTA3SET_SPEC, bool, O>;
 impl W {
     #[doc = "Bit 0 - RXINI Set"]
     #[inline(always)]
-    pub fn rxinis(&mut self) -> RXINIS_W {
-        RXINIS_W { w: self }
+    #[must_use]
+    pub fn rxinis(&mut self) -> RXINIS_W<0> {
+        RXINIS_W::new(self)
     }
     #[doc = "Bit 1 - TXOUTI Set"]
     #[inline(always)]
-    pub fn txoutis(&mut self) -> TXOUTIS_W {
-        TXOUTIS_W { w: self }
+    #[must_use]
+    pub fn txoutis(&mut self) -> TXOUTIS_W<1> {
+        TXOUTIS_W::new(self)
     }
     #[doc = "Bit 2 - TXSTPI Set"]
     #[inline(always)]
-    pub fn txstpis(&mut self) -> TXSTPIS_W {
-        TXSTPIS_W { w: self }
+    #[must_use]
+    pub fn txstpis(&mut self) -> TXSTPIS_W<2> {
+        TXSTPIS_W::new(self)
     }
     #[doc = "Bit 3 - PERRI Set"]
     #[inline(always)]
-    pub fn perris(&mut self) -> PERRIS_W {
-        PERRIS_W { w: self }
+    #[must_use]
+    pub fn perris(&mut self) -> PERRIS_W<3> {
+        PERRIS_W::new(self)
     }
     #[doc = "Bit 4 - NAKEDI Set"]
     #[inline(always)]
-    pub fn nakedis(&mut self) -> NAKEDIS_W {
-        NAKEDIS_W { w: self }
+    #[must_use]
+    pub fn nakedis(&mut self) -> NAKEDIS_W<4> {
+        NAKEDIS_W::new(self)
     }
     #[doc = "Bit 5 - ERRORFI Set"]
     #[inline(always)]
-    pub fn errorfis(&mut self) -> ERRORFIS_W {
-        ERRORFIS_W { w: self }
+    #[must_use]
+    pub fn errorfis(&mut self) -> ERRORFIS_W<5> {
+        ERRORFIS_W::new(self)
     }
     #[doc = "Bit 6 - RXSTALLDI Set"]
     #[inline(always)]
-    pub fn rxstalldis(&mut self) -> RXSTALLDIS_W {
-        RXSTALLDIS_W { w: self }
+    #[must_use]
+    pub fn rxstalldis(&mut self) -> RXSTALLDIS_W<6> {
+        RXSTALLDIS_W::new(self)
     }
     #[doc = "Bit 10 - RAMACERI Set"]
     #[inline(always)]
-    pub fn ramaceris(&mut self) -> RAMACERIS_W {
-        RAMACERIS_W { w: self }
+    #[must_use]
+    pub fn ramaceris(&mut self) -> RAMACERIS_W<10> {
+        RAMACERIS_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -251,11 +99,10 @@ impl crate::RegisterSpec for UPSTA3SET_SPEC {
 #[doc = "`write(|w| ..)` method takes [upsta3set::W](W) writer structure"]
 impl crate::Writable for UPSTA3SET_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets UPSTA3SET to value 0"]
 impl crate::Resettable for UPSTA3SET_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

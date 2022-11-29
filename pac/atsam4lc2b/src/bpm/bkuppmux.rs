@@ -35,31 +35,9 @@ impl From<crate::W<BKUPPMUX_SPEC>> for W {
     }
 }
 #[doc = "Field `BKUPPMUX` reader - Backup Pin Muxing"]
-pub struct BKUPPMUX_R(crate::FieldReader<u16, u16>);
-impl BKUPPMUX_R {
-    pub(crate) fn new(bits: u16) -> Self {
-        BKUPPMUX_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for BKUPPMUX_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type BKUPPMUX_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `BKUPPMUX` writer - Backup Pin Muxing"]
-pub struct BKUPPMUX_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> BKUPPMUX_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01ff) | (value as u32 & 0x01ff);
-        self.w
-    }
-}
+pub type BKUPPMUX_W<'a, const O: u8> = crate::FieldWriter<'a, u32, BKUPPMUX_SPEC, u16, u16, 9, O>;
 impl R {
     #[doc = "Bits 0:8 - Backup Pin Muxing"]
     #[inline(always)]
@@ -70,8 +48,9 @@ impl R {
 impl W {
     #[doc = "Bits 0:8 - Backup Pin Muxing"]
     #[inline(always)]
-    pub fn bkuppmux(&mut self) -> BKUPPMUX_W {
-        BKUPPMUX_W { w: self }
+    #[must_use]
+    pub fn bkuppmux(&mut self) -> BKUPPMUX_W<0> {
+        BKUPPMUX_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -92,11 +71,10 @@ impl crate::Readable for BKUPPMUX_SPEC {
 #[doc = "`write(|w| ..)` method takes [bkuppmux::W](W) writer structure"]
 impl crate::Writable for BKUPPMUX_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets BKUPPMUX to value 0"]
 impl crate::Resettable for BKUPPMUX_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

@@ -35,129 +35,21 @@ impl From<crate::W<CALALR_SPEC>> for W {
     }
 }
 #[doc = "Field `MONTH` reader - Month Alarm"]
-pub struct MONTH_R(crate::FieldReader<u8, u8>);
-impl MONTH_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        MONTH_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for MONTH_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type MONTH_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `MONTH` writer - Month Alarm"]
-pub struct MONTH_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> MONTH_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x1f << 16)) | ((value as u32 & 0x1f) << 16);
-        self.w
-    }
-}
+pub type MONTH_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CALALR_SPEC, u8, u8, 5, O>;
 #[doc = "Field `MTHEN` reader - Month Alarm Enable"]
-pub struct MTHEN_R(crate::FieldReader<bool, bool>);
-impl MTHEN_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        MTHEN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for MTHEN_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type MTHEN_R = crate::BitReader<bool>;
 #[doc = "Field `MTHEN` writer - Month Alarm Enable"]
-pub struct MTHEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> MTHEN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 23)) | ((value as u32 & 0x01) << 23);
-        self.w
-    }
-}
+pub type MTHEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CALALR_SPEC, bool, O>;
 #[doc = "Field `DATE` reader - Date Alarm"]
-pub struct DATE_R(crate::FieldReader<u8, u8>);
-impl DATE_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        DATE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DATE_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DATE_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `DATE` writer - Date Alarm"]
-pub struct DATE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DATE_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x3f << 24)) | ((value as u32 & 0x3f) << 24);
-        self.w
-    }
-}
+pub type DATE_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CALALR_SPEC, u8, u8, 6, O>;
 #[doc = "Field `DATEEN` reader - Date Alarm Enable"]
-pub struct DATEEN_R(crate::FieldReader<bool, bool>);
-impl DATEEN_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        DATEEN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DATEEN_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DATEEN_R = crate::BitReader<bool>;
 #[doc = "Field `DATEEN` writer - Date Alarm Enable"]
-pub struct DATEEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DATEEN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 31)) | ((value as u32 & 0x01) << 31);
-        self.w
-    }
-}
+pub type DATEEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CALALR_SPEC, bool, O>;
 impl R {
     #[doc = "Bits 16:20 - Month Alarm"]
     #[inline(always)]
@@ -167,7 +59,7 @@ impl R {
     #[doc = "Bit 23 - Month Alarm Enable"]
     #[inline(always)]
     pub fn mthen(&self) -> MTHEN_R {
-        MTHEN_R::new(((self.bits >> 23) & 0x01) != 0)
+        MTHEN_R::new(((self.bits >> 23) & 1) != 0)
     }
     #[doc = "Bits 24:29 - Date Alarm"]
     #[inline(always)]
@@ -177,29 +69,33 @@ impl R {
     #[doc = "Bit 31 - Date Alarm Enable"]
     #[inline(always)]
     pub fn dateen(&self) -> DATEEN_R {
-        DATEEN_R::new(((self.bits >> 31) & 0x01) != 0)
+        DATEEN_R::new(((self.bits >> 31) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bits 16:20 - Month Alarm"]
     #[inline(always)]
-    pub fn month(&mut self) -> MONTH_W {
-        MONTH_W { w: self }
+    #[must_use]
+    pub fn month(&mut self) -> MONTH_W<16> {
+        MONTH_W::new(self)
     }
     #[doc = "Bit 23 - Month Alarm Enable"]
     #[inline(always)]
-    pub fn mthen(&mut self) -> MTHEN_W {
-        MTHEN_W { w: self }
+    #[must_use]
+    pub fn mthen(&mut self) -> MTHEN_W<23> {
+        MTHEN_W::new(self)
     }
     #[doc = "Bits 24:29 - Date Alarm"]
     #[inline(always)]
-    pub fn date(&mut self) -> DATE_W {
-        DATE_W { w: self }
+    #[must_use]
+    pub fn date(&mut self) -> DATE_W<24> {
+        DATE_W::new(self)
     }
     #[doc = "Bit 31 - Date Alarm Enable"]
     #[inline(always)]
-    pub fn dateen(&mut self) -> DATEEN_W {
-        DATEEN_W { w: self }
+    #[must_use]
+    pub fn dateen(&mut self) -> DATEEN_W<31> {
+        DATEEN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -220,11 +116,10 @@ impl crate::Readable for CALALR_SPEC {
 #[doc = "`write(|w| ..)` method takes [calalr::W](W) writer structure"]
 impl crate::Writable for CALALR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets CALALR to value 0"]
 impl crate::Resettable for CALALR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

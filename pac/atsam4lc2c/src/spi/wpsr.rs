@@ -13,10 +13,12 @@ impl From<crate::R<WPSR_SPEC>> for R {
         R(reader)
     }
 }
+#[doc = "Field `WPVS` reader - Write Protection Violation Status"]
+pub type WPVS_R = crate::FieldReader<u8, WPVSSELECT_A>;
 #[doc = "Write Protection Violation Status\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum WPVS_A {
+pub enum WPVSSELECT_A {
     #[doc = "1: The Write Protection has blocked a Write access to a protected register (since the last read)."]
     WRITE_WITH_WP = 1,
     #[doc = "2: Software Reset has been performed while Write Protection was enabled (since the last read or since the last write access on MR, IER, IDR or CSRx)."]
@@ -24,70 +26,46 @@ pub enum WPVS_A {
     #[doc = "4: Write accesses have been detected on MR (while a chip select was active) or on CSRi (while the Chip Select \"i\" was active) since the last read."]
     UNEXPECTED_WRITE = 4,
 }
-impl From<WPVS_A> for u8 {
+impl From<WPVSSELECT_A> for u8 {
     #[inline(always)]
-    fn from(variant: WPVS_A) -> Self {
+    fn from(variant: WPVSSELECT_A) -> Self {
         variant as _
     }
 }
-#[doc = "Field `WPVS` reader - Write Protection Violation Status"]
-pub struct WPVS_R(crate::FieldReader<u8, WPVS_A>);
 impl WPVS_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        WPVS_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<WPVS_A> {
+    pub fn variant(&self) -> Option<WPVSSELECT_A> {
         match self.bits {
-            1 => Some(WPVS_A::WRITE_WITH_WP),
-            2 => Some(WPVS_A::SWRST_WITH_WP),
-            4 => Some(WPVS_A::UNEXPECTED_WRITE),
+            1 => Some(WPVSSELECT_A::WRITE_WITH_WP),
+            2 => Some(WPVSSELECT_A::SWRST_WITH_WP),
+            4 => Some(WPVSSELECT_A::UNEXPECTED_WRITE),
             _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `WRITE_WITH_WP`"]
     #[inline(always)]
     pub fn is_write_with_wp(&self) -> bool {
-        **self == WPVS_A::WRITE_WITH_WP
+        *self == WPVSSELECT_A::WRITE_WITH_WP
     }
     #[doc = "Checks if the value of the field is `SWRST_WITH_WP`"]
     #[inline(always)]
     pub fn is_swrst_with_wp(&self) -> bool {
-        **self == WPVS_A::SWRST_WITH_WP
+        *self == WPVSSELECT_A::SWRST_WITH_WP
     }
     #[doc = "Checks if the value of the field is `UNEXPECTED_WRITE`"]
     #[inline(always)]
     pub fn is_unexpected_write(&self) -> bool {
-        **self == WPVS_A::UNEXPECTED_WRITE
-    }
-}
-impl core::ops::Deref for WPVS_R {
-    type Target = crate::FieldReader<u8, WPVS_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == WPVSSELECT_A::UNEXPECTED_WRITE
     }
 }
 #[doc = "Field `WPVSRC` reader - Write Protection Violation Source"]
-pub struct WPVSRC_R(crate::FieldReader<u8, u8>);
-impl WPVSRC_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        WPVSRC_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for WPVSRC_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type WPVSRC_R = crate::FieldReader<u8, u8>;
 impl R {
     #[doc = "Bits 0:2 - Write Protection Violation Status"]
     #[inline(always)]
     pub fn wpvs(&self) -> WPVS_R {
-        WPVS_R::new((self.bits & 0x07) as u8)
+        WPVS_R::new((self.bits & 7) as u8)
     }
     #[doc = "Bits 8:15 - Write Protection Violation Source"]
     #[inline(always)]
@@ -106,8 +84,5 @@ impl crate::Readable for WPSR_SPEC {
 }
 #[doc = "`reset()` method sets WPSR to value 0"]
 impl crate::Resettable for WPSR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

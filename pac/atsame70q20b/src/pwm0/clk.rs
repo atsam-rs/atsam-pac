@@ -34,85 +34,64 @@ impl From<crate::W<CLK_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `DIVA` reader - CLKA Divide Factor"]
+pub type DIVA_R = crate::FieldReader<u8, DIVASELECT_A>;
 #[doc = "CLKA Divide Factor\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum DIVA_A {
+pub enum DIVASELECT_A {
     #[doc = "0: CLKA clock is turned off"]
     CLKA_POFF = 0,
     #[doc = "1: CLKA clock is clock selected by PREA"]
     PREA = 1,
 }
-impl From<DIVA_A> for u8 {
+impl From<DIVASELECT_A> for u8 {
     #[inline(always)]
-    fn from(variant: DIVA_A) -> Self {
+    fn from(variant: DIVASELECT_A) -> Self {
         variant as _
     }
 }
-#[doc = "Field `DIVA` reader - CLKA Divide Factor"]
-pub struct DIVA_R(crate::FieldReader<u8, DIVA_A>);
 impl DIVA_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        DIVA_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<DIVA_A> {
+    pub fn variant(&self) -> Option<DIVASELECT_A> {
         match self.bits {
-            0 => Some(DIVA_A::CLKA_POFF),
-            1 => Some(DIVA_A::PREA),
+            0 => Some(DIVASELECT_A::CLKA_POFF),
+            1 => Some(DIVASELECT_A::PREA),
             _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `CLKA_POFF`"]
     #[inline(always)]
     pub fn is_clka_poff(&self) -> bool {
-        **self == DIVA_A::CLKA_POFF
+        *self == DIVASELECT_A::CLKA_POFF
     }
     #[doc = "Checks if the value of the field is `PREA`"]
     #[inline(always)]
     pub fn is_prea(&self) -> bool {
-        **self == DIVA_A::PREA
-    }
-}
-impl core::ops::Deref for DIVA_R {
-    type Target = crate::FieldReader<u8, DIVA_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == DIVASELECT_A::PREA
     }
 }
 #[doc = "Field `DIVA` writer - CLKA Divide Factor"]
-pub struct DIVA_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DIVA_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: DIVA_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type DIVA_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CLK_SPEC, u8, DIVASELECT_A, 8, O>;
+impl<'a, const O: u8> DIVA_W<'a, O> {
     #[doc = "CLKA clock is turned off"]
     #[inline(always)]
     pub fn clka_poff(self) -> &'a mut W {
-        self.variant(DIVA_A::CLKA_POFF)
+        self.variant(DIVASELECT_A::CLKA_POFF)
     }
     #[doc = "CLKA clock is clock selected by PREA"]
     #[inline(always)]
     pub fn prea(self) -> &'a mut W {
-        self.variant(DIVA_A::PREA)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xff) | (value as u32 & 0xff);
-        self.w
+        self.variant(DIVASELECT_A::PREA)
     }
 }
+#[doc = "Field `PREA` reader - CLKA Source Clock Selection"]
+pub type PREA_R = crate::FieldReader<u8, PREASELECT_A>;
 #[doc = "CLKA Source Clock Selection\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum PREA_A {
+pub enum PREASELECT_A {
     #[doc = "0: Peripheral clock"]
     CLK = 0,
     #[doc = "1: Peripheral clock/2"]
@@ -136,250 +115,204 @@ pub enum PREA_A {
     #[doc = "10: Peripheral clock/1024"]
     CLK_DIV1024 = 10,
 }
-impl From<PREA_A> for u8 {
+impl From<PREASELECT_A> for u8 {
     #[inline(always)]
-    fn from(variant: PREA_A) -> Self {
+    fn from(variant: PREASELECT_A) -> Self {
         variant as _
     }
 }
-#[doc = "Field `PREA` reader - CLKA Source Clock Selection"]
-pub struct PREA_R(crate::FieldReader<u8, PREA_A>);
 impl PREA_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        PREA_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<PREA_A> {
+    pub fn variant(&self) -> Option<PREASELECT_A> {
         match self.bits {
-            0 => Some(PREA_A::CLK),
-            1 => Some(PREA_A::CLK_DIV2),
-            2 => Some(PREA_A::CLK_DIV4),
-            3 => Some(PREA_A::CLK_DIV8),
-            4 => Some(PREA_A::CLK_DIV16),
-            5 => Some(PREA_A::CLK_DIV32),
-            6 => Some(PREA_A::CLK_DIV64),
-            7 => Some(PREA_A::CLK_DIV128),
-            8 => Some(PREA_A::CLK_DIV256),
-            9 => Some(PREA_A::CLK_DIV512),
-            10 => Some(PREA_A::CLK_DIV1024),
+            0 => Some(PREASELECT_A::CLK),
+            1 => Some(PREASELECT_A::CLK_DIV2),
+            2 => Some(PREASELECT_A::CLK_DIV4),
+            3 => Some(PREASELECT_A::CLK_DIV8),
+            4 => Some(PREASELECT_A::CLK_DIV16),
+            5 => Some(PREASELECT_A::CLK_DIV32),
+            6 => Some(PREASELECT_A::CLK_DIV64),
+            7 => Some(PREASELECT_A::CLK_DIV128),
+            8 => Some(PREASELECT_A::CLK_DIV256),
+            9 => Some(PREASELECT_A::CLK_DIV512),
+            10 => Some(PREASELECT_A::CLK_DIV1024),
             _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `CLK`"]
     #[inline(always)]
     pub fn is_clk(&self) -> bool {
-        **self == PREA_A::CLK
+        *self == PREASELECT_A::CLK
     }
     #[doc = "Checks if the value of the field is `CLK_DIV2`"]
     #[inline(always)]
     pub fn is_clk_div2(&self) -> bool {
-        **self == PREA_A::CLK_DIV2
+        *self == PREASELECT_A::CLK_DIV2
     }
     #[doc = "Checks if the value of the field is `CLK_DIV4`"]
     #[inline(always)]
     pub fn is_clk_div4(&self) -> bool {
-        **self == PREA_A::CLK_DIV4
+        *self == PREASELECT_A::CLK_DIV4
     }
     #[doc = "Checks if the value of the field is `CLK_DIV8`"]
     #[inline(always)]
     pub fn is_clk_div8(&self) -> bool {
-        **self == PREA_A::CLK_DIV8
+        *self == PREASELECT_A::CLK_DIV8
     }
     #[doc = "Checks if the value of the field is `CLK_DIV16`"]
     #[inline(always)]
     pub fn is_clk_div16(&self) -> bool {
-        **self == PREA_A::CLK_DIV16
+        *self == PREASELECT_A::CLK_DIV16
     }
     #[doc = "Checks if the value of the field is `CLK_DIV32`"]
     #[inline(always)]
     pub fn is_clk_div32(&self) -> bool {
-        **self == PREA_A::CLK_DIV32
+        *self == PREASELECT_A::CLK_DIV32
     }
     #[doc = "Checks if the value of the field is `CLK_DIV64`"]
     #[inline(always)]
     pub fn is_clk_div64(&self) -> bool {
-        **self == PREA_A::CLK_DIV64
+        *self == PREASELECT_A::CLK_DIV64
     }
     #[doc = "Checks if the value of the field is `CLK_DIV128`"]
     #[inline(always)]
     pub fn is_clk_div128(&self) -> bool {
-        **self == PREA_A::CLK_DIV128
+        *self == PREASELECT_A::CLK_DIV128
     }
     #[doc = "Checks if the value of the field is `CLK_DIV256`"]
     #[inline(always)]
     pub fn is_clk_div256(&self) -> bool {
-        **self == PREA_A::CLK_DIV256
+        *self == PREASELECT_A::CLK_DIV256
     }
     #[doc = "Checks if the value of the field is `CLK_DIV512`"]
     #[inline(always)]
     pub fn is_clk_div512(&self) -> bool {
-        **self == PREA_A::CLK_DIV512
+        *self == PREASELECT_A::CLK_DIV512
     }
     #[doc = "Checks if the value of the field is `CLK_DIV1024`"]
     #[inline(always)]
     pub fn is_clk_div1024(&self) -> bool {
-        **self == PREA_A::CLK_DIV1024
-    }
-}
-impl core::ops::Deref for PREA_R {
-    type Target = crate::FieldReader<u8, PREA_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == PREASELECT_A::CLK_DIV1024
     }
 }
 #[doc = "Field `PREA` writer - CLKA Source Clock Selection"]
-pub struct PREA_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PREA_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: PREA_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type PREA_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CLK_SPEC, u8, PREASELECT_A, 4, O>;
+impl<'a, const O: u8> PREA_W<'a, O> {
     #[doc = "Peripheral clock"]
     #[inline(always)]
     pub fn clk(self) -> &'a mut W {
-        self.variant(PREA_A::CLK)
+        self.variant(PREASELECT_A::CLK)
     }
     #[doc = "Peripheral clock/2"]
     #[inline(always)]
     pub fn clk_div2(self) -> &'a mut W {
-        self.variant(PREA_A::CLK_DIV2)
+        self.variant(PREASELECT_A::CLK_DIV2)
     }
     #[doc = "Peripheral clock/4"]
     #[inline(always)]
     pub fn clk_div4(self) -> &'a mut W {
-        self.variant(PREA_A::CLK_DIV4)
+        self.variant(PREASELECT_A::CLK_DIV4)
     }
     #[doc = "Peripheral clock/8"]
     #[inline(always)]
     pub fn clk_div8(self) -> &'a mut W {
-        self.variant(PREA_A::CLK_DIV8)
+        self.variant(PREASELECT_A::CLK_DIV8)
     }
     #[doc = "Peripheral clock/16"]
     #[inline(always)]
     pub fn clk_div16(self) -> &'a mut W {
-        self.variant(PREA_A::CLK_DIV16)
+        self.variant(PREASELECT_A::CLK_DIV16)
     }
     #[doc = "Peripheral clock/32"]
     #[inline(always)]
     pub fn clk_div32(self) -> &'a mut W {
-        self.variant(PREA_A::CLK_DIV32)
+        self.variant(PREASELECT_A::CLK_DIV32)
     }
     #[doc = "Peripheral clock/64"]
     #[inline(always)]
     pub fn clk_div64(self) -> &'a mut W {
-        self.variant(PREA_A::CLK_DIV64)
+        self.variant(PREASELECT_A::CLK_DIV64)
     }
     #[doc = "Peripheral clock/128"]
     #[inline(always)]
     pub fn clk_div128(self) -> &'a mut W {
-        self.variant(PREA_A::CLK_DIV128)
+        self.variant(PREASELECT_A::CLK_DIV128)
     }
     #[doc = "Peripheral clock/256"]
     #[inline(always)]
     pub fn clk_div256(self) -> &'a mut W {
-        self.variant(PREA_A::CLK_DIV256)
+        self.variant(PREASELECT_A::CLK_DIV256)
     }
     #[doc = "Peripheral clock/512"]
     #[inline(always)]
     pub fn clk_div512(self) -> &'a mut W {
-        self.variant(PREA_A::CLK_DIV512)
+        self.variant(PREASELECT_A::CLK_DIV512)
     }
     #[doc = "Peripheral clock/1024"]
     #[inline(always)]
     pub fn clk_div1024(self) -> &'a mut W {
-        self.variant(PREA_A::CLK_DIV1024)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 8)) | ((value as u32 & 0x0f) << 8);
-        self.w
+        self.variant(PREASELECT_A::CLK_DIV1024)
     }
 }
+#[doc = "Field `DIVB` reader - CLKB Divide Factor"]
+pub type DIVB_R = crate::FieldReader<u8, DIVBSELECT_A>;
 #[doc = "CLKB Divide Factor\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum DIVB_A {
+pub enum DIVBSELECT_A {
     #[doc = "0: CLKB clock is turned off"]
     CLKB_POFF = 0,
     #[doc = "1: CLKB clock is clock selected by PREB"]
     PREB = 1,
 }
-impl From<DIVB_A> for u8 {
+impl From<DIVBSELECT_A> for u8 {
     #[inline(always)]
-    fn from(variant: DIVB_A) -> Self {
+    fn from(variant: DIVBSELECT_A) -> Self {
         variant as _
     }
 }
-#[doc = "Field `DIVB` reader - CLKB Divide Factor"]
-pub struct DIVB_R(crate::FieldReader<u8, DIVB_A>);
 impl DIVB_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        DIVB_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<DIVB_A> {
+    pub fn variant(&self) -> Option<DIVBSELECT_A> {
         match self.bits {
-            0 => Some(DIVB_A::CLKB_POFF),
-            1 => Some(DIVB_A::PREB),
+            0 => Some(DIVBSELECT_A::CLKB_POFF),
+            1 => Some(DIVBSELECT_A::PREB),
             _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `CLKB_POFF`"]
     #[inline(always)]
     pub fn is_clkb_poff(&self) -> bool {
-        **self == DIVB_A::CLKB_POFF
+        *self == DIVBSELECT_A::CLKB_POFF
     }
     #[doc = "Checks if the value of the field is `PREB`"]
     #[inline(always)]
     pub fn is_preb(&self) -> bool {
-        **self == DIVB_A::PREB
-    }
-}
-impl core::ops::Deref for DIVB_R {
-    type Target = crate::FieldReader<u8, DIVB_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == DIVBSELECT_A::PREB
     }
 }
 #[doc = "Field `DIVB` writer - CLKB Divide Factor"]
-pub struct DIVB_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DIVB_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: DIVB_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type DIVB_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CLK_SPEC, u8, DIVBSELECT_A, 8, O>;
+impl<'a, const O: u8> DIVB_W<'a, O> {
     #[doc = "CLKB clock is turned off"]
     #[inline(always)]
     pub fn clkb_poff(self) -> &'a mut W {
-        self.variant(DIVB_A::CLKB_POFF)
+        self.variant(DIVBSELECT_A::CLKB_POFF)
     }
     #[doc = "CLKB clock is clock selected by PREB"]
     #[inline(always)]
     pub fn preb(self) -> &'a mut W {
-        self.variant(DIVB_A::PREB)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0xff << 16)) | ((value as u32 & 0xff) << 16);
-        self.w
+        self.variant(DIVBSELECT_A::PREB)
     }
 }
+#[doc = "Field `PREB` reader - CLKB Source Clock Selection"]
+pub type PREB_R = crate::FieldReader<u8, PREBSELECT_A>;
 #[doc = "CLKB Source Clock Selection\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum PREB_A {
+pub enum PREBSELECT_A {
     #[doc = "0: Peripheral clock"]
     CLK = 0,
     #[doc = "1: Peripheral clock/2"]
@@ -403,169 +336,144 @@ pub enum PREB_A {
     #[doc = "10: Peripheral clock/1024"]
     CLK_DIV1024 = 10,
 }
-impl From<PREB_A> for u8 {
+impl From<PREBSELECT_A> for u8 {
     #[inline(always)]
-    fn from(variant: PREB_A) -> Self {
+    fn from(variant: PREBSELECT_A) -> Self {
         variant as _
     }
 }
-#[doc = "Field `PREB` reader - CLKB Source Clock Selection"]
-pub struct PREB_R(crate::FieldReader<u8, PREB_A>);
 impl PREB_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        PREB_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<PREB_A> {
+    pub fn variant(&self) -> Option<PREBSELECT_A> {
         match self.bits {
-            0 => Some(PREB_A::CLK),
-            1 => Some(PREB_A::CLK_DIV2),
-            2 => Some(PREB_A::CLK_DIV4),
-            3 => Some(PREB_A::CLK_DIV8),
-            4 => Some(PREB_A::CLK_DIV16),
-            5 => Some(PREB_A::CLK_DIV32),
-            6 => Some(PREB_A::CLK_DIV64),
-            7 => Some(PREB_A::CLK_DIV128),
-            8 => Some(PREB_A::CLK_DIV256),
-            9 => Some(PREB_A::CLK_DIV512),
-            10 => Some(PREB_A::CLK_DIV1024),
+            0 => Some(PREBSELECT_A::CLK),
+            1 => Some(PREBSELECT_A::CLK_DIV2),
+            2 => Some(PREBSELECT_A::CLK_DIV4),
+            3 => Some(PREBSELECT_A::CLK_DIV8),
+            4 => Some(PREBSELECT_A::CLK_DIV16),
+            5 => Some(PREBSELECT_A::CLK_DIV32),
+            6 => Some(PREBSELECT_A::CLK_DIV64),
+            7 => Some(PREBSELECT_A::CLK_DIV128),
+            8 => Some(PREBSELECT_A::CLK_DIV256),
+            9 => Some(PREBSELECT_A::CLK_DIV512),
+            10 => Some(PREBSELECT_A::CLK_DIV1024),
             _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `CLK`"]
     #[inline(always)]
     pub fn is_clk(&self) -> bool {
-        **self == PREB_A::CLK
+        *self == PREBSELECT_A::CLK
     }
     #[doc = "Checks if the value of the field is `CLK_DIV2`"]
     #[inline(always)]
     pub fn is_clk_div2(&self) -> bool {
-        **self == PREB_A::CLK_DIV2
+        *self == PREBSELECT_A::CLK_DIV2
     }
     #[doc = "Checks if the value of the field is `CLK_DIV4`"]
     #[inline(always)]
     pub fn is_clk_div4(&self) -> bool {
-        **self == PREB_A::CLK_DIV4
+        *self == PREBSELECT_A::CLK_DIV4
     }
     #[doc = "Checks if the value of the field is `CLK_DIV8`"]
     #[inline(always)]
     pub fn is_clk_div8(&self) -> bool {
-        **self == PREB_A::CLK_DIV8
+        *self == PREBSELECT_A::CLK_DIV8
     }
     #[doc = "Checks if the value of the field is `CLK_DIV16`"]
     #[inline(always)]
     pub fn is_clk_div16(&self) -> bool {
-        **self == PREB_A::CLK_DIV16
+        *self == PREBSELECT_A::CLK_DIV16
     }
     #[doc = "Checks if the value of the field is `CLK_DIV32`"]
     #[inline(always)]
     pub fn is_clk_div32(&self) -> bool {
-        **self == PREB_A::CLK_DIV32
+        *self == PREBSELECT_A::CLK_DIV32
     }
     #[doc = "Checks if the value of the field is `CLK_DIV64`"]
     #[inline(always)]
     pub fn is_clk_div64(&self) -> bool {
-        **self == PREB_A::CLK_DIV64
+        *self == PREBSELECT_A::CLK_DIV64
     }
     #[doc = "Checks if the value of the field is `CLK_DIV128`"]
     #[inline(always)]
     pub fn is_clk_div128(&self) -> bool {
-        **self == PREB_A::CLK_DIV128
+        *self == PREBSELECT_A::CLK_DIV128
     }
     #[doc = "Checks if the value of the field is `CLK_DIV256`"]
     #[inline(always)]
     pub fn is_clk_div256(&self) -> bool {
-        **self == PREB_A::CLK_DIV256
+        *self == PREBSELECT_A::CLK_DIV256
     }
     #[doc = "Checks if the value of the field is `CLK_DIV512`"]
     #[inline(always)]
     pub fn is_clk_div512(&self) -> bool {
-        **self == PREB_A::CLK_DIV512
+        *self == PREBSELECT_A::CLK_DIV512
     }
     #[doc = "Checks if the value of the field is `CLK_DIV1024`"]
     #[inline(always)]
     pub fn is_clk_div1024(&self) -> bool {
-        **self == PREB_A::CLK_DIV1024
-    }
-}
-impl core::ops::Deref for PREB_R {
-    type Target = crate::FieldReader<u8, PREB_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == PREBSELECT_A::CLK_DIV1024
     }
 }
 #[doc = "Field `PREB` writer - CLKB Source Clock Selection"]
-pub struct PREB_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PREB_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: PREB_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type PREB_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CLK_SPEC, u8, PREBSELECT_A, 4, O>;
+impl<'a, const O: u8> PREB_W<'a, O> {
     #[doc = "Peripheral clock"]
     #[inline(always)]
     pub fn clk(self) -> &'a mut W {
-        self.variant(PREB_A::CLK)
+        self.variant(PREBSELECT_A::CLK)
     }
     #[doc = "Peripheral clock/2"]
     #[inline(always)]
     pub fn clk_div2(self) -> &'a mut W {
-        self.variant(PREB_A::CLK_DIV2)
+        self.variant(PREBSELECT_A::CLK_DIV2)
     }
     #[doc = "Peripheral clock/4"]
     #[inline(always)]
     pub fn clk_div4(self) -> &'a mut W {
-        self.variant(PREB_A::CLK_DIV4)
+        self.variant(PREBSELECT_A::CLK_DIV4)
     }
     #[doc = "Peripheral clock/8"]
     #[inline(always)]
     pub fn clk_div8(self) -> &'a mut W {
-        self.variant(PREB_A::CLK_DIV8)
+        self.variant(PREBSELECT_A::CLK_DIV8)
     }
     #[doc = "Peripheral clock/16"]
     #[inline(always)]
     pub fn clk_div16(self) -> &'a mut W {
-        self.variant(PREB_A::CLK_DIV16)
+        self.variant(PREBSELECT_A::CLK_DIV16)
     }
     #[doc = "Peripheral clock/32"]
     #[inline(always)]
     pub fn clk_div32(self) -> &'a mut W {
-        self.variant(PREB_A::CLK_DIV32)
+        self.variant(PREBSELECT_A::CLK_DIV32)
     }
     #[doc = "Peripheral clock/64"]
     #[inline(always)]
     pub fn clk_div64(self) -> &'a mut W {
-        self.variant(PREB_A::CLK_DIV64)
+        self.variant(PREBSELECT_A::CLK_DIV64)
     }
     #[doc = "Peripheral clock/128"]
     #[inline(always)]
     pub fn clk_div128(self) -> &'a mut W {
-        self.variant(PREB_A::CLK_DIV128)
+        self.variant(PREBSELECT_A::CLK_DIV128)
     }
     #[doc = "Peripheral clock/256"]
     #[inline(always)]
     pub fn clk_div256(self) -> &'a mut W {
-        self.variant(PREB_A::CLK_DIV256)
+        self.variant(PREBSELECT_A::CLK_DIV256)
     }
     #[doc = "Peripheral clock/512"]
     #[inline(always)]
     pub fn clk_div512(self) -> &'a mut W {
-        self.variant(PREB_A::CLK_DIV512)
+        self.variant(PREBSELECT_A::CLK_DIV512)
     }
     #[doc = "Peripheral clock/1024"]
     #[inline(always)]
     pub fn clk_div1024(self) -> &'a mut W {
-        self.variant(PREB_A::CLK_DIV1024)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 24)) | ((value as u32 & 0x0f) << 24);
-        self.w
+        self.variant(PREBSELECT_A::CLK_DIV1024)
     }
 }
 impl R {
@@ -593,23 +501,27 @@ impl R {
 impl W {
     #[doc = "Bits 0:7 - CLKA Divide Factor"]
     #[inline(always)]
-    pub fn diva(&mut self) -> DIVA_W {
-        DIVA_W { w: self }
+    #[must_use]
+    pub fn diva(&mut self) -> DIVA_W<0> {
+        DIVA_W::new(self)
     }
     #[doc = "Bits 8:11 - CLKA Source Clock Selection"]
     #[inline(always)]
-    pub fn prea(&mut self) -> PREA_W {
-        PREA_W { w: self }
+    #[must_use]
+    pub fn prea(&mut self) -> PREA_W<8> {
+        PREA_W::new(self)
     }
     #[doc = "Bits 16:23 - CLKB Divide Factor"]
     #[inline(always)]
-    pub fn divb(&mut self) -> DIVB_W {
-        DIVB_W { w: self }
+    #[must_use]
+    pub fn divb(&mut self) -> DIVB_W<16> {
+        DIVB_W::new(self)
     }
     #[doc = "Bits 24:27 - CLKB Source Clock Selection"]
     #[inline(always)]
-    pub fn preb(&mut self) -> PREB_W {
-        PREB_W { w: self }
+    #[must_use]
+    pub fn preb(&mut self) -> PREB_W<24> {
+        PREB_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -630,11 +542,10 @@ impl crate::Readable for CLK_SPEC {
 #[doc = "`write(|w| ..)` method takes [clk::W](W) writer structure"]
 impl crate::Writable for CLK_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets CLK to value 0"]
 impl crate::Resettable for CLK_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

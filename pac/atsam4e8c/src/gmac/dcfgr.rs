@@ -34,8 +34,10 @@ impl From<crate::W<DCFGR_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `FBLDO` reader - Fixed Burst Length for DMA Data Operations:"]
+pub type FBLDO_R = crate::FieldReader<u8, FBLDO_A>;
 #[doc = "Fixed Burst Length for DMA Data Operations:\n\nValue on reset: 4"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum FBLDO_A {
     #[doc = "1: 00001: Always use SINGLE AHB bursts"]
@@ -53,13 +55,8 @@ impl From<FBLDO_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `FBLDO` reader - Fixed Burst Length for DMA Data Operations:"]
-pub struct FBLDO_R(crate::FieldReader<u8, FBLDO_A>);
 impl FBLDO_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        FBLDO_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<FBLDO_A> {
         match self.bits {
@@ -73,41 +70,27 @@ impl FBLDO_R {
     #[doc = "Checks if the value of the field is `SINGLE`"]
     #[inline(always)]
     pub fn is_single(&self) -> bool {
-        **self == FBLDO_A::SINGLE
+        *self == FBLDO_A::SINGLE
     }
     #[doc = "Checks if the value of the field is `INCR4`"]
     #[inline(always)]
     pub fn is_incr4(&self) -> bool {
-        **self == FBLDO_A::INCR4
+        *self == FBLDO_A::INCR4
     }
     #[doc = "Checks if the value of the field is `INCR8`"]
     #[inline(always)]
     pub fn is_incr8(&self) -> bool {
-        **self == FBLDO_A::INCR8
+        *self == FBLDO_A::INCR8
     }
     #[doc = "Checks if the value of the field is `INCR16`"]
     #[inline(always)]
     pub fn is_incr16(&self) -> bool {
-        **self == FBLDO_A::INCR16
-    }
-}
-impl core::ops::Deref for FBLDO_R {
-    type Target = crate::FieldReader<u8, FBLDO_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == FBLDO_A::INCR16
     }
 }
 #[doc = "Field `FBLDO` writer - Fixed Burst Length for DMA Data Operations:"]
-pub struct FBLDO_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> FBLDO_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: FBLDO_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type FBLDO_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DCFGR_SPEC, u8, FBLDO_A, 5, O>;
+impl<'a, const O: u8> FBLDO_W<'a, O> {
     #[doc = "00001: Always use SINGLE AHB bursts"]
     #[inline(always)]
     pub fn single(self) -> &'a mut W {
@@ -128,111 +111,19 @@ impl<'a> FBLDO_W<'a> {
     pub fn incr16(self) -> &'a mut W {
         self.variant(FBLDO_A::INCR16)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x1f) | (value as u32 & 0x1f);
-        self.w
-    }
 }
 #[doc = "Field `ESMA` reader - Endian Swap Mode Enable for Management Descriptor Accesses"]
-pub struct ESMA_R(crate::FieldReader<bool, bool>);
-impl ESMA_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        ESMA_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for ESMA_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type ESMA_R = crate::BitReader<bool>;
 #[doc = "Field `ESMA` writer - Endian Swap Mode Enable for Management Descriptor Accesses"]
-pub struct ESMA_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ESMA_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | ((value as u32 & 0x01) << 6);
-        self.w
-    }
-}
+pub type ESMA_W<'a, const O: u8> = crate::BitWriter<'a, u32, DCFGR_SPEC, bool, O>;
 #[doc = "Field `ESPA` reader - Endian Swap Mode Enable for Packet Data Accesses"]
-pub struct ESPA_R(crate::FieldReader<bool, bool>);
-impl ESPA_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        ESPA_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for ESPA_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type ESPA_R = crate::BitReader<bool>;
 #[doc = "Field `ESPA` writer - Endian Swap Mode Enable for Packet Data Accesses"]
-pub struct ESPA_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ESPA_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | ((value as u32 & 0x01) << 7);
-        self.w
-    }
-}
+pub type ESPA_W<'a, const O: u8> = crate::BitWriter<'a, u32, DCFGR_SPEC, bool, O>;
 #[doc = "Field `DRBS` reader - DMA Receive Buffer Size"]
-pub struct DRBS_R(crate::FieldReader<u8, u8>);
-impl DRBS_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        DRBS_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DRBS_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DRBS_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `DRBS` writer - DMA Receive Buffer Size"]
-pub struct DRBS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DRBS_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0xff << 16)) | ((value as u32 & 0xff) << 16);
-        self.w
-    }
-}
+pub type DRBS_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DCFGR_SPEC, u8, u8, 8, O>;
 impl R {
     #[doc = "Bits 0:4 - Fixed Burst Length for DMA Data Operations:"]
     #[inline(always)]
@@ -242,12 +133,12 @@ impl R {
     #[doc = "Bit 6 - Endian Swap Mode Enable for Management Descriptor Accesses"]
     #[inline(always)]
     pub fn esma(&self) -> ESMA_R {
-        ESMA_R::new(((self.bits >> 6) & 0x01) != 0)
+        ESMA_R::new(((self.bits >> 6) & 1) != 0)
     }
     #[doc = "Bit 7 - Endian Swap Mode Enable for Packet Data Accesses"]
     #[inline(always)]
     pub fn espa(&self) -> ESPA_R {
-        ESPA_R::new(((self.bits >> 7) & 0x01) != 0)
+        ESPA_R::new(((self.bits >> 7) & 1) != 0)
     }
     #[doc = "Bits 16:23 - DMA Receive Buffer Size"]
     #[inline(always)]
@@ -258,23 +149,27 @@ impl R {
 impl W {
     #[doc = "Bits 0:4 - Fixed Burst Length for DMA Data Operations:"]
     #[inline(always)]
-    pub fn fbldo(&mut self) -> FBLDO_W {
-        FBLDO_W { w: self }
+    #[must_use]
+    pub fn fbldo(&mut self) -> FBLDO_W<0> {
+        FBLDO_W::new(self)
     }
     #[doc = "Bit 6 - Endian Swap Mode Enable for Management Descriptor Accesses"]
     #[inline(always)]
-    pub fn esma(&mut self) -> ESMA_W {
-        ESMA_W { w: self }
+    #[must_use]
+    pub fn esma(&mut self) -> ESMA_W<6> {
+        ESMA_W::new(self)
     }
     #[doc = "Bit 7 - Endian Swap Mode Enable for Packet Data Accesses"]
     #[inline(always)]
-    pub fn espa(&mut self) -> ESPA_W {
-        ESPA_W { w: self }
+    #[must_use]
+    pub fn espa(&mut self) -> ESPA_W<7> {
+        ESPA_W::new(self)
     }
     #[doc = "Bits 16:23 - DMA Receive Buffer Size"]
     #[inline(always)]
-    pub fn drbs(&mut self) -> DRBS_W {
-        DRBS_W { w: self }
+    #[must_use]
+    pub fn drbs(&mut self) -> DRBS_W<16> {
+        DRBS_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -295,11 +190,10 @@ impl crate::Readable for DCFGR_SPEC {
 #[doc = "`write(|w| ..)` method takes [dcfgr::W](W) writer structure"]
 impl crate::Writable for DCFGR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets DCFGR to value 0x0002_0004"]
 impl crate::Resettable for DCFGR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x0002_0004
-    }
+    const RESET_VALUE: Self::Ux = 0x0002_0004;
 }

@@ -34,147 +34,84 @@ impl From<crate::W<SMR_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `SCREN` reader - Scrambling/Unscrambling Enable"]
+pub type SCREN_R = crate::BitReader<SCRENSELECT_A>;
 #[doc = "Scrambling/Unscrambling Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SCREN_A {
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum SCRENSELECT_A {
     #[doc = "0: The scrambling/unscrambling is disabled."]
     DISABLED = 0,
     #[doc = "1: The scrambling/unscrambling is enabled."]
     ENABLED = 1,
 }
-impl From<SCREN_A> for bool {
+impl From<SCRENSELECT_A> for bool {
     #[inline(always)]
-    fn from(variant: SCREN_A) -> Self {
+    fn from(variant: SCRENSELECT_A) -> Self {
         variant as u8 != 0
     }
 }
-#[doc = "Field `SCREN` reader - Scrambling/Unscrambling Enable"]
-pub struct SCREN_R(crate::FieldReader<bool, SCREN_A>);
 impl SCREN_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        SCREN_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SCREN_A {
+    pub fn variant(&self) -> SCRENSELECT_A {
         match self.bits {
-            false => SCREN_A::DISABLED,
-            true => SCREN_A::ENABLED,
+            false => SCRENSELECT_A::DISABLED,
+            true => SCRENSELECT_A::ENABLED,
         }
     }
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == SCREN_A::DISABLED
+        *self == SCRENSELECT_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == SCREN_A::ENABLED
-    }
-}
-impl core::ops::Deref for SCREN_R {
-    type Target = crate::FieldReader<bool, SCREN_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == SCRENSELECT_A::ENABLED
     }
 }
 #[doc = "Field `SCREN` writer - Scrambling/Unscrambling Enable"]
-pub struct SCREN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SCREN_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: SCREN_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type SCREN_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMR_SPEC, SCRENSELECT_A, O>;
+impl<'a, const O: u8> SCREN_W<'a, O> {
     #[doc = "The scrambling/unscrambling is disabled."]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
-        self.variant(SCREN_A::DISABLED)
+        self.variant(SCRENSELECT_A::DISABLED)
     }
     #[doc = "The scrambling/unscrambling is enabled."]
     #[inline(always)]
     pub fn enabled(self) -> &'a mut W {
-        self.variant(SCREN_A::ENABLED)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
+        self.variant(SCRENSELECT_A::ENABLED)
     }
 }
 #[doc = "Field `RVDIS` reader - Scrambling/Unscrambling Random Value Disable"]
-pub struct RVDIS_R(crate::FieldReader<bool, bool>);
-impl RVDIS_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        RVDIS_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for RVDIS_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type RVDIS_R = crate::BitReader<bool>;
 #[doc = "Field `RVDIS` writer - Scrambling/Unscrambling Random Value Disable"]
-pub struct RVDIS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RVDIS_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
-}
+pub type RVDIS_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMR_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - Scrambling/Unscrambling Enable"]
     #[inline(always)]
     pub fn scren(&self) -> SCREN_R {
-        SCREN_R::new((self.bits & 0x01) != 0)
+        SCREN_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Scrambling/Unscrambling Random Value Disable"]
     #[inline(always)]
     pub fn rvdis(&self) -> RVDIS_R {
-        RVDIS_R::new(((self.bits >> 1) & 0x01) != 0)
+        RVDIS_R::new(((self.bits >> 1) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Scrambling/Unscrambling Enable"]
     #[inline(always)]
-    pub fn scren(&mut self) -> SCREN_W {
-        SCREN_W { w: self }
+    #[must_use]
+    pub fn scren(&mut self) -> SCREN_W<0> {
+        SCREN_W::new(self)
     }
     #[doc = "Bit 1 - Scrambling/Unscrambling Random Value Disable"]
     #[inline(always)]
-    pub fn rvdis(&mut self) -> RVDIS_W {
-        RVDIS_W { w: self }
+    #[must_use]
+    pub fn rvdis(&mut self) -> RVDIS_W<1> {
+        RVDIS_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -195,11 +132,10 @@ impl crate::Readable for SMR_SPEC {
 #[doc = "`write(|w| ..)` method takes [smr::W](W) writer structure"]
 impl crate::Writable for SMR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets SMR to value 0"]
 impl crate::Resettable for SMR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

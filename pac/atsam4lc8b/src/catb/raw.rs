@@ -14,33 +14,9 @@ impl From<crate::R<RAW_SPEC>> for R {
     }
 }
 #[doc = "Field `RAWA` reader - Current Sensor Raw Value"]
-pub struct RAWA_R(crate::FieldReader<u8, u8>);
-impl RAWA_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        RAWA_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for RAWA_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type RAWA_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `RAWB` reader - Last Sensor Raw Value"]
-pub struct RAWB_R(crate::FieldReader<u8, u8>);
-impl RAWB_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        RAWB_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for RAWB_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type RAWB_R = crate::FieldReader<u8, u8>;
 impl R {
     #[doc = "Bits 16:23 - Current Sensor Raw Value"]
     #[inline(always)]
@@ -64,8 +40,5 @@ impl crate::Readable for RAW_SPEC {
 }
 #[doc = "`reset()` method sets RAW to value 0"]
 impl crate::Resettable for RAW_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

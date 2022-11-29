@@ -20,99 +20,49 @@ impl From<crate::W<CR_SPEC>> for W {
     }
 }
 #[doc = "Field `PROCRST` writer - Processor Reset"]
-pub struct PROCRST_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PROCRST_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type PROCRST_W<'a, const O: u8> = crate::BitWriter<'a, u32, CR_SPEC, bool, O>;
 #[doc = "Field `EXTRST` writer - External Reset"]
-pub struct EXTRST_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> EXTRST_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
-        self.w
-    }
-}
+pub type EXTRST_W<'a, const O: u8> = crate::BitWriter<'a, u32, CR_SPEC, bool, O>;
 #[doc = "System Reset Key\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum KEY_AW {
+pub enum KEYSELECT_AW {
     #[doc = "165: Writing any other value in this field aborts the write operation."]
     PASSWD = 165,
 }
-impl From<KEY_AW> for u8 {
+impl From<KEYSELECT_AW> for u8 {
     #[inline(always)]
-    fn from(variant: KEY_AW) -> Self {
+    fn from(variant: KEYSELECT_AW) -> Self {
         variant as _
     }
 }
 #[doc = "Field `KEY` writer - System Reset Key"]
-pub struct KEY_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> KEY_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: KEY_AW) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type KEY_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CR_SPEC, u8, KEYSELECT_AW, 8, O>;
+impl<'a, const O: u8> KEY_W<'a, O> {
     #[doc = "Writing any other value in this field aborts the write operation."]
     #[inline(always)]
     pub fn passwd(self) -> &'a mut W {
-        self.variant(KEY_AW::PASSWD)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0xff << 24)) | ((value as u32 & 0xff) << 24);
-        self.w
+        self.variant(KEYSELECT_AW::PASSWD)
     }
 }
 impl W {
     #[doc = "Bit 0 - Processor Reset"]
     #[inline(always)]
-    pub fn procrst(&mut self) -> PROCRST_W {
-        PROCRST_W { w: self }
+    #[must_use]
+    pub fn procrst(&mut self) -> PROCRST_W<0> {
+        PROCRST_W::new(self)
     }
     #[doc = "Bit 3 - External Reset"]
     #[inline(always)]
-    pub fn extrst(&mut self) -> EXTRST_W {
-        EXTRST_W { w: self }
+    #[must_use]
+    pub fn extrst(&mut self) -> EXTRST_W<3> {
+        EXTRST_W::new(self)
     }
     #[doc = "Bits 24:31 - System Reset Key"]
     #[inline(always)]
-    pub fn key(&mut self) -> KEY_W {
-        KEY_W { w: self }
+    #[must_use]
+    pub fn key(&mut self) -> KEY_W<24> {
+        KEY_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -129,11 +79,10 @@ impl crate::RegisterSpec for CR_SPEC {
 #[doc = "`write(|w| ..)` method takes [cr::W](W) writer structure"]
 impl crate::Writable for CR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets CR to value 0"]
 impl crate::Resettable for CR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

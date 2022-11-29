@@ -20,22 +20,13 @@ impl From<crate::W<CPRDUPD3_SPEC>> for W {
     }
 }
 #[doc = "Field `CPRDUPD` writer - Channel Period Update"]
-pub struct CPRDUPD_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CPRDUPD_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x00ff_ffff) | (value as u32 & 0x00ff_ffff);
-        self.w
-    }
-}
+pub type CPRDUPD_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CPRDUPD3_SPEC, u32, u32, 24, O>;
 impl W {
     #[doc = "Bits 0:23 - Channel Period Update"]
     #[inline(always)]
-    pub fn cprdupd(&mut self) -> CPRDUPD_W {
-        CPRDUPD_W { w: self }
+    #[must_use]
+    pub fn cprdupd(&mut self) -> CPRDUPD_W<0> {
+        CPRDUPD_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -52,4 +43,6 @@ impl crate::RegisterSpec for CPRDUPD3_SPEC {
 #[doc = "`write(|w| ..)` method takes [cprdupd3::W](W) writer structure"]
 impl crate::Writable for CPRDUPD3_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

@@ -34,10 +34,12 @@ impl From<crate::W<DCFGR_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `FBLDO` reader - Fixed Burst Length for DMA Data Operations:"]
+pub type FBLDO_R = crate::FieldReader<u8, FBLDOSELECT_A>;
 #[doc = "Fixed Burst Length for DMA Data Operations:\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum FBLDO_A {
+pub enum FBLDOSELECT_A {
     #[doc = "1: 00001: Always use SINGLE AHB bursts"]
     SINGLE = 1,
     #[doc = "4: 001xx: Attempt to use INCR4 AHB bursts (Default)"]
@@ -47,170 +49,84 @@ pub enum FBLDO_A {
     #[doc = "16: 1xxxx: Attempt to use INCR16 AHB bursts"]
     INCR16 = 16,
 }
-impl From<FBLDO_A> for u8 {
+impl From<FBLDOSELECT_A> for u8 {
     #[inline(always)]
-    fn from(variant: FBLDO_A) -> Self {
+    fn from(variant: FBLDOSELECT_A) -> Self {
         variant as _
     }
 }
-#[doc = "Field `FBLDO` reader - Fixed Burst Length for DMA Data Operations:"]
-pub struct FBLDO_R(crate::FieldReader<u8, FBLDO_A>);
 impl FBLDO_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        FBLDO_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<FBLDO_A> {
+    pub fn variant(&self) -> Option<FBLDOSELECT_A> {
         match self.bits {
-            1 => Some(FBLDO_A::SINGLE),
-            4 => Some(FBLDO_A::INCR4),
-            8 => Some(FBLDO_A::INCR8),
-            16 => Some(FBLDO_A::INCR16),
+            1 => Some(FBLDOSELECT_A::SINGLE),
+            4 => Some(FBLDOSELECT_A::INCR4),
+            8 => Some(FBLDOSELECT_A::INCR8),
+            16 => Some(FBLDOSELECT_A::INCR16),
             _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `SINGLE`"]
     #[inline(always)]
     pub fn is_single(&self) -> bool {
-        **self == FBLDO_A::SINGLE
+        *self == FBLDOSELECT_A::SINGLE
     }
     #[doc = "Checks if the value of the field is `INCR4`"]
     #[inline(always)]
     pub fn is_incr4(&self) -> bool {
-        **self == FBLDO_A::INCR4
+        *self == FBLDOSELECT_A::INCR4
     }
     #[doc = "Checks if the value of the field is `INCR8`"]
     #[inline(always)]
     pub fn is_incr8(&self) -> bool {
-        **self == FBLDO_A::INCR8
+        *self == FBLDOSELECT_A::INCR8
     }
     #[doc = "Checks if the value of the field is `INCR16`"]
     #[inline(always)]
     pub fn is_incr16(&self) -> bool {
-        **self == FBLDO_A::INCR16
-    }
-}
-impl core::ops::Deref for FBLDO_R {
-    type Target = crate::FieldReader<u8, FBLDO_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == FBLDOSELECT_A::INCR16
     }
 }
 #[doc = "Field `FBLDO` writer - Fixed Burst Length for DMA Data Operations:"]
-pub struct FBLDO_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> FBLDO_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: FBLDO_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type FBLDO_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, DCFGR_SPEC, u8, FBLDOSELECT_A, 5, O>;
+impl<'a, const O: u8> FBLDO_W<'a, O> {
     #[doc = "00001: Always use SINGLE AHB bursts"]
     #[inline(always)]
     pub fn single(self) -> &'a mut W {
-        self.variant(FBLDO_A::SINGLE)
+        self.variant(FBLDOSELECT_A::SINGLE)
     }
     #[doc = "001xx: Attempt to use INCR4 AHB bursts (Default)"]
     #[inline(always)]
     pub fn incr4(self) -> &'a mut W {
-        self.variant(FBLDO_A::INCR4)
+        self.variant(FBLDOSELECT_A::INCR4)
     }
     #[doc = "01xxx: Attempt to use INCR8 AHB bursts"]
     #[inline(always)]
     pub fn incr8(self) -> &'a mut W {
-        self.variant(FBLDO_A::INCR8)
+        self.variant(FBLDOSELECT_A::INCR8)
     }
     #[doc = "1xxxx: Attempt to use INCR16 AHB bursts"]
     #[inline(always)]
     pub fn incr16(self) -> &'a mut W {
-        self.variant(FBLDO_A::INCR16)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x1f) | (value as u32 & 0x1f);
-        self.w
+        self.variant(FBLDOSELECT_A::INCR16)
     }
 }
 #[doc = "Field `ESMA` reader - Endian Swap Mode Enable for Management Descriptor Accesses"]
-pub struct ESMA_R(crate::FieldReader<bool, bool>);
-impl ESMA_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        ESMA_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for ESMA_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type ESMA_R = crate::BitReader<bool>;
 #[doc = "Field `ESMA` writer - Endian Swap Mode Enable for Management Descriptor Accesses"]
-pub struct ESMA_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ESMA_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | ((value as u32 & 0x01) << 6);
-        self.w
-    }
-}
+pub type ESMA_W<'a, const O: u8> = crate::BitWriter<'a, u32, DCFGR_SPEC, bool, O>;
 #[doc = "Field `ESPA` reader - Endian Swap Mode Enable for Packet Data Accesses"]
-pub struct ESPA_R(crate::FieldReader<bool, bool>);
-impl ESPA_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        ESPA_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for ESPA_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type ESPA_R = crate::BitReader<bool>;
 #[doc = "Field `ESPA` writer - Endian Swap Mode Enable for Packet Data Accesses"]
-pub struct ESPA_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ESPA_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | ((value as u32 & 0x01) << 7);
-        self.w
-    }
-}
+pub type ESPA_W<'a, const O: u8> = crate::BitWriter<'a, u32, DCFGR_SPEC, bool, O>;
+#[doc = "Field `RXBMS` reader - Receiver Packet Buffer Memory Size Select"]
+pub type RXBMS_R = crate::FieldReader<u8, RXBMSSELECT_A>;
 #[doc = "Receiver Packet Buffer Memory Size Select\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum RXBMS_A {
+pub enum RXBMSSELECT_A {
     #[doc = "0: 4/8 Kbyte Memory Size"]
     EIGHTH = 0,
     #[doc = "1: 4/4 Kbytes Memory Size"]
@@ -220,228 +136,86 @@ pub enum RXBMS_A {
     #[doc = "3: 4 Kbytes Memory Size"]
     FULL = 3,
 }
-impl From<RXBMS_A> for u8 {
+impl From<RXBMSSELECT_A> for u8 {
     #[inline(always)]
-    fn from(variant: RXBMS_A) -> Self {
+    fn from(variant: RXBMSSELECT_A) -> Self {
         variant as _
     }
 }
-#[doc = "Field `RXBMS` reader - Receiver Packet Buffer Memory Size Select"]
-pub struct RXBMS_R(crate::FieldReader<u8, RXBMS_A>);
 impl RXBMS_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        RXBMS_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> RXBMS_A {
+    pub fn variant(&self) -> RXBMSSELECT_A {
         match self.bits {
-            0 => RXBMS_A::EIGHTH,
-            1 => RXBMS_A::QUARTER,
-            2 => RXBMS_A::HALF,
-            3 => RXBMS_A::FULL,
+            0 => RXBMSSELECT_A::EIGHTH,
+            1 => RXBMSSELECT_A::QUARTER,
+            2 => RXBMSSELECT_A::HALF,
+            3 => RXBMSSELECT_A::FULL,
             _ => unreachable!(),
         }
     }
     #[doc = "Checks if the value of the field is `EIGHTH`"]
     #[inline(always)]
     pub fn is_eighth(&self) -> bool {
-        **self == RXBMS_A::EIGHTH
+        *self == RXBMSSELECT_A::EIGHTH
     }
     #[doc = "Checks if the value of the field is `QUARTER`"]
     #[inline(always)]
     pub fn is_quarter(&self) -> bool {
-        **self == RXBMS_A::QUARTER
+        *self == RXBMSSELECT_A::QUARTER
     }
     #[doc = "Checks if the value of the field is `HALF`"]
     #[inline(always)]
     pub fn is_half(&self) -> bool {
-        **self == RXBMS_A::HALF
+        *self == RXBMSSELECT_A::HALF
     }
     #[doc = "Checks if the value of the field is `FULL`"]
     #[inline(always)]
     pub fn is_full(&self) -> bool {
-        **self == RXBMS_A::FULL
-    }
-}
-impl core::ops::Deref for RXBMS_R {
-    type Target = crate::FieldReader<u8, RXBMS_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == RXBMSSELECT_A::FULL
     }
 }
 #[doc = "Field `RXBMS` writer - Receiver Packet Buffer Memory Size Select"]
-pub struct RXBMS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RXBMS_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: RXBMS_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
+pub type RXBMS_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, DCFGR_SPEC, u8, RXBMSSELECT_A, 2, O>;
+impl<'a, const O: u8> RXBMS_W<'a, O> {
     #[doc = "4/8 Kbyte Memory Size"]
     #[inline(always)]
     pub fn eighth(self) -> &'a mut W {
-        self.variant(RXBMS_A::EIGHTH)
+        self.variant(RXBMSSELECT_A::EIGHTH)
     }
     #[doc = "4/4 Kbytes Memory Size"]
     #[inline(always)]
     pub fn quarter(self) -> &'a mut W {
-        self.variant(RXBMS_A::QUARTER)
+        self.variant(RXBMSSELECT_A::QUARTER)
     }
     #[doc = "4/2 Kbytes Memory Size"]
     #[inline(always)]
     pub fn half(self) -> &'a mut W {
-        self.variant(RXBMS_A::HALF)
+        self.variant(RXBMSSELECT_A::HALF)
     }
     #[doc = "4 Kbytes Memory Size"]
     #[inline(always)]
     pub fn full(self) -> &'a mut W {
-        self.variant(RXBMS_A::FULL)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 8)) | ((value as u32 & 0x03) << 8);
-        self.w
+        self.variant(RXBMSSELECT_A::FULL)
     }
 }
 #[doc = "Field `TXPBMS` reader - Transmitter Packet Buffer Memory Size Select"]
-pub struct TXPBMS_R(crate::FieldReader<bool, bool>);
-impl TXPBMS_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        TXPBMS_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TXPBMS_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TXPBMS_R = crate::BitReader<bool>;
 #[doc = "Field `TXPBMS` writer - Transmitter Packet Buffer Memory Size Select"]
-pub struct TXPBMS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TXPBMS_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 10)) | ((value as u32 & 0x01) << 10);
-        self.w
-    }
-}
+pub type TXPBMS_W<'a, const O: u8> = crate::BitWriter<'a, u32, DCFGR_SPEC, bool, O>;
 #[doc = "Field `TXCOEN` reader - Transmitter Checksum Generation Offload Enable"]
-pub struct TXCOEN_R(crate::FieldReader<bool, bool>);
-impl TXCOEN_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        TXCOEN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TXCOEN_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TXCOEN_R = crate::BitReader<bool>;
 #[doc = "Field `TXCOEN` writer - Transmitter Checksum Generation Offload Enable"]
-pub struct TXCOEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TXCOEN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 11)) | ((value as u32 & 0x01) << 11);
-        self.w
-    }
-}
+pub type TXCOEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, DCFGR_SPEC, bool, O>;
 #[doc = "Field `DRBS` reader - DMA Receive Buffer Size"]
-pub struct DRBS_R(crate::FieldReader<u8, u8>);
-impl DRBS_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        DRBS_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DRBS_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DRBS_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `DRBS` writer - DMA Receive Buffer Size"]
-pub struct DRBS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DRBS_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0xff << 16)) | ((value as u32 & 0xff) << 16);
-        self.w
-    }
-}
+pub type DRBS_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DCFGR_SPEC, u8, u8, 8, O>;
 #[doc = "Field `DDRP` reader - DMA Discard Receive Packets"]
-pub struct DDRP_R(crate::FieldReader<bool, bool>);
-impl DDRP_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        DDRP_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DDRP_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DDRP_R = crate::BitReader<bool>;
 #[doc = "Field `DDRP` writer - DMA Discard Receive Packets"]
-pub struct DDRP_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DDRP_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 24)) | ((value as u32 & 0x01) << 24);
-        self.w
-    }
-}
+pub type DDRP_W<'a, const O: u8> = crate::BitWriter<'a, u32, DCFGR_SPEC, bool, O>;
 impl R {
     #[doc = "Bits 0:4 - Fixed Burst Length for DMA Data Operations:"]
     #[inline(always)]
@@ -451,27 +225,27 @@ impl R {
     #[doc = "Bit 6 - Endian Swap Mode Enable for Management Descriptor Accesses"]
     #[inline(always)]
     pub fn esma(&self) -> ESMA_R {
-        ESMA_R::new(((self.bits >> 6) & 0x01) != 0)
+        ESMA_R::new(((self.bits >> 6) & 1) != 0)
     }
     #[doc = "Bit 7 - Endian Swap Mode Enable for Packet Data Accesses"]
     #[inline(always)]
     pub fn espa(&self) -> ESPA_R {
-        ESPA_R::new(((self.bits >> 7) & 0x01) != 0)
+        ESPA_R::new(((self.bits >> 7) & 1) != 0)
     }
     #[doc = "Bits 8:9 - Receiver Packet Buffer Memory Size Select"]
     #[inline(always)]
     pub fn rxbms(&self) -> RXBMS_R {
-        RXBMS_R::new(((self.bits >> 8) & 0x03) as u8)
+        RXBMS_R::new(((self.bits >> 8) & 3) as u8)
     }
     #[doc = "Bit 10 - Transmitter Packet Buffer Memory Size Select"]
     #[inline(always)]
     pub fn txpbms(&self) -> TXPBMS_R {
-        TXPBMS_R::new(((self.bits >> 10) & 0x01) != 0)
+        TXPBMS_R::new(((self.bits >> 10) & 1) != 0)
     }
     #[doc = "Bit 11 - Transmitter Checksum Generation Offload Enable"]
     #[inline(always)]
     pub fn txcoen(&self) -> TXCOEN_R {
-        TXCOEN_R::new(((self.bits >> 11) & 0x01) != 0)
+        TXCOEN_R::new(((self.bits >> 11) & 1) != 0)
     }
     #[doc = "Bits 16:23 - DMA Receive Buffer Size"]
     #[inline(always)]
@@ -481,49 +255,57 @@ impl R {
     #[doc = "Bit 24 - DMA Discard Receive Packets"]
     #[inline(always)]
     pub fn ddrp(&self) -> DDRP_R {
-        DDRP_R::new(((self.bits >> 24) & 0x01) != 0)
+        DDRP_R::new(((self.bits >> 24) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bits 0:4 - Fixed Burst Length for DMA Data Operations:"]
     #[inline(always)]
-    pub fn fbldo(&mut self) -> FBLDO_W {
-        FBLDO_W { w: self }
+    #[must_use]
+    pub fn fbldo(&mut self) -> FBLDO_W<0> {
+        FBLDO_W::new(self)
     }
     #[doc = "Bit 6 - Endian Swap Mode Enable for Management Descriptor Accesses"]
     #[inline(always)]
-    pub fn esma(&mut self) -> ESMA_W {
-        ESMA_W { w: self }
+    #[must_use]
+    pub fn esma(&mut self) -> ESMA_W<6> {
+        ESMA_W::new(self)
     }
     #[doc = "Bit 7 - Endian Swap Mode Enable for Packet Data Accesses"]
     #[inline(always)]
-    pub fn espa(&mut self) -> ESPA_W {
-        ESPA_W { w: self }
+    #[must_use]
+    pub fn espa(&mut self) -> ESPA_W<7> {
+        ESPA_W::new(self)
     }
     #[doc = "Bits 8:9 - Receiver Packet Buffer Memory Size Select"]
     #[inline(always)]
-    pub fn rxbms(&mut self) -> RXBMS_W {
-        RXBMS_W { w: self }
+    #[must_use]
+    pub fn rxbms(&mut self) -> RXBMS_W<8> {
+        RXBMS_W::new(self)
     }
     #[doc = "Bit 10 - Transmitter Packet Buffer Memory Size Select"]
     #[inline(always)]
-    pub fn txpbms(&mut self) -> TXPBMS_W {
-        TXPBMS_W { w: self }
+    #[must_use]
+    pub fn txpbms(&mut self) -> TXPBMS_W<10> {
+        TXPBMS_W::new(self)
     }
     #[doc = "Bit 11 - Transmitter Checksum Generation Offload Enable"]
     #[inline(always)]
-    pub fn txcoen(&mut self) -> TXCOEN_W {
-        TXCOEN_W { w: self }
+    #[must_use]
+    pub fn txcoen(&mut self) -> TXCOEN_W<11> {
+        TXCOEN_W::new(self)
     }
     #[doc = "Bits 16:23 - DMA Receive Buffer Size"]
     #[inline(always)]
-    pub fn drbs(&mut self) -> DRBS_W {
-        DRBS_W { w: self }
+    #[must_use]
+    pub fn drbs(&mut self) -> DRBS_W<16> {
+        DRBS_W::new(self)
     }
     #[doc = "Bit 24 - DMA Discard Receive Packets"]
     #[inline(always)]
-    pub fn ddrp(&mut self) -> DDRP_W {
-        DDRP_W { w: self }
+    #[must_use]
+    pub fn ddrp(&mut self) -> DDRP_W<24> {
+        DDRP_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -544,11 +326,10 @@ impl crate::Readable for DCFGR_SPEC {
 #[doc = "`write(|w| ..)` method takes [dcfgr::W](W) writer structure"]
 impl crate::Writable for DCFGR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets DCFGR to value 0"]
 impl crate::Resettable for DCFGR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

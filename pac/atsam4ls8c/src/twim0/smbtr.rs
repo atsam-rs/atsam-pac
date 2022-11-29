@@ -35,109 +35,21 @@ impl From<crate::W<SMBTR_SPEC>> for W {
     }
 }
 #[doc = "Field `TLOWS` reader - Slave Clock stretch maximum cycles"]
-pub struct TLOWS_R(crate::FieldReader<u8, u8>);
-impl TLOWS_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        TLOWS_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TLOWS_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TLOWS_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `TLOWS` writer - Slave Clock stretch maximum cycles"]
-pub struct TLOWS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TLOWS_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xff) | (value as u32 & 0xff);
-        self.w
-    }
-}
+pub type TLOWS_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SMBTR_SPEC, u8, u8, 8, O>;
 #[doc = "Field `TLOWM` reader - Master Clock stretch maximum cycles"]
-pub struct TLOWM_R(crate::FieldReader<u8, u8>);
-impl TLOWM_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        TLOWM_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TLOWM_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TLOWM_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `TLOWM` writer - Master Clock stretch maximum cycles"]
-pub struct TLOWM_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TLOWM_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0xff << 8)) | ((value as u32 & 0xff) << 8);
-        self.w
-    }
-}
+pub type TLOWM_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SMBTR_SPEC, u8, u8, 8, O>;
 #[doc = "Field `THMAX` reader - Clock High maximum cycles"]
-pub struct THMAX_R(crate::FieldReader<u8, u8>);
-impl THMAX_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        THMAX_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for THMAX_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type THMAX_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `THMAX` writer - Clock High maximum cycles"]
-pub struct THMAX_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> THMAX_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0xff << 16)) | ((value as u32 & 0xff) << 16);
-        self.w
-    }
-}
+pub type THMAX_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SMBTR_SPEC, u8, u8, 8, O>;
 #[doc = "Field `EXP` reader - SMBus Timeout Clock prescaler"]
-pub struct EXP_R(crate::FieldReader<u8, u8>);
-impl EXP_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        EXP_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for EXP_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type EXP_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `EXP` writer - SMBus Timeout Clock prescaler"]
-pub struct EXP_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> EXP_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 28)) | ((value as u32 & 0x0f) << 28);
-        self.w
-    }
-}
+pub type EXP_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SMBTR_SPEC, u8, u8, 4, O>;
 impl R {
     #[doc = "Bits 0:7 - Slave Clock stretch maximum cycles"]
     #[inline(always)]
@@ -163,23 +75,27 @@ impl R {
 impl W {
     #[doc = "Bits 0:7 - Slave Clock stretch maximum cycles"]
     #[inline(always)]
-    pub fn tlows(&mut self) -> TLOWS_W {
-        TLOWS_W { w: self }
+    #[must_use]
+    pub fn tlows(&mut self) -> TLOWS_W<0> {
+        TLOWS_W::new(self)
     }
     #[doc = "Bits 8:15 - Master Clock stretch maximum cycles"]
     #[inline(always)]
-    pub fn tlowm(&mut self) -> TLOWM_W {
-        TLOWM_W { w: self }
+    #[must_use]
+    pub fn tlowm(&mut self) -> TLOWM_W<8> {
+        TLOWM_W::new(self)
     }
     #[doc = "Bits 16:23 - Clock High maximum cycles"]
     #[inline(always)]
-    pub fn thmax(&mut self) -> THMAX_W {
-        THMAX_W { w: self }
+    #[must_use]
+    pub fn thmax(&mut self) -> THMAX_W<16> {
+        THMAX_W::new(self)
     }
     #[doc = "Bits 28:31 - SMBus Timeout Clock prescaler"]
     #[inline(always)]
-    pub fn exp(&mut self) -> EXP_W {
-        EXP_W { w: self }
+    #[must_use]
+    pub fn exp(&mut self) -> EXP_W<28> {
+        EXP_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -200,11 +116,10 @@ impl crate::Readable for SMBTR_SPEC {
 #[doc = "`write(|w| ..)` method takes [smbtr::W](W) writer structure"]
 impl crate::Writable for SMBTR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets SMBTR to value 0"]
 impl crate::Resettable for SMBTR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

@@ -20,59 +20,21 @@ impl From<crate::W<IDR_SPEC>> for W {
     }
 }
 #[doc = "Field `PSOK` writer - Power Scaling OK Interrupt Disable"]
-pub struct PSOK_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PSOK_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type PSOK_W<'a, const O: u8> = crate::BitWriter<'a, u32, IDR_SPEC, bool, O>;
 #[doc = "Field `AE` writer - Access Error Interrupt Disable"]
-pub struct AE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> AE_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 31)) | ((value as u32 & 0x01) << 31);
-        self.w
-    }
-}
+pub type AE_W<'a, const O: u8> = crate::BitWriter<'a, u32, IDR_SPEC, bool, O>;
 impl W {
     #[doc = "Bit 0 - Power Scaling OK Interrupt Disable"]
     #[inline(always)]
-    pub fn psok(&mut self) -> PSOK_W {
-        PSOK_W { w: self }
+    #[must_use]
+    pub fn psok(&mut self) -> PSOK_W<0> {
+        PSOK_W::new(self)
     }
     #[doc = "Bit 31 - Access Error Interrupt Disable"]
     #[inline(always)]
-    pub fn ae(&mut self) -> AE_W {
-        AE_W { w: self }
+    #[must_use]
+    pub fn ae(&mut self) -> AE_W<31> {
+        AE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -89,11 +51,10 @@ impl crate::RegisterSpec for IDR_SPEC {
 #[doc = "`write(|w| ..)` method takes [idr::W](W) writer structure"]
 impl crate::Writable for IDR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets IDR to value 0"]
 impl crate::Resettable for IDR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

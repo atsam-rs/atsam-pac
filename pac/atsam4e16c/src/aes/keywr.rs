@@ -20,22 +20,13 @@ impl From<crate::W<KEYWR_SPEC>> for W {
     }
 }
 #[doc = "Field `KEYW` writer - Key Word"]
-pub struct KEYW_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> KEYW_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xffff_ffff) | (value as u32 & 0xffff_ffff);
-        self.w
-    }
-}
+pub type KEYW_W<'a, const O: u8> = crate::FieldWriter<'a, u32, KEYWR_SPEC, u32, u32, 32, O>;
 impl W {
     #[doc = "Bits 0:31 - Key Word"]
     #[inline(always)]
-    pub fn keyw(&mut self) -> KEYW_W {
-        KEYW_W { w: self }
+    #[must_use]
+    pub fn keyw(&mut self) -> KEYW_W<0> {
+        KEYW_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -52,4 +43,6 @@ impl crate::RegisterSpec for KEYWR_SPEC {
 #[doc = "`write(|w| ..)` method takes [keywr::W](W) writer structure"]
 impl crate::Writable for KEYWR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

@@ -20,194 +20,61 @@ impl From<crate::W<CIM_SPEC>> for W {
     }
 }
 #[doc = "Field `BIM` writer - End of Block Interrupt Mask Bit"]
-pub struct BIM_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> BIM_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type BIM_W<'a, const O: u8> = crate::BitWriter<'a, u32, CIM_SPEC, bool, O>;
 #[doc = "Field `LIM` writer - End of Linked List Interrupt Mask Bit"]
-pub struct LIM_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> LIM_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
-}
+pub type LIM_W<'a, const O: u8> = crate::BitWriter<'a, u32, CIM_SPEC, bool, O>;
 #[doc = "Field `DIM` writer - End of Disable Interrupt Mask Bit"]
-pub struct DIM_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DIM_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
-    }
-}
+pub type DIM_W<'a, const O: u8> = crate::BitWriter<'a, u32, CIM_SPEC, bool, O>;
 #[doc = "Field `FIM` writer - End of Flush Interrupt Mask Bit"]
-pub struct FIM_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> FIM_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
-        self.w
-    }
-}
+pub type FIM_W<'a, const O: u8> = crate::BitWriter<'a, u32, CIM_SPEC, bool, O>;
 #[doc = "Field `RBEIM` writer - Read Bus Error Interrupt Mask Bit"]
-pub struct RBEIM_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RBEIM_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
-        self.w
-    }
-}
+pub type RBEIM_W<'a, const O: u8> = crate::BitWriter<'a, u32, CIM_SPEC, bool, O>;
 #[doc = "Field `WBEIM` writer - Write Bus Error Interrupt Mask Bit"]
-pub struct WBEIM_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> WBEIM_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
-        self.w
-    }
-}
+pub type WBEIM_W<'a, const O: u8> = crate::BitWriter<'a, u32, CIM_SPEC, bool, O>;
 #[doc = "Field `ROIM` writer - Request Overflow Error Interrupt Mask Bit"]
-pub struct ROIM_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ROIM_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | ((value as u32 & 0x01) << 6);
-        self.w
-    }
-}
+pub type ROIM_W<'a, const O: u8> = crate::BitWriter<'a, u32, CIM_SPEC, bool, O>;
 impl W {
     #[doc = "Bit 0 - End of Block Interrupt Mask Bit"]
     #[inline(always)]
-    pub fn bim(&mut self) -> BIM_W {
-        BIM_W { w: self }
+    #[must_use]
+    pub fn bim(&mut self) -> BIM_W<0> {
+        BIM_W::new(self)
     }
     #[doc = "Bit 1 - End of Linked List Interrupt Mask Bit"]
     #[inline(always)]
-    pub fn lim(&mut self) -> LIM_W {
-        LIM_W { w: self }
+    #[must_use]
+    pub fn lim(&mut self) -> LIM_W<1> {
+        LIM_W::new(self)
     }
     #[doc = "Bit 2 - End of Disable Interrupt Mask Bit"]
     #[inline(always)]
-    pub fn dim(&mut self) -> DIM_W {
-        DIM_W { w: self }
+    #[must_use]
+    pub fn dim(&mut self) -> DIM_W<2> {
+        DIM_W::new(self)
     }
     #[doc = "Bit 3 - End of Flush Interrupt Mask Bit"]
     #[inline(always)]
-    pub fn fim(&mut self) -> FIM_W {
-        FIM_W { w: self }
+    #[must_use]
+    pub fn fim(&mut self) -> FIM_W<3> {
+        FIM_W::new(self)
     }
     #[doc = "Bit 4 - Read Bus Error Interrupt Mask Bit"]
     #[inline(always)]
-    pub fn rbeim(&mut self) -> RBEIM_W {
-        RBEIM_W { w: self }
+    #[must_use]
+    pub fn rbeim(&mut self) -> RBEIM_W<4> {
+        RBEIM_W::new(self)
     }
     #[doc = "Bit 5 - Write Bus Error Interrupt Mask Bit"]
     #[inline(always)]
-    pub fn wbeim(&mut self) -> WBEIM_W {
-        WBEIM_W { w: self }
+    #[must_use]
+    pub fn wbeim(&mut self) -> WBEIM_W<5> {
+        WBEIM_W::new(self)
     }
     #[doc = "Bit 6 - Request Overflow Error Interrupt Mask Bit"]
     #[inline(always)]
-    pub fn roim(&mut self) -> ROIM_W {
-        ROIM_W { w: self }
+    #[must_use]
+    pub fn roim(&mut self) -> ROIM_W<6> {
+        ROIM_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -224,11 +91,10 @@ impl crate::RegisterSpec for CIM_SPEC {
 #[doc = "`write(|w| ..)` method takes [cim::W](W) writer structure"]
 impl crate::Writable for CIM_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets CIM to value 0"]
 impl crate::Resettable for CIM_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

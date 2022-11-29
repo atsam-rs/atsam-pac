@@ -35,83 +35,20 @@ impl From<crate::W<MATRIX_SCFG_SPEC>> for W {
     }
 }
 #[doc = "Field `SLOT_CYCLE` reader - Maximum Bus Grant Duration for Masters"]
-pub struct SLOT_CYCLE_R(crate::FieldReader<u16, u16>);
-impl SLOT_CYCLE_R {
-    pub(crate) fn new(bits: u16) -> Self {
-        SLOT_CYCLE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for SLOT_CYCLE_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type SLOT_CYCLE_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `SLOT_CYCLE` writer - Maximum Bus Grant Duration for Masters"]
-pub struct SLOT_CYCLE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SLOT_CYCLE_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01ff) | (value as u32 & 0x01ff);
-        self.w
-    }
-}
+pub type SLOT_CYCLE_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, MATRIX_SCFG_SPEC, u16, u16, 9, O>;
 #[doc = "Field `DEFMSTR_TYPE` reader - Default Master Type"]
-pub struct DEFMSTR_TYPE_R(crate::FieldReader<u8, u8>);
-impl DEFMSTR_TYPE_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        DEFMSTR_TYPE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DEFMSTR_TYPE_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DEFMSTR_TYPE_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `DEFMSTR_TYPE` writer - Default Master Type"]
-pub struct DEFMSTR_TYPE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DEFMSTR_TYPE_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 16)) | ((value as u32 & 0x03) << 16);
-        self.w
-    }
-}
+pub type DEFMSTR_TYPE_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, MATRIX_SCFG_SPEC, u8, u8, 2, O>;
 #[doc = "Field `FIXED_DEFMSTR` reader - Fixed Default Master"]
-pub struct FIXED_DEFMSTR_R(crate::FieldReader<u8, u8>);
-impl FIXED_DEFMSTR_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        FIXED_DEFMSTR_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for FIXED_DEFMSTR_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type FIXED_DEFMSTR_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `FIXED_DEFMSTR` writer - Fixed Default Master"]
-pub struct FIXED_DEFMSTR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> FIXED_DEFMSTR_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 18)) | ((value as u32 & 0x0f) << 18);
-        self.w
-    }
-}
+pub type FIXED_DEFMSTR_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, MATRIX_SCFG_SPEC, u8, u8, 4, O>;
 impl R {
     #[doc = "Bits 0:8 - Maximum Bus Grant Duration for Masters"]
     #[inline(always)]
@@ -121,7 +58,7 @@ impl R {
     #[doc = "Bits 16:17 - Default Master Type"]
     #[inline(always)]
     pub fn defmstr_type(&self) -> DEFMSTR_TYPE_R {
-        DEFMSTR_TYPE_R::new(((self.bits >> 16) & 0x03) as u8)
+        DEFMSTR_TYPE_R::new(((self.bits >> 16) & 3) as u8)
     }
     #[doc = "Bits 18:21 - Fixed Default Master"]
     #[inline(always)]
@@ -132,18 +69,21 @@ impl R {
 impl W {
     #[doc = "Bits 0:8 - Maximum Bus Grant Duration for Masters"]
     #[inline(always)]
-    pub fn slot_cycle(&mut self) -> SLOT_CYCLE_W {
-        SLOT_CYCLE_W { w: self }
+    #[must_use]
+    pub fn slot_cycle(&mut self) -> SLOT_CYCLE_W<0> {
+        SLOT_CYCLE_W::new(self)
     }
     #[doc = "Bits 16:17 - Default Master Type"]
     #[inline(always)]
-    pub fn defmstr_type(&mut self) -> DEFMSTR_TYPE_W {
-        DEFMSTR_TYPE_W { w: self }
+    #[must_use]
+    pub fn defmstr_type(&mut self) -> DEFMSTR_TYPE_W<16> {
+        DEFMSTR_TYPE_W::new(self)
     }
     #[doc = "Bits 18:21 - Fixed Default Master"]
     #[inline(always)]
-    pub fn fixed_defmstr(&mut self) -> FIXED_DEFMSTR_W {
-        FIXED_DEFMSTR_W { w: self }
+    #[must_use]
+    pub fn fixed_defmstr(&mut self) -> FIXED_DEFMSTR_W<18> {
+        FIXED_DEFMSTR_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -164,4 +104,6 @@ impl crate::Readable for MATRIX_SCFG_SPEC {
 #[doc = "`write(|w| ..)` method takes [matrix_scfg::W](W) writer structure"]
 impl crate::Writable for MATRIX_SCFG_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

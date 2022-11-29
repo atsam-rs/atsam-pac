@@ -35,43 +35,22 @@ impl From<crate::W<AWEN_SPEC>> for W {
     }
 }
 #[doc = "Field `AWEN` reader - Asynchronous Wake Up"]
-pub struct AWEN_R(crate::FieldReader<u32, u32>);
-impl AWEN_R {
-    pub(crate) fn new(bits: u32) -> Self {
-        AWEN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for AWEN_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type AWEN_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `AWEN` writer - Asynchronous Wake Up"]
-pub struct AWEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> AWEN_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xffff_ffff) | (value as u32 & 0xffff_ffff);
-        self.w
-    }
-}
+pub type AWEN_W<'a, const O: u8> = crate::FieldWriter<'a, u32, AWEN_SPEC, u32, u32, 32, O>;
 impl R {
     #[doc = "Bits 0:31 - Asynchronous Wake Up"]
     #[inline(always)]
     pub fn awen(&self) -> AWEN_R {
-        AWEN_R::new((self.bits & 0xffff_ffff) as u32)
+        AWEN_R::new(self.bits)
     }
 }
 impl W {
     #[doc = "Bits 0:31 - Asynchronous Wake Up"]
     #[inline(always)]
-    pub fn awen(&mut self) -> AWEN_W {
-        AWEN_W { w: self }
+    #[must_use]
+    pub fn awen(&mut self) -> AWEN_W<0> {
+        AWEN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -92,11 +71,10 @@ impl crate::Readable for AWEN_SPEC {
 #[doc = "`write(|w| ..)` method takes [awen::W](W) writer structure"]
 impl crate::Writable for AWEN_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets AWEN to value 0"]
 impl crate::Resettable for AWEN_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

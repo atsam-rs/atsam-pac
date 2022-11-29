@@ -34,66 +34,43 @@ impl From<crate::W<TTGR_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `TG` reader - Timeguard Value"]
+pub type TG_R = crate::FieldReader<u8, TGSELECT_A>;
 #[doc = "Timeguard Value\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum TG_A {
+pub enum TGSELECT_A {
     #[doc = "0: Disables the TX Timeguard function."]
     DISABLE = 0,
 }
-impl From<TG_A> for u8 {
+impl From<TGSELECT_A> for u8 {
     #[inline(always)]
-    fn from(variant: TG_A) -> Self {
+    fn from(variant: TGSELECT_A) -> Self {
         variant as _
     }
 }
-#[doc = "Field `TG` reader - Timeguard Value"]
-pub struct TG_R(crate::FieldReader<u8, TG_A>);
 impl TG_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        TG_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<TG_A> {
+    pub fn variant(&self) -> Option<TGSELECT_A> {
         match self.bits {
-            0 => Some(TG_A::DISABLE),
+            0 => Some(TGSELECT_A::DISABLE),
             _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `DISABLE`"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        **self == TG_A::DISABLE
-    }
-}
-impl core::ops::Deref for TG_R {
-    type Target = crate::FieldReader<u8, TG_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == TGSELECT_A::DISABLE
     }
 }
 #[doc = "Field `TG` writer - Timeguard Value"]
-pub struct TG_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TG_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: TG_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type TG_W<'a, const O: u8> = crate::FieldWriter<'a, u32, TTGR_SPEC, u8, TGSELECT_A, 8, O>;
+impl<'a, const O: u8> TG_W<'a, O> {
     #[doc = "Disables the TX Timeguard function."]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
-        self.variant(TG_A::DISABLE)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xff) | (value as u32 & 0xff);
-        self.w
+        self.variant(TGSELECT_A::DISABLE)
     }
 }
 impl R {
@@ -106,8 +83,9 @@ impl R {
 impl W {
     #[doc = "Bits 0:7 - Timeguard Value"]
     #[inline(always)]
-    pub fn tg(&mut self) -> TG_W {
-        TG_W { w: self }
+    #[must_use]
+    pub fn tg(&mut self) -> TG_W<0> {
+        TG_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -128,11 +106,10 @@ impl crate::Readable for TTGR_SPEC {
 #[doc = "`write(|w| ..)` method takes [ttgr::W](W) writer structure"]
 impl crate::Writable for TTGR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets TTGR to value 0"]
 impl crate::Resettable for TTGR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

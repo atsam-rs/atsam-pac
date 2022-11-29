@@ -20,113 +20,37 @@ impl From<crate::W<CR_SPEC>> for W {
     }
 }
 #[doc = "Field `ISI_EN` writer - ISI Module Enable Request"]
-pub struct ISI_EN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ISI_EN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type ISI_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CR_SPEC, bool, O>;
 #[doc = "Field `ISI_DIS` writer - ISI Module Disable Request"]
-pub struct ISI_DIS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ISI_DIS_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
-}
+pub type ISI_DIS_W<'a, const O: u8> = crate::BitWriter<'a, u32, CR_SPEC, bool, O>;
 #[doc = "Field `ISI_SRST` writer - ISI Software Reset Request"]
-pub struct ISI_SRST_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ISI_SRST_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
-    }
-}
+pub type ISI_SRST_W<'a, const O: u8> = crate::BitWriter<'a, u32, CR_SPEC, bool, O>;
 #[doc = "Field `ISI_CDC` writer - ISI Codec Request"]
-pub struct ISI_CDC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ISI_CDC_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
-        self.w
-    }
-}
+pub type ISI_CDC_W<'a, const O: u8> = crate::BitWriter<'a, u32, CR_SPEC, bool, O>;
 impl W {
     #[doc = "Bit 0 - ISI Module Enable Request"]
     #[inline(always)]
-    pub fn isi_en(&mut self) -> ISI_EN_W {
-        ISI_EN_W { w: self }
+    #[must_use]
+    pub fn isi_en(&mut self) -> ISI_EN_W<0> {
+        ISI_EN_W::new(self)
     }
     #[doc = "Bit 1 - ISI Module Disable Request"]
     #[inline(always)]
-    pub fn isi_dis(&mut self) -> ISI_DIS_W {
-        ISI_DIS_W { w: self }
+    #[must_use]
+    pub fn isi_dis(&mut self) -> ISI_DIS_W<1> {
+        ISI_DIS_W::new(self)
     }
     #[doc = "Bit 2 - ISI Software Reset Request"]
     #[inline(always)]
-    pub fn isi_srst(&mut self) -> ISI_SRST_W {
-        ISI_SRST_W { w: self }
+    #[must_use]
+    pub fn isi_srst(&mut self) -> ISI_SRST_W<2> {
+        ISI_SRST_W::new(self)
     }
     #[doc = "Bit 8 - ISI Codec Request"]
     #[inline(always)]
-    pub fn isi_cdc(&mut self) -> ISI_CDC_W {
-        ISI_CDC_W { w: self }
+    #[must_use]
+    pub fn isi_cdc(&mut self) -> ISI_CDC_W<8> {
+        ISI_CDC_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -143,11 +67,10 @@ impl crate::RegisterSpec for CR_SPEC {
 #[doc = "`write(|w| ..)` method takes [cr::W](W) writer structure"]
 impl crate::Writable for CR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets CR to value 0"]
 impl crate::Resettable for CR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

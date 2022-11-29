@@ -14,43 +14,19 @@ impl From<crate::R<DMA_CHSR_SPEC>> for R {
     }
 }
 #[doc = "Field `P_CH_S` reader - Preview DMA Channel Status"]
-pub struct P_CH_S_R(crate::FieldReader<bool, bool>);
-impl P_CH_S_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        P_CH_S_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for P_CH_S_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type P_CH_S_R = crate::BitReader<bool>;
 #[doc = "Field `C_CH_S` reader - Code DMA Channel Status"]
-pub struct C_CH_S_R(crate::FieldReader<bool, bool>);
-impl C_CH_S_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        C_CH_S_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for C_CH_S_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type C_CH_S_R = crate::BitReader<bool>;
 impl R {
     #[doc = "Bit 0 - Preview DMA Channel Status"]
     #[inline(always)]
     pub fn p_ch_s(&self) -> P_CH_S_R {
-        P_CH_S_R::new((self.bits & 0x01) != 0)
+        P_CH_S_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Code DMA Channel Status"]
     #[inline(always)]
     pub fn c_ch_s(&self) -> C_CH_S_R {
-        C_CH_S_R::new(((self.bits >> 1) & 0x01) != 0)
+        C_CH_S_R::new(((self.bits >> 1) & 1) != 0)
     }
 }
 #[doc = "DMA Channel Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [dma_chsr](index.html) module"]
@@ -64,8 +40,5 @@ impl crate::Readable for DMA_CHSR_SPEC {
 }
 #[doc = "`reset()` method sets DMA_CHSR to value 0"]
 impl crate::Resettable for DMA_CHSR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

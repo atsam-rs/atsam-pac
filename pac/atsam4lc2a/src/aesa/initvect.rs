@@ -20,22 +20,13 @@ impl From<crate::W<INITVECT_SPEC>> for W {
     }
 }
 #[doc = "Field `INITVECT0` writer - Initialization Vector Word 0"]
-pub struct INITVECT0_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> INITVECT0_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xffff_ffff) | (value as u32 & 0xffff_ffff);
-        self.w
-    }
-}
+pub type INITVECT0_W<'a, const O: u8> = crate::FieldWriter<'a, u32, INITVECT_SPEC, u32, u32, 32, O>;
 impl W {
     #[doc = "Bits 0:31 - Initialization Vector Word 0"]
     #[inline(always)]
-    pub fn initvect0(&mut self) -> INITVECT0_W {
-        INITVECT0_W { w: self }
+    #[must_use]
+    pub fn initvect0(&mut self) -> INITVECT0_W<0> {
+        INITVECT0_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -52,11 +43,10 @@ impl crate::RegisterSpec for INITVECT_SPEC {
 #[doc = "`write(|w| ..)` method takes [initvect::W](W) writer structure"]
 impl crate::Writable for INITVECT_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets INITVECT%s to value 0"]
 impl crate::Resettable for INITVECT_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

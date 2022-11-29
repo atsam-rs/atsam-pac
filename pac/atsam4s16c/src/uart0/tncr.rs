@@ -35,31 +35,9 @@ impl From<crate::W<TNCR_SPEC>> for W {
     }
 }
 #[doc = "Field `TXNCTR` reader - Transmit Counter Next"]
-pub struct TXNCTR_R(crate::FieldReader<u16, u16>);
-impl TXNCTR_R {
-    pub(crate) fn new(bits: u16) -> Self {
-        TXNCTR_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TXNCTR_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TXNCTR_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `TXNCTR` writer - Transmit Counter Next"]
-pub struct TXNCTR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TXNCTR_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xffff) | (value as u32 & 0xffff);
-        self.w
-    }
-}
+pub type TXNCTR_W<'a, const O: u8> = crate::FieldWriter<'a, u32, TNCR_SPEC, u16, u16, 16, O>;
 impl R {
     #[doc = "Bits 0:15 - Transmit Counter Next"]
     #[inline(always)]
@@ -70,8 +48,9 @@ impl R {
 impl W {
     #[doc = "Bits 0:15 - Transmit Counter Next"]
     #[inline(always)]
-    pub fn txnctr(&mut self) -> TXNCTR_W {
-        TXNCTR_W { w: self }
+    #[must_use]
+    pub fn txnctr(&mut self) -> TXNCTR_W<0> {
+        TXNCTR_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -92,11 +71,10 @@ impl crate::Readable for TNCR_SPEC {
 #[doc = "`write(|w| ..)` method takes [tncr::W](W) writer structure"]
 impl crate::Writable for TNCR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets TNCR to value 0"]
 impl crate::Resettable for TNCR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

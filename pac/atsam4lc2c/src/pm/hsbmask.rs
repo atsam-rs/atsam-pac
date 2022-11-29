@@ -35,467 +35,157 @@ impl From<crate::W<HSBMASK_SPEC>> for W {
     }
 }
 #[doc = "Field `PDCA_` reader - PDCA HSB Clock Mask"]
-pub struct PDCA__R(crate::FieldReader<bool, bool>);
-impl PDCA__R {
-    pub(crate) fn new(bits: bool) -> Self {
-        PDCA__R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for PDCA__R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type PDCA__R = crate::BitReader<bool>;
 #[doc = "Field `PDCA_` writer - PDCA HSB Clock Mask"]
-pub struct PDCA__W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PDCA__W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type PDCA__W<'a, const O: u8> = crate::BitWriter<'a, u32, HSBMASK_SPEC, bool, O>;
 #[doc = "Field `HFLASHC_` reader - HFLASHC HSB Clock Mask"]
-pub struct HFLASHC__R(crate::FieldReader<bool, bool>);
-impl HFLASHC__R {
-    pub(crate) fn new(bits: bool) -> Self {
-        HFLASHC__R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for HFLASHC__R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type HFLASHC__R = crate::BitReader<bool>;
 #[doc = "Field `HFLASHC_` writer - HFLASHC HSB Clock Mask"]
-pub struct HFLASHC__W<'a> {
-    w: &'a mut W,
-}
-impl<'a> HFLASHC__W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
-}
+pub type HFLASHC__W<'a, const O: u8> = crate::BitWriter<'a, u32, HSBMASK_SPEC, bool, O>;
 #[doc = "Field `HRAMC1_` reader - HRAMC1 HSB Clock Mask"]
-pub struct HRAMC1__R(crate::FieldReader<bool, bool>);
-impl HRAMC1__R {
-    pub(crate) fn new(bits: bool) -> Self {
-        HRAMC1__R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for HRAMC1__R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type HRAMC1__R = crate::BitReader<bool>;
 #[doc = "Field `HRAMC1_` writer - HRAMC1 HSB Clock Mask"]
-pub struct HRAMC1__W<'a> {
-    w: &'a mut W,
-}
-impl<'a> HRAMC1__W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
-    }
-}
+pub type HRAMC1__W<'a, const O: u8> = crate::BitWriter<'a, u32, HSBMASK_SPEC, bool, O>;
 #[doc = "Field `USBC_` reader - USBC HSB Clock Mask"]
-pub struct USBC__R(crate::FieldReader<bool, bool>);
-impl USBC__R {
-    pub(crate) fn new(bits: bool) -> Self {
-        USBC__R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for USBC__R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type USBC__R = crate::BitReader<bool>;
 #[doc = "Field `USBC_` writer - USBC HSB Clock Mask"]
-pub struct USBC__W<'a> {
-    w: &'a mut W,
-}
-impl<'a> USBC__W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
-        self.w
-    }
-}
+pub type USBC__W<'a, const O: u8> = crate::BitWriter<'a, u32, HSBMASK_SPEC, bool, O>;
 #[doc = "Field `CRCCU_` reader - CRCCU HSB Clock Mask"]
-pub struct CRCCU__R(crate::FieldReader<bool, bool>);
-impl CRCCU__R {
-    pub(crate) fn new(bits: bool) -> Self {
-        CRCCU__R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CRCCU__R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CRCCU__R = crate::BitReader<bool>;
 #[doc = "Field `CRCCU_` writer - CRCCU HSB Clock Mask"]
-pub struct CRCCU__W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CRCCU__W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
-        self.w
-    }
-}
+pub type CRCCU__W<'a, const O: u8> = crate::BitWriter<'a, u32, HSBMASK_SPEC, bool, O>;
 #[doc = "Field `HTOP0_` reader - HTOP0 HSB Clock Mask"]
-pub struct HTOP0__R(crate::FieldReader<bool, bool>);
-impl HTOP0__R {
-    pub(crate) fn new(bits: bool) -> Self {
-        HTOP0__R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for HTOP0__R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type HTOP0__R = crate::BitReader<bool>;
 #[doc = "Field `HTOP0_` writer - HTOP0 HSB Clock Mask"]
-pub struct HTOP0__W<'a> {
-    w: &'a mut W,
-}
-impl<'a> HTOP0__W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
-        self.w
-    }
-}
+pub type HTOP0__W<'a, const O: u8> = crate::BitWriter<'a, u32, HSBMASK_SPEC, bool, O>;
 #[doc = "Field `HTOP1_` reader - HTOP1 HSB Clock Mask"]
-pub struct HTOP1__R(crate::FieldReader<bool, bool>);
-impl HTOP1__R {
-    pub(crate) fn new(bits: bool) -> Self {
-        HTOP1__R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for HTOP1__R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type HTOP1__R = crate::BitReader<bool>;
 #[doc = "Field `HTOP1_` writer - HTOP1 HSB Clock Mask"]
-pub struct HTOP1__W<'a> {
-    w: &'a mut W,
-}
-impl<'a> HTOP1__W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | ((value as u32 & 0x01) << 6);
-        self.w
-    }
-}
+pub type HTOP1__W<'a, const O: u8> = crate::BitWriter<'a, u32, HSBMASK_SPEC, bool, O>;
 #[doc = "Field `HTOP2_` reader - HTOP2 HSB Clock Mask"]
-pub struct HTOP2__R(crate::FieldReader<bool, bool>);
-impl HTOP2__R {
-    pub(crate) fn new(bits: bool) -> Self {
-        HTOP2__R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for HTOP2__R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type HTOP2__R = crate::BitReader<bool>;
 #[doc = "Field `HTOP2_` writer - HTOP2 HSB Clock Mask"]
-pub struct HTOP2__W<'a> {
-    w: &'a mut W,
-}
-impl<'a> HTOP2__W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | ((value as u32 & 0x01) << 7);
-        self.w
-    }
-}
+pub type HTOP2__W<'a, const O: u8> = crate::BitWriter<'a, u32, HSBMASK_SPEC, bool, O>;
 #[doc = "Field `HTOP3_` reader - HTOP3 HSB Clock Mask"]
-pub struct HTOP3__R(crate::FieldReader<bool, bool>);
-impl HTOP3__R {
-    pub(crate) fn new(bits: bool) -> Self {
-        HTOP3__R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for HTOP3__R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type HTOP3__R = crate::BitReader<bool>;
 #[doc = "Field `HTOP3_` writer - HTOP3 HSB Clock Mask"]
-pub struct HTOP3__W<'a> {
-    w: &'a mut W,
-}
-impl<'a> HTOP3__W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
-        self.w
-    }
-}
+pub type HTOP3__W<'a, const O: u8> = crate::BitWriter<'a, u32, HSBMASK_SPEC, bool, O>;
 #[doc = "Field `AESA_` reader - AESA HSB Clock Mask"]
-pub struct AESA__R(crate::FieldReader<bool, bool>);
-impl AESA__R {
-    pub(crate) fn new(bits: bool) -> Self {
-        AESA__R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for AESA__R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type AESA__R = crate::BitReader<bool>;
 #[doc = "Field `AESA_` writer - AESA HSB Clock Mask"]
-pub struct AESA__W<'a> {
-    w: &'a mut W,
-}
-impl<'a> AESA__W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 9)) | ((value as u32 & 0x01) << 9);
-        self.w
-    }
-}
+pub type AESA__W<'a, const O: u8> = crate::BitWriter<'a, u32, HSBMASK_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - PDCA HSB Clock Mask"]
     #[inline(always)]
     pub fn pdca_(&self) -> PDCA__R {
-        PDCA__R::new((self.bits & 0x01) != 0)
+        PDCA__R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - HFLASHC HSB Clock Mask"]
     #[inline(always)]
     pub fn hflashc_(&self) -> HFLASHC__R {
-        HFLASHC__R::new(((self.bits >> 1) & 0x01) != 0)
+        HFLASHC__R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - HRAMC1 HSB Clock Mask"]
     #[inline(always)]
     pub fn hramc1_(&self) -> HRAMC1__R {
-        HRAMC1__R::new(((self.bits >> 2) & 0x01) != 0)
+        HRAMC1__R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - USBC HSB Clock Mask"]
     #[inline(always)]
     pub fn usbc_(&self) -> USBC__R {
-        USBC__R::new(((self.bits >> 3) & 0x01) != 0)
+        USBC__R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 4 - CRCCU HSB Clock Mask"]
     #[inline(always)]
     pub fn crccu_(&self) -> CRCCU__R {
-        CRCCU__R::new(((self.bits >> 4) & 0x01) != 0)
+        CRCCU__R::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bit 5 - HTOP0 HSB Clock Mask"]
     #[inline(always)]
     pub fn htop0_(&self) -> HTOP0__R {
-        HTOP0__R::new(((self.bits >> 5) & 0x01) != 0)
+        HTOP0__R::new(((self.bits >> 5) & 1) != 0)
     }
     #[doc = "Bit 6 - HTOP1 HSB Clock Mask"]
     #[inline(always)]
     pub fn htop1_(&self) -> HTOP1__R {
-        HTOP1__R::new(((self.bits >> 6) & 0x01) != 0)
+        HTOP1__R::new(((self.bits >> 6) & 1) != 0)
     }
     #[doc = "Bit 7 - HTOP2 HSB Clock Mask"]
     #[inline(always)]
     pub fn htop2_(&self) -> HTOP2__R {
-        HTOP2__R::new(((self.bits >> 7) & 0x01) != 0)
+        HTOP2__R::new(((self.bits >> 7) & 1) != 0)
     }
     #[doc = "Bit 8 - HTOP3 HSB Clock Mask"]
     #[inline(always)]
     pub fn htop3_(&self) -> HTOP3__R {
-        HTOP3__R::new(((self.bits >> 8) & 0x01) != 0)
+        HTOP3__R::new(((self.bits >> 8) & 1) != 0)
     }
     #[doc = "Bit 9 - AESA HSB Clock Mask"]
     #[inline(always)]
     pub fn aesa_(&self) -> AESA__R {
-        AESA__R::new(((self.bits >> 9) & 0x01) != 0)
+        AESA__R::new(((self.bits >> 9) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - PDCA HSB Clock Mask"]
     #[inline(always)]
-    pub fn pdca_(&mut self) -> PDCA__W {
-        PDCA__W { w: self }
+    #[must_use]
+    pub fn pdca_(&mut self) -> PDCA__W<0> {
+        PDCA__W::new(self)
     }
     #[doc = "Bit 1 - HFLASHC HSB Clock Mask"]
     #[inline(always)]
-    pub fn hflashc_(&mut self) -> HFLASHC__W {
-        HFLASHC__W { w: self }
+    #[must_use]
+    pub fn hflashc_(&mut self) -> HFLASHC__W<1> {
+        HFLASHC__W::new(self)
     }
     #[doc = "Bit 2 - HRAMC1 HSB Clock Mask"]
     #[inline(always)]
-    pub fn hramc1_(&mut self) -> HRAMC1__W {
-        HRAMC1__W { w: self }
+    #[must_use]
+    pub fn hramc1_(&mut self) -> HRAMC1__W<2> {
+        HRAMC1__W::new(self)
     }
     #[doc = "Bit 3 - USBC HSB Clock Mask"]
     #[inline(always)]
-    pub fn usbc_(&mut self) -> USBC__W {
-        USBC__W { w: self }
+    #[must_use]
+    pub fn usbc_(&mut self) -> USBC__W<3> {
+        USBC__W::new(self)
     }
     #[doc = "Bit 4 - CRCCU HSB Clock Mask"]
     #[inline(always)]
-    pub fn crccu_(&mut self) -> CRCCU__W {
-        CRCCU__W { w: self }
+    #[must_use]
+    pub fn crccu_(&mut self) -> CRCCU__W<4> {
+        CRCCU__W::new(self)
     }
     #[doc = "Bit 5 - HTOP0 HSB Clock Mask"]
     #[inline(always)]
-    pub fn htop0_(&mut self) -> HTOP0__W {
-        HTOP0__W { w: self }
+    #[must_use]
+    pub fn htop0_(&mut self) -> HTOP0__W<5> {
+        HTOP0__W::new(self)
     }
     #[doc = "Bit 6 - HTOP1 HSB Clock Mask"]
     #[inline(always)]
-    pub fn htop1_(&mut self) -> HTOP1__W {
-        HTOP1__W { w: self }
+    #[must_use]
+    pub fn htop1_(&mut self) -> HTOP1__W<6> {
+        HTOP1__W::new(self)
     }
     #[doc = "Bit 7 - HTOP2 HSB Clock Mask"]
     #[inline(always)]
-    pub fn htop2_(&mut self) -> HTOP2__W {
-        HTOP2__W { w: self }
+    #[must_use]
+    pub fn htop2_(&mut self) -> HTOP2__W<7> {
+        HTOP2__W::new(self)
     }
     #[doc = "Bit 8 - HTOP3 HSB Clock Mask"]
     #[inline(always)]
-    pub fn htop3_(&mut self) -> HTOP3__W {
-        HTOP3__W { w: self }
+    #[must_use]
+    pub fn htop3_(&mut self) -> HTOP3__W<8> {
+        HTOP3__W::new(self)
     }
     #[doc = "Bit 9 - AESA HSB Clock Mask"]
     #[inline(always)]
-    pub fn aesa_(&mut self) -> AESA__W {
-        AESA__W { w: self }
+    #[must_use]
+    pub fn aesa_(&mut self) -> AESA__W<9> {
+        AESA__W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -516,11 +206,10 @@ impl crate::Readable for HSBMASK_SPEC {
 #[doc = "`write(|w| ..)` method takes [hsbmask::W](W) writer structure"]
 impl crate::Writable for HSBMASK_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets HSBMASK to value 0x01e2"]
 impl crate::Resettable for HSBMASK_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x01e2
-    }
+    const RESET_VALUE: Self::Ux = 0x01e2;
 }

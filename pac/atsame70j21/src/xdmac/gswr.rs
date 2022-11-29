@@ -20,653 +20,197 @@ impl From<crate::W<GSWR_SPEC>> for W {
     }
 }
 #[doc = "Field `SWREQ0` writer - XDMAC Channel 0 Software Request Bit"]
-pub struct SWREQ0_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SWREQ0_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type SWREQ0_W<'a, const O: u8> = crate::BitWriter<'a, u32, GSWR_SPEC, bool, O>;
 #[doc = "Field `SWREQ1` writer - XDMAC Channel 1 Software Request Bit"]
-pub struct SWREQ1_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SWREQ1_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
-}
+pub type SWREQ1_W<'a, const O: u8> = crate::BitWriter<'a, u32, GSWR_SPEC, bool, O>;
 #[doc = "Field `SWREQ2` writer - XDMAC Channel 2 Software Request Bit"]
-pub struct SWREQ2_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SWREQ2_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
-    }
-}
+pub type SWREQ2_W<'a, const O: u8> = crate::BitWriter<'a, u32, GSWR_SPEC, bool, O>;
 #[doc = "Field `SWREQ3` writer - XDMAC Channel 3 Software Request Bit"]
-pub struct SWREQ3_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SWREQ3_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
-        self.w
-    }
-}
+pub type SWREQ3_W<'a, const O: u8> = crate::BitWriter<'a, u32, GSWR_SPEC, bool, O>;
 #[doc = "Field `SWREQ4` writer - XDMAC Channel 4 Software Request Bit"]
-pub struct SWREQ4_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SWREQ4_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
-        self.w
-    }
-}
+pub type SWREQ4_W<'a, const O: u8> = crate::BitWriter<'a, u32, GSWR_SPEC, bool, O>;
 #[doc = "Field `SWREQ5` writer - XDMAC Channel 5 Software Request Bit"]
-pub struct SWREQ5_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SWREQ5_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
-        self.w
-    }
-}
+pub type SWREQ5_W<'a, const O: u8> = crate::BitWriter<'a, u32, GSWR_SPEC, bool, O>;
 #[doc = "Field `SWREQ6` writer - XDMAC Channel 6 Software Request Bit"]
-pub struct SWREQ6_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SWREQ6_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | ((value as u32 & 0x01) << 6);
-        self.w
-    }
-}
+pub type SWREQ6_W<'a, const O: u8> = crate::BitWriter<'a, u32, GSWR_SPEC, bool, O>;
 #[doc = "Field `SWREQ7` writer - XDMAC Channel 7 Software Request Bit"]
-pub struct SWREQ7_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SWREQ7_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | ((value as u32 & 0x01) << 7);
-        self.w
-    }
-}
+pub type SWREQ7_W<'a, const O: u8> = crate::BitWriter<'a, u32, GSWR_SPEC, bool, O>;
 #[doc = "Field `SWREQ8` writer - XDMAC Channel 8 Software Request Bit"]
-pub struct SWREQ8_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SWREQ8_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
-        self.w
-    }
-}
+pub type SWREQ8_W<'a, const O: u8> = crate::BitWriter<'a, u32, GSWR_SPEC, bool, O>;
 #[doc = "Field `SWREQ9` writer - XDMAC Channel 9 Software Request Bit"]
-pub struct SWREQ9_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SWREQ9_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 9)) | ((value as u32 & 0x01) << 9);
-        self.w
-    }
-}
+pub type SWREQ9_W<'a, const O: u8> = crate::BitWriter<'a, u32, GSWR_SPEC, bool, O>;
 #[doc = "Field `SWREQ10` writer - XDMAC Channel 10 Software Request Bit"]
-pub struct SWREQ10_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SWREQ10_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 10)) | ((value as u32 & 0x01) << 10);
-        self.w
-    }
-}
+pub type SWREQ10_W<'a, const O: u8> = crate::BitWriter<'a, u32, GSWR_SPEC, bool, O>;
 #[doc = "Field `SWREQ11` writer - XDMAC Channel 11 Software Request Bit"]
-pub struct SWREQ11_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SWREQ11_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 11)) | ((value as u32 & 0x01) << 11);
-        self.w
-    }
-}
+pub type SWREQ11_W<'a, const O: u8> = crate::BitWriter<'a, u32, GSWR_SPEC, bool, O>;
 #[doc = "Field `SWREQ12` writer - XDMAC Channel 12 Software Request Bit"]
-pub struct SWREQ12_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SWREQ12_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 12)) | ((value as u32 & 0x01) << 12);
-        self.w
-    }
-}
+pub type SWREQ12_W<'a, const O: u8> = crate::BitWriter<'a, u32, GSWR_SPEC, bool, O>;
 #[doc = "Field `SWREQ13` writer - XDMAC Channel 13 Software Request Bit"]
-pub struct SWREQ13_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SWREQ13_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 13)) | ((value as u32 & 0x01) << 13);
-        self.w
-    }
-}
+pub type SWREQ13_W<'a, const O: u8> = crate::BitWriter<'a, u32, GSWR_SPEC, bool, O>;
 #[doc = "Field `SWREQ14` writer - XDMAC Channel 14 Software Request Bit"]
-pub struct SWREQ14_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SWREQ14_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 14)) | ((value as u32 & 0x01) << 14);
-        self.w
-    }
-}
+pub type SWREQ14_W<'a, const O: u8> = crate::BitWriter<'a, u32, GSWR_SPEC, bool, O>;
 #[doc = "Field `SWREQ15` writer - XDMAC Channel 15 Software Request Bit"]
-pub struct SWREQ15_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SWREQ15_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 15)) | ((value as u32 & 0x01) << 15);
-        self.w
-    }
-}
+pub type SWREQ15_W<'a, const O: u8> = crate::BitWriter<'a, u32, GSWR_SPEC, bool, O>;
 #[doc = "Field `SWREQ16` writer - XDMAC Channel 16 Software Request Bit"]
-pub struct SWREQ16_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SWREQ16_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 16)) | ((value as u32 & 0x01) << 16);
-        self.w
-    }
-}
+pub type SWREQ16_W<'a, const O: u8> = crate::BitWriter<'a, u32, GSWR_SPEC, bool, O>;
 #[doc = "Field `SWREQ17` writer - XDMAC Channel 17 Software Request Bit"]
-pub struct SWREQ17_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SWREQ17_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 17)) | ((value as u32 & 0x01) << 17);
-        self.w
-    }
-}
+pub type SWREQ17_W<'a, const O: u8> = crate::BitWriter<'a, u32, GSWR_SPEC, bool, O>;
 #[doc = "Field `SWREQ18` writer - XDMAC Channel 18 Software Request Bit"]
-pub struct SWREQ18_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SWREQ18_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 18)) | ((value as u32 & 0x01) << 18);
-        self.w
-    }
-}
+pub type SWREQ18_W<'a, const O: u8> = crate::BitWriter<'a, u32, GSWR_SPEC, bool, O>;
 #[doc = "Field `SWREQ19` writer - XDMAC Channel 19 Software Request Bit"]
-pub struct SWREQ19_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SWREQ19_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 19)) | ((value as u32 & 0x01) << 19);
-        self.w
-    }
-}
+pub type SWREQ19_W<'a, const O: u8> = crate::BitWriter<'a, u32, GSWR_SPEC, bool, O>;
 #[doc = "Field `SWREQ20` writer - XDMAC Channel 20 Software Request Bit"]
-pub struct SWREQ20_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SWREQ20_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 20)) | ((value as u32 & 0x01) << 20);
-        self.w
-    }
-}
+pub type SWREQ20_W<'a, const O: u8> = crate::BitWriter<'a, u32, GSWR_SPEC, bool, O>;
 #[doc = "Field `SWREQ21` writer - XDMAC Channel 21 Software Request Bit"]
-pub struct SWREQ21_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SWREQ21_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 21)) | ((value as u32 & 0x01) << 21);
-        self.w
-    }
-}
+pub type SWREQ21_W<'a, const O: u8> = crate::BitWriter<'a, u32, GSWR_SPEC, bool, O>;
 #[doc = "Field `SWREQ22` writer - XDMAC Channel 22 Software Request Bit"]
-pub struct SWREQ22_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SWREQ22_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 22)) | ((value as u32 & 0x01) << 22);
-        self.w
-    }
-}
+pub type SWREQ22_W<'a, const O: u8> = crate::BitWriter<'a, u32, GSWR_SPEC, bool, O>;
 #[doc = "Field `SWREQ23` writer - XDMAC Channel 23 Software Request Bit"]
-pub struct SWREQ23_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SWREQ23_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 23)) | ((value as u32 & 0x01) << 23);
-        self.w
-    }
-}
+pub type SWREQ23_W<'a, const O: u8> = crate::BitWriter<'a, u32, GSWR_SPEC, bool, O>;
 impl W {
     #[doc = "Bit 0 - XDMAC Channel 0 Software Request Bit"]
     #[inline(always)]
-    pub fn swreq0(&mut self) -> SWREQ0_W {
-        SWREQ0_W { w: self }
+    #[must_use]
+    pub fn swreq0(&mut self) -> SWREQ0_W<0> {
+        SWREQ0_W::new(self)
     }
     #[doc = "Bit 1 - XDMAC Channel 1 Software Request Bit"]
     #[inline(always)]
-    pub fn swreq1(&mut self) -> SWREQ1_W {
-        SWREQ1_W { w: self }
+    #[must_use]
+    pub fn swreq1(&mut self) -> SWREQ1_W<1> {
+        SWREQ1_W::new(self)
     }
     #[doc = "Bit 2 - XDMAC Channel 2 Software Request Bit"]
     #[inline(always)]
-    pub fn swreq2(&mut self) -> SWREQ2_W {
-        SWREQ2_W { w: self }
+    #[must_use]
+    pub fn swreq2(&mut self) -> SWREQ2_W<2> {
+        SWREQ2_W::new(self)
     }
     #[doc = "Bit 3 - XDMAC Channel 3 Software Request Bit"]
     #[inline(always)]
-    pub fn swreq3(&mut self) -> SWREQ3_W {
-        SWREQ3_W { w: self }
+    #[must_use]
+    pub fn swreq3(&mut self) -> SWREQ3_W<3> {
+        SWREQ3_W::new(self)
     }
     #[doc = "Bit 4 - XDMAC Channel 4 Software Request Bit"]
     #[inline(always)]
-    pub fn swreq4(&mut self) -> SWREQ4_W {
-        SWREQ4_W { w: self }
+    #[must_use]
+    pub fn swreq4(&mut self) -> SWREQ4_W<4> {
+        SWREQ4_W::new(self)
     }
     #[doc = "Bit 5 - XDMAC Channel 5 Software Request Bit"]
     #[inline(always)]
-    pub fn swreq5(&mut self) -> SWREQ5_W {
-        SWREQ5_W { w: self }
+    #[must_use]
+    pub fn swreq5(&mut self) -> SWREQ5_W<5> {
+        SWREQ5_W::new(self)
     }
     #[doc = "Bit 6 - XDMAC Channel 6 Software Request Bit"]
     #[inline(always)]
-    pub fn swreq6(&mut self) -> SWREQ6_W {
-        SWREQ6_W { w: self }
+    #[must_use]
+    pub fn swreq6(&mut self) -> SWREQ6_W<6> {
+        SWREQ6_W::new(self)
     }
     #[doc = "Bit 7 - XDMAC Channel 7 Software Request Bit"]
     #[inline(always)]
-    pub fn swreq7(&mut self) -> SWREQ7_W {
-        SWREQ7_W { w: self }
+    #[must_use]
+    pub fn swreq7(&mut self) -> SWREQ7_W<7> {
+        SWREQ7_W::new(self)
     }
     #[doc = "Bit 8 - XDMAC Channel 8 Software Request Bit"]
     #[inline(always)]
-    pub fn swreq8(&mut self) -> SWREQ8_W {
-        SWREQ8_W { w: self }
+    #[must_use]
+    pub fn swreq8(&mut self) -> SWREQ8_W<8> {
+        SWREQ8_W::new(self)
     }
     #[doc = "Bit 9 - XDMAC Channel 9 Software Request Bit"]
     #[inline(always)]
-    pub fn swreq9(&mut self) -> SWREQ9_W {
-        SWREQ9_W { w: self }
+    #[must_use]
+    pub fn swreq9(&mut self) -> SWREQ9_W<9> {
+        SWREQ9_W::new(self)
     }
     #[doc = "Bit 10 - XDMAC Channel 10 Software Request Bit"]
     #[inline(always)]
-    pub fn swreq10(&mut self) -> SWREQ10_W {
-        SWREQ10_W { w: self }
+    #[must_use]
+    pub fn swreq10(&mut self) -> SWREQ10_W<10> {
+        SWREQ10_W::new(self)
     }
     #[doc = "Bit 11 - XDMAC Channel 11 Software Request Bit"]
     #[inline(always)]
-    pub fn swreq11(&mut self) -> SWREQ11_W {
-        SWREQ11_W { w: self }
+    #[must_use]
+    pub fn swreq11(&mut self) -> SWREQ11_W<11> {
+        SWREQ11_W::new(self)
     }
     #[doc = "Bit 12 - XDMAC Channel 12 Software Request Bit"]
     #[inline(always)]
-    pub fn swreq12(&mut self) -> SWREQ12_W {
-        SWREQ12_W { w: self }
+    #[must_use]
+    pub fn swreq12(&mut self) -> SWREQ12_W<12> {
+        SWREQ12_W::new(self)
     }
     #[doc = "Bit 13 - XDMAC Channel 13 Software Request Bit"]
     #[inline(always)]
-    pub fn swreq13(&mut self) -> SWREQ13_W {
-        SWREQ13_W { w: self }
+    #[must_use]
+    pub fn swreq13(&mut self) -> SWREQ13_W<13> {
+        SWREQ13_W::new(self)
     }
     #[doc = "Bit 14 - XDMAC Channel 14 Software Request Bit"]
     #[inline(always)]
-    pub fn swreq14(&mut self) -> SWREQ14_W {
-        SWREQ14_W { w: self }
+    #[must_use]
+    pub fn swreq14(&mut self) -> SWREQ14_W<14> {
+        SWREQ14_W::new(self)
     }
     #[doc = "Bit 15 - XDMAC Channel 15 Software Request Bit"]
     #[inline(always)]
-    pub fn swreq15(&mut self) -> SWREQ15_W {
-        SWREQ15_W { w: self }
+    #[must_use]
+    pub fn swreq15(&mut self) -> SWREQ15_W<15> {
+        SWREQ15_W::new(self)
     }
     #[doc = "Bit 16 - XDMAC Channel 16 Software Request Bit"]
     #[inline(always)]
-    pub fn swreq16(&mut self) -> SWREQ16_W {
-        SWREQ16_W { w: self }
+    #[must_use]
+    pub fn swreq16(&mut self) -> SWREQ16_W<16> {
+        SWREQ16_W::new(self)
     }
     #[doc = "Bit 17 - XDMAC Channel 17 Software Request Bit"]
     #[inline(always)]
-    pub fn swreq17(&mut self) -> SWREQ17_W {
-        SWREQ17_W { w: self }
+    #[must_use]
+    pub fn swreq17(&mut self) -> SWREQ17_W<17> {
+        SWREQ17_W::new(self)
     }
     #[doc = "Bit 18 - XDMAC Channel 18 Software Request Bit"]
     #[inline(always)]
-    pub fn swreq18(&mut self) -> SWREQ18_W {
-        SWREQ18_W { w: self }
+    #[must_use]
+    pub fn swreq18(&mut self) -> SWREQ18_W<18> {
+        SWREQ18_W::new(self)
     }
     #[doc = "Bit 19 - XDMAC Channel 19 Software Request Bit"]
     #[inline(always)]
-    pub fn swreq19(&mut self) -> SWREQ19_W {
-        SWREQ19_W { w: self }
+    #[must_use]
+    pub fn swreq19(&mut self) -> SWREQ19_W<19> {
+        SWREQ19_W::new(self)
     }
     #[doc = "Bit 20 - XDMAC Channel 20 Software Request Bit"]
     #[inline(always)]
-    pub fn swreq20(&mut self) -> SWREQ20_W {
-        SWREQ20_W { w: self }
+    #[must_use]
+    pub fn swreq20(&mut self) -> SWREQ20_W<20> {
+        SWREQ20_W::new(self)
     }
     #[doc = "Bit 21 - XDMAC Channel 21 Software Request Bit"]
     #[inline(always)]
-    pub fn swreq21(&mut self) -> SWREQ21_W {
-        SWREQ21_W { w: self }
+    #[must_use]
+    pub fn swreq21(&mut self) -> SWREQ21_W<21> {
+        SWREQ21_W::new(self)
     }
     #[doc = "Bit 22 - XDMAC Channel 22 Software Request Bit"]
     #[inline(always)]
-    pub fn swreq22(&mut self) -> SWREQ22_W {
-        SWREQ22_W { w: self }
+    #[must_use]
+    pub fn swreq22(&mut self) -> SWREQ22_W<22> {
+        SWREQ22_W::new(self)
     }
     #[doc = "Bit 23 - XDMAC Channel 23 Software Request Bit"]
     #[inline(always)]
-    pub fn swreq23(&mut self) -> SWREQ23_W {
-        SWREQ23_W { w: self }
+    #[must_use]
+    pub fn swreq23(&mut self) -> SWREQ23_W<23> {
+        SWREQ23_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -683,11 +227,10 @@ impl crate::RegisterSpec for GSWR_SPEC {
 #[doc = "`write(|w| ..)` method takes [gswr::W](W) writer structure"]
 impl crate::Writable for GSWR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets GSWR to value 0"]
 impl crate::Resettable for GSWR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

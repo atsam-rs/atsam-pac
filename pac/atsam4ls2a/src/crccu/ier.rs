@@ -20,32 +20,13 @@ impl From<crate::W<IER_SPEC>> for W {
     }
 }
 #[doc = "Field `ERRIER` writer - CRC Error Interrupt Enable"]
-pub struct ERRIER_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ERRIER_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type ERRIER_W<'a, const O: u8> = crate::BitWriter<'a, u32, IER_SPEC, bool, O>;
 impl W {
     #[doc = "Bit 0 - CRC Error Interrupt Enable"]
     #[inline(always)]
-    pub fn errier(&mut self) -> ERRIER_W {
-        ERRIER_W { w: self }
+    #[must_use]
+    pub fn errier(&mut self) -> ERRIER_W<0> {
+        ERRIER_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -62,11 +43,10 @@ impl crate::RegisterSpec for IER_SPEC {
 #[doc = "`write(|w| ..)` method takes [ier::W](W) writer structure"]
 impl crate::Writable for IER_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets IER to value 0"]
 impl crate::Resettable for IER_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

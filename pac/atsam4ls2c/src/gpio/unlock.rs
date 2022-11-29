@@ -20,39 +20,21 @@ impl From<crate::W<UNLOCK_SPEC>> for W {
     }
 }
 #[doc = "Field `ADDR` writer - Offset Register"]
-pub struct ADDR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ADDR_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x03ff) | (value as u32 & 0x03ff);
-        self.w
-    }
-}
+pub type ADDR_W<'a, const O: u8> = crate::FieldWriter<'a, u32, UNLOCK_SPEC, u16, u16, 10, O>;
 #[doc = "Field `KEY` writer - Unlocking Key"]
-pub struct KEY_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> KEY_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0xff << 24)) | ((value as u32 & 0xff) << 24);
-        self.w
-    }
-}
+pub type KEY_W<'a, const O: u8> = crate::FieldWriter<'a, u32, UNLOCK_SPEC, u8, u8, 8, O>;
 impl W {
     #[doc = "Bits 0:9 - Offset Register"]
     #[inline(always)]
-    pub fn addr(&mut self) -> ADDR_W {
-        ADDR_W { w: self }
+    #[must_use]
+    pub fn addr(&mut self) -> ADDR_W<0> {
+        ADDR_W::new(self)
     }
     #[doc = "Bits 24:31 - Unlocking Key"]
     #[inline(always)]
-    pub fn key(&mut self) -> KEY_W {
-        KEY_W { w: self }
+    #[must_use]
+    pub fn key(&mut self) -> KEY_W<24> {
+        KEY_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -69,11 +51,10 @@ impl crate::RegisterSpec for UNLOCK_SPEC {
 #[doc = "`write(|w| ..)` method takes [unlock::W](W) writer structure"]
 impl crate::Writable for UNLOCK_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets UNLOCK%s to value 0"]
 impl crate::Resettable for UNLOCK_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

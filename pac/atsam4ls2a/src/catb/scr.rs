@@ -20,86 +20,29 @@ impl From<crate::W<SCR_SPEC>> for W {
     }
 }
 #[doc = "Field `SAMPLE` writer - Sample Ready"]
-pub struct SAMPLE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SAMPLE_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type SAMPLE_W<'a, const O: u8> = crate::BitWriter<'a, u32, SCR_SPEC, bool, O>;
 #[doc = "Field `INTCH` writer - In-touch"]
-pub struct INTCH_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> INTCH_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
-}
+pub type INTCH_W<'a, const O: u8> = crate::BitWriter<'a, u32, SCR_SPEC, bool, O>;
 #[doc = "Field `OUTTCH` writer - Out-of-Touch"]
-pub struct OUTTCH_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> OUTTCH_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
-    }
-}
+pub type OUTTCH_W<'a, const O: u8> = crate::BitWriter<'a, u32, SCR_SPEC, bool, O>;
 impl W {
     #[doc = "Bit 0 - Sample Ready"]
     #[inline(always)]
-    pub fn sample(&mut self) -> SAMPLE_W {
-        SAMPLE_W { w: self }
+    #[must_use]
+    pub fn sample(&mut self) -> SAMPLE_W<0> {
+        SAMPLE_W::new(self)
     }
     #[doc = "Bit 1 - In-touch"]
     #[inline(always)]
-    pub fn intch(&mut self) -> INTCH_W {
-        INTCH_W { w: self }
+    #[must_use]
+    pub fn intch(&mut self) -> INTCH_W<1> {
+        INTCH_W::new(self)
     }
     #[doc = "Bit 2 - Out-of-Touch"]
     #[inline(always)]
-    pub fn outtch(&mut self) -> OUTTCH_W {
-        OUTTCH_W { w: self }
+    #[must_use]
+    pub fn outtch(&mut self) -> OUTTCH_W<2> {
+        OUTTCH_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -116,11 +59,10 @@ impl crate::RegisterSpec for SCR_SPEC {
 #[doc = "`write(|w| ..)` method takes [scr::W](W) writer structure"]
 impl crate::Writable for SCR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets SCR to value 0"]
 impl crate::Resettable for SCR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

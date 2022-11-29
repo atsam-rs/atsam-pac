@@ -20,410 +20,125 @@ impl From<crate::W<UECON4SET_SPEC>> for W {
     }
 }
 #[doc = "Field `TXINES` writer - TXINE Set"]
-pub struct TXINES_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TXINES_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type TXINES_W<'a, const O: u8> = crate::BitWriter<'a, u32, UECON4SET_SPEC, bool, O>;
 #[doc = "Field `RXOUTES` writer - RXOUTE Set"]
-pub struct RXOUTES_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RXOUTES_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
-}
+pub type RXOUTES_W<'a, const O: u8> = crate::BitWriter<'a, u32, UECON4SET_SPEC, bool, O>;
 #[doc = "Field `RXSTPES` writer - RXSTPE Set"]
-pub struct RXSTPES_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RXSTPES_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
-    }
-}
+pub type RXSTPES_W<'a, const O: u8> = crate::BitWriter<'a, u32, UECON4SET_SPEC, bool, O>;
 #[doc = "Field `NAKOUTES` writer - NAKOUTE Set"]
-pub struct NAKOUTES_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> NAKOUTES_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
-        self.w
-    }
-}
+pub type NAKOUTES_W<'a, const O: u8> = crate::BitWriter<'a, u32, UECON4SET_SPEC, bool, O>;
 #[doc = "Field `NAKINES` writer - NAKINE Set"]
-pub struct NAKINES_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> NAKINES_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
-        self.w
-    }
-}
+pub type NAKINES_W<'a, const O: u8> = crate::BitWriter<'a, u32, UECON4SET_SPEC, bool, O>;
 #[doc = "Field `STALLEDES` writer - STALLEDE Set"]
-pub struct STALLEDES_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> STALLEDES_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | ((value as u32 & 0x01) << 6);
-        self.w
-    }
-}
+pub type STALLEDES_W<'a, const O: u8> = crate::BitWriter<'a, u32, UECON4SET_SPEC, bool, O>;
 #[doc = "Field `NREPLYS` writer - NREPLY Set"]
-pub struct NREPLYS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> NREPLYS_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
-        self.w
-    }
-}
+pub type NREPLYS_W<'a, const O: u8> = crate::BitWriter<'a, u32, UECON4SET_SPEC, bool, O>;
 #[doc = "Field `RAMACERES` writer - RAMACERE Set"]
-pub struct RAMACERES_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RAMACERES_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 11)) | ((value as u32 & 0x01) << 11);
-        self.w
-    }
-}
+pub type RAMACERES_W<'a, const O: u8> = crate::BitWriter<'a, u32, UECON4SET_SPEC, bool, O>;
 #[doc = "Field `NBUSYBKES` writer - NBUSYBKE Set"]
-pub struct NBUSYBKES_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> NBUSYBKES_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 12)) | ((value as u32 & 0x01) << 12);
-        self.w
-    }
-}
+pub type NBUSYBKES_W<'a, const O: u8> = crate::BitWriter<'a, u32, UECON4SET_SPEC, bool, O>;
 #[doc = "Field `KILLBKS` writer - KILLBK Set"]
-pub struct KILLBKS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> KILLBKS_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 13)) | ((value as u32 & 0x01) << 13);
-        self.w
-    }
-}
+pub type KILLBKS_W<'a, const O: u8> = crate::BitWriter<'a, u32, UECON4SET_SPEC, bool, O>;
 #[doc = "Field `NYETDISS` writer - NYETDIS Set"]
-pub struct NYETDISS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> NYETDISS_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 17)) | ((value as u32 & 0x01) << 17);
-        self.w
-    }
-}
+pub type NYETDISS_W<'a, const O: u8> = crate::BitWriter<'a, u32, UECON4SET_SPEC, bool, O>;
 #[doc = "Field `RSTDTS` writer - RSTDT Set"]
-pub struct RSTDTS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RSTDTS_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 18)) | ((value as u32 & 0x01) << 18);
-        self.w
-    }
-}
+pub type RSTDTS_W<'a, const O: u8> = crate::BitWriter<'a, u32, UECON4SET_SPEC, bool, O>;
 #[doc = "Field `STALLRQS` writer - STALLRQ Set"]
-pub struct STALLRQS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> STALLRQS_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 19)) | ((value as u32 & 0x01) << 19);
-        self.w
-    }
-}
+pub type STALLRQS_W<'a, const O: u8> = crate::BitWriter<'a, u32, UECON4SET_SPEC, bool, O>;
 #[doc = "Field `BUSY0S` writer - BUSY0 Set"]
-pub struct BUSY0S_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> BUSY0S_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 24)) | ((value as u32 & 0x01) << 24);
-        self.w
-    }
-}
+pub type BUSY0S_W<'a, const O: u8> = crate::BitWriter<'a, u32, UECON4SET_SPEC, bool, O>;
 #[doc = "Field `BUSY1S` writer - BUSY1 Set"]
-pub struct BUSY1S_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> BUSY1S_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 25)) | ((value as u32 & 0x01) << 25);
-        self.w
-    }
-}
+pub type BUSY1S_W<'a, const O: u8> = crate::BitWriter<'a, u32, UECON4SET_SPEC, bool, O>;
 impl W {
     #[doc = "Bit 0 - TXINE Set"]
     #[inline(always)]
-    pub fn txines(&mut self) -> TXINES_W {
-        TXINES_W { w: self }
+    #[must_use]
+    pub fn txines(&mut self) -> TXINES_W<0> {
+        TXINES_W::new(self)
     }
     #[doc = "Bit 1 - RXOUTE Set"]
     #[inline(always)]
-    pub fn rxoutes(&mut self) -> RXOUTES_W {
-        RXOUTES_W { w: self }
+    #[must_use]
+    pub fn rxoutes(&mut self) -> RXOUTES_W<1> {
+        RXOUTES_W::new(self)
     }
     #[doc = "Bit 2 - RXSTPE Set"]
     #[inline(always)]
-    pub fn rxstpes(&mut self) -> RXSTPES_W {
-        RXSTPES_W { w: self }
+    #[must_use]
+    pub fn rxstpes(&mut self) -> RXSTPES_W<2> {
+        RXSTPES_W::new(self)
     }
     #[doc = "Bit 3 - NAKOUTE Set"]
     #[inline(always)]
-    pub fn nakoutes(&mut self) -> NAKOUTES_W {
-        NAKOUTES_W { w: self }
+    #[must_use]
+    pub fn nakoutes(&mut self) -> NAKOUTES_W<3> {
+        NAKOUTES_W::new(self)
     }
     #[doc = "Bit 4 - NAKINE Set"]
     #[inline(always)]
-    pub fn nakines(&mut self) -> NAKINES_W {
-        NAKINES_W { w: self }
+    #[must_use]
+    pub fn nakines(&mut self) -> NAKINES_W<4> {
+        NAKINES_W::new(self)
     }
     #[doc = "Bit 6 - STALLEDE Set"]
     #[inline(always)]
-    pub fn stalledes(&mut self) -> STALLEDES_W {
-        STALLEDES_W { w: self }
+    #[must_use]
+    pub fn stalledes(&mut self) -> STALLEDES_W<6> {
+        STALLEDES_W::new(self)
     }
     #[doc = "Bit 8 - NREPLY Set"]
     #[inline(always)]
-    pub fn nreplys(&mut self) -> NREPLYS_W {
-        NREPLYS_W { w: self }
+    #[must_use]
+    pub fn nreplys(&mut self) -> NREPLYS_W<8> {
+        NREPLYS_W::new(self)
     }
     #[doc = "Bit 11 - RAMACERE Set"]
     #[inline(always)]
-    pub fn ramaceres(&mut self) -> RAMACERES_W {
-        RAMACERES_W { w: self }
+    #[must_use]
+    pub fn ramaceres(&mut self) -> RAMACERES_W<11> {
+        RAMACERES_W::new(self)
     }
     #[doc = "Bit 12 - NBUSYBKE Set"]
     #[inline(always)]
-    pub fn nbusybkes(&mut self) -> NBUSYBKES_W {
-        NBUSYBKES_W { w: self }
+    #[must_use]
+    pub fn nbusybkes(&mut self) -> NBUSYBKES_W<12> {
+        NBUSYBKES_W::new(self)
     }
     #[doc = "Bit 13 - KILLBK Set"]
     #[inline(always)]
-    pub fn killbks(&mut self) -> KILLBKS_W {
-        KILLBKS_W { w: self }
+    #[must_use]
+    pub fn killbks(&mut self) -> KILLBKS_W<13> {
+        KILLBKS_W::new(self)
     }
     #[doc = "Bit 17 - NYETDIS Set"]
     #[inline(always)]
-    pub fn nyetdiss(&mut self) -> NYETDISS_W {
-        NYETDISS_W { w: self }
+    #[must_use]
+    pub fn nyetdiss(&mut self) -> NYETDISS_W<17> {
+        NYETDISS_W::new(self)
     }
     #[doc = "Bit 18 - RSTDT Set"]
     #[inline(always)]
-    pub fn rstdts(&mut self) -> RSTDTS_W {
-        RSTDTS_W { w: self }
+    #[must_use]
+    pub fn rstdts(&mut self) -> RSTDTS_W<18> {
+        RSTDTS_W::new(self)
     }
     #[doc = "Bit 19 - STALLRQ Set"]
     #[inline(always)]
-    pub fn stallrqs(&mut self) -> STALLRQS_W {
-        STALLRQS_W { w: self }
+    #[must_use]
+    pub fn stallrqs(&mut self) -> STALLRQS_W<19> {
+        STALLRQS_W::new(self)
     }
     #[doc = "Bit 24 - BUSY0 Set"]
     #[inline(always)]
-    pub fn busy0s(&mut self) -> BUSY0S_W {
-        BUSY0S_W { w: self }
+    #[must_use]
+    pub fn busy0s(&mut self) -> BUSY0S_W<24> {
+        BUSY0S_W::new(self)
     }
     #[doc = "Bit 25 - BUSY1 Set"]
     #[inline(always)]
-    pub fn busy1s(&mut self) -> BUSY1S_W {
-        BUSY1S_W { w: self }
+    #[must_use]
+    pub fn busy1s(&mut self) -> BUSY1S_W<25> {
+        BUSY1S_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -440,11 +155,10 @@ impl crate::RegisterSpec for UECON4SET_SPEC {
 #[doc = "`write(|w| ..)` method takes [uecon4set::W](W) writer structure"]
 impl crate::Writable for UECON4SET_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets UECON4SET to value 0"]
 impl crate::Resettable for UECON4SET_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

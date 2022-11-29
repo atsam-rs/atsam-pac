@@ -14,24 +14,12 @@ impl From<crate::R<PARAMETER_SPEC>> for R {
     }
 }
 #[doc = "Field `PARAMETER` reader - Parameter"]
-pub struct PARAMETER_R(crate::FieldReader<u32, u32>);
-impl PARAMETER_R {
-    pub(crate) fn new(bits: u32) -> Self {
-        PARAMETER_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for PARAMETER_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type PARAMETER_R = crate::FieldReader<u32, u32>;
 impl R {
     #[doc = "Bits 0:31 - Parameter"]
     #[inline(always)]
     pub fn parameter(&self) -> PARAMETER_R {
-        PARAMETER_R::new((self.bits & 0xffff_ffff) as u32)
+        PARAMETER_R::new(self.bits)
     }
 }
 #[doc = "Parameter Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [parameter](index.html) module"]
@@ -45,8 +33,5 @@ impl crate::Readable for PARAMETER_SPEC {
 }
 #[doc = "`reset()` method sets PARAMETER%s to value 0"]
 impl crate::Resettable for PARAMETER_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

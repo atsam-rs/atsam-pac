@@ -20,22 +20,13 @@ impl From<crate::W<DRNGSEED_SPEC>> for W {
     }
 }
 #[doc = "Field `SEED` writer - DRNG Seed"]
-pub struct SEED_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SEED_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xffff_ffff) | (value as u32 & 0xffff_ffff);
-        self.w
-    }
-}
+pub type SEED_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DRNGSEED_SPEC, u32, u32, 32, O>;
 impl W {
     #[doc = "Bits 0:31 - DRNG Seed"]
     #[inline(always)]
-    pub fn seed(&mut self) -> SEED_W {
-        SEED_W { w: self }
+    #[must_use]
+    pub fn seed(&mut self) -> SEED_W<0> {
+        SEED_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -52,11 +43,10 @@ impl crate::RegisterSpec for DRNGSEED_SPEC {
 #[doc = "`write(|w| ..)` method takes [drngseed::W](W) writer structure"]
 impl crate::Writable for DRNGSEED_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets DRNGSEED to value 0"]
 impl crate::Resettable for DRNGSEED_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

@@ -35,113 +35,27 @@ impl From<crate::W<BOD33SAMPLING_SPEC>> for W {
     }
 }
 #[doc = "Field `CEN` reader - Clock Enable"]
-pub struct CEN_R(crate::FieldReader<bool, bool>);
-impl CEN_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        CEN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CEN_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CEN_R = crate::BitReader<bool>;
 #[doc = "Field `CEN` writer - Clock Enable"]
-pub struct CEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CEN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type CEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, BOD33SAMPLING_SPEC, bool, O>;
 #[doc = "Field `CSSEL` reader - Clock Source Select"]
-pub struct CSSEL_R(crate::FieldReader<bool, bool>);
-impl CSSEL_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        CSSEL_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CSSEL_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CSSEL_R = crate::BitReader<bool>;
 #[doc = "Field `CSSEL` writer - Clock Source Select"]
-pub struct CSSEL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CSSEL_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
-}
+pub type CSSEL_W<'a, const O: u8> = crate::BitWriter<'a, u32, BOD33SAMPLING_SPEC, bool, O>;
 #[doc = "Field `PSEL` reader - Prescaler Select"]
-pub struct PSEL_R(crate::FieldReader<u8, u8>);
-impl PSEL_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        PSEL_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for PSEL_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type PSEL_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `PSEL` writer - Prescaler Select"]
-pub struct PSEL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PSEL_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 8)) | ((value as u32 & 0x0f) << 8);
-        self.w
-    }
-}
+pub type PSEL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, BOD33SAMPLING_SPEC, u8, u8, 4, O>;
 impl R {
     #[doc = "Bit 0 - Clock Enable"]
     #[inline(always)]
     pub fn cen(&self) -> CEN_R {
-        CEN_R::new((self.bits & 0x01) != 0)
+        CEN_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Clock Source Select"]
     #[inline(always)]
     pub fn cssel(&self) -> CSSEL_R {
-        CSSEL_R::new(((self.bits >> 1) & 0x01) != 0)
+        CSSEL_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bits 8:11 - Prescaler Select"]
     #[inline(always)]
@@ -152,18 +66,21 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Clock Enable"]
     #[inline(always)]
-    pub fn cen(&mut self) -> CEN_W {
-        CEN_W { w: self }
+    #[must_use]
+    pub fn cen(&mut self) -> CEN_W<0> {
+        CEN_W::new(self)
     }
     #[doc = "Bit 1 - Clock Source Select"]
     #[inline(always)]
-    pub fn cssel(&mut self) -> CSSEL_W {
-        CSSEL_W { w: self }
+    #[must_use]
+    pub fn cssel(&mut self) -> CSSEL_W<1> {
+        CSSEL_W::new(self)
     }
     #[doc = "Bits 8:11 - Prescaler Select"]
     #[inline(always)]
-    pub fn psel(&mut self) -> PSEL_W {
-        PSEL_W { w: self }
+    #[must_use]
+    pub fn psel(&mut self) -> PSEL_W<8> {
+        PSEL_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -184,11 +101,10 @@ impl crate::Readable for BOD33SAMPLING_SPEC {
 #[doc = "`write(|w| ..)` method takes [bod33sampling::W](W) writer structure"]
 impl crate::Writable for BOD33SAMPLING_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets BOD33SAMPLING to value 0"]
 impl crate::Resettable for BOD33SAMPLING_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

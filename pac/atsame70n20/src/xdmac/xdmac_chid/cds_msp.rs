@@ -35,57 +35,13 @@ impl From<crate::W<CDS_MSP_SPEC>> for W {
     }
 }
 #[doc = "Field `SDS_MSP` reader - Channel x Source Data stride or Memory Set Pattern"]
-pub struct SDS_MSP_R(crate::FieldReader<u16, u16>);
-impl SDS_MSP_R {
-    pub(crate) fn new(bits: u16) -> Self {
-        SDS_MSP_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for SDS_MSP_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type SDS_MSP_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `SDS_MSP` writer - Channel x Source Data stride or Memory Set Pattern"]
-pub struct SDS_MSP_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SDS_MSP_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xffff) | (value as u32 & 0xffff);
-        self.w
-    }
-}
+pub type SDS_MSP_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CDS_MSP_SPEC, u16, u16, 16, O>;
 #[doc = "Field `DDS_MSP` reader - Channel x Destination Data Stride or Memory Set Pattern"]
-pub struct DDS_MSP_R(crate::FieldReader<u16, u16>);
-impl DDS_MSP_R {
-    pub(crate) fn new(bits: u16) -> Self {
-        DDS_MSP_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DDS_MSP_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DDS_MSP_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `DDS_MSP` writer - Channel x Destination Data Stride or Memory Set Pattern"]
-pub struct DDS_MSP_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DDS_MSP_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0xffff << 16)) | ((value as u32 & 0xffff) << 16);
-        self.w
-    }
-}
+pub type DDS_MSP_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CDS_MSP_SPEC, u16, u16, 16, O>;
 impl R {
     #[doc = "Bits 0:15 - Channel x Source Data stride or Memory Set Pattern"]
     #[inline(always)]
@@ -101,13 +57,15 @@ impl R {
 impl W {
     #[doc = "Bits 0:15 - Channel x Source Data stride or Memory Set Pattern"]
     #[inline(always)]
-    pub fn sds_msp(&mut self) -> SDS_MSP_W {
-        SDS_MSP_W { w: self }
+    #[must_use]
+    pub fn sds_msp(&mut self) -> SDS_MSP_W<0> {
+        SDS_MSP_W::new(self)
     }
     #[doc = "Bits 16:31 - Channel x Destination Data Stride or Memory Set Pattern"]
     #[inline(always)]
-    pub fn dds_msp(&mut self) -> DDS_MSP_W {
-        DDS_MSP_W { w: self }
+    #[must_use]
+    pub fn dds_msp(&mut self) -> DDS_MSP_W<16> {
+        DDS_MSP_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -128,11 +86,10 @@ impl crate::Readable for CDS_MSP_SPEC {
 #[doc = "`write(|w| ..)` method takes [cds_msp::W](W) writer structure"]
 impl crate::Writable for CDS_MSP_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets CDS_MSP to value 0"]
 impl crate::Resettable for CDS_MSP_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

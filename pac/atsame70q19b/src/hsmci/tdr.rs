@@ -20,22 +20,13 @@ impl From<crate::W<TDR_SPEC>> for W {
     }
 }
 #[doc = "Field `DATA` writer - Data to Write"]
-pub struct DATA_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DATA_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xffff_ffff) | (value as u32 & 0xffff_ffff);
-        self.w
-    }
-}
+pub type DATA_W<'a, const O: u8> = crate::FieldWriter<'a, u32, TDR_SPEC, u32, u32, 32, O>;
 impl W {
     #[doc = "Bits 0:31 - Data to Write"]
     #[inline(always)]
-    pub fn data(&mut self) -> DATA_W {
-        DATA_W { w: self }
+    #[must_use]
+    pub fn data(&mut self) -> DATA_W<0> {
+        DATA_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -52,11 +43,10 @@ impl crate::RegisterSpec for TDR_SPEC {
 #[doc = "`write(|w| ..)` method takes [tdr::W](W) writer structure"]
 impl crate::Writable for TDR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets TDR to value 0"]
 impl crate::Resettable for TDR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

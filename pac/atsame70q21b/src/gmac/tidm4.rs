@@ -35,67 +35,13 @@ impl From<crate::W<TIDM4_SPEC>> for W {
     }
 }
 #[doc = "Field `TID` reader - Type ID Match 4"]
-pub struct TID_R(crate::FieldReader<u16, u16>);
-impl TID_R {
-    pub(crate) fn new(bits: u16) -> Self {
-        TID_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TID_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TID_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `TID` writer - Type ID Match 4"]
-pub struct TID_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TID_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xffff) | (value as u32 & 0xffff);
-        self.w
-    }
-}
+pub type TID_W<'a, const O: u8> = crate::FieldWriter<'a, u32, TIDM4_SPEC, u16, u16, 16, O>;
 #[doc = "Field `ENID4` reader - Enable Copying of TID Matched Frames"]
-pub struct ENID4_R(crate::FieldReader<bool, bool>);
-impl ENID4_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        ENID4_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for ENID4_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type ENID4_R = crate::BitReader<bool>;
 #[doc = "Field `ENID4` writer - Enable Copying of TID Matched Frames"]
-pub struct ENID4_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ENID4_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 31)) | ((value as u32 & 0x01) << 31);
-        self.w
-    }
-}
+pub type ENID4_W<'a, const O: u8> = crate::BitWriter<'a, u32, TIDM4_SPEC, bool, O>;
 impl R {
     #[doc = "Bits 0:15 - Type ID Match 4"]
     #[inline(always)]
@@ -105,19 +51,21 @@ impl R {
     #[doc = "Bit 31 - Enable Copying of TID Matched Frames"]
     #[inline(always)]
     pub fn enid4(&self) -> ENID4_R {
-        ENID4_R::new(((self.bits >> 31) & 0x01) != 0)
+        ENID4_R::new(((self.bits >> 31) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bits 0:15 - Type ID Match 4"]
     #[inline(always)]
-    pub fn tid(&mut self) -> TID_W {
-        TID_W { w: self }
+    #[must_use]
+    pub fn tid(&mut self) -> TID_W<0> {
+        TID_W::new(self)
     }
     #[doc = "Bit 31 - Enable Copying of TID Matched Frames"]
     #[inline(always)]
-    pub fn enid4(&mut self) -> ENID4_W {
-        ENID4_W { w: self }
+    #[must_use]
+    pub fn enid4(&mut self) -> ENID4_W<31> {
+        ENID4_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -138,11 +86,10 @@ impl crate::Readable for TIDM4_SPEC {
 #[doc = "`write(|w| ..)` method takes [tidm4::W](W) writer structure"]
 impl crate::Writable for TIDM4_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets TIDM4 to value 0"]
 impl crate::Resettable for TIDM4_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

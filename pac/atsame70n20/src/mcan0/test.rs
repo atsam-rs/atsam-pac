@@ -34,93 +34,62 @@ impl From<crate::W<TEST_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `LBCK` reader - Loop Back Mode (read/write)"]
+pub type LBCK_R = crate::BitReader<LBCKSELECT_A>;
 #[doc = "Loop Back Mode (read/write)\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum LBCK_A {
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum LBCKSELECT_A {
     #[doc = "0: Reset value. Loop Back mode is disabled."]
     DISABLED = 0,
     #[doc = "1: Loop Back mode is enabled (see Section 1.5.1.9)."]
     ENABLED = 1,
 }
-impl From<LBCK_A> for bool {
+impl From<LBCKSELECT_A> for bool {
     #[inline(always)]
-    fn from(variant: LBCK_A) -> Self {
+    fn from(variant: LBCKSELECT_A) -> Self {
         variant as u8 != 0
     }
 }
-#[doc = "Field `LBCK` reader - Loop Back Mode (read/write)"]
-pub struct LBCK_R(crate::FieldReader<bool, LBCK_A>);
 impl LBCK_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        LBCK_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> LBCK_A {
+    pub fn variant(&self) -> LBCKSELECT_A {
         match self.bits {
-            false => LBCK_A::DISABLED,
-            true => LBCK_A::ENABLED,
+            false => LBCKSELECT_A::DISABLED,
+            true => LBCKSELECT_A::ENABLED,
         }
     }
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == LBCK_A::DISABLED
+        *self == LBCKSELECT_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == LBCK_A::ENABLED
-    }
-}
-impl core::ops::Deref for LBCK_R {
-    type Target = crate::FieldReader<bool, LBCK_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == LBCKSELECT_A::ENABLED
     }
 }
 #[doc = "Field `LBCK` writer - Loop Back Mode (read/write)"]
-pub struct LBCK_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> LBCK_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: LBCK_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type LBCK_W<'a, const O: u8> = crate::BitWriter<'a, u32, TEST_SPEC, LBCKSELECT_A, O>;
+impl<'a, const O: u8> LBCK_W<'a, O> {
     #[doc = "Reset value. Loop Back mode is disabled."]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
-        self.variant(LBCK_A::DISABLED)
+        self.variant(LBCKSELECT_A::DISABLED)
     }
     #[doc = "Loop Back mode is enabled (see Section 1.5.1.9)."]
     #[inline(always)]
     pub fn enabled(self) -> &'a mut W {
-        self.variant(LBCK_A::ENABLED)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
-        self.w
+        self.variant(LBCKSELECT_A::ENABLED)
     }
 }
+#[doc = "Field `TX` reader - Control of Transmit Pin (read/write)"]
+pub type TX_R = crate::FieldReader<u8, TXSELECT_A>;
 #[doc = "Control of Transmit Pin (read/write)\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum TX_A {
+pub enum TXSELECT_A {
     #[doc = "0: Reset value, CANTX controlled by the CAN Core, updated at the end of the CAN bit time."]
     RESET = 0,
     #[doc = "1: Sample Point can be monitored at pin CANTX."]
@@ -130,171 +99,92 @@ pub enum TX_A {
     #[doc = "3: Recessive ('1') at pin CANTX."]
     RECESSIVE = 3,
 }
-impl From<TX_A> for u8 {
+impl From<TXSELECT_A> for u8 {
     #[inline(always)]
-    fn from(variant: TX_A) -> Self {
+    fn from(variant: TXSELECT_A) -> Self {
         variant as _
     }
 }
-#[doc = "Field `TX` reader - Control of Transmit Pin (read/write)"]
-pub struct TX_R(crate::FieldReader<u8, TX_A>);
 impl TX_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        TX_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> TX_A {
+    pub fn variant(&self) -> TXSELECT_A {
         match self.bits {
-            0 => TX_A::RESET,
-            1 => TX_A::SAMPLE_POINT_MONITORING,
-            2 => TX_A::DOMINANT,
-            3 => TX_A::RECESSIVE,
+            0 => TXSELECT_A::RESET,
+            1 => TXSELECT_A::SAMPLE_POINT_MONITORING,
+            2 => TXSELECT_A::DOMINANT,
+            3 => TXSELECT_A::RECESSIVE,
             _ => unreachable!(),
         }
     }
     #[doc = "Checks if the value of the field is `RESET`"]
     #[inline(always)]
     pub fn is_reset(&self) -> bool {
-        **self == TX_A::RESET
+        *self == TXSELECT_A::RESET
     }
     #[doc = "Checks if the value of the field is `SAMPLE_POINT_MONITORING`"]
     #[inline(always)]
     pub fn is_sample_point_monitoring(&self) -> bool {
-        **self == TX_A::SAMPLE_POINT_MONITORING
+        *self == TXSELECT_A::SAMPLE_POINT_MONITORING
     }
     #[doc = "Checks if the value of the field is `DOMINANT`"]
     #[inline(always)]
     pub fn is_dominant(&self) -> bool {
-        **self == TX_A::DOMINANT
+        *self == TXSELECT_A::DOMINANT
     }
     #[doc = "Checks if the value of the field is `RECESSIVE`"]
     #[inline(always)]
     pub fn is_recessive(&self) -> bool {
-        **self == TX_A::RECESSIVE
-    }
-}
-impl core::ops::Deref for TX_R {
-    type Target = crate::FieldReader<u8, TX_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == TXSELECT_A::RECESSIVE
     }
 }
 #[doc = "Field `TX` writer - Control of Transmit Pin (read/write)"]
-pub struct TX_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TX_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: TX_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
+pub type TX_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, TEST_SPEC, u8, TXSELECT_A, 2, O>;
+impl<'a, const O: u8> TX_W<'a, O> {
     #[doc = "Reset value, CANTX controlled by the CAN Core, updated at the end of the CAN bit time."]
     #[inline(always)]
     pub fn reset(self) -> &'a mut W {
-        self.variant(TX_A::RESET)
+        self.variant(TXSELECT_A::RESET)
     }
     #[doc = "Sample Point can be monitored at pin CANTX."]
     #[inline(always)]
     pub fn sample_point_monitoring(self) -> &'a mut W {
-        self.variant(TX_A::SAMPLE_POINT_MONITORING)
+        self.variant(TXSELECT_A::SAMPLE_POINT_MONITORING)
     }
     #[doc = "Dominant ('0') level at pin CANTX."]
     #[inline(always)]
     pub fn dominant(self) -> &'a mut W {
-        self.variant(TX_A::DOMINANT)
+        self.variant(TXSELECT_A::DOMINANT)
     }
     #[doc = "Recessive ('1') at pin CANTX."]
     #[inline(always)]
     pub fn recessive(self) -> &'a mut W {
-        self.variant(TX_A::RECESSIVE)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 5)) | ((value as u32 & 0x03) << 5);
-        self.w
+        self.variant(TXSELECT_A::RECESSIVE)
     }
 }
 #[doc = "Field `RX` reader - Receive Pin (read-only)"]
-pub struct RX_R(crate::FieldReader<bool, bool>);
-impl RX_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        RX_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for RX_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type RX_R = crate::BitReader<bool>;
 #[doc = "Field `RX` writer - Receive Pin (read-only)"]
-pub struct RX_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RX_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | ((value as u32 & 0x01) << 7);
-        self.w
-    }
-}
+pub type RX_W<'a, const O: u8> = crate::BitWriter<'a, u32, TEST_SPEC, bool, O>;
 #[doc = "Field `TDCV` reader - Transceiver Delay Compensation Value (read-only)"]
-pub struct TDCV_R(crate::FieldReader<u8, u8>);
-impl TDCV_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        TDCV_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TDCV_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TDCV_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `TDCV` writer - Transceiver Delay Compensation Value (read-only)"]
-pub struct TDCV_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TDCV_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x3f << 8)) | ((value as u32 & 0x3f) << 8);
-        self.w
-    }
-}
+pub type TDCV_W<'a, const O: u8> = crate::FieldWriter<'a, u32, TEST_SPEC, u8, u8, 6, O>;
 impl R {
     #[doc = "Bit 4 - Loop Back Mode (read/write)"]
     #[inline(always)]
     pub fn lbck(&self) -> LBCK_R {
-        LBCK_R::new(((self.bits >> 4) & 0x01) != 0)
+        LBCK_R::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bits 5:6 - Control of Transmit Pin (read/write)"]
     #[inline(always)]
     pub fn tx(&self) -> TX_R {
-        TX_R::new(((self.bits >> 5) & 0x03) as u8)
+        TX_R::new(((self.bits >> 5) & 3) as u8)
     }
     #[doc = "Bit 7 - Receive Pin (read-only)"]
     #[inline(always)]
     pub fn rx(&self) -> RX_R {
-        RX_R::new(((self.bits >> 7) & 0x01) != 0)
+        RX_R::new(((self.bits >> 7) & 1) != 0)
     }
     #[doc = "Bits 8:13 - Transceiver Delay Compensation Value (read-only)"]
     #[inline(always)]
@@ -305,23 +195,27 @@ impl R {
 impl W {
     #[doc = "Bit 4 - Loop Back Mode (read/write)"]
     #[inline(always)]
-    pub fn lbck(&mut self) -> LBCK_W {
-        LBCK_W { w: self }
+    #[must_use]
+    pub fn lbck(&mut self) -> LBCK_W<4> {
+        LBCK_W::new(self)
     }
     #[doc = "Bits 5:6 - Control of Transmit Pin (read/write)"]
     #[inline(always)]
-    pub fn tx(&mut self) -> TX_W {
-        TX_W { w: self }
+    #[must_use]
+    pub fn tx(&mut self) -> TX_W<5> {
+        TX_W::new(self)
     }
     #[doc = "Bit 7 - Receive Pin (read-only)"]
     #[inline(always)]
-    pub fn rx(&mut self) -> RX_W {
-        RX_W { w: self }
+    #[must_use]
+    pub fn rx(&mut self) -> RX_W<7> {
+        RX_W::new(self)
     }
     #[doc = "Bits 8:13 - Transceiver Delay Compensation Value (read-only)"]
     #[inline(always)]
-    pub fn tdcv(&mut self) -> TDCV_W {
-        TDCV_W { w: self }
+    #[must_use]
+    pub fn tdcv(&mut self) -> TDCV_W<8> {
+        TDCV_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -342,11 +236,10 @@ impl crate::Readable for TEST_SPEC {
 #[doc = "`write(|w| ..)` method takes [test::W](W) writer structure"]
 impl crate::Writable for TEST_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets TEST to value 0"]
 impl crate::Resettable for TEST_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

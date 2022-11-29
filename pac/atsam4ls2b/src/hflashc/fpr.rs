@@ -14,33 +14,9 @@ impl From<crate::R<FPR_SPEC>> for R {
     }
 }
 #[doc = "Field `FSZ` reader - Flash Size"]
-pub struct FSZ_R(crate::FieldReader<u8, u8>);
-impl FSZ_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        FSZ_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for FSZ_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type FSZ_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `PSZ` reader - Page Size"]
-pub struct PSZ_R(crate::FieldReader<u8, u8>);
-impl PSZ_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        PSZ_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for PSZ_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type PSZ_R = crate::FieldReader<u8, u8>;
 impl R {
     #[doc = "Bits 0:3 - Flash Size"]
     #[inline(always)]
@@ -50,7 +26,7 @@ impl R {
     #[doc = "Bits 8:10 - Page Size"]
     #[inline(always)]
     pub fn psz(&self) -> PSZ_R {
-        PSZ_R::new(((self.bits >> 8) & 0x07) as u8)
+        PSZ_R::new(((self.bits >> 8) & 7) as u8)
     }
 }
 #[doc = "Flash Controller Parameter Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [fpr](index.html) module"]
@@ -64,8 +40,5 @@ impl crate::Readable for FPR_SPEC {
 }
 #[doc = "`reset()` method sets FPR to value 0"]
 impl crate::Resettable for FPR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

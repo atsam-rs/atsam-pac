@@ -54,11 +54,10 @@ impl crate::Readable for BGCR_SPEC {
 #[doc = "`write(|w| ..)` method takes [bgcr::W](W) writer structure"]
 impl crate::Writable for BGCR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets BGCR to value 0"]
 impl crate::Resettable for BGCR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

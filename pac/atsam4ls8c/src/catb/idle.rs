@@ -35,57 +35,13 @@ impl From<crate::W<IDLE_SPEC>> for W {
     }
 }
 #[doc = "Field `FIDLE` reader - Fractional Sensor Idle"]
-pub struct FIDLE_R(crate::FieldReader<u16, u16>);
-impl FIDLE_R {
-    pub(crate) fn new(bits: u16) -> Self {
-        FIDLE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for FIDLE_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type FIDLE_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `FIDLE` writer - Fractional Sensor Idle"]
-pub struct FIDLE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> FIDLE_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x0fff) | (value as u32 & 0x0fff);
-        self.w
-    }
-}
+pub type FIDLE_W<'a, const O: u8> = crate::FieldWriter<'a, u32, IDLE_SPEC, u16, u16, 12, O>;
 #[doc = "Field `RIDLE` reader - Integer Sensor Idle"]
-pub struct RIDLE_R(crate::FieldReader<u16, u16>);
-impl RIDLE_R {
-    pub(crate) fn new(bits: u16) -> Self {
-        RIDLE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for RIDLE_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type RIDLE_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `RIDLE` writer - Integer Sensor Idle"]
-pub struct RIDLE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RIDLE_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0xffff << 12)) | ((value as u32 & 0xffff) << 12);
-        self.w
-    }
-}
+pub type RIDLE_W<'a, const O: u8> = crate::FieldWriter<'a, u32, IDLE_SPEC, u16, u16, 16, O>;
 impl R {
     #[doc = "Bits 0:11 - Fractional Sensor Idle"]
     #[inline(always)]
@@ -101,13 +57,15 @@ impl R {
 impl W {
     #[doc = "Bits 0:11 - Fractional Sensor Idle"]
     #[inline(always)]
-    pub fn fidle(&mut self) -> FIDLE_W {
-        FIDLE_W { w: self }
+    #[must_use]
+    pub fn fidle(&mut self) -> FIDLE_W<0> {
+        FIDLE_W::new(self)
     }
     #[doc = "Bits 12:27 - Integer Sensor Idle"]
     #[inline(always)]
-    pub fn ridle(&mut self) -> RIDLE_W {
-        RIDLE_W { w: self }
+    #[must_use]
+    pub fn ridle(&mut self) -> RIDLE_W<12> {
+        RIDLE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -128,11 +86,10 @@ impl crate::Readable for IDLE_SPEC {
 #[doc = "`write(|w| ..)` method takes [idle::W](W) writer structure"]
 impl crate::Writable for IDLE_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets IDLE to value 0"]
 impl crate::Resettable for IDLE_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

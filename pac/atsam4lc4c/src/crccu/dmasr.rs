@@ -14,24 +14,12 @@ impl From<crate::R<DMASR_SPEC>> for R {
     }
 }
 #[doc = "Field `DMASR` reader - DMA Channel Status"]
-pub struct DMASR_R(crate::FieldReader<bool, bool>);
-impl DMASR_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        DMASR_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DMASR_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DMASR_R = crate::BitReader<bool>;
 impl R {
     #[doc = "Bit 0 - DMA Channel Status"]
     #[inline(always)]
     pub fn dmasr(&self) -> DMASR_R {
-        DMASR_R::new((self.bits & 0x01) != 0)
+        DMASR_R::new((self.bits & 1) != 0)
     }
 }
 #[doc = "DMA Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [dmasr](index.html) module"]
@@ -45,8 +33,5 @@ impl crate::Readable for DMASR_SPEC {
 }
 #[doc = "`reset()` method sets DMASR to value 0"]
 impl crate::Resettable for DMASR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

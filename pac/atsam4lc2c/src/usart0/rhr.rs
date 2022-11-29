@@ -14,63 +14,41 @@ impl From<crate::R<RHR_SPEC>> for R {
     }
 }
 #[doc = "Field `RXCHR` reader - Received Character"]
-pub struct RXCHR_R(crate::FieldReader<u16, u16>);
-impl RXCHR_R {
-    pub(crate) fn new(bits: u16) -> Self {
-        RXCHR_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for RXCHR_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type RXCHR_R = crate::FieldReader<u16, u16>;
+#[doc = "Field `RXSYNH` reader - Received Sync"]
+pub type RXSYNH_R = crate::BitReader<RXSYNHSELECT_A>;
 #[doc = "Received Sync\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum RXSYNH_A {
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum RXSYNHSELECT_A {
     #[doc = "0: Last character received is a Data"]
     _0 = 0,
     #[doc = "1: Last character received is a Command"]
     _1 = 1,
 }
-impl From<RXSYNH_A> for bool {
+impl From<RXSYNHSELECT_A> for bool {
     #[inline(always)]
-    fn from(variant: RXSYNH_A) -> Self {
+    fn from(variant: RXSYNHSELECT_A) -> Self {
         variant as u8 != 0
     }
 }
-#[doc = "Field `RXSYNH` reader - Received Sync"]
-pub struct RXSYNH_R(crate::FieldReader<bool, RXSYNH_A>);
 impl RXSYNH_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        RXSYNH_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> RXSYNH_A {
+    pub fn variant(&self) -> RXSYNHSELECT_A {
         match self.bits {
-            false => RXSYNH_A::_0,
-            true => RXSYNH_A::_1,
+            false => RXSYNHSELECT_A::_0,
+            true => RXSYNHSELECT_A::_1,
         }
     }
     #[doc = "Checks if the value of the field is `_0`"]
     #[inline(always)]
     pub fn is_0(&self) -> bool {
-        **self == RXSYNH_A::_0
+        *self == RXSYNHSELECT_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
     #[inline(always)]
     pub fn is_1(&self) -> bool {
-        **self == RXSYNH_A::_1
-    }
-}
-impl core::ops::Deref for RXSYNH_R {
-    type Target = crate::FieldReader<bool, RXSYNH_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == RXSYNHSELECT_A::_1
     }
 }
 impl R {
@@ -82,7 +60,7 @@ impl R {
     #[doc = "Bit 15 - Received Sync"]
     #[inline(always)]
     pub fn rxsynh(&self) -> RXSYNH_R {
-        RXSYNH_R::new(((self.bits >> 15) & 0x01) != 0)
+        RXSYNH_R::new(((self.bits >> 15) & 1) != 0)
     }
 }
 #[doc = "Receiver Holding Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [rhr](index.html) module"]
@@ -96,8 +74,5 @@ impl crate::Readable for RHR_SPEC {
 }
 #[doc = "`reset()` method sets RHR to value 0"]
 impl crate::Resettable for RHR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

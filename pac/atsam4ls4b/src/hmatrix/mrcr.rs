@@ -34,1496 +34,984 @@ impl From<crate::W<MRCR_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `RCB0` reader - Remap Command bit for Master 0"]
+pub type RCB0_R = crate::BitReader<RCB0SELECT_A>;
 #[doc = "Remap Command bit for Master 0\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum RCB0_A {
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum RCB0SELECT_A {
     #[doc = "0: Disable remapped address decoding for master"]
     _0 = 0,
     #[doc = "1: Enable remapped address decoding for master"]
     _1 = 1,
 }
-impl From<RCB0_A> for bool {
+impl From<RCB0SELECT_A> for bool {
     #[inline(always)]
-    fn from(variant: RCB0_A) -> Self {
+    fn from(variant: RCB0SELECT_A) -> Self {
         variant as u8 != 0
     }
 }
-#[doc = "Field `RCB0` reader - Remap Command bit for Master 0"]
-pub struct RCB0_R(crate::FieldReader<bool, RCB0_A>);
 impl RCB0_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        RCB0_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> RCB0_A {
+    pub fn variant(&self) -> RCB0SELECT_A {
         match self.bits {
-            false => RCB0_A::_0,
-            true => RCB0_A::_1,
+            false => RCB0SELECT_A::_0,
+            true => RCB0SELECT_A::_1,
         }
     }
     #[doc = "Checks if the value of the field is `_0`"]
     #[inline(always)]
     pub fn is_0(&self) -> bool {
-        **self == RCB0_A::_0
+        *self == RCB0SELECT_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
     #[inline(always)]
     pub fn is_1(&self) -> bool {
-        **self == RCB0_A::_1
-    }
-}
-impl core::ops::Deref for RCB0_R {
-    type Target = crate::FieldReader<bool, RCB0_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == RCB0SELECT_A::_1
     }
 }
 #[doc = "Field `RCB0` writer - Remap Command bit for Master 0"]
-pub struct RCB0_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RCB0_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: RCB0_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type RCB0_W<'a, const O: u8> = crate::BitWriter<'a, u32, MRCR_SPEC, RCB0SELECT_A, O>;
+impl<'a, const O: u8> RCB0_W<'a, O> {
     #[doc = "Disable remapped address decoding for master"]
     #[inline(always)]
     pub fn _0(self) -> &'a mut W {
-        self.variant(RCB0_A::_0)
+        self.variant(RCB0SELECT_A::_0)
     }
     #[doc = "Enable remapped address decoding for master"]
     #[inline(always)]
     pub fn _1(self) -> &'a mut W {
-        self.variant(RCB0_A::_1)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
-#[doc = "Remap Command bit for Master 1\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum RCB1_A {
-    #[doc = "0: Disable remapped address decoding for master"]
-    _0 = 0,
-    #[doc = "1: Enable remapped address decoding for master"]
-    _1 = 1,
-}
-impl From<RCB1_A> for bool {
-    #[inline(always)]
-    fn from(variant: RCB1_A) -> Self {
-        variant as u8 != 0
+        self.variant(RCB0SELECT_A::_1)
     }
 }
 #[doc = "Field `RCB1` reader - Remap Command bit for Master 1"]
-pub struct RCB1_R(crate::FieldReader<bool, RCB1_A>);
-impl RCB1_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        RCB1_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+pub type RCB1_R = crate::BitReader<RCB1SELECT_A>;
+#[doc = "Remap Command bit for Master 1\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum RCB1SELECT_A {
+    #[doc = "0: Disable remapped address decoding for master"]
+    _0 = 0,
+    #[doc = "1: Enable remapped address decoding for master"]
+    _1 = 1,
+}
+impl From<RCB1SELECT_A> for bool {
     #[inline(always)]
-    pub fn variant(&self) -> RCB1_A {
+    fn from(variant: RCB1SELECT_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl RCB1_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> RCB1SELECT_A {
         match self.bits {
-            false => RCB1_A::_0,
-            true => RCB1_A::_1,
+            false => RCB1SELECT_A::_0,
+            true => RCB1SELECT_A::_1,
         }
     }
     #[doc = "Checks if the value of the field is `_0`"]
     #[inline(always)]
     pub fn is_0(&self) -> bool {
-        **self == RCB1_A::_0
+        *self == RCB1SELECT_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
     #[inline(always)]
     pub fn is_1(&self) -> bool {
-        **self == RCB1_A::_1
-    }
-}
-impl core::ops::Deref for RCB1_R {
-    type Target = crate::FieldReader<bool, RCB1_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == RCB1SELECT_A::_1
     }
 }
 #[doc = "Field `RCB1` writer - Remap Command bit for Master 1"]
-pub struct RCB1_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RCB1_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: RCB1_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type RCB1_W<'a, const O: u8> = crate::BitWriter<'a, u32, MRCR_SPEC, RCB1SELECT_A, O>;
+impl<'a, const O: u8> RCB1_W<'a, O> {
     #[doc = "Disable remapped address decoding for master"]
     #[inline(always)]
     pub fn _0(self) -> &'a mut W {
-        self.variant(RCB1_A::_0)
+        self.variant(RCB1SELECT_A::_0)
     }
     #[doc = "Enable remapped address decoding for master"]
     #[inline(always)]
     pub fn _1(self) -> &'a mut W {
-        self.variant(RCB1_A::_1)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
-}
-#[doc = "Remap Command bit for Master 2\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum RCB2_A {
-    #[doc = "0: Disable remapped address decoding for master"]
-    _0 = 0,
-    #[doc = "1: Enable remapped address decoding for master"]
-    _1 = 1,
-}
-impl From<RCB2_A> for bool {
-    #[inline(always)]
-    fn from(variant: RCB2_A) -> Self {
-        variant as u8 != 0
+        self.variant(RCB1SELECT_A::_1)
     }
 }
 #[doc = "Field `RCB2` reader - Remap Command bit for Master 2"]
-pub struct RCB2_R(crate::FieldReader<bool, RCB2_A>);
-impl RCB2_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        RCB2_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+pub type RCB2_R = crate::BitReader<RCB2SELECT_A>;
+#[doc = "Remap Command bit for Master 2\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum RCB2SELECT_A {
+    #[doc = "0: Disable remapped address decoding for master"]
+    _0 = 0,
+    #[doc = "1: Enable remapped address decoding for master"]
+    _1 = 1,
+}
+impl From<RCB2SELECT_A> for bool {
     #[inline(always)]
-    pub fn variant(&self) -> RCB2_A {
+    fn from(variant: RCB2SELECT_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl RCB2_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> RCB2SELECT_A {
         match self.bits {
-            false => RCB2_A::_0,
-            true => RCB2_A::_1,
+            false => RCB2SELECT_A::_0,
+            true => RCB2SELECT_A::_1,
         }
     }
     #[doc = "Checks if the value of the field is `_0`"]
     #[inline(always)]
     pub fn is_0(&self) -> bool {
-        **self == RCB2_A::_0
+        *self == RCB2SELECT_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
     #[inline(always)]
     pub fn is_1(&self) -> bool {
-        **self == RCB2_A::_1
-    }
-}
-impl core::ops::Deref for RCB2_R {
-    type Target = crate::FieldReader<bool, RCB2_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == RCB2SELECT_A::_1
     }
 }
 #[doc = "Field `RCB2` writer - Remap Command bit for Master 2"]
-pub struct RCB2_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RCB2_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: RCB2_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type RCB2_W<'a, const O: u8> = crate::BitWriter<'a, u32, MRCR_SPEC, RCB2SELECT_A, O>;
+impl<'a, const O: u8> RCB2_W<'a, O> {
     #[doc = "Disable remapped address decoding for master"]
     #[inline(always)]
     pub fn _0(self) -> &'a mut W {
-        self.variant(RCB2_A::_0)
+        self.variant(RCB2SELECT_A::_0)
     }
     #[doc = "Enable remapped address decoding for master"]
     #[inline(always)]
     pub fn _1(self) -> &'a mut W {
-        self.variant(RCB2_A::_1)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
-    }
-}
-#[doc = "Remap Command bit for Master 3\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum RCB3_A {
-    #[doc = "0: Disable remapped address decoding for master"]
-    _0 = 0,
-    #[doc = "1: Enable remapped address decoding for master"]
-    _1 = 1,
-}
-impl From<RCB3_A> for bool {
-    #[inline(always)]
-    fn from(variant: RCB3_A) -> Self {
-        variant as u8 != 0
+        self.variant(RCB2SELECT_A::_1)
     }
 }
 #[doc = "Field `RCB3` reader - Remap Command bit for Master 3"]
-pub struct RCB3_R(crate::FieldReader<bool, RCB3_A>);
-impl RCB3_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        RCB3_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+pub type RCB3_R = crate::BitReader<RCB3SELECT_A>;
+#[doc = "Remap Command bit for Master 3\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum RCB3SELECT_A {
+    #[doc = "0: Disable remapped address decoding for master"]
+    _0 = 0,
+    #[doc = "1: Enable remapped address decoding for master"]
+    _1 = 1,
+}
+impl From<RCB3SELECT_A> for bool {
     #[inline(always)]
-    pub fn variant(&self) -> RCB3_A {
+    fn from(variant: RCB3SELECT_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl RCB3_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> RCB3SELECT_A {
         match self.bits {
-            false => RCB3_A::_0,
-            true => RCB3_A::_1,
+            false => RCB3SELECT_A::_0,
+            true => RCB3SELECT_A::_1,
         }
     }
     #[doc = "Checks if the value of the field is `_0`"]
     #[inline(always)]
     pub fn is_0(&self) -> bool {
-        **self == RCB3_A::_0
+        *self == RCB3SELECT_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
     #[inline(always)]
     pub fn is_1(&self) -> bool {
-        **self == RCB3_A::_1
-    }
-}
-impl core::ops::Deref for RCB3_R {
-    type Target = crate::FieldReader<bool, RCB3_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == RCB3SELECT_A::_1
     }
 }
 #[doc = "Field `RCB3` writer - Remap Command bit for Master 3"]
-pub struct RCB3_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RCB3_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: RCB3_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type RCB3_W<'a, const O: u8> = crate::BitWriter<'a, u32, MRCR_SPEC, RCB3SELECT_A, O>;
+impl<'a, const O: u8> RCB3_W<'a, O> {
     #[doc = "Disable remapped address decoding for master"]
     #[inline(always)]
     pub fn _0(self) -> &'a mut W {
-        self.variant(RCB3_A::_0)
+        self.variant(RCB3SELECT_A::_0)
     }
     #[doc = "Enable remapped address decoding for master"]
     #[inline(always)]
     pub fn _1(self) -> &'a mut W {
-        self.variant(RCB3_A::_1)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
-        self.w
-    }
-}
-#[doc = "Remap Command bit for Master 4\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum RCB4_A {
-    #[doc = "0: Disable remapped address decoding for master"]
-    _0 = 0,
-    #[doc = "1: Enable remapped address decoding for master"]
-    _1 = 1,
-}
-impl From<RCB4_A> for bool {
-    #[inline(always)]
-    fn from(variant: RCB4_A) -> Self {
-        variant as u8 != 0
+        self.variant(RCB3SELECT_A::_1)
     }
 }
 #[doc = "Field `RCB4` reader - Remap Command bit for Master 4"]
-pub struct RCB4_R(crate::FieldReader<bool, RCB4_A>);
-impl RCB4_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        RCB4_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+pub type RCB4_R = crate::BitReader<RCB4SELECT_A>;
+#[doc = "Remap Command bit for Master 4\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum RCB4SELECT_A {
+    #[doc = "0: Disable remapped address decoding for master"]
+    _0 = 0,
+    #[doc = "1: Enable remapped address decoding for master"]
+    _1 = 1,
+}
+impl From<RCB4SELECT_A> for bool {
     #[inline(always)]
-    pub fn variant(&self) -> RCB4_A {
+    fn from(variant: RCB4SELECT_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl RCB4_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> RCB4SELECT_A {
         match self.bits {
-            false => RCB4_A::_0,
-            true => RCB4_A::_1,
+            false => RCB4SELECT_A::_0,
+            true => RCB4SELECT_A::_1,
         }
     }
     #[doc = "Checks if the value of the field is `_0`"]
     #[inline(always)]
     pub fn is_0(&self) -> bool {
-        **self == RCB4_A::_0
+        *self == RCB4SELECT_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
     #[inline(always)]
     pub fn is_1(&self) -> bool {
-        **self == RCB4_A::_1
-    }
-}
-impl core::ops::Deref for RCB4_R {
-    type Target = crate::FieldReader<bool, RCB4_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == RCB4SELECT_A::_1
     }
 }
 #[doc = "Field `RCB4` writer - Remap Command bit for Master 4"]
-pub struct RCB4_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RCB4_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: RCB4_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type RCB4_W<'a, const O: u8> = crate::BitWriter<'a, u32, MRCR_SPEC, RCB4SELECT_A, O>;
+impl<'a, const O: u8> RCB4_W<'a, O> {
     #[doc = "Disable remapped address decoding for master"]
     #[inline(always)]
     pub fn _0(self) -> &'a mut W {
-        self.variant(RCB4_A::_0)
+        self.variant(RCB4SELECT_A::_0)
     }
     #[doc = "Enable remapped address decoding for master"]
     #[inline(always)]
     pub fn _1(self) -> &'a mut W {
-        self.variant(RCB4_A::_1)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
-        self.w
-    }
-}
-#[doc = "Remap Command bit for Master 5\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum RCB5_A {
-    #[doc = "0: Disable remapped address decoding for master"]
-    _0 = 0,
-    #[doc = "1: Enable remapped address decoding for master"]
-    _1 = 1,
-}
-impl From<RCB5_A> for bool {
-    #[inline(always)]
-    fn from(variant: RCB5_A) -> Self {
-        variant as u8 != 0
+        self.variant(RCB4SELECT_A::_1)
     }
 }
 #[doc = "Field `RCB5` reader - Remap Command bit for Master 5"]
-pub struct RCB5_R(crate::FieldReader<bool, RCB5_A>);
-impl RCB5_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        RCB5_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+pub type RCB5_R = crate::BitReader<RCB5SELECT_A>;
+#[doc = "Remap Command bit for Master 5\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum RCB5SELECT_A {
+    #[doc = "0: Disable remapped address decoding for master"]
+    _0 = 0,
+    #[doc = "1: Enable remapped address decoding for master"]
+    _1 = 1,
+}
+impl From<RCB5SELECT_A> for bool {
     #[inline(always)]
-    pub fn variant(&self) -> RCB5_A {
+    fn from(variant: RCB5SELECT_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl RCB5_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> RCB5SELECT_A {
         match self.bits {
-            false => RCB5_A::_0,
-            true => RCB5_A::_1,
+            false => RCB5SELECT_A::_0,
+            true => RCB5SELECT_A::_1,
         }
     }
     #[doc = "Checks if the value of the field is `_0`"]
     #[inline(always)]
     pub fn is_0(&self) -> bool {
-        **self == RCB5_A::_0
+        *self == RCB5SELECT_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
     #[inline(always)]
     pub fn is_1(&self) -> bool {
-        **self == RCB5_A::_1
-    }
-}
-impl core::ops::Deref for RCB5_R {
-    type Target = crate::FieldReader<bool, RCB5_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == RCB5SELECT_A::_1
     }
 }
 #[doc = "Field `RCB5` writer - Remap Command bit for Master 5"]
-pub struct RCB5_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RCB5_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: RCB5_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type RCB5_W<'a, const O: u8> = crate::BitWriter<'a, u32, MRCR_SPEC, RCB5SELECT_A, O>;
+impl<'a, const O: u8> RCB5_W<'a, O> {
     #[doc = "Disable remapped address decoding for master"]
     #[inline(always)]
     pub fn _0(self) -> &'a mut W {
-        self.variant(RCB5_A::_0)
+        self.variant(RCB5SELECT_A::_0)
     }
     #[doc = "Enable remapped address decoding for master"]
     #[inline(always)]
     pub fn _1(self) -> &'a mut W {
-        self.variant(RCB5_A::_1)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
-        self.w
-    }
-}
-#[doc = "Remap Command bit for Master 6\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum RCB6_A {
-    #[doc = "0: Disable remapped address decoding for master"]
-    _0 = 0,
-    #[doc = "1: Enable remapped address decoding for master"]
-    _1 = 1,
-}
-impl From<RCB6_A> for bool {
-    #[inline(always)]
-    fn from(variant: RCB6_A) -> Self {
-        variant as u8 != 0
+        self.variant(RCB5SELECT_A::_1)
     }
 }
 #[doc = "Field `RCB6` reader - Remap Command bit for Master 6"]
-pub struct RCB6_R(crate::FieldReader<bool, RCB6_A>);
-impl RCB6_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        RCB6_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+pub type RCB6_R = crate::BitReader<RCB6SELECT_A>;
+#[doc = "Remap Command bit for Master 6\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum RCB6SELECT_A {
+    #[doc = "0: Disable remapped address decoding for master"]
+    _0 = 0,
+    #[doc = "1: Enable remapped address decoding for master"]
+    _1 = 1,
+}
+impl From<RCB6SELECT_A> for bool {
     #[inline(always)]
-    pub fn variant(&self) -> RCB6_A {
+    fn from(variant: RCB6SELECT_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl RCB6_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> RCB6SELECT_A {
         match self.bits {
-            false => RCB6_A::_0,
-            true => RCB6_A::_1,
+            false => RCB6SELECT_A::_0,
+            true => RCB6SELECT_A::_1,
         }
     }
     #[doc = "Checks if the value of the field is `_0`"]
     #[inline(always)]
     pub fn is_0(&self) -> bool {
-        **self == RCB6_A::_0
+        *self == RCB6SELECT_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
     #[inline(always)]
     pub fn is_1(&self) -> bool {
-        **self == RCB6_A::_1
-    }
-}
-impl core::ops::Deref for RCB6_R {
-    type Target = crate::FieldReader<bool, RCB6_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == RCB6SELECT_A::_1
     }
 }
 #[doc = "Field `RCB6` writer - Remap Command bit for Master 6"]
-pub struct RCB6_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RCB6_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: RCB6_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type RCB6_W<'a, const O: u8> = crate::BitWriter<'a, u32, MRCR_SPEC, RCB6SELECT_A, O>;
+impl<'a, const O: u8> RCB6_W<'a, O> {
     #[doc = "Disable remapped address decoding for master"]
     #[inline(always)]
     pub fn _0(self) -> &'a mut W {
-        self.variant(RCB6_A::_0)
+        self.variant(RCB6SELECT_A::_0)
     }
     #[doc = "Enable remapped address decoding for master"]
     #[inline(always)]
     pub fn _1(self) -> &'a mut W {
-        self.variant(RCB6_A::_1)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | ((value as u32 & 0x01) << 6);
-        self.w
-    }
-}
-#[doc = "Remap Command bit for Master 7\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum RCB7_A {
-    #[doc = "0: Disable remapped address decoding for master"]
-    _0 = 0,
-    #[doc = "1: Enable remapped address decoding for master"]
-    _1 = 1,
-}
-impl From<RCB7_A> for bool {
-    #[inline(always)]
-    fn from(variant: RCB7_A) -> Self {
-        variant as u8 != 0
+        self.variant(RCB6SELECT_A::_1)
     }
 }
 #[doc = "Field `RCB7` reader - Remap Command bit for Master 7"]
-pub struct RCB7_R(crate::FieldReader<bool, RCB7_A>);
-impl RCB7_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        RCB7_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+pub type RCB7_R = crate::BitReader<RCB7SELECT_A>;
+#[doc = "Remap Command bit for Master 7\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum RCB7SELECT_A {
+    #[doc = "0: Disable remapped address decoding for master"]
+    _0 = 0,
+    #[doc = "1: Enable remapped address decoding for master"]
+    _1 = 1,
+}
+impl From<RCB7SELECT_A> for bool {
     #[inline(always)]
-    pub fn variant(&self) -> RCB7_A {
+    fn from(variant: RCB7SELECT_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl RCB7_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> RCB7SELECT_A {
         match self.bits {
-            false => RCB7_A::_0,
-            true => RCB7_A::_1,
+            false => RCB7SELECT_A::_0,
+            true => RCB7SELECT_A::_1,
         }
     }
     #[doc = "Checks if the value of the field is `_0`"]
     #[inline(always)]
     pub fn is_0(&self) -> bool {
-        **self == RCB7_A::_0
+        *self == RCB7SELECT_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
     #[inline(always)]
     pub fn is_1(&self) -> bool {
-        **self == RCB7_A::_1
-    }
-}
-impl core::ops::Deref for RCB7_R {
-    type Target = crate::FieldReader<bool, RCB7_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == RCB7SELECT_A::_1
     }
 }
 #[doc = "Field `RCB7` writer - Remap Command bit for Master 7"]
-pub struct RCB7_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RCB7_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: RCB7_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type RCB7_W<'a, const O: u8> = crate::BitWriter<'a, u32, MRCR_SPEC, RCB7SELECT_A, O>;
+impl<'a, const O: u8> RCB7_W<'a, O> {
     #[doc = "Disable remapped address decoding for master"]
     #[inline(always)]
     pub fn _0(self) -> &'a mut W {
-        self.variant(RCB7_A::_0)
+        self.variant(RCB7SELECT_A::_0)
     }
     #[doc = "Enable remapped address decoding for master"]
     #[inline(always)]
     pub fn _1(self) -> &'a mut W {
-        self.variant(RCB7_A::_1)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | ((value as u32 & 0x01) << 7);
-        self.w
-    }
-}
-#[doc = "Remap Command bit for Master 8\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum RCB8_A {
-    #[doc = "0: Disable remapped address decoding for master"]
-    _0 = 0,
-    #[doc = "1: Enable remapped address decoding for master"]
-    _1 = 1,
-}
-impl From<RCB8_A> for bool {
-    #[inline(always)]
-    fn from(variant: RCB8_A) -> Self {
-        variant as u8 != 0
+        self.variant(RCB7SELECT_A::_1)
     }
 }
 #[doc = "Field `RCB8` reader - Remap Command bit for Master 8"]
-pub struct RCB8_R(crate::FieldReader<bool, RCB8_A>);
-impl RCB8_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        RCB8_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+pub type RCB8_R = crate::BitReader<RCB8SELECT_A>;
+#[doc = "Remap Command bit for Master 8\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum RCB8SELECT_A {
+    #[doc = "0: Disable remapped address decoding for master"]
+    _0 = 0,
+    #[doc = "1: Enable remapped address decoding for master"]
+    _1 = 1,
+}
+impl From<RCB8SELECT_A> for bool {
     #[inline(always)]
-    pub fn variant(&self) -> RCB8_A {
+    fn from(variant: RCB8SELECT_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl RCB8_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> RCB8SELECT_A {
         match self.bits {
-            false => RCB8_A::_0,
-            true => RCB8_A::_1,
+            false => RCB8SELECT_A::_0,
+            true => RCB8SELECT_A::_1,
         }
     }
     #[doc = "Checks if the value of the field is `_0`"]
     #[inline(always)]
     pub fn is_0(&self) -> bool {
-        **self == RCB8_A::_0
+        *self == RCB8SELECT_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
     #[inline(always)]
     pub fn is_1(&self) -> bool {
-        **self == RCB8_A::_1
-    }
-}
-impl core::ops::Deref for RCB8_R {
-    type Target = crate::FieldReader<bool, RCB8_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == RCB8SELECT_A::_1
     }
 }
 #[doc = "Field `RCB8` writer - Remap Command bit for Master 8"]
-pub struct RCB8_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RCB8_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: RCB8_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type RCB8_W<'a, const O: u8> = crate::BitWriter<'a, u32, MRCR_SPEC, RCB8SELECT_A, O>;
+impl<'a, const O: u8> RCB8_W<'a, O> {
     #[doc = "Disable remapped address decoding for master"]
     #[inline(always)]
     pub fn _0(self) -> &'a mut W {
-        self.variant(RCB8_A::_0)
+        self.variant(RCB8SELECT_A::_0)
     }
     #[doc = "Enable remapped address decoding for master"]
     #[inline(always)]
     pub fn _1(self) -> &'a mut W {
-        self.variant(RCB8_A::_1)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
-        self.w
-    }
-}
-#[doc = "Remap Command bit for Master 9\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum RCB9_A {
-    #[doc = "0: Disable remapped address decoding for master"]
-    _0 = 0,
-    #[doc = "1: Enable remapped address decoding for master"]
-    _1 = 1,
-}
-impl From<RCB9_A> for bool {
-    #[inline(always)]
-    fn from(variant: RCB9_A) -> Self {
-        variant as u8 != 0
+        self.variant(RCB8SELECT_A::_1)
     }
 }
 #[doc = "Field `RCB9` reader - Remap Command bit for Master 9"]
-pub struct RCB9_R(crate::FieldReader<bool, RCB9_A>);
-impl RCB9_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        RCB9_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+pub type RCB9_R = crate::BitReader<RCB9SELECT_A>;
+#[doc = "Remap Command bit for Master 9\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum RCB9SELECT_A {
+    #[doc = "0: Disable remapped address decoding for master"]
+    _0 = 0,
+    #[doc = "1: Enable remapped address decoding for master"]
+    _1 = 1,
+}
+impl From<RCB9SELECT_A> for bool {
     #[inline(always)]
-    pub fn variant(&self) -> RCB9_A {
+    fn from(variant: RCB9SELECT_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl RCB9_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> RCB9SELECT_A {
         match self.bits {
-            false => RCB9_A::_0,
-            true => RCB9_A::_1,
+            false => RCB9SELECT_A::_0,
+            true => RCB9SELECT_A::_1,
         }
     }
     #[doc = "Checks if the value of the field is `_0`"]
     #[inline(always)]
     pub fn is_0(&self) -> bool {
-        **self == RCB9_A::_0
+        *self == RCB9SELECT_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
     #[inline(always)]
     pub fn is_1(&self) -> bool {
-        **self == RCB9_A::_1
-    }
-}
-impl core::ops::Deref for RCB9_R {
-    type Target = crate::FieldReader<bool, RCB9_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == RCB9SELECT_A::_1
     }
 }
 #[doc = "Field `RCB9` writer - Remap Command bit for Master 9"]
-pub struct RCB9_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RCB9_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: RCB9_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type RCB9_W<'a, const O: u8> = crate::BitWriter<'a, u32, MRCR_SPEC, RCB9SELECT_A, O>;
+impl<'a, const O: u8> RCB9_W<'a, O> {
     #[doc = "Disable remapped address decoding for master"]
     #[inline(always)]
     pub fn _0(self) -> &'a mut W {
-        self.variant(RCB9_A::_0)
+        self.variant(RCB9SELECT_A::_0)
     }
     #[doc = "Enable remapped address decoding for master"]
     #[inline(always)]
     pub fn _1(self) -> &'a mut W {
-        self.variant(RCB9_A::_1)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 9)) | ((value as u32 & 0x01) << 9);
-        self.w
-    }
-}
-#[doc = "Remap Command bit for Master 10\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum RCB10_A {
-    #[doc = "0: Disable remapped address decoding for master"]
-    _0 = 0,
-    #[doc = "1: Enable remapped address decoding for master"]
-    _1 = 1,
-}
-impl From<RCB10_A> for bool {
-    #[inline(always)]
-    fn from(variant: RCB10_A) -> Self {
-        variant as u8 != 0
+        self.variant(RCB9SELECT_A::_1)
     }
 }
 #[doc = "Field `RCB10` reader - Remap Command bit for Master 10"]
-pub struct RCB10_R(crate::FieldReader<bool, RCB10_A>);
-impl RCB10_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        RCB10_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+pub type RCB10_R = crate::BitReader<RCB10SELECT_A>;
+#[doc = "Remap Command bit for Master 10\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum RCB10SELECT_A {
+    #[doc = "0: Disable remapped address decoding for master"]
+    _0 = 0,
+    #[doc = "1: Enable remapped address decoding for master"]
+    _1 = 1,
+}
+impl From<RCB10SELECT_A> for bool {
     #[inline(always)]
-    pub fn variant(&self) -> RCB10_A {
+    fn from(variant: RCB10SELECT_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl RCB10_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> RCB10SELECT_A {
         match self.bits {
-            false => RCB10_A::_0,
-            true => RCB10_A::_1,
+            false => RCB10SELECT_A::_0,
+            true => RCB10SELECT_A::_1,
         }
     }
     #[doc = "Checks if the value of the field is `_0`"]
     #[inline(always)]
     pub fn is_0(&self) -> bool {
-        **self == RCB10_A::_0
+        *self == RCB10SELECT_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
     #[inline(always)]
     pub fn is_1(&self) -> bool {
-        **self == RCB10_A::_1
-    }
-}
-impl core::ops::Deref for RCB10_R {
-    type Target = crate::FieldReader<bool, RCB10_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == RCB10SELECT_A::_1
     }
 }
 #[doc = "Field `RCB10` writer - Remap Command bit for Master 10"]
-pub struct RCB10_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RCB10_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: RCB10_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type RCB10_W<'a, const O: u8> = crate::BitWriter<'a, u32, MRCR_SPEC, RCB10SELECT_A, O>;
+impl<'a, const O: u8> RCB10_W<'a, O> {
     #[doc = "Disable remapped address decoding for master"]
     #[inline(always)]
     pub fn _0(self) -> &'a mut W {
-        self.variant(RCB10_A::_0)
+        self.variant(RCB10SELECT_A::_0)
     }
     #[doc = "Enable remapped address decoding for master"]
     #[inline(always)]
     pub fn _1(self) -> &'a mut W {
-        self.variant(RCB10_A::_1)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 10)) | ((value as u32 & 0x01) << 10);
-        self.w
-    }
-}
-#[doc = "Remap Command bit for Master 11\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum RCB11_A {
-    #[doc = "0: Disable remapped address decoding for master"]
-    _0 = 0,
-    #[doc = "1: Enable remapped address decoding for master"]
-    _1 = 1,
-}
-impl From<RCB11_A> for bool {
-    #[inline(always)]
-    fn from(variant: RCB11_A) -> Self {
-        variant as u8 != 0
+        self.variant(RCB10SELECT_A::_1)
     }
 }
 #[doc = "Field `RCB11` reader - Remap Command bit for Master 11"]
-pub struct RCB11_R(crate::FieldReader<bool, RCB11_A>);
-impl RCB11_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        RCB11_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+pub type RCB11_R = crate::BitReader<RCB11SELECT_A>;
+#[doc = "Remap Command bit for Master 11\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum RCB11SELECT_A {
+    #[doc = "0: Disable remapped address decoding for master"]
+    _0 = 0,
+    #[doc = "1: Enable remapped address decoding for master"]
+    _1 = 1,
+}
+impl From<RCB11SELECT_A> for bool {
     #[inline(always)]
-    pub fn variant(&self) -> RCB11_A {
+    fn from(variant: RCB11SELECT_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl RCB11_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> RCB11SELECT_A {
         match self.bits {
-            false => RCB11_A::_0,
-            true => RCB11_A::_1,
+            false => RCB11SELECT_A::_0,
+            true => RCB11SELECT_A::_1,
         }
     }
     #[doc = "Checks if the value of the field is `_0`"]
     #[inline(always)]
     pub fn is_0(&self) -> bool {
-        **self == RCB11_A::_0
+        *self == RCB11SELECT_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
     #[inline(always)]
     pub fn is_1(&self) -> bool {
-        **self == RCB11_A::_1
-    }
-}
-impl core::ops::Deref for RCB11_R {
-    type Target = crate::FieldReader<bool, RCB11_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == RCB11SELECT_A::_1
     }
 }
 #[doc = "Field `RCB11` writer - Remap Command bit for Master 11"]
-pub struct RCB11_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RCB11_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: RCB11_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type RCB11_W<'a, const O: u8> = crate::BitWriter<'a, u32, MRCR_SPEC, RCB11SELECT_A, O>;
+impl<'a, const O: u8> RCB11_W<'a, O> {
     #[doc = "Disable remapped address decoding for master"]
     #[inline(always)]
     pub fn _0(self) -> &'a mut W {
-        self.variant(RCB11_A::_0)
+        self.variant(RCB11SELECT_A::_0)
     }
     #[doc = "Enable remapped address decoding for master"]
     #[inline(always)]
     pub fn _1(self) -> &'a mut W {
-        self.variant(RCB11_A::_1)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 11)) | ((value as u32 & 0x01) << 11);
-        self.w
-    }
-}
-#[doc = "Remap Command bit for Master 12\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum RCB12_A {
-    #[doc = "0: Disable remapped address decoding for master"]
-    _0 = 0,
-    #[doc = "1: Enable remapped address decoding for master"]
-    _1 = 1,
-}
-impl From<RCB12_A> for bool {
-    #[inline(always)]
-    fn from(variant: RCB12_A) -> Self {
-        variant as u8 != 0
+        self.variant(RCB11SELECT_A::_1)
     }
 }
 #[doc = "Field `RCB12` reader - Remap Command bit for Master 12"]
-pub struct RCB12_R(crate::FieldReader<bool, RCB12_A>);
-impl RCB12_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        RCB12_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+pub type RCB12_R = crate::BitReader<RCB12SELECT_A>;
+#[doc = "Remap Command bit for Master 12\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum RCB12SELECT_A {
+    #[doc = "0: Disable remapped address decoding for master"]
+    _0 = 0,
+    #[doc = "1: Enable remapped address decoding for master"]
+    _1 = 1,
+}
+impl From<RCB12SELECT_A> for bool {
     #[inline(always)]
-    pub fn variant(&self) -> RCB12_A {
+    fn from(variant: RCB12SELECT_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl RCB12_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> RCB12SELECT_A {
         match self.bits {
-            false => RCB12_A::_0,
-            true => RCB12_A::_1,
+            false => RCB12SELECT_A::_0,
+            true => RCB12SELECT_A::_1,
         }
     }
     #[doc = "Checks if the value of the field is `_0`"]
     #[inline(always)]
     pub fn is_0(&self) -> bool {
-        **self == RCB12_A::_0
+        *self == RCB12SELECT_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
     #[inline(always)]
     pub fn is_1(&self) -> bool {
-        **self == RCB12_A::_1
-    }
-}
-impl core::ops::Deref for RCB12_R {
-    type Target = crate::FieldReader<bool, RCB12_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == RCB12SELECT_A::_1
     }
 }
 #[doc = "Field `RCB12` writer - Remap Command bit for Master 12"]
-pub struct RCB12_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RCB12_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: RCB12_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type RCB12_W<'a, const O: u8> = crate::BitWriter<'a, u32, MRCR_SPEC, RCB12SELECT_A, O>;
+impl<'a, const O: u8> RCB12_W<'a, O> {
     #[doc = "Disable remapped address decoding for master"]
     #[inline(always)]
     pub fn _0(self) -> &'a mut W {
-        self.variant(RCB12_A::_0)
+        self.variant(RCB12SELECT_A::_0)
     }
     #[doc = "Enable remapped address decoding for master"]
     #[inline(always)]
     pub fn _1(self) -> &'a mut W {
-        self.variant(RCB12_A::_1)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 12)) | ((value as u32 & 0x01) << 12);
-        self.w
-    }
-}
-#[doc = "Remap Command bit for Master 13\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum RCB13_A {
-    #[doc = "0: Disable remapped address decoding for master"]
-    _0 = 0,
-    #[doc = "1: Enable remapped address decoding for master"]
-    _1 = 1,
-}
-impl From<RCB13_A> for bool {
-    #[inline(always)]
-    fn from(variant: RCB13_A) -> Self {
-        variant as u8 != 0
+        self.variant(RCB12SELECT_A::_1)
     }
 }
 #[doc = "Field `RCB13` reader - Remap Command bit for Master 13"]
-pub struct RCB13_R(crate::FieldReader<bool, RCB13_A>);
-impl RCB13_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        RCB13_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+pub type RCB13_R = crate::BitReader<RCB13SELECT_A>;
+#[doc = "Remap Command bit for Master 13\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum RCB13SELECT_A {
+    #[doc = "0: Disable remapped address decoding for master"]
+    _0 = 0,
+    #[doc = "1: Enable remapped address decoding for master"]
+    _1 = 1,
+}
+impl From<RCB13SELECT_A> for bool {
     #[inline(always)]
-    pub fn variant(&self) -> RCB13_A {
+    fn from(variant: RCB13SELECT_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl RCB13_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> RCB13SELECT_A {
         match self.bits {
-            false => RCB13_A::_0,
-            true => RCB13_A::_1,
+            false => RCB13SELECT_A::_0,
+            true => RCB13SELECT_A::_1,
         }
     }
     #[doc = "Checks if the value of the field is `_0`"]
     #[inline(always)]
     pub fn is_0(&self) -> bool {
-        **self == RCB13_A::_0
+        *self == RCB13SELECT_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
     #[inline(always)]
     pub fn is_1(&self) -> bool {
-        **self == RCB13_A::_1
-    }
-}
-impl core::ops::Deref for RCB13_R {
-    type Target = crate::FieldReader<bool, RCB13_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == RCB13SELECT_A::_1
     }
 }
 #[doc = "Field `RCB13` writer - Remap Command bit for Master 13"]
-pub struct RCB13_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RCB13_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: RCB13_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type RCB13_W<'a, const O: u8> = crate::BitWriter<'a, u32, MRCR_SPEC, RCB13SELECT_A, O>;
+impl<'a, const O: u8> RCB13_W<'a, O> {
     #[doc = "Disable remapped address decoding for master"]
     #[inline(always)]
     pub fn _0(self) -> &'a mut W {
-        self.variant(RCB13_A::_0)
+        self.variant(RCB13SELECT_A::_0)
     }
     #[doc = "Enable remapped address decoding for master"]
     #[inline(always)]
     pub fn _1(self) -> &'a mut W {
-        self.variant(RCB13_A::_1)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 13)) | ((value as u32 & 0x01) << 13);
-        self.w
-    }
-}
-#[doc = "Remap Command bit for Master 14\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum RCB14_A {
-    #[doc = "0: Disable remapped address decoding for master"]
-    _0 = 0,
-    #[doc = "1: Enable remapped address decoding for master"]
-    _1 = 1,
-}
-impl From<RCB14_A> for bool {
-    #[inline(always)]
-    fn from(variant: RCB14_A) -> Self {
-        variant as u8 != 0
+        self.variant(RCB13SELECT_A::_1)
     }
 }
 #[doc = "Field `RCB14` reader - Remap Command bit for Master 14"]
-pub struct RCB14_R(crate::FieldReader<bool, RCB14_A>);
-impl RCB14_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        RCB14_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> RCB14_A {
-        match self.bits {
-            false => RCB14_A::_0,
-            true => RCB14_A::_1,
-        }
-    }
-    #[doc = "Checks if the value of the field is `_0`"]
-    #[inline(always)]
-    pub fn is_0(&self) -> bool {
-        **self == RCB14_A::_0
-    }
-    #[doc = "Checks if the value of the field is `_1`"]
-    #[inline(always)]
-    pub fn is_1(&self) -> bool {
-        **self == RCB14_A::_1
-    }
-}
-impl core::ops::Deref for RCB14_R {
-    type Target = crate::FieldReader<bool, RCB14_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-#[doc = "Field `RCB14` writer - Remap Command bit for Master 14"]
-pub struct RCB14_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RCB14_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: RCB14_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    #[doc = "Disable remapped address decoding for master"]
-    #[inline(always)]
-    pub fn _0(self) -> &'a mut W {
-        self.variant(RCB14_A::_0)
-    }
-    #[doc = "Enable remapped address decoding for master"]
-    #[inline(always)]
-    pub fn _1(self) -> &'a mut W {
-        self.variant(RCB14_A::_1)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 14)) | ((value as u32 & 0x01) << 14);
-        self.w
-    }
-}
-#[doc = "Remap Command bit for Master 15\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum RCB15_A {
+pub type RCB14_R = crate::BitReader<RCB14SELECT_A>;
+#[doc = "Remap Command bit for Master 14\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum RCB14SELECT_A {
     #[doc = "0: Disable remapped address decoding for master"]
     _0 = 0,
     #[doc = "1: Enable remapped address decoding for master"]
     _1 = 1,
 }
-impl From<RCB15_A> for bool {
+impl From<RCB14SELECT_A> for bool {
     #[inline(always)]
-    fn from(variant: RCB15_A) -> Self {
+    fn from(variant: RCB14SELECT_A) -> Self {
         variant as u8 != 0
     }
 }
-#[doc = "Field `RCB15` reader - Remap Command bit for Master 15"]
-pub struct RCB15_R(crate::FieldReader<bool, RCB15_A>);
-impl RCB15_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        RCB15_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+impl RCB14_R {
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> RCB15_A {
+    pub fn variant(&self) -> RCB14SELECT_A {
         match self.bits {
-            false => RCB15_A::_0,
-            true => RCB15_A::_1,
+            false => RCB14SELECT_A::_0,
+            true => RCB14SELECT_A::_1,
         }
     }
     #[doc = "Checks if the value of the field is `_0`"]
     #[inline(always)]
     pub fn is_0(&self) -> bool {
-        **self == RCB15_A::_0
+        *self == RCB14SELECT_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
     #[inline(always)]
     pub fn is_1(&self) -> bool {
-        **self == RCB15_A::_1
+        *self == RCB14SELECT_A::_1
     }
 }
-impl core::ops::Deref for RCB15_R {
-    type Target = crate::FieldReader<bool, RCB15_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-#[doc = "Field `RCB15` writer - Remap Command bit for Master 15"]
-pub struct RCB15_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RCB15_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: RCB15_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+#[doc = "Field `RCB14` writer - Remap Command bit for Master 14"]
+pub type RCB14_W<'a, const O: u8> = crate::BitWriter<'a, u32, MRCR_SPEC, RCB14SELECT_A, O>;
+impl<'a, const O: u8> RCB14_W<'a, O> {
     #[doc = "Disable remapped address decoding for master"]
     #[inline(always)]
     pub fn _0(self) -> &'a mut W {
-        self.variant(RCB15_A::_0)
+        self.variant(RCB14SELECT_A::_0)
     }
     #[doc = "Enable remapped address decoding for master"]
     #[inline(always)]
     pub fn _1(self) -> &'a mut W {
-        self.variant(RCB15_A::_1)
+        self.variant(RCB14SELECT_A::_1)
     }
-    #[doc = r"Sets the field bit"]
+}
+#[doc = "Field `RCB15` reader - Remap Command bit for Master 15"]
+pub type RCB15_R = crate::BitReader<RCB15SELECT_A>;
+#[doc = "Remap Command bit for Master 15\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum RCB15SELECT_A {
+    #[doc = "0: Disable remapped address decoding for master"]
+    _0 = 0,
+    #[doc = "1: Enable remapped address decoding for master"]
+    _1 = 1,
+}
+impl From<RCB15SELECT_A> for bool {
     #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
+    fn from(variant: RCB15SELECT_A) -> Self {
+        variant as u8 != 0
     }
-    #[doc = r"Clears the field bit"]
+}
+impl RCB15_R {
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
+    pub fn variant(&self) -> RCB15SELECT_A {
+        match self.bits {
+            false => RCB15SELECT_A::_0,
+            true => RCB15SELECT_A::_1,
+        }
     }
-    #[doc = r"Writes raw bits to the field"]
+    #[doc = "Checks if the value of the field is `_0`"]
     #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 15)) | ((value as u32 & 0x01) << 15);
-        self.w
+    pub fn is_0(&self) -> bool {
+        *self == RCB15SELECT_A::_0
+    }
+    #[doc = "Checks if the value of the field is `_1`"]
+    #[inline(always)]
+    pub fn is_1(&self) -> bool {
+        *self == RCB15SELECT_A::_1
+    }
+}
+#[doc = "Field `RCB15` writer - Remap Command bit for Master 15"]
+pub type RCB15_W<'a, const O: u8> = crate::BitWriter<'a, u32, MRCR_SPEC, RCB15SELECT_A, O>;
+impl<'a, const O: u8> RCB15_W<'a, O> {
+    #[doc = "Disable remapped address decoding for master"]
+    #[inline(always)]
+    pub fn _0(self) -> &'a mut W {
+        self.variant(RCB15SELECT_A::_0)
+    }
+    #[doc = "Enable remapped address decoding for master"]
+    #[inline(always)]
+    pub fn _1(self) -> &'a mut W {
+        self.variant(RCB15SELECT_A::_1)
     }
 }
 impl R {
     #[doc = "Bit 0 - Remap Command bit for Master 0"]
     #[inline(always)]
     pub fn rcb0(&self) -> RCB0_R {
-        RCB0_R::new((self.bits & 0x01) != 0)
+        RCB0_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Remap Command bit for Master 1"]
     #[inline(always)]
     pub fn rcb1(&self) -> RCB1_R {
-        RCB1_R::new(((self.bits >> 1) & 0x01) != 0)
+        RCB1_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - Remap Command bit for Master 2"]
     #[inline(always)]
     pub fn rcb2(&self) -> RCB2_R {
-        RCB2_R::new(((self.bits >> 2) & 0x01) != 0)
+        RCB2_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - Remap Command bit for Master 3"]
     #[inline(always)]
     pub fn rcb3(&self) -> RCB3_R {
-        RCB3_R::new(((self.bits >> 3) & 0x01) != 0)
+        RCB3_R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 4 - Remap Command bit for Master 4"]
     #[inline(always)]
     pub fn rcb4(&self) -> RCB4_R {
-        RCB4_R::new(((self.bits >> 4) & 0x01) != 0)
+        RCB4_R::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bit 5 - Remap Command bit for Master 5"]
     #[inline(always)]
     pub fn rcb5(&self) -> RCB5_R {
-        RCB5_R::new(((self.bits >> 5) & 0x01) != 0)
+        RCB5_R::new(((self.bits >> 5) & 1) != 0)
     }
     #[doc = "Bit 6 - Remap Command bit for Master 6"]
     #[inline(always)]
     pub fn rcb6(&self) -> RCB6_R {
-        RCB6_R::new(((self.bits >> 6) & 0x01) != 0)
+        RCB6_R::new(((self.bits >> 6) & 1) != 0)
     }
     #[doc = "Bit 7 - Remap Command bit for Master 7"]
     #[inline(always)]
     pub fn rcb7(&self) -> RCB7_R {
-        RCB7_R::new(((self.bits >> 7) & 0x01) != 0)
+        RCB7_R::new(((self.bits >> 7) & 1) != 0)
     }
     #[doc = "Bit 8 - Remap Command bit for Master 8"]
     #[inline(always)]
     pub fn rcb8(&self) -> RCB8_R {
-        RCB8_R::new(((self.bits >> 8) & 0x01) != 0)
+        RCB8_R::new(((self.bits >> 8) & 1) != 0)
     }
     #[doc = "Bit 9 - Remap Command bit for Master 9"]
     #[inline(always)]
     pub fn rcb9(&self) -> RCB9_R {
-        RCB9_R::new(((self.bits >> 9) & 0x01) != 0)
+        RCB9_R::new(((self.bits >> 9) & 1) != 0)
     }
     #[doc = "Bit 10 - Remap Command bit for Master 10"]
     #[inline(always)]
     pub fn rcb10(&self) -> RCB10_R {
-        RCB10_R::new(((self.bits >> 10) & 0x01) != 0)
+        RCB10_R::new(((self.bits >> 10) & 1) != 0)
     }
     #[doc = "Bit 11 - Remap Command bit for Master 11"]
     #[inline(always)]
     pub fn rcb11(&self) -> RCB11_R {
-        RCB11_R::new(((self.bits >> 11) & 0x01) != 0)
+        RCB11_R::new(((self.bits >> 11) & 1) != 0)
     }
     #[doc = "Bit 12 - Remap Command bit for Master 12"]
     #[inline(always)]
     pub fn rcb12(&self) -> RCB12_R {
-        RCB12_R::new(((self.bits >> 12) & 0x01) != 0)
+        RCB12_R::new(((self.bits >> 12) & 1) != 0)
     }
     #[doc = "Bit 13 - Remap Command bit for Master 13"]
     #[inline(always)]
     pub fn rcb13(&self) -> RCB13_R {
-        RCB13_R::new(((self.bits >> 13) & 0x01) != 0)
+        RCB13_R::new(((self.bits >> 13) & 1) != 0)
     }
     #[doc = "Bit 14 - Remap Command bit for Master 14"]
     #[inline(always)]
     pub fn rcb14(&self) -> RCB14_R {
-        RCB14_R::new(((self.bits >> 14) & 0x01) != 0)
+        RCB14_R::new(((self.bits >> 14) & 1) != 0)
     }
     #[doc = "Bit 15 - Remap Command bit for Master 15"]
     #[inline(always)]
     pub fn rcb15(&self) -> RCB15_R {
-        RCB15_R::new(((self.bits >> 15) & 0x01) != 0)
+        RCB15_R::new(((self.bits >> 15) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Remap Command bit for Master 0"]
     #[inline(always)]
-    pub fn rcb0(&mut self) -> RCB0_W {
-        RCB0_W { w: self }
+    #[must_use]
+    pub fn rcb0(&mut self) -> RCB0_W<0> {
+        RCB0_W::new(self)
     }
     #[doc = "Bit 1 - Remap Command bit for Master 1"]
     #[inline(always)]
-    pub fn rcb1(&mut self) -> RCB1_W {
-        RCB1_W { w: self }
+    #[must_use]
+    pub fn rcb1(&mut self) -> RCB1_W<1> {
+        RCB1_W::new(self)
     }
     #[doc = "Bit 2 - Remap Command bit for Master 2"]
     #[inline(always)]
-    pub fn rcb2(&mut self) -> RCB2_W {
-        RCB2_W { w: self }
+    #[must_use]
+    pub fn rcb2(&mut self) -> RCB2_W<2> {
+        RCB2_W::new(self)
     }
     #[doc = "Bit 3 - Remap Command bit for Master 3"]
     #[inline(always)]
-    pub fn rcb3(&mut self) -> RCB3_W {
-        RCB3_W { w: self }
+    #[must_use]
+    pub fn rcb3(&mut self) -> RCB3_W<3> {
+        RCB3_W::new(self)
     }
     #[doc = "Bit 4 - Remap Command bit for Master 4"]
     #[inline(always)]
-    pub fn rcb4(&mut self) -> RCB4_W {
-        RCB4_W { w: self }
+    #[must_use]
+    pub fn rcb4(&mut self) -> RCB4_W<4> {
+        RCB4_W::new(self)
     }
     #[doc = "Bit 5 - Remap Command bit for Master 5"]
     #[inline(always)]
-    pub fn rcb5(&mut self) -> RCB5_W {
-        RCB5_W { w: self }
+    #[must_use]
+    pub fn rcb5(&mut self) -> RCB5_W<5> {
+        RCB5_W::new(self)
     }
     #[doc = "Bit 6 - Remap Command bit for Master 6"]
     #[inline(always)]
-    pub fn rcb6(&mut self) -> RCB6_W {
-        RCB6_W { w: self }
+    #[must_use]
+    pub fn rcb6(&mut self) -> RCB6_W<6> {
+        RCB6_W::new(self)
     }
     #[doc = "Bit 7 - Remap Command bit for Master 7"]
     #[inline(always)]
-    pub fn rcb7(&mut self) -> RCB7_W {
-        RCB7_W { w: self }
+    #[must_use]
+    pub fn rcb7(&mut self) -> RCB7_W<7> {
+        RCB7_W::new(self)
     }
     #[doc = "Bit 8 - Remap Command bit for Master 8"]
     #[inline(always)]
-    pub fn rcb8(&mut self) -> RCB8_W {
-        RCB8_W { w: self }
+    #[must_use]
+    pub fn rcb8(&mut self) -> RCB8_W<8> {
+        RCB8_W::new(self)
     }
     #[doc = "Bit 9 - Remap Command bit for Master 9"]
     #[inline(always)]
-    pub fn rcb9(&mut self) -> RCB9_W {
-        RCB9_W { w: self }
+    #[must_use]
+    pub fn rcb9(&mut self) -> RCB9_W<9> {
+        RCB9_W::new(self)
     }
     #[doc = "Bit 10 - Remap Command bit for Master 10"]
     #[inline(always)]
-    pub fn rcb10(&mut self) -> RCB10_W {
-        RCB10_W { w: self }
+    #[must_use]
+    pub fn rcb10(&mut self) -> RCB10_W<10> {
+        RCB10_W::new(self)
     }
     #[doc = "Bit 11 - Remap Command bit for Master 11"]
     #[inline(always)]
-    pub fn rcb11(&mut self) -> RCB11_W {
-        RCB11_W { w: self }
+    #[must_use]
+    pub fn rcb11(&mut self) -> RCB11_W<11> {
+        RCB11_W::new(self)
     }
     #[doc = "Bit 12 - Remap Command bit for Master 12"]
     #[inline(always)]
-    pub fn rcb12(&mut self) -> RCB12_W {
-        RCB12_W { w: self }
+    #[must_use]
+    pub fn rcb12(&mut self) -> RCB12_W<12> {
+        RCB12_W::new(self)
     }
     #[doc = "Bit 13 - Remap Command bit for Master 13"]
     #[inline(always)]
-    pub fn rcb13(&mut self) -> RCB13_W {
-        RCB13_W { w: self }
+    #[must_use]
+    pub fn rcb13(&mut self) -> RCB13_W<13> {
+        RCB13_W::new(self)
     }
     #[doc = "Bit 14 - Remap Command bit for Master 14"]
     #[inline(always)]
-    pub fn rcb14(&mut self) -> RCB14_W {
-        RCB14_W { w: self }
+    #[must_use]
+    pub fn rcb14(&mut self) -> RCB14_W<14> {
+        RCB14_W::new(self)
     }
     #[doc = "Bit 15 - Remap Command bit for Master 15"]
     #[inline(always)]
-    pub fn rcb15(&mut self) -> RCB15_W {
-        RCB15_W { w: self }
+    #[must_use]
+    pub fn rcb15(&mut self) -> RCB15_W<15> {
+        RCB15_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -1544,11 +1032,10 @@ impl crate::Readable for MRCR_SPEC {
 #[doc = "`write(|w| ..)` method takes [mrcr::W](W) writer structure"]
 impl crate::Writable for MRCR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets MRCR to value 0"]
 impl crate::Resettable for MRCR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

@@ -35,43 +35,22 @@ impl From<crate::W<US_IDTRX_SPEC>> for W {
     }
 }
 #[doc = "Field `IDTRX` reader - LON Indeterminate Time after Reception (comm_type = 1 mode only)"]
-pub struct IDTRX_R(crate::FieldReader<u32, u32>);
-impl IDTRX_R {
-    pub(crate) fn new(bits: u32) -> Self {
-        IDTRX_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for IDTRX_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type IDTRX_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `IDTRX` writer - LON Indeterminate Time after Reception (comm_type = 1 mode only)"]
-pub struct IDTRX_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> IDTRX_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x00ff_ffff) | (value as u32 & 0x00ff_ffff);
-        self.w
-    }
-}
+pub type IDTRX_W<'a, const O: u8> = crate::FieldWriter<'a, u32, US_IDTRX_SPEC, u32, u32, 24, O>;
 impl R {
     #[doc = "Bits 0:23 - LON Indeterminate Time after Reception (comm_type = 1 mode only)"]
     #[inline(always)]
     pub fn idtrx(&self) -> IDTRX_R {
-        IDTRX_R::new((self.bits & 0x00ff_ffff) as u32)
+        IDTRX_R::new(self.bits & 0x00ff_ffff)
     }
 }
 impl W {
     #[doc = "Bits 0:23 - LON Indeterminate Time after Reception (comm_type = 1 mode only)"]
     #[inline(always)]
-    pub fn idtrx(&mut self) -> IDTRX_W {
-        IDTRX_W { w: self }
+    #[must_use]
+    pub fn idtrx(&mut self) -> IDTRX_W<0> {
+        IDTRX_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -92,11 +71,10 @@ impl crate::Readable for US_IDTRX_SPEC {
 #[doc = "`write(|w| ..)` method takes [us_idtrx::W](W) writer structure"]
 impl crate::Writable for US_IDTRX_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets US_IDTRX to value 0"]
 impl crate::Resettable for US_IDTRX_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

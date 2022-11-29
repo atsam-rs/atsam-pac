@@ -35,35 +35,15 @@ impl From<crate::W<ST2CW17_SPEC>> for W {
     }
 }
 #[doc = "Field `OFFSVAL` reader - Offset Value in Bytes"]
-pub struct OFFSVAL_R(crate::FieldReader<u8, u8>);
-impl OFFSVAL_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        OFFSVAL_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for OFFSVAL_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type OFFSVAL_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `OFFSVAL` writer - Offset Value in Bytes"]
-pub struct OFFSVAL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> OFFSVAL_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x7f) | (value as u32 & 0x7f);
-        self.w
-    }
-}
+pub type OFFSVAL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, ST2CW17_SPEC, u8, u8, 7, O>;
+#[doc = "Field `OFFSSTRT` reader - Ethernet Frame Offset Start"]
+pub type OFFSSTRT_R = crate::FieldReader<u8, OFFSSTRTSELECT_A>;
 #[doc = "Ethernet Frame Offset Start\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum OFFSSTRT_A {
+pub enum OFFSSTRTSELECT_A {
     #[doc = "0: Offset from the start of the frame"]
     FRAMESTART = 0,
     #[doc = "1: Offset from the byte after the EtherType field"]
@@ -73,92 +53,68 @@ pub enum OFFSSTRT_A {
     #[doc = "3: Offset from the byte after the TCP/UDP header field"]
     TCP_UDP = 3,
 }
-impl From<OFFSSTRT_A> for u8 {
+impl From<OFFSSTRTSELECT_A> for u8 {
     #[inline(always)]
-    fn from(variant: OFFSSTRT_A) -> Self {
+    fn from(variant: OFFSSTRTSELECT_A) -> Self {
         variant as _
     }
 }
-#[doc = "Field `OFFSSTRT` reader - Ethernet Frame Offset Start"]
-pub struct OFFSSTRT_R(crate::FieldReader<u8, OFFSSTRT_A>);
 impl OFFSSTRT_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        OFFSSTRT_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> OFFSSTRT_A {
+    pub fn variant(&self) -> OFFSSTRTSELECT_A {
         match self.bits {
-            0 => OFFSSTRT_A::FRAMESTART,
-            1 => OFFSSTRT_A::ETHERTYPE,
-            2 => OFFSSTRT_A::IP,
-            3 => OFFSSTRT_A::TCP_UDP,
+            0 => OFFSSTRTSELECT_A::FRAMESTART,
+            1 => OFFSSTRTSELECT_A::ETHERTYPE,
+            2 => OFFSSTRTSELECT_A::IP,
+            3 => OFFSSTRTSELECT_A::TCP_UDP,
             _ => unreachable!(),
         }
     }
     #[doc = "Checks if the value of the field is `FRAMESTART`"]
     #[inline(always)]
     pub fn is_framestart(&self) -> bool {
-        **self == OFFSSTRT_A::FRAMESTART
+        *self == OFFSSTRTSELECT_A::FRAMESTART
     }
     #[doc = "Checks if the value of the field is `ETHERTYPE`"]
     #[inline(always)]
     pub fn is_ethertype(&self) -> bool {
-        **self == OFFSSTRT_A::ETHERTYPE
+        *self == OFFSSTRTSELECT_A::ETHERTYPE
     }
     #[doc = "Checks if the value of the field is `IP`"]
     #[inline(always)]
     pub fn is_ip(&self) -> bool {
-        **self == OFFSSTRT_A::IP
+        *self == OFFSSTRTSELECT_A::IP
     }
     #[doc = "Checks if the value of the field is `TCP_UDP`"]
     #[inline(always)]
     pub fn is_tcp_udp(&self) -> bool {
-        **self == OFFSSTRT_A::TCP_UDP
-    }
-}
-impl core::ops::Deref for OFFSSTRT_R {
-    type Target = crate::FieldReader<u8, OFFSSTRT_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == OFFSSTRTSELECT_A::TCP_UDP
     }
 }
 #[doc = "Field `OFFSSTRT` writer - Ethernet Frame Offset Start"]
-pub struct OFFSSTRT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> OFFSSTRT_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: OFFSSTRT_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
+pub type OFFSSTRT_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, ST2CW17_SPEC, u8, OFFSSTRTSELECT_A, 2, O>;
+impl<'a, const O: u8> OFFSSTRT_W<'a, O> {
     #[doc = "Offset from the start of the frame"]
     #[inline(always)]
     pub fn framestart(self) -> &'a mut W {
-        self.variant(OFFSSTRT_A::FRAMESTART)
+        self.variant(OFFSSTRTSELECT_A::FRAMESTART)
     }
     #[doc = "Offset from the byte after the EtherType field"]
     #[inline(always)]
     pub fn ethertype(self) -> &'a mut W {
-        self.variant(OFFSSTRT_A::ETHERTYPE)
+        self.variant(OFFSSTRTSELECT_A::ETHERTYPE)
     }
     #[doc = "Offset from the byte after the IP header field"]
     #[inline(always)]
     pub fn ip(self) -> &'a mut W {
-        self.variant(OFFSSTRT_A::IP)
+        self.variant(OFFSSTRTSELECT_A::IP)
     }
     #[doc = "Offset from the byte after the TCP/UDP header field"]
     #[inline(always)]
     pub fn tcp_udp(self) -> &'a mut W {
-        self.variant(OFFSSTRT_A::TCP_UDP)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 7)) | ((value as u32 & 0x03) << 7);
-        self.w
+        self.variant(OFFSSTRTSELECT_A::TCP_UDP)
     }
 }
 impl R {
@@ -170,19 +126,21 @@ impl R {
     #[doc = "Bits 7:8 - Ethernet Frame Offset Start"]
     #[inline(always)]
     pub fn offsstrt(&self) -> OFFSSTRT_R {
-        OFFSSTRT_R::new(((self.bits >> 7) & 0x03) as u8)
+        OFFSSTRT_R::new(((self.bits >> 7) & 3) as u8)
     }
 }
 impl W {
     #[doc = "Bits 0:6 - Offset Value in Bytes"]
     #[inline(always)]
-    pub fn offsval(&mut self) -> OFFSVAL_W {
-        OFFSVAL_W { w: self }
+    #[must_use]
+    pub fn offsval(&mut self) -> OFFSVAL_W<0> {
+        OFFSVAL_W::new(self)
     }
     #[doc = "Bits 7:8 - Ethernet Frame Offset Start"]
     #[inline(always)]
-    pub fn offsstrt(&mut self) -> OFFSSTRT_W {
-        OFFSSTRT_W { w: self }
+    #[must_use]
+    pub fn offsstrt(&mut self) -> OFFSSTRT_W<7> {
+        OFFSSTRT_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -203,11 +161,10 @@ impl crate::Readable for ST2CW17_SPEC {
 #[doc = "`write(|w| ..)` method takes [st2cw17::W](W) writer structure"]
 impl crate::Writable for ST2CW17_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets ST2CW17 to value 0"]
 impl crate::Resettable for ST2CW17_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

@@ -35,190 +35,40 @@ impl From<crate::W<MR_SPEC>> for W {
     }
 }
 #[doc = "Field `HRMOD` reader - 12-/24-hour Mode"]
-pub struct HRMOD_R(crate::FieldReader<bool, bool>);
-impl HRMOD_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        HRMOD_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for HRMOD_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type HRMOD_R = crate::BitReader<bool>;
 #[doc = "Field `HRMOD` writer - 12-/24-hour Mode"]
-pub struct HRMOD_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> HRMOD_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type HRMOD_W<'a, const O: u8> = crate::BitWriter<'a, u32, MR_SPEC, bool, O>;
 #[doc = "Field `PERSIAN` reader - PERSIAN Calendar"]
-pub struct PERSIAN_R(crate::FieldReader<bool, bool>);
-impl PERSIAN_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        PERSIAN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for PERSIAN_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type PERSIAN_R = crate::BitReader<bool>;
 #[doc = "Field `PERSIAN` writer - PERSIAN Calendar"]
-pub struct PERSIAN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PERSIAN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
-}
+pub type PERSIAN_W<'a, const O: u8> = crate::BitWriter<'a, u32, MR_SPEC, bool, O>;
 #[doc = "Field `NEGPPM` reader - NEGative PPM Correction"]
-pub struct NEGPPM_R(crate::FieldReader<bool, bool>);
-impl NEGPPM_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        NEGPPM_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for NEGPPM_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type NEGPPM_R = crate::BitReader<bool>;
 #[doc = "Field `NEGPPM` writer - NEGative PPM Correction"]
-pub struct NEGPPM_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> NEGPPM_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
-        self.w
-    }
-}
+pub type NEGPPM_W<'a, const O: u8> = crate::BitWriter<'a, u32, MR_SPEC, bool, O>;
 #[doc = "Field `CORRECTION` reader - Slow Clock Correction"]
-pub struct CORRECTION_R(crate::FieldReader<u8, u8>);
-impl CORRECTION_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        CORRECTION_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CORRECTION_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CORRECTION_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `CORRECTION` writer - Slow Clock Correction"]
-pub struct CORRECTION_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CORRECTION_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x7f << 8)) | ((value as u32 & 0x7f) << 8);
-        self.w
-    }
-}
+pub type CORRECTION_W<'a, const O: u8> = crate::FieldWriter<'a, u32, MR_SPEC, u8, u8, 7, O>;
 #[doc = "Field `HIGHPPM` reader - HIGH PPM Correction"]
-pub struct HIGHPPM_R(crate::FieldReader<bool, bool>);
-impl HIGHPPM_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        HIGHPPM_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for HIGHPPM_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type HIGHPPM_R = crate::BitReader<bool>;
 #[doc = "Field `HIGHPPM` writer - HIGH PPM Correction"]
-pub struct HIGHPPM_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> HIGHPPM_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 15)) | ((value as u32 & 0x01) << 15);
-        self.w
-    }
-}
+pub type HIGHPPM_W<'a, const O: u8> = crate::BitWriter<'a, u32, MR_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - 12-/24-hour Mode"]
     #[inline(always)]
     pub fn hrmod(&self) -> HRMOD_R {
-        HRMOD_R::new((self.bits & 0x01) != 0)
+        HRMOD_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - PERSIAN Calendar"]
     #[inline(always)]
     pub fn persian(&self) -> PERSIAN_R {
-        PERSIAN_R::new(((self.bits >> 1) & 0x01) != 0)
+        PERSIAN_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 4 - NEGative PPM Correction"]
     #[inline(always)]
     pub fn negppm(&self) -> NEGPPM_R {
-        NEGPPM_R::new(((self.bits >> 4) & 0x01) != 0)
+        NEGPPM_R::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bits 8:14 - Slow Clock Correction"]
     #[inline(always)]
@@ -228,34 +78,39 @@ impl R {
     #[doc = "Bit 15 - HIGH PPM Correction"]
     #[inline(always)]
     pub fn highppm(&self) -> HIGHPPM_R {
-        HIGHPPM_R::new(((self.bits >> 15) & 0x01) != 0)
+        HIGHPPM_R::new(((self.bits >> 15) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - 12-/24-hour Mode"]
     #[inline(always)]
-    pub fn hrmod(&mut self) -> HRMOD_W {
-        HRMOD_W { w: self }
+    #[must_use]
+    pub fn hrmod(&mut self) -> HRMOD_W<0> {
+        HRMOD_W::new(self)
     }
     #[doc = "Bit 1 - PERSIAN Calendar"]
     #[inline(always)]
-    pub fn persian(&mut self) -> PERSIAN_W {
-        PERSIAN_W { w: self }
+    #[must_use]
+    pub fn persian(&mut self) -> PERSIAN_W<1> {
+        PERSIAN_W::new(self)
     }
     #[doc = "Bit 4 - NEGative PPM Correction"]
     #[inline(always)]
-    pub fn negppm(&mut self) -> NEGPPM_W {
-        NEGPPM_W { w: self }
+    #[must_use]
+    pub fn negppm(&mut self) -> NEGPPM_W<4> {
+        NEGPPM_W::new(self)
     }
     #[doc = "Bits 8:14 - Slow Clock Correction"]
     #[inline(always)]
-    pub fn correction(&mut self) -> CORRECTION_W {
-        CORRECTION_W { w: self }
+    #[must_use]
+    pub fn correction(&mut self) -> CORRECTION_W<8> {
+        CORRECTION_W::new(self)
     }
     #[doc = "Bit 15 - HIGH PPM Correction"]
     #[inline(always)]
-    pub fn highppm(&mut self) -> HIGHPPM_W {
-        HIGHPPM_W { w: self }
+    #[must_use]
+    pub fn highppm(&mut self) -> HIGHPPM_W<15> {
+        HIGHPPM_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -276,11 +131,10 @@ impl crate::Readable for MR_SPEC {
 #[doc = "`write(|w| ..)` method takes [mr::W](W) writer structure"]
 impl crate::Writable for MR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets MR to value 0"]
 impl crate::Resettable for MR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

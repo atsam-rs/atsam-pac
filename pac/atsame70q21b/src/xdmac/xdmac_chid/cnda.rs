@@ -35,89 +35,37 @@ impl From<crate::W<CNDA_SPEC>> for W {
     }
 }
 #[doc = "Field `NDAIF` reader - Channel x Next Descriptor Interface"]
-pub struct NDAIF_R(crate::FieldReader<bool, bool>);
-impl NDAIF_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        NDAIF_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for NDAIF_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type NDAIF_R = crate::BitReader<bool>;
 #[doc = "Field `NDAIF` writer - Channel x Next Descriptor Interface"]
-pub struct NDAIF_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> NDAIF_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type NDAIF_W<'a, const O: u8> = crate::BitWriter<'a, u32, CNDA_SPEC, bool, O>;
 #[doc = "Field `NDA` reader - Channel x Next Descriptor Address"]
-pub struct NDA_R(crate::FieldReader<u32, u32>);
-impl NDA_R {
-    pub(crate) fn new(bits: u32) -> Self {
-        NDA_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for NDA_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type NDA_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `NDA` writer - Channel x Next Descriptor Address"]
-pub struct NDA_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> NDA_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x3fff_ffff << 2)) | ((value as u32 & 0x3fff_ffff) << 2);
-        self.w
-    }
-}
+pub type NDA_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CNDA_SPEC, u32, u32, 30, O>;
 impl R {
     #[doc = "Bit 0 - Channel x Next Descriptor Interface"]
     #[inline(always)]
     pub fn ndaif(&self) -> NDAIF_R {
-        NDAIF_R::new((self.bits & 0x01) != 0)
+        NDAIF_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bits 2:31 - Channel x Next Descriptor Address"]
     #[inline(always)]
     pub fn nda(&self) -> NDA_R {
-        NDA_R::new(((self.bits >> 2) & 0x3fff_ffff) as u32)
+        NDA_R::new((self.bits >> 2) & 0x3fff_ffff)
     }
 }
 impl W {
     #[doc = "Bit 0 - Channel x Next Descriptor Interface"]
     #[inline(always)]
-    pub fn ndaif(&mut self) -> NDAIF_W {
-        NDAIF_W { w: self }
+    #[must_use]
+    pub fn ndaif(&mut self) -> NDAIF_W<0> {
+        NDAIF_W::new(self)
     }
     #[doc = "Bits 2:31 - Channel x Next Descriptor Address"]
     #[inline(always)]
-    pub fn nda(&mut self) -> NDA_W {
-        NDA_W { w: self }
+    #[must_use]
+    pub fn nda(&mut self) -> NDA_W<2> {
+        NDA_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -138,11 +86,10 @@ impl crate::Readable for CNDA_SPEC {
 #[doc = "`write(|w| ..)` method takes [cnda::W](W) writer structure"]
 impl crate::Writable for CNDA_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets CNDA to value 0"]
 impl crate::Resettable for CNDA_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

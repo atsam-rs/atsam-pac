@@ -20,142 +20,63 @@ impl From<crate::W<IER_SPEC>> for W {
     }
 }
 #[doc = "Field `CFD` writer - Clock Failure Detected Interrupt Enable"]
-pub struct CFD_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CFD_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type CFD_W<'a, const O: u8> = crate::BitWriter<'a, u32, IER_SPEC, bool, O>;
 #[doc = "Field `CKRDY` writer - Clock Ready Interrupt Enable"]
-pub struct CKRDY_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CKRDY_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
-        self.w
-    }
-}
+pub type CKRDY_W<'a, const O: u8> = crate::BitWriter<'a, u32, IER_SPEC, bool, O>;
 #[doc = "Wake up Interrupt Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum WAKE_AW {
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum WAKESELECT_AW {
     #[doc = "0: No effect"]
     _0 = 0,
     #[doc = "1: Disable Interrupt."]
     _1 = 1,
 }
-impl From<WAKE_AW> for bool {
+impl From<WAKESELECT_AW> for bool {
     #[inline(always)]
-    fn from(variant: WAKE_AW) -> Self {
+    fn from(variant: WAKESELECT_AW) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `WAKE` writer - Wake up Interrupt Enable"]
-pub struct WAKE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> WAKE_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: WAKE_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type WAKE_W<'a, const O: u8> = crate::BitWriter<'a, u32, IER_SPEC, WAKESELECT_AW, O>;
+impl<'a, const O: u8> WAKE_W<'a, O> {
     #[doc = "No effect"]
     #[inline(always)]
     pub fn _0(self) -> &'a mut W {
-        self.variant(WAKE_AW::_0)
+        self.variant(WAKESELECT_AW::_0)
     }
     #[doc = "Disable Interrupt."]
     #[inline(always)]
     pub fn _1(self) -> &'a mut W {
-        self.variant(WAKE_AW::_1)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
-        self.w
+        self.variant(WAKESELECT_AW::_1)
     }
 }
 #[doc = "Field `AE` writer - Access Error Interrupt Enable"]
-pub struct AE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> AE_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 31)) | ((value as u32 & 0x01) << 31);
-        self.w
-    }
-}
+pub type AE_W<'a, const O: u8> = crate::BitWriter<'a, u32, IER_SPEC, bool, O>;
 impl W {
     #[doc = "Bit 0 - Clock Failure Detected Interrupt Enable"]
     #[inline(always)]
-    pub fn cfd(&mut self) -> CFD_W {
-        CFD_W { w: self }
+    #[must_use]
+    pub fn cfd(&mut self) -> CFD_W<0> {
+        CFD_W::new(self)
     }
     #[doc = "Bit 5 - Clock Ready Interrupt Enable"]
     #[inline(always)]
-    pub fn ckrdy(&mut self) -> CKRDY_W {
-        CKRDY_W { w: self }
+    #[must_use]
+    pub fn ckrdy(&mut self) -> CKRDY_W<5> {
+        CKRDY_W::new(self)
     }
     #[doc = "Bit 8 - Wake up Interrupt Enable"]
     #[inline(always)]
-    pub fn wake(&mut self) -> WAKE_W {
-        WAKE_W { w: self }
+    #[must_use]
+    pub fn wake(&mut self) -> WAKE_W<8> {
+        WAKE_W::new(self)
     }
     #[doc = "Bit 31 - Access Error Interrupt Enable"]
     #[inline(always)]
-    pub fn ae(&mut self) -> AE_W {
-        AE_W { w: self }
+    #[must_use]
+    pub fn ae(&mut self) -> AE_W<31> {
+        AE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -172,11 +93,10 @@ impl crate::RegisterSpec for IER_SPEC {
 #[doc = "`write(|w| ..)` method takes [ier::W](W) writer structure"]
 impl crate::Writable for IER_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets IER to value 0"]
 impl crate::Resettable for IER_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

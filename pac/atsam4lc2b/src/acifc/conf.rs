@@ -35,335 +35,127 @@ impl From<crate::W<CONF_SPEC>> for W {
     }
 }
 #[doc = "Field `IS` reader - Interupt Settings"]
-pub struct IS_R(crate::FieldReader<u8, u8>);
-impl IS_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        IS_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for IS_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type IS_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `IS` writer - Interupt Settings"]
-pub struct IS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> IS_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x03) | (value as u32 & 0x03);
-        self.w
-    }
-}
+pub type IS_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CONF_SPEC, u8, u8, 2, O>;
 #[doc = "Field `MODE` reader - Analog Comparator Mode"]
-pub struct MODE_R(crate::FieldReader<u8, u8>);
-impl MODE_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        MODE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for MODE_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type MODE_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `MODE` writer - Analog Comparator Mode"]
-pub struct MODE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> MODE_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 4)) | ((value as u32 & 0x03) << 4);
-        self.w
-    }
-}
+pub type MODE_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CONF_SPEC, u8, u8, 2, O>;
 #[doc = "Field `INSELN` reader - Negative Input Select"]
-pub struct INSELN_R(crate::FieldReader<u8, u8>);
-impl INSELN_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        INSELN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for INSELN_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type INSELN_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `INSELN` writer - Negative Input Select"]
-pub struct INSELN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> INSELN_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 8)) | ((value as u32 & 0x03) << 8);
-        self.w
-    }
-}
+pub type INSELN_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CONF_SPEC, u8, u8, 2, O>;
 #[doc = "Field `EVENN` reader - Peripheral Event Enable Negative"]
-pub struct EVENN_R(crate::FieldReader<bool, bool>);
-impl EVENN_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        EVENN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for EVENN_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type EVENN_R = crate::BitReader<bool>;
 #[doc = "Field `EVENN` writer - Peripheral Event Enable Negative"]
-pub struct EVENN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> EVENN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 16)) | ((value as u32 & 0x01) << 16);
-        self.w
-    }
-}
+pub type EVENN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CONF_SPEC, bool, O>;
 #[doc = "Field `EVENP` reader - Peripheral Event Enable Positive"]
-pub struct EVENP_R(crate::FieldReader<bool, bool>);
-impl EVENP_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        EVENP_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for EVENP_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type EVENP_R = crate::BitReader<bool>;
 #[doc = "Field `EVENP` writer - Peripheral Event Enable Positive"]
-pub struct EVENP_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> EVENP_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 17)) | ((value as u32 & 0x01) << 17);
-        self.w
-    }
-}
+pub type EVENP_W<'a, const O: u8> = crate::BitWriter<'a, u32, CONF_SPEC, bool, O>;
 #[doc = "Field `HYS` reader - Hysteresis Voltage Value"]
-pub struct HYS_R(crate::FieldReader<u8, u8>);
-impl HYS_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        HYS_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for HYS_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type HYS_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `HYS` writer - Hysteresis Voltage Value"]
-pub struct HYS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> HYS_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 24)) | ((value as u32 & 0x03) << 24);
-        self.w
-    }
-}
+pub type HYS_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CONF_SPEC, u8, u8, 2, O>;
 #[doc = "Field `FAST` reader - Fast Mode Enable"]
-pub struct FAST_R(crate::FieldReader<bool, bool>);
-impl FAST_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        FAST_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for FAST_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type FAST_R = crate::BitReader<bool>;
 #[doc = "Field `FAST` writer - Fast Mode Enable"]
-pub struct FAST_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> FAST_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 26)) | ((value as u32 & 0x01) << 26);
-        self.w
-    }
-}
+pub type FAST_W<'a, const O: u8> = crate::BitWriter<'a, u32, CONF_SPEC, bool, O>;
 #[doc = "Field `ALWAYSON` reader - Always On"]
-pub struct ALWAYSON_R(crate::FieldReader<bool, bool>);
-impl ALWAYSON_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        ALWAYSON_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for ALWAYSON_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type ALWAYSON_R = crate::BitReader<bool>;
 #[doc = "Field `ALWAYSON` writer - Always On"]
-pub struct ALWAYSON_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ALWAYSON_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 27)) | ((value as u32 & 0x01) << 27);
-        self.w
-    }
-}
+pub type ALWAYSON_W<'a, const O: u8> = crate::BitWriter<'a, u32, CONF_SPEC, bool, O>;
 impl R {
     #[doc = "Bits 0:1 - Interupt Settings"]
     #[inline(always)]
     pub fn is(&self) -> IS_R {
-        IS_R::new((self.bits & 0x03) as u8)
+        IS_R::new((self.bits & 3) as u8)
     }
     #[doc = "Bits 4:5 - Analog Comparator Mode"]
     #[inline(always)]
     pub fn mode(&self) -> MODE_R {
-        MODE_R::new(((self.bits >> 4) & 0x03) as u8)
+        MODE_R::new(((self.bits >> 4) & 3) as u8)
     }
     #[doc = "Bits 8:9 - Negative Input Select"]
     #[inline(always)]
     pub fn inseln(&self) -> INSELN_R {
-        INSELN_R::new(((self.bits >> 8) & 0x03) as u8)
+        INSELN_R::new(((self.bits >> 8) & 3) as u8)
     }
     #[doc = "Bit 16 - Peripheral Event Enable Negative"]
     #[inline(always)]
     pub fn evenn(&self) -> EVENN_R {
-        EVENN_R::new(((self.bits >> 16) & 0x01) != 0)
+        EVENN_R::new(((self.bits >> 16) & 1) != 0)
     }
     #[doc = "Bit 17 - Peripheral Event Enable Positive"]
     #[inline(always)]
     pub fn evenp(&self) -> EVENP_R {
-        EVENP_R::new(((self.bits >> 17) & 0x01) != 0)
+        EVENP_R::new(((self.bits >> 17) & 1) != 0)
     }
     #[doc = "Bits 24:25 - Hysteresis Voltage Value"]
     #[inline(always)]
     pub fn hys(&self) -> HYS_R {
-        HYS_R::new(((self.bits >> 24) & 0x03) as u8)
+        HYS_R::new(((self.bits >> 24) & 3) as u8)
     }
     #[doc = "Bit 26 - Fast Mode Enable"]
     #[inline(always)]
     pub fn fast(&self) -> FAST_R {
-        FAST_R::new(((self.bits >> 26) & 0x01) != 0)
+        FAST_R::new(((self.bits >> 26) & 1) != 0)
     }
     #[doc = "Bit 27 - Always On"]
     #[inline(always)]
     pub fn alwayson(&self) -> ALWAYSON_R {
-        ALWAYSON_R::new(((self.bits >> 27) & 0x01) != 0)
+        ALWAYSON_R::new(((self.bits >> 27) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bits 0:1 - Interupt Settings"]
     #[inline(always)]
-    pub fn is(&mut self) -> IS_W {
-        IS_W { w: self }
+    #[must_use]
+    pub fn is(&mut self) -> IS_W<0> {
+        IS_W::new(self)
     }
     #[doc = "Bits 4:5 - Analog Comparator Mode"]
     #[inline(always)]
-    pub fn mode(&mut self) -> MODE_W {
-        MODE_W { w: self }
+    #[must_use]
+    pub fn mode(&mut self) -> MODE_W<4> {
+        MODE_W::new(self)
     }
     #[doc = "Bits 8:9 - Negative Input Select"]
     #[inline(always)]
-    pub fn inseln(&mut self) -> INSELN_W {
-        INSELN_W { w: self }
+    #[must_use]
+    pub fn inseln(&mut self) -> INSELN_W<8> {
+        INSELN_W::new(self)
     }
     #[doc = "Bit 16 - Peripheral Event Enable Negative"]
     #[inline(always)]
-    pub fn evenn(&mut self) -> EVENN_W {
-        EVENN_W { w: self }
+    #[must_use]
+    pub fn evenn(&mut self) -> EVENN_W<16> {
+        EVENN_W::new(self)
     }
     #[doc = "Bit 17 - Peripheral Event Enable Positive"]
     #[inline(always)]
-    pub fn evenp(&mut self) -> EVENP_W {
-        EVENP_W { w: self }
+    #[must_use]
+    pub fn evenp(&mut self) -> EVENP_W<17> {
+        EVENP_W::new(self)
     }
     #[doc = "Bits 24:25 - Hysteresis Voltage Value"]
     #[inline(always)]
-    pub fn hys(&mut self) -> HYS_W {
-        HYS_W { w: self }
+    #[must_use]
+    pub fn hys(&mut self) -> HYS_W<24> {
+        HYS_W::new(self)
     }
     #[doc = "Bit 26 - Fast Mode Enable"]
     #[inline(always)]
-    pub fn fast(&mut self) -> FAST_W {
-        FAST_W { w: self }
+    #[must_use]
+    pub fn fast(&mut self) -> FAST_W<26> {
+        FAST_W::new(self)
     }
     #[doc = "Bit 27 - Always On"]
     #[inline(always)]
-    pub fn alwayson(&mut self) -> ALWAYSON_W {
-        ALWAYSON_W { w: self }
+    #[must_use]
+    pub fn alwayson(&mut self) -> ALWAYSON_W<27> {
+        ALWAYSON_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -384,11 +176,10 @@ impl crate::Readable for CONF_SPEC {
 #[doc = "`write(|w| ..)` method takes [conf::W](W) writer structure"]
 impl crate::Writable for CONF_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets CONF%s to value 0"]
 impl crate::Resettable for CONF_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

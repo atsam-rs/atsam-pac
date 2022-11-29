@@ -24,8 +24,5 @@ impl crate::Readable for CIDR_SPEC {
 }
 #[doc = "`reset()` method sets CIDR to value 0xab0a_09e0"]
 impl crate::Resettable for CIDR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0xab0a_09e0
-    }
+    const RESET_VALUE: Self::Ux = 0xab0a_09e0;
 }

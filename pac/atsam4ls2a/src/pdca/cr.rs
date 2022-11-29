@@ -20,86 +20,29 @@ impl From<crate::W<CR_SPEC>> for W {
     }
 }
 #[doc = "Field `TEN` writer - Transfer Enable"]
-pub struct TEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TEN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type TEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CR_SPEC, bool, O>;
 #[doc = "Field `TDIS` writer - Transfer Disable"]
-pub struct TDIS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TDIS_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
-}
+pub type TDIS_W<'a, const O: u8> = crate::BitWriter<'a, u32, CR_SPEC, bool, O>;
 #[doc = "Field `ECLR` writer - Error Clear"]
-pub struct ECLR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ECLR_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
-        self.w
-    }
-}
+pub type ECLR_W<'a, const O: u8> = crate::BitWriter<'a, u32, CR_SPEC, bool, O>;
 impl W {
     #[doc = "Bit 0 - Transfer Enable"]
     #[inline(always)]
-    pub fn ten(&mut self) -> TEN_W {
-        TEN_W { w: self }
+    #[must_use]
+    pub fn ten(&mut self) -> TEN_W<0> {
+        TEN_W::new(self)
     }
     #[doc = "Bit 1 - Transfer Disable"]
     #[inline(always)]
-    pub fn tdis(&mut self) -> TDIS_W {
-        TDIS_W { w: self }
+    #[must_use]
+    pub fn tdis(&mut self) -> TDIS_W<1> {
+        TDIS_W::new(self)
     }
     #[doc = "Bit 8 - Error Clear"]
     #[inline(always)]
-    pub fn eclr(&mut self) -> ECLR_W {
-        ECLR_W { w: self }
+    #[must_use]
+    pub fn eclr(&mut self) -> ECLR_W<8> {
+        ECLR_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -116,11 +59,10 @@ impl crate::RegisterSpec for CR_SPEC {
 #[doc = "`write(|w| ..)` method takes [cr::W](W) writer structure"]
 impl crate::Writable for CR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets CR%s to value 0"]
 impl crate::Resettable for CR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

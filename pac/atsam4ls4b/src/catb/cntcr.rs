@@ -35,88 +35,22 @@ impl From<crate::W<CNTCR_SPEC>> for W {
     }
 }
 #[doc = "Field `TOP` reader - Counter Top Value"]
-pub struct TOP_R(crate::FieldReader<u32, u32>);
-impl TOP_R {
-    pub(crate) fn new(bits: u32) -> Self {
-        TOP_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TOP_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TOP_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `TOP` writer - Counter Top Value"]
-pub struct TOP_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TOP_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x00ff_ffff) | (value as u32 & 0x00ff_ffff);
-        self.w
-    }
-}
+pub type TOP_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CNTCR_SPEC, u32, u32, 24, O>;
 #[doc = "Field `SPREAD` reader - Spread Spectrum"]
-pub struct SPREAD_R(crate::FieldReader<u8, u8>);
-impl SPREAD_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        SPREAD_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for SPREAD_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type SPREAD_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `SPREAD` writer - Spread Spectrum"]
-pub struct SPREAD_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SPREAD_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 24)) | ((value as u32 & 0x0f) << 24);
-        self.w
-    }
-}
+pub type SPREAD_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CNTCR_SPEC, u8, u8, 4, O>;
 #[doc = "Field `REPEAT` reader - Repeat Measurements"]
-pub struct REPEAT_R(crate::FieldReader<u8, u8>);
-impl REPEAT_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        REPEAT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for REPEAT_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type REPEAT_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `REPEAT` writer - Repeat Measurements"]
-pub struct REPEAT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> REPEAT_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 28)) | ((value as u32 & 0x07) << 28);
-        self.w
-    }
-}
+pub type REPEAT_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CNTCR_SPEC, u8, u8, 3, O>;
 impl R {
     #[doc = "Bits 0:23 - Counter Top Value"]
     #[inline(always)]
     pub fn top(&self) -> TOP_R {
-        TOP_R::new((self.bits & 0x00ff_ffff) as u32)
+        TOP_R::new(self.bits & 0x00ff_ffff)
     }
     #[doc = "Bits 24:27 - Spread Spectrum"]
     #[inline(always)]
@@ -126,24 +60,27 @@ impl R {
     #[doc = "Bits 28:30 - Repeat Measurements"]
     #[inline(always)]
     pub fn repeat(&self) -> REPEAT_R {
-        REPEAT_R::new(((self.bits >> 28) & 0x07) as u8)
+        REPEAT_R::new(((self.bits >> 28) & 7) as u8)
     }
 }
 impl W {
     #[doc = "Bits 0:23 - Counter Top Value"]
     #[inline(always)]
-    pub fn top(&mut self) -> TOP_W {
-        TOP_W { w: self }
+    #[must_use]
+    pub fn top(&mut self) -> TOP_W<0> {
+        TOP_W::new(self)
     }
     #[doc = "Bits 24:27 - Spread Spectrum"]
     #[inline(always)]
-    pub fn spread(&mut self) -> SPREAD_W {
-        SPREAD_W { w: self }
+    #[must_use]
+    pub fn spread(&mut self) -> SPREAD_W<24> {
+        SPREAD_W::new(self)
     }
     #[doc = "Bits 28:30 - Repeat Measurements"]
     #[inline(always)]
-    pub fn repeat(&mut self) -> REPEAT_W {
-        REPEAT_W { w: self }
+    #[must_use]
+    pub fn repeat(&mut self) -> REPEAT_W<28> {
+        REPEAT_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -164,11 +101,10 @@ impl crate::Readable for CNTCR_SPEC {
 #[doc = "`write(|w| ..)` method takes [cntcr::W](W) writer structure"]
 impl crate::Writable for CNTCR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets CNTCR to value 0"]
 impl crate::Resettable for CNTCR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

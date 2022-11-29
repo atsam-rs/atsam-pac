@@ -35,283 +35,67 @@ impl From<crate::W<RCFASTCFG_SPEC>> for W {
     }
 }
 #[doc = "Field `EN` reader - Oscillator Enable"]
-pub struct EN_R(crate::FieldReader<bool, bool>);
-impl EN_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        EN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for EN_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type EN_R = crate::BitReader<bool>;
 #[doc = "Field `EN` writer - Oscillator Enable"]
-pub struct EN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> EN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, RCFASTCFG_SPEC, bool, O>;
 #[doc = "Field `TUNEEN` reader - Tuner Enable"]
-pub struct TUNEEN_R(crate::FieldReader<bool, bool>);
-impl TUNEEN_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        TUNEEN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TUNEEN_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TUNEEN_R = crate::BitReader<bool>;
 #[doc = "Field `TUNEEN` writer - Tuner Enable"]
-pub struct TUNEEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TUNEEN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
-}
+pub type TUNEEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, RCFASTCFG_SPEC, bool, O>;
 #[doc = "Field `JITMODE` reader - Jitter Mode"]
-pub struct JITMODE_R(crate::FieldReader<bool, bool>);
-impl JITMODE_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        JITMODE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for JITMODE_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type JITMODE_R = crate::BitReader<bool>;
 #[doc = "Field `JITMODE` writer - Jitter Mode"]
-pub struct JITMODE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> JITMODE_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
-    }
-}
+pub type JITMODE_W<'a, const O: u8> = crate::BitWriter<'a, u32, RCFASTCFG_SPEC, bool, O>;
 #[doc = "Field `NBPERIODS` reader - Number of 32kHz Periods"]
-pub struct NBPERIODS_R(crate::FieldReader<u8, u8>);
-impl NBPERIODS_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        NBPERIODS_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for NBPERIODS_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type NBPERIODS_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `NBPERIODS` writer - Number of 32kHz Periods"]
-pub struct NBPERIODS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> NBPERIODS_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 4)) | ((value as u32 & 0x07) << 4);
-        self.w
-    }
-}
+pub type NBPERIODS_W<'a, const O: u8> = crate::FieldWriter<'a, u32, RCFASTCFG_SPEC, u8, u8, 3, O>;
 #[doc = "Field `FCD` reader - RCFAST Fuse Calibration Done"]
-pub struct FCD_R(crate::FieldReader<bool, bool>);
-impl FCD_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        FCD_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for FCD_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type FCD_R = crate::BitReader<bool>;
 #[doc = "Field `FCD` writer - RCFAST Fuse Calibration Done"]
-pub struct FCD_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> FCD_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | ((value as u32 & 0x01) << 7);
-        self.w
-    }
-}
+pub type FCD_W<'a, const O: u8> = crate::BitWriter<'a, u32, RCFASTCFG_SPEC, bool, O>;
 #[doc = "Field `FRANGE` reader - Frequency Range"]
-pub struct FRANGE_R(crate::FieldReader<u8, u8>);
-impl FRANGE_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        FRANGE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for FRANGE_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type FRANGE_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `FRANGE` writer - Frequency Range"]
-pub struct FRANGE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> FRANGE_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 8)) | ((value as u32 & 0x03) << 8);
-        self.w
-    }
-}
+pub type FRANGE_W<'a, const O: u8> = crate::FieldWriter<'a, u32, RCFASTCFG_SPEC, u8, u8, 2, O>;
 #[doc = "Field `LOCKMARGIN` reader - Accepted Count Error for Lock"]
-pub struct LOCKMARGIN_R(crate::FieldReader<u8, u8>);
-impl LOCKMARGIN_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        LOCKMARGIN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for LOCKMARGIN_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type LOCKMARGIN_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `LOCKMARGIN` writer - Accepted Count Error for Lock"]
-pub struct LOCKMARGIN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> LOCKMARGIN_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 12)) | ((value as u32 & 0x0f) << 12);
-        self.w
-    }
-}
+pub type LOCKMARGIN_W<'a, const O: u8> = crate::FieldWriter<'a, u32, RCFASTCFG_SPEC, u8, u8, 4, O>;
 #[doc = "Field `CALIB` reader - Oscillator Calibration Value"]
-pub struct CALIB_R(crate::FieldReader<u8, u8>);
-impl CALIB_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        CALIB_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CALIB_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CALIB_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `CALIB` writer - Oscillator Calibration Value"]
-pub struct CALIB_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CALIB_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x7f << 16)) | ((value as u32 & 0x7f) << 16);
-        self.w
-    }
-}
+pub type CALIB_W<'a, const O: u8> = crate::FieldWriter<'a, u32, RCFASTCFG_SPEC, u8, u8, 7, O>;
 impl R {
     #[doc = "Bit 0 - Oscillator Enable"]
     #[inline(always)]
     pub fn en(&self) -> EN_R {
-        EN_R::new((self.bits & 0x01) != 0)
+        EN_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Tuner Enable"]
     #[inline(always)]
     pub fn tuneen(&self) -> TUNEEN_R {
-        TUNEEN_R::new(((self.bits >> 1) & 0x01) != 0)
+        TUNEEN_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - Jitter Mode"]
     #[inline(always)]
     pub fn jitmode(&self) -> JITMODE_R {
-        JITMODE_R::new(((self.bits >> 2) & 0x01) != 0)
+        JITMODE_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bits 4:6 - Number of 32kHz Periods"]
     #[inline(always)]
     pub fn nbperiods(&self) -> NBPERIODS_R {
-        NBPERIODS_R::new(((self.bits >> 4) & 0x07) as u8)
+        NBPERIODS_R::new(((self.bits >> 4) & 7) as u8)
     }
     #[doc = "Bit 7 - RCFAST Fuse Calibration Done"]
     #[inline(always)]
     pub fn fcd(&self) -> FCD_R {
-        FCD_R::new(((self.bits >> 7) & 0x01) != 0)
+        FCD_R::new(((self.bits >> 7) & 1) != 0)
     }
     #[doc = "Bits 8:9 - Frequency Range"]
     #[inline(always)]
     pub fn frange(&self) -> FRANGE_R {
-        FRANGE_R::new(((self.bits >> 8) & 0x03) as u8)
+        FRANGE_R::new(((self.bits >> 8) & 3) as u8)
     }
     #[doc = "Bits 12:15 - Accepted Count Error for Lock"]
     #[inline(always)]
@@ -327,43 +111,51 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Oscillator Enable"]
     #[inline(always)]
-    pub fn en(&mut self) -> EN_W {
-        EN_W { w: self }
+    #[must_use]
+    pub fn en(&mut self) -> EN_W<0> {
+        EN_W::new(self)
     }
     #[doc = "Bit 1 - Tuner Enable"]
     #[inline(always)]
-    pub fn tuneen(&mut self) -> TUNEEN_W {
-        TUNEEN_W { w: self }
+    #[must_use]
+    pub fn tuneen(&mut self) -> TUNEEN_W<1> {
+        TUNEEN_W::new(self)
     }
     #[doc = "Bit 2 - Jitter Mode"]
     #[inline(always)]
-    pub fn jitmode(&mut self) -> JITMODE_W {
-        JITMODE_W { w: self }
+    #[must_use]
+    pub fn jitmode(&mut self) -> JITMODE_W<2> {
+        JITMODE_W::new(self)
     }
     #[doc = "Bits 4:6 - Number of 32kHz Periods"]
     #[inline(always)]
-    pub fn nbperiods(&mut self) -> NBPERIODS_W {
-        NBPERIODS_W { w: self }
+    #[must_use]
+    pub fn nbperiods(&mut self) -> NBPERIODS_W<4> {
+        NBPERIODS_W::new(self)
     }
     #[doc = "Bit 7 - RCFAST Fuse Calibration Done"]
     #[inline(always)]
-    pub fn fcd(&mut self) -> FCD_W {
-        FCD_W { w: self }
+    #[must_use]
+    pub fn fcd(&mut self) -> FCD_W<7> {
+        FCD_W::new(self)
     }
     #[doc = "Bits 8:9 - Frequency Range"]
     #[inline(always)]
-    pub fn frange(&mut self) -> FRANGE_W {
-        FRANGE_W { w: self }
+    #[must_use]
+    pub fn frange(&mut self) -> FRANGE_W<8> {
+        FRANGE_W::new(self)
     }
     #[doc = "Bits 12:15 - Accepted Count Error for Lock"]
     #[inline(always)]
-    pub fn lockmargin(&mut self) -> LOCKMARGIN_W {
-        LOCKMARGIN_W { w: self }
+    #[must_use]
+    pub fn lockmargin(&mut self) -> LOCKMARGIN_W<12> {
+        LOCKMARGIN_W::new(self)
     }
     #[doc = "Bits 16:22 - Oscillator Calibration Value"]
     #[inline(always)]
-    pub fn calib(&mut self) -> CALIB_W {
-        CALIB_W { w: self }
+    #[must_use]
+    pub fn calib(&mut self) -> CALIB_W<16> {
+        CALIB_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -384,11 +176,10 @@ impl crate::Readable for RCFASTCFG_SPEC {
 #[doc = "`write(|w| ..)` method takes [rcfastcfg::W](W) writer structure"]
 impl crate::Writable for RCFASTCFG_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets RCFASTCFG to value 0"]
 impl crate::Resettable for RCFASTCFG_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

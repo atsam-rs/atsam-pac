@@ -14,24 +14,12 @@ impl From<crate::R<IMR_SPEC>> for R {
     }
 }
 #[doc = "Field `TXRDY` reader - Transmit Ready Interrupt Mask"]
-pub struct TXRDY_R(crate::FieldReader<bool, bool>);
-impl TXRDY_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        TXRDY_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TXRDY_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TXRDY_R = crate::BitReader<bool>;
 impl R {
     #[doc = "Bit 0 - Transmit Ready Interrupt Mask"]
     #[inline(always)]
     pub fn txrdy(&self) -> TXRDY_R {
-        TXRDY_R::new((self.bits & 0x01) != 0)
+        TXRDY_R::new((self.bits & 1) != 0)
     }
 }
 #[doc = "Interrupt Mask Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [imr](index.html) module"]
@@ -45,8 +33,5 @@ impl crate::Readable for IMR_SPEC {
 }
 #[doc = "`reset()` method sets IMR to value 0"]
 impl crate::Resettable for IMR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

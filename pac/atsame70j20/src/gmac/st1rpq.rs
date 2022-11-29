@@ -35,160 +35,30 @@ impl From<crate::W<ST1RPQ_SPEC>> for W {
     }
 }
 #[doc = "Field `QNB` reader - Queue Number (0-2)"]
-pub struct QNB_R(crate::FieldReader<u8, u8>);
-impl QNB_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        QNB_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for QNB_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type QNB_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `QNB` writer - Queue Number (0-2)"]
-pub struct QNB_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> QNB_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x07) | (value as u32 & 0x07);
-        self.w
-    }
-}
+pub type QNB_W<'a, const O: u8> = crate::FieldWriter<'a, u32, ST1RPQ_SPEC, u8, u8, 3, O>;
 #[doc = "Field `DSTCM` reader - Differentiated Services or Traffic Class Match"]
-pub struct DSTCM_R(crate::FieldReader<u8, u8>);
-impl DSTCM_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        DSTCM_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DSTCM_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DSTCM_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `DSTCM` writer - Differentiated Services or Traffic Class Match"]
-pub struct DSTCM_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DSTCM_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0xff << 4)) | ((value as u32 & 0xff) << 4);
-        self.w
-    }
-}
+pub type DSTCM_W<'a, const O: u8> = crate::FieldWriter<'a, u32, ST1RPQ_SPEC, u8, u8, 8, O>;
 #[doc = "Field `UDPM` reader - UDP Port Match"]
-pub struct UDPM_R(crate::FieldReader<u16, u16>);
-impl UDPM_R {
-    pub(crate) fn new(bits: u16) -> Self {
-        UDPM_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for UDPM_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type UDPM_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `UDPM` writer - UDP Port Match"]
-pub struct UDPM_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> UDPM_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0xffff << 12)) | ((value as u32 & 0xffff) << 12);
-        self.w
-    }
-}
+pub type UDPM_W<'a, const O: u8> = crate::FieldWriter<'a, u32, ST1RPQ_SPEC, u16, u16, 16, O>;
 #[doc = "Field `DSTCE` reader - Differentiated Services or Traffic Class Match Enable"]
-pub struct DSTCE_R(crate::FieldReader<bool, bool>);
-impl DSTCE_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        DSTCE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DSTCE_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DSTCE_R = crate::BitReader<bool>;
 #[doc = "Field `DSTCE` writer - Differentiated Services or Traffic Class Match Enable"]
-pub struct DSTCE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DSTCE_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 28)) | ((value as u32 & 0x01) << 28);
-        self.w
-    }
-}
+pub type DSTCE_W<'a, const O: u8> = crate::BitWriter<'a, u32, ST1RPQ_SPEC, bool, O>;
 #[doc = "Field `UDPE` reader - UDP Port Match Enable"]
-pub struct UDPE_R(crate::FieldReader<bool, bool>);
-impl UDPE_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        UDPE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for UDPE_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type UDPE_R = crate::BitReader<bool>;
 #[doc = "Field `UDPE` writer - UDP Port Match Enable"]
-pub struct UDPE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> UDPE_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 29)) | ((value as u32 & 0x01) << 29);
-        self.w
-    }
-}
+pub type UDPE_W<'a, const O: u8> = crate::BitWriter<'a, u32, ST1RPQ_SPEC, bool, O>;
 impl R {
     #[doc = "Bits 0:2 - Queue Number (0-2)"]
     #[inline(always)]
     pub fn qnb(&self) -> QNB_R {
-        QNB_R::new((self.bits & 0x07) as u8)
+        QNB_R::new((self.bits & 7) as u8)
     }
     #[doc = "Bits 4:11 - Differentiated Services or Traffic Class Match"]
     #[inline(always)]
@@ -203,39 +73,44 @@ impl R {
     #[doc = "Bit 28 - Differentiated Services or Traffic Class Match Enable"]
     #[inline(always)]
     pub fn dstce(&self) -> DSTCE_R {
-        DSTCE_R::new(((self.bits >> 28) & 0x01) != 0)
+        DSTCE_R::new(((self.bits >> 28) & 1) != 0)
     }
     #[doc = "Bit 29 - UDP Port Match Enable"]
     #[inline(always)]
     pub fn udpe(&self) -> UDPE_R {
-        UDPE_R::new(((self.bits >> 29) & 0x01) != 0)
+        UDPE_R::new(((self.bits >> 29) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bits 0:2 - Queue Number (0-2)"]
     #[inline(always)]
-    pub fn qnb(&mut self) -> QNB_W {
-        QNB_W { w: self }
+    #[must_use]
+    pub fn qnb(&mut self) -> QNB_W<0> {
+        QNB_W::new(self)
     }
     #[doc = "Bits 4:11 - Differentiated Services or Traffic Class Match"]
     #[inline(always)]
-    pub fn dstcm(&mut self) -> DSTCM_W {
-        DSTCM_W { w: self }
+    #[must_use]
+    pub fn dstcm(&mut self) -> DSTCM_W<4> {
+        DSTCM_W::new(self)
     }
     #[doc = "Bits 12:27 - UDP Port Match"]
     #[inline(always)]
-    pub fn udpm(&mut self) -> UDPM_W {
-        UDPM_W { w: self }
+    #[must_use]
+    pub fn udpm(&mut self) -> UDPM_W<12> {
+        UDPM_W::new(self)
     }
     #[doc = "Bit 28 - Differentiated Services or Traffic Class Match Enable"]
     #[inline(always)]
-    pub fn dstce(&mut self) -> DSTCE_W {
-        DSTCE_W { w: self }
+    #[must_use]
+    pub fn dstce(&mut self) -> DSTCE_W<28> {
+        DSTCE_W::new(self)
     }
     #[doc = "Bit 29 - UDP Port Match Enable"]
     #[inline(always)]
-    pub fn udpe(&mut self) -> UDPE_W {
-        UDPE_W { w: self }
+    #[must_use]
+    pub fn udpe(&mut self) -> UDPE_W<29> {
+        UDPE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -256,12 +131,11 @@ impl crate::Readable for ST1RPQ_SPEC {
 #[doc = "`write(|w| ..)` method takes [st1rpq::W](W) writer structure"]
 impl crate::Writable for ST1RPQ_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets ST1RPQ[%s]
 to value 0"]
 impl crate::Resettable for ST1RPQ_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

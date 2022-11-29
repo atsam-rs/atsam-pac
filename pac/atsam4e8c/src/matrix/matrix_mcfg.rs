@@ -35,43 +35,22 @@ impl From<crate::W<MATRIX_MCFG_SPEC>> for W {
     }
 }
 #[doc = "Field `ULBT` reader - Undefined Length Burst Type"]
-pub struct ULBT_R(crate::FieldReader<u8, u8>);
-impl ULBT_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        ULBT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for ULBT_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type ULBT_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `ULBT` writer - Undefined Length Burst Type"]
-pub struct ULBT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ULBT_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x07) | (value as u32 & 0x07);
-        self.w
-    }
-}
+pub type ULBT_W<'a, const O: u8> = crate::FieldWriter<'a, u32, MATRIX_MCFG_SPEC, u8, u8, 3, O>;
 impl R {
     #[doc = "Bits 0:2 - Undefined Length Burst Type"]
     #[inline(always)]
     pub fn ulbt(&self) -> ULBT_R {
-        ULBT_R::new((self.bits & 0x07) as u8)
+        ULBT_R::new((self.bits & 7) as u8)
     }
 }
 impl W {
     #[doc = "Bits 0:2 - Undefined Length Burst Type"]
     #[inline(always)]
-    pub fn ulbt(&mut self) -> ULBT_W {
-        ULBT_W { w: self }
+    #[must_use]
+    pub fn ulbt(&mut self) -> ULBT_W<0> {
+        ULBT_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -92,4 +71,6 @@ impl crate::Readable for MATRIX_MCFG_SPEC {
 #[doc = "`write(|w| ..)` method takes [matrix_mcfg::W](W) writer structure"]
 impl crate::Writable for MATRIX_MCFG_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

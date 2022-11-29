@@ -35,109 +35,21 @@ impl From<crate::W<GWAC_SPEC>> for W {
     }
 }
 #[doc = "Field `PW0` reader - Pool Weight 0"]
-pub struct PW0_R(crate::FieldReader<u8, u8>);
-impl PW0_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        PW0_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for PW0_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type PW0_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `PW0` writer - Pool Weight 0"]
-pub struct PW0_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PW0_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x0f) | (value as u32 & 0x0f);
-        self.w
-    }
-}
+pub type PW0_W<'a, const O: u8> = crate::FieldWriter<'a, u32, GWAC_SPEC, u8, u8, 4, O>;
 #[doc = "Field `PW1` reader - Pool Weight 1"]
-pub struct PW1_R(crate::FieldReader<u8, u8>);
-impl PW1_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        PW1_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for PW1_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type PW1_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `PW1` writer - Pool Weight 1"]
-pub struct PW1_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PW1_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 4)) | ((value as u32 & 0x0f) << 4);
-        self.w
-    }
-}
+pub type PW1_W<'a, const O: u8> = crate::FieldWriter<'a, u32, GWAC_SPEC, u8, u8, 4, O>;
 #[doc = "Field `PW2` reader - Pool Weight 2"]
-pub struct PW2_R(crate::FieldReader<u8, u8>);
-impl PW2_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        PW2_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for PW2_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type PW2_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `PW2` writer - Pool Weight 2"]
-pub struct PW2_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PW2_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 8)) | ((value as u32 & 0x0f) << 8);
-        self.w
-    }
-}
+pub type PW2_W<'a, const O: u8> = crate::FieldWriter<'a, u32, GWAC_SPEC, u8, u8, 4, O>;
 #[doc = "Field `PW3` reader - Pool Weight 3"]
-pub struct PW3_R(crate::FieldReader<u8, u8>);
-impl PW3_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        PW3_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for PW3_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type PW3_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `PW3` writer - Pool Weight 3"]
-pub struct PW3_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PW3_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 12)) | ((value as u32 & 0x0f) << 12);
-        self.w
-    }
-}
+pub type PW3_W<'a, const O: u8> = crate::FieldWriter<'a, u32, GWAC_SPEC, u8, u8, 4, O>;
 impl R {
     #[doc = "Bits 0:3 - Pool Weight 0"]
     #[inline(always)]
@@ -163,23 +75,27 @@ impl R {
 impl W {
     #[doc = "Bits 0:3 - Pool Weight 0"]
     #[inline(always)]
-    pub fn pw0(&mut self) -> PW0_W {
-        PW0_W { w: self }
+    #[must_use]
+    pub fn pw0(&mut self) -> PW0_W<0> {
+        PW0_W::new(self)
     }
     #[doc = "Bits 4:7 - Pool Weight 1"]
     #[inline(always)]
-    pub fn pw1(&mut self) -> PW1_W {
-        PW1_W { w: self }
+    #[must_use]
+    pub fn pw1(&mut self) -> PW1_W<4> {
+        PW1_W::new(self)
     }
     #[doc = "Bits 8:11 - Pool Weight 2"]
     #[inline(always)]
-    pub fn pw2(&mut self) -> PW2_W {
-        PW2_W { w: self }
+    #[must_use]
+    pub fn pw2(&mut self) -> PW2_W<8> {
+        PW2_W::new(self)
     }
     #[doc = "Bits 12:15 - Pool Weight 3"]
     #[inline(always)]
-    pub fn pw3(&mut self) -> PW3_W {
-        PW3_W { w: self }
+    #[must_use]
+    pub fn pw3(&mut self) -> PW3_W<12> {
+        PW3_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -200,11 +116,10 @@ impl crate::Readable for GWAC_SPEC {
 #[doc = "`write(|w| ..)` method takes [gwac::W](W) writer structure"]
 impl crate::Writable for GWAC_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets GWAC to value 0"]
 impl crate::Resettable for GWAC_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

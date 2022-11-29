@@ -20,21 +20,11 @@ impl From<crate::W<TDR_SPEC>> for W {
     }
 }
 #[doc = "Field `TD` writer - Transmit Data"]
-pub struct TD_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TD_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xffff) | (value as u32 & 0xffff);
-        self.w
-    }
-}
+pub type TD_W<'a, const O: u8> = crate::FieldWriter<'a, u32, TDR_SPEC, u16, u16, 16, O>;
 #[doc = "Peripheral Chip Select\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum PCS_AW {
+pub enum PCSSELECT_AW {
     #[doc = "14: NPCS0 as Chip Select"]
     NPCS0 = 14,
     #[doc = "13: NPCS1 as Chip Select"]
@@ -44,86 +34,56 @@ pub enum PCS_AW {
     #[doc = "7: NPCS3 as Chip Select"]
     NPCS3 = 7,
 }
-impl From<PCS_AW> for u8 {
+impl From<PCSSELECT_AW> for u8 {
     #[inline(always)]
-    fn from(variant: PCS_AW) -> Self {
+    fn from(variant: PCSSELECT_AW) -> Self {
         variant as _
     }
 }
 #[doc = "Field `PCS` writer - Peripheral Chip Select"]
-pub struct PCS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PCS_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: PCS_AW) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type PCS_W<'a, const O: u8> = crate::FieldWriter<'a, u32, TDR_SPEC, u8, PCSSELECT_AW, 4, O>;
+impl<'a, const O: u8> PCS_W<'a, O> {
     #[doc = "NPCS0 as Chip Select"]
     #[inline(always)]
     pub fn npcs0(self) -> &'a mut W {
-        self.variant(PCS_AW::NPCS0)
+        self.variant(PCSSELECT_AW::NPCS0)
     }
     #[doc = "NPCS1 as Chip Select"]
     #[inline(always)]
     pub fn npcs1(self) -> &'a mut W {
-        self.variant(PCS_AW::NPCS1)
+        self.variant(PCSSELECT_AW::NPCS1)
     }
     #[doc = "NPCS2 as Chip Select"]
     #[inline(always)]
     pub fn npcs2(self) -> &'a mut W {
-        self.variant(PCS_AW::NPCS2)
+        self.variant(PCSSELECT_AW::NPCS2)
     }
     #[doc = "NPCS3 as Chip Select"]
     #[inline(always)]
     pub fn npcs3(self) -> &'a mut W {
-        self.variant(PCS_AW::NPCS3)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 16)) | ((value as u32 & 0x0f) << 16);
-        self.w
+        self.variant(PCSSELECT_AW::NPCS3)
     }
 }
 #[doc = "Field `LASTXFER` writer - Last Transfer"]
-pub struct LASTXFER_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> LASTXFER_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 24)) | ((value as u32 & 0x01) << 24);
-        self.w
-    }
-}
+pub type LASTXFER_W<'a, const O: u8> = crate::BitWriter<'a, u32, TDR_SPEC, bool, O>;
 impl W {
     #[doc = "Bits 0:15 - Transmit Data"]
     #[inline(always)]
-    pub fn td(&mut self) -> TD_W {
-        TD_W { w: self }
+    #[must_use]
+    pub fn td(&mut self) -> TD_W<0> {
+        TD_W::new(self)
     }
     #[doc = "Bits 16:19 - Peripheral Chip Select"]
     #[inline(always)]
-    pub fn pcs(&mut self) -> PCS_W {
-        PCS_W { w: self }
+    #[must_use]
+    pub fn pcs(&mut self) -> PCS_W<16> {
+        PCS_W::new(self)
     }
     #[doc = "Bit 24 - Last Transfer"]
     #[inline(always)]
-    pub fn lastxfer(&mut self) -> LASTXFER_W {
-        LASTXFER_W { w: self }
+    #[must_use]
+    pub fn lastxfer(&mut self) -> LASTXFER_W<24> {
+        LASTXFER_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -140,11 +100,10 @@ impl crate::RegisterSpec for TDR_SPEC {
 #[doc = "`write(|w| ..)` method takes [tdr::W](W) writer structure"]
 impl crate::Writable for TDR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets TDR to value 0"]
 impl crate::Resettable for TDR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

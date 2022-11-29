@@ -35,53 +35,22 @@ impl From<crate::W<COSR_SPEC>> for W {
     }
 }
 #[doc = "Field `CSEL` reader - Sample & Hold unit Correction Select"]
-pub struct CSEL_R(crate::FieldReader<bool, bool>);
-impl CSEL_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        CSEL_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CSEL_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CSEL_R = crate::BitReader<bool>;
 #[doc = "Field `CSEL` writer - Sample & Hold unit Correction Select"]
-pub struct CSEL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CSEL_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type CSEL_W<'a, const O: u8> = crate::BitWriter<'a, u32, COSR_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - Sample & Hold unit Correction Select"]
     #[inline(always)]
     pub fn csel(&self) -> CSEL_R {
-        CSEL_R::new((self.bits & 0x01) != 0)
+        CSEL_R::new((self.bits & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Sample & Hold unit Correction Select"]
     #[inline(always)]
-    pub fn csel(&mut self) -> CSEL_W {
-        CSEL_W { w: self }
+    #[must_use]
+    pub fn csel(&mut self) -> CSEL_W<0> {
+        CSEL_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -102,11 +71,10 @@ impl crate::Readable for COSR_SPEC {
 #[doc = "`write(|w| ..)` method takes [cosr::W](W) writer structure"]
 impl crate::Writable for COSR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets COSR to value 0"]
 impl crate::Resettable for COSR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

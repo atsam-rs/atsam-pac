@@ -14,47 +14,11 @@ impl From<crate::R<PARAMETER_SPEC>> for R {
     }
 }
 #[doc = "Field `NPINS` reader - Number of Pins"]
-pub struct NPINS_R(crate::FieldReader<u8, u8>);
-impl NPINS_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        NPINS_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for NPINS_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type NPINS_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `NSTATUS` reader - Number of Status bits"]
-pub struct NSTATUS_R(crate::FieldReader<u8, u8>);
-impl NSTATUS_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        NSTATUS_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for NSTATUS_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type NSTATUS_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `FRACTIONAL` reader - Number of Fractional bits"]
-pub struct FRACTIONAL_R(crate::FieldReader<u8, u8>);
-impl FRACTIONAL_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        FRACTIONAL_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for FRACTIONAL_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type FRACTIONAL_R = crate::FieldReader<u8, u8>;
 impl R {
     #[doc = "Bits 0:7 - Number of Pins"]
     #[inline(always)]
@@ -83,8 +47,5 @@ impl crate::Readable for PARAMETER_SPEC {
 }
 #[doc = "`reset()` method sets PARAMETER to value 0"]
 impl crate::Resettable for PARAMETER_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

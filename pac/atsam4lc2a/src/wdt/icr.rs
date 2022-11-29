@@ -20,32 +20,13 @@ impl From<crate::W<ICR_SPEC>> for W {
     }
 }
 #[doc = "Field `WINT` writer - Watchdog Interrupt"]
-pub struct WINT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> WINT_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
-    }
-}
+pub type WINT_W<'a, const O: u8> = crate::BitWriter<'a, u32, ICR_SPEC, bool, O>;
 impl W {
     #[doc = "Bit 2 - Watchdog Interrupt"]
     #[inline(always)]
-    pub fn wint(&mut self) -> WINT_W {
-        WINT_W { w: self }
+    #[must_use]
+    pub fn wint(&mut self) -> WINT_W<2> {
+        WINT_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -62,11 +43,10 @@ impl crate::RegisterSpec for ICR_SPEC {
 #[doc = "`write(|w| ..)` method takes [icr::W](W) writer structure"]
 impl crate::Writable for ICR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets ICR to value 0"]
 impl crate::Resettable for ICR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

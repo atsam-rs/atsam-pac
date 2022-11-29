@@ -35,743 +35,247 @@ impl From<crate::W<DIFFR_SPEC>> for W {
     }
 }
 #[doc = "Field `DIFF0` reader - Differential inputs for channel 0"]
-pub struct DIFF0_R(crate::FieldReader<bool, bool>);
-impl DIFF0_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        DIFF0_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DIFF0_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DIFF0_R = crate::BitReader<bool>;
 #[doc = "Field `DIFF0` writer - Differential inputs for channel 0"]
-pub struct DIFF0_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DIFF0_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type DIFF0_W<'a, const O: u8> = crate::BitWriter<'a, u32, DIFFR_SPEC, bool, O>;
 #[doc = "Field `DIFF1` reader - Differential inputs for channel 1"]
-pub struct DIFF1_R(crate::FieldReader<bool, bool>);
-impl DIFF1_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        DIFF1_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DIFF1_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DIFF1_R = crate::BitReader<bool>;
 #[doc = "Field `DIFF1` writer - Differential inputs for channel 1"]
-pub struct DIFF1_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DIFF1_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
-}
+pub type DIFF1_W<'a, const O: u8> = crate::BitWriter<'a, u32, DIFFR_SPEC, bool, O>;
 #[doc = "Field `DIFF2` reader - Differential inputs for channel 2"]
-pub struct DIFF2_R(crate::FieldReader<bool, bool>);
-impl DIFF2_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        DIFF2_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DIFF2_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DIFF2_R = crate::BitReader<bool>;
 #[doc = "Field `DIFF2` writer - Differential inputs for channel 2"]
-pub struct DIFF2_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DIFF2_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
-    }
-}
+pub type DIFF2_W<'a, const O: u8> = crate::BitWriter<'a, u32, DIFFR_SPEC, bool, O>;
 #[doc = "Field `DIFF3` reader - Differential inputs for channel 3"]
-pub struct DIFF3_R(crate::FieldReader<bool, bool>);
-impl DIFF3_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        DIFF3_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DIFF3_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DIFF3_R = crate::BitReader<bool>;
 #[doc = "Field `DIFF3` writer - Differential inputs for channel 3"]
-pub struct DIFF3_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DIFF3_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
-        self.w
-    }
-}
+pub type DIFF3_W<'a, const O: u8> = crate::BitWriter<'a, u32, DIFFR_SPEC, bool, O>;
 #[doc = "Field `DIFF4` reader - Differential inputs for channel 4"]
-pub struct DIFF4_R(crate::FieldReader<bool, bool>);
-impl DIFF4_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        DIFF4_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DIFF4_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DIFF4_R = crate::BitReader<bool>;
 #[doc = "Field `DIFF4` writer - Differential inputs for channel 4"]
-pub struct DIFF4_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DIFF4_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
-        self.w
-    }
-}
+pub type DIFF4_W<'a, const O: u8> = crate::BitWriter<'a, u32, DIFFR_SPEC, bool, O>;
 #[doc = "Field `DIFF5` reader - Differential inputs for channel 5"]
-pub struct DIFF5_R(crate::FieldReader<bool, bool>);
-impl DIFF5_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        DIFF5_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DIFF5_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DIFF5_R = crate::BitReader<bool>;
 #[doc = "Field `DIFF5` writer - Differential inputs for channel 5"]
-pub struct DIFF5_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DIFF5_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
-        self.w
-    }
-}
+pub type DIFF5_W<'a, const O: u8> = crate::BitWriter<'a, u32, DIFFR_SPEC, bool, O>;
 #[doc = "Field `DIFF6` reader - Differential inputs for channel 6"]
-pub struct DIFF6_R(crate::FieldReader<bool, bool>);
-impl DIFF6_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        DIFF6_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DIFF6_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DIFF6_R = crate::BitReader<bool>;
 #[doc = "Field `DIFF6` writer - Differential inputs for channel 6"]
-pub struct DIFF6_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DIFF6_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | ((value as u32 & 0x01) << 6);
-        self.w
-    }
-}
+pub type DIFF6_W<'a, const O: u8> = crate::BitWriter<'a, u32, DIFFR_SPEC, bool, O>;
 #[doc = "Field `DIFF7` reader - Differential inputs for channel 7"]
-pub struct DIFF7_R(crate::FieldReader<bool, bool>);
-impl DIFF7_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        DIFF7_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DIFF7_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DIFF7_R = crate::BitReader<bool>;
 #[doc = "Field `DIFF7` writer - Differential inputs for channel 7"]
-pub struct DIFF7_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DIFF7_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | ((value as u32 & 0x01) << 7);
-        self.w
-    }
-}
+pub type DIFF7_W<'a, const O: u8> = crate::BitWriter<'a, u32, DIFFR_SPEC, bool, O>;
 #[doc = "Field `DIFF8` reader - Differential inputs for channel 8"]
-pub struct DIFF8_R(crate::FieldReader<bool, bool>);
-impl DIFF8_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        DIFF8_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DIFF8_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DIFF8_R = crate::BitReader<bool>;
 #[doc = "Field `DIFF8` writer - Differential inputs for channel 8"]
-pub struct DIFF8_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DIFF8_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
-        self.w
-    }
-}
+pub type DIFF8_W<'a, const O: u8> = crate::BitWriter<'a, u32, DIFFR_SPEC, bool, O>;
 #[doc = "Field `DIFF9` reader - Differential inputs for channel 9"]
-pub struct DIFF9_R(crate::FieldReader<bool, bool>);
-impl DIFF9_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        DIFF9_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DIFF9_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DIFF9_R = crate::BitReader<bool>;
 #[doc = "Field `DIFF9` writer - Differential inputs for channel 9"]
-pub struct DIFF9_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DIFF9_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 9)) | ((value as u32 & 0x01) << 9);
-        self.w
-    }
-}
+pub type DIFF9_W<'a, const O: u8> = crate::BitWriter<'a, u32, DIFFR_SPEC, bool, O>;
 #[doc = "Field `DIFF10` reader - Differential inputs for channel 10"]
-pub struct DIFF10_R(crate::FieldReader<bool, bool>);
-impl DIFF10_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        DIFF10_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DIFF10_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DIFF10_R = crate::BitReader<bool>;
 #[doc = "Field `DIFF10` writer - Differential inputs for channel 10"]
-pub struct DIFF10_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DIFF10_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 10)) | ((value as u32 & 0x01) << 10);
-        self.w
-    }
-}
+pub type DIFF10_W<'a, const O: u8> = crate::BitWriter<'a, u32, DIFFR_SPEC, bool, O>;
 #[doc = "Field `DIFF11` reader - Differential inputs for channel 11"]
-pub struct DIFF11_R(crate::FieldReader<bool, bool>);
-impl DIFF11_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        DIFF11_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DIFF11_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DIFF11_R = crate::BitReader<bool>;
 #[doc = "Field `DIFF11` writer - Differential inputs for channel 11"]
-pub struct DIFF11_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DIFF11_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 11)) | ((value as u32 & 0x01) << 11);
-        self.w
-    }
-}
+pub type DIFF11_W<'a, const O: u8> = crate::BitWriter<'a, u32, DIFFR_SPEC, bool, O>;
 #[doc = "Field `DIFF12` reader - Differential inputs for channel 12"]
-pub struct DIFF12_R(crate::FieldReader<bool, bool>);
-impl DIFF12_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        DIFF12_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DIFF12_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DIFF12_R = crate::BitReader<bool>;
 #[doc = "Field `DIFF12` writer - Differential inputs for channel 12"]
-pub struct DIFF12_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DIFF12_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 12)) | ((value as u32 & 0x01) << 12);
-        self.w
-    }
-}
+pub type DIFF12_W<'a, const O: u8> = crate::BitWriter<'a, u32, DIFFR_SPEC, bool, O>;
 #[doc = "Field `DIFF13` reader - Differential inputs for channel 13"]
-pub struct DIFF13_R(crate::FieldReader<bool, bool>);
-impl DIFF13_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        DIFF13_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DIFF13_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DIFF13_R = crate::BitReader<bool>;
 #[doc = "Field `DIFF13` writer - Differential inputs for channel 13"]
-pub struct DIFF13_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DIFF13_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 13)) | ((value as u32 & 0x01) << 13);
-        self.w
-    }
-}
+pub type DIFF13_W<'a, const O: u8> = crate::BitWriter<'a, u32, DIFFR_SPEC, bool, O>;
 #[doc = "Field `DIFF14` reader - Differential inputs for channel 14"]
-pub struct DIFF14_R(crate::FieldReader<bool, bool>);
-impl DIFF14_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        DIFF14_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DIFF14_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DIFF14_R = crate::BitReader<bool>;
 #[doc = "Field `DIFF14` writer - Differential inputs for channel 14"]
-pub struct DIFF14_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DIFF14_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 14)) | ((value as u32 & 0x01) << 14);
-        self.w
-    }
-}
+pub type DIFF14_W<'a, const O: u8> = crate::BitWriter<'a, u32, DIFFR_SPEC, bool, O>;
 #[doc = "Field `DIFF15` reader - Differential inputs for channel 15"]
-pub struct DIFF15_R(crate::FieldReader<bool, bool>);
-impl DIFF15_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        DIFF15_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DIFF15_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DIFF15_R = crate::BitReader<bool>;
 #[doc = "Field `DIFF15` writer - Differential inputs for channel 15"]
-pub struct DIFF15_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DIFF15_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 15)) | ((value as u32 & 0x01) << 15);
-        self.w
-    }
-}
+pub type DIFF15_W<'a, const O: u8> = crate::BitWriter<'a, u32, DIFFR_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - Differential inputs for channel 0"]
     #[inline(always)]
     pub fn diff0(&self) -> DIFF0_R {
-        DIFF0_R::new((self.bits & 0x01) != 0)
+        DIFF0_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Differential inputs for channel 1"]
     #[inline(always)]
     pub fn diff1(&self) -> DIFF1_R {
-        DIFF1_R::new(((self.bits >> 1) & 0x01) != 0)
+        DIFF1_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - Differential inputs for channel 2"]
     #[inline(always)]
     pub fn diff2(&self) -> DIFF2_R {
-        DIFF2_R::new(((self.bits >> 2) & 0x01) != 0)
+        DIFF2_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - Differential inputs for channel 3"]
     #[inline(always)]
     pub fn diff3(&self) -> DIFF3_R {
-        DIFF3_R::new(((self.bits >> 3) & 0x01) != 0)
+        DIFF3_R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 4 - Differential inputs for channel 4"]
     #[inline(always)]
     pub fn diff4(&self) -> DIFF4_R {
-        DIFF4_R::new(((self.bits >> 4) & 0x01) != 0)
+        DIFF4_R::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bit 5 - Differential inputs for channel 5"]
     #[inline(always)]
     pub fn diff5(&self) -> DIFF5_R {
-        DIFF5_R::new(((self.bits >> 5) & 0x01) != 0)
+        DIFF5_R::new(((self.bits >> 5) & 1) != 0)
     }
     #[doc = "Bit 6 - Differential inputs for channel 6"]
     #[inline(always)]
     pub fn diff6(&self) -> DIFF6_R {
-        DIFF6_R::new(((self.bits >> 6) & 0x01) != 0)
+        DIFF6_R::new(((self.bits >> 6) & 1) != 0)
     }
     #[doc = "Bit 7 - Differential inputs for channel 7"]
     #[inline(always)]
     pub fn diff7(&self) -> DIFF7_R {
-        DIFF7_R::new(((self.bits >> 7) & 0x01) != 0)
+        DIFF7_R::new(((self.bits >> 7) & 1) != 0)
     }
     #[doc = "Bit 8 - Differential inputs for channel 8"]
     #[inline(always)]
     pub fn diff8(&self) -> DIFF8_R {
-        DIFF8_R::new(((self.bits >> 8) & 0x01) != 0)
+        DIFF8_R::new(((self.bits >> 8) & 1) != 0)
     }
     #[doc = "Bit 9 - Differential inputs for channel 9"]
     #[inline(always)]
     pub fn diff9(&self) -> DIFF9_R {
-        DIFF9_R::new(((self.bits >> 9) & 0x01) != 0)
+        DIFF9_R::new(((self.bits >> 9) & 1) != 0)
     }
     #[doc = "Bit 10 - Differential inputs for channel 10"]
     #[inline(always)]
     pub fn diff10(&self) -> DIFF10_R {
-        DIFF10_R::new(((self.bits >> 10) & 0x01) != 0)
+        DIFF10_R::new(((self.bits >> 10) & 1) != 0)
     }
     #[doc = "Bit 11 - Differential inputs for channel 11"]
     #[inline(always)]
     pub fn diff11(&self) -> DIFF11_R {
-        DIFF11_R::new(((self.bits >> 11) & 0x01) != 0)
+        DIFF11_R::new(((self.bits >> 11) & 1) != 0)
     }
     #[doc = "Bit 12 - Differential inputs for channel 12"]
     #[inline(always)]
     pub fn diff12(&self) -> DIFF12_R {
-        DIFF12_R::new(((self.bits >> 12) & 0x01) != 0)
+        DIFF12_R::new(((self.bits >> 12) & 1) != 0)
     }
     #[doc = "Bit 13 - Differential inputs for channel 13"]
     #[inline(always)]
     pub fn diff13(&self) -> DIFF13_R {
-        DIFF13_R::new(((self.bits >> 13) & 0x01) != 0)
+        DIFF13_R::new(((self.bits >> 13) & 1) != 0)
     }
     #[doc = "Bit 14 - Differential inputs for channel 14"]
     #[inline(always)]
     pub fn diff14(&self) -> DIFF14_R {
-        DIFF14_R::new(((self.bits >> 14) & 0x01) != 0)
+        DIFF14_R::new(((self.bits >> 14) & 1) != 0)
     }
     #[doc = "Bit 15 - Differential inputs for channel 15"]
     #[inline(always)]
     pub fn diff15(&self) -> DIFF15_R {
-        DIFF15_R::new(((self.bits >> 15) & 0x01) != 0)
+        DIFF15_R::new(((self.bits >> 15) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Differential inputs for channel 0"]
     #[inline(always)]
-    pub fn diff0(&mut self) -> DIFF0_W {
-        DIFF0_W { w: self }
+    #[must_use]
+    pub fn diff0(&mut self) -> DIFF0_W<0> {
+        DIFF0_W::new(self)
     }
     #[doc = "Bit 1 - Differential inputs for channel 1"]
     #[inline(always)]
-    pub fn diff1(&mut self) -> DIFF1_W {
-        DIFF1_W { w: self }
+    #[must_use]
+    pub fn diff1(&mut self) -> DIFF1_W<1> {
+        DIFF1_W::new(self)
     }
     #[doc = "Bit 2 - Differential inputs for channel 2"]
     #[inline(always)]
-    pub fn diff2(&mut self) -> DIFF2_W {
-        DIFF2_W { w: self }
+    #[must_use]
+    pub fn diff2(&mut self) -> DIFF2_W<2> {
+        DIFF2_W::new(self)
     }
     #[doc = "Bit 3 - Differential inputs for channel 3"]
     #[inline(always)]
-    pub fn diff3(&mut self) -> DIFF3_W {
-        DIFF3_W { w: self }
+    #[must_use]
+    pub fn diff3(&mut self) -> DIFF3_W<3> {
+        DIFF3_W::new(self)
     }
     #[doc = "Bit 4 - Differential inputs for channel 4"]
     #[inline(always)]
-    pub fn diff4(&mut self) -> DIFF4_W {
-        DIFF4_W { w: self }
+    #[must_use]
+    pub fn diff4(&mut self) -> DIFF4_W<4> {
+        DIFF4_W::new(self)
     }
     #[doc = "Bit 5 - Differential inputs for channel 5"]
     #[inline(always)]
-    pub fn diff5(&mut self) -> DIFF5_W {
-        DIFF5_W { w: self }
+    #[must_use]
+    pub fn diff5(&mut self) -> DIFF5_W<5> {
+        DIFF5_W::new(self)
     }
     #[doc = "Bit 6 - Differential inputs for channel 6"]
     #[inline(always)]
-    pub fn diff6(&mut self) -> DIFF6_W {
-        DIFF6_W { w: self }
+    #[must_use]
+    pub fn diff6(&mut self) -> DIFF6_W<6> {
+        DIFF6_W::new(self)
     }
     #[doc = "Bit 7 - Differential inputs for channel 7"]
     #[inline(always)]
-    pub fn diff7(&mut self) -> DIFF7_W {
-        DIFF7_W { w: self }
+    #[must_use]
+    pub fn diff7(&mut self) -> DIFF7_W<7> {
+        DIFF7_W::new(self)
     }
     #[doc = "Bit 8 - Differential inputs for channel 8"]
     #[inline(always)]
-    pub fn diff8(&mut self) -> DIFF8_W {
-        DIFF8_W { w: self }
+    #[must_use]
+    pub fn diff8(&mut self) -> DIFF8_W<8> {
+        DIFF8_W::new(self)
     }
     #[doc = "Bit 9 - Differential inputs for channel 9"]
     #[inline(always)]
-    pub fn diff9(&mut self) -> DIFF9_W {
-        DIFF9_W { w: self }
+    #[must_use]
+    pub fn diff9(&mut self) -> DIFF9_W<9> {
+        DIFF9_W::new(self)
     }
     #[doc = "Bit 10 - Differential inputs for channel 10"]
     #[inline(always)]
-    pub fn diff10(&mut self) -> DIFF10_W {
-        DIFF10_W { w: self }
+    #[must_use]
+    pub fn diff10(&mut self) -> DIFF10_W<10> {
+        DIFF10_W::new(self)
     }
     #[doc = "Bit 11 - Differential inputs for channel 11"]
     #[inline(always)]
-    pub fn diff11(&mut self) -> DIFF11_W {
-        DIFF11_W { w: self }
+    #[must_use]
+    pub fn diff11(&mut self) -> DIFF11_W<11> {
+        DIFF11_W::new(self)
     }
     #[doc = "Bit 12 - Differential inputs for channel 12"]
     #[inline(always)]
-    pub fn diff12(&mut self) -> DIFF12_W {
-        DIFF12_W { w: self }
+    #[must_use]
+    pub fn diff12(&mut self) -> DIFF12_W<12> {
+        DIFF12_W::new(self)
     }
     #[doc = "Bit 13 - Differential inputs for channel 13"]
     #[inline(always)]
-    pub fn diff13(&mut self) -> DIFF13_W {
-        DIFF13_W { w: self }
+    #[must_use]
+    pub fn diff13(&mut self) -> DIFF13_W<13> {
+        DIFF13_W::new(self)
     }
     #[doc = "Bit 14 - Differential inputs for channel 14"]
     #[inline(always)]
-    pub fn diff14(&mut self) -> DIFF14_W {
-        DIFF14_W { w: self }
+    #[must_use]
+    pub fn diff14(&mut self) -> DIFF14_W<14> {
+        DIFF14_W::new(self)
     }
     #[doc = "Bit 15 - Differential inputs for channel 15"]
     #[inline(always)]
-    pub fn diff15(&mut self) -> DIFF15_W {
-        DIFF15_W { w: self }
+    #[must_use]
+    pub fn diff15(&mut self) -> DIFF15_W<15> {
+        DIFF15_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -792,11 +296,10 @@ impl crate::Readable for DIFFR_SPEC {
 #[doc = "`write(|w| ..)` method takes [diffr::W](W) writer structure"]
 impl crate::Writable for DIFFR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets DIFFR to value 0"]
 impl crate::Resettable for DIFFR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

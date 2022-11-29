@@ -35,43 +35,22 @@ impl From<crate::W<RBQBAPQ_SPEC>> for W {
     }
 }
 #[doc = "Field `RXBQBA` reader - Receive Buffer Queue Base Address"]
-pub struct RXBQBA_R(crate::FieldReader<u32, u32>);
-impl RXBQBA_R {
-    pub(crate) fn new(bits: u32) -> Self {
-        RXBQBA_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for RXBQBA_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type RXBQBA_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `RXBQBA` writer - Receive Buffer Queue Base Address"]
-pub struct RXBQBA_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RXBQBA_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x3fff_ffff << 2)) | ((value as u32 & 0x3fff_ffff) << 2);
-        self.w
-    }
-}
+pub type RXBQBA_W<'a, const O: u8> = crate::FieldWriter<'a, u32, RBQBAPQ_SPEC, u32, u32, 30, O>;
 impl R {
     #[doc = "Bits 2:31 - Receive Buffer Queue Base Address"]
     #[inline(always)]
     pub fn rxbqba(&self) -> RXBQBA_R {
-        RXBQBA_R::new(((self.bits >> 2) & 0x3fff_ffff) as u32)
+        RXBQBA_R::new((self.bits >> 2) & 0x3fff_ffff)
     }
 }
 impl W {
     #[doc = "Bits 2:31 - Receive Buffer Queue Base Address"]
     #[inline(always)]
-    pub fn rxbqba(&mut self) -> RXBQBA_W {
-        RXBQBA_W { w: self }
+    #[must_use]
+    pub fn rxbqba(&mut self) -> RXBQBA_W<2> {
+        RXBQBA_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -92,12 +71,11 @@ impl crate::Readable for RBQBAPQ_SPEC {
 #[doc = "`write(|w| ..)` method takes [rbqbapq::W](W) writer structure"]
 impl crate::Writable for RBQBAPQ_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets RBQBAPQ[%s]
 to value 0"]
 impl crate::Resettable for RBQBAPQ_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

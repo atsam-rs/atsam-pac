@@ -35,31 +35,9 @@ impl From<crate::W<US_LONPR_SPEC>> for W {
     }
 }
 #[doc = "Field `LONPL` reader - LON Preamble Length"]
-pub struct LONPL_R(crate::FieldReader<u16, u16>);
-impl LONPL_R {
-    pub(crate) fn new(bits: u16) -> Self {
-        LONPL_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for LONPL_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type LONPL_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `LONPL` writer - LON Preamble Length"]
-pub struct LONPL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> LONPL_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x3fff) | (value as u32 & 0x3fff);
-        self.w
-    }
-}
+pub type LONPL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, US_LONPR_SPEC, u16, u16, 14, O>;
 impl R {
     #[doc = "Bits 0:13 - LON Preamble Length"]
     #[inline(always)]
@@ -70,8 +48,9 @@ impl R {
 impl W {
     #[doc = "Bits 0:13 - LON Preamble Length"]
     #[inline(always)]
-    pub fn lonpl(&mut self) -> LONPL_W {
-        LONPL_W { w: self }
+    #[must_use]
+    pub fn lonpl(&mut self) -> LONPL_W<0> {
+        LONPL_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -92,11 +71,10 @@ impl crate::Readable for US_LONPR_SPEC {
 #[doc = "`write(|w| ..)` method takes [us_lonpr::W](W) writer structure"]
 impl crate::Writable for US_LONPR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets US_LONPR to value 0"]
 impl crate::Resettable for US_LONPR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

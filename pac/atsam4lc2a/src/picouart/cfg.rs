@@ -35,103 +35,27 @@ impl From<crate::W<CFG_SPEC>> for W {
     }
 }
 #[doc = "Field `SOURCE` reader - Source Enable Mode"]
-pub struct SOURCE_R(crate::FieldReader<u8, u8>);
-impl SOURCE_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        SOURCE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for SOURCE_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type SOURCE_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `SOURCE` writer - Source Enable Mode"]
-pub struct SOURCE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SOURCE_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x03) | (value as u32 & 0x03);
-        self.w
-    }
-}
+pub type SOURCE_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CFG_SPEC, u8, u8, 2, O>;
 #[doc = "Field `ACTION` reader - Action to perform"]
-pub struct ACTION_R(crate::FieldReader<bool, bool>);
-impl ACTION_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        ACTION_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for ACTION_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type ACTION_R = crate::BitReader<bool>;
 #[doc = "Field `ACTION` writer - Action to perform"]
-pub struct ACTION_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ACTION_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
-    }
-}
+pub type ACTION_W<'a, const O: u8> = crate::BitWriter<'a, u32, CFG_SPEC, bool, O>;
 #[doc = "Field `MATCH` reader - Data Match"]
-pub struct MATCH_R(crate::FieldReader<u8, u8>);
-impl MATCH_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        MATCH_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for MATCH_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type MATCH_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `MATCH` writer - Data Match"]
-pub struct MATCH_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> MATCH_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0xff << 8)) | ((value as u32 & 0xff) << 8);
-        self.w
-    }
-}
+pub type MATCH_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CFG_SPEC, u8, u8, 8, O>;
 impl R {
     #[doc = "Bits 0:1 - Source Enable Mode"]
     #[inline(always)]
     pub fn source(&self) -> SOURCE_R {
-        SOURCE_R::new((self.bits & 0x03) as u8)
+        SOURCE_R::new((self.bits & 3) as u8)
     }
     #[doc = "Bit 2 - Action to perform"]
     #[inline(always)]
     pub fn action(&self) -> ACTION_R {
-        ACTION_R::new(((self.bits >> 2) & 0x01) != 0)
+        ACTION_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bits 8:15 - Data Match"]
     #[inline(always)]
@@ -142,18 +66,21 @@ impl R {
 impl W {
     #[doc = "Bits 0:1 - Source Enable Mode"]
     #[inline(always)]
-    pub fn source(&mut self) -> SOURCE_W {
-        SOURCE_W { w: self }
+    #[must_use]
+    pub fn source(&mut self) -> SOURCE_W<0> {
+        SOURCE_W::new(self)
     }
     #[doc = "Bit 2 - Action to perform"]
     #[inline(always)]
-    pub fn action(&mut self) -> ACTION_W {
-        ACTION_W { w: self }
+    #[must_use]
+    pub fn action(&mut self) -> ACTION_W<2> {
+        ACTION_W::new(self)
     }
     #[doc = "Bits 8:15 - Data Match"]
     #[inline(always)]
-    pub fn match_(&mut self) -> MATCH_W {
-        MATCH_W { w: self }
+    #[must_use]
+    pub fn match_(&mut self) -> MATCH_W<8> {
+        MATCH_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -174,11 +101,10 @@ impl crate::Readable for CFG_SPEC {
 #[doc = "`write(|w| ..)` method takes [cfg::W](W) writer structure"]
 impl crate::Writable for CFG_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets CFG to value 0"]
 impl crate::Resettable for CFG_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

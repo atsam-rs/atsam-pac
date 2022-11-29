@@ -35,171 +35,67 @@ impl From<crate::W<CONFW_SPEC>> for W {
     }
 }
 #[doc = "Field `WIS` reader - Window Mode Interrupt Settings"]
-pub struct WIS_R(crate::FieldReader<u8, u8>);
-impl WIS_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        WIS_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for WIS_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type WIS_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `WIS` writer - Window Mode Interrupt Settings"]
-pub struct WIS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> WIS_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x07) | (value as u32 & 0x07);
-        self.w
-    }
-}
+pub type WIS_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CONFW_SPEC, u8, u8, 3, O>;
 #[doc = "Field `WEVSRC` reader - Peripheral Event Sourse Selection for Window Mode"]
-pub struct WEVSRC_R(crate::FieldReader<u8, u8>);
-impl WEVSRC_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        WEVSRC_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for WEVSRC_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type WEVSRC_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `WEVSRC` writer - Peripheral Event Sourse Selection for Window Mode"]
-pub struct WEVSRC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> WEVSRC_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 8)) | ((value as u32 & 0x07) << 8);
-        self.w
-    }
-}
+pub type WEVSRC_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CONFW_SPEC, u8, u8, 3, O>;
 #[doc = "Field `WEVEN` reader - Window Peripheral Event Enable"]
-pub struct WEVEN_R(crate::FieldReader<bool, bool>);
-impl WEVEN_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        WEVEN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for WEVEN_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type WEVEN_R = crate::BitReader<bool>;
 #[doc = "Field `WEVEN` writer - Window Peripheral Event Enable"]
-pub struct WEVEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> WEVEN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 11)) | ((value as u32 & 0x01) << 11);
-        self.w
-    }
-}
+pub type WEVEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CONFW_SPEC, bool, O>;
 #[doc = "Field `WFEN` reader - Window Mode Enable"]
-pub struct WFEN_R(crate::FieldReader<bool, bool>);
-impl WFEN_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        WFEN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for WFEN_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type WFEN_R = crate::BitReader<bool>;
 #[doc = "Field `WFEN` writer - Window Mode Enable"]
-pub struct WFEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> WFEN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 16)) | ((value as u32 & 0x01) << 16);
-        self.w
-    }
-}
+pub type WFEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CONFW_SPEC, bool, O>;
 impl R {
     #[doc = "Bits 0:2 - Window Mode Interrupt Settings"]
     #[inline(always)]
     pub fn wis(&self) -> WIS_R {
-        WIS_R::new((self.bits & 0x07) as u8)
+        WIS_R::new((self.bits & 7) as u8)
     }
     #[doc = "Bits 8:10 - Peripheral Event Sourse Selection for Window Mode"]
     #[inline(always)]
     pub fn wevsrc(&self) -> WEVSRC_R {
-        WEVSRC_R::new(((self.bits >> 8) & 0x07) as u8)
+        WEVSRC_R::new(((self.bits >> 8) & 7) as u8)
     }
     #[doc = "Bit 11 - Window Peripheral Event Enable"]
     #[inline(always)]
     pub fn weven(&self) -> WEVEN_R {
-        WEVEN_R::new(((self.bits >> 11) & 0x01) != 0)
+        WEVEN_R::new(((self.bits >> 11) & 1) != 0)
     }
     #[doc = "Bit 16 - Window Mode Enable"]
     #[inline(always)]
     pub fn wfen(&self) -> WFEN_R {
-        WFEN_R::new(((self.bits >> 16) & 0x01) != 0)
+        WFEN_R::new(((self.bits >> 16) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bits 0:2 - Window Mode Interrupt Settings"]
     #[inline(always)]
-    pub fn wis(&mut self) -> WIS_W {
-        WIS_W { w: self }
+    #[must_use]
+    pub fn wis(&mut self) -> WIS_W<0> {
+        WIS_W::new(self)
     }
     #[doc = "Bits 8:10 - Peripheral Event Sourse Selection for Window Mode"]
     #[inline(always)]
-    pub fn wevsrc(&mut self) -> WEVSRC_W {
-        WEVSRC_W { w: self }
+    #[must_use]
+    pub fn wevsrc(&mut self) -> WEVSRC_W<8> {
+        WEVSRC_W::new(self)
     }
     #[doc = "Bit 11 - Window Peripheral Event Enable"]
     #[inline(always)]
-    pub fn weven(&mut self) -> WEVEN_W {
-        WEVEN_W { w: self }
+    #[must_use]
+    pub fn weven(&mut self) -> WEVEN_W<11> {
+        WEVEN_W::new(self)
     }
     #[doc = "Bit 16 - Window Mode Enable"]
     #[inline(always)]
-    pub fn wfen(&mut self) -> WFEN_W {
-        WFEN_W { w: self }
+    #[must_use]
+    pub fn wfen(&mut self) -> WFEN_W<16> {
+        WFEN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -220,11 +116,10 @@ impl crate::Readable for CONFW_SPEC {
 #[doc = "`write(|w| ..)` method takes [confw::W](W) writer structure"]
 impl crate::Writable for CONFW_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets CONFW%s to value 0"]
 impl crate::Resettable for CONFW_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

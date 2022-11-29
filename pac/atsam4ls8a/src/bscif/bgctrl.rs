@@ -34,10 +34,12 @@ impl From<crate::W<BGCTRL_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `ADCISEL` reader - ADC Input Selection"]
+pub type ADCISEL_R = crate::FieldReader<u8, ADCISELSELECT_A>;
 #[doc = "ADC Input Selection\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum ADCISEL_A {
+pub enum ADCISELSELECT_A {
     #[doc = "0: `0`"]
     DIS = 0,
     #[doc = "1: `1`"]
@@ -45,141 +47,87 @@ pub enum ADCISEL_A {
     #[doc = "2: `10`"]
     VREF = 2,
 }
-impl From<ADCISEL_A> for u8 {
+impl From<ADCISELSELECT_A> for u8 {
     #[inline(always)]
-    fn from(variant: ADCISEL_A) -> Self {
+    fn from(variant: ADCISELSELECT_A) -> Self {
         variant as _
     }
 }
-#[doc = "Field `ADCISEL` reader - ADC Input Selection"]
-pub struct ADCISEL_R(crate::FieldReader<u8, ADCISEL_A>);
 impl ADCISEL_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        ADCISEL_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<ADCISEL_A> {
+    pub fn variant(&self) -> Option<ADCISELSELECT_A> {
         match self.bits {
-            0 => Some(ADCISEL_A::DIS),
-            1 => Some(ADCISEL_A::VTEMP),
-            2 => Some(ADCISEL_A::VREF),
+            0 => Some(ADCISELSELECT_A::DIS),
+            1 => Some(ADCISELSELECT_A::VTEMP),
+            2 => Some(ADCISELSELECT_A::VREF),
             _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `DIS`"]
     #[inline(always)]
     pub fn is_dis(&self) -> bool {
-        **self == ADCISEL_A::DIS
+        *self == ADCISELSELECT_A::DIS
     }
     #[doc = "Checks if the value of the field is `VTEMP`"]
     #[inline(always)]
     pub fn is_vtemp(&self) -> bool {
-        **self == ADCISEL_A::VTEMP
+        *self == ADCISELSELECT_A::VTEMP
     }
     #[doc = "Checks if the value of the field is `VREF`"]
     #[inline(always)]
     pub fn is_vref(&self) -> bool {
-        **self == ADCISEL_A::VREF
-    }
-}
-impl core::ops::Deref for ADCISEL_R {
-    type Target = crate::FieldReader<u8, ADCISEL_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == ADCISELSELECT_A::VREF
     }
 }
 #[doc = "Field `ADCISEL` writer - ADC Input Selection"]
-pub struct ADCISEL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ADCISEL_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: ADCISEL_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type ADCISEL_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, BGCTRL_SPEC, u8, ADCISELSELECT_A, 2, O>;
+impl<'a, const O: u8> ADCISEL_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn dis(self) -> &'a mut W {
-        self.variant(ADCISEL_A::DIS)
+        self.variant(ADCISELSELECT_A::DIS)
     }
     #[doc = "`1`"]
     #[inline(always)]
     pub fn vtemp(self) -> &'a mut W {
-        self.variant(ADCISEL_A::VTEMP)
+        self.variant(ADCISELSELECT_A::VTEMP)
     }
     #[doc = "`10`"]
     #[inline(always)]
     pub fn vref(self) -> &'a mut W {
-        self.variant(ADCISEL_A::VREF)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x03) | (value as u32 & 0x03);
-        self.w
+        self.variant(ADCISELSELECT_A::VREF)
     }
 }
 #[doc = "Field `TSEN` reader - Temperature Sensor Enable"]
-pub struct TSEN_R(crate::FieldReader<bool, bool>);
-impl TSEN_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        TSEN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TSEN_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TSEN_R = crate::BitReader<bool>;
 #[doc = "Field `TSEN` writer - Temperature Sensor Enable"]
-pub struct TSEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TSEN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
-        self.w
-    }
-}
+pub type TSEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, BGCTRL_SPEC, bool, O>;
 impl R {
     #[doc = "Bits 0:1 - ADC Input Selection"]
     #[inline(always)]
     pub fn adcisel(&self) -> ADCISEL_R {
-        ADCISEL_R::new((self.bits & 0x03) as u8)
+        ADCISEL_R::new((self.bits & 3) as u8)
     }
     #[doc = "Bit 8 - Temperature Sensor Enable"]
     #[inline(always)]
     pub fn tsen(&self) -> TSEN_R {
-        TSEN_R::new(((self.bits >> 8) & 0x01) != 0)
+        TSEN_R::new(((self.bits >> 8) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bits 0:1 - ADC Input Selection"]
     #[inline(always)]
-    pub fn adcisel(&mut self) -> ADCISEL_W {
-        ADCISEL_W { w: self }
+    #[must_use]
+    pub fn adcisel(&mut self) -> ADCISEL_W<0> {
+        ADCISEL_W::new(self)
     }
     #[doc = "Bit 8 - Temperature Sensor Enable"]
     #[inline(always)]
-    pub fn tsen(&mut self) -> TSEN_W {
-        TSEN_W { w: self }
+    #[must_use]
+    pub fn tsen(&mut self) -> TSEN_W<8> {
+        TSEN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -200,11 +148,10 @@ impl crate::Readable for BGCTRL_SPEC {
 #[doc = "`write(|w| ..)` method takes [bgctrl::W](W) writer structure"]
 impl crate::Writable for BGCTRL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets BGCTRL to value 0"]
 impl crate::Resettable for BGCTRL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

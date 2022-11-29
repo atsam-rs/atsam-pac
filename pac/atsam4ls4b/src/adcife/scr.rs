@@ -20,167 +20,53 @@ impl From<crate::W<SCR_SPEC>> for W {
     }
 }
 #[doc = "Field `SEOC` writer - Sequencer end of conversion"]
-pub struct SEOC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SEOC_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type SEOC_W<'a, const O: u8> = crate::BitWriter<'a, u32, SCR_SPEC, bool, O>;
 #[doc = "Field `LOVR` writer - Sequencer last converted value overrun"]
-pub struct LOVR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> LOVR_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
-}
+pub type LOVR_W<'a, const O: u8> = crate::BitWriter<'a, u32, SCR_SPEC, bool, O>;
 #[doc = "Field `WM` writer - Window monitor"]
-pub struct WM_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> WM_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
-    }
-}
+pub type WM_W<'a, const O: u8> = crate::BitWriter<'a, u32, SCR_SPEC, bool, O>;
 #[doc = "Field `SMTRG` writer - Sequencer missed trigger event"]
-pub struct SMTRG_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SMTRG_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
-        self.w
-    }
-}
+pub type SMTRG_W<'a, const O: u8> = crate::BitWriter<'a, u32, SCR_SPEC, bool, O>;
 #[doc = "Field `SUTD` writer - Start-up time done"]
-pub struct SUTD_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SUTD_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
-        self.w
-    }
-}
+pub type SUTD_W<'a, const O: u8> = crate::BitWriter<'a, u32, SCR_SPEC, bool, O>;
 #[doc = "Field `TTO` writer - Timer time-out"]
-pub struct TTO_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TTO_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
-        self.w
-    }
-}
+pub type TTO_W<'a, const O: u8> = crate::BitWriter<'a, u32, SCR_SPEC, bool, O>;
 impl W {
     #[doc = "Bit 0 - Sequencer end of conversion"]
     #[inline(always)]
-    pub fn seoc(&mut self) -> SEOC_W {
-        SEOC_W { w: self }
+    #[must_use]
+    pub fn seoc(&mut self) -> SEOC_W<0> {
+        SEOC_W::new(self)
     }
     #[doc = "Bit 1 - Sequencer last converted value overrun"]
     #[inline(always)]
-    pub fn lovr(&mut self) -> LOVR_W {
-        LOVR_W { w: self }
+    #[must_use]
+    pub fn lovr(&mut self) -> LOVR_W<1> {
+        LOVR_W::new(self)
     }
     #[doc = "Bit 2 - Window monitor"]
     #[inline(always)]
-    pub fn wm(&mut self) -> WM_W {
-        WM_W { w: self }
+    #[must_use]
+    pub fn wm(&mut self) -> WM_W<2> {
+        WM_W::new(self)
     }
     #[doc = "Bit 3 - Sequencer missed trigger event"]
     #[inline(always)]
-    pub fn smtrg(&mut self) -> SMTRG_W {
-        SMTRG_W { w: self }
+    #[must_use]
+    pub fn smtrg(&mut self) -> SMTRG_W<3> {
+        SMTRG_W::new(self)
     }
     #[doc = "Bit 4 - Start-up time done"]
     #[inline(always)]
-    pub fn sutd(&mut self) -> SUTD_W {
-        SUTD_W { w: self }
+    #[must_use]
+    pub fn sutd(&mut self) -> SUTD_W<4> {
+        SUTD_W::new(self)
     }
     #[doc = "Bit 5 - Timer time-out"]
     #[inline(always)]
-    pub fn tto(&mut self) -> TTO_W {
-        TTO_W { w: self }
+    #[must_use]
+    pub fn tto(&mut self) -> TTO_W<5> {
+        TTO_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -197,11 +83,10 @@ impl crate::RegisterSpec for SCR_SPEC {
 #[doc = "`write(|w| ..)` method takes [scr::W](W) writer structure"]
 impl crate::Writable for SCR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets SCR to value 0"]
 impl crate::Resettable for SCR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

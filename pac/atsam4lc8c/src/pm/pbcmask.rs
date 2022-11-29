@@ -35,237 +35,82 @@ impl From<crate::W<PBCMASK_SPEC>> for W {
     }
 }
 #[doc = "Field `PM_` reader - PM APB Clock Enable"]
-pub struct PM__R(crate::FieldReader<bool, bool>);
-impl PM__R {
-    pub(crate) fn new(bits: bool) -> Self {
-        PM__R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for PM__R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type PM__R = crate::BitReader<bool>;
 #[doc = "Field `PM_` writer - PM APB Clock Enable"]
-pub struct PM__W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PM__W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type PM__W<'a, const O: u8> = crate::BitWriter<'a, u32, PBCMASK_SPEC, bool, O>;
 #[doc = "Field `CHIPID_` reader - CHIPID APB Clock Enable"]
-pub struct CHIPID__R(crate::FieldReader<bool, bool>);
-impl CHIPID__R {
-    pub(crate) fn new(bits: bool) -> Self {
-        CHIPID__R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CHIPID__R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CHIPID__R = crate::BitReader<bool>;
 #[doc = "Field `CHIPID_` writer - CHIPID APB Clock Enable"]
-pub struct CHIPID__W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CHIPID__W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
-}
+pub type CHIPID__W<'a, const O: u8> = crate::BitWriter<'a, u32, PBCMASK_SPEC, bool, O>;
 #[doc = "Field `SCIF_` reader - SCIF APB Clock Enable"]
-pub struct SCIF__R(crate::FieldReader<bool, bool>);
-impl SCIF__R {
-    pub(crate) fn new(bits: bool) -> Self {
-        SCIF__R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for SCIF__R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type SCIF__R = crate::BitReader<bool>;
 #[doc = "Field `SCIF_` writer - SCIF APB Clock Enable"]
-pub struct SCIF__W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SCIF__W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
-    }
-}
+pub type SCIF__W<'a, const O: u8> = crate::BitWriter<'a, u32, PBCMASK_SPEC, bool, O>;
 #[doc = "Field `FREQM_` reader - FREQM APB Clock Enable"]
-pub struct FREQM__R(crate::FieldReader<bool, bool>);
-impl FREQM__R {
-    pub(crate) fn new(bits: bool) -> Self {
-        FREQM__R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for FREQM__R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type FREQM__R = crate::BitReader<bool>;
 #[doc = "Field `FREQM_` writer - FREQM APB Clock Enable"]
-pub struct FREQM__W<'a> {
-    w: &'a mut W,
-}
-impl<'a> FREQM__W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
-        self.w
-    }
-}
+pub type FREQM__W<'a, const O: u8> = crate::BitWriter<'a, u32, PBCMASK_SPEC, bool, O>;
 #[doc = "Field `GPIO_` reader - GPIO APB Clock Enable"]
-pub struct GPIO__R(crate::FieldReader<bool, bool>);
-impl GPIO__R {
-    pub(crate) fn new(bits: bool) -> Self {
-        GPIO__R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for GPIO__R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type GPIO__R = crate::BitReader<bool>;
 #[doc = "Field `GPIO_` writer - GPIO APB Clock Enable"]
-pub struct GPIO__W<'a> {
-    w: &'a mut W,
-}
-impl<'a> GPIO__W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
-        self.w
-    }
-}
+pub type GPIO__W<'a, const O: u8> = crate::BitWriter<'a, u32, PBCMASK_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - PM APB Clock Enable"]
     #[inline(always)]
     pub fn pm_(&self) -> PM__R {
-        PM__R::new((self.bits & 0x01) != 0)
+        PM__R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - CHIPID APB Clock Enable"]
     #[inline(always)]
     pub fn chipid_(&self) -> CHIPID__R {
-        CHIPID__R::new(((self.bits >> 1) & 0x01) != 0)
+        CHIPID__R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - SCIF APB Clock Enable"]
     #[inline(always)]
     pub fn scif_(&self) -> SCIF__R {
-        SCIF__R::new(((self.bits >> 2) & 0x01) != 0)
+        SCIF__R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - FREQM APB Clock Enable"]
     #[inline(always)]
     pub fn freqm_(&self) -> FREQM__R {
-        FREQM__R::new(((self.bits >> 3) & 0x01) != 0)
+        FREQM__R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 4 - GPIO APB Clock Enable"]
     #[inline(always)]
     pub fn gpio_(&self) -> GPIO__R {
-        GPIO__R::new(((self.bits >> 4) & 0x01) != 0)
+        GPIO__R::new(((self.bits >> 4) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - PM APB Clock Enable"]
     #[inline(always)]
-    pub fn pm_(&mut self) -> PM__W {
-        PM__W { w: self }
+    #[must_use]
+    pub fn pm_(&mut self) -> PM__W<0> {
+        PM__W::new(self)
     }
     #[doc = "Bit 1 - CHIPID APB Clock Enable"]
     #[inline(always)]
-    pub fn chipid_(&mut self) -> CHIPID__W {
-        CHIPID__W { w: self }
+    #[must_use]
+    pub fn chipid_(&mut self) -> CHIPID__W<1> {
+        CHIPID__W::new(self)
     }
     #[doc = "Bit 2 - SCIF APB Clock Enable"]
     #[inline(always)]
-    pub fn scif_(&mut self) -> SCIF__W {
-        SCIF__W { w: self }
+    #[must_use]
+    pub fn scif_(&mut self) -> SCIF__W<2> {
+        SCIF__W::new(self)
     }
     #[doc = "Bit 3 - FREQM APB Clock Enable"]
     #[inline(always)]
-    pub fn freqm_(&mut self) -> FREQM__W {
-        FREQM__W { w: self }
+    #[must_use]
+    pub fn freqm_(&mut self) -> FREQM__W<3> {
+        FREQM__W::new(self)
     }
     #[doc = "Bit 4 - GPIO APB Clock Enable"]
     #[inline(always)]
-    pub fn gpio_(&mut self) -> GPIO__W {
-        GPIO__W { w: self }
+    #[must_use]
+    pub fn gpio_(&mut self) -> GPIO__W<4> {
+        GPIO__W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -286,11 +131,10 @@ impl crate::Readable for PBCMASK_SPEC {
 #[doc = "`write(|w| ..)` method takes [pbcmask::W](W) writer structure"]
 impl crate::Writable for PBCMASK_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets PBCMASK to value 0x1f"]
 impl crate::Resettable for PBCMASK_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x1f
-    }
+    const RESET_VALUE: Self::Ux = 0x1f;
 }

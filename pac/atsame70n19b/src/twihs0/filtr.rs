@@ -35,181 +35,67 @@ impl From<crate::W<FILTR_SPEC>> for W {
     }
 }
 #[doc = "Field `FILT` reader - RX Digital Filter"]
-pub struct FILT_R(crate::FieldReader<bool, bool>);
-impl FILT_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        FILT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for FILT_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type FILT_R = crate::BitReader<bool>;
 #[doc = "Field `FILT` writer - RX Digital Filter"]
-pub struct FILT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> FILT_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type FILT_W<'a, const O: u8> = crate::BitWriter<'a, u32, FILTR_SPEC, bool, O>;
 #[doc = "Field `PADFEN` reader - PAD Filter Enable"]
-pub struct PADFEN_R(crate::FieldReader<bool, bool>);
-impl PADFEN_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        PADFEN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for PADFEN_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type PADFEN_R = crate::BitReader<bool>;
 #[doc = "Field `PADFEN` writer - PAD Filter Enable"]
-pub struct PADFEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PADFEN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
-}
+pub type PADFEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, FILTR_SPEC, bool, O>;
 #[doc = "Field `PADFCFG` reader - PAD Filter Config"]
-pub struct PADFCFG_R(crate::FieldReader<bool, bool>);
-impl PADFCFG_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        PADFCFG_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for PADFCFG_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type PADFCFG_R = crate::BitReader<bool>;
 #[doc = "Field `PADFCFG` writer - PAD Filter Config"]
-pub struct PADFCFG_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PADFCFG_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
-    }
-}
+pub type PADFCFG_W<'a, const O: u8> = crate::BitWriter<'a, u32, FILTR_SPEC, bool, O>;
 #[doc = "Field `THRES` reader - Digital Filter Threshold"]
-pub struct THRES_R(crate::FieldReader<u8, u8>);
-impl THRES_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        THRES_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for THRES_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type THRES_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `THRES` writer - Digital Filter Threshold"]
-pub struct THRES_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> THRES_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 8)) | ((value as u32 & 0x07) << 8);
-        self.w
-    }
-}
+pub type THRES_W<'a, const O: u8> = crate::FieldWriter<'a, u32, FILTR_SPEC, u8, u8, 3, O>;
 impl R {
     #[doc = "Bit 0 - RX Digital Filter"]
     #[inline(always)]
     pub fn filt(&self) -> FILT_R {
-        FILT_R::new((self.bits & 0x01) != 0)
+        FILT_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - PAD Filter Enable"]
     #[inline(always)]
     pub fn padfen(&self) -> PADFEN_R {
-        PADFEN_R::new(((self.bits >> 1) & 0x01) != 0)
+        PADFEN_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - PAD Filter Config"]
     #[inline(always)]
     pub fn padfcfg(&self) -> PADFCFG_R {
-        PADFCFG_R::new(((self.bits >> 2) & 0x01) != 0)
+        PADFCFG_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bits 8:10 - Digital Filter Threshold"]
     #[inline(always)]
     pub fn thres(&self) -> THRES_R {
-        THRES_R::new(((self.bits >> 8) & 0x07) as u8)
+        THRES_R::new(((self.bits >> 8) & 7) as u8)
     }
 }
 impl W {
     #[doc = "Bit 0 - RX Digital Filter"]
     #[inline(always)]
-    pub fn filt(&mut self) -> FILT_W {
-        FILT_W { w: self }
+    #[must_use]
+    pub fn filt(&mut self) -> FILT_W<0> {
+        FILT_W::new(self)
     }
     #[doc = "Bit 1 - PAD Filter Enable"]
     #[inline(always)]
-    pub fn padfen(&mut self) -> PADFEN_W {
-        PADFEN_W { w: self }
+    #[must_use]
+    pub fn padfen(&mut self) -> PADFEN_W<1> {
+        PADFEN_W::new(self)
     }
     #[doc = "Bit 2 - PAD Filter Config"]
     #[inline(always)]
-    pub fn padfcfg(&mut self) -> PADFCFG_W {
-        PADFCFG_W { w: self }
+    #[must_use]
+    pub fn padfcfg(&mut self) -> PADFCFG_W<2> {
+        PADFCFG_W::new(self)
     }
     #[doc = "Bits 8:10 - Digital Filter Threshold"]
     #[inline(always)]
-    pub fn thres(&mut self) -> THRES_W {
-        THRES_W { w: self }
+    #[must_use]
+    pub fn thres(&mut self) -> THRES_W<8> {
+        THRES_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -230,11 +116,10 @@ impl crate::Readable for FILTR_SPEC {
 #[doc = "`write(|w| ..)` method takes [filtr::W](W) writer structure"]
 impl crate::Writable for FILTR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets FILTR to value 0"]
 impl crate::Resettable for FILTR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

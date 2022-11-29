@@ -20,22 +20,13 @@ impl From<crate::W<TRSCR_SPEC>> for W {
     }
 }
 #[doc = "Field `TRSC` writer - Trigger Interrupt Status Clear"]
-pub struct TRSC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TRSC_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xffff_ffff) | (value as u32 & 0xffff_ffff);
-        self.w
-    }
-}
+pub type TRSC_W<'a, const O: u8> = crate::FieldWriter<'a, u32, TRSCR_SPEC, u32, u32, 32, O>;
 impl W {
     #[doc = "Bits 0:31 - Trigger Interrupt Status Clear"]
     #[inline(always)]
-    pub fn trsc(&mut self) -> TRSC_W {
-        TRSC_W { w: self }
+    #[must_use]
+    pub fn trsc(&mut self) -> TRSC_W<0> {
+        TRSC_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -52,11 +43,10 @@ impl crate::RegisterSpec for TRSCR_SPEC {
 #[doc = "`write(|w| ..)` method takes [trscr::W](W) writer structure"]
 impl crate::Writable for TRSCR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets TRSCR to value 0"]
 impl crate::Resettable for TRSCR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

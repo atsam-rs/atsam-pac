@@ -35,109 +35,21 @@ impl From<crate::W<TR_SPEC>> for W {
     }
 }
 #[doc = "Field `TLOWS` reader - SMBus Tlow:sext Cycles"]
-pub struct TLOWS_R(crate::FieldReader<u8, u8>);
-impl TLOWS_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        TLOWS_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TLOWS_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TLOWS_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `TLOWS` writer - SMBus Tlow:sext Cycles"]
-pub struct TLOWS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TLOWS_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xff) | (value as u32 & 0xff);
-        self.w
-    }
-}
+pub type TLOWS_W<'a, const O: u8> = crate::FieldWriter<'a, u32, TR_SPEC, u8, u8, 8, O>;
 #[doc = "Field `TTOUT` reader - SMBus Ttimeout Cycles"]
-pub struct TTOUT_R(crate::FieldReader<u8, u8>);
-impl TTOUT_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        TTOUT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TTOUT_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TTOUT_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `TTOUT` writer - SMBus Ttimeout Cycles"]
-pub struct TTOUT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TTOUT_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0xff << 8)) | ((value as u32 & 0xff) << 8);
-        self.w
-    }
-}
+pub type TTOUT_W<'a, const O: u8> = crate::FieldWriter<'a, u32, TR_SPEC, u8, u8, 8, O>;
 #[doc = "Field `SUDAT` reader - Data Setup Cycles"]
-pub struct SUDAT_R(crate::FieldReader<u8, u8>);
-impl SUDAT_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        SUDAT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for SUDAT_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type SUDAT_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `SUDAT` writer - Data Setup Cycles"]
-pub struct SUDAT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SUDAT_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0xff << 16)) | ((value as u32 & 0xff) << 16);
-        self.w
-    }
-}
+pub type SUDAT_W<'a, const O: u8> = crate::FieldWriter<'a, u32, TR_SPEC, u8, u8, 8, O>;
 #[doc = "Field `EXP` reader - Clock Prescaler"]
-pub struct EXP_R(crate::FieldReader<u8, u8>);
-impl EXP_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        EXP_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for EXP_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type EXP_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `EXP` writer - Clock Prescaler"]
-pub struct EXP_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> EXP_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 28)) | ((value as u32 & 0x0f) << 28);
-        self.w
-    }
-}
+pub type EXP_W<'a, const O: u8> = crate::FieldWriter<'a, u32, TR_SPEC, u8, u8, 4, O>;
 impl R {
     #[doc = "Bits 0:7 - SMBus Tlow:sext Cycles"]
     #[inline(always)]
@@ -163,23 +75,27 @@ impl R {
 impl W {
     #[doc = "Bits 0:7 - SMBus Tlow:sext Cycles"]
     #[inline(always)]
-    pub fn tlows(&mut self) -> TLOWS_W {
-        TLOWS_W { w: self }
+    #[must_use]
+    pub fn tlows(&mut self) -> TLOWS_W<0> {
+        TLOWS_W::new(self)
     }
     #[doc = "Bits 8:15 - SMBus Ttimeout Cycles"]
     #[inline(always)]
-    pub fn ttout(&mut self) -> TTOUT_W {
-        TTOUT_W { w: self }
+    #[must_use]
+    pub fn ttout(&mut self) -> TTOUT_W<8> {
+        TTOUT_W::new(self)
     }
     #[doc = "Bits 16:23 - Data Setup Cycles"]
     #[inline(always)]
-    pub fn sudat(&mut self) -> SUDAT_W {
-        SUDAT_W { w: self }
+    #[must_use]
+    pub fn sudat(&mut self) -> SUDAT_W<16> {
+        SUDAT_W::new(self)
     }
     #[doc = "Bits 28:31 - Clock Prescaler"]
     #[inline(always)]
-    pub fn exp(&mut self) -> EXP_W {
-        EXP_W { w: self }
+    #[must_use]
+    pub fn exp(&mut self) -> EXP_W<28> {
+        EXP_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -200,11 +116,10 @@ impl crate::Readable for TR_SPEC {
 #[doc = "`write(|w| ..)` method takes [tr::W](W) writer structure"]
 impl crate::Writable for TR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets TR to value 0"]
 impl crate::Resettable for TR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

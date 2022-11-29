@@ -20,194 +20,61 @@ impl From<crate::W<CIE_SPEC>> for W {
     }
 }
 #[doc = "Field `BIE` writer - End of Block Interrupt Enable Bit"]
-pub struct BIE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> BIE_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type BIE_W<'a, const O: u8> = crate::BitWriter<'a, u32, CIE_SPEC, bool, O>;
 #[doc = "Field `LIE` writer - End of Linked List Interrupt Enable Bit"]
-pub struct LIE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> LIE_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
-}
+pub type LIE_W<'a, const O: u8> = crate::BitWriter<'a, u32, CIE_SPEC, bool, O>;
 #[doc = "Field `DIE` writer - End of Disable Interrupt Enable Bit"]
-pub struct DIE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DIE_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
-    }
-}
+pub type DIE_W<'a, const O: u8> = crate::BitWriter<'a, u32, CIE_SPEC, bool, O>;
 #[doc = "Field `FIE` writer - End of Flush Interrupt Enable Bit"]
-pub struct FIE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> FIE_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
-        self.w
-    }
-}
+pub type FIE_W<'a, const O: u8> = crate::BitWriter<'a, u32, CIE_SPEC, bool, O>;
 #[doc = "Field `RBIE` writer - Read Bus Error Interrupt Enable Bit"]
-pub struct RBIE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RBIE_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
-        self.w
-    }
-}
+pub type RBIE_W<'a, const O: u8> = crate::BitWriter<'a, u32, CIE_SPEC, bool, O>;
 #[doc = "Field `WBIE` writer - Write Bus Error Interrupt Enable Bit"]
-pub struct WBIE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> WBIE_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
-        self.w
-    }
-}
+pub type WBIE_W<'a, const O: u8> = crate::BitWriter<'a, u32, CIE_SPEC, bool, O>;
 #[doc = "Field `ROIE` writer - Request Overflow Error Interrupt Enable Bit"]
-pub struct ROIE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ROIE_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | ((value as u32 & 0x01) << 6);
-        self.w
-    }
-}
+pub type ROIE_W<'a, const O: u8> = crate::BitWriter<'a, u32, CIE_SPEC, bool, O>;
 impl W {
     #[doc = "Bit 0 - End of Block Interrupt Enable Bit"]
     #[inline(always)]
-    pub fn bie(&mut self) -> BIE_W {
-        BIE_W { w: self }
+    #[must_use]
+    pub fn bie(&mut self) -> BIE_W<0> {
+        BIE_W::new(self)
     }
     #[doc = "Bit 1 - End of Linked List Interrupt Enable Bit"]
     #[inline(always)]
-    pub fn lie(&mut self) -> LIE_W {
-        LIE_W { w: self }
+    #[must_use]
+    pub fn lie(&mut self) -> LIE_W<1> {
+        LIE_W::new(self)
     }
     #[doc = "Bit 2 - End of Disable Interrupt Enable Bit"]
     #[inline(always)]
-    pub fn die(&mut self) -> DIE_W {
-        DIE_W { w: self }
+    #[must_use]
+    pub fn die(&mut self) -> DIE_W<2> {
+        DIE_W::new(self)
     }
     #[doc = "Bit 3 - End of Flush Interrupt Enable Bit"]
     #[inline(always)]
-    pub fn fie(&mut self) -> FIE_W {
-        FIE_W { w: self }
+    #[must_use]
+    pub fn fie(&mut self) -> FIE_W<3> {
+        FIE_W::new(self)
     }
     #[doc = "Bit 4 - Read Bus Error Interrupt Enable Bit"]
     #[inline(always)]
-    pub fn rbie(&mut self) -> RBIE_W {
-        RBIE_W { w: self }
+    #[must_use]
+    pub fn rbie(&mut self) -> RBIE_W<4> {
+        RBIE_W::new(self)
     }
     #[doc = "Bit 5 - Write Bus Error Interrupt Enable Bit"]
     #[inline(always)]
-    pub fn wbie(&mut self) -> WBIE_W {
-        WBIE_W { w: self }
+    #[must_use]
+    pub fn wbie(&mut self) -> WBIE_W<5> {
+        WBIE_W::new(self)
     }
     #[doc = "Bit 6 - Request Overflow Error Interrupt Enable Bit"]
     #[inline(always)]
-    pub fn roie(&mut self) -> ROIE_W {
-        ROIE_W { w: self }
+    #[must_use]
+    pub fn roie(&mut self) -> ROIE_W<6> {
+        ROIE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -224,11 +91,10 @@ impl crate::RegisterSpec for CIE_SPEC {
 #[doc = "`write(|w| ..)` method takes [cie::W](W) writer structure"]
 impl crate::Writable for CIE_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets CIE to value 0"]
 impl crate::Resettable for CIE_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

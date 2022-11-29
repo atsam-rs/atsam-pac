@@ -35,43 +35,22 @@ impl From<crate::W<RC_SPEC>> for W {
     }
 }
 #[doc = "Field `RC` reader - Register C"]
-pub struct RC_R(crate::FieldReader<u32, u32>);
-impl RC_R {
-    pub(crate) fn new(bits: u32) -> Self {
-        RC_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for RC_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type RC_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `RC` writer - Register C"]
-pub struct RC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RC_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xffff_ffff) | (value as u32 & 0xffff_ffff);
-        self.w
-    }
-}
+pub type RC_W<'a, const O: u8> = crate::FieldWriter<'a, u32, RC_SPEC, u32, u32, 32, O>;
 impl R {
     #[doc = "Bits 0:31 - Register C"]
     #[inline(always)]
     pub fn rc(&self) -> RC_R {
-        RC_R::new((self.bits & 0xffff_ffff) as u32)
+        RC_R::new(self.bits)
     }
 }
 impl W {
     #[doc = "Bits 0:31 - Register C"]
     #[inline(always)]
-    pub fn rc(&mut self) -> RC_W {
-        RC_W { w: self }
+    #[must_use]
+    pub fn rc(&mut self) -> RC_W<0> {
+        RC_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -92,11 +71,10 @@ impl crate::Readable for RC_SPEC {
 #[doc = "`write(|w| ..)` method takes [rc::W](W) writer structure"]
 impl crate::Writable for RC_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets RC to value 0"]
 impl crate::Resettable for RC_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

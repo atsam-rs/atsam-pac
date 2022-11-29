@@ -35,35 +35,15 @@ impl From<crate::W<PCR_SPEC>> for W {
     }
 }
 #[doc = "Field `PID` reader - Peripheral ID"]
-pub struct PID_R(crate::FieldReader<u8, u8>);
-impl PID_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        PID_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for PID_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type PID_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `PID` writer - Peripheral ID"]
-pub struct PID_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PID_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x7f) | (value as u32 & 0x7f);
-        self.w
-    }
-}
+pub type PID_W<'a, const O: u8> = crate::FieldWriter<'a, u32, PCR_SPEC, u8, u8, 7, O>;
+#[doc = "Field `GCLKCSS` reader - Generic Clock Source Selection"]
+pub type GCLKCSS_R = crate::FieldReader<u8, GCLKCSSSELECT_A>;
 #[doc = "Generic Clock Source Selection\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum GCLKCSS_A {
+pub enum GCLKCSSSELECT_A {
     #[doc = "0: Slow clock is selected"]
     SLOW_CLK = 0,
     #[doc = "1: Main clock is selected"]
@@ -75,239 +55,97 @@ pub enum GCLKCSS_A {
     #[doc = "4: Master Clock is selected"]
     MCK_CLK = 4,
 }
-impl From<GCLKCSS_A> for u8 {
+impl From<GCLKCSSSELECT_A> for u8 {
     #[inline(always)]
-    fn from(variant: GCLKCSS_A) -> Self {
+    fn from(variant: GCLKCSSSELECT_A) -> Self {
         variant as _
     }
 }
-#[doc = "Field `GCLKCSS` reader - Generic Clock Source Selection"]
-pub struct GCLKCSS_R(crate::FieldReader<u8, GCLKCSS_A>);
 impl GCLKCSS_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        GCLKCSS_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<GCLKCSS_A> {
+    pub fn variant(&self) -> Option<GCLKCSSSELECT_A> {
         match self.bits {
-            0 => Some(GCLKCSS_A::SLOW_CLK),
-            1 => Some(GCLKCSS_A::MAIN_CLK),
-            2 => Some(GCLKCSS_A::PLLA_CLK),
-            3 => Some(GCLKCSS_A::UPLL_CLK),
-            4 => Some(GCLKCSS_A::MCK_CLK),
+            0 => Some(GCLKCSSSELECT_A::SLOW_CLK),
+            1 => Some(GCLKCSSSELECT_A::MAIN_CLK),
+            2 => Some(GCLKCSSSELECT_A::PLLA_CLK),
+            3 => Some(GCLKCSSSELECT_A::UPLL_CLK),
+            4 => Some(GCLKCSSSELECT_A::MCK_CLK),
             _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `SLOW_CLK`"]
     #[inline(always)]
     pub fn is_slow_clk(&self) -> bool {
-        **self == GCLKCSS_A::SLOW_CLK
+        *self == GCLKCSSSELECT_A::SLOW_CLK
     }
     #[doc = "Checks if the value of the field is `MAIN_CLK`"]
     #[inline(always)]
     pub fn is_main_clk(&self) -> bool {
-        **self == GCLKCSS_A::MAIN_CLK
+        *self == GCLKCSSSELECT_A::MAIN_CLK
     }
     #[doc = "Checks if the value of the field is `PLLA_CLK`"]
     #[inline(always)]
     pub fn is_plla_clk(&self) -> bool {
-        **self == GCLKCSS_A::PLLA_CLK
+        *self == GCLKCSSSELECT_A::PLLA_CLK
     }
     #[doc = "Checks if the value of the field is `UPLL_CLK`"]
     #[inline(always)]
     pub fn is_upll_clk(&self) -> bool {
-        **self == GCLKCSS_A::UPLL_CLK
+        *self == GCLKCSSSELECT_A::UPLL_CLK
     }
     #[doc = "Checks if the value of the field is `MCK_CLK`"]
     #[inline(always)]
     pub fn is_mck_clk(&self) -> bool {
-        **self == GCLKCSS_A::MCK_CLK
-    }
-}
-impl core::ops::Deref for GCLKCSS_R {
-    type Target = crate::FieldReader<u8, GCLKCSS_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == GCLKCSSSELECT_A::MCK_CLK
     }
 }
 #[doc = "Field `GCLKCSS` writer - Generic Clock Source Selection"]
-pub struct GCLKCSS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> GCLKCSS_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: GCLKCSS_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type GCLKCSS_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, PCR_SPEC, u8, GCLKCSSSELECT_A, 3, O>;
+impl<'a, const O: u8> GCLKCSS_W<'a, O> {
     #[doc = "Slow clock is selected"]
     #[inline(always)]
     pub fn slow_clk(self) -> &'a mut W {
-        self.variant(GCLKCSS_A::SLOW_CLK)
+        self.variant(GCLKCSSSELECT_A::SLOW_CLK)
     }
     #[doc = "Main clock is selected"]
     #[inline(always)]
     pub fn main_clk(self) -> &'a mut W {
-        self.variant(GCLKCSS_A::MAIN_CLK)
+        self.variant(GCLKCSSSELECT_A::MAIN_CLK)
     }
     #[doc = "PLLACK is selected"]
     #[inline(always)]
     pub fn plla_clk(self) -> &'a mut W {
-        self.variant(GCLKCSS_A::PLLA_CLK)
+        self.variant(GCLKCSSSELECT_A::PLLA_CLK)
     }
     #[doc = "UPLL Clock is selected"]
     #[inline(always)]
     pub fn upll_clk(self) -> &'a mut W {
-        self.variant(GCLKCSS_A::UPLL_CLK)
+        self.variant(GCLKCSSSELECT_A::UPLL_CLK)
     }
     #[doc = "Master Clock is selected"]
     #[inline(always)]
     pub fn mck_clk(self) -> &'a mut W {
-        self.variant(GCLKCSS_A::MCK_CLK)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 8)) | ((value as u32 & 0x07) << 8);
-        self.w
+        self.variant(GCLKCSSSELECT_A::MCK_CLK)
     }
 }
 #[doc = "Field `CMD` reader - Command"]
-pub struct CMD_R(crate::FieldReader<bool, bool>);
-impl CMD_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        CMD_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CMD_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CMD_R = crate::BitReader<bool>;
 #[doc = "Field `CMD` writer - Command"]
-pub struct CMD_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CMD_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 12)) | ((value as u32 & 0x01) << 12);
-        self.w
-    }
-}
+pub type CMD_W<'a, const O: u8> = crate::BitWriter<'a, u32, PCR_SPEC, bool, O>;
 #[doc = "Field `GCLKDIV` reader - Generic Clock Division Ratio"]
-pub struct GCLKDIV_R(crate::FieldReader<u8, u8>);
-impl GCLKDIV_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        GCLKDIV_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for GCLKDIV_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type GCLKDIV_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `GCLKDIV` writer - Generic Clock Division Ratio"]
-pub struct GCLKDIV_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> GCLKDIV_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0xff << 20)) | ((value as u32 & 0xff) << 20);
-        self.w
-    }
-}
+pub type GCLKDIV_W<'a, const O: u8> = crate::FieldWriter<'a, u32, PCR_SPEC, u8, u8, 8, O>;
 #[doc = "Field `EN` reader - Enable"]
-pub struct EN_R(crate::FieldReader<bool, bool>);
-impl EN_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        EN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for EN_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type EN_R = crate::BitReader<bool>;
 #[doc = "Field `EN` writer - Enable"]
-pub struct EN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> EN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 28)) | ((value as u32 & 0x01) << 28);
-        self.w
-    }
-}
+pub type EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, PCR_SPEC, bool, O>;
 #[doc = "Field `GCLKEN` reader - Generic Clock Enable"]
-pub struct GCLKEN_R(crate::FieldReader<bool, bool>);
-impl GCLKEN_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        GCLKEN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for GCLKEN_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type GCLKEN_R = crate::BitReader<bool>;
 #[doc = "Field `GCLKEN` writer - Generic Clock Enable"]
-pub struct GCLKEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> GCLKEN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 29)) | ((value as u32 & 0x01) << 29);
-        self.w
-    }
-}
+pub type GCLKEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, PCR_SPEC, bool, O>;
 impl R {
     #[doc = "Bits 0:6 - Peripheral ID"]
     #[inline(always)]
@@ -317,12 +155,12 @@ impl R {
     #[doc = "Bits 8:10 - Generic Clock Source Selection"]
     #[inline(always)]
     pub fn gclkcss(&self) -> GCLKCSS_R {
-        GCLKCSS_R::new(((self.bits >> 8) & 0x07) as u8)
+        GCLKCSS_R::new(((self.bits >> 8) & 7) as u8)
     }
     #[doc = "Bit 12 - Command"]
     #[inline(always)]
     pub fn cmd(&self) -> CMD_R {
-        CMD_R::new(((self.bits >> 12) & 0x01) != 0)
+        CMD_R::new(((self.bits >> 12) & 1) != 0)
     }
     #[doc = "Bits 20:27 - Generic Clock Division Ratio"]
     #[inline(always)]
@@ -332,44 +170,50 @@ impl R {
     #[doc = "Bit 28 - Enable"]
     #[inline(always)]
     pub fn en(&self) -> EN_R {
-        EN_R::new(((self.bits >> 28) & 0x01) != 0)
+        EN_R::new(((self.bits >> 28) & 1) != 0)
     }
     #[doc = "Bit 29 - Generic Clock Enable"]
     #[inline(always)]
     pub fn gclken(&self) -> GCLKEN_R {
-        GCLKEN_R::new(((self.bits >> 29) & 0x01) != 0)
+        GCLKEN_R::new(((self.bits >> 29) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bits 0:6 - Peripheral ID"]
     #[inline(always)]
-    pub fn pid(&mut self) -> PID_W {
-        PID_W { w: self }
+    #[must_use]
+    pub fn pid(&mut self) -> PID_W<0> {
+        PID_W::new(self)
     }
     #[doc = "Bits 8:10 - Generic Clock Source Selection"]
     #[inline(always)]
-    pub fn gclkcss(&mut self) -> GCLKCSS_W {
-        GCLKCSS_W { w: self }
+    #[must_use]
+    pub fn gclkcss(&mut self) -> GCLKCSS_W<8> {
+        GCLKCSS_W::new(self)
     }
     #[doc = "Bit 12 - Command"]
     #[inline(always)]
-    pub fn cmd(&mut self) -> CMD_W {
-        CMD_W { w: self }
+    #[must_use]
+    pub fn cmd(&mut self) -> CMD_W<12> {
+        CMD_W::new(self)
     }
     #[doc = "Bits 20:27 - Generic Clock Division Ratio"]
     #[inline(always)]
-    pub fn gclkdiv(&mut self) -> GCLKDIV_W {
-        GCLKDIV_W { w: self }
+    #[must_use]
+    pub fn gclkdiv(&mut self) -> GCLKDIV_W<20> {
+        GCLKDIV_W::new(self)
     }
     #[doc = "Bit 28 - Enable"]
     #[inline(always)]
-    pub fn en(&mut self) -> EN_W {
-        EN_W { w: self }
+    #[must_use]
+    pub fn en(&mut self) -> EN_W<28> {
+        EN_W::new(self)
     }
     #[doc = "Bit 29 - Generic Clock Enable"]
     #[inline(always)]
-    pub fn gclken(&mut self) -> GCLKEN_W {
-        GCLKEN_W { w: self }
+    #[must_use]
+    pub fn gclken(&mut self) -> GCLKEN_W<29> {
+        GCLKEN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -390,11 +234,10 @@ impl crate::Readable for PCR_SPEC {
 #[doc = "`write(|w| ..)` method takes [pcr::W](W) writer structure"]
 impl crate::Writable for PCR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets PCR to value 0"]
 impl crate::Resettable for PCR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

@@ -35,115 +35,52 @@ impl From<crate::W<ACR_SPEC>> for W {
     }
 }
 #[doc = "Field `IBCTLCH0` reader - Analog Output Current Control"]
-pub struct IBCTLCH0_R(crate::FieldReader<u8, u8>);
-impl IBCTLCH0_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        IBCTLCH0_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for IBCTLCH0_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type IBCTLCH0_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `IBCTLCH0` writer - Analog Output Current Control"]
-pub struct IBCTLCH0_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> IBCTLCH0_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x03) | (value as u32 & 0x03);
-        self.w
-    }
-}
+pub type IBCTLCH0_W<'a, const O: u8> = crate::FieldWriter<'a, u32, ACR_SPEC, u8, u8, 2, O>;
 #[doc = "Field `IBCTLCH1` reader - Analog Output Current Control"]
-pub struct IBCTLCH1_R(crate::FieldReader<u8, u8>);
-impl IBCTLCH1_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        IBCTLCH1_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for IBCTLCH1_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type IBCTLCH1_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `IBCTLCH1` writer - Analog Output Current Control"]
-pub struct IBCTLCH1_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> IBCTLCH1_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 2)) | ((value as u32 & 0x03) << 2);
-        self.w
-    }
-}
+pub type IBCTLCH1_W<'a, const O: u8> = crate::FieldWriter<'a, u32, ACR_SPEC, u8, u8, 2, O>;
 #[doc = "Field `IBCTLDACCORE` reader - Bias Current Control for DAC Core"]
-pub struct IBCTLDACCORE_R(crate::FieldReader<u8, u8>);
-impl IBCTLDACCORE_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        IBCTLDACCORE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for IBCTLDACCORE_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type IBCTLDACCORE_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `IBCTLDACCORE` writer - Bias Current Control for DAC Core"]
-pub struct IBCTLDACCORE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> IBCTLDACCORE_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 8)) | ((value as u32 & 0x03) << 8);
-        self.w
-    }
-}
+pub type IBCTLDACCORE_W<'a, const O: u8> = crate::FieldWriter<'a, u32, ACR_SPEC, u8, u8, 2, O>;
 impl R {
     #[doc = "Bits 0:1 - Analog Output Current Control"]
     #[inline(always)]
     pub fn ibctlch0(&self) -> IBCTLCH0_R {
-        IBCTLCH0_R::new((self.bits & 0x03) as u8)
+        IBCTLCH0_R::new((self.bits & 3) as u8)
     }
     #[doc = "Bits 2:3 - Analog Output Current Control"]
     #[inline(always)]
     pub fn ibctlch1(&self) -> IBCTLCH1_R {
-        IBCTLCH1_R::new(((self.bits >> 2) & 0x03) as u8)
+        IBCTLCH1_R::new(((self.bits >> 2) & 3) as u8)
     }
     #[doc = "Bits 8:9 - Bias Current Control for DAC Core"]
     #[inline(always)]
     pub fn ibctldaccore(&self) -> IBCTLDACCORE_R {
-        IBCTLDACCORE_R::new(((self.bits >> 8) & 0x03) as u8)
+        IBCTLDACCORE_R::new(((self.bits >> 8) & 3) as u8)
     }
 }
 impl W {
     #[doc = "Bits 0:1 - Analog Output Current Control"]
     #[inline(always)]
-    pub fn ibctlch0(&mut self) -> IBCTLCH0_W {
-        IBCTLCH0_W { w: self }
+    #[must_use]
+    pub fn ibctlch0(&mut self) -> IBCTLCH0_W<0> {
+        IBCTLCH0_W::new(self)
     }
     #[doc = "Bits 2:3 - Analog Output Current Control"]
     #[inline(always)]
-    pub fn ibctlch1(&mut self) -> IBCTLCH1_W {
-        IBCTLCH1_W { w: self }
+    #[must_use]
+    pub fn ibctlch1(&mut self) -> IBCTLCH1_W<2> {
+        IBCTLCH1_W::new(self)
     }
     #[doc = "Bits 8:9 - Bias Current Control for DAC Core"]
     #[inline(always)]
-    pub fn ibctldaccore(&mut self) -> IBCTLDACCORE_W {
-        IBCTLDACCORE_W { w: self }
+    #[must_use]
+    pub fn ibctldaccore(&mut self) -> IBCTLDACCORE_W<8> {
+        IBCTLDACCORE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -164,11 +101,10 @@ impl crate::Readable for ACR_SPEC {
 #[doc = "`write(|w| ..)` method takes [acr::W](W) writer structure"]
 impl crate::Writable for ACR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets ACR to value 0"]
 impl crate::Resettable for ACR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

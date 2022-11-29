@@ -35,57 +35,13 @@ impl From<crate::W<SCUP_SPEC>> for W {
     }
 }
 #[doc = "Field `UPR` reader - Update Period"]
-pub struct UPR_R(crate::FieldReader<u8, u8>);
-impl UPR_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        UPR_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for UPR_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type UPR_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `UPR` writer - Update Period"]
-pub struct UPR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> UPR_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x0f) | (value as u32 & 0x0f);
-        self.w
-    }
-}
+pub type UPR_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SCUP_SPEC, u8, u8, 4, O>;
 #[doc = "Field `UPRCNT` reader - Update Period Counter"]
-pub struct UPRCNT_R(crate::FieldReader<u8, u8>);
-impl UPRCNT_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        UPRCNT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for UPRCNT_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type UPRCNT_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `UPRCNT` writer - Update Period Counter"]
-pub struct UPRCNT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> UPRCNT_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 4)) | ((value as u32 & 0x0f) << 4);
-        self.w
-    }
-}
+pub type UPRCNT_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SCUP_SPEC, u8, u8, 4, O>;
 impl R {
     #[doc = "Bits 0:3 - Update Period"]
     #[inline(always)]
@@ -101,13 +57,15 @@ impl R {
 impl W {
     #[doc = "Bits 0:3 - Update Period"]
     #[inline(always)]
-    pub fn upr(&mut self) -> UPR_W {
-        UPR_W { w: self }
+    #[must_use]
+    pub fn upr(&mut self) -> UPR_W<0> {
+        UPR_W::new(self)
     }
     #[doc = "Bits 4:7 - Update Period Counter"]
     #[inline(always)]
-    pub fn uprcnt(&mut self) -> UPRCNT_W {
-        UPRCNT_W { w: self }
+    #[must_use]
+    pub fn uprcnt(&mut self) -> UPRCNT_W<4> {
+        UPRCNT_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -128,11 +86,10 @@ impl crate::Readable for SCUP_SPEC {
 #[doc = "`write(|w| ..)` method takes [scup::W](W) writer structure"]
 impl crate::Writable for SCUP_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets SCUP to value 0"]
 impl crate::Resettable for SCUP_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

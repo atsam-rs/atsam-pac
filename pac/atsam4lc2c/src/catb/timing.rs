@@ -35,57 +35,13 @@ impl From<crate::W<TIMING_SPEC>> for W {
     }
 }
 #[doc = "Field `TLEVEL` reader - Relative Level Smoothing"]
-pub struct TLEVEL_R(crate::FieldReader<u16, u16>);
-impl TLEVEL_R {
-    pub(crate) fn new(bits: u16) -> Self {
-        TLEVEL_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TLEVEL_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TLEVEL_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `TLEVEL` writer - Relative Level Smoothing"]
-pub struct TLEVEL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TLEVEL_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x0fff) | (value as u32 & 0x0fff);
-        self.w
-    }
-}
+pub type TLEVEL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, TIMING_SPEC, u16, u16, 12, O>;
 #[doc = "Field `TIDLE` reader - Idle Smoothening"]
-pub struct TIDLE_R(crate::FieldReader<u16, u16>);
-impl TIDLE_R {
-    pub(crate) fn new(bits: u16) -> Self {
-        TIDLE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TIDLE_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TIDLE_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `TIDLE` writer - Idle Smoothening"]
-pub struct TIDLE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TIDLE_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0fff << 16)) | ((value as u32 & 0x0fff) << 16);
-        self.w
-    }
-}
+pub type TIDLE_W<'a, const O: u8> = crate::FieldWriter<'a, u32, TIMING_SPEC, u16, u16, 12, O>;
 impl R {
     #[doc = "Bits 0:11 - Relative Level Smoothing"]
     #[inline(always)]
@@ -101,13 +57,15 @@ impl R {
 impl W {
     #[doc = "Bits 0:11 - Relative Level Smoothing"]
     #[inline(always)]
-    pub fn tlevel(&mut self) -> TLEVEL_W {
-        TLEVEL_W { w: self }
+    #[must_use]
+    pub fn tlevel(&mut self) -> TLEVEL_W<0> {
+        TLEVEL_W::new(self)
     }
     #[doc = "Bits 16:27 - Idle Smoothening"]
     #[inline(always)]
-    pub fn tidle(&mut self) -> TIDLE_W {
-        TIDLE_W { w: self }
+    #[must_use]
+    pub fn tidle(&mut self) -> TIDLE_W<16> {
+        TIDLE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -128,11 +86,10 @@ impl crate::Readable for TIMING_SPEC {
 #[doc = "`write(|w| ..)` method takes [timing::W](W) writer structure"]
 impl crate::Writable for TIMING_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets TIMING to value 0"]
 impl crate::Resettable for TIMING_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

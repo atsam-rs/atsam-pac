@@ -14,35 +14,13 @@ impl From<crate::R<ISR_SPEC>> for R {
     }
 }
 #[doc = "Field `DATRDY` reader - Data Ready"]
-pub struct DATRDY_R(crate::FieldReader<bool, bool>);
-impl DATRDY_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        DATRDY_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DATRDY_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DATRDY_R = crate::BitReader<bool>;
 #[doc = "Field `URAD` reader - Unspecified Register Access Detection Status"]
-pub struct URAD_R(crate::FieldReader<bool, bool>);
-impl URAD_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        URAD_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for URAD_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type URAD_R = crate::BitReader<bool>;
+#[doc = "Field `URAT` reader - Unspecified Register Access"]
+pub type URAT_R = crate::FieldReader<u8, URAT_A>;
 #[doc = "Unspecified Register Access\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum URAT_A {
     #[doc = "0: Input Data Register written during the data processing when SMOD = 0x2 mode."]
@@ -64,13 +42,8 @@ impl From<URAT_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `URAT` reader - Unspecified Register Access"]
-pub struct URAT_R(crate::FieldReader<u8, URAT_A>);
 impl URAT_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        URAT_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<URAT_A> {
         match self.bits {
@@ -86,51 +59,44 @@ impl URAT_R {
     #[doc = "Checks if the value of the field is `IDR_WR_PROCESSING`"]
     #[inline(always)]
     pub fn is_idr_wr_processing(&self) -> bool {
-        **self == URAT_A::IDR_WR_PROCESSING
+        *self == URAT_A::IDR_WR_PROCESSING
     }
     #[doc = "Checks if the value of the field is `ODR_RD_PROCESSING`"]
     #[inline(always)]
     pub fn is_odr_rd_processing(&self) -> bool {
-        **self == URAT_A::ODR_RD_PROCESSING
+        *self == URAT_A::ODR_RD_PROCESSING
     }
     #[doc = "Checks if the value of the field is `MR_WR_PROCESSING`"]
     #[inline(always)]
     pub fn is_mr_wr_processing(&self) -> bool {
-        **self == URAT_A::MR_WR_PROCESSING
+        *self == URAT_A::MR_WR_PROCESSING
     }
     #[doc = "Checks if the value of the field is `ODR_RD_SUBKGEN`"]
     #[inline(always)]
     pub fn is_odr_rd_subkgen(&self) -> bool {
-        **self == URAT_A::ODR_RD_SUBKGEN
+        *self == URAT_A::ODR_RD_SUBKGEN
     }
     #[doc = "Checks if the value of the field is `MR_WR_SUBKGEN`"]
     #[inline(always)]
     pub fn is_mr_wr_subkgen(&self) -> bool {
-        **self == URAT_A::MR_WR_SUBKGEN
+        *self == URAT_A::MR_WR_SUBKGEN
     }
     #[doc = "Checks if the value of the field is `WOR_RD_ACCESS`"]
     #[inline(always)]
     pub fn is_wor_rd_access(&self) -> bool {
-        **self == URAT_A::WOR_RD_ACCESS
-    }
-}
-impl core::ops::Deref for URAT_R {
-    type Target = crate::FieldReader<u8, URAT_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == URAT_A::WOR_RD_ACCESS
     }
 }
 impl R {
     #[doc = "Bit 0 - Data Ready"]
     #[inline(always)]
     pub fn datrdy(&self) -> DATRDY_R {
-        DATRDY_R::new((self.bits & 0x01) != 0)
+        DATRDY_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 8 - Unspecified Register Access Detection Status"]
     #[inline(always)]
     pub fn urad(&self) -> URAD_R {
-        URAD_R::new(((self.bits >> 8) & 0x01) != 0)
+        URAD_R::new(((self.bits >> 8) & 1) != 0)
     }
     #[doc = "Bits 12:15 - Unspecified Register Access"]
     #[inline(always)]
@@ -149,8 +115,5 @@ impl crate::Readable for ISR_SPEC {
 }
 #[doc = "`reset()` method sets ISR to value 0"]
 impl crate::Resettable for ISR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

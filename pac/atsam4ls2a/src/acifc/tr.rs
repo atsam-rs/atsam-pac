@@ -35,375 +35,127 @@ impl From<crate::W<TR_SPEC>> for W {
     }
 }
 #[doc = "Field `ACTEST0` reader - AC0 Output Override Value"]
-pub struct ACTEST0_R(crate::FieldReader<bool, bool>);
-impl ACTEST0_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        ACTEST0_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for ACTEST0_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type ACTEST0_R = crate::BitReader<bool>;
 #[doc = "Field `ACTEST0` writer - AC0 Output Override Value"]
-pub struct ACTEST0_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ACTEST0_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type ACTEST0_W<'a, const O: u8> = crate::BitWriter<'a, u32, TR_SPEC, bool, O>;
 #[doc = "Field `ACTEST1` reader - AC1 Output Override Value"]
-pub struct ACTEST1_R(crate::FieldReader<bool, bool>);
-impl ACTEST1_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        ACTEST1_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for ACTEST1_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type ACTEST1_R = crate::BitReader<bool>;
 #[doc = "Field `ACTEST1` writer - AC1 Output Override Value"]
-pub struct ACTEST1_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ACTEST1_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
-}
+pub type ACTEST1_W<'a, const O: u8> = crate::BitWriter<'a, u32, TR_SPEC, bool, O>;
 #[doc = "Field `ACTEST2` reader - AC2 Output Override Value"]
-pub struct ACTEST2_R(crate::FieldReader<bool, bool>);
-impl ACTEST2_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        ACTEST2_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for ACTEST2_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type ACTEST2_R = crate::BitReader<bool>;
 #[doc = "Field `ACTEST2` writer - AC2 Output Override Value"]
-pub struct ACTEST2_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ACTEST2_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
-    }
-}
+pub type ACTEST2_W<'a, const O: u8> = crate::BitWriter<'a, u32, TR_SPEC, bool, O>;
 #[doc = "Field `ACTEST3` reader - AC3 Output Override Value"]
-pub struct ACTEST3_R(crate::FieldReader<bool, bool>);
-impl ACTEST3_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        ACTEST3_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for ACTEST3_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type ACTEST3_R = crate::BitReader<bool>;
 #[doc = "Field `ACTEST3` writer - AC3 Output Override Value"]
-pub struct ACTEST3_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ACTEST3_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
-        self.w
-    }
-}
+pub type ACTEST3_W<'a, const O: u8> = crate::BitWriter<'a, u32, TR_SPEC, bool, O>;
 #[doc = "Field `ACTEST4` reader - AC4 Output Override Value"]
-pub struct ACTEST4_R(crate::FieldReader<bool, bool>);
-impl ACTEST4_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        ACTEST4_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for ACTEST4_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type ACTEST4_R = crate::BitReader<bool>;
 #[doc = "Field `ACTEST4` writer - AC4 Output Override Value"]
-pub struct ACTEST4_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ACTEST4_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
-        self.w
-    }
-}
+pub type ACTEST4_W<'a, const O: u8> = crate::BitWriter<'a, u32, TR_SPEC, bool, O>;
 #[doc = "Field `ACTEST5` reader - AC5 Output Override Value"]
-pub struct ACTEST5_R(crate::FieldReader<bool, bool>);
-impl ACTEST5_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        ACTEST5_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for ACTEST5_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type ACTEST5_R = crate::BitReader<bool>;
 #[doc = "Field `ACTEST5` writer - AC5 Output Override Value"]
-pub struct ACTEST5_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ACTEST5_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
-        self.w
-    }
-}
+pub type ACTEST5_W<'a, const O: u8> = crate::BitWriter<'a, u32, TR_SPEC, bool, O>;
 #[doc = "Field `ACTEST6` reader - AC6 Output Override Value"]
-pub struct ACTEST6_R(crate::FieldReader<bool, bool>);
-impl ACTEST6_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        ACTEST6_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for ACTEST6_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type ACTEST6_R = crate::BitReader<bool>;
 #[doc = "Field `ACTEST6` writer - AC6 Output Override Value"]
-pub struct ACTEST6_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ACTEST6_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | ((value as u32 & 0x01) << 6);
-        self.w
-    }
-}
+pub type ACTEST6_W<'a, const O: u8> = crate::BitWriter<'a, u32, TR_SPEC, bool, O>;
 #[doc = "Field `ACTEST7` reader - AC7 Output Override Value"]
-pub struct ACTEST7_R(crate::FieldReader<bool, bool>);
-impl ACTEST7_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        ACTEST7_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for ACTEST7_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type ACTEST7_R = crate::BitReader<bool>;
 #[doc = "Field `ACTEST7` writer - AC7 Output Override Value"]
-pub struct ACTEST7_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ACTEST7_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | ((value as u32 & 0x01) << 7);
-        self.w
-    }
-}
+pub type ACTEST7_W<'a, const O: u8> = crate::BitWriter<'a, u32, TR_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - AC0 Output Override Value"]
     #[inline(always)]
     pub fn actest0(&self) -> ACTEST0_R {
-        ACTEST0_R::new((self.bits & 0x01) != 0)
+        ACTEST0_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - AC1 Output Override Value"]
     #[inline(always)]
     pub fn actest1(&self) -> ACTEST1_R {
-        ACTEST1_R::new(((self.bits >> 1) & 0x01) != 0)
+        ACTEST1_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - AC2 Output Override Value"]
     #[inline(always)]
     pub fn actest2(&self) -> ACTEST2_R {
-        ACTEST2_R::new(((self.bits >> 2) & 0x01) != 0)
+        ACTEST2_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - AC3 Output Override Value"]
     #[inline(always)]
     pub fn actest3(&self) -> ACTEST3_R {
-        ACTEST3_R::new(((self.bits >> 3) & 0x01) != 0)
+        ACTEST3_R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 4 - AC4 Output Override Value"]
     #[inline(always)]
     pub fn actest4(&self) -> ACTEST4_R {
-        ACTEST4_R::new(((self.bits >> 4) & 0x01) != 0)
+        ACTEST4_R::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bit 5 - AC5 Output Override Value"]
     #[inline(always)]
     pub fn actest5(&self) -> ACTEST5_R {
-        ACTEST5_R::new(((self.bits >> 5) & 0x01) != 0)
+        ACTEST5_R::new(((self.bits >> 5) & 1) != 0)
     }
     #[doc = "Bit 6 - AC6 Output Override Value"]
     #[inline(always)]
     pub fn actest6(&self) -> ACTEST6_R {
-        ACTEST6_R::new(((self.bits >> 6) & 0x01) != 0)
+        ACTEST6_R::new(((self.bits >> 6) & 1) != 0)
     }
     #[doc = "Bit 7 - AC7 Output Override Value"]
     #[inline(always)]
     pub fn actest7(&self) -> ACTEST7_R {
-        ACTEST7_R::new(((self.bits >> 7) & 0x01) != 0)
+        ACTEST7_R::new(((self.bits >> 7) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - AC0 Output Override Value"]
     #[inline(always)]
-    pub fn actest0(&mut self) -> ACTEST0_W {
-        ACTEST0_W { w: self }
+    #[must_use]
+    pub fn actest0(&mut self) -> ACTEST0_W<0> {
+        ACTEST0_W::new(self)
     }
     #[doc = "Bit 1 - AC1 Output Override Value"]
     #[inline(always)]
-    pub fn actest1(&mut self) -> ACTEST1_W {
-        ACTEST1_W { w: self }
+    #[must_use]
+    pub fn actest1(&mut self) -> ACTEST1_W<1> {
+        ACTEST1_W::new(self)
     }
     #[doc = "Bit 2 - AC2 Output Override Value"]
     #[inline(always)]
-    pub fn actest2(&mut self) -> ACTEST2_W {
-        ACTEST2_W { w: self }
+    #[must_use]
+    pub fn actest2(&mut self) -> ACTEST2_W<2> {
+        ACTEST2_W::new(self)
     }
     #[doc = "Bit 3 - AC3 Output Override Value"]
     #[inline(always)]
-    pub fn actest3(&mut self) -> ACTEST3_W {
-        ACTEST3_W { w: self }
+    #[must_use]
+    pub fn actest3(&mut self) -> ACTEST3_W<3> {
+        ACTEST3_W::new(self)
     }
     #[doc = "Bit 4 - AC4 Output Override Value"]
     #[inline(always)]
-    pub fn actest4(&mut self) -> ACTEST4_W {
-        ACTEST4_W { w: self }
+    #[must_use]
+    pub fn actest4(&mut self) -> ACTEST4_W<4> {
+        ACTEST4_W::new(self)
     }
     #[doc = "Bit 5 - AC5 Output Override Value"]
     #[inline(always)]
-    pub fn actest5(&mut self) -> ACTEST5_W {
-        ACTEST5_W { w: self }
+    #[must_use]
+    pub fn actest5(&mut self) -> ACTEST5_W<5> {
+        ACTEST5_W::new(self)
     }
     #[doc = "Bit 6 - AC6 Output Override Value"]
     #[inline(always)]
-    pub fn actest6(&mut self) -> ACTEST6_W {
-        ACTEST6_W { w: self }
+    #[must_use]
+    pub fn actest6(&mut self) -> ACTEST6_W<6> {
+        ACTEST6_W::new(self)
     }
     #[doc = "Bit 7 - AC7 Output Override Value"]
     #[inline(always)]
-    pub fn actest7(&mut self) -> ACTEST7_W {
-        ACTEST7_W { w: self }
+    #[must_use]
+    pub fn actest7(&mut self) -> ACTEST7_W<7> {
+        ACTEST7_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -424,11 +176,10 @@ impl crate::Readable for TR_SPEC {
 #[doc = "`write(|w| ..)` method takes [tr::W](W) writer structure"]
 impl crate::Writable for TR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets TR to value 0"]
 impl crate::Resettable for TR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

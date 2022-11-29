@@ -20,83 +20,40 @@ impl From<crate::W<SECOND_DMA_WORD_CDMA_ALT_SPEC>> for W {
     }
 }
 #[doc = "Field `LT` writer - Low Threshold"]
-pub struct LT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> LT_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x0fff) | (value as u32 & 0x0fff);
-        self.w
-    }
-}
+pub type LT_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, SECOND_DMA_WORD_CDMA_ALT_SPEC, u16, u16, 12, O>;
 #[doc = "Field `WM` writer - Window Monitor Mode"]
-pub struct WM_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> WM_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 12)) | ((value as u32 & 0x07) << 12);
-        self.w
-    }
-}
+pub type WM_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, SECOND_DMA_WORD_CDMA_ALT_SPEC, u8, u8, 3, O>;
 #[doc = "Field `HT` writer - High Threshold"]
-pub struct HT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> HT_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0fff << 16)) | ((value as u32 & 0x0fff) << 16);
-        self.w
-    }
-}
+pub type HT_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, SECOND_DMA_WORD_CDMA_ALT_SPEC, u16, u16, 12, O>;
 #[doc = "Field `DW` writer - Double Word transmitting"]
-pub struct DW_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DW_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 31)) | ((value as u32 & 0x01) << 31);
-        self.w
-    }
-}
+pub type DW_W<'a, const O: u8> = crate::BitWriter<'a, u32, SECOND_DMA_WORD_CDMA_ALT_SPEC, bool, O>;
 impl W {
     #[doc = "Bits 0:11 - Low Threshold"]
     #[inline(always)]
-    pub fn lt(&mut self) -> LT_W {
-        LT_W { w: self }
+    #[must_use]
+    pub fn lt(&mut self) -> LT_W<0> {
+        LT_W::new(self)
     }
     #[doc = "Bits 12:14 - Window Monitor Mode"]
     #[inline(always)]
-    pub fn wm(&mut self) -> WM_W {
-        WM_W { w: self }
+    #[must_use]
+    pub fn wm(&mut self) -> WM_W<12> {
+        WM_W::new(self)
     }
     #[doc = "Bits 16:27 - High Threshold"]
     #[inline(always)]
-    pub fn ht(&mut self) -> HT_W {
-        HT_W { w: self }
+    #[must_use]
+    pub fn ht(&mut self) -> HT_W<16> {
+        HT_W::new(self)
     }
     #[doc = "Bit 31 - Double Word transmitting"]
     #[inline(always)]
-    pub fn dw(&mut self) -> DW_W {
-        DW_W { w: self }
+    #[must_use]
+    pub fn dw(&mut self) -> DW_W<31> {
+        DW_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -113,11 +70,10 @@ impl crate::RegisterSpec for SECOND_DMA_WORD_CDMA_ALT_SPEC {
 #[doc = "`write(|w| ..)` method takes [second_dma_word_cdma_alt::W](W) writer structure"]
 impl crate::Writable for SECOND_DMA_WORD_CDMA_ALT_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets CDMA_ALT to value 0"]
 impl crate::Resettable for SECOND_DMA_WORD_CDMA_ALT_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

@@ -1,3 +1,18 @@
+#[doc = "Register `MEN` reader"]
+pub struct R(crate::R<MEN_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<MEN_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<MEN_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<MEN_SPEC>) -> Self {
+        R(reader)
+    }
+}
 #[doc = "Register `MEN` writer"]
 pub struct W(crate::W<MEN_SPEC>);
 impl core::ops::Deref for W {
@@ -20,61 +35,39 @@ impl From<crate::W<MEN_SPEC>> for W {
     }
 }
 #[doc = "Monitor Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum MENABLE_AW {
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum MENABLESELECT_AW {
     #[doc = "0: Disable Monitor Counter"]
     DIS = 0,
     #[doc = "1: Enable Monitor Counter"]
     EN = 1,
 }
-impl From<MENABLE_AW> for bool {
+impl From<MENABLESELECT_AW> for bool {
     #[inline(always)]
-    fn from(variant: MENABLE_AW) -> Self {
+    fn from(variant: MENABLESELECT_AW) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `MENABLE` writer - Monitor Enable"]
-pub struct MENABLE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> MENABLE_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: MENABLE_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type MENABLE_W<'a, const O: u8> = crate::BitWriter<'a, u32, MEN_SPEC, MENABLESELECT_AW, O>;
+impl<'a, const O: u8> MENABLE_W<'a, O> {
     #[doc = "Disable Monitor Counter"]
     #[inline(always)]
     pub fn dis(self) -> &'a mut W {
-        self.variant(MENABLE_AW::DIS)
+        self.variant(MENABLESELECT_AW::DIS)
     }
     #[doc = "Enable Monitor Counter"]
     #[inline(always)]
     pub fn en(self) -> &'a mut W {
-        self.variant(MENABLE_AW::EN)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
+        self.variant(MENABLESELECT_AW::EN)
     }
 }
 impl W {
     #[doc = "Bit 0 - Monitor Enable"]
     #[inline(always)]
-    pub fn menable(&mut self) -> MENABLE_W {
-        MENABLE_W { w: self }
+    #[must_use]
+    pub fn menable(&mut self) -> MENABLE_W<0> {
+        MENABLE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -83,19 +76,22 @@ impl W {
         self
     }
 }
-#[doc = "Monitor Enable Register\n\nThis register you can [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [men](index.html) module"]
+#[doc = "Monitor Enable Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [men](index.html) module"]
 pub struct MEN_SPEC;
 impl crate::RegisterSpec for MEN_SPEC {
     type Ux = u32;
 }
+#[doc = "`read()` method returns [men::R](R) reader structure"]
+impl crate::Readable for MEN_SPEC {
+    type Reader = R;
+}
 #[doc = "`write(|w| ..)` method takes [men::W](W) writer structure"]
 impl crate::Writable for MEN_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets MEN to value 0"]
 impl crate::Resettable for MEN_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

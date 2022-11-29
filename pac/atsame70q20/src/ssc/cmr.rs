@@ -35,31 +35,9 @@ impl From<crate::W<CMR_SPEC>> for W {
     }
 }
 #[doc = "Field `DIV` reader - Clock Divider"]
-pub struct DIV_R(crate::FieldReader<u16, u16>);
-impl DIV_R {
-    pub(crate) fn new(bits: u16) -> Self {
-        DIV_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DIV_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DIV_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `DIV` writer - Clock Divider"]
-pub struct DIV_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DIV_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x0fff) | (value as u32 & 0x0fff);
-        self.w
-    }
-}
+pub type DIV_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CMR_SPEC, u16, u16, 12, O>;
 impl R {
     #[doc = "Bits 0:11 - Clock Divider"]
     #[inline(always)]
@@ -70,8 +48,9 @@ impl R {
 impl W {
     #[doc = "Bits 0:11 - Clock Divider"]
     #[inline(always)]
-    pub fn div(&mut self) -> DIV_W {
-        DIV_W { w: self }
+    #[must_use]
+    pub fn div(&mut self) -> DIV_W<0> {
+        DIV_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -92,11 +71,10 @@ impl crate::Readable for CMR_SPEC {
 #[doc = "`write(|w| ..)` method takes [cmr::W](W) writer structure"]
 impl crate::Writable for CMR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets CMR to value 0"]
 impl crate::Resettable for CMR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

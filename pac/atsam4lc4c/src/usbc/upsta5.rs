@@ -14,214 +14,82 @@ impl From<crate::R<UPSTA5_SPEC>> for R {
     }
 }
 #[doc = "Field `RXINI` reader - Received IN Data Interrupt"]
-pub struct RXINI_R(crate::FieldReader<bool, bool>);
-impl RXINI_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        RXINI_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for RXINI_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type RXINI_R = crate::BitReader<bool>;
 #[doc = "Field `TXOUTI` reader - Transmitted OUT Data Interrupt"]
-pub struct TXOUTI_R(crate::FieldReader<bool, bool>);
-impl TXOUTI_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        TXOUTI_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TXOUTI_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TXOUTI_R = crate::BitReader<bool>;
 #[doc = "Field `TXSTPI` reader - Transmitted SETUP Interrupt"]
-pub struct TXSTPI_R(crate::FieldReader<bool, bool>);
-impl TXSTPI_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        TXSTPI_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TXSTPI_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TXSTPI_R = crate::BitReader<bool>;
 #[doc = "Field `PERRI` reader - Pipe Error Interrupt"]
-pub struct PERRI_R(crate::FieldReader<bool, bool>);
-impl PERRI_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        PERRI_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for PERRI_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type PERRI_R = crate::BitReader<bool>;
 #[doc = "Field `NAKEDI` reader - NAKed Interrupt"]
-pub struct NAKEDI_R(crate::FieldReader<bool, bool>);
-impl NAKEDI_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        NAKEDI_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for NAKEDI_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type NAKEDI_R = crate::BitReader<bool>;
 #[doc = "Field `ERRORFI` reader - Errorflow Interrupt"]
-pub struct ERRORFI_R(crate::FieldReader<bool, bool>);
-impl ERRORFI_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        ERRORFI_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for ERRORFI_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type ERRORFI_R = crate::BitReader<bool>;
 #[doc = "Field `RXSTALLDI` reader - Received STALLed Interrupt"]
-pub struct RXSTALLDI_R(crate::FieldReader<bool, bool>);
-impl RXSTALLDI_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        RXSTALLDI_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for RXSTALLDI_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type RXSTALLDI_R = crate::BitReader<bool>;
 #[doc = "Field `DTSEQ` reader - Data Toggle Sequence"]
-pub struct DTSEQ_R(crate::FieldReader<u8, u8>);
-impl DTSEQ_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        DTSEQ_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DTSEQ_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DTSEQ_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `RAMACERI` reader - Ram Access Error Interrupt"]
-pub struct RAMACERI_R(crate::FieldReader<bool, bool>);
-impl RAMACERI_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        RAMACERI_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for RAMACERI_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type RAMACERI_R = crate::BitReader<bool>;
 #[doc = "Field `NBUSYBK` reader - Number of Busy Bank"]
-pub struct NBUSYBK_R(crate::FieldReader<u8, u8>);
-impl NBUSYBK_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        NBUSYBK_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for NBUSYBK_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type NBUSYBK_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `CURRBK` reader - Current Bank"]
-pub struct CURRBK_R(crate::FieldReader<u8, u8>);
-impl CURRBK_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        CURRBK_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CURRBK_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CURRBK_R = crate::FieldReader<u8, u8>;
 impl R {
     #[doc = "Bit 0 - Received IN Data Interrupt"]
     #[inline(always)]
     pub fn rxini(&self) -> RXINI_R {
-        RXINI_R::new((self.bits & 0x01) != 0)
+        RXINI_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Transmitted OUT Data Interrupt"]
     #[inline(always)]
     pub fn txouti(&self) -> TXOUTI_R {
-        TXOUTI_R::new(((self.bits >> 1) & 0x01) != 0)
+        TXOUTI_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - Transmitted SETUP Interrupt"]
     #[inline(always)]
     pub fn txstpi(&self) -> TXSTPI_R {
-        TXSTPI_R::new(((self.bits >> 2) & 0x01) != 0)
+        TXSTPI_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - Pipe Error Interrupt"]
     #[inline(always)]
     pub fn perri(&self) -> PERRI_R {
-        PERRI_R::new(((self.bits >> 3) & 0x01) != 0)
+        PERRI_R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 4 - NAKed Interrupt"]
     #[inline(always)]
     pub fn nakedi(&self) -> NAKEDI_R {
-        NAKEDI_R::new(((self.bits >> 4) & 0x01) != 0)
+        NAKEDI_R::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bit 5 - Errorflow Interrupt"]
     #[inline(always)]
     pub fn errorfi(&self) -> ERRORFI_R {
-        ERRORFI_R::new(((self.bits >> 5) & 0x01) != 0)
+        ERRORFI_R::new(((self.bits >> 5) & 1) != 0)
     }
     #[doc = "Bit 6 - Received STALLed Interrupt"]
     #[inline(always)]
     pub fn rxstalldi(&self) -> RXSTALLDI_R {
-        RXSTALLDI_R::new(((self.bits >> 6) & 0x01) != 0)
+        RXSTALLDI_R::new(((self.bits >> 6) & 1) != 0)
     }
     #[doc = "Bits 8:9 - Data Toggle Sequence"]
     #[inline(always)]
     pub fn dtseq(&self) -> DTSEQ_R {
-        DTSEQ_R::new(((self.bits >> 8) & 0x03) as u8)
+        DTSEQ_R::new(((self.bits >> 8) & 3) as u8)
     }
     #[doc = "Bit 10 - Ram Access Error Interrupt"]
     #[inline(always)]
     pub fn ramaceri(&self) -> RAMACERI_R {
-        RAMACERI_R::new(((self.bits >> 10) & 0x01) != 0)
+        RAMACERI_R::new(((self.bits >> 10) & 1) != 0)
     }
     #[doc = "Bits 12:13 - Number of Busy Bank"]
     #[inline(always)]
     pub fn nbusybk(&self) -> NBUSYBK_R {
-        NBUSYBK_R::new(((self.bits >> 12) & 0x03) as u8)
+        NBUSYBK_R::new(((self.bits >> 12) & 3) as u8)
     }
     #[doc = "Bits 14:15 - Current Bank"]
     #[inline(always)]
     pub fn currbk(&self) -> CURRBK_R {
-        CURRBK_R::new(((self.bits >> 14) & 0x03) as u8)
+        CURRBK_R::new(((self.bits >> 14) & 3) as u8)
     }
 }
 #[doc = "Pipe Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [upsta5](index.html) module"]
@@ -235,8 +103,5 @@ impl crate::Readable for UPSTA5_SPEC {
 }
 #[doc = "`reset()` method sets UPSTA5 to value 0"]
 impl crate::Resettable for UPSTA5_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

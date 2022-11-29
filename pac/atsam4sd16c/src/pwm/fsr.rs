@@ -14,33 +14,9 @@ impl From<crate::R<FSR_SPEC>> for R {
     }
 }
 #[doc = "Field `FIV` reader - Fault Input Value"]
-pub struct FIV_R(crate::FieldReader<u8, u8>);
-impl FIV_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        FIV_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for FIV_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type FIV_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `FS` reader - Fault Status"]
-pub struct FS_R(crate::FieldReader<u8, u8>);
-impl FS_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        FS_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for FS_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type FS_R = crate::FieldReader<u8, u8>;
 impl R {
     #[doc = "Bits 0:7 - Fault Input Value"]
     #[inline(always)]
@@ -64,8 +40,5 @@ impl crate::Readable for FSR_SPEC {
 }
 #[doc = "`reset()` method sets FSR to value 0"]
 impl crate::Resettable for FSR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

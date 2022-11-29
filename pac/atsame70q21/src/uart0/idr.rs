@@ -20,194 +20,61 @@ impl From<crate::W<IDR_SPEC>> for W {
     }
 }
 #[doc = "Field `RXRDY` writer - Disable RXRDY Interrupt"]
-pub struct RXRDY_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RXRDY_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type RXRDY_W<'a, const O: u8> = crate::BitWriter<'a, u32, IDR_SPEC, bool, O>;
 #[doc = "Field `TXRDY` writer - Disable TXRDY Interrupt"]
-pub struct TXRDY_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TXRDY_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
-}
+pub type TXRDY_W<'a, const O: u8> = crate::BitWriter<'a, u32, IDR_SPEC, bool, O>;
 #[doc = "Field `OVRE` writer - Disable Overrun Error Interrupt"]
-pub struct OVRE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> OVRE_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
-        self.w
-    }
-}
+pub type OVRE_W<'a, const O: u8> = crate::BitWriter<'a, u32, IDR_SPEC, bool, O>;
 #[doc = "Field `FRAME` writer - Disable Framing Error Interrupt"]
-pub struct FRAME_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> FRAME_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | ((value as u32 & 0x01) << 6);
-        self.w
-    }
-}
+pub type FRAME_W<'a, const O: u8> = crate::BitWriter<'a, u32, IDR_SPEC, bool, O>;
 #[doc = "Field `PARE` writer - Disable Parity Error Interrupt"]
-pub struct PARE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PARE_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | ((value as u32 & 0x01) << 7);
-        self.w
-    }
-}
+pub type PARE_W<'a, const O: u8> = crate::BitWriter<'a, u32, IDR_SPEC, bool, O>;
 #[doc = "Field `TXEMPTY` writer - Disable TXEMPTY Interrupt"]
-pub struct TXEMPTY_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TXEMPTY_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 9)) | ((value as u32 & 0x01) << 9);
-        self.w
-    }
-}
+pub type TXEMPTY_W<'a, const O: u8> = crate::BitWriter<'a, u32, IDR_SPEC, bool, O>;
 #[doc = "Field `CMP` writer - Disable Comparison Interrupt"]
-pub struct CMP_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CMP_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 15)) | ((value as u32 & 0x01) << 15);
-        self.w
-    }
-}
+pub type CMP_W<'a, const O: u8> = crate::BitWriter<'a, u32, IDR_SPEC, bool, O>;
 impl W {
     #[doc = "Bit 0 - Disable RXRDY Interrupt"]
     #[inline(always)]
-    pub fn rxrdy(&mut self) -> RXRDY_W {
-        RXRDY_W { w: self }
+    #[must_use]
+    pub fn rxrdy(&mut self) -> RXRDY_W<0> {
+        RXRDY_W::new(self)
     }
     #[doc = "Bit 1 - Disable TXRDY Interrupt"]
     #[inline(always)]
-    pub fn txrdy(&mut self) -> TXRDY_W {
-        TXRDY_W { w: self }
+    #[must_use]
+    pub fn txrdy(&mut self) -> TXRDY_W<1> {
+        TXRDY_W::new(self)
     }
     #[doc = "Bit 5 - Disable Overrun Error Interrupt"]
     #[inline(always)]
-    pub fn ovre(&mut self) -> OVRE_W {
-        OVRE_W { w: self }
+    #[must_use]
+    pub fn ovre(&mut self) -> OVRE_W<5> {
+        OVRE_W::new(self)
     }
     #[doc = "Bit 6 - Disable Framing Error Interrupt"]
     #[inline(always)]
-    pub fn frame(&mut self) -> FRAME_W {
-        FRAME_W { w: self }
+    #[must_use]
+    pub fn frame(&mut self) -> FRAME_W<6> {
+        FRAME_W::new(self)
     }
     #[doc = "Bit 7 - Disable Parity Error Interrupt"]
     #[inline(always)]
-    pub fn pare(&mut self) -> PARE_W {
-        PARE_W { w: self }
+    #[must_use]
+    pub fn pare(&mut self) -> PARE_W<7> {
+        PARE_W::new(self)
     }
     #[doc = "Bit 9 - Disable TXEMPTY Interrupt"]
     #[inline(always)]
-    pub fn txempty(&mut self) -> TXEMPTY_W {
-        TXEMPTY_W { w: self }
+    #[must_use]
+    pub fn txempty(&mut self) -> TXEMPTY_W<9> {
+        TXEMPTY_W::new(self)
     }
     #[doc = "Bit 15 - Disable Comparison Interrupt"]
     #[inline(always)]
-    pub fn cmp(&mut self) -> CMP_W {
-        CMP_W { w: self }
+    #[must_use]
+    pub fn cmp(&mut self) -> CMP_W<15> {
+        CMP_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -224,11 +91,10 @@ impl crate::RegisterSpec for IDR_SPEC {
 #[doc = "`write(|w| ..)` method takes [idr::W](W) writer structure"]
 impl crate::Writable for IDR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets IDR to value 0"]
 impl crate::Resettable for IDR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

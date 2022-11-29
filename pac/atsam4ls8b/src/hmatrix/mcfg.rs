@@ -34,10 +34,12 @@ impl From<crate::W<MCFG_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `ULBT` reader - Undefined Length Burst Type"]
+pub type ULBT_R = crate::FieldReader<u8, ULBTSELECT_A>;
 #[doc = "Undefined Length Burst Type\n\nValue on reset: 2"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum ULBT_A {
+pub enum ULBTSELECT_A {
     #[doc = "0: Infinite Length"]
     INFINITE = 0,
     #[doc = "1: Single Access"]
@@ -49,117 +51,93 @@ pub enum ULBT_A {
     #[doc = "4: Sixteen Beat Burst"]
     SIXTEEN_BEAT = 4,
 }
-impl From<ULBT_A> for u8 {
+impl From<ULBTSELECT_A> for u8 {
     #[inline(always)]
-    fn from(variant: ULBT_A) -> Self {
+    fn from(variant: ULBTSELECT_A) -> Self {
         variant as _
     }
 }
-#[doc = "Field `ULBT` reader - Undefined Length Burst Type"]
-pub struct ULBT_R(crate::FieldReader<u8, ULBT_A>);
 impl ULBT_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        ULBT_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<ULBT_A> {
+    pub fn variant(&self) -> Option<ULBTSELECT_A> {
         match self.bits {
-            0 => Some(ULBT_A::INFINITE),
-            1 => Some(ULBT_A::SINGLE),
-            2 => Some(ULBT_A::FOUR_BEAT),
-            3 => Some(ULBT_A::EIGHT_BEAT),
-            4 => Some(ULBT_A::SIXTEEN_BEAT),
+            0 => Some(ULBTSELECT_A::INFINITE),
+            1 => Some(ULBTSELECT_A::SINGLE),
+            2 => Some(ULBTSELECT_A::FOUR_BEAT),
+            3 => Some(ULBTSELECT_A::EIGHT_BEAT),
+            4 => Some(ULBTSELECT_A::SIXTEEN_BEAT),
             _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `INFINITE`"]
     #[inline(always)]
     pub fn is_infinite(&self) -> bool {
-        **self == ULBT_A::INFINITE
+        *self == ULBTSELECT_A::INFINITE
     }
     #[doc = "Checks if the value of the field is `SINGLE`"]
     #[inline(always)]
     pub fn is_single(&self) -> bool {
-        **self == ULBT_A::SINGLE
+        *self == ULBTSELECT_A::SINGLE
     }
     #[doc = "Checks if the value of the field is `FOUR_BEAT`"]
     #[inline(always)]
     pub fn is_four_beat(&self) -> bool {
-        **self == ULBT_A::FOUR_BEAT
+        *self == ULBTSELECT_A::FOUR_BEAT
     }
     #[doc = "Checks if the value of the field is `EIGHT_BEAT`"]
     #[inline(always)]
     pub fn is_eight_beat(&self) -> bool {
-        **self == ULBT_A::EIGHT_BEAT
+        *self == ULBTSELECT_A::EIGHT_BEAT
     }
     #[doc = "Checks if the value of the field is `SIXTEEN_BEAT`"]
     #[inline(always)]
     pub fn is_sixteen_beat(&self) -> bool {
-        **self == ULBT_A::SIXTEEN_BEAT
-    }
-}
-impl core::ops::Deref for ULBT_R {
-    type Target = crate::FieldReader<u8, ULBT_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == ULBTSELECT_A::SIXTEEN_BEAT
     }
 }
 #[doc = "Field `ULBT` writer - Undefined Length Burst Type"]
-pub struct ULBT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ULBT_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: ULBT_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type ULBT_W<'a, const O: u8> = crate::FieldWriter<'a, u32, MCFG_SPEC, u8, ULBTSELECT_A, 3, O>;
+impl<'a, const O: u8> ULBT_W<'a, O> {
     #[doc = "Infinite Length"]
     #[inline(always)]
     pub fn infinite(self) -> &'a mut W {
-        self.variant(ULBT_A::INFINITE)
+        self.variant(ULBTSELECT_A::INFINITE)
     }
     #[doc = "Single Access"]
     #[inline(always)]
     pub fn single(self) -> &'a mut W {
-        self.variant(ULBT_A::SINGLE)
+        self.variant(ULBTSELECT_A::SINGLE)
     }
     #[doc = "Four Beat Burst"]
     #[inline(always)]
     pub fn four_beat(self) -> &'a mut W {
-        self.variant(ULBT_A::FOUR_BEAT)
+        self.variant(ULBTSELECT_A::FOUR_BEAT)
     }
     #[doc = "Eight Beat Burst"]
     #[inline(always)]
     pub fn eight_beat(self) -> &'a mut W {
-        self.variant(ULBT_A::EIGHT_BEAT)
+        self.variant(ULBTSELECT_A::EIGHT_BEAT)
     }
     #[doc = "Sixteen Beat Burst"]
     #[inline(always)]
     pub fn sixteen_beat(self) -> &'a mut W {
-        self.variant(ULBT_A::SIXTEEN_BEAT)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x07) | (value as u32 & 0x07);
-        self.w
+        self.variant(ULBTSELECT_A::SIXTEEN_BEAT)
     }
 }
 impl R {
     #[doc = "Bits 0:2 - Undefined Length Burst Type"]
     #[inline(always)]
     pub fn ulbt(&self) -> ULBT_R {
-        ULBT_R::new((self.bits & 0x07) as u8)
+        ULBT_R::new((self.bits & 7) as u8)
     }
 }
 impl W {
     #[doc = "Bits 0:2 - Undefined Length Burst Type"]
     #[inline(always)]
-    pub fn ulbt(&mut self) -> ULBT_W {
-        ULBT_W { w: self }
+    #[must_use]
+    pub fn ulbt(&mut self) -> ULBT_W<0> {
+        ULBT_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -180,11 +158,10 @@ impl crate::Readable for MCFG_SPEC {
 #[doc = "`write(|w| ..)` method takes [mcfg::W](W) writer structure"]
 impl crate::Writable for MCFG_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets MCFG%s to value 0x02"]
 impl crate::Resettable for MCFG_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x02
-    }
+    const RESET_VALUE: Self::Ux = 0x02;
 }

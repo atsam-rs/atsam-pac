@@ -35,53 +35,22 @@ impl From<crate::W<CFG_SPEC>> for W {
     }
 }
 #[doc = "Field `GCLKDIS` reader - Disable Clock Gating"]
-pub struct GCLKDIS_R(crate::FieldReader<bool, bool>);
-impl GCLKDIS_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        GCLKDIS_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for GCLKDIS_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type GCLKDIS_R = crate::BitReader<bool>;
 #[doc = "Field `GCLKDIS` writer - Disable Clock Gating"]
-pub struct GCLKDIS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> GCLKDIS_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type GCLKDIS_W<'a, const O: u8> = crate::BitWriter<'a, u32, CFG_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - Disable Clock Gating"]
     #[inline(always)]
     pub fn gclkdis(&self) -> GCLKDIS_R {
-        GCLKDIS_R::new((self.bits & 0x01) != 0)
+        GCLKDIS_R::new((self.bits & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Disable Clock Gating"]
     #[inline(always)]
-    pub fn gclkdis(&mut self) -> GCLKDIS_W {
-        GCLKDIS_W { w: self }
+    #[must_use]
+    pub fn gclkdis(&mut self) -> GCLKDIS_W<0> {
+        GCLKDIS_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -102,11 +71,10 @@ impl crate::Readable for CFG_SPEC {
 #[doc = "`write(|w| ..)` method takes [cfg::W](W) writer structure"]
 impl crate::Writable for CFG_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets CFG to value 0"]
 impl crate::Resettable for CFG_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

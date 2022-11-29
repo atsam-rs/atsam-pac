@@ -35,43 +35,22 @@ impl From<crate::W<CLENR_SPEC>> for W {
     }
 }
 #[doc = "Field `CLEN` reader - Plaintext/Ciphertext Length"]
-pub struct CLEN_R(crate::FieldReader<u32, u32>);
-impl CLEN_R {
-    pub(crate) fn new(bits: u32) -> Self {
-        CLEN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CLEN_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CLEN_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `CLEN` writer - Plaintext/Ciphertext Length"]
-pub struct CLEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CLEN_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xffff_ffff) | (value as u32 & 0xffff_ffff);
-        self.w
-    }
-}
+pub type CLEN_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CLENR_SPEC, u32, u32, 32, O>;
 impl R {
     #[doc = "Bits 0:31 - Plaintext/Ciphertext Length"]
     #[inline(always)]
     pub fn clen(&self) -> CLEN_R {
-        CLEN_R::new((self.bits & 0xffff_ffff) as u32)
+        CLEN_R::new(self.bits)
     }
 }
 impl W {
     #[doc = "Bits 0:31 - Plaintext/Ciphertext Length"]
     #[inline(always)]
-    pub fn clen(&mut self) -> CLEN_W {
-        CLEN_W { w: self }
+    #[must_use]
+    pub fn clen(&mut self) -> CLEN_W<0> {
+        CLEN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -92,11 +71,10 @@ impl crate::Readable for CLENR_SPEC {
 #[doc = "`write(|w| ..)` method takes [clenr::W](W) writer structure"]
 impl crate::Writable for CLENR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets CLENR to value 0"]
 impl crate::Resettable for CLENR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

@@ -14,24 +14,12 @@ impl From<crate::R<RSPR_SPEC>> for R {
     }
 }
 #[doc = "Field `RSP` reader - Response"]
-pub struct RSP_R(crate::FieldReader<u32, u32>);
-impl RSP_R {
-    pub(crate) fn new(bits: u32) -> Self {
-        RSP_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for RSP_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type RSP_R = crate::FieldReader<u32, u32>;
 impl R {
     #[doc = "Bits 0:31 - Response"]
     #[inline(always)]
     pub fn rsp(&self) -> RSP_R {
-        RSP_R::new((self.bits & 0xffff_ffff) as u32)
+        RSP_R::new(self.bits)
     }
 }
 #[doc = "Response Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [rspr](index.html) module"]

@@ -34,10 +34,12 @@ impl From<crate::W<BRGR_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `CD` reader - Clock Divisor"]
+pub type CD_R = crate::FieldReader<u16, CDSELECT_A>;
 #[doc = "Clock Divisor\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u16)]
-pub enum CD_A {
+pub enum CDSELECT_A {
     #[doc = "0: Disables the clock"]
     DISABLE = 0,
     #[doc = "1: Clock Divisor Bypass"]
@@ -45,143 +47,95 @@ pub enum CD_A {
     #[doc = "2: Baud Rate (Asynchronous Mode) = Selected Clock/(16 x CD) or (8 x CD); Baud Rate (Synchronous Mode) = Selected Clock/CD;"]
     _2 = 2,
 }
-impl From<CD_A> for u16 {
+impl From<CDSELECT_A> for u16 {
     #[inline(always)]
-    fn from(variant: CD_A) -> Self {
+    fn from(variant: CDSELECT_A) -> Self {
         variant as _
     }
 }
-#[doc = "Field `CD` reader - Clock Divisor"]
-pub struct CD_R(crate::FieldReader<u16, CD_A>);
 impl CD_R {
-    pub(crate) fn new(bits: u16) -> Self {
-        CD_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<CD_A> {
+    pub fn variant(&self) -> Option<CDSELECT_A> {
         match self.bits {
-            0 => Some(CD_A::DISABLE),
-            1 => Some(CD_A::BYPASS),
-            2 => Some(CD_A::_2),
+            0 => Some(CDSELECT_A::DISABLE),
+            1 => Some(CDSELECT_A::BYPASS),
+            2 => Some(CDSELECT_A::_2),
             _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `DISABLE`"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        **self == CD_A::DISABLE
+        *self == CDSELECT_A::DISABLE
     }
     #[doc = "Checks if the value of the field is `BYPASS`"]
     #[inline(always)]
     pub fn is_bypass(&self) -> bool {
-        **self == CD_A::BYPASS
+        *self == CDSELECT_A::BYPASS
     }
     #[doc = "Checks if the value of the field is `_2`"]
     #[inline(always)]
     pub fn is_2(&self) -> bool {
-        **self == CD_A::_2
-    }
-}
-impl core::ops::Deref for CD_R {
-    type Target = crate::FieldReader<u16, CD_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == CDSELECT_A::_2
     }
 }
 #[doc = "Field `CD` writer - Clock Divisor"]
-pub struct CD_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CD_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CD_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type CD_W<'a, const O: u8> = crate::FieldWriter<'a, u32, BRGR_SPEC, u16, CDSELECT_A, 16, O>;
+impl<'a, const O: u8> CD_W<'a, O> {
     #[doc = "Disables the clock"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
-        self.variant(CD_A::DISABLE)
+        self.variant(CDSELECT_A::DISABLE)
     }
     #[doc = "Clock Divisor Bypass"]
     #[inline(always)]
     pub fn bypass(self) -> &'a mut W {
-        self.variant(CD_A::BYPASS)
+        self.variant(CDSELECT_A::BYPASS)
     }
     #[doc = "Baud Rate (Asynchronous Mode) = Selected Clock/(16 x CD) or (8 x CD); Baud Rate (Synchronous Mode) = Selected Clock/CD;"]
     #[inline(always)]
     pub fn _2(self) -> &'a mut W {
-        self.variant(CD_A::_2)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xffff) | (value as u32 & 0xffff);
-        self.w
-    }
-}
-#[doc = "Fractional Part\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-#[repr(u8)]
-pub enum FP_A {
-    #[doc = "0: Fractional divider is disabled"]
-    _0 = 0,
-}
-impl From<FP_A> for u8 {
-    #[inline(always)]
-    fn from(variant: FP_A) -> Self {
-        variant as _
+        self.variant(CDSELECT_A::_2)
     }
 }
 #[doc = "Field `FP` reader - Fractional Part"]
-pub struct FP_R(crate::FieldReader<u8, FP_A>);
-impl FP_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        FP_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+pub type FP_R = crate::FieldReader<u8, FPSELECT_A>;
+#[doc = "Fractional Part\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+#[repr(u8)]
+pub enum FPSELECT_A {
+    #[doc = "0: Fractional divider is disabled"]
+    _0 = 0,
+}
+impl From<FPSELECT_A> for u8 {
     #[inline(always)]
-    pub fn variant(&self) -> Option<FP_A> {
+    fn from(variant: FPSELECT_A) -> Self {
+        variant as _
+    }
+}
+impl FP_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> Option<FPSELECT_A> {
         match self.bits {
-            0 => Some(FP_A::_0),
+            0 => Some(FPSELECT_A::_0),
             _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `_0`"]
     #[inline(always)]
     pub fn is_0(&self) -> bool {
-        **self == FP_A::_0
-    }
-}
-impl core::ops::Deref for FP_R {
-    type Target = crate::FieldReader<u8, FP_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == FPSELECT_A::_0
     }
 }
 #[doc = "Field `FP` writer - Fractional Part"]
-pub struct FP_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> FP_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: FP_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type FP_W<'a, const O: u8> = crate::FieldWriter<'a, u32, BRGR_SPEC, u8, FPSELECT_A, 3, O>;
+impl<'a, const O: u8> FP_W<'a, O> {
     #[doc = "Fractional divider is disabled"]
     #[inline(always)]
     pub fn _0(self) -> &'a mut W {
-        self.variant(FP_A::_0)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 16)) | ((value as u32 & 0x07) << 16);
-        self.w
+        self.variant(FPSELECT_A::_0)
     }
 }
 impl R {
@@ -193,19 +147,21 @@ impl R {
     #[doc = "Bits 16:18 - Fractional Part"]
     #[inline(always)]
     pub fn fp(&self) -> FP_R {
-        FP_R::new(((self.bits >> 16) & 0x07) as u8)
+        FP_R::new(((self.bits >> 16) & 7) as u8)
     }
 }
 impl W {
     #[doc = "Bits 0:15 - Clock Divisor"]
     #[inline(always)]
-    pub fn cd(&mut self) -> CD_W {
-        CD_W { w: self }
+    #[must_use]
+    pub fn cd(&mut self) -> CD_W<0> {
+        CD_W::new(self)
     }
     #[doc = "Bits 16:18 - Fractional Part"]
     #[inline(always)]
-    pub fn fp(&mut self) -> FP_W {
-        FP_W { w: self }
+    #[must_use]
+    pub fn fp(&mut self) -> FP_W<16> {
+        FP_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -226,11 +182,10 @@ impl crate::Readable for BRGR_SPEC {
 #[doc = "`write(|w| ..)` method takes [brgr::W](W) writer structure"]
 impl crate::Writable for BRGR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets BRGR to value 0"]
 impl crate::Resettable for BRGR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

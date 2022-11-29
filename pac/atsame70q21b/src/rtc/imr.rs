@@ -14,119 +14,47 @@ impl From<crate::R<IMR_SPEC>> for R {
     }
 }
 #[doc = "Field `ACK` reader - Acknowledge Update Interrupt Mask"]
-pub struct ACK_R(crate::FieldReader<bool, bool>);
-impl ACK_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        ACK_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for ACK_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type ACK_R = crate::BitReader<bool>;
 #[doc = "Field `ALR` reader - Alarm Interrupt Mask"]
-pub struct ALR_R(crate::FieldReader<bool, bool>);
-impl ALR_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        ALR_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for ALR_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type ALR_R = crate::BitReader<bool>;
 #[doc = "Field `SEC` reader - Second Event Interrupt Mask"]
-pub struct SEC_R(crate::FieldReader<bool, bool>);
-impl SEC_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        SEC_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for SEC_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type SEC_R = crate::BitReader<bool>;
 #[doc = "Field `TIM` reader - Time Event Interrupt Mask"]
-pub struct TIM_R(crate::FieldReader<bool, bool>);
-impl TIM_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        TIM_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TIM_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TIM_R = crate::BitReader<bool>;
 #[doc = "Field `CAL` reader - Calendar Event Interrupt Mask"]
-pub struct CAL_R(crate::FieldReader<bool, bool>);
-impl CAL_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        CAL_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CAL_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CAL_R = crate::BitReader<bool>;
 #[doc = "Field `TDERR` reader - Time and/or Date Error Mask"]
-pub struct TDERR_R(crate::FieldReader<bool, bool>);
-impl TDERR_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        TDERR_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TDERR_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TDERR_R = crate::BitReader<bool>;
 impl R {
     #[doc = "Bit 0 - Acknowledge Update Interrupt Mask"]
     #[inline(always)]
     pub fn ack(&self) -> ACK_R {
-        ACK_R::new((self.bits & 0x01) != 0)
+        ACK_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Alarm Interrupt Mask"]
     #[inline(always)]
     pub fn alr(&self) -> ALR_R {
-        ALR_R::new(((self.bits >> 1) & 0x01) != 0)
+        ALR_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - Second Event Interrupt Mask"]
     #[inline(always)]
     pub fn sec(&self) -> SEC_R {
-        SEC_R::new(((self.bits >> 2) & 0x01) != 0)
+        SEC_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - Time Event Interrupt Mask"]
     #[inline(always)]
     pub fn tim(&self) -> TIM_R {
-        TIM_R::new(((self.bits >> 3) & 0x01) != 0)
+        TIM_R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 4 - Calendar Event Interrupt Mask"]
     #[inline(always)]
     pub fn cal(&self) -> CAL_R {
-        CAL_R::new(((self.bits >> 4) & 0x01) != 0)
+        CAL_R::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bit 5 - Time and/or Date Error Mask"]
     #[inline(always)]
     pub fn tderr(&self) -> TDERR_R {
-        TDERR_R::new(((self.bits >> 5) & 0x01) != 0)
+        TDERR_R::new(((self.bits >> 5) & 1) != 0)
     }
 }
 #[doc = "Interrupt Mask Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [imr](index.html) module"]
@@ -140,8 +68,5 @@ impl crate::Readable for IMR_SPEC {
 }
 #[doc = "`reset()` method sets IMR to value 0"]
 impl crate::Resettable for IMR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

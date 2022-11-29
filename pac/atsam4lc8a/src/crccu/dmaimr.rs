@@ -24,8 +24,5 @@ impl crate::Readable for DMAIMR_SPEC {
 }
 #[doc = "`reset()` method sets DMAIMR to value 0"]
 impl crate::Resettable for DMAIMR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

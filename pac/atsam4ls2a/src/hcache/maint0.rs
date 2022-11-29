@@ -20,61 +20,39 @@ impl From<crate::W<MAINT0_SPEC>> for W {
     }
 }
 #[doc = "Cache Controller Invalidate All\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum INVALL_AW {
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum INVALLSELECT_AW {
     #[doc = "0: No effect"]
     NO = 0,
     #[doc = "1: Invalidate all cache entries"]
     YES = 1,
 }
-impl From<INVALL_AW> for bool {
+impl From<INVALLSELECT_AW> for bool {
     #[inline(always)]
-    fn from(variant: INVALL_AW) -> Self {
+    fn from(variant: INVALLSELECT_AW) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `INVALL` writer - Cache Controller Invalidate All"]
-pub struct INVALL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> INVALL_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: INVALL_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type INVALL_W<'a, const O: u8> = crate::BitWriter<'a, u32, MAINT0_SPEC, INVALLSELECT_AW, O>;
+impl<'a, const O: u8> INVALL_W<'a, O> {
     #[doc = "No effect"]
     #[inline(always)]
     pub fn no(self) -> &'a mut W {
-        self.variant(INVALL_AW::NO)
+        self.variant(INVALLSELECT_AW::NO)
     }
     #[doc = "Invalidate all cache entries"]
     #[inline(always)]
     pub fn yes(self) -> &'a mut W {
-        self.variant(INVALL_AW::YES)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
+        self.variant(INVALLSELECT_AW::YES)
     }
 }
 impl W {
     #[doc = "Bit 0 - Cache Controller Invalidate All"]
     #[inline(always)]
-    pub fn invall(&mut self) -> INVALL_W {
-        INVALL_W { w: self }
+    #[must_use]
+    pub fn invall(&mut self) -> INVALL_W<0> {
+        INVALL_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -91,11 +69,10 @@ impl crate::RegisterSpec for MAINT0_SPEC {
 #[doc = "`write(|w| ..)` method takes [maint0::W](W) writer structure"]
 impl crate::Writable for MAINT0_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets MAINT0 to value 0"]
 impl crate::Resettable for MAINT0_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

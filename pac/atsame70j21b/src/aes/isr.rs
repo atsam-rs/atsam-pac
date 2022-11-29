@@ -14,37 +14,15 @@ impl From<crate::R<ISR_SPEC>> for R {
     }
 }
 #[doc = "Field `DATRDY` reader - Data Ready (cleared by setting bit START or bit SWRST in AES_CR or by reading AES_ODATARx)"]
-pub struct DATRDY_R(crate::FieldReader<bool, bool>);
-impl DATRDY_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        DATRDY_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DATRDY_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DATRDY_R = crate::BitReader<bool>;
 #[doc = "Field `URAD` reader - Unspecified Register Access Detection Status (cleared by writing SWRST in AES_CR)"]
-pub struct URAD_R(crate::FieldReader<bool, bool>);
-impl URAD_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        URAD_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for URAD_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type URAD_R = crate::BitReader<bool>;
+#[doc = "Field `URAT` reader - Unspecified Register Access (cleared by writing SWRST in AES_CR)"]
+pub type URAT_R = crate::FieldReader<u8, URATSELECT_A>;
 #[doc = "Unspecified Register Access (cleared by writing SWRST in AES_CR)\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum URAT_A {
+pub enum URATSELECT_A {
     #[doc = "0: Input Data Register written during the data processing when SMOD = 0x2 mode."]
     IDR_WR_PROCESSING = 0,
     #[doc = "1: Output Data Register read during the data processing."]
@@ -58,93 +36,69 @@ pub enum URAT_A {
     #[doc = "5: Write-only register read access."]
     WOR_RD_ACCESS = 5,
 }
-impl From<URAT_A> for u8 {
+impl From<URATSELECT_A> for u8 {
     #[inline(always)]
-    fn from(variant: URAT_A) -> Self {
+    fn from(variant: URATSELECT_A) -> Self {
         variant as _
     }
 }
-#[doc = "Field `URAT` reader - Unspecified Register Access (cleared by writing SWRST in AES_CR)"]
-pub struct URAT_R(crate::FieldReader<u8, URAT_A>);
 impl URAT_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        URAT_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<URAT_A> {
+    pub fn variant(&self) -> Option<URATSELECT_A> {
         match self.bits {
-            0 => Some(URAT_A::IDR_WR_PROCESSING),
-            1 => Some(URAT_A::ODR_RD_PROCESSING),
-            2 => Some(URAT_A::MR_WR_PROCESSING),
-            3 => Some(URAT_A::ODR_RD_SUBKGEN),
-            4 => Some(URAT_A::MR_WR_SUBKGEN),
-            5 => Some(URAT_A::WOR_RD_ACCESS),
+            0 => Some(URATSELECT_A::IDR_WR_PROCESSING),
+            1 => Some(URATSELECT_A::ODR_RD_PROCESSING),
+            2 => Some(URATSELECT_A::MR_WR_PROCESSING),
+            3 => Some(URATSELECT_A::ODR_RD_SUBKGEN),
+            4 => Some(URATSELECT_A::MR_WR_SUBKGEN),
+            5 => Some(URATSELECT_A::WOR_RD_ACCESS),
             _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `IDR_WR_PROCESSING`"]
     #[inline(always)]
     pub fn is_idr_wr_processing(&self) -> bool {
-        **self == URAT_A::IDR_WR_PROCESSING
+        *self == URATSELECT_A::IDR_WR_PROCESSING
     }
     #[doc = "Checks if the value of the field is `ODR_RD_PROCESSING`"]
     #[inline(always)]
     pub fn is_odr_rd_processing(&self) -> bool {
-        **self == URAT_A::ODR_RD_PROCESSING
+        *self == URATSELECT_A::ODR_RD_PROCESSING
     }
     #[doc = "Checks if the value of the field is `MR_WR_PROCESSING`"]
     #[inline(always)]
     pub fn is_mr_wr_processing(&self) -> bool {
-        **self == URAT_A::MR_WR_PROCESSING
+        *self == URATSELECT_A::MR_WR_PROCESSING
     }
     #[doc = "Checks if the value of the field is `ODR_RD_SUBKGEN`"]
     #[inline(always)]
     pub fn is_odr_rd_subkgen(&self) -> bool {
-        **self == URAT_A::ODR_RD_SUBKGEN
+        *self == URATSELECT_A::ODR_RD_SUBKGEN
     }
     #[doc = "Checks if the value of the field is `MR_WR_SUBKGEN`"]
     #[inline(always)]
     pub fn is_mr_wr_subkgen(&self) -> bool {
-        **self == URAT_A::MR_WR_SUBKGEN
+        *self == URATSELECT_A::MR_WR_SUBKGEN
     }
     #[doc = "Checks if the value of the field is `WOR_RD_ACCESS`"]
     #[inline(always)]
     pub fn is_wor_rd_access(&self) -> bool {
-        **self == URAT_A::WOR_RD_ACCESS
-    }
-}
-impl core::ops::Deref for URAT_R {
-    type Target = crate::FieldReader<u8, URAT_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == URATSELECT_A::WOR_RD_ACCESS
     }
 }
 #[doc = "Field `TAGRDY` reader - GCM Tag Ready"]
-pub struct TAGRDY_R(crate::FieldReader<bool, bool>);
-impl TAGRDY_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        TAGRDY_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TAGRDY_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TAGRDY_R = crate::BitReader<bool>;
 impl R {
     #[doc = "Bit 0 - Data Ready (cleared by setting bit START or bit SWRST in AES_CR or by reading AES_ODATARx)"]
     #[inline(always)]
     pub fn datrdy(&self) -> DATRDY_R {
-        DATRDY_R::new((self.bits & 0x01) != 0)
+        DATRDY_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 8 - Unspecified Register Access Detection Status (cleared by writing SWRST in AES_CR)"]
     #[inline(always)]
     pub fn urad(&self) -> URAD_R {
-        URAD_R::new(((self.bits >> 8) & 0x01) != 0)
+        URAD_R::new(((self.bits >> 8) & 1) != 0)
     }
     #[doc = "Bits 12:15 - Unspecified Register Access (cleared by writing SWRST in AES_CR)"]
     #[inline(always)]
@@ -154,7 +108,7 @@ impl R {
     #[doc = "Bit 16 - GCM Tag Ready"]
     #[inline(always)]
     pub fn tagrdy(&self) -> TAGRDY_R {
-        TAGRDY_R::new(((self.bits >> 16) & 0x01) != 0)
+        TAGRDY_R::new(((self.bits >> 16) & 1) != 0)
     }
 }
 #[doc = "Interrupt Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [isr](index.html) module"]
@@ -168,8 +122,5 @@ impl crate::Readable for ISR_SPEC {
 }
 #[doc = "`reset()` method sets ISR to value 0"]
 impl crate::Resettable for ISR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

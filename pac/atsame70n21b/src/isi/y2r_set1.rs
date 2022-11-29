@@ -35,139 +35,21 @@ impl From<crate::W<Y2R_SET1_SPEC>> for W {
     }
 }
 #[doc = "Field `C4` reader - Color Space Conversion Matrix Coefficient C4"]
-pub struct C4_R(crate::FieldReader<u16, u16>);
-impl C4_R {
-    pub(crate) fn new(bits: u16) -> Self {
-        C4_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for C4_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type C4_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `C4` writer - Color Space Conversion Matrix Coefficient C4"]
-pub struct C4_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> C4_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01ff) | (value as u32 & 0x01ff);
-        self.w
-    }
-}
+pub type C4_W<'a, const O: u8> = crate::FieldWriter<'a, u32, Y2R_SET1_SPEC, u16, u16, 9, O>;
 #[doc = "Field `Yoff` reader - Color Space Conversion Luminance Default Offset"]
-pub struct YOFF_R(crate::FieldReader<bool, bool>);
-impl YOFF_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        YOFF_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for YOFF_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type YOFF_R = crate::BitReader<bool>;
 #[doc = "Field `Yoff` writer - Color Space Conversion Luminance Default Offset"]
-pub struct YOFF_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> YOFF_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 12)) | ((value as u32 & 0x01) << 12);
-        self.w
-    }
-}
+pub type YOFF_W<'a, const O: u8> = crate::BitWriter<'a, u32, Y2R_SET1_SPEC, bool, O>;
 #[doc = "Field `Croff` reader - Color Space Conversion Red Chrominance Default Offset"]
-pub struct CROFF_R(crate::FieldReader<bool, bool>);
-impl CROFF_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        CROFF_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CROFF_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CROFF_R = crate::BitReader<bool>;
 #[doc = "Field `Croff` writer - Color Space Conversion Red Chrominance Default Offset"]
-pub struct CROFF_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CROFF_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 13)) | ((value as u32 & 0x01) << 13);
-        self.w
-    }
-}
+pub type CROFF_W<'a, const O: u8> = crate::BitWriter<'a, u32, Y2R_SET1_SPEC, bool, O>;
 #[doc = "Field `Cboff` reader - Color Space Conversion Blue Chrominance Default Offset"]
-pub struct CBOFF_R(crate::FieldReader<bool, bool>);
-impl CBOFF_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        CBOFF_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CBOFF_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CBOFF_R = crate::BitReader<bool>;
 #[doc = "Field `Cboff` writer - Color Space Conversion Blue Chrominance Default Offset"]
-pub struct CBOFF_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CBOFF_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 14)) | ((value as u32 & 0x01) << 14);
-        self.w
-    }
-}
+pub type CBOFF_W<'a, const O: u8> = crate::BitWriter<'a, u32, Y2R_SET1_SPEC, bool, O>;
 impl R {
     #[doc = "Bits 0:8 - Color Space Conversion Matrix Coefficient C4"]
     #[inline(always)]
@@ -177,39 +59,43 @@ impl R {
     #[doc = "Bit 12 - Color Space Conversion Luminance Default Offset"]
     #[inline(always)]
     pub fn yoff(&self) -> YOFF_R {
-        YOFF_R::new(((self.bits >> 12) & 0x01) != 0)
+        YOFF_R::new(((self.bits >> 12) & 1) != 0)
     }
     #[doc = "Bit 13 - Color Space Conversion Red Chrominance Default Offset"]
     #[inline(always)]
     pub fn croff(&self) -> CROFF_R {
-        CROFF_R::new(((self.bits >> 13) & 0x01) != 0)
+        CROFF_R::new(((self.bits >> 13) & 1) != 0)
     }
     #[doc = "Bit 14 - Color Space Conversion Blue Chrominance Default Offset"]
     #[inline(always)]
     pub fn cboff(&self) -> CBOFF_R {
-        CBOFF_R::new(((self.bits >> 14) & 0x01) != 0)
+        CBOFF_R::new(((self.bits >> 14) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bits 0:8 - Color Space Conversion Matrix Coefficient C4"]
     #[inline(always)]
-    pub fn c4(&mut self) -> C4_W {
-        C4_W { w: self }
+    #[must_use]
+    pub fn c4(&mut self) -> C4_W<0> {
+        C4_W::new(self)
     }
     #[doc = "Bit 12 - Color Space Conversion Luminance Default Offset"]
     #[inline(always)]
-    pub fn yoff(&mut self) -> YOFF_W {
-        YOFF_W { w: self }
+    #[must_use]
+    pub fn yoff(&mut self) -> YOFF_W<12> {
+        YOFF_W::new(self)
     }
     #[doc = "Bit 13 - Color Space Conversion Red Chrominance Default Offset"]
     #[inline(always)]
-    pub fn croff(&mut self) -> CROFF_W {
-        CROFF_W { w: self }
+    #[must_use]
+    pub fn croff(&mut self) -> CROFF_W<13> {
+        CROFF_W::new(self)
     }
     #[doc = "Bit 14 - Color Space Conversion Blue Chrominance Default Offset"]
     #[inline(always)]
-    pub fn cboff(&mut self) -> CBOFF_W {
-        CBOFF_W { w: self }
+    #[must_use]
+    pub fn cboff(&mut self) -> CBOFF_W<14> {
+        CBOFF_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -230,11 +116,10 @@ impl crate::Readable for Y2R_SET1_SPEC {
 #[doc = "`write(|w| ..)` method takes [y2r_set1::W](W) writer structure"]
 impl crate::Writable for Y2R_SET1_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets Y2R_SET1 to value 0"]
 impl crate::Resettable for Y2R_SET1_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

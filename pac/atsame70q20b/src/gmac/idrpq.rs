@@ -20,194 +20,61 @@ impl From<crate::W<IDRPQ_SPEC>> for W {
     }
 }
 #[doc = "Field `RCOMP` writer - Receive Complete"]
-pub struct RCOMP_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RCOMP_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
-}
+pub type RCOMP_W<'a, const O: u8> = crate::BitWriter<'a, u32, IDRPQ_SPEC, bool, O>;
 #[doc = "Field `RXUBR` writer - RX Used Bit Read"]
-pub struct RXUBR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RXUBR_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
-    }
-}
+pub type RXUBR_W<'a, const O: u8> = crate::BitWriter<'a, u32, IDRPQ_SPEC, bool, O>;
 #[doc = "Field `RLEX` writer - Retry Limit Exceeded or Late Collision"]
-pub struct RLEX_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RLEX_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
-        self.w
-    }
-}
+pub type RLEX_W<'a, const O: u8> = crate::BitWriter<'a, u32, IDRPQ_SPEC, bool, O>;
 #[doc = "Field `TFC` writer - Transmit Frame Corruption Due to AHB Error"]
-pub struct TFC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TFC_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | ((value as u32 & 0x01) << 6);
-        self.w
-    }
-}
+pub type TFC_W<'a, const O: u8> = crate::BitWriter<'a, u32, IDRPQ_SPEC, bool, O>;
 #[doc = "Field `TCOMP` writer - Transmit Complete"]
-pub struct TCOMP_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TCOMP_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | ((value as u32 & 0x01) << 7);
-        self.w
-    }
-}
+pub type TCOMP_W<'a, const O: u8> = crate::BitWriter<'a, u32, IDRPQ_SPEC, bool, O>;
 #[doc = "Field `ROVR` writer - Receive Overrun"]
-pub struct ROVR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ROVR_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 10)) | ((value as u32 & 0x01) << 10);
-        self.w
-    }
-}
+pub type ROVR_W<'a, const O: u8> = crate::BitWriter<'a, u32, IDRPQ_SPEC, bool, O>;
 #[doc = "Field `HRESP` writer - HRESP Not OK"]
-pub struct HRESP_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> HRESP_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 11)) | ((value as u32 & 0x01) << 11);
-        self.w
-    }
-}
+pub type HRESP_W<'a, const O: u8> = crate::BitWriter<'a, u32, IDRPQ_SPEC, bool, O>;
 impl W {
     #[doc = "Bit 1 - Receive Complete"]
     #[inline(always)]
-    pub fn rcomp(&mut self) -> RCOMP_W {
-        RCOMP_W { w: self }
+    #[must_use]
+    pub fn rcomp(&mut self) -> RCOMP_W<1> {
+        RCOMP_W::new(self)
     }
     #[doc = "Bit 2 - RX Used Bit Read"]
     #[inline(always)]
-    pub fn rxubr(&mut self) -> RXUBR_W {
-        RXUBR_W { w: self }
+    #[must_use]
+    pub fn rxubr(&mut self) -> RXUBR_W<2> {
+        RXUBR_W::new(self)
     }
     #[doc = "Bit 5 - Retry Limit Exceeded or Late Collision"]
     #[inline(always)]
-    pub fn rlex(&mut self) -> RLEX_W {
-        RLEX_W { w: self }
+    #[must_use]
+    pub fn rlex(&mut self) -> RLEX_W<5> {
+        RLEX_W::new(self)
     }
     #[doc = "Bit 6 - Transmit Frame Corruption Due to AHB Error"]
     #[inline(always)]
-    pub fn tfc(&mut self) -> TFC_W {
-        TFC_W { w: self }
+    #[must_use]
+    pub fn tfc(&mut self) -> TFC_W<6> {
+        TFC_W::new(self)
     }
     #[doc = "Bit 7 - Transmit Complete"]
     #[inline(always)]
-    pub fn tcomp(&mut self) -> TCOMP_W {
-        TCOMP_W { w: self }
+    #[must_use]
+    pub fn tcomp(&mut self) -> TCOMP_W<7> {
+        TCOMP_W::new(self)
     }
     #[doc = "Bit 10 - Receive Overrun"]
     #[inline(always)]
-    pub fn rovr(&mut self) -> ROVR_W {
-        ROVR_W { w: self }
+    #[must_use]
+    pub fn rovr(&mut self) -> ROVR_W<10> {
+        ROVR_W::new(self)
     }
     #[doc = "Bit 11 - HRESP Not OK"]
     #[inline(always)]
-    pub fn hresp(&mut self) -> HRESP_W {
-        HRESP_W { w: self }
+    #[must_use]
+    pub fn hresp(&mut self) -> HRESP_W<11> {
+        HRESP_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -224,12 +91,11 @@ impl crate::RegisterSpec for IDRPQ_SPEC {
 #[doc = "`write(|w| ..)` method takes [idrpq::W](W) writer structure"]
 impl crate::Writable for IDRPQ_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets IDRPQ[%s]
 to value 0"]
 impl crate::Resettable for IDRPQ_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

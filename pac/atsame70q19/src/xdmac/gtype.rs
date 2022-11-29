@@ -35,83 +35,17 @@ impl From<crate::W<GTYPE_SPEC>> for W {
     }
 }
 #[doc = "Field `NB_CH` reader - Number of Channels Minus One"]
-pub struct NB_CH_R(crate::FieldReader<u8, u8>);
-impl NB_CH_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        NB_CH_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for NB_CH_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type NB_CH_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `NB_CH` writer - Number of Channels Minus One"]
-pub struct NB_CH_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> NB_CH_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x1f) | (value as u32 & 0x1f);
-        self.w
-    }
-}
+pub type NB_CH_W<'a, const O: u8> = crate::FieldWriter<'a, u32, GTYPE_SPEC, u8, u8, 5, O>;
 #[doc = "Field `FIFO_SZ` reader - Number of Bytes"]
-pub struct FIFO_SZ_R(crate::FieldReader<u16, u16>);
-impl FIFO_SZ_R {
-    pub(crate) fn new(bits: u16) -> Self {
-        FIFO_SZ_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for FIFO_SZ_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type FIFO_SZ_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `FIFO_SZ` writer - Number of Bytes"]
-pub struct FIFO_SZ_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> FIFO_SZ_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07ff << 5)) | ((value as u32 & 0x07ff) << 5);
-        self.w
-    }
-}
+pub type FIFO_SZ_W<'a, const O: u8> = crate::FieldWriter<'a, u32, GTYPE_SPEC, u16, u16, 11, O>;
 #[doc = "Field `NB_REQ` reader - Number of Peripheral Requests Minus One"]
-pub struct NB_REQ_R(crate::FieldReader<u8, u8>);
-impl NB_REQ_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        NB_REQ_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for NB_REQ_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type NB_REQ_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `NB_REQ` writer - Number of Peripheral Requests Minus One"]
-pub struct NB_REQ_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> NB_REQ_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x7f << 16)) | ((value as u32 & 0x7f) << 16);
-        self.w
-    }
-}
+pub type NB_REQ_W<'a, const O: u8> = crate::FieldWriter<'a, u32, GTYPE_SPEC, u8, u8, 7, O>;
 impl R {
     #[doc = "Bits 0:4 - Number of Channels Minus One"]
     #[inline(always)]
@@ -132,18 +66,21 @@ impl R {
 impl W {
     #[doc = "Bits 0:4 - Number of Channels Minus One"]
     #[inline(always)]
-    pub fn nb_ch(&mut self) -> NB_CH_W {
-        NB_CH_W { w: self }
+    #[must_use]
+    pub fn nb_ch(&mut self) -> NB_CH_W<0> {
+        NB_CH_W::new(self)
     }
     #[doc = "Bits 5:15 - Number of Bytes"]
     #[inline(always)]
-    pub fn fifo_sz(&mut self) -> FIFO_SZ_W {
-        FIFO_SZ_W { w: self }
+    #[must_use]
+    pub fn fifo_sz(&mut self) -> FIFO_SZ_W<5> {
+        FIFO_SZ_W::new(self)
     }
     #[doc = "Bits 16:22 - Number of Peripheral Requests Minus One"]
     #[inline(always)]
-    pub fn nb_req(&mut self) -> NB_REQ_W {
-        NB_REQ_W { w: self }
+    #[must_use]
+    pub fn nb_req(&mut self) -> NB_REQ_W<16> {
+        NB_REQ_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -164,11 +101,10 @@ impl crate::Readable for GTYPE_SPEC {
 #[doc = "`write(|w| ..)` method takes [gtype::W](W) writer structure"]
 impl crate::Writable for GTYPE_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets GTYPE to value 0"]
 impl crate::Resettable for GTYPE_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

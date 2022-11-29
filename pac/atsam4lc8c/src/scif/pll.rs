@@ -35,186 +35,44 @@ impl From<crate::W<PLL_SPEC>> for W {
     }
 }
 #[doc = "Field `PLLEN` reader - PLL Enable"]
-pub struct PLLEN_R(crate::FieldReader<bool, bool>);
-impl PLLEN_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        PLLEN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for PLLEN_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type PLLEN_R = crate::BitReader<bool>;
 #[doc = "Field `PLLEN` writer - PLL Enable"]
-pub struct PLLEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PLLEN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type PLLEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, PLL_SPEC, bool, O>;
 #[doc = "Field `PLLOSC` reader - PLL Oscillator Select"]
-pub struct PLLOSC_R(crate::FieldReader<u8, u8>);
-impl PLLOSC_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        PLLOSC_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for PLLOSC_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type PLLOSC_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `PLLOSC` writer - PLL Oscillator Select"]
-pub struct PLLOSC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PLLOSC_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 1)) | ((value as u32 & 0x03) << 1);
-        self.w
-    }
-}
+pub type PLLOSC_W<'a, const O: u8> = crate::FieldWriter<'a, u32, PLL_SPEC, u8, u8, 2, O>;
 #[doc = "Field `PLLOPT` reader - PLL Option"]
-pub struct PLLOPT_R(crate::FieldReader<u8, u8>);
-impl PLLOPT_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        PLLOPT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for PLLOPT_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type PLLOPT_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `PLLOPT` writer - PLL Option"]
-pub struct PLLOPT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PLLOPT_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 3)) | ((value as u32 & 0x07) << 3);
-        self.w
-    }
-}
+pub type PLLOPT_W<'a, const O: u8> = crate::FieldWriter<'a, u32, PLL_SPEC, u8, u8, 3, O>;
 #[doc = "Field `PLLDIV` reader - PLL Division Factor"]
-pub struct PLLDIV_R(crate::FieldReader<u8, u8>);
-impl PLLDIV_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        PLLDIV_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for PLLDIV_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type PLLDIV_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `PLLDIV` writer - PLL Division Factor"]
-pub struct PLLDIV_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PLLDIV_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 8)) | ((value as u32 & 0x0f) << 8);
-        self.w
-    }
-}
+pub type PLLDIV_W<'a, const O: u8> = crate::FieldWriter<'a, u32, PLL_SPEC, u8, u8, 4, O>;
 #[doc = "Field `PLLMUL` reader - PLL Multiply Factor"]
-pub struct PLLMUL_R(crate::FieldReader<u8, u8>);
-impl PLLMUL_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        PLLMUL_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for PLLMUL_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type PLLMUL_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `PLLMUL` writer - PLL Multiply Factor"]
-pub struct PLLMUL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PLLMUL_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 16)) | ((value as u32 & 0x0f) << 16);
-        self.w
-    }
-}
+pub type PLLMUL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, PLL_SPEC, u8, u8, 4, O>;
 #[doc = "Field `PLLCOUNT` reader - PLL Count"]
-pub struct PLLCOUNT_R(crate::FieldReader<u8, u8>);
-impl PLLCOUNT_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        PLLCOUNT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for PLLCOUNT_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type PLLCOUNT_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `PLLCOUNT` writer - PLL Count"]
-pub struct PLLCOUNT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PLLCOUNT_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x3f << 24)) | ((value as u32 & 0x3f) << 24);
-        self.w
-    }
-}
+pub type PLLCOUNT_W<'a, const O: u8> = crate::FieldWriter<'a, u32, PLL_SPEC, u8, u8, 6, O>;
 impl R {
     #[doc = "Bit 0 - PLL Enable"]
     #[inline(always)]
     pub fn pllen(&self) -> PLLEN_R {
-        PLLEN_R::new((self.bits & 0x01) != 0)
+        PLLEN_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bits 1:2 - PLL Oscillator Select"]
     #[inline(always)]
     pub fn pllosc(&self) -> PLLOSC_R {
-        PLLOSC_R::new(((self.bits >> 1) & 0x03) as u8)
+        PLLOSC_R::new(((self.bits >> 1) & 3) as u8)
     }
     #[doc = "Bits 3:5 - PLL Option"]
     #[inline(always)]
     pub fn pllopt(&self) -> PLLOPT_R {
-        PLLOPT_R::new(((self.bits >> 3) & 0x07) as u8)
+        PLLOPT_R::new(((self.bits >> 3) & 7) as u8)
     }
     #[doc = "Bits 8:11 - PLL Division Factor"]
     #[inline(always)]
@@ -235,33 +93,39 @@ impl R {
 impl W {
     #[doc = "Bit 0 - PLL Enable"]
     #[inline(always)]
-    pub fn pllen(&mut self) -> PLLEN_W {
-        PLLEN_W { w: self }
+    #[must_use]
+    pub fn pllen(&mut self) -> PLLEN_W<0> {
+        PLLEN_W::new(self)
     }
     #[doc = "Bits 1:2 - PLL Oscillator Select"]
     #[inline(always)]
-    pub fn pllosc(&mut self) -> PLLOSC_W {
-        PLLOSC_W { w: self }
+    #[must_use]
+    pub fn pllosc(&mut self) -> PLLOSC_W<1> {
+        PLLOSC_W::new(self)
     }
     #[doc = "Bits 3:5 - PLL Option"]
     #[inline(always)]
-    pub fn pllopt(&mut self) -> PLLOPT_W {
-        PLLOPT_W { w: self }
+    #[must_use]
+    pub fn pllopt(&mut self) -> PLLOPT_W<3> {
+        PLLOPT_W::new(self)
     }
     #[doc = "Bits 8:11 - PLL Division Factor"]
     #[inline(always)]
-    pub fn plldiv(&mut self) -> PLLDIV_W {
-        PLLDIV_W { w: self }
+    #[must_use]
+    pub fn plldiv(&mut self) -> PLLDIV_W<8> {
+        PLLDIV_W::new(self)
     }
     #[doc = "Bits 16:19 - PLL Multiply Factor"]
     #[inline(always)]
-    pub fn pllmul(&mut self) -> PLLMUL_W {
-        PLLMUL_W { w: self }
+    #[must_use]
+    pub fn pllmul(&mut self) -> PLLMUL_W<16> {
+        PLLMUL_W::new(self)
     }
     #[doc = "Bits 24:29 - PLL Count"]
     #[inline(always)]
-    pub fn pllcount(&mut self) -> PLLCOUNT_W {
-        PLLCOUNT_W { w: self }
+    #[must_use]
+    pub fn pllcount(&mut self) -> PLLCOUNT_W<24> {
+        PLLCOUNT_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -282,11 +146,10 @@ impl crate::Readable for PLL_SPEC {
 #[doc = "`write(|w| ..)` method takes [pll::W](W) writer structure"]
 impl crate::Writable for PLL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets PLL to value 0"]
 impl crate::Resettable for PLL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

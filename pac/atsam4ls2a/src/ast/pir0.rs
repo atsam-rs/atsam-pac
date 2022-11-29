@@ -35,31 +35,9 @@ impl From<crate::W<PIR0_SPEC>> for W {
     }
 }
 #[doc = "Field `INSEL` reader - Interval Select"]
-pub struct INSEL_R(crate::FieldReader<u8, u8>);
-impl INSEL_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        INSEL_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for INSEL_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type INSEL_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `INSEL` writer - Interval Select"]
-pub struct INSEL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> INSEL_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x1f) | (value as u32 & 0x1f);
-        self.w
-    }
-}
+pub type INSEL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, PIR0_SPEC, u8, u8, 5, O>;
 impl R {
     #[doc = "Bits 0:4 - Interval Select"]
     #[inline(always)]
@@ -70,8 +48,9 @@ impl R {
 impl W {
     #[doc = "Bits 0:4 - Interval Select"]
     #[inline(always)]
-    pub fn insel(&mut self) -> INSEL_W {
-        INSEL_W { w: self }
+    #[must_use]
+    pub fn insel(&mut self) -> INSEL_W<0> {
+        INSEL_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -92,11 +71,10 @@ impl crate::Readable for PIR0_SPEC {
 #[doc = "`write(|w| ..)` method takes [pir0::W](W) writer structure"]
 impl crate::Writable for PIR0_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets PIR0 to value 0"]
 impl crate::Resettable for PIR0_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

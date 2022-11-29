@@ -14,33 +14,9 @@ impl From<crate::R<US_LINBRR_SPEC>> for R {
     }
 }
 #[doc = "Field `LINCD` reader - Clock Divider after Synchronization"]
-pub struct LINCD_R(crate::FieldReader<u16, u16>);
-impl LINCD_R {
-    pub(crate) fn new(bits: u16) -> Self {
-        LINCD_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for LINCD_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type LINCD_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `LINFP` reader - Fractional Part after Synchronization"]
-pub struct LINFP_R(crate::FieldReader<u8, u8>);
-impl LINFP_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        LINFP_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for LINFP_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type LINFP_R = crate::FieldReader<u8, u8>;
 impl R {
     #[doc = "Bits 0:15 - Clock Divider after Synchronization"]
     #[inline(always)]
@@ -50,7 +26,7 @@ impl R {
     #[doc = "Bits 16:18 - Fractional Part after Synchronization"]
     #[inline(always)]
     pub fn linfp(&self) -> LINFP_R {
-        LINFP_R::new(((self.bits >> 16) & 0x07) as u8)
+        LINFP_R::new(((self.bits >> 16) & 7) as u8)
     }
 }
 #[doc = "LIN Baud Rate Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [us_linbrr](index.html) module"]
@@ -64,8 +40,5 @@ impl crate::Readable for US_LINBRR_SPEC {
 }
 #[doc = "`reset()` method sets US_LINBRR to value 0"]
 impl crate::Resettable for US_LINBRR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

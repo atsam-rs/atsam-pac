@@ -14,309 +14,117 @@ impl From<crate::R<PMC_PCSR1_SPEC>> for R {
     }
 }
 #[doc = "Field `PID32` reader - Peripheral Clock 32 Status"]
-pub struct PID32_R(crate::FieldReader<bool, bool>);
-impl PID32_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        PID32_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for PID32_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type PID32_R = crate::BitReader<bool>;
 #[doc = "Field `PID33` reader - Peripheral Clock 33 Status"]
-pub struct PID33_R(crate::FieldReader<bool, bool>);
-impl PID33_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        PID33_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for PID33_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type PID33_R = crate::BitReader<bool>;
 #[doc = "Field `PID34` reader - Peripheral Clock 34 Status"]
-pub struct PID34_R(crate::FieldReader<bool, bool>);
-impl PID34_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        PID34_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for PID34_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type PID34_R = crate::BitReader<bool>;
 #[doc = "Field `PID35` reader - Peripheral Clock 35 Status"]
-pub struct PID35_R(crate::FieldReader<bool, bool>);
-impl PID35_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        PID35_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for PID35_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type PID35_R = crate::BitReader<bool>;
 #[doc = "Field `PID36` reader - Peripheral Clock 36 Status"]
-pub struct PID36_R(crate::FieldReader<bool, bool>);
-impl PID36_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        PID36_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for PID36_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type PID36_R = crate::BitReader<bool>;
 #[doc = "Field `PID37` reader - Peripheral Clock 37 Status"]
-pub struct PID37_R(crate::FieldReader<bool, bool>);
-impl PID37_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        PID37_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for PID37_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type PID37_R = crate::BitReader<bool>;
 #[doc = "Field `PID38` reader - Peripheral Clock 38 Status"]
-pub struct PID38_R(crate::FieldReader<bool, bool>);
-impl PID38_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        PID38_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for PID38_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type PID38_R = crate::BitReader<bool>;
 #[doc = "Field `PID39` reader - Peripheral Clock 39 Status"]
-pub struct PID39_R(crate::FieldReader<bool, bool>);
-impl PID39_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        PID39_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for PID39_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type PID39_R = crate::BitReader<bool>;
 #[doc = "Field `PID40` reader - Peripheral Clock 40 Status"]
-pub struct PID40_R(crate::FieldReader<bool, bool>);
-impl PID40_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        PID40_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for PID40_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type PID40_R = crate::BitReader<bool>;
 #[doc = "Field `PID41` reader - Peripheral Clock 41 Status"]
-pub struct PID41_R(crate::FieldReader<bool, bool>);
-impl PID41_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        PID41_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for PID41_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type PID41_R = crate::BitReader<bool>;
 #[doc = "Field `PID42` reader - Peripheral Clock 42 Status"]
-pub struct PID42_R(crate::FieldReader<bool, bool>);
-impl PID42_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        PID42_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for PID42_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type PID42_R = crate::BitReader<bool>;
 #[doc = "Field `PID43` reader - Peripheral Clock 43 Status"]
-pub struct PID43_R(crate::FieldReader<bool, bool>);
-impl PID43_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        PID43_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for PID43_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type PID43_R = crate::BitReader<bool>;
 #[doc = "Field `PID44` reader - Peripheral Clock 44 Status"]
-pub struct PID44_R(crate::FieldReader<bool, bool>);
-impl PID44_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        PID44_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for PID44_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type PID44_R = crate::BitReader<bool>;
 #[doc = "Field `PID45` reader - Peripheral Clock 45 Status"]
-pub struct PID45_R(crate::FieldReader<bool, bool>);
-impl PID45_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        PID45_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for PID45_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type PID45_R = crate::BitReader<bool>;
 #[doc = "Field `PID46` reader - Peripheral Clock 46 Status"]
-pub struct PID46_R(crate::FieldReader<bool, bool>);
-impl PID46_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        PID46_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for PID46_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type PID46_R = crate::BitReader<bool>;
 #[doc = "Field `PID47` reader - Peripheral Clock 47 Status"]
-pub struct PID47_R(crate::FieldReader<bool, bool>);
-impl PID47_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        PID47_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for PID47_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type PID47_R = crate::BitReader<bool>;
 impl R {
     #[doc = "Bit 0 - Peripheral Clock 32 Status"]
     #[inline(always)]
     pub fn pid32(&self) -> PID32_R {
-        PID32_R::new((self.bits & 0x01) != 0)
+        PID32_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Peripheral Clock 33 Status"]
     #[inline(always)]
     pub fn pid33(&self) -> PID33_R {
-        PID33_R::new(((self.bits >> 1) & 0x01) != 0)
+        PID33_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - Peripheral Clock 34 Status"]
     #[inline(always)]
     pub fn pid34(&self) -> PID34_R {
-        PID34_R::new(((self.bits >> 2) & 0x01) != 0)
+        PID34_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - Peripheral Clock 35 Status"]
     #[inline(always)]
     pub fn pid35(&self) -> PID35_R {
-        PID35_R::new(((self.bits >> 3) & 0x01) != 0)
+        PID35_R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 4 - Peripheral Clock 36 Status"]
     #[inline(always)]
     pub fn pid36(&self) -> PID36_R {
-        PID36_R::new(((self.bits >> 4) & 0x01) != 0)
+        PID36_R::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bit 5 - Peripheral Clock 37 Status"]
     #[inline(always)]
     pub fn pid37(&self) -> PID37_R {
-        PID37_R::new(((self.bits >> 5) & 0x01) != 0)
+        PID37_R::new(((self.bits >> 5) & 1) != 0)
     }
     #[doc = "Bit 6 - Peripheral Clock 38 Status"]
     #[inline(always)]
     pub fn pid38(&self) -> PID38_R {
-        PID38_R::new(((self.bits >> 6) & 0x01) != 0)
+        PID38_R::new(((self.bits >> 6) & 1) != 0)
     }
     #[doc = "Bit 7 - Peripheral Clock 39 Status"]
     #[inline(always)]
     pub fn pid39(&self) -> PID39_R {
-        PID39_R::new(((self.bits >> 7) & 0x01) != 0)
+        PID39_R::new(((self.bits >> 7) & 1) != 0)
     }
     #[doc = "Bit 8 - Peripheral Clock 40 Status"]
     #[inline(always)]
     pub fn pid40(&self) -> PID40_R {
-        PID40_R::new(((self.bits >> 8) & 0x01) != 0)
+        PID40_R::new(((self.bits >> 8) & 1) != 0)
     }
     #[doc = "Bit 9 - Peripheral Clock 41 Status"]
     #[inline(always)]
     pub fn pid41(&self) -> PID41_R {
-        PID41_R::new(((self.bits >> 9) & 0x01) != 0)
+        PID41_R::new(((self.bits >> 9) & 1) != 0)
     }
     #[doc = "Bit 10 - Peripheral Clock 42 Status"]
     #[inline(always)]
     pub fn pid42(&self) -> PID42_R {
-        PID42_R::new(((self.bits >> 10) & 0x01) != 0)
+        PID42_R::new(((self.bits >> 10) & 1) != 0)
     }
     #[doc = "Bit 11 - Peripheral Clock 43 Status"]
     #[inline(always)]
     pub fn pid43(&self) -> PID43_R {
-        PID43_R::new(((self.bits >> 11) & 0x01) != 0)
+        PID43_R::new(((self.bits >> 11) & 1) != 0)
     }
     #[doc = "Bit 12 - Peripheral Clock 44 Status"]
     #[inline(always)]
     pub fn pid44(&self) -> PID44_R {
-        PID44_R::new(((self.bits >> 12) & 0x01) != 0)
+        PID44_R::new(((self.bits >> 12) & 1) != 0)
     }
     #[doc = "Bit 13 - Peripheral Clock 45 Status"]
     #[inline(always)]
     pub fn pid45(&self) -> PID45_R {
-        PID45_R::new(((self.bits >> 13) & 0x01) != 0)
+        PID45_R::new(((self.bits >> 13) & 1) != 0)
     }
     #[doc = "Bit 14 - Peripheral Clock 46 Status"]
     #[inline(always)]
     pub fn pid46(&self) -> PID46_R {
-        PID46_R::new(((self.bits >> 14) & 0x01) != 0)
+        PID46_R::new(((self.bits >> 14) & 1) != 0)
     }
     #[doc = "Bit 15 - Peripheral Clock 47 Status"]
     #[inline(always)]
     pub fn pid47(&self) -> PID47_R {
-        PID47_R::new(((self.bits >> 15) & 0x01) != 0)
+        PID47_R::new(((self.bits >> 15) & 1) != 0)
     }
 }
 #[doc = "Peripheral Clock Status Register 1\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pmc_pcsr1](index.html) module"]
@@ -330,8 +138,5 @@ impl crate::Readable for PMC_PCSR1_SPEC {
 }
 #[doc = "`reset()` method sets PMC_PCSR1 to value 0"]
 impl crate::Resettable for PMC_PCSR1_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

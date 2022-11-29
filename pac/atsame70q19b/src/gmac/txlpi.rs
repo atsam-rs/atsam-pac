@@ -14,19 +14,7 @@ impl From<crate::R<TXLPI_SPEC>> for R {
     }
 }
 #[doc = "Field `COUNT` reader - Count of LPI transitions (cleared on read)"]
-pub struct COUNT_R(crate::FieldReader<u16, u16>);
-impl COUNT_R {
-    pub(crate) fn new(bits: u16) -> Self {
-        COUNT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for COUNT_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type COUNT_R = crate::FieldReader<u16, u16>;
 impl R {
     #[doc = "Bits 0:15 - Count of LPI transitions (cleared on read)"]
     #[inline(always)]
@@ -45,8 +33,5 @@ impl crate::Readable for TXLPI_SPEC {
 }
 #[doc = "`reset()` method sets TXLPI to value 0"]
 impl crate::Resettable for TXLPI_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

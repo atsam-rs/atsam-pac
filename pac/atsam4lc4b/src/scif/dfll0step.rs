@@ -35,57 +35,13 @@ impl From<crate::W<DFLL0STEP_SPEC>> for W {
     }
 }
 #[doc = "Field `FSTEP` reader - Fine Maximum Step"]
-pub struct FSTEP_R(crate::FieldReader<u8, u8>);
-impl FSTEP_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        FSTEP_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for FSTEP_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type FSTEP_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `FSTEP` writer - Fine Maximum Step"]
-pub struct FSTEP_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> FSTEP_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xff) | (value as u32 & 0xff);
-        self.w
-    }
-}
+pub type FSTEP_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DFLL0STEP_SPEC, u8, u8, 8, O>;
 #[doc = "Field `CSTEP` reader - Coarse Maximum Step"]
-pub struct CSTEP_R(crate::FieldReader<u8, u8>);
-impl CSTEP_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        CSTEP_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CSTEP_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CSTEP_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `CSTEP` writer - Coarse Maximum Step"]
-pub struct CSTEP_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CSTEP_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x1f << 16)) | ((value as u32 & 0x1f) << 16);
-        self.w
-    }
-}
+pub type CSTEP_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DFLL0STEP_SPEC, u8, u8, 5, O>;
 impl R {
     #[doc = "Bits 0:7 - Fine Maximum Step"]
     #[inline(always)]
@@ -101,13 +57,15 @@ impl R {
 impl W {
     #[doc = "Bits 0:7 - Fine Maximum Step"]
     #[inline(always)]
-    pub fn fstep(&mut self) -> FSTEP_W {
-        FSTEP_W { w: self }
+    #[must_use]
+    pub fn fstep(&mut self) -> FSTEP_W<0> {
+        FSTEP_W::new(self)
     }
     #[doc = "Bits 16:20 - Coarse Maximum Step"]
     #[inline(always)]
-    pub fn cstep(&mut self) -> CSTEP_W {
-        CSTEP_W { w: self }
+    #[must_use]
+    pub fn cstep(&mut self) -> CSTEP_W<16> {
+        CSTEP_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -128,11 +86,10 @@ impl crate::Readable for DFLL0STEP_SPEC {
 #[doc = "`write(|w| ..)` method takes [dfll0step::W](W) writer structure"]
 impl crate::Writable for DFLL0STEP_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets DFLL0STEP to value 0"]
 impl crate::Resettable for DFLL0STEP_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

@@ -24,8 +24,5 @@ impl crate::Readable for EXID_SPEC {
 }
 #[doc = "`reset()` method sets EXID to value 0x0400_000f"]
 impl crate::Resettable for EXID_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x0400_000f
-    }
+    const RESET_VALUE: Self::Ux = 0x0400_000f;
 }

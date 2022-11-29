@@ -34,8 +34,10 @@ impl From<crate::W<MATRIX_MCFG_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `ULBT` reader - Undefined Length Burst Type"]
+pub type ULBT_R = crate::FieldReader<u8, ULBT_A>;
 #[doc = "Undefined Length Burst Type"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum ULBT_A {
     #[doc = "0: No predicted end of burst is generated and therefore INCR bursts coming from this master cannot be broken."]
@@ -55,13 +57,8 @@ impl From<ULBT_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `ULBT` reader - Undefined Length Burst Type"]
-pub struct ULBT_R(crate::FieldReader<u8, ULBT_A>);
 impl ULBT_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        ULBT_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<ULBT_A> {
         match self.bits {
@@ -76,46 +73,32 @@ impl ULBT_R {
     #[doc = "Checks if the value of the field is `INFINITE`"]
     #[inline(always)]
     pub fn is_infinite(&self) -> bool {
-        **self == ULBT_A::INFINITE
+        *self == ULBT_A::INFINITE
     }
     #[doc = "Checks if the value of the field is `SINGLE`"]
     #[inline(always)]
     pub fn is_single(&self) -> bool {
-        **self == ULBT_A::SINGLE
+        *self == ULBT_A::SINGLE
     }
     #[doc = "Checks if the value of the field is `FOUR_BEAT`"]
     #[inline(always)]
     pub fn is_four_beat(&self) -> bool {
-        **self == ULBT_A::FOUR_BEAT
+        *self == ULBT_A::FOUR_BEAT
     }
     #[doc = "Checks if the value of the field is `EIGHT_BEAT`"]
     #[inline(always)]
     pub fn is_eight_beat(&self) -> bool {
-        **self == ULBT_A::EIGHT_BEAT
+        *self == ULBT_A::EIGHT_BEAT
     }
     #[doc = "Checks if the value of the field is `SIXTEEN_BEAT`"]
     #[inline(always)]
     pub fn is_sixteen_beat(&self) -> bool {
-        **self == ULBT_A::SIXTEEN_BEAT
-    }
-}
-impl core::ops::Deref for ULBT_R {
-    type Target = crate::FieldReader<u8, ULBT_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == ULBT_A::SIXTEEN_BEAT
     }
 }
 #[doc = "Field `ULBT` writer - Undefined Length Burst Type"]
-pub struct ULBT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ULBT_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: ULBT_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type ULBT_W<'a, const O: u8> = crate::FieldWriter<'a, u32, MATRIX_MCFG_SPEC, u8, ULBT_A, 3, O>;
+impl<'a, const O: u8> ULBT_W<'a, O> {
     #[doc = "No predicted end of burst is generated and therefore INCR bursts coming from this master cannot be broken."]
     #[inline(always)]
     pub fn infinite(self) -> &'a mut W {
@@ -141,25 +124,20 @@ impl<'a> ULBT_W<'a> {
     pub fn sixteen_beat(self) -> &'a mut W {
         self.variant(ULBT_A::SIXTEEN_BEAT)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x07) | (value as u32 & 0x07);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bits 0:2 - Undefined Length Burst Type"]
     #[inline(always)]
     pub fn ulbt(&self) -> ULBT_R {
-        ULBT_R::new((self.bits & 0x07) as u8)
+        ULBT_R::new((self.bits & 7) as u8)
     }
 }
 impl W {
     #[doc = "Bits 0:2 - Undefined Length Burst Type"]
     #[inline(always)]
-    pub fn ulbt(&mut self) -> ULBT_W {
-        ULBT_W { w: self }
+    #[must_use]
+    pub fn ulbt(&mut self) -> ULBT_W<0> {
+        ULBT_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -180,4 +158,6 @@ impl crate::Readable for MATRIX_MCFG_SPEC {
 #[doc = "`write(|w| ..)` method takes [matrix_mcfg::W](W) writer structure"]
 impl crate::Writable for MATRIX_MCFG_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

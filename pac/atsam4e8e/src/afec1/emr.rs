@@ -34,8 +34,10 @@ impl From<crate::W<EMR_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `CMPMODE` reader - Comparison Mode"]
+pub type CMPMODE_R = crate::FieldReader<u8, CMPMODE_A>;
 #[doc = "Comparison Mode\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum CMPMODE_A {
     #[doc = "0: Generates an event when the converted data is lower than the low threshold of the window."]
@@ -53,13 +55,8 @@ impl From<CMPMODE_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `CMPMODE` reader - Comparison Mode"]
-pub struct CMPMODE_R(crate::FieldReader<u8, CMPMODE_A>);
 impl CMPMODE_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        CMPMODE_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CMPMODE_A {
         match self.bits {
@@ -73,41 +70,28 @@ impl CMPMODE_R {
     #[doc = "Checks if the value of the field is `LOW`"]
     #[inline(always)]
     pub fn is_low(&self) -> bool {
-        **self == CMPMODE_A::LOW
+        *self == CMPMODE_A::LOW
     }
     #[doc = "Checks if the value of the field is `HIGH`"]
     #[inline(always)]
     pub fn is_high(&self) -> bool {
-        **self == CMPMODE_A::HIGH
+        *self == CMPMODE_A::HIGH
     }
     #[doc = "Checks if the value of the field is `IN`"]
     #[inline(always)]
     pub fn is_in(&self) -> bool {
-        **self == CMPMODE_A::IN
+        *self == CMPMODE_A::IN
     }
     #[doc = "Checks if the value of the field is `OUT`"]
     #[inline(always)]
     pub fn is_out(&self) -> bool {
-        **self == CMPMODE_A::OUT
-    }
-}
-impl core::ops::Deref for CMPMODE_R {
-    type Target = crate::FieldReader<u8, CMPMODE_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == CMPMODE_A::OUT
     }
 }
 #[doc = "Field `CMPMODE` writer - Comparison Mode"]
-pub struct CMPMODE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CMPMODE_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CMPMODE_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
+pub type CMPMODE_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, EMR_SPEC, u8, CMPMODE_A, 2, O>;
+impl<'a, const O: u8> CMPMODE_W<'a, O> {
     #[doc = "Generates an event when the converted data is lower than the low threshold of the window."]
     #[inline(always)]
     pub fn low(self) -> &'a mut W {
@@ -128,103 +112,23 @@ impl<'a> CMPMODE_W<'a> {
     pub fn out(self) -> &'a mut W {
         self.variant(CMPMODE_A::OUT)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x03) | (value as u32 & 0x03);
-        self.w
-    }
 }
 #[doc = "Field `CMPSEL` reader - Comparison Selected Channel"]
-pub struct CMPSEL_R(crate::FieldReader<u8, u8>);
-impl CMPSEL_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        CMPSEL_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CMPSEL_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CMPSEL_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `CMPSEL` writer - Comparison Selected Channel"]
-pub struct CMPSEL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CMPSEL_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x1f << 3)) | ((value as u32 & 0x1f) << 3);
-        self.w
-    }
-}
+pub type CMPSEL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, EMR_SPEC, u8, u8, 5, O>;
 #[doc = "Field `CMPALL` reader - Compare All Channels"]
-pub struct CMPALL_R(crate::FieldReader<bool, bool>);
-impl CMPALL_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        CMPALL_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CMPALL_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CMPALL_R = crate::BitReader<bool>;
 #[doc = "Field `CMPALL` writer - Compare All Channels"]
-pub struct CMPALL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CMPALL_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 9)) | ((value as u32 & 0x01) << 9);
-        self.w
-    }
-}
+pub type CMPALL_W<'a, const O: u8> = crate::BitWriter<'a, u32, EMR_SPEC, bool, O>;
 #[doc = "Field `CMPFILTER` reader - Compare Event Filtering"]
-pub struct CMPFILTER_R(crate::FieldReader<u8, u8>);
-impl CMPFILTER_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        CMPFILTER_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CMPFILTER_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CMPFILTER_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `CMPFILTER` writer - Compare Event Filtering"]
-pub struct CMPFILTER_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CMPFILTER_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 12)) | ((value as u32 & 0x03) << 12);
-        self.w
-    }
-}
+pub type CMPFILTER_W<'a, const O: u8> = crate::FieldWriter<'a, u32, EMR_SPEC, u8, u8, 2, O>;
+#[doc = "Field `RES` reader - Resolution"]
+pub type RES_R = crate::FieldReader<u8, RES_A>;
 #[doc = "Resolution\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum RES_A {
     #[doc = "0: 12-bit resolution, AFEC sample rate is maximum (no averaging)."]
@@ -246,13 +150,8 @@ impl From<RES_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `RES` reader - Resolution"]
-pub struct RES_R(crate::FieldReader<u8, RES_A>);
 impl RES_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        RES_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<RES_A> {
         match self.bits {
@@ -268,51 +167,37 @@ impl RES_R {
     #[doc = "Checks if the value of the field is `NO_AVERAGE`"]
     #[inline(always)]
     pub fn is_no_average(&self) -> bool {
-        **self == RES_A::NO_AVERAGE
+        *self == RES_A::NO_AVERAGE
     }
     #[doc = "Checks if the value of the field is `LOW_RES`"]
     #[inline(always)]
     pub fn is_low_res(&self) -> bool {
-        **self == RES_A::LOW_RES
+        *self == RES_A::LOW_RES
     }
     #[doc = "Checks if the value of the field is `OSR4`"]
     #[inline(always)]
     pub fn is_osr4(&self) -> bool {
-        **self == RES_A::OSR4
+        *self == RES_A::OSR4
     }
     #[doc = "Checks if the value of the field is `OSR16`"]
     #[inline(always)]
     pub fn is_osr16(&self) -> bool {
-        **self == RES_A::OSR16
+        *self == RES_A::OSR16
     }
     #[doc = "Checks if the value of the field is `OSR64`"]
     #[inline(always)]
     pub fn is_osr64(&self) -> bool {
-        **self == RES_A::OSR64
+        *self == RES_A::OSR64
     }
     #[doc = "Checks if the value of the field is `OSR256`"]
     #[inline(always)]
     pub fn is_osr256(&self) -> bool {
-        **self == RES_A::OSR256
-    }
-}
-impl core::ops::Deref for RES_R {
-    type Target = crate::FieldReader<u8, RES_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == RES_A::OSR256
     }
 }
 #[doc = "Field `RES` writer - Resolution"]
-pub struct RES_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RES_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: RES_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type RES_W<'a, const O: u8> = crate::FieldWriter<'a, u32, EMR_SPEC, u8, RES_A, 3, O>;
+impl<'a, const O: u8> RES_W<'a, O> {
     #[doc = "12-bit resolution, AFEC sample rate is maximum (no averaging)."]
     #[inline(always)]
     pub fn no_average(self) -> &'a mut W {
@@ -343,15 +228,11 @@ impl<'a> RES_W<'a> {
     pub fn osr256(self) -> &'a mut W {
         self.variant(RES_A::OSR256)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 16)) | ((value as u32 & 0x07) << 16);
-        self.w
-    }
 }
+#[doc = "Field `AFEMODE` reader - AFE Running Mode"]
+pub type AFEMODE_R = crate::FieldReader<u8, AFEMODE_A>;
 #[doc = "AFE Running Mode\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum AFEMODE_A {
     #[doc = "0: Normal mode of operation."]
@@ -360,7 +241,7 @@ pub enum AFEMODE_A {
     OFFSET_ERROR = 1,
     #[doc = "2: Gain Error mode to measure the gain error."]
     GAIN_ERROR_HIGH = 2,
-    #[doc = "3: `11`"]
+    #[doc = "3:"]
     GAIN_ERROR_LOW = 3,
 }
 impl From<AFEMODE_A> for u8 {
@@ -369,13 +250,8 @@ impl From<AFEMODE_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `AFEMODE` reader - AFE Running Mode"]
-pub struct AFEMODE_R(crate::FieldReader<u8, AFEMODE_A>);
 impl AFEMODE_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        AFEMODE_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> AFEMODE_A {
         match self.bits {
@@ -389,41 +265,28 @@ impl AFEMODE_R {
     #[doc = "Checks if the value of the field is `NORMAL`"]
     #[inline(always)]
     pub fn is_normal(&self) -> bool {
-        **self == AFEMODE_A::NORMAL
+        *self == AFEMODE_A::NORMAL
     }
     #[doc = "Checks if the value of the field is `OFFSET_ERROR`"]
     #[inline(always)]
     pub fn is_offset_error(&self) -> bool {
-        **self == AFEMODE_A::OFFSET_ERROR
+        *self == AFEMODE_A::OFFSET_ERROR
     }
     #[doc = "Checks if the value of the field is `GAIN_ERROR_HIGH`"]
     #[inline(always)]
     pub fn is_gain_error_high(&self) -> bool {
-        **self == AFEMODE_A::GAIN_ERROR_HIGH
+        *self == AFEMODE_A::GAIN_ERROR_HIGH
     }
     #[doc = "Checks if the value of the field is `GAIN_ERROR_LOW`"]
     #[inline(always)]
     pub fn is_gain_error_low(&self) -> bool {
-        **self == AFEMODE_A::GAIN_ERROR_LOW
-    }
-}
-impl core::ops::Deref for AFEMODE_R {
-    type Target = crate::FieldReader<u8, AFEMODE_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == AFEMODE_A::GAIN_ERROR_LOW
     }
 }
 #[doc = "Field `AFEMODE` writer - AFE Running Mode"]
-pub struct AFEMODE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> AFEMODE_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: AFEMODE_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
+pub type AFEMODE_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, EMR_SPEC, u8, AFEMODE_A, 2, O>;
+impl<'a, const O: u8> AFEMODE_W<'a, O> {
     #[doc = "Normal mode of operation."]
     #[inline(always)]
     pub fn normal(self) -> &'a mut W {
@@ -439,92 +302,24 @@ impl<'a> AFEMODE_W<'a> {
     pub fn gain_error_high(self) -> &'a mut W {
         self.variant(AFEMODE_A::GAIN_ERROR_HIGH)
     }
-    #[doc = "`11`"]
+    #[doc = ""]
     #[inline(always)]
     pub fn gain_error_low(self) -> &'a mut W {
         self.variant(AFEMODE_A::GAIN_ERROR_LOW)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 20)) | ((value as u32 & 0x03) << 20);
-        self.w
-    }
 }
 #[doc = "Field `TAG` reader - TAG of the AFEC_LDCR"]
-pub struct TAG_R(crate::FieldReader<bool, bool>);
-impl TAG_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        TAG_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TAG_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TAG_R = crate::BitReader<bool>;
 #[doc = "Field `TAG` writer - TAG of the AFEC_LDCR"]
-pub struct TAG_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TAG_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 24)) | ((value as u32 & 0x01) << 24);
-        self.w
-    }
-}
+pub type TAG_W<'a, const O: u8> = crate::BitWriter<'a, u32, EMR_SPEC, bool, O>;
 #[doc = "Field `STM` reader - Single Trigger Mode"]
-pub struct STM_R(crate::FieldReader<bool, bool>);
-impl STM_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        STM_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for STM_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type STM_R = crate::BitReader<bool>;
 #[doc = "Field `STM` writer - Single Trigger Mode"]
-pub struct STM_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> STM_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 25)) | ((value as u32 & 0x01) << 25);
-        self.w
-    }
-}
+pub type STM_W<'a, const O: u8> = crate::BitWriter<'a, u32, EMR_SPEC, bool, O>;
+#[doc = "Field `SIGNMODE` reader - Sign Mode"]
+pub type SIGNMODE_R = crate::FieldReader<u8, SIGNMODE_A>;
 #[doc = "Sign Mode\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum SIGNMODE_A {
     #[doc = "0: Single-Ended Channels: Unsigned conversions.Differential Channels: Signed conversions."]
@@ -542,13 +337,8 @@ impl From<SIGNMODE_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `SIGNMODE` reader - Sign Mode"]
-pub struct SIGNMODE_R(crate::FieldReader<u8, SIGNMODE_A>);
 impl SIGNMODE_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        SIGNMODE_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> SIGNMODE_A {
         match self.bits {
@@ -562,41 +352,28 @@ impl SIGNMODE_R {
     #[doc = "Checks if the value of the field is `SE_UNSG_DF_SIGN`"]
     #[inline(always)]
     pub fn is_se_unsg_df_sign(&self) -> bool {
-        **self == SIGNMODE_A::SE_UNSG_DF_SIGN
+        *self == SIGNMODE_A::SE_UNSG_DF_SIGN
     }
     #[doc = "Checks if the value of the field is `SE_SIGN_DF_UNSG`"]
     #[inline(always)]
     pub fn is_se_sign_df_unsg(&self) -> bool {
-        **self == SIGNMODE_A::SE_SIGN_DF_UNSG
+        *self == SIGNMODE_A::SE_SIGN_DF_UNSG
     }
     #[doc = "Checks if the value of the field is `ALL_UNSIGNED`"]
     #[inline(always)]
     pub fn is_all_unsigned(&self) -> bool {
-        **self == SIGNMODE_A::ALL_UNSIGNED
+        *self == SIGNMODE_A::ALL_UNSIGNED
     }
     #[doc = "Checks if the value of the field is `ALL_SIGNED`"]
     #[inline(always)]
     pub fn is_all_signed(&self) -> bool {
-        **self == SIGNMODE_A::ALL_SIGNED
-    }
-}
-impl core::ops::Deref for SIGNMODE_R {
-    type Target = crate::FieldReader<u8, SIGNMODE_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == SIGNMODE_A::ALL_SIGNED
     }
 }
 #[doc = "Field `SIGNMODE` writer - Sign Mode"]
-pub struct SIGNMODE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SIGNMODE_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: SIGNMODE_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
+pub type SIGNMODE_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, EMR_SPEC, u8, SIGNMODE_A, 2, O>;
+impl<'a, const O: u8> SIGNMODE_W<'a, O> {
     #[doc = "Single-Ended Channels: Unsigned conversions.Differential Channels: Signed conversions."]
     #[inline(always)]
     pub fn se_unsg_df_sign(self) -> &'a mut W {
@@ -617,18 +394,12 @@ impl<'a> SIGNMODE_W<'a> {
     pub fn all_signed(self) -> &'a mut W {
         self.variant(SIGNMODE_A::ALL_SIGNED)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 28)) | ((value as u32 & 0x03) << 28);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bits 0:1 - Comparison Mode"]
     #[inline(always)]
     pub fn cmpmode(&self) -> CMPMODE_R {
-        CMPMODE_R::new((self.bits & 0x03) as u8)
+        CMPMODE_R::new((self.bits & 3) as u8)
     }
     #[doc = "Bits 3:7 - Comparison Selected Channel"]
     #[inline(always)]
@@ -638,84 +409,93 @@ impl R {
     #[doc = "Bit 9 - Compare All Channels"]
     #[inline(always)]
     pub fn cmpall(&self) -> CMPALL_R {
-        CMPALL_R::new(((self.bits >> 9) & 0x01) != 0)
+        CMPALL_R::new(((self.bits >> 9) & 1) != 0)
     }
     #[doc = "Bits 12:13 - Compare Event Filtering"]
     #[inline(always)]
     pub fn cmpfilter(&self) -> CMPFILTER_R {
-        CMPFILTER_R::new(((self.bits >> 12) & 0x03) as u8)
+        CMPFILTER_R::new(((self.bits >> 12) & 3) as u8)
     }
     #[doc = "Bits 16:18 - Resolution"]
     #[inline(always)]
     pub fn res(&self) -> RES_R {
-        RES_R::new(((self.bits >> 16) & 0x07) as u8)
+        RES_R::new(((self.bits >> 16) & 7) as u8)
     }
     #[doc = "Bits 20:21 - AFE Running Mode"]
     #[inline(always)]
     pub fn afemode(&self) -> AFEMODE_R {
-        AFEMODE_R::new(((self.bits >> 20) & 0x03) as u8)
+        AFEMODE_R::new(((self.bits >> 20) & 3) as u8)
     }
     #[doc = "Bit 24 - TAG of the AFEC_LDCR"]
     #[inline(always)]
     pub fn tag(&self) -> TAG_R {
-        TAG_R::new(((self.bits >> 24) & 0x01) != 0)
+        TAG_R::new(((self.bits >> 24) & 1) != 0)
     }
     #[doc = "Bit 25 - Single Trigger Mode"]
     #[inline(always)]
     pub fn stm(&self) -> STM_R {
-        STM_R::new(((self.bits >> 25) & 0x01) != 0)
+        STM_R::new(((self.bits >> 25) & 1) != 0)
     }
     #[doc = "Bits 28:29 - Sign Mode"]
     #[inline(always)]
     pub fn signmode(&self) -> SIGNMODE_R {
-        SIGNMODE_R::new(((self.bits >> 28) & 0x03) as u8)
+        SIGNMODE_R::new(((self.bits >> 28) & 3) as u8)
     }
 }
 impl W {
     #[doc = "Bits 0:1 - Comparison Mode"]
     #[inline(always)]
-    pub fn cmpmode(&mut self) -> CMPMODE_W {
-        CMPMODE_W { w: self }
+    #[must_use]
+    pub fn cmpmode(&mut self) -> CMPMODE_W<0> {
+        CMPMODE_W::new(self)
     }
     #[doc = "Bits 3:7 - Comparison Selected Channel"]
     #[inline(always)]
-    pub fn cmpsel(&mut self) -> CMPSEL_W {
-        CMPSEL_W { w: self }
+    #[must_use]
+    pub fn cmpsel(&mut self) -> CMPSEL_W<3> {
+        CMPSEL_W::new(self)
     }
     #[doc = "Bit 9 - Compare All Channels"]
     #[inline(always)]
-    pub fn cmpall(&mut self) -> CMPALL_W {
-        CMPALL_W { w: self }
+    #[must_use]
+    pub fn cmpall(&mut self) -> CMPALL_W<9> {
+        CMPALL_W::new(self)
     }
     #[doc = "Bits 12:13 - Compare Event Filtering"]
     #[inline(always)]
-    pub fn cmpfilter(&mut self) -> CMPFILTER_W {
-        CMPFILTER_W { w: self }
+    #[must_use]
+    pub fn cmpfilter(&mut self) -> CMPFILTER_W<12> {
+        CMPFILTER_W::new(self)
     }
     #[doc = "Bits 16:18 - Resolution"]
     #[inline(always)]
-    pub fn res(&mut self) -> RES_W {
-        RES_W { w: self }
+    #[must_use]
+    pub fn res(&mut self) -> RES_W<16> {
+        RES_W::new(self)
     }
     #[doc = "Bits 20:21 - AFE Running Mode"]
     #[inline(always)]
-    pub fn afemode(&mut self) -> AFEMODE_W {
-        AFEMODE_W { w: self }
+    #[must_use]
+    pub fn afemode(&mut self) -> AFEMODE_W<20> {
+        AFEMODE_W::new(self)
     }
     #[doc = "Bit 24 - TAG of the AFEC_LDCR"]
     #[inline(always)]
-    pub fn tag(&mut self) -> TAG_W {
-        TAG_W { w: self }
+    #[must_use]
+    pub fn tag(&mut self) -> TAG_W<24> {
+        TAG_W::new(self)
     }
     #[doc = "Bit 25 - Single Trigger Mode"]
     #[inline(always)]
-    pub fn stm(&mut self) -> STM_W {
-        STM_W { w: self }
+    #[must_use]
+    pub fn stm(&mut self) -> STM_W<25> {
+        STM_W::new(self)
     }
     #[doc = "Bits 28:29 - Sign Mode"]
     #[inline(always)]
-    pub fn signmode(&mut self) -> SIGNMODE_W {
-        SIGNMODE_W { w: self }
+    #[must_use]
+    pub fn signmode(&mut self) -> SIGNMODE_W<28> {
+        SIGNMODE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -736,11 +516,10 @@ impl crate::Readable for EMR_SPEC {
 #[doc = "`write(|w| ..)` method takes [emr::W](W) writer structure"]
 impl crate::Writable for EMR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets EMR to value 0"]
 impl crate::Resettable for EMR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

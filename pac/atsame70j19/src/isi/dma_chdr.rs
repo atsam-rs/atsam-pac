@@ -20,59 +20,21 @@ impl From<crate::W<DMA_CHDR_SPEC>> for W {
     }
 }
 #[doc = "Field `P_CH_DIS` writer - Preview Channel Disable Request"]
-pub struct P_CH_DIS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> P_CH_DIS_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type P_CH_DIS_W<'a, const O: u8> = crate::BitWriter<'a, u32, DMA_CHDR_SPEC, bool, O>;
 #[doc = "Field `C_CH_DIS` writer - Codec Channel Disable Request"]
-pub struct C_CH_DIS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> C_CH_DIS_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
-}
+pub type C_CH_DIS_W<'a, const O: u8> = crate::BitWriter<'a, u32, DMA_CHDR_SPEC, bool, O>;
 impl W {
     #[doc = "Bit 0 - Preview Channel Disable Request"]
     #[inline(always)]
-    pub fn p_ch_dis(&mut self) -> P_CH_DIS_W {
-        P_CH_DIS_W { w: self }
+    #[must_use]
+    pub fn p_ch_dis(&mut self) -> P_CH_DIS_W<0> {
+        P_CH_DIS_W::new(self)
     }
     #[doc = "Bit 1 - Codec Channel Disable Request"]
     #[inline(always)]
-    pub fn c_ch_dis(&mut self) -> C_CH_DIS_W {
-        C_CH_DIS_W { w: self }
+    #[must_use]
+    pub fn c_ch_dis(&mut self) -> C_CH_DIS_W<1> {
+        C_CH_DIS_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -89,11 +51,10 @@ impl crate::RegisterSpec for DMA_CHDR_SPEC {
 #[doc = "`write(|w| ..)` method takes [dma_chdr::W](W) writer structure"]
 impl crate::Writable for DMA_CHDR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets DMA_CHDR to value 0"]
 impl crate::Resettable for DMA_CHDR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

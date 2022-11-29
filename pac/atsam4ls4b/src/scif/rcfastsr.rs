@@ -35,201 +35,29 @@ impl From<crate::W<RCFASTSR_SPEC>> for W {
     }
 }
 #[doc = "Field `CURTRIM` reader - Current Trim Value"]
-pub struct CURTRIM_R(crate::FieldReader<u8, u8>);
-impl CURTRIM_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        CURTRIM_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CURTRIM_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CURTRIM_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `CURTRIM` writer - Current Trim Value"]
-pub struct CURTRIM_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CURTRIM_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x7f) | (value as u32 & 0x7f);
-        self.w
-    }
-}
+pub type CURTRIM_W<'a, const O: u8> = crate::FieldWriter<'a, u32, RCFASTSR_SPEC, u8, u8, 7, O>;
 #[doc = "Field `CNTERR` reader - Current Count Error"]
-pub struct CNTERR_R(crate::FieldReader<u8, u8>);
-impl CNTERR_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        CNTERR_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CNTERR_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CNTERR_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `CNTERR` writer - Current Count Error"]
-pub struct CNTERR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CNTERR_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x1f << 16)) | ((value as u32 & 0x1f) << 16);
-        self.w
-    }
-}
+pub type CNTERR_W<'a, const O: u8> = crate::FieldWriter<'a, u32, RCFASTSR_SPEC, u8, u8, 5, O>;
 #[doc = "Field `SIGN` reader - Sign of Current Count Error"]
-pub struct SIGN_R(crate::FieldReader<bool, bool>);
-impl SIGN_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        SIGN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for SIGN_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type SIGN_R = crate::BitReader<bool>;
 #[doc = "Field `SIGN` writer - Sign of Current Count Error"]
-pub struct SIGN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SIGN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 21)) | ((value as u32 & 0x01) << 21);
-        self.w
-    }
-}
+pub type SIGN_W<'a, const O: u8> = crate::BitWriter<'a, u32, RCFASTSR_SPEC, bool, O>;
 #[doc = "Field `LOCK` reader - Lock"]
-pub struct LOCK_R(crate::FieldReader<bool, bool>);
-impl LOCK_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        LOCK_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for LOCK_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type LOCK_R = crate::BitReader<bool>;
 #[doc = "Field `LOCK` writer - Lock"]
-pub struct LOCK_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> LOCK_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 24)) | ((value as u32 & 0x01) << 24);
-        self.w
-    }
-}
+pub type LOCK_W<'a, const O: u8> = crate::BitWriter<'a, u32, RCFASTSR_SPEC, bool, O>;
 #[doc = "Field `LOCKLOST` reader - Lock Lost"]
-pub struct LOCKLOST_R(crate::FieldReader<bool, bool>);
-impl LOCKLOST_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        LOCKLOST_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for LOCKLOST_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type LOCKLOST_R = crate::BitReader<bool>;
 #[doc = "Field `LOCKLOST` writer - Lock Lost"]
-pub struct LOCKLOST_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> LOCKLOST_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 25)) | ((value as u32 & 0x01) << 25);
-        self.w
-    }
-}
+pub type LOCKLOST_W<'a, const O: u8> = crate::BitWriter<'a, u32, RCFASTSR_SPEC, bool, O>;
 #[doc = "Field `UPDATED` reader - Current Trim Value Updated"]
-pub struct UPDATED_R(crate::FieldReader<bool, bool>);
-impl UPDATED_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        UPDATED_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for UPDATED_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type UPDATED_R = crate::BitReader<bool>;
 #[doc = "Field `UPDATED` writer - Current Trim Value Updated"]
-pub struct UPDATED_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> UPDATED_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 31)) | ((value as u32 & 0x01) << 31);
-        self.w
-    }
-}
+pub type UPDATED_W<'a, const O: u8> = crate::BitWriter<'a, u32, RCFASTSR_SPEC, bool, O>;
 impl R {
     #[doc = "Bits 0:6 - Current Trim Value"]
     #[inline(always)]
@@ -244,54 +72,60 @@ impl R {
     #[doc = "Bit 21 - Sign of Current Count Error"]
     #[inline(always)]
     pub fn sign(&self) -> SIGN_R {
-        SIGN_R::new(((self.bits >> 21) & 0x01) != 0)
+        SIGN_R::new(((self.bits >> 21) & 1) != 0)
     }
     #[doc = "Bit 24 - Lock"]
     #[inline(always)]
     pub fn lock(&self) -> LOCK_R {
-        LOCK_R::new(((self.bits >> 24) & 0x01) != 0)
+        LOCK_R::new(((self.bits >> 24) & 1) != 0)
     }
     #[doc = "Bit 25 - Lock Lost"]
     #[inline(always)]
     pub fn locklost(&self) -> LOCKLOST_R {
-        LOCKLOST_R::new(((self.bits >> 25) & 0x01) != 0)
+        LOCKLOST_R::new(((self.bits >> 25) & 1) != 0)
     }
     #[doc = "Bit 31 - Current Trim Value Updated"]
     #[inline(always)]
     pub fn updated(&self) -> UPDATED_R {
-        UPDATED_R::new(((self.bits >> 31) & 0x01) != 0)
+        UPDATED_R::new(((self.bits >> 31) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bits 0:6 - Current Trim Value"]
     #[inline(always)]
-    pub fn curtrim(&mut self) -> CURTRIM_W {
-        CURTRIM_W { w: self }
+    #[must_use]
+    pub fn curtrim(&mut self) -> CURTRIM_W<0> {
+        CURTRIM_W::new(self)
     }
     #[doc = "Bits 16:20 - Current Count Error"]
     #[inline(always)]
-    pub fn cnterr(&mut self) -> CNTERR_W {
-        CNTERR_W { w: self }
+    #[must_use]
+    pub fn cnterr(&mut self) -> CNTERR_W<16> {
+        CNTERR_W::new(self)
     }
     #[doc = "Bit 21 - Sign of Current Count Error"]
     #[inline(always)]
-    pub fn sign(&mut self) -> SIGN_W {
-        SIGN_W { w: self }
+    #[must_use]
+    pub fn sign(&mut self) -> SIGN_W<21> {
+        SIGN_W::new(self)
     }
     #[doc = "Bit 24 - Lock"]
     #[inline(always)]
-    pub fn lock(&mut self) -> LOCK_W {
-        LOCK_W { w: self }
+    #[must_use]
+    pub fn lock(&mut self) -> LOCK_W<24> {
+        LOCK_W::new(self)
     }
     #[doc = "Bit 25 - Lock Lost"]
     #[inline(always)]
-    pub fn locklost(&mut self) -> LOCKLOST_W {
-        LOCKLOST_W { w: self }
+    #[must_use]
+    pub fn locklost(&mut self) -> LOCKLOST_W<25> {
+        LOCKLOST_W::new(self)
     }
     #[doc = "Bit 31 - Current Trim Value Updated"]
     #[inline(always)]
-    pub fn updated(&mut self) -> UPDATED_W {
-        UPDATED_W { w: self }
+    #[must_use]
+    pub fn updated(&mut self) -> UPDATED_W<31> {
+        UPDATED_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -312,11 +146,10 @@ impl crate::Readable for RCFASTSR_SPEC {
 #[doc = "`write(|w| ..)` method takes [rcfastsr::W](W) writer structure"]
 impl crate::Writable for RCFASTSR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets RCFASTSR to value 0"]
 impl crate::Resettable for RCFASTSR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

@@ -35,125 +35,52 @@ impl From<crate::W<HRPCR_SPEC>> for W {
     }
 }
 #[doc = "Field `HRPEN` reader - High Resolution Prescaler Enable"]
-pub struct HRPEN_R(crate::FieldReader<bool, bool>);
-impl HRPEN_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        HRPEN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for HRPEN_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type HRPEN_R = crate::BitReader<bool>;
 #[doc = "Field `HRPEN` writer - High Resolution Prescaler Enable"]
-pub struct HRPEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> HRPEN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type HRPEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, HRPCR_SPEC, bool, O>;
 #[doc = "Field `CKSEL` reader - Clock Input Selection"]
-pub struct CKSEL_R(crate::FieldReader<u8, u8>);
-impl CKSEL_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        CKSEL_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CKSEL_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CKSEL_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `CKSEL` writer - Clock Input Selection"]
-pub struct CKSEL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CKSEL_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 1)) | ((value as u32 & 0x07) << 1);
-        self.w
-    }
-}
+pub type CKSEL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, HRPCR_SPEC, u8, u8, 3, O>;
 #[doc = "Field `HRCOUNT` reader - High Resolution Counter"]
-pub struct HRCOUNT_R(crate::FieldReader<u32, u32>);
-impl HRCOUNT_R {
-    pub(crate) fn new(bits: u32) -> Self {
-        HRCOUNT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for HRCOUNT_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type HRCOUNT_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `HRCOUNT` writer - High Resolution Counter"]
-pub struct HRCOUNT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> HRCOUNT_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x00ff_ffff << 8)) | ((value as u32 & 0x00ff_ffff) << 8);
-        self.w
-    }
-}
+pub type HRCOUNT_W<'a, const O: u8> = crate::FieldWriter<'a, u32, HRPCR_SPEC, u32, u32, 24, O>;
 impl R {
     #[doc = "Bit 0 - High Resolution Prescaler Enable"]
     #[inline(always)]
     pub fn hrpen(&self) -> HRPEN_R {
-        HRPEN_R::new((self.bits & 0x01) != 0)
+        HRPEN_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bits 1:3 - Clock Input Selection"]
     #[inline(always)]
     pub fn cksel(&self) -> CKSEL_R {
-        CKSEL_R::new(((self.bits >> 1) & 0x07) as u8)
+        CKSEL_R::new(((self.bits >> 1) & 7) as u8)
     }
     #[doc = "Bits 8:31 - High Resolution Counter"]
     #[inline(always)]
     pub fn hrcount(&self) -> HRCOUNT_R {
-        HRCOUNT_R::new(((self.bits >> 8) & 0x00ff_ffff) as u32)
+        HRCOUNT_R::new((self.bits >> 8) & 0x00ff_ffff)
     }
 }
 impl W {
     #[doc = "Bit 0 - High Resolution Prescaler Enable"]
     #[inline(always)]
-    pub fn hrpen(&mut self) -> HRPEN_W {
-        HRPEN_W { w: self }
+    #[must_use]
+    pub fn hrpen(&mut self) -> HRPEN_W<0> {
+        HRPEN_W::new(self)
     }
     #[doc = "Bits 1:3 - Clock Input Selection"]
     #[inline(always)]
-    pub fn cksel(&mut self) -> CKSEL_W {
-        CKSEL_W { w: self }
+    #[must_use]
+    pub fn cksel(&mut self) -> CKSEL_W<1> {
+        CKSEL_W::new(self)
     }
     #[doc = "Bits 8:31 - High Resolution Counter"]
     #[inline(always)]
-    pub fn hrcount(&mut self) -> HRCOUNT_W {
-        HRCOUNT_W { w: self }
+    #[must_use]
+    pub fn hrcount(&mut self) -> HRCOUNT_W<8> {
+        HRCOUNT_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -174,11 +101,10 @@ impl crate::Readable for HRPCR_SPEC {
 #[doc = "`write(|w| ..)` method takes [hrpcr::W](W) writer structure"]
 impl crate::Writable for HRPCR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets HRPCR to value 0"]
 impl crate::Resettable for HRPCR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

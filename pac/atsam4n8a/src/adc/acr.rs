@@ -34,8 +34,10 @@ impl From<crate::W<ACR_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `IRVCE` reader - Internal Reference Voltage Change Enable"]
+pub type IRVCE_R = crate::BitReader<IRVCE_A>;
 #[doc = "Internal Reference Voltage Change Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum IRVCE_A {
     #[doc = "0: The internal reference voltage is stuck at the default value (see the product electrical charac-teristics for further details)."]
     STUCK_AT_DEFAULT = 0,
@@ -48,13 +50,8 @@ impl From<IRVCE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `IRVCE` reader - Internal Reference Voltage Change Enable"]
-pub struct IRVCE_R(crate::FieldReader<bool, IRVCE_A>);
 impl IRVCE_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        IRVCE_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> IRVCE_A {
         match self.bits {
@@ -65,31 +62,17 @@ impl IRVCE_R {
     #[doc = "Checks if the value of the field is `STUCK_AT_DEFAULT`"]
     #[inline(always)]
     pub fn is_stuck_at_default(&self) -> bool {
-        **self == IRVCE_A::STUCK_AT_DEFAULT
+        *self == IRVCE_A::STUCK_AT_DEFAULT
     }
     #[doc = "Checks if the value of the field is `SELECTION`"]
     #[inline(always)]
     pub fn is_selection(&self) -> bool {
-        **self == IRVCE_A::SELECTION
-    }
-}
-impl core::ops::Deref for IRVCE_R {
-    type Target = crate::FieldReader<bool, IRVCE_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == IRVCE_A::SELECTION
     }
 }
 #[doc = "Field `IRVCE` writer - Internal Reference Voltage Change Enable"]
-pub struct IRVCE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> IRVCE_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: IRVCE_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type IRVCE_W<'a, const O: u8> = crate::BitWriter<'a, u32, ACR_SPEC, IRVCE_A, O>;
+impl<'a, const O: u8> IRVCE_W<'a, O> {
     #[doc = "The internal reference voltage is stuck at the default value (see the product electrical charac-teristics for further details)."]
     #[inline(always)]
     pub fn stuck_at_default(self) -> &'a mut W {
@@ -100,126 +83,24 @@ impl<'a> IRVCE_W<'a> {
     pub fn selection(self) -> &'a mut W {
         self.variant(IRVCE_A::SELECTION)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
-    }
 }
 #[doc = "Field `IRVS` reader - Internal Reference Voltage Selection"]
-pub struct IRVS_R(crate::FieldReader<u8, u8>);
-impl IRVS_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        IRVS_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for IRVS_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type IRVS_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `IRVS` writer - Internal Reference Voltage Selection"]
-pub struct IRVS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> IRVS_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 3)) | ((value as u32 & 0x0f) << 3);
-        self.w
-    }
-}
+pub type IRVS_W<'a, const O: u8> = crate::FieldWriter<'a, u32, ACR_SPEC, u8, u8, 4, O>;
 #[doc = "Field `FORCEREF` reader - Force Internal Reference Voltage"]
-pub struct FORCEREF_R(crate::FieldReader<bool, bool>);
-impl FORCEREF_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        FORCEREF_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for FORCEREF_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type FORCEREF_R = crate::BitReader<bool>;
 #[doc = "Field `FORCEREF` writer - Force Internal Reference Voltage"]
-pub struct FORCEREF_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> FORCEREF_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 19)) | ((value as u32 & 0x01) << 19);
-        self.w
-    }
-}
+pub type FORCEREF_W<'a, const O: u8> = crate::BitWriter<'a, u32, ACR_SPEC, bool, O>;
 #[doc = "Field `ONREF` reader - Internal Voltage Reference ON"]
-pub struct ONREF_R(crate::FieldReader<bool, bool>);
-impl ONREF_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        ONREF_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for ONREF_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type ONREF_R = crate::BitReader<bool>;
 #[doc = "Field `ONREF` writer - Internal Voltage Reference ON"]
-pub struct ONREF_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ONREF_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 20)) | ((value as u32 & 0x01) << 20);
-        self.w
-    }
-}
+pub type ONREF_W<'a, const O: u8> = crate::BitWriter<'a, u32, ACR_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 2 - Internal Reference Voltage Change Enable"]
     #[inline(always)]
     pub fn irvce(&self) -> IRVCE_R {
-        IRVCE_R::new(((self.bits >> 2) & 0x01) != 0)
+        IRVCE_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bits 3:6 - Internal Reference Voltage Selection"]
     #[inline(always)]
@@ -229,34 +110,38 @@ impl R {
     #[doc = "Bit 19 - Force Internal Reference Voltage"]
     #[inline(always)]
     pub fn forceref(&self) -> FORCEREF_R {
-        FORCEREF_R::new(((self.bits >> 19) & 0x01) != 0)
+        FORCEREF_R::new(((self.bits >> 19) & 1) != 0)
     }
     #[doc = "Bit 20 - Internal Voltage Reference ON"]
     #[inline(always)]
     pub fn onref(&self) -> ONREF_R {
-        ONREF_R::new(((self.bits >> 20) & 0x01) != 0)
+        ONREF_R::new(((self.bits >> 20) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 2 - Internal Reference Voltage Change Enable"]
     #[inline(always)]
-    pub fn irvce(&mut self) -> IRVCE_W {
-        IRVCE_W { w: self }
+    #[must_use]
+    pub fn irvce(&mut self) -> IRVCE_W<2> {
+        IRVCE_W::new(self)
     }
     #[doc = "Bits 3:6 - Internal Reference Voltage Selection"]
     #[inline(always)]
-    pub fn irvs(&mut self) -> IRVS_W {
-        IRVS_W { w: self }
+    #[must_use]
+    pub fn irvs(&mut self) -> IRVS_W<3> {
+        IRVS_W::new(self)
     }
     #[doc = "Bit 19 - Force Internal Reference Voltage"]
     #[inline(always)]
-    pub fn forceref(&mut self) -> FORCEREF_W {
-        FORCEREF_W { w: self }
+    #[must_use]
+    pub fn forceref(&mut self) -> FORCEREF_W<19> {
+        FORCEREF_W::new(self)
     }
     #[doc = "Bit 20 - Internal Voltage Reference ON"]
     #[inline(always)]
-    pub fn onref(&mut self) -> ONREF_W {
-        ONREF_W { w: self }
+    #[must_use]
+    pub fn onref(&mut self) -> ONREF_W<20> {
+        ONREF_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -277,11 +162,10 @@ impl crate::Readable for ACR_SPEC {
 #[doc = "`write(|w| ..)` method takes [acr::W](W) writer structure"]
 impl crate::Writable for ACR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets ACR to value 0x0008_0000"]
 impl crate::Resettable for ACR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x0008_0000
-    }
+    const RESET_VALUE: Self::Ux = 0x0008_0000;
 }

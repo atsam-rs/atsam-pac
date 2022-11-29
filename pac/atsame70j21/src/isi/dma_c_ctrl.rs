@@ -35,191 +35,67 @@ impl From<crate::W<DMA_C_CTRL_SPEC>> for W {
     }
 }
 #[doc = "Field `C_FETCH` reader - Descriptor Fetch Control Bit"]
-pub struct C_FETCH_R(crate::FieldReader<bool, bool>);
-impl C_FETCH_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        C_FETCH_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for C_FETCH_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type C_FETCH_R = crate::BitReader<bool>;
 #[doc = "Field `C_FETCH` writer - Descriptor Fetch Control Bit"]
-pub struct C_FETCH_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> C_FETCH_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type C_FETCH_W<'a, const O: u8> = crate::BitWriter<'a, u32, DMA_C_CTRL_SPEC, bool, O>;
 #[doc = "Field `C_WB` reader - Descriptor Writeback Control Bit"]
-pub struct C_WB_R(crate::FieldReader<bool, bool>);
-impl C_WB_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        C_WB_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for C_WB_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type C_WB_R = crate::BitReader<bool>;
 #[doc = "Field `C_WB` writer - Descriptor Writeback Control Bit"]
-pub struct C_WB_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> C_WB_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
-}
+pub type C_WB_W<'a, const O: u8> = crate::BitWriter<'a, u32, DMA_C_CTRL_SPEC, bool, O>;
 #[doc = "Field `C_IEN` reader - Transfer Done Flag Control"]
-pub struct C_IEN_R(crate::FieldReader<bool, bool>);
-impl C_IEN_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        C_IEN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for C_IEN_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type C_IEN_R = crate::BitReader<bool>;
 #[doc = "Field `C_IEN` writer - Transfer Done Flag Control"]
-pub struct C_IEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> C_IEN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
-    }
-}
+pub type C_IEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, DMA_C_CTRL_SPEC, bool, O>;
 #[doc = "Field `C_DONE` reader - Codec Transfer Done"]
-pub struct C_DONE_R(crate::FieldReader<bool, bool>);
-impl C_DONE_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        C_DONE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for C_DONE_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type C_DONE_R = crate::BitReader<bool>;
 #[doc = "Field `C_DONE` writer - Codec Transfer Done"]
-pub struct C_DONE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> C_DONE_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
-        self.w
-    }
-}
+pub type C_DONE_W<'a, const O: u8> = crate::BitWriter<'a, u32, DMA_C_CTRL_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - Descriptor Fetch Control Bit"]
     #[inline(always)]
     pub fn c_fetch(&self) -> C_FETCH_R {
-        C_FETCH_R::new((self.bits & 0x01) != 0)
+        C_FETCH_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Descriptor Writeback Control Bit"]
     #[inline(always)]
     pub fn c_wb(&self) -> C_WB_R {
-        C_WB_R::new(((self.bits >> 1) & 0x01) != 0)
+        C_WB_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - Transfer Done Flag Control"]
     #[inline(always)]
     pub fn c_ien(&self) -> C_IEN_R {
-        C_IEN_R::new(((self.bits >> 2) & 0x01) != 0)
+        C_IEN_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - Codec Transfer Done"]
     #[inline(always)]
     pub fn c_done(&self) -> C_DONE_R {
-        C_DONE_R::new(((self.bits >> 3) & 0x01) != 0)
+        C_DONE_R::new(((self.bits >> 3) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Descriptor Fetch Control Bit"]
     #[inline(always)]
-    pub fn c_fetch(&mut self) -> C_FETCH_W {
-        C_FETCH_W { w: self }
+    #[must_use]
+    pub fn c_fetch(&mut self) -> C_FETCH_W<0> {
+        C_FETCH_W::new(self)
     }
     #[doc = "Bit 1 - Descriptor Writeback Control Bit"]
     #[inline(always)]
-    pub fn c_wb(&mut self) -> C_WB_W {
-        C_WB_W { w: self }
+    #[must_use]
+    pub fn c_wb(&mut self) -> C_WB_W<1> {
+        C_WB_W::new(self)
     }
     #[doc = "Bit 2 - Transfer Done Flag Control"]
     #[inline(always)]
-    pub fn c_ien(&mut self) -> C_IEN_W {
-        C_IEN_W { w: self }
+    #[must_use]
+    pub fn c_ien(&mut self) -> C_IEN_W<2> {
+        C_IEN_W::new(self)
     }
     #[doc = "Bit 3 - Codec Transfer Done"]
     #[inline(always)]
-    pub fn c_done(&mut self) -> C_DONE_W {
-        C_DONE_W { w: self }
+    #[must_use]
+    pub fn c_done(&mut self) -> C_DONE_W<3> {
+        C_DONE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -240,11 +116,10 @@ impl crate::Readable for DMA_C_CTRL_SPEC {
 #[doc = "`write(|w| ..)` method takes [dma_c_ctrl::W](W) writer structure"]
 impl crate::Writable for DMA_C_CTRL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets DMA_C_CTRL to value 0"]
 impl crate::Resettable for DMA_C_CTRL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

@@ -35,35 +35,15 @@ impl From<crate::W<SCFG_SPEC>> for W {
     }
 }
 #[doc = "Field `SLOT_CYCLE` reader - Maximum Bus Grant Duration for Masters"]
-pub struct SLOT_CYCLE_R(crate::FieldReader<u16, u16>);
-impl SLOT_CYCLE_R {
-    pub(crate) fn new(bits: u16) -> Self {
-        SLOT_CYCLE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for SLOT_CYCLE_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type SLOT_CYCLE_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `SLOT_CYCLE` writer - Maximum Bus Grant Duration for Masters"]
-pub struct SLOT_CYCLE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SLOT_CYCLE_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01ff) | (value as u32 & 0x01ff);
-        self.w
-    }
-}
+pub type SLOT_CYCLE_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SCFG_SPEC, u16, u16, 9, O>;
+#[doc = "Field `DEFMSTR_TYPE` reader - Default Master Type"]
+pub type DEFMSTR_TYPE_R = crate::FieldReader<u8, DEFMSTR_TYPESELECT_A>;
 #[doc = "Default Master Type\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum DEFMSTR_TYPE_A {
+pub enum DEFMSTR_TYPESELECT_A {
     #[doc = "0: No Default Master-At the end of the current slave access, if no other master request is pending, the slave is disconnected from all masters.This results in a one clock cycle latency for the first access of a burst transfer or for a single access."]
     NONE = 0,
     #[doc = "1: Last Default Master-At the end of the current slave access, if no other master request is pending, the slave stays connected to the last master having accessed it.This results in not having one clock cycle latency when the last master tries to access the slave again."]
@@ -71,109 +51,63 @@ pub enum DEFMSTR_TYPE_A {
     #[doc = "2: Fixed Default Master-At the end of the current slave access, if no other master request is pending, the slave connects to the fixed master the number that has been written in the FIXED_DEFMSTR field.This results in not having one clock cycle latency when the fixed master tries to access the slave again."]
     FIXED = 2,
 }
-impl From<DEFMSTR_TYPE_A> for u8 {
+impl From<DEFMSTR_TYPESELECT_A> for u8 {
     #[inline(always)]
-    fn from(variant: DEFMSTR_TYPE_A) -> Self {
+    fn from(variant: DEFMSTR_TYPESELECT_A) -> Self {
         variant as _
     }
 }
-#[doc = "Field `DEFMSTR_TYPE` reader - Default Master Type"]
-pub struct DEFMSTR_TYPE_R(crate::FieldReader<u8, DEFMSTR_TYPE_A>);
 impl DEFMSTR_TYPE_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        DEFMSTR_TYPE_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<DEFMSTR_TYPE_A> {
+    pub fn variant(&self) -> Option<DEFMSTR_TYPESELECT_A> {
         match self.bits {
-            0 => Some(DEFMSTR_TYPE_A::NONE),
-            1 => Some(DEFMSTR_TYPE_A::LAST),
-            2 => Some(DEFMSTR_TYPE_A::FIXED),
+            0 => Some(DEFMSTR_TYPESELECT_A::NONE),
+            1 => Some(DEFMSTR_TYPESELECT_A::LAST),
+            2 => Some(DEFMSTR_TYPESELECT_A::FIXED),
             _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `NONE`"]
     #[inline(always)]
     pub fn is_none(&self) -> bool {
-        **self == DEFMSTR_TYPE_A::NONE
+        *self == DEFMSTR_TYPESELECT_A::NONE
     }
     #[doc = "Checks if the value of the field is `LAST`"]
     #[inline(always)]
     pub fn is_last(&self) -> bool {
-        **self == DEFMSTR_TYPE_A::LAST
+        *self == DEFMSTR_TYPESELECT_A::LAST
     }
     #[doc = "Checks if the value of the field is `FIXED`"]
     #[inline(always)]
     pub fn is_fixed(&self) -> bool {
-        **self == DEFMSTR_TYPE_A::FIXED
-    }
-}
-impl core::ops::Deref for DEFMSTR_TYPE_R {
-    type Target = crate::FieldReader<u8, DEFMSTR_TYPE_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == DEFMSTR_TYPESELECT_A::FIXED
     }
 }
 #[doc = "Field `DEFMSTR_TYPE` writer - Default Master Type"]
-pub struct DEFMSTR_TYPE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DEFMSTR_TYPE_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: DEFMSTR_TYPE_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type DEFMSTR_TYPE_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, SCFG_SPEC, u8, DEFMSTR_TYPESELECT_A, 2, O>;
+impl<'a, const O: u8> DEFMSTR_TYPE_W<'a, O> {
     #[doc = "No Default Master-At the end of the current slave access, if no other master request is pending, the slave is disconnected from all masters.This results in a one clock cycle latency for the first access of a burst transfer or for a single access."]
     #[inline(always)]
     pub fn none(self) -> &'a mut W {
-        self.variant(DEFMSTR_TYPE_A::NONE)
+        self.variant(DEFMSTR_TYPESELECT_A::NONE)
     }
     #[doc = "Last Default Master-At the end of the current slave access, if no other master request is pending, the slave stays connected to the last master having accessed it.This results in not having one clock cycle latency when the last master tries to access the slave again."]
     #[inline(always)]
     pub fn last(self) -> &'a mut W {
-        self.variant(DEFMSTR_TYPE_A::LAST)
+        self.variant(DEFMSTR_TYPESELECT_A::LAST)
     }
     #[doc = "Fixed Default Master-At the end of the current slave access, if no other master request is pending, the slave connects to the fixed master the number that has been written in the FIXED_DEFMSTR field.This results in not having one clock cycle latency when the fixed master tries to access the slave again."]
     #[inline(always)]
     pub fn fixed(self) -> &'a mut W {
-        self.variant(DEFMSTR_TYPE_A::FIXED)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 16)) | ((value as u32 & 0x03) << 16);
-        self.w
+        self.variant(DEFMSTR_TYPESELECT_A::FIXED)
     }
 }
 #[doc = "Field `FIXED_DEFMSTR` reader - Fixed Default Master"]
-pub struct FIXED_DEFMSTR_R(crate::FieldReader<u8, u8>);
-impl FIXED_DEFMSTR_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        FIXED_DEFMSTR_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for FIXED_DEFMSTR_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type FIXED_DEFMSTR_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `FIXED_DEFMSTR` writer - Fixed Default Master"]
-pub struct FIXED_DEFMSTR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> FIXED_DEFMSTR_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 18)) | ((value as u32 & 0x0f) << 18);
-        self.w
-    }
-}
+pub type FIXED_DEFMSTR_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SCFG_SPEC, u8, u8, 4, O>;
 impl R {
     #[doc = "Bits 0:8 - Maximum Bus Grant Duration for Masters"]
     #[inline(always)]
@@ -183,7 +117,7 @@ impl R {
     #[doc = "Bits 16:17 - Default Master Type"]
     #[inline(always)]
     pub fn defmstr_type(&self) -> DEFMSTR_TYPE_R {
-        DEFMSTR_TYPE_R::new(((self.bits >> 16) & 0x03) as u8)
+        DEFMSTR_TYPE_R::new(((self.bits >> 16) & 3) as u8)
     }
     #[doc = "Bits 18:21 - Fixed Default Master"]
     #[inline(always)]
@@ -194,18 +128,21 @@ impl R {
 impl W {
     #[doc = "Bits 0:8 - Maximum Bus Grant Duration for Masters"]
     #[inline(always)]
-    pub fn slot_cycle(&mut self) -> SLOT_CYCLE_W {
-        SLOT_CYCLE_W { w: self }
+    #[must_use]
+    pub fn slot_cycle(&mut self) -> SLOT_CYCLE_W<0> {
+        SLOT_CYCLE_W::new(self)
     }
     #[doc = "Bits 16:17 - Default Master Type"]
     #[inline(always)]
-    pub fn defmstr_type(&mut self) -> DEFMSTR_TYPE_W {
-        DEFMSTR_TYPE_W { w: self }
+    #[must_use]
+    pub fn defmstr_type(&mut self) -> DEFMSTR_TYPE_W<16> {
+        DEFMSTR_TYPE_W::new(self)
     }
     #[doc = "Bits 18:21 - Fixed Default Master"]
     #[inline(always)]
-    pub fn fixed_defmstr(&mut self) -> FIXED_DEFMSTR_W {
-        FIXED_DEFMSTR_W { w: self }
+    #[must_use]
+    pub fn fixed_defmstr(&mut self) -> FIXED_DEFMSTR_W<18> {
+        FIXED_DEFMSTR_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -226,12 +163,11 @@ impl crate::Readable for SCFG_SPEC {
 #[doc = "`write(|w| ..)` method takes [scfg::W](W) writer structure"]
 impl crate::Writable for SCFG_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets SCFG[%s]
 to value 0"]
 impl crate::Resettable for SCFG_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

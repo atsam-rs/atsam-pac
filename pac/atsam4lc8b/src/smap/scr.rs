@@ -20,140 +20,45 @@ impl From<crate::W<SCR_SPEC>> for W {
     }
 }
 #[doc = "Field `DONE` writer - Done"]
-pub struct DONE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DONE_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type DONE_W<'a, const O: u8> = crate::BitWriter<'a, u32, SCR_SPEC, bool, O>;
 #[doc = "Field `HCR` writer - Hold Core Register"]
-pub struct HCR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> HCR_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
-}
+pub type HCR_W<'a, const O: u8> = crate::BitWriter<'a, u32, SCR_SPEC, bool, O>;
 #[doc = "Field `BERR` writer - Bus error"]
-pub struct BERR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> BERR_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
-    }
-}
+pub type BERR_W<'a, const O: u8> = crate::BitWriter<'a, u32, SCR_SPEC, bool, O>;
 #[doc = "Field `FAIL` writer - Failure"]
-pub struct FAIL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> FAIL_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
-        self.w
-    }
-}
+pub type FAIL_W<'a, const O: u8> = crate::BitWriter<'a, u32, SCR_SPEC, bool, O>;
 #[doc = "Field `LCK` writer - Lock error"]
-pub struct LCK_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> LCK_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
-        self.w
-    }
-}
+pub type LCK_W<'a, const O: u8> = crate::BitWriter<'a, u32, SCR_SPEC, bool, O>;
 impl W {
     #[doc = "Bit 0 - Done"]
     #[inline(always)]
-    pub fn done(&mut self) -> DONE_W {
-        DONE_W { w: self }
+    #[must_use]
+    pub fn done(&mut self) -> DONE_W<0> {
+        DONE_W::new(self)
     }
     #[doc = "Bit 1 - Hold Core Register"]
     #[inline(always)]
-    pub fn hcr(&mut self) -> HCR_W {
-        HCR_W { w: self }
+    #[must_use]
+    pub fn hcr(&mut self) -> HCR_W<1> {
+        HCR_W::new(self)
     }
     #[doc = "Bit 2 - Bus error"]
     #[inline(always)]
-    pub fn berr(&mut self) -> BERR_W {
-        BERR_W { w: self }
+    #[must_use]
+    pub fn berr(&mut self) -> BERR_W<2> {
+        BERR_W::new(self)
     }
     #[doc = "Bit 3 - Failure"]
     #[inline(always)]
-    pub fn fail(&mut self) -> FAIL_W {
-        FAIL_W { w: self }
+    #[must_use]
+    pub fn fail(&mut self) -> FAIL_W<3> {
+        FAIL_W::new(self)
     }
     #[doc = "Bit 4 - Lock error"]
     #[inline(always)]
-    pub fn lck(&mut self) -> LCK_W {
-        LCK_W { w: self }
+    #[must_use]
+    pub fn lck(&mut self) -> LCK_W<4> {
+        LCK_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -170,11 +75,10 @@ impl crate::RegisterSpec for SCR_SPEC {
 #[doc = "`write(|w| ..)` method takes [scr::W](W) writer structure"]
 impl crate::Writable for SCR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets SCR to value 0"]
 impl crate::Resettable for SCR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

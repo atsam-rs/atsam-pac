@@ -14,100 +14,40 @@ impl From<crate::R<GCFG_SPEC>> for R {
     }
 }
 #[doc = "Field `CGDISREG` reader - Configuration Registers Clock Gating Disable"]
-pub struct CGDISREG_R(crate::FieldReader<bool, bool>);
-impl CGDISREG_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        CGDISREG_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CGDISREG_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CGDISREG_R = crate::BitReader<bool>;
 #[doc = "Field `CGDISPIPE` reader - Pipeline Clock Gating Disable"]
-pub struct CGDISPIPE_R(crate::FieldReader<bool, bool>);
-impl CGDISPIPE_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        CGDISPIPE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CGDISPIPE_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CGDISPIPE_R = crate::BitReader<bool>;
 #[doc = "Field `CGDISFIFO` reader - FIFO Clock Gating Disable"]
-pub struct CGDISFIFO_R(crate::FieldReader<bool, bool>);
-impl CGDISFIFO_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        CGDISFIFO_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CGDISFIFO_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CGDISFIFO_R = crate::BitReader<bool>;
 #[doc = "Field `CGDISIF` reader - Bus Interface Clock Gating Disable"]
-pub struct CGDISIF_R(crate::FieldReader<bool, bool>);
-impl CGDISIF_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        CGDISIF_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CGDISIF_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CGDISIF_R = crate::BitReader<bool>;
 #[doc = "Field `BXKBEN` reader - Boundary X Kilobyte Enable"]
-pub struct BXKBEN_R(crate::FieldReader<bool, bool>);
-impl BXKBEN_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        BXKBEN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for BXKBEN_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type BXKBEN_R = crate::BitReader<bool>;
 impl R {
     #[doc = "Bit 0 - Configuration Registers Clock Gating Disable"]
     #[inline(always)]
     pub fn cgdisreg(&self) -> CGDISREG_R {
-        CGDISREG_R::new((self.bits & 0x01) != 0)
+        CGDISREG_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Pipeline Clock Gating Disable"]
     #[inline(always)]
     pub fn cgdispipe(&self) -> CGDISPIPE_R {
-        CGDISPIPE_R::new(((self.bits >> 1) & 0x01) != 0)
+        CGDISPIPE_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - FIFO Clock Gating Disable"]
     #[inline(always)]
     pub fn cgdisfifo(&self) -> CGDISFIFO_R {
-        CGDISFIFO_R::new(((self.bits >> 2) & 0x01) != 0)
+        CGDISFIFO_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - Bus Interface Clock Gating Disable"]
     #[inline(always)]
     pub fn cgdisif(&self) -> CGDISIF_R {
-        CGDISIF_R::new(((self.bits >> 3) & 0x01) != 0)
+        CGDISIF_R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 8 - Boundary X Kilobyte Enable"]
     #[inline(always)]
     pub fn bxkben(&self) -> BXKBEN_R {
-        BXKBEN_R::new(((self.bits >> 8) & 0x01) != 0)
+        BXKBEN_R::new(((self.bits >> 8) & 1) != 0)
     }
 }
 #[doc = "Global Configuration Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [gcfg](index.html) module"]
@@ -121,8 +61,5 @@ impl crate::Readable for GCFG_SPEC {
 }
 #[doc = "`reset()` method sets GCFG to value 0"]
 impl crate::Resettable for GCFG_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

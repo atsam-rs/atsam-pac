@@ -35,329 +35,112 @@ impl From<crate::W<RC32KCR_SPEC>> for W {
     }
 }
 #[doc = "Field `EN` reader - Enable as Generic clock source"]
-pub struct EN_R(crate::FieldReader<bool, bool>);
-impl EN_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        EN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for EN_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type EN_R = crate::BitReader<bool>;
 #[doc = "Field `EN` writer - Enable as Generic clock source"]
-pub struct EN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> EN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, RC32KCR_SPEC, bool, O>;
 #[doc = "Field `TCEN` reader - Temperature Compensation Enable"]
-pub struct TCEN_R(crate::FieldReader<bool, bool>);
-impl TCEN_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        TCEN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TCEN_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TCEN_R = crate::BitReader<bool>;
 #[doc = "Field `TCEN` writer - Temperature Compensation Enable"]
-pub struct TCEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TCEN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
-}
+pub type TCEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, RC32KCR_SPEC, bool, O>;
 #[doc = "Field `EN32K` reader - Enable 32 KHz output"]
-pub struct EN32K_R(crate::FieldReader<bool, bool>);
-impl EN32K_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        EN32K_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for EN32K_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type EN32K_R = crate::BitReader<bool>;
 #[doc = "Field `EN32K` writer - Enable 32 KHz output"]
-pub struct EN32K_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> EN32K_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
-    }
-}
+pub type EN32K_W<'a, const O: u8> = crate::BitWriter<'a, u32, RC32KCR_SPEC, bool, O>;
 #[doc = "Field `EN1K` reader - Enable 1 kHz output"]
-pub struct EN1K_R(crate::FieldReader<bool, bool>);
-impl EN1K_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        EN1K_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for EN1K_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type EN1K_R = crate::BitReader<bool>;
 #[doc = "Field `EN1K` writer - Enable 1 kHz output"]
-pub struct EN1K_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> EN1K_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
-        self.w
-    }
-}
+pub type EN1K_W<'a, const O: u8> = crate::BitWriter<'a, u32, RC32KCR_SPEC, bool, O>;
 #[doc = "Field `MODE` reader - Mode Selection"]
-pub struct MODE_R(crate::FieldReader<bool, bool>);
-impl MODE_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        MODE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for MODE_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type MODE_R = crate::BitReader<bool>;
 #[doc = "Field `MODE` writer - Mode Selection"]
-pub struct MODE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> MODE_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
-        self.w
-    }
-}
+pub type MODE_W<'a, const O: u8> = crate::BitWriter<'a, u32, RC32KCR_SPEC, bool, O>;
 #[doc = "Field `REF` reader - Reference select"]
-pub struct REF_R(crate::FieldReader<bool, bool>);
-impl REF_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        REF_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for REF_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type REF_R = crate::BitReader<bool>;
 #[doc = "Field `REF` writer - Reference select"]
-pub struct REF_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> REF_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
-        self.w
-    }
-}
+pub type REF_W<'a, const O: u8> = crate::BitWriter<'a, u32, RC32KCR_SPEC, bool, O>;
 #[doc = "Field `FCD` reader - Flash calibration done"]
-pub struct FCD_R(crate::FieldReader<bool, bool>);
-impl FCD_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        FCD_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for FCD_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type FCD_R = crate::BitReader<bool>;
 #[doc = "Field `FCD` writer - Flash calibration done"]
-pub struct FCD_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> FCD_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | ((value as u32 & 0x01) << 7);
-        self.w
-    }
-}
+pub type FCD_W<'a, const O: u8> = crate::BitWriter<'a, u32, RC32KCR_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - Enable as Generic clock source"]
     #[inline(always)]
     pub fn en(&self) -> EN_R {
-        EN_R::new((self.bits & 0x01) != 0)
+        EN_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Temperature Compensation Enable"]
     #[inline(always)]
     pub fn tcen(&self) -> TCEN_R {
-        TCEN_R::new(((self.bits >> 1) & 0x01) != 0)
+        TCEN_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - Enable 32 KHz output"]
     #[inline(always)]
     pub fn en32k(&self) -> EN32K_R {
-        EN32K_R::new(((self.bits >> 2) & 0x01) != 0)
+        EN32K_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - Enable 1 kHz output"]
     #[inline(always)]
     pub fn en1k(&self) -> EN1K_R {
-        EN1K_R::new(((self.bits >> 3) & 0x01) != 0)
+        EN1K_R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 4 - Mode Selection"]
     #[inline(always)]
     pub fn mode(&self) -> MODE_R {
-        MODE_R::new(((self.bits >> 4) & 0x01) != 0)
+        MODE_R::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bit 5 - Reference select"]
     #[inline(always)]
     pub fn ref_(&self) -> REF_R {
-        REF_R::new(((self.bits >> 5) & 0x01) != 0)
+        REF_R::new(((self.bits >> 5) & 1) != 0)
     }
     #[doc = "Bit 7 - Flash calibration done"]
     #[inline(always)]
     pub fn fcd(&self) -> FCD_R {
-        FCD_R::new(((self.bits >> 7) & 0x01) != 0)
+        FCD_R::new(((self.bits >> 7) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Enable as Generic clock source"]
     #[inline(always)]
-    pub fn en(&mut self) -> EN_W {
-        EN_W { w: self }
+    #[must_use]
+    pub fn en(&mut self) -> EN_W<0> {
+        EN_W::new(self)
     }
     #[doc = "Bit 1 - Temperature Compensation Enable"]
     #[inline(always)]
-    pub fn tcen(&mut self) -> TCEN_W {
-        TCEN_W { w: self }
+    #[must_use]
+    pub fn tcen(&mut self) -> TCEN_W<1> {
+        TCEN_W::new(self)
     }
     #[doc = "Bit 2 - Enable 32 KHz output"]
     #[inline(always)]
-    pub fn en32k(&mut self) -> EN32K_W {
-        EN32K_W { w: self }
+    #[must_use]
+    pub fn en32k(&mut self) -> EN32K_W<2> {
+        EN32K_W::new(self)
     }
     #[doc = "Bit 3 - Enable 1 kHz output"]
     #[inline(always)]
-    pub fn en1k(&mut self) -> EN1K_W {
-        EN1K_W { w: self }
+    #[must_use]
+    pub fn en1k(&mut self) -> EN1K_W<3> {
+        EN1K_W::new(self)
     }
     #[doc = "Bit 4 - Mode Selection"]
     #[inline(always)]
-    pub fn mode(&mut self) -> MODE_W {
-        MODE_W { w: self }
+    #[must_use]
+    pub fn mode(&mut self) -> MODE_W<4> {
+        MODE_W::new(self)
     }
     #[doc = "Bit 5 - Reference select"]
     #[inline(always)]
-    pub fn ref_(&mut self) -> REF_W {
-        REF_W { w: self }
+    #[must_use]
+    pub fn ref_(&mut self) -> REF_W<5> {
+        REF_W::new(self)
     }
     #[doc = "Bit 7 - Flash calibration done"]
     #[inline(always)]
-    pub fn fcd(&mut self) -> FCD_W {
-        FCD_W { w: self }
+    #[must_use]
+    pub fn fcd(&mut self) -> FCD_W<7> {
+        FCD_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -378,11 +161,10 @@ impl crate::Readable for RC32KCR_SPEC {
 #[doc = "`write(|w| ..)` method takes [rc32kcr::W](W) writer structure"]
 impl crate::Writable for RC32KCR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets RC32KCR to value 0"]
 impl crate::Resettable for RC32KCR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

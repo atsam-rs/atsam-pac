@@ -35,31 +35,9 @@ impl From<crate::W<TRUTH_SPEC>> for W {
     }
 }
 #[doc = "Field `TRUTH` reader - Truth"]
-pub struct TRUTH_R(crate::FieldReader<u16, u16>);
-impl TRUTH_R {
-    pub(crate) fn new(bits: u16) -> Self {
-        TRUTH_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TRUTH_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TRUTH_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `TRUTH` writer - Truth"]
-pub struct TRUTH_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TRUTH_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xffff) | (value as u32 & 0xffff);
-        self.w
-    }
-}
+pub type TRUTH_W<'a, const O: u8> = crate::FieldWriter<'a, u32, TRUTH_SPEC, u16, u16, 16, O>;
 impl R {
     #[doc = "Bits 0:15 - Truth"]
     #[inline(always)]
@@ -70,8 +48,9 @@ impl R {
 impl W {
     #[doc = "Bits 0:15 - Truth"]
     #[inline(always)]
-    pub fn truth(&mut self) -> TRUTH_W {
-        TRUTH_W { w: self }
+    #[must_use]
+    pub fn truth(&mut self) -> TRUTH_W<0> {
+        TRUTH_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -92,11 +71,10 @@ impl crate::Readable for TRUTH_SPEC {
 #[doc = "`write(|w| ..)` method takes [truth::W](W) writer structure"]
 impl crate::Writable for TRUTH_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets TRUTH%s to value 0"]
 impl crate::Resettable for TRUTH_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

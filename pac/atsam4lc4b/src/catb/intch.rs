@@ -14,24 +14,12 @@ impl From<crate::R<INTCH_SPEC>> for R {
     }
 }
 #[doc = "Field `INTCH` reader - In-Touch"]
-pub struct INTCH_R(crate::FieldReader<u32, u32>);
-impl INTCH_R {
-    pub(crate) fn new(bits: u32) -> Self {
-        INTCH_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for INTCH_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type INTCH_R = crate::FieldReader<u32, u32>;
 impl R {
     #[doc = "Bits 0:31 - In-Touch"]
     #[inline(always)]
     pub fn intch(&self) -> INTCH_R {
-        INTCH_R::new((self.bits & 0xffff_ffff) as u32)
+        INTCH_R::new(self.bits)
     }
 }
 #[doc = "In-Touch Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [intch](index.html) module"]
@@ -45,8 +33,5 @@ impl crate::Readable for INTCH_SPEC {
 }
 #[doc = "`reset()` method sets INTCH%s to value 0"]
 impl crate::Resettable for INTCH_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

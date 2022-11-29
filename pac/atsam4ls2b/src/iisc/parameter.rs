@@ -13,64 +13,42 @@ impl From<crate::R<PARAMETER_SPEC>> for R {
         R(reader)
     }
 }
+#[doc = "Field `FORMAT` reader - Data protocol format"]
+pub type FORMAT_R = crate::BitReader<FORMATSELECT_A>;
 #[doc = "Data protocol format\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum FORMAT_A {
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum FORMATSELECT_A {
     #[doc = "0: I2S format, stereo with IWS low for left channel"]
     I2S = 0,
 }
-impl From<FORMAT_A> for bool {
+impl From<FORMATSELECT_A> for bool {
     #[inline(always)]
-    fn from(variant: FORMAT_A) -> Self {
+    fn from(variant: FORMATSELECT_A) -> Self {
         variant as u8 != 0
     }
 }
-#[doc = "Field `FORMAT` reader - Data protocol format"]
-pub struct FORMAT_R(crate::FieldReader<bool, FORMAT_A>);
 impl FORMAT_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        FORMAT_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<FORMAT_A> {
+    pub fn variant(&self) -> Option<FORMATSELECT_A> {
         match self.bits {
-            false => Some(FORMAT_A::I2S),
+            false => Some(FORMATSELECT_A::I2S),
             _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `I2S`"]
     #[inline(always)]
     pub fn is_i2s(&self) -> bool {
-        **self == FORMAT_A::I2S
-    }
-}
-impl core::ops::Deref for FORMAT_R {
-    type Target = crate::FieldReader<bool, FORMAT_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == FORMATSELECT_A::I2S
     }
 }
 #[doc = "Field `NBCHAN` reader - Maximum number of channels - 1"]
-pub struct NBCHAN_R(crate::FieldReader<u8, u8>);
-impl NBCHAN_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        NBCHAN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for NBCHAN_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type NBCHAN_R = crate::FieldReader<u8, u8>;
 impl R {
     #[doc = "Bit 7 - Data protocol format"]
     #[inline(always)]
     pub fn format(&self) -> FORMAT_R {
-        FORMAT_R::new(((self.bits >> 7) & 0x01) != 0)
+        FORMAT_R::new(((self.bits >> 7) & 1) != 0)
     }
     #[doc = "Bits 16:20 - Maximum number of channels - 1"]
     #[inline(always)]
@@ -89,8 +67,5 @@ impl crate::Readable for PARAMETER_SPEC {
 }
 #[doc = "`reset()` method sets PARAMETER to value 0x0001_0000"]
 impl crate::Resettable for PARAMETER_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x0001_0000
-    }
+    const RESET_VALUE: Self::Ux = 0x0001_0000;
 }

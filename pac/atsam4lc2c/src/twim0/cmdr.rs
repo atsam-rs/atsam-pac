@@ -35,412 +35,58 @@ impl From<crate::W<CMDR_SPEC>> for W {
     }
 }
 #[doc = "Field `READ` reader - Transfer Direction"]
-pub struct READ_R(crate::FieldReader<bool, bool>);
-impl READ_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        READ_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for READ_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type READ_R = crate::BitReader<bool>;
 #[doc = "Field `READ` writer - Transfer Direction"]
-pub struct READ_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> READ_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type READ_W<'a, const O: u8> = crate::BitWriter<'a, u32, CMDR_SPEC, bool, O>;
 #[doc = "Field `SADR` reader - Slave Address"]
-pub struct SADR_R(crate::FieldReader<u16, u16>);
-impl SADR_R {
-    pub(crate) fn new(bits: u16) -> Self {
-        SADR_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for SADR_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type SADR_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `SADR` writer - Slave Address"]
-pub struct SADR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SADR_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03ff << 1)) | ((value as u32 & 0x03ff) << 1);
-        self.w
-    }
-}
+pub type SADR_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CMDR_SPEC, u16, u16, 10, O>;
 #[doc = "Field `TENBIT` reader - Ten Bit Addressing Mode"]
-pub struct TENBIT_R(crate::FieldReader<bool, bool>);
-impl TENBIT_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        TENBIT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TENBIT_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TENBIT_R = crate::BitReader<bool>;
 #[doc = "Field `TENBIT` writer - Ten Bit Addressing Mode"]
-pub struct TENBIT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TENBIT_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 11)) | ((value as u32 & 0x01) << 11);
-        self.w
-    }
-}
+pub type TENBIT_W<'a, const O: u8> = crate::BitWriter<'a, u32, CMDR_SPEC, bool, O>;
 #[doc = "Field `REPSAME` reader - Transfer is to same address as previous address"]
-pub struct REPSAME_R(crate::FieldReader<bool, bool>);
-impl REPSAME_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        REPSAME_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for REPSAME_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type REPSAME_R = crate::BitReader<bool>;
 #[doc = "Field `REPSAME` writer - Transfer is to same address as previous address"]
-pub struct REPSAME_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> REPSAME_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 12)) | ((value as u32 & 0x01) << 12);
-        self.w
-    }
-}
+pub type REPSAME_W<'a, const O: u8> = crate::BitWriter<'a, u32, CMDR_SPEC, bool, O>;
 #[doc = "Field `START` reader - Send START condition"]
-pub struct START_R(crate::FieldReader<bool, bool>);
-impl START_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        START_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for START_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type START_R = crate::BitReader<bool>;
 #[doc = "Field `START` writer - Send START condition"]
-pub struct START_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> START_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 13)) | ((value as u32 & 0x01) << 13);
-        self.w
-    }
-}
+pub type START_W<'a, const O: u8> = crate::BitWriter<'a, u32, CMDR_SPEC, bool, O>;
 #[doc = "Field `STOP` reader - Send STOP condition"]
-pub struct STOP_R(crate::FieldReader<bool, bool>);
-impl STOP_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        STOP_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for STOP_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type STOP_R = crate::BitReader<bool>;
 #[doc = "Field `STOP` writer - Send STOP condition"]
-pub struct STOP_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> STOP_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 14)) | ((value as u32 & 0x01) << 14);
-        self.w
-    }
-}
+pub type STOP_W<'a, const O: u8> = crate::BitWriter<'a, u32, CMDR_SPEC, bool, O>;
 #[doc = "Field `VALID` reader - CMDR Valid"]
-pub struct VALID_R(crate::FieldReader<bool, bool>);
-impl VALID_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        VALID_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for VALID_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type VALID_R = crate::BitReader<bool>;
 #[doc = "Field `VALID` writer - CMDR Valid"]
-pub struct VALID_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> VALID_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 15)) | ((value as u32 & 0x01) << 15);
-        self.w
-    }
-}
+pub type VALID_W<'a, const O: u8> = crate::BitWriter<'a, u32, CMDR_SPEC, bool, O>;
 #[doc = "Field `NBYTES` reader - Number of data bytes in transfer"]
-pub struct NBYTES_R(crate::FieldReader<u8, u8>);
-impl NBYTES_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        NBYTES_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for NBYTES_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type NBYTES_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `NBYTES` writer - Number of data bytes in transfer"]
-pub struct NBYTES_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> NBYTES_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0xff << 16)) | ((value as u32 & 0xff) << 16);
-        self.w
-    }
-}
+pub type NBYTES_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CMDR_SPEC, u8, u8, 8, O>;
 #[doc = "Field `PECEN` reader - Packet Error Checking Enable"]
-pub struct PECEN_R(crate::FieldReader<bool, bool>);
-impl PECEN_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        PECEN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for PECEN_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type PECEN_R = crate::BitReader<bool>;
 #[doc = "Field `PECEN` writer - Packet Error Checking Enable"]
-pub struct PECEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PECEN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 24)) | ((value as u32 & 0x01) << 24);
-        self.w
-    }
-}
+pub type PECEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CMDR_SPEC, bool, O>;
 #[doc = "Field `ACKLAST` reader - ACK Last Master RX Byte"]
-pub struct ACKLAST_R(crate::FieldReader<bool, bool>);
-impl ACKLAST_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        ACKLAST_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for ACKLAST_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type ACKLAST_R = crate::BitReader<bool>;
 #[doc = "Field `ACKLAST` writer - ACK Last Master RX Byte"]
-pub struct ACKLAST_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ACKLAST_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 25)) | ((value as u32 & 0x01) << 25);
-        self.w
-    }
-}
+pub type ACKLAST_W<'a, const O: u8> = crate::BitWriter<'a, u32, CMDR_SPEC, bool, O>;
 #[doc = "Field `HS` reader - HS-mode"]
-pub struct HS_R(crate::FieldReader<bool, bool>);
-impl HS_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        HS_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for HS_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type HS_R = crate::BitReader<bool>;
 #[doc = "Field `HS` writer - HS-mode"]
-pub struct HS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> HS_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 26)) | ((value as u32 & 0x01) << 26);
-        self.w
-    }
-}
+pub type HS_W<'a, const O: u8> = crate::BitWriter<'a, u32, CMDR_SPEC, bool, O>;
 #[doc = "Field `HSMCODE` reader - HS-mode Master Code"]
-pub struct HSMCODE_R(crate::FieldReader<u8, u8>);
-impl HSMCODE_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        HSMCODE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for HSMCODE_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type HSMCODE_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `HSMCODE` writer - HS-mode Master Code"]
-pub struct HSMCODE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> HSMCODE_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 28)) | ((value as u32 & 0x07) << 28);
-        self.w
-    }
-}
+pub type HSMCODE_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CMDR_SPEC, u8, u8, 3, O>;
 impl R {
     #[doc = "Bit 0 - Transfer Direction"]
     #[inline(always)]
     pub fn read(&self) -> READ_R {
-        READ_R::new((self.bits & 0x01) != 0)
+        READ_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bits 1:10 - Slave Address"]
     #[inline(always)]
@@ -450,27 +96,27 @@ impl R {
     #[doc = "Bit 11 - Ten Bit Addressing Mode"]
     #[inline(always)]
     pub fn tenbit(&self) -> TENBIT_R {
-        TENBIT_R::new(((self.bits >> 11) & 0x01) != 0)
+        TENBIT_R::new(((self.bits >> 11) & 1) != 0)
     }
     #[doc = "Bit 12 - Transfer is to same address as previous address"]
     #[inline(always)]
     pub fn repsame(&self) -> REPSAME_R {
-        REPSAME_R::new(((self.bits >> 12) & 0x01) != 0)
+        REPSAME_R::new(((self.bits >> 12) & 1) != 0)
     }
     #[doc = "Bit 13 - Send START condition"]
     #[inline(always)]
     pub fn start(&self) -> START_R {
-        START_R::new(((self.bits >> 13) & 0x01) != 0)
+        START_R::new(((self.bits >> 13) & 1) != 0)
     }
     #[doc = "Bit 14 - Send STOP condition"]
     #[inline(always)]
     pub fn stop(&self) -> STOP_R {
-        STOP_R::new(((self.bits >> 14) & 0x01) != 0)
+        STOP_R::new(((self.bits >> 14) & 1) != 0)
     }
     #[doc = "Bit 15 - CMDR Valid"]
     #[inline(always)]
     pub fn valid(&self) -> VALID_R {
-        VALID_R::new(((self.bits >> 15) & 0x01) != 0)
+        VALID_R::new(((self.bits >> 15) & 1) != 0)
     }
     #[doc = "Bits 16:23 - Number of data bytes in transfer"]
     #[inline(always)]
@@ -480,84 +126,96 @@ impl R {
     #[doc = "Bit 24 - Packet Error Checking Enable"]
     #[inline(always)]
     pub fn pecen(&self) -> PECEN_R {
-        PECEN_R::new(((self.bits >> 24) & 0x01) != 0)
+        PECEN_R::new(((self.bits >> 24) & 1) != 0)
     }
     #[doc = "Bit 25 - ACK Last Master RX Byte"]
     #[inline(always)]
     pub fn acklast(&self) -> ACKLAST_R {
-        ACKLAST_R::new(((self.bits >> 25) & 0x01) != 0)
+        ACKLAST_R::new(((self.bits >> 25) & 1) != 0)
     }
     #[doc = "Bit 26 - HS-mode"]
     #[inline(always)]
     pub fn hs(&self) -> HS_R {
-        HS_R::new(((self.bits >> 26) & 0x01) != 0)
+        HS_R::new(((self.bits >> 26) & 1) != 0)
     }
     #[doc = "Bits 28:30 - HS-mode Master Code"]
     #[inline(always)]
     pub fn hsmcode(&self) -> HSMCODE_R {
-        HSMCODE_R::new(((self.bits >> 28) & 0x07) as u8)
+        HSMCODE_R::new(((self.bits >> 28) & 7) as u8)
     }
 }
 impl W {
     #[doc = "Bit 0 - Transfer Direction"]
     #[inline(always)]
-    pub fn read(&mut self) -> READ_W {
-        READ_W { w: self }
+    #[must_use]
+    pub fn read(&mut self) -> READ_W<0> {
+        READ_W::new(self)
     }
     #[doc = "Bits 1:10 - Slave Address"]
     #[inline(always)]
-    pub fn sadr(&mut self) -> SADR_W {
-        SADR_W { w: self }
+    #[must_use]
+    pub fn sadr(&mut self) -> SADR_W<1> {
+        SADR_W::new(self)
     }
     #[doc = "Bit 11 - Ten Bit Addressing Mode"]
     #[inline(always)]
-    pub fn tenbit(&mut self) -> TENBIT_W {
-        TENBIT_W { w: self }
+    #[must_use]
+    pub fn tenbit(&mut self) -> TENBIT_W<11> {
+        TENBIT_W::new(self)
     }
     #[doc = "Bit 12 - Transfer is to same address as previous address"]
     #[inline(always)]
-    pub fn repsame(&mut self) -> REPSAME_W {
-        REPSAME_W { w: self }
+    #[must_use]
+    pub fn repsame(&mut self) -> REPSAME_W<12> {
+        REPSAME_W::new(self)
     }
     #[doc = "Bit 13 - Send START condition"]
     #[inline(always)]
-    pub fn start(&mut self) -> START_W {
-        START_W { w: self }
+    #[must_use]
+    pub fn start(&mut self) -> START_W<13> {
+        START_W::new(self)
     }
     #[doc = "Bit 14 - Send STOP condition"]
     #[inline(always)]
-    pub fn stop(&mut self) -> STOP_W {
-        STOP_W { w: self }
+    #[must_use]
+    pub fn stop(&mut self) -> STOP_W<14> {
+        STOP_W::new(self)
     }
     #[doc = "Bit 15 - CMDR Valid"]
     #[inline(always)]
-    pub fn valid(&mut self) -> VALID_W {
-        VALID_W { w: self }
+    #[must_use]
+    pub fn valid(&mut self) -> VALID_W<15> {
+        VALID_W::new(self)
     }
     #[doc = "Bits 16:23 - Number of data bytes in transfer"]
     #[inline(always)]
-    pub fn nbytes(&mut self) -> NBYTES_W {
-        NBYTES_W { w: self }
+    #[must_use]
+    pub fn nbytes(&mut self) -> NBYTES_W<16> {
+        NBYTES_W::new(self)
     }
     #[doc = "Bit 24 - Packet Error Checking Enable"]
     #[inline(always)]
-    pub fn pecen(&mut self) -> PECEN_W {
-        PECEN_W { w: self }
+    #[must_use]
+    pub fn pecen(&mut self) -> PECEN_W<24> {
+        PECEN_W::new(self)
     }
     #[doc = "Bit 25 - ACK Last Master RX Byte"]
     #[inline(always)]
-    pub fn acklast(&mut self) -> ACKLAST_W {
-        ACKLAST_W { w: self }
+    #[must_use]
+    pub fn acklast(&mut self) -> ACKLAST_W<25> {
+        ACKLAST_W::new(self)
     }
     #[doc = "Bit 26 - HS-mode"]
     #[inline(always)]
-    pub fn hs(&mut self) -> HS_W {
-        HS_W { w: self }
+    #[must_use]
+    pub fn hs(&mut self) -> HS_W<26> {
+        HS_W::new(self)
     }
     #[doc = "Bits 28:30 - HS-mode Master Code"]
     #[inline(always)]
-    pub fn hsmcode(&mut self) -> HSMCODE_W {
-        HSMCODE_W { w: self }
+    #[must_use]
+    pub fn hsmcode(&mut self) -> HSMCODE_W<28> {
+        HSMCODE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -578,11 +236,10 @@ impl crate::Readable for CMDR_SPEC {
 #[doc = "`write(|w| ..)` method takes [cmdr::W](W) writer structure"]
 impl crate::Writable for CMDR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets CMDR to value 0"]
 impl crate::Resettable for CMDR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

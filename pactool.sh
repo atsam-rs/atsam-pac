@@ -20,11 +20,11 @@ function generate {
     done
 
     if [ "$(which svd2rust)" == "" ]; then
-        cargo install svd2rust --version 0.19.0
+        cargo install svd2rust --version 0.27.2
     fi
 
     if [ "$(which form)" == "" ]; then
-        cargo install form --version 0.7.0
+        cargo install form --version 0.10.0
     fi
 
     TOP="${PWD}"
@@ -80,12 +80,12 @@ version = "0.1.0"
 
 [dependencies]
 bare-metal = "1.0.0"
-cortex-m = "0.7.5"
+cortex-m = "0.7.6"
 vcell = "0.1.3"
 
 [dependencies.cortex-m-rt]
 optional = true
-version = "0.7.1"
+version = "0.7.2"
 
 [features]
 rt = ["cortex-m-rt/device"]

@@ -20,302 +20,93 @@ impl From<crate::W<ICR_SPEC>> for W {
     }
 }
 #[doc = "Field `OSC0RDY` writer - OSC0 Ready"]
-pub struct OSC0RDY_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> OSC0RDY_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type OSC0RDY_W<'a, const O: u8> = crate::BitWriter<'a, u32, ICR_SPEC, bool, O>;
 #[doc = "Field `DFLL0LOCKC` writer - DFLL0 Lock Coarse"]
-pub struct DFLL0LOCKC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DFLL0LOCKC_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
-}
+pub type DFLL0LOCKC_W<'a, const O: u8> = crate::BitWriter<'a, u32, ICR_SPEC, bool, O>;
 #[doc = "Field `DFLL0LOCKF` writer - DFLL0 Lock Fine"]
-pub struct DFLL0LOCKF_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DFLL0LOCKF_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
-    }
-}
+pub type DFLL0LOCKF_W<'a, const O: u8> = crate::BitWriter<'a, u32, ICR_SPEC, bool, O>;
 #[doc = "Field `DFLL0RDY` writer - DFLL0 Ready"]
-pub struct DFLL0RDY_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DFLL0RDY_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
-        self.w
-    }
-}
+pub type DFLL0RDY_W<'a, const O: u8> = crate::BitWriter<'a, u32, ICR_SPEC, bool, O>;
 #[doc = "Field `DFLL0RCS` writer - DFLL0 Reference Clock Stopped"]
-pub struct DFLL0RCS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DFLL0RCS_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
-        self.w
-    }
-}
+pub type DFLL0RCS_W<'a, const O: u8> = crate::BitWriter<'a, u32, ICR_SPEC, bool, O>;
 #[doc = "Field `DFLL0OOB` writer - DFLL0 Out Of Bounds"]
-pub struct DFLL0OOB_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DFLL0OOB_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
-        self.w
-    }
-}
+pub type DFLL0OOB_W<'a, const O: u8> = crate::BitWriter<'a, u32, ICR_SPEC, bool, O>;
 #[doc = "Field `PLL0LOCK` writer - PLL0 Lock"]
-pub struct PLL0LOCK_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PLL0LOCK_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | ((value as u32 & 0x01) << 6);
-        self.w
-    }
-}
+pub type PLL0LOCK_W<'a, const O: u8> = crate::BitWriter<'a, u32, ICR_SPEC, bool, O>;
 #[doc = "Field `PLL0LOCKLOST` writer - PLL0 Lock Lost"]
-pub struct PLL0LOCKLOST_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PLL0LOCKLOST_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | ((value as u32 & 0x01) << 7);
-        self.w
-    }
-}
+pub type PLL0LOCKLOST_W<'a, const O: u8> = crate::BitWriter<'a, u32, ICR_SPEC, bool, O>;
 #[doc = "Field `RCFASTLOCK` writer - RCFAST Lock"]
-pub struct RCFASTLOCK_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RCFASTLOCK_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 13)) | ((value as u32 & 0x01) << 13);
-        self.w
-    }
-}
+pub type RCFASTLOCK_W<'a, const O: u8> = crate::BitWriter<'a, u32, ICR_SPEC, bool, O>;
 #[doc = "Field `RCFASTLOCKLOST` writer - RCFAST Lock Lost"]
-pub struct RCFASTLOCKLOST_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RCFASTLOCKLOST_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 14)) | ((value as u32 & 0x01) << 14);
-        self.w
-    }
-}
+pub type RCFASTLOCKLOST_W<'a, const O: u8> = crate::BitWriter<'a, u32, ICR_SPEC, bool, O>;
 #[doc = "Field `AE` writer - Access Error"]
-pub struct AE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> AE_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 31)) | ((value as u32 & 0x01) << 31);
-        self.w
-    }
-}
+pub type AE_W<'a, const O: u8> = crate::BitWriter<'a, u32, ICR_SPEC, bool, O>;
 impl W {
     #[doc = "Bit 0 - OSC0 Ready"]
     #[inline(always)]
-    pub fn osc0rdy(&mut self) -> OSC0RDY_W {
-        OSC0RDY_W { w: self }
+    #[must_use]
+    pub fn osc0rdy(&mut self) -> OSC0RDY_W<0> {
+        OSC0RDY_W::new(self)
     }
     #[doc = "Bit 1 - DFLL0 Lock Coarse"]
     #[inline(always)]
-    pub fn dfll0lockc(&mut self) -> DFLL0LOCKC_W {
-        DFLL0LOCKC_W { w: self }
+    #[must_use]
+    pub fn dfll0lockc(&mut self) -> DFLL0LOCKC_W<1> {
+        DFLL0LOCKC_W::new(self)
     }
     #[doc = "Bit 2 - DFLL0 Lock Fine"]
     #[inline(always)]
-    pub fn dfll0lockf(&mut self) -> DFLL0LOCKF_W {
-        DFLL0LOCKF_W { w: self }
+    #[must_use]
+    pub fn dfll0lockf(&mut self) -> DFLL0LOCKF_W<2> {
+        DFLL0LOCKF_W::new(self)
     }
     #[doc = "Bit 3 - DFLL0 Ready"]
     #[inline(always)]
-    pub fn dfll0rdy(&mut self) -> DFLL0RDY_W {
-        DFLL0RDY_W { w: self }
+    #[must_use]
+    pub fn dfll0rdy(&mut self) -> DFLL0RDY_W<3> {
+        DFLL0RDY_W::new(self)
     }
     #[doc = "Bit 4 - DFLL0 Reference Clock Stopped"]
     #[inline(always)]
-    pub fn dfll0rcs(&mut self) -> DFLL0RCS_W {
-        DFLL0RCS_W { w: self }
+    #[must_use]
+    pub fn dfll0rcs(&mut self) -> DFLL0RCS_W<4> {
+        DFLL0RCS_W::new(self)
     }
     #[doc = "Bit 5 - DFLL0 Out Of Bounds"]
     #[inline(always)]
-    pub fn dfll0oob(&mut self) -> DFLL0OOB_W {
-        DFLL0OOB_W { w: self }
+    #[must_use]
+    pub fn dfll0oob(&mut self) -> DFLL0OOB_W<5> {
+        DFLL0OOB_W::new(self)
     }
     #[doc = "Bit 6 - PLL0 Lock"]
     #[inline(always)]
-    pub fn pll0lock(&mut self) -> PLL0LOCK_W {
-        PLL0LOCK_W { w: self }
+    #[must_use]
+    pub fn pll0lock(&mut self) -> PLL0LOCK_W<6> {
+        PLL0LOCK_W::new(self)
     }
     #[doc = "Bit 7 - PLL0 Lock Lost"]
     #[inline(always)]
-    pub fn pll0locklost(&mut self) -> PLL0LOCKLOST_W {
-        PLL0LOCKLOST_W { w: self }
+    #[must_use]
+    pub fn pll0locklost(&mut self) -> PLL0LOCKLOST_W<7> {
+        PLL0LOCKLOST_W::new(self)
     }
     #[doc = "Bit 13 - RCFAST Lock"]
     #[inline(always)]
-    pub fn rcfastlock(&mut self) -> RCFASTLOCK_W {
-        RCFASTLOCK_W { w: self }
+    #[must_use]
+    pub fn rcfastlock(&mut self) -> RCFASTLOCK_W<13> {
+        RCFASTLOCK_W::new(self)
     }
     #[doc = "Bit 14 - RCFAST Lock Lost"]
     #[inline(always)]
-    pub fn rcfastlocklost(&mut self) -> RCFASTLOCKLOST_W {
-        RCFASTLOCKLOST_W { w: self }
+    #[must_use]
+    pub fn rcfastlocklost(&mut self) -> RCFASTLOCKLOST_W<14> {
+        RCFASTLOCKLOST_W::new(self)
     }
     #[doc = "Bit 31 - Access Error"]
     #[inline(always)]
-    pub fn ae(&mut self) -> AE_W {
-        AE_W { w: self }
+    #[must_use]
+    pub fn ae(&mut self) -> AE_W<31> {
+        AE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -332,11 +123,10 @@ impl crate::RegisterSpec for ICR_SPEC {
 #[doc = "`write(|w| ..)` method takes [icr::W](W) writer structure"]
 impl crate::Writable for ICR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets ICR to value 0"]
 impl crate::Resettable for ICR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

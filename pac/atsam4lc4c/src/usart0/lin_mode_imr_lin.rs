@@ -13,1057 +13,793 @@ impl From<crate::R<LIN_MODE_IMR_LIN_SPEC>> for R {
         R(reader)
     }
 }
+#[doc = "Field `RXRDY` reader - RXRDY Interrupt Mask"]
+pub type RXRDY_R = crate::BitReader<RXRDYSELECT_A>;
 #[doc = "RXRDY Interrupt Mask\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum RXRDY_A {
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum RXRDYSELECT_A {
     #[doc = "0: The interrupt is disabled"]
     _0 = 0,
     #[doc = "1: The interrupt is enabled"]
     _1 = 1,
 }
-impl From<RXRDY_A> for bool {
+impl From<RXRDYSELECT_A> for bool {
     #[inline(always)]
-    fn from(variant: RXRDY_A) -> Self {
+    fn from(variant: RXRDYSELECT_A) -> Self {
         variant as u8 != 0
     }
 }
-#[doc = "Field `RXRDY` reader - RXRDY Interrupt Mask"]
-pub struct RXRDY_R(crate::FieldReader<bool, RXRDY_A>);
 impl RXRDY_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        RXRDY_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> RXRDY_A {
+    pub fn variant(&self) -> RXRDYSELECT_A {
         match self.bits {
-            false => RXRDY_A::_0,
-            true => RXRDY_A::_1,
+            false => RXRDYSELECT_A::_0,
+            true => RXRDYSELECT_A::_1,
         }
     }
     #[doc = "Checks if the value of the field is `_0`"]
     #[inline(always)]
     pub fn is_0(&self) -> bool {
-        **self == RXRDY_A::_0
+        *self == RXRDYSELECT_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
     #[inline(always)]
     pub fn is_1(&self) -> bool {
-        **self == RXRDY_A::_1
-    }
-}
-impl core::ops::Deref for RXRDY_R {
-    type Target = crate::FieldReader<bool, RXRDY_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-#[doc = "TXRDY Interrupt Mask\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum TXRDY_A {
-    #[doc = "0: The interrupt is disabled"]
-    _0 = 0,
-    #[doc = "1: The interrupt is enabled"]
-    _1 = 1,
-}
-impl From<TXRDY_A> for bool {
-    #[inline(always)]
-    fn from(variant: TXRDY_A) -> Self {
-        variant as u8 != 0
+        *self == RXRDYSELECT_A::_1
     }
 }
 #[doc = "Field `TXRDY` reader - TXRDY Interrupt Mask"]
-pub struct TXRDY_R(crate::FieldReader<bool, TXRDY_A>);
-impl TXRDY_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        TXRDY_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> TXRDY_A {
-        match self.bits {
-            false => TXRDY_A::_0,
-            true => TXRDY_A::_1,
-        }
-    }
-    #[doc = "Checks if the value of the field is `_0`"]
-    #[inline(always)]
-    pub fn is_0(&self) -> bool {
-        **self == TXRDY_A::_0
-    }
-    #[doc = "Checks if the value of the field is `_1`"]
-    #[inline(always)]
-    pub fn is_1(&self) -> bool {
-        **self == TXRDY_A::_1
-    }
-}
-impl core::ops::Deref for TXRDY_R {
-    type Target = crate::FieldReader<bool, TXRDY_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-#[doc = "Receiver Break Interrupt Mask\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum RXBRK_A {
+pub type TXRDY_R = crate::BitReader<TXRDYSELECT_A>;
+#[doc = "TXRDY Interrupt Mask\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum TXRDYSELECT_A {
     #[doc = "0: The interrupt is disabled"]
     _0 = 0,
     #[doc = "1: The interrupt is enabled"]
     _1 = 1,
 }
-impl From<RXBRK_A> for bool {
+impl From<TXRDYSELECT_A> for bool {
     #[inline(always)]
-    fn from(variant: RXBRK_A) -> Self {
+    fn from(variant: TXRDYSELECT_A) -> Self {
         variant as u8 != 0
+    }
+}
+impl TXRDY_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> TXRDYSELECT_A {
+        match self.bits {
+            false => TXRDYSELECT_A::_0,
+            true => TXRDYSELECT_A::_1,
+        }
+    }
+    #[doc = "Checks if the value of the field is `_0`"]
+    #[inline(always)]
+    pub fn is_0(&self) -> bool {
+        *self == TXRDYSELECT_A::_0
+    }
+    #[doc = "Checks if the value of the field is `_1`"]
+    #[inline(always)]
+    pub fn is_1(&self) -> bool {
+        *self == TXRDYSELECT_A::_1
     }
 }
 #[doc = "Field `RXBRK` reader - Receiver Break Interrupt Mask"]
-pub struct RXBRK_R(crate::FieldReader<bool, RXBRK_A>);
-impl RXBRK_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        RXBRK_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> RXBRK_A {
-        match self.bits {
-            false => RXBRK_A::_0,
-            true => RXBRK_A::_1,
-        }
-    }
-    #[doc = "Checks if the value of the field is `_0`"]
-    #[inline(always)]
-    pub fn is_0(&self) -> bool {
-        **self == RXBRK_A::_0
-    }
-    #[doc = "Checks if the value of the field is `_1`"]
-    #[inline(always)]
-    pub fn is_1(&self) -> bool {
-        **self == RXBRK_A::_1
-    }
-}
-impl core::ops::Deref for RXBRK_R {
-    type Target = crate::FieldReader<bool, RXBRK_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-#[doc = "Overrun Error Interrupt Mask\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum OVRE_A {
+pub type RXBRK_R = crate::BitReader<RXBRKSELECT_A>;
+#[doc = "Receiver Break Interrupt Mask\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum RXBRKSELECT_A {
     #[doc = "0: The interrupt is disabled"]
     _0 = 0,
     #[doc = "1: The interrupt is enabled"]
     _1 = 1,
 }
-impl From<OVRE_A> for bool {
+impl From<RXBRKSELECT_A> for bool {
     #[inline(always)]
-    fn from(variant: OVRE_A) -> Self {
+    fn from(variant: RXBRKSELECT_A) -> Self {
         variant as u8 != 0
+    }
+}
+impl RXBRK_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> RXBRKSELECT_A {
+        match self.bits {
+            false => RXBRKSELECT_A::_0,
+            true => RXBRKSELECT_A::_1,
+        }
+    }
+    #[doc = "Checks if the value of the field is `_0`"]
+    #[inline(always)]
+    pub fn is_0(&self) -> bool {
+        *self == RXBRKSELECT_A::_0
+    }
+    #[doc = "Checks if the value of the field is `_1`"]
+    #[inline(always)]
+    pub fn is_1(&self) -> bool {
+        *self == RXBRKSELECT_A::_1
     }
 }
 #[doc = "Field `OVRE` reader - Overrun Error Interrupt Mask"]
-pub struct OVRE_R(crate::FieldReader<bool, OVRE_A>);
-impl OVRE_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        OVRE_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> OVRE_A {
-        match self.bits {
-            false => OVRE_A::_0,
-            true => OVRE_A::_1,
-        }
-    }
-    #[doc = "Checks if the value of the field is `_0`"]
-    #[inline(always)]
-    pub fn is_0(&self) -> bool {
-        **self == OVRE_A::_0
-    }
-    #[doc = "Checks if the value of the field is `_1`"]
-    #[inline(always)]
-    pub fn is_1(&self) -> bool {
-        **self == OVRE_A::_1
-    }
-}
-impl core::ops::Deref for OVRE_R {
-    type Target = crate::FieldReader<bool, OVRE_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-#[doc = "Framing Error Interrupt Mask\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum FRAME_A {
+pub type OVRE_R = crate::BitReader<OVRESELECT_A>;
+#[doc = "Overrun Error Interrupt Mask\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum OVRESELECT_A {
     #[doc = "0: The interrupt is disabled"]
     _0 = 0,
     #[doc = "1: The interrupt is enabled"]
     _1 = 1,
 }
-impl From<FRAME_A> for bool {
+impl From<OVRESELECT_A> for bool {
     #[inline(always)]
-    fn from(variant: FRAME_A) -> Self {
+    fn from(variant: OVRESELECT_A) -> Self {
         variant as u8 != 0
+    }
+}
+impl OVRE_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> OVRESELECT_A {
+        match self.bits {
+            false => OVRESELECT_A::_0,
+            true => OVRESELECT_A::_1,
+        }
+    }
+    #[doc = "Checks if the value of the field is `_0`"]
+    #[inline(always)]
+    pub fn is_0(&self) -> bool {
+        *self == OVRESELECT_A::_0
+    }
+    #[doc = "Checks if the value of the field is `_1`"]
+    #[inline(always)]
+    pub fn is_1(&self) -> bool {
+        *self == OVRESELECT_A::_1
     }
 }
 #[doc = "Field `FRAME` reader - Framing Error Interrupt Mask"]
-pub struct FRAME_R(crate::FieldReader<bool, FRAME_A>);
-impl FRAME_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        FRAME_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> FRAME_A {
-        match self.bits {
-            false => FRAME_A::_0,
-            true => FRAME_A::_1,
-        }
-    }
-    #[doc = "Checks if the value of the field is `_0`"]
-    #[inline(always)]
-    pub fn is_0(&self) -> bool {
-        **self == FRAME_A::_0
-    }
-    #[doc = "Checks if the value of the field is `_1`"]
-    #[inline(always)]
-    pub fn is_1(&self) -> bool {
-        **self == FRAME_A::_1
-    }
-}
-impl core::ops::Deref for FRAME_R {
-    type Target = crate::FieldReader<bool, FRAME_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-#[doc = "Parity Error Interrupt Mask\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PARE_A {
+pub type FRAME_R = crate::BitReader<FRAMESELECT_A>;
+#[doc = "Framing Error Interrupt Mask\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum FRAMESELECT_A {
     #[doc = "0: The interrupt is disabled"]
     _0 = 0,
     #[doc = "1: The interrupt is enabled"]
     _1 = 1,
 }
-impl From<PARE_A> for bool {
+impl From<FRAMESELECT_A> for bool {
     #[inline(always)]
-    fn from(variant: PARE_A) -> Self {
+    fn from(variant: FRAMESELECT_A) -> Self {
         variant as u8 != 0
+    }
+}
+impl FRAME_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> FRAMESELECT_A {
+        match self.bits {
+            false => FRAMESELECT_A::_0,
+            true => FRAMESELECT_A::_1,
+        }
+    }
+    #[doc = "Checks if the value of the field is `_0`"]
+    #[inline(always)]
+    pub fn is_0(&self) -> bool {
+        *self == FRAMESELECT_A::_0
+    }
+    #[doc = "Checks if the value of the field is `_1`"]
+    #[inline(always)]
+    pub fn is_1(&self) -> bool {
+        *self == FRAMESELECT_A::_1
     }
 }
 #[doc = "Field `PARE` reader - Parity Error Interrupt Mask"]
-pub struct PARE_R(crate::FieldReader<bool, PARE_A>);
-impl PARE_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        PARE_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> PARE_A {
-        match self.bits {
-            false => PARE_A::_0,
-            true => PARE_A::_1,
-        }
-    }
-    #[doc = "Checks if the value of the field is `_0`"]
-    #[inline(always)]
-    pub fn is_0(&self) -> bool {
-        **self == PARE_A::_0
-    }
-    #[doc = "Checks if the value of the field is `_1`"]
-    #[inline(always)]
-    pub fn is_1(&self) -> bool {
-        **self == PARE_A::_1
-    }
-}
-impl core::ops::Deref for PARE_R {
-    type Target = crate::FieldReader<bool, PARE_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-#[doc = "Time-out Interrupt Mask\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum TIMEOUT_A {
+pub type PARE_R = crate::BitReader<PARESELECT_A>;
+#[doc = "Parity Error Interrupt Mask\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum PARESELECT_A {
     #[doc = "0: The interrupt is disabled"]
     _0 = 0,
     #[doc = "1: The interrupt is enabled"]
     _1 = 1,
 }
-impl From<TIMEOUT_A> for bool {
+impl From<PARESELECT_A> for bool {
     #[inline(always)]
-    fn from(variant: TIMEOUT_A) -> Self {
+    fn from(variant: PARESELECT_A) -> Self {
         variant as u8 != 0
+    }
+}
+impl PARE_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> PARESELECT_A {
+        match self.bits {
+            false => PARESELECT_A::_0,
+            true => PARESELECT_A::_1,
+        }
+    }
+    #[doc = "Checks if the value of the field is `_0`"]
+    #[inline(always)]
+    pub fn is_0(&self) -> bool {
+        *self == PARESELECT_A::_0
+    }
+    #[doc = "Checks if the value of the field is `_1`"]
+    #[inline(always)]
+    pub fn is_1(&self) -> bool {
+        *self == PARESELECT_A::_1
     }
 }
 #[doc = "Field `TIMEOUT` reader - Time-out Interrupt Mask"]
-pub struct TIMEOUT_R(crate::FieldReader<bool, TIMEOUT_A>);
-impl TIMEOUT_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        TIMEOUT_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> TIMEOUT_A {
-        match self.bits {
-            false => TIMEOUT_A::_0,
-            true => TIMEOUT_A::_1,
-        }
-    }
-    #[doc = "Checks if the value of the field is `_0`"]
-    #[inline(always)]
-    pub fn is_0(&self) -> bool {
-        **self == TIMEOUT_A::_0
-    }
-    #[doc = "Checks if the value of the field is `_1`"]
-    #[inline(always)]
-    pub fn is_1(&self) -> bool {
-        **self == TIMEOUT_A::_1
-    }
-}
-impl core::ops::Deref for TIMEOUT_R {
-    type Target = crate::FieldReader<bool, TIMEOUT_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-#[doc = "TXEMPTY Interrupt Mask\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum TXEMPTY_A {
+pub type TIMEOUT_R = crate::BitReader<TIMEOUTSELECT_A>;
+#[doc = "Time-out Interrupt Mask\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum TIMEOUTSELECT_A {
     #[doc = "0: The interrupt is disabled"]
     _0 = 0,
     #[doc = "1: The interrupt is enabled"]
     _1 = 1,
 }
-impl From<TXEMPTY_A> for bool {
+impl From<TIMEOUTSELECT_A> for bool {
     #[inline(always)]
-    fn from(variant: TXEMPTY_A) -> Self {
+    fn from(variant: TIMEOUTSELECT_A) -> Self {
         variant as u8 != 0
+    }
+}
+impl TIMEOUT_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> TIMEOUTSELECT_A {
+        match self.bits {
+            false => TIMEOUTSELECT_A::_0,
+            true => TIMEOUTSELECT_A::_1,
+        }
+    }
+    #[doc = "Checks if the value of the field is `_0`"]
+    #[inline(always)]
+    pub fn is_0(&self) -> bool {
+        *self == TIMEOUTSELECT_A::_0
+    }
+    #[doc = "Checks if the value of the field is `_1`"]
+    #[inline(always)]
+    pub fn is_1(&self) -> bool {
+        *self == TIMEOUTSELECT_A::_1
     }
 }
 #[doc = "Field `TXEMPTY` reader - TXEMPTY Interrupt Mask"]
-pub struct TXEMPTY_R(crate::FieldReader<bool, TXEMPTY_A>);
-impl TXEMPTY_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        TXEMPTY_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> TXEMPTY_A {
-        match self.bits {
-            false => TXEMPTY_A::_0,
-            true => TXEMPTY_A::_1,
-        }
-    }
-    #[doc = "Checks if the value of the field is `_0`"]
-    #[inline(always)]
-    pub fn is_0(&self) -> bool {
-        **self == TXEMPTY_A::_0
-    }
-    #[doc = "Checks if the value of the field is `_1`"]
-    #[inline(always)]
-    pub fn is_1(&self) -> bool {
-        **self == TXEMPTY_A::_1
-    }
-}
-impl core::ops::Deref for TXEMPTY_R {
-    type Target = crate::FieldReader<bool, TXEMPTY_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-#[doc = "Iteration Interrupt Mask\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ITER_A {
+pub type TXEMPTY_R = crate::BitReader<TXEMPTYSELECT_A>;
+#[doc = "TXEMPTY Interrupt Mask\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum TXEMPTYSELECT_A {
     #[doc = "0: The interrupt is disabled"]
     _0 = 0,
     #[doc = "1: The interrupt is enabled"]
     _1 = 1,
 }
-impl From<ITER_A> for bool {
+impl From<TXEMPTYSELECT_A> for bool {
     #[inline(always)]
-    fn from(variant: ITER_A) -> Self {
+    fn from(variant: TXEMPTYSELECT_A) -> Self {
         variant as u8 != 0
+    }
+}
+impl TXEMPTY_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> TXEMPTYSELECT_A {
+        match self.bits {
+            false => TXEMPTYSELECT_A::_0,
+            true => TXEMPTYSELECT_A::_1,
+        }
+    }
+    #[doc = "Checks if the value of the field is `_0`"]
+    #[inline(always)]
+    pub fn is_0(&self) -> bool {
+        *self == TXEMPTYSELECT_A::_0
+    }
+    #[doc = "Checks if the value of the field is `_1`"]
+    #[inline(always)]
+    pub fn is_1(&self) -> bool {
+        *self == TXEMPTYSELECT_A::_1
     }
 }
 #[doc = "Field `ITER` reader - Iteration Interrupt Mask"]
-pub struct ITER_R(crate::FieldReader<bool, ITER_A>);
-impl ITER_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        ITER_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> ITER_A {
-        match self.bits {
-            false => ITER_A::_0,
-            true => ITER_A::_1,
-        }
-    }
-    #[doc = "Checks if the value of the field is `_0`"]
-    #[inline(always)]
-    pub fn is_0(&self) -> bool {
-        **self == ITER_A::_0
-    }
-    #[doc = "Checks if the value of the field is `_1`"]
-    #[inline(always)]
-    pub fn is_1(&self) -> bool {
-        **self == ITER_A::_1
-    }
-}
-impl core::ops::Deref for ITER_R {
-    type Target = crate::FieldReader<bool, ITER_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-#[doc = "Buffer Empty Interrupt Mask\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum TXBUFE_A {
+pub type ITER_R = crate::BitReader<ITERSELECT_A>;
+#[doc = "Iteration Interrupt Mask\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum ITERSELECT_A {
     #[doc = "0: The interrupt is disabled"]
     _0 = 0,
     #[doc = "1: The interrupt is enabled"]
     _1 = 1,
 }
-impl From<TXBUFE_A> for bool {
+impl From<ITERSELECT_A> for bool {
     #[inline(always)]
-    fn from(variant: TXBUFE_A) -> Self {
+    fn from(variant: ITERSELECT_A) -> Self {
         variant as u8 != 0
+    }
+}
+impl ITER_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> ITERSELECT_A {
+        match self.bits {
+            false => ITERSELECT_A::_0,
+            true => ITERSELECT_A::_1,
+        }
+    }
+    #[doc = "Checks if the value of the field is `_0`"]
+    #[inline(always)]
+    pub fn is_0(&self) -> bool {
+        *self == ITERSELECT_A::_0
+    }
+    #[doc = "Checks if the value of the field is `_1`"]
+    #[inline(always)]
+    pub fn is_1(&self) -> bool {
+        *self == ITERSELECT_A::_1
     }
 }
 #[doc = "Field `TXBUFE` reader - Buffer Empty Interrupt Mask"]
-pub struct TXBUFE_R(crate::FieldReader<bool, TXBUFE_A>);
-impl TXBUFE_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        TXBUFE_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> TXBUFE_A {
-        match self.bits {
-            false => TXBUFE_A::_0,
-            true => TXBUFE_A::_1,
-        }
-    }
-    #[doc = "Checks if the value of the field is `_0`"]
-    #[inline(always)]
-    pub fn is_0(&self) -> bool {
-        **self == TXBUFE_A::_0
-    }
-    #[doc = "Checks if the value of the field is `_1`"]
-    #[inline(always)]
-    pub fn is_1(&self) -> bool {
-        **self == TXBUFE_A::_1
-    }
-}
-impl core::ops::Deref for TXBUFE_R {
-    type Target = crate::FieldReader<bool, TXBUFE_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-#[doc = "Buffer Full Interrupt Mask\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum RXBUFF_A {
+pub type TXBUFE_R = crate::BitReader<TXBUFESELECT_A>;
+#[doc = "Buffer Empty Interrupt Mask\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum TXBUFESELECT_A {
     #[doc = "0: The interrupt is disabled"]
     _0 = 0,
     #[doc = "1: The interrupt is enabled"]
     _1 = 1,
 }
-impl From<RXBUFF_A> for bool {
+impl From<TXBUFESELECT_A> for bool {
     #[inline(always)]
-    fn from(variant: RXBUFF_A) -> Self {
+    fn from(variant: TXBUFESELECT_A) -> Self {
         variant as u8 != 0
+    }
+}
+impl TXBUFE_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> TXBUFESELECT_A {
+        match self.bits {
+            false => TXBUFESELECT_A::_0,
+            true => TXBUFESELECT_A::_1,
+        }
+    }
+    #[doc = "Checks if the value of the field is `_0`"]
+    #[inline(always)]
+    pub fn is_0(&self) -> bool {
+        *self == TXBUFESELECT_A::_0
+    }
+    #[doc = "Checks if the value of the field is `_1`"]
+    #[inline(always)]
+    pub fn is_1(&self) -> bool {
+        *self == TXBUFESELECT_A::_1
     }
 }
 #[doc = "Field `RXBUFF` reader - Buffer Full Interrupt Mask"]
-pub struct RXBUFF_R(crate::FieldReader<bool, RXBUFF_A>);
-impl RXBUFF_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        RXBUFF_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> RXBUFF_A {
-        match self.bits {
-            false => RXBUFF_A::_0,
-            true => RXBUFF_A::_1,
-        }
-    }
-    #[doc = "Checks if the value of the field is `_0`"]
-    #[inline(always)]
-    pub fn is_0(&self) -> bool {
-        **self == RXBUFF_A::_0
-    }
-    #[doc = "Checks if the value of the field is `_1`"]
-    #[inline(always)]
-    pub fn is_1(&self) -> bool {
-        **self == RXBUFF_A::_1
-    }
-}
-impl core::ops::Deref for RXBUFF_R {
-    type Target = crate::FieldReader<bool, RXBUFF_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-#[doc = "Non Acknowledge or LIN Break Sent or LIN Break Received Interrupt Mask\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum NACK_A {
+pub type RXBUFF_R = crate::BitReader<RXBUFFSELECT_A>;
+#[doc = "Buffer Full Interrupt Mask\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum RXBUFFSELECT_A {
     #[doc = "0: The interrupt is disabled"]
     _0 = 0,
     #[doc = "1: The interrupt is enabled"]
     _1 = 1,
 }
-impl From<NACK_A> for bool {
+impl From<RXBUFFSELECT_A> for bool {
     #[inline(always)]
-    fn from(variant: NACK_A) -> Self {
+    fn from(variant: RXBUFFSELECT_A) -> Self {
         variant as u8 != 0
+    }
+}
+impl RXBUFF_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> RXBUFFSELECT_A {
+        match self.bits {
+            false => RXBUFFSELECT_A::_0,
+            true => RXBUFFSELECT_A::_1,
+        }
+    }
+    #[doc = "Checks if the value of the field is `_0`"]
+    #[inline(always)]
+    pub fn is_0(&self) -> bool {
+        *self == RXBUFFSELECT_A::_0
+    }
+    #[doc = "Checks if the value of the field is `_1`"]
+    #[inline(always)]
+    pub fn is_1(&self) -> bool {
+        *self == RXBUFFSELECT_A::_1
     }
 }
 #[doc = "Field `NACK` reader - Non Acknowledge or LIN Break Sent or LIN Break Received Interrupt Mask"]
-pub struct NACK_R(crate::FieldReader<bool, NACK_A>);
-impl NACK_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        NACK_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+pub type NACK_R = crate::BitReader<NACKSELECT_A>;
+#[doc = "Non Acknowledge or LIN Break Sent or LIN Break Received Interrupt Mask\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum NACKSELECT_A {
+    #[doc = "0: The interrupt is disabled"]
+    _0 = 0,
+    #[doc = "1: The interrupt is enabled"]
+    _1 = 1,
+}
+impl From<NACKSELECT_A> for bool {
     #[inline(always)]
-    pub fn variant(&self) -> NACK_A {
+    fn from(variant: NACKSELECT_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl NACK_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> NACKSELECT_A {
         match self.bits {
-            false => NACK_A::_0,
-            true => NACK_A::_1,
+            false => NACKSELECT_A::_0,
+            true => NACKSELECT_A::_1,
         }
     }
     #[doc = "Checks if the value of the field is `_0`"]
     #[inline(always)]
     pub fn is_0(&self) -> bool {
-        **self == NACK_A::_0
+        *self == NACKSELECT_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
     #[inline(always)]
     pub fn is_1(&self) -> bool {
-        **self == NACK_A::_1
-    }
-}
-impl core::ops::Deref for NACK_R {
-    type Target = crate::FieldReader<bool, NACK_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == NACKSELECT_A::_1
     }
 }
 #[doc = "Field `LINID` reader - LIN Identifier Sent or LIN Received Interrupt Mask"]
-pub struct LINID_R(crate::FieldReader<bool, bool>);
-impl LINID_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        LINID_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for LINID_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type LINID_R = crate::BitReader<bool>;
 #[doc = "Field `LINTC` reader - LIN Transfer Conpleted Interrupt Mask"]
-pub struct LINTC_R(crate::FieldReader<bool, bool>);
-impl LINTC_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        LINTC_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for LINTC_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type LINTC_R = crate::BitReader<bool>;
+#[doc = "Field `RIIC` reader - Ring Indicator Input Change Mask"]
+pub type RIIC_R = crate::BitReader<RIICSELECT_A>;
 #[doc = "Ring Indicator Input Change Mask\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum RIIC_A {
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum RIICSELECT_A {
     #[doc = "0: The interrupt is disabled"]
     _0 = 0,
     #[doc = "1: The interrupt is enabled"]
     _1 = 1,
 }
-impl From<RIIC_A> for bool {
+impl From<RIICSELECT_A> for bool {
     #[inline(always)]
-    fn from(variant: RIIC_A) -> Self {
+    fn from(variant: RIICSELECT_A) -> Self {
         variant as u8 != 0
     }
 }
-#[doc = "Field `RIIC` reader - Ring Indicator Input Change Mask"]
-pub struct RIIC_R(crate::FieldReader<bool, RIIC_A>);
 impl RIIC_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        RIIC_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> RIIC_A {
+    pub fn variant(&self) -> RIICSELECT_A {
         match self.bits {
-            false => RIIC_A::_0,
-            true => RIIC_A::_1,
+            false => RIICSELECT_A::_0,
+            true => RIICSELECT_A::_1,
         }
     }
     #[doc = "Checks if the value of the field is `_0`"]
     #[inline(always)]
     pub fn is_0(&self) -> bool {
-        **self == RIIC_A::_0
+        *self == RIICSELECT_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
     #[inline(always)]
     pub fn is_1(&self) -> bool {
-        **self == RIIC_A::_1
-    }
-}
-impl core::ops::Deref for RIIC_R {
-    type Target = crate::FieldReader<bool, RIIC_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-#[doc = "Data Set Ready Input Change Mask\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum DSRIC_A {
-    #[doc = "0: The interrupt is disabled"]
-    _0 = 0,
-    #[doc = "1: The interrupt is enabled"]
-    _1 = 1,
-}
-impl From<DSRIC_A> for bool {
-    #[inline(always)]
-    fn from(variant: DSRIC_A) -> Self {
-        variant as u8 != 0
+        *self == RIICSELECT_A::_1
     }
 }
 #[doc = "Field `DSRIC` reader - Data Set Ready Input Change Mask"]
-pub struct DSRIC_R(crate::FieldReader<bool, DSRIC_A>);
-impl DSRIC_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        DSRIC_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> DSRIC_A {
-        match self.bits {
-            false => DSRIC_A::_0,
-            true => DSRIC_A::_1,
-        }
-    }
-    #[doc = "Checks if the value of the field is `_0`"]
-    #[inline(always)]
-    pub fn is_0(&self) -> bool {
-        **self == DSRIC_A::_0
-    }
-    #[doc = "Checks if the value of the field is `_1`"]
-    #[inline(always)]
-    pub fn is_1(&self) -> bool {
-        **self == DSRIC_A::_1
-    }
-}
-impl core::ops::Deref for DSRIC_R {
-    type Target = crate::FieldReader<bool, DSRIC_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-#[doc = "Data Carrier Detect Input Change Interrupt Mask\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum DCDIC_A {
+pub type DSRIC_R = crate::BitReader<DSRICSELECT_A>;
+#[doc = "Data Set Ready Input Change Mask\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum DSRICSELECT_A {
     #[doc = "0: The interrupt is disabled"]
     _0 = 0,
     #[doc = "1: The interrupt is enabled"]
     _1 = 1,
 }
-impl From<DCDIC_A> for bool {
+impl From<DSRICSELECT_A> for bool {
     #[inline(always)]
-    fn from(variant: DCDIC_A) -> Self {
+    fn from(variant: DSRICSELECT_A) -> Self {
         variant as u8 != 0
+    }
+}
+impl DSRIC_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> DSRICSELECT_A {
+        match self.bits {
+            false => DSRICSELECT_A::_0,
+            true => DSRICSELECT_A::_1,
+        }
+    }
+    #[doc = "Checks if the value of the field is `_0`"]
+    #[inline(always)]
+    pub fn is_0(&self) -> bool {
+        *self == DSRICSELECT_A::_0
+    }
+    #[doc = "Checks if the value of the field is `_1`"]
+    #[inline(always)]
+    pub fn is_1(&self) -> bool {
+        *self == DSRICSELECT_A::_1
     }
 }
 #[doc = "Field `DCDIC` reader - Data Carrier Detect Input Change Interrupt Mask"]
-pub struct DCDIC_R(crate::FieldReader<bool, DCDIC_A>);
-impl DCDIC_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        DCDIC_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> DCDIC_A {
-        match self.bits {
-            false => DCDIC_A::_0,
-            true => DCDIC_A::_1,
-        }
-    }
-    #[doc = "Checks if the value of the field is `_0`"]
-    #[inline(always)]
-    pub fn is_0(&self) -> bool {
-        **self == DCDIC_A::_0
-    }
-    #[doc = "Checks if the value of the field is `_1`"]
-    #[inline(always)]
-    pub fn is_1(&self) -> bool {
-        **self == DCDIC_A::_1
-    }
-}
-impl core::ops::Deref for DCDIC_R {
-    type Target = crate::FieldReader<bool, DCDIC_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-#[doc = "Clear to Send Input Change Interrupt Mask\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CTSIC_A {
+pub type DCDIC_R = crate::BitReader<DCDICSELECT_A>;
+#[doc = "Data Carrier Detect Input Change Interrupt Mask\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum DCDICSELECT_A {
     #[doc = "0: The interrupt is disabled"]
     _0 = 0,
     #[doc = "1: The interrupt is enabled"]
     _1 = 1,
 }
-impl From<CTSIC_A> for bool {
+impl From<DCDICSELECT_A> for bool {
     #[inline(always)]
-    fn from(variant: CTSIC_A) -> Self {
+    fn from(variant: DCDICSELECT_A) -> Self {
         variant as u8 != 0
+    }
+}
+impl DCDIC_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> DCDICSELECT_A {
+        match self.bits {
+            false => DCDICSELECT_A::_0,
+            true => DCDICSELECT_A::_1,
+        }
+    }
+    #[doc = "Checks if the value of the field is `_0`"]
+    #[inline(always)]
+    pub fn is_0(&self) -> bool {
+        *self == DCDICSELECT_A::_0
+    }
+    #[doc = "Checks if the value of the field is `_1`"]
+    #[inline(always)]
+    pub fn is_1(&self) -> bool {
+        *self == DCDICSELECT_A::_1
     }
 }
 #[doc = "Field `CTSIC` reader - Clear to Send Input Change Interrupt Mask"]
-pub struct CTSIC_R(crate::FieldReader<bool, CTSIC_A>);
-impl CTSIC_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        CTSIC_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+pub type CTSIC_R = crate::BitReader<CTSICSELECT_A>;
+#[doc = "Clear to Send Input Change Interrupt Mask\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum CTSICSELECT_A {
+    #[doc = "0: The interrupt is disabled"]
+    _0 = 0,
+    #[doc = "1: The interrupt is enabled"]
+    _1 = 1,
+}
+impl From<CTSICSELECT_A> for bool {
     #[inline(always)]
-    pub fn variant(&self) -> CTSIC_A {
+    fn from(variant: CTSICSELECT_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl CTSIC_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> CTSICSELECT_A {
         match self.bits {
-            false => CTSIC_A::_0,
-            true => CTSIC_A::_1,
+            false => CTSICSELECT_A::_0,
+            true => CTSICSELECT_A::_1,
         }
     }
     #[doc = "Checks if the value of the field is `_0`"]
     #[inline(always)]
     pub fn is_0(&self) -> bool {
-        **self == CTSIC_A::_0
+        *self == CTSICSELECT_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
     #[inline(always)]
     pub fn is_1(&self) -> bool {
-        **self == CTSIC_A::_1
-    }
-}
-impl core::ops::Deref for CTSIC_R {
-    type Target = crate::FieldReader<bool, CTSIC_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == CTSICSELECT_A::_1
     }
 }
 #[doc = "Field `LINBE` reader - LIN Bus Error Interrupt Mask"]
-pub struct LINBE_R(crate::FieldReader<bool, bool>);
-impl LINBE_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        LINBE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for LINBE_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type LINBE_R = crate::BitReader<bool>;
 #[doc = "Field `LINISFE` reader - LIN Inconsistent Synch Field Error Interrupt Mask"]
-pub struct LINISFE_R(crate::FieldReader<bool, bool>);
-impl LINISFE_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        LINISFE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for LINISFE_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type LINISFE_R = crate::BitReader<bool>;
 #[doc = "Field `LINIPE` reader - LIN Identifier Parity Interrupt Mask"]
-pub struct LINIPE_R(crate::FieldReader<bool, bool>);
-impl LINIPE_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        LINIPE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for LINIPE_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type LINIPE_R = crate::BitReader<bool>;
 #[doc = "Field `LINCE` reader - LIN Checksum Error Interrupt Mask"]
-pub struct LINCE_R(crate::FieldReader<bool, bool>);
-impl LINCE_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        LINCE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for LINCE_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type LINCE_R = crate::BitReader<bool>;
 #[doc = "Field `LINSNRE` reader - LIN Slave Not Responding Error Interrupt Mask"]
-pub struct LINSNRE_R(crate::FieldReader<bool, bool>);
-impl LINSNRE_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        LINSNRE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for LINSNRE_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type LINSNRE_R = crate::BitReader<bool>;
+#[doc = "Field `LINSTE` reader - LIN Synch Tolerance Error Interrupt Mask"]
+pub type LINSTE_R = crate::BitReader<LINSTESELECT_A>;
 #[doc = "LIN Synch Tolerance Error Interrupt Mask\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum LINSTE_A {
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum LINSTESELECT_A {
     #[doc = "0: The interrupt is disabled"]
     _0 = 0,
     #[doc = "1: The interrupt is enabled"]
     _1 = 1,
 }
-impl From<LINSTE_A> for bool {
+impl From<LINSTESELECT_A> for bool {
     #[inline(always)]
-    fn from(variant: LINSTE_A) -> Self {
+    fn from(variant: LINSTESELECT_A) -> Self {
         variant as u8 != 0
     }
 }
-#[doc = "Field `LINSTE` reader - LIN Synch Tolerance Error Interrupt Mask"]
-pub struct LINSTE_R(crate::FieldReader<bool, LINSTE_A>);
 impl LINSTE_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        LINSTE_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> LINSTE_A {
+    pub fn variant(&self) -> LINSTESELECT_A {
         match self.bits {
-            false => LINSTE_A::_0,
-            true => LINSTE_A::_1,
+            false => LINSTESELECT_A::_0,
+            true => LINSTESELECT_A::_1,
         }
     }
     #[doc = "Checks if the value of the field is `_0`"]
     #[inline(always)]
     pub fn is_0(&self) -> bool {
-        **self == LINSTE_A::_0
+        *self == LINSTESELECT_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
     #[inline(always)]
     pub fn is_1(&self) -> bool {
-        **self == LINSTE_A::_1
-    }
-}
-impl core::ops::Deref for LINSTE_R {
-    type Target = crate::FieldReader<bool, LINSTE_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-#[doc = "LIN Header Timeout Error Interrupt Mask\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum LINHTE_A {
-    #[doc = "0: The interrupt is disabled"]
-    _0 = 0,
-    #[doc = "1: The interrupt is enabled"]
-    _1 = 1,
-}
-impl From<LINHTE_A> for bool {
-    #[inline(always)]
-    fn from(variant: LINHTE_A) -> Self {
-        variant as u8 != 0
+        *self == LINSTESELECT_A::_1
     }
 }
 #[doc = "Field `LINHTE` reader - LIN Header Timeout Error Interrupt Mask"]
-pub struct LINHTE_R(crate::FieldReader<bool, LINHTE_A>);
-impl LINHTE_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        LINHTE_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+pub type LINHTE_R = crate::BitReader<LINHTESELECT_A>;
+#[doc = "LIN Header Timeout Error Interrupt Mask\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum LINHTESELECT_A {
+    #[doc = "0: The interrupt is disabled"]
+    _0 = 0,
+    #[doc = "1: The interrupt is enabled"]
+    _1 = 1,
+}
+impl From<LINHTESELECT_A> for bool {
     #[inline(always)]
-    pub fn variant(&self) -> LINHTE_A {
+    fn from(variant: LINHTESELECT_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl LINHTE_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> LINHTESELECT_A {
         match self.bits {
-            false => LINHTE_A::_0,
-            true => LINHTE_A::_1,
+            false => LINHTESELECT_A::_0,
+            true => LINHTESELECT_A::_1,
         }
     }
     #[doc = "Checks if the value of the field is `_0`"]
     #[inline(always)]
     pub fn is_0(&self) -> bool {
-        **self == LINHTE_A::_0
+        *self == LINHTESELECT_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
     #[inline(always)]
     pub fn is_1(&self) -> bool {
-        **self == LINHTE_A::_1
-    }
-}
-impl core::ops::Deref for LINHTE_R {
-    type Target = crate::FieldReader<bool, LINHTE_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == LINHTESELECT_A::_1
     }
 }
 impl R {
     #[doc = "Bit 0 - RXRDY Interrupt Mask"]
     #[inline(always)]
     pub fn rxrdy(&self) -> RXRDY_R {
-        RXRDY_R::new((self.bits & 0x01) != 0)
+        RXRDY_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - TXRDY Interrupt Mask"]
     #[inline(always)]
     pub fn txrdy(&self) -> TXRDY_R {
-        TXRDY_R::new(((self.bits >> 1) & 0x01) != 0)
+        TXRDY_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - Receiver Break Interrupt Mask"]
     #[inline(always)]
     pub fn rxbrk(&self) -> RXBRK_R {
-        RXBRK_R::new(((self.bits >> 2) & 0x01) != 0)
+        RXBRK_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 5 - Overrun Error Interrupt Mask"]
     #[inline(always)]
     pub fn ovre(&self) -> OVRE_R {
-        OVRE_R::new(((self.bits >> 5) & 0x01) != 0)
+        OVRE_R::new(((self.bits >> 5) & 1) != 0)
     }
     #[doc = "Bit 6 - Framing Error Interrupt Mask"]
     #[inline(always)]
     pub fn frame(&self) -> FRAME_R {
-        FRAME_R::new(((self.bits >> 6) & 0x01) != 0)
+        FRAME_R::new(((self.bits >> 6) & 1) != 0)
     }
     #[doc = "Bit 7 - Parity Error Interrupt Mask"]
     #[inline(always)]
     pub fn pare(&self) -> PARE_R {
-        PARE_R::new(((self.bits >> 7) & 0x01) != 0)
+        PARE_R::new(((self.bits >> 7) & 1) != 0)
     }
     #[doc = "Bit 8 - Time-out Interrupt Mask"]
     #[inline(always)]
     pub fn timeout(&self) -> TIMEOUT_R {
-        TIMEOUT_R::new(((self.bits >> 8) & 0x01) != 0)
+        TIMEOUT_R::new(((self.bits >> 8) & 1) != 0)
     }
     #[doc = "Bit 9 - TXEMPTY Interrupt Mask"]
     #[inline(always)]
     pub fn txempty(&self) -> TXEMPTY_R {
-        TXEMPTY_R::new(((self.bits >> 9) & 0x01) != 0)
+        TXEMPTY_R::new(((self.bits >> 9) & 1) != 0)
     }
     #[doc = "Bit 10 - Iteration Interrupt Mask"]
     #[inline(always)]
     pub fn iter(&self) -> ITER_R {
-        ITER_R::new(((self.bits >> 10) & 0x01) != 0)
+        ITER_R::new(((self.bits >> 10) & 1) != 0)
     }
     #[doc = "Bit 11 - Buffer Empty Interrupt Mask"]
     #[inline(always)]
     pub fn txbufe(&self) -> TXBUFE_R {
-        TXBUFE_R::new(((self.bits >> 11) & 0x01) != 0)
+        TXBUFE_R::new(((self.bits >> 11) & 1) != 0)
     }
     #[doc = "Bit 12 - Buffer Full Interrupt Mask"]
     #[inline(always)]
     pub fn rxbuff(&self) -> RXBUFF_R {
-        RXBUFF_R::new(((self.bits >> 12) & 0x01) != 0)
+        RXBUFF_R::new(((self.bits >> 12) & 1) != 0)
     }
     #[doc = "Bit 13 - Non Acknowledge or LIN Break Sent or LIN Break Received Interrupt Mask"]
     #[inline(always)]
     pub fn nack(&self) -> NACK_R {
-        NACK_R::new(((self.bits >> 13) & 0x01) != 0)
+        NACK_R::new(((self.bits >> 13) & 1) != 0)
     }
     #[doc = "Bit 14 - LIN Identifier Sent or LIN Received Interrupt Mask"]
     #[inline(always)]
     pub fn linid(&self) -> LINID_R {
-        LINID_R::new(((self.bits >> 14) & 0x01) != 0)
+        LINID_R::new(((self.bits >> 14) & 1) != 0)
     }
     #[doc = "Bit 15 - LIN Transfer Conpleted Interrupt Mask"]
     #[inline(always)]
     pub fn lintc(&self) -> LINTC_R {
-        LINTC_R::new(((self.bits >> 15) & 0x01) != 0)
+        LINTC_R::new(((self.bits >> 15) & 1) != 0)
     }
     #[doc = "Bit 16 - Ring Indicator Input Change Mask"]
     #[inline(always)]
     pub fn riic(&self) -> RIIC_R {
-        RIIC_R::new(((self.bits >> 16) & 0x01) != 0)
+        RIIC_R::new(((self.bits >> 16) & 1) != 0)
     }
     #[doc = "Bit 17 - Data Set Ready Input Change Mask"]
     #[inline(always)]
     pub fn dsric(&self) -> DSRIC_R {
-        DSRIC_R::new(((self.bits >> 17) & 0x01) != 0)
+        DSRIC_R::new(((self.bits >> 17) & 1) != 0)
     }
     #[doc = "Bit 18 - Data Carrier Detect Input Change Interrupt Mask"]
     #[inline(always)]
     pub fn dcdic(&self) -> DCDIC_R {
-        DCDIC_R::new(((self.bits >> 18) & 0x01) != 0)
+        DCDIC_R::new(((self.bits >> 18) & 1) != 0)
     }
     #[doc = "Bit 19 - Clear to Send Input Change Interrupt Mask"]
     #[inline(always)]
     pub fn ctsic(&self) -> CTSIC_R {
-        CTSIC_R::new(((self.bits >> 19) & 0x01) != 0)
+        CTSIC_R::new(((self.bits >> 19) & 1) != 0)
     }
     #[doc = "Bit 25 - LIN Bus Error Interrupt Mask"]
     #[inline(always)]
     pub fn linbe(&self) -> LINBE_R {
-        LINBE_R::new(((self.bits >> 25) & 0x01) != 0)
+        LINBE_R::new(((self.bits >> 25) & 1) != 0)
     }
     #[doc = "Bit 26 - LIN Inconsistent Synch Field Error Interrupt Mask"]
     #[inline(always)]
     pub fn linisfe(&self) -> LINISFE_R {
-        LINISFE_R::new(((self.bits >> 26) & 0x01) != 0)
+        LINISFE_R::new(((self.bits >> 26) & 1) != 0)
     }
     #[doc = "Bit 27 - LIN Identifier Parity Interrupt Mask"]
     #[inline(always)]
     pub fn linipe(&self) -> LINIPE_R {
-        LINIPE_R::new(((self.bits >> 27) & 0x01) != 0)
+        LINIPE_R::new(((self.bits >> 27) & 1) != 0)
     }
     #[doc = "Bit 28 - LIN Checksum Error Interrupt Mask"]
     #[inline(always)]
     pub fn lince(&self) -> LINCE_R {
-        LINCE_R::new(((self.bits >> 28) & 0x01) != 0)
+        LINCE_R::new(((self.bits >> 28) & 1) != 0)
     }
     #[doc = "Bit 29 - LIN Slave Not Responding Error Interrupt Mask"]
     #[inline(always)]
     pub fn linsnre(&self) -> LINSNRE_R {
-        LINSNRE_R::new(((self.bits >> 29) & 0x01) != 0)
+        LINSNRE_R::new(((self.bits >> 29) & 1) != 0)
     }
     #[doc = "Bit 30 - LIN Synch Tolerance Error Interrupt Mask"]
     #[inline(always)]
     pub fn linste(&self) -> LINSTE_R {
-        LINSTE_R::new(((self.bits >> 30) & 0x01) != 0)
+        LINSTE_R::new(((self.bits >> 30) & 1) != 0)
     }
     #[doc = "Bit 31 - LIN Header Timeout Error Interrupt Mask"]
     #[inline(always)]
     pub fn linhte(&self) -> LINHTE_R {
-        LINHTE_R::new(((self.bits >> 31) & 0x01) != 0)
+        LINHTE_R::new(((self.bits >> 31) & 1) != 0)
     }
 }
 #[doc = "Interrupt Mask Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [lin_mode_imr_lin](index.html) module"]
@@ -1077,8 +813,5 @@ impl crate::Readable for LIN_MODE_IMR_LIN_SPEC {
 }
 #[doc = "`reset()` method sets IMR_LIN to value 0"]
 impl crate::Resettable for LIN_MODE_IMR_LIN_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

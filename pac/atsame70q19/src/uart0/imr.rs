@@ -14,138 +14,54 @@ impl From<crate::R<IMR_SPEC>> for R {
     }
 }
 #[doc = "Field `RXRDY` reader - Mask RXRDY Interrupt"]
-pub struct RXRDY_R(crate::FieldReader<bool, bool>);
-impl RXRDY_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        RXRDY_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for RXRDY_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type RXRDY_R = crate::BitReader<bool>;
 #[doc = "Field `TXRDY` reader - Disable TXRDY Interrupt"]
-pub struct TXRDY_R(crate::FieldReader<bool, bool>);
-impl TXRDY_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        TXRDY_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TXRDY_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TXRDY_R = crate::BitReader<bool>;
 #[doc = "Field `OVRE` reader - Mask Overrun Error Interrupt"]
-pub struct OVRE_R(crate::FieldReader<bool, bool>);
-impl OVRE_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        OVRE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for OVRE_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type OVRE_R = crate::BitReader<bool>;
 #[doc = "Field `FRAME` reader - Mask Framing Error Interrupt"]
-pub struct FRAME_R(crate::FieldReader<bool, bool>);
-impl FRAME_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        FRAME_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for FRAME_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type FRAME_R = crate::BitReader<bool>;
 #[doc = "Field `PARE` reader - Mask Parity Error Interrupt"]
-pub struct PARE_R(crate::FieldReader<bool, bool>);
-impl PARE_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        PARE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for PARE_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type PARE_R = crate::BitReader<bool>;
 #[doc = "Field `TXEMPTY` reader - Mask TXEMPTY Interrupt"]
-pub struct TXEMPTY_R(crate::FieldReader<bool, bool>);
-impl TXEMPTY_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        TXEMPTY_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TXEMPTY_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TXEMPTY_R = crate::BitReader<bool>;
 #[doc = "Field `CMP` reader - Mask Comparison Interrupt"]
-pub struct CMP_R(crate::FieldReader<bool, bool>);
-impl CMP_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        CMP_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CMP_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CMP_R = crate::BitReader<bool>;
 impl R {
     #[doc = "Bit 0 - Mask RXRDY Interrupt"]
     #[inline(always)]
     pub fn rxrdy(&self) -> RXRDY_R {
-        RXRDY_R::new((self.bits & 0x01) != 0)
+        RXRDY_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Disable TXRDY Interrupt"]
     #[inline(always)]
     pub fn txrdy(&self) -> TXRDY_R {
-        TXRDY_R::new(((self.bits >> 1) & 0x01) != 0)
+        TXRDY_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 5 - Mask Overrun Error Interrupt"]
     #[inline(always)]
     pub fn ovre(&self) -> OVRE_R {
-        OVRE_R::new(((self.bits >> 5) & 0x01) != 0)
+        OVRE_R::new(((self.bits >> 5) & 1) != 0)
     }
     #[doc = "Bit 6 - Mask Framing Error Interrupt"]
     #[inline(always)]
     pub fn frame(&self) -> FRAME_R {
-        FRAME_R::new(((self.bits >> 6) & 0x01) != 0)
+        FRAME_R::new(((self.bits >> 6) & 1) != 0)
     }
     #[doc = "Bit 7 - Mask Parity Error Interrupt"]
     #[inline(always)]
     pub fn pare(&self) -> PARE_R {
-        PARE_R::new(((self.bits >> 7) & 0x01) != 0)
+        PARE_R::new(((self.bits >> 7) & 1) != 0)
     }
     #[doc = "Bit 9 - Mask TXEMPTY Interrupt"]
     #[inline(always)]
     pub fn txempty(&self) -> TXEMPTY_R {
-        TXEMPTY_R::new(((self.bits >> 9) & 0x01) != 0)
+        TXEMPTY_R::new(((self.bits >> 9) & 1) != 0)
     }
     #[doc = "Bit 15 - Mask Comparison Interrupt"]
     #[inline(always)]
     pub fn cmp(&self) -> CMP_R {
-        CMP_R::new(((self.bits >> 15) & 0x01) != 0)
+        CMP_R::new(((self.bits >> 15) & 1) != 0)
     }
 }
 #[doc = "Interrupt Mask Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [imr](index.html) module"]
@@ -159,8 +75,5 @@ impl crate::Readable for IMR_SPEC {
 }
 #[doc = "`reset()` method sets IMR to value 0"]
 impl crate::Resettable for IMR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

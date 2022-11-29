@@ -20,221 +20,69 @@ impl From<crate::W<SCER_SPEC>> for W {
     }
 }
 #[doc = "Field `USBCLK` writer - Enable USB FS Clock"]
-pub struct USBCLK_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> USBCLK_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
-        self.w
-    }
-}
+pub type USBCLK_W<'a, const O: u8> = crate::BitWriter<'a, u32, SCER_SPEC, bool, O>;
 #[doc = "Field `PCK0` writer - Programmable Clock 0 Output Enable"]
-pub struct PCK0_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PCK0_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
-        self.w
-    }
-}
+pub type PCK0_W<'a, const O: u8> = crate::BitWriter<'a, u32, SCER_SPEC, bool, O>;
 #[doc = "Field `PCK1` writer - Programmable Clock 1 Output Enable"]
-pub struct PCK1_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PCK1_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 9)) | ((value as u32 & 0x01) << 9);
-        self.w
-    }
-}
+pub type PCK1_W<'a, const O: u8> = crate::BitWriter<'a, u32, SCER_SPEC, bool, O>;
 #[doc = "Field `PCK2` writer - Programmable Clock 2 Output Enable"]
-pub struct PCK2_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PCK2_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 10)) | ((value as u32 & 0x01) << 10);
-        self.w
-    }
-}
+pub type PCK2_W<'a, const O: u8> = crate::BitWriter<'a, u32, SCER_SPEC, bool, O>;
 #[doc = "Field `PCK3` writer - Programmable Clock 3 Output Enable"]
-pub struct PCK3_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PCK3_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 11)) | ((value as u32 & 0x01) << 11);
-        self.w
-    }
-}
+pub type PCK3_W<'a, const O: u8> = crate::BitWriter<'a, u32, SCER_SPEC, bool, O>;
 #[doc = "Field `PCK4` writer - Programmable Clock 4 Output Enable"]
-pub struct PCK4_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PCK4_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 12)) | ((value as u32 & 0x01) << 12);
-        self.w
-    }
-}
+pub type PCK4_W<'a, const O: u8> = crate::BitWriter<'a, u32, SCER_SPEC, bool, O>;
 #[doc = "Field `PCK5` writer - Programmable Clock 5 Output Enable"]
-pub struct PCK5_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PCK5_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 13)) | ((value as u32 & 0x01) << 13);
-        self.w
-    }
-}
+pub type PCK5_W<'a, const O: u8> = crate::BitWriter<'a, u32, SCER_SPEC, bool, O>;
 #[doc = "Field `PCK6` writer - Programmable Clock 6 Output Enable"]
-pub struct PCK6_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PCK6_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 14)) | ((value as u32 & 0x01) << 14);
-        self.w
-    }
-}
+pub type PCK6_W<'a, const O: u8> = crate::BitWriter<'a, u32, SCER_SPEC, bool, O>;
 impl W {
     #[doc = "Bit 5 - Enable USB FS Clock"]
     #[inline(always)]
-    pub fn usbclk(&mut self) -> USBCLK_W {
-        USBCLK_W { w: self }
+    #[must_use]
+    pub fn usbclk(&mut self) -> USBCLK_W<5> {
+        USBCLK_W::new(self)
     }
     #[doc = "Bit 8 - Programmable Clock 0 Output Enable"]
     #[inline(always)]
-    pub fn pck0(&mut self) -> PCK0_W {
-        PCK0_W { w: self }
+    #[must_use]
+    pub fn pck0(&mut self) -> PCK0_W<8> {
+        PCK0_W::new(self)
     }
     #[doc = "Bit 9 - Programmable Clock 1 Output Enable"]
     #[inline(always)]
-    pub fn pck1(&mut self) -> PCK1_W {
-        PCK1_W { w: self }
+    #[must_use]
+    pub fn pck1(&mut self) -> PCK1_W<9> {
+        PCK1_W::new(self)
     }
     #[doc = "Bit 10 - Programmable Clock 2 Output Enable"]
     #[inline(always)]
-    pub fn pck2(&mut self) -> PCK2_W {
-        PCK2_W { w: self }
+    #[must_use]
+    pub fn pck2(&mut self) -> PCK2_W<10> {
+        PCK2_W::new(self)
     }
     #[doc = "Bit 11 - Programmable Clock 3 Output Enable"]
     #[inline(always)]
-    pub fn pck3(&mut self) -> PCK3_W {
-        PCK3_W { w: self }
+    #[must_use]
+    pub fn pck3(&mut self) -> PCK3_W<11> {
+        PCK3_W::new(self)
     }
     #[doc = "Bit 12 - Programmable Clock 4 Output Enable"]
     #[inline(always)]
-    pub fn pck4(&mut self) -> PCK4_W {
-        PCK4_W { w: self }
+    #[must_use]
+    pub fn pck4(&mut self) -> PCK4_W<12> {
+        PCK4_W::new(self)
     }
     #[doc = "Bit 13 - Programmable Clock 5 Output Enable"]
     #[inline(always)]
-    pub fn pck5(&mut self) -> PCK5_W {
-        PCK5_W { w: self }
+    #[must_use]
+    pub fn pck5(&mut self) -> PCK5_W<13> {
+        PCK5_W::new(self)
     }
     #[doc = "Bit 14 - Programmable Clock 6 Output Enable"]
     #[inline(always)]
-    pub fn pck6(&mut self) -> PCK6_W {
-        PCK6_W { w: self }
+    #[must_use]
+    pub fn pck6(&mut self) -> PCK6_W<14> {
+        PCK6_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -251,11 +99,10 @@ impl crate::RegisterSpec for SCER_SPEC {
 #[doc = "`write(|w| ..)` method takes [scer::W](W) writer structure"]
 impl crate::Writable for SCER_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets SCER to value 0"]
 impl crate::Resettable for SCER_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

@@ -35,283 +35,97 @@ impl From<crate::W<PBDMASK_SPEC>> for W {
     }
 }
 #[doc = "Field `BPM_` reader - BPM APB Clock Enable"]
-pub struct BPM__R(crate::FieldReader<bool, bool>);
-impl BPM__R {
-    pub(crate) fn new(bits: bool) -> Self {
-        BPM__R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for BPM__R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type BPM__R = crate::BitReader<bool>;
 #[doc = "Field `BPM_` writer - BPM APB Clock Enable"]
-pub struct BPM__W<'a> {
-    w: &'a mut W,
-}
-impl<'a> BPM__W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type BPM__W<'a, const O: u8> = crate::BitWriter<'a, u32, PBDMASK_SPEC, bool, O>;
 #[doc = "Field `BSCIF_` reader - BSCIF APB Clock Enable"]
-pub struct BSCIF__R(crate::FieldReader<bool, bool>);
-impl BSCIF__R {
-    pub(crate) fn new(bits: bool) -> Self {
-        BSCIF__R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for BSCIF__R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type BSCIF__R = crate::BitReader<bool>;
 #[doc = "Field `BSCIF_` writer - BSCIF APB Clock Enable"]
-pub struct BSCIF__W<'a> {
-    w: &'a mut W,
-}
-impl<'a> BSCIF__W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
-}
+pub type BSCIF__W<'a, const O: u8> = crate::BitWriter<'a, u32, PBDMASK_SPEC, bool, O>;
 #[doc = "Field `AST_` reader - AST APB Clock Enable"]
-pub struct AST__R(crate::FieldReader<bool, bool>);
-impl AST__R {
-    pub(crate) fn new(bits: bool) -> Self {
-        AST__R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for AST__R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type AST__R = crate::BitReader<bool>;
 #[doc = "Field `AST_` writer - AST APB Clock Enable"]
-pub struct AST__W<'a> {
-    w: &'a mut W,
-}
-impl<'a> AST__W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
-    }
-}
+pub type AST__W<'a, const O: u8> = crate::BitWriter<'a, u32, PBDMASK_SPEC, bool, O>;
 #[doc = "Field `WDT_` reader - WDT APB Clock Enable"]
-pub struct WDT__R(crate::FieldReader<bool, bool>);
-impl WDT__R {
-    pub(crate) fn new(bits: bool) -> Self {
-        WDT__R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for WDT__R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type WDT__R = crate::BitReader<bool>;
 #[doc = "Field `WDT_` writer - WDT APB Clock Enable"]
-pub struct WDT__W<'a> {
-    w: &'a mut W,
-}
-impl<'a> WDT__W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
-        self.w
-    }
-}
+pub type WDT__W<'a, const O: u8> = crate::BitWriter<'a, u32, PBDMASK_SPEC, bool, O>;
 #[doc = "Field `EIC_` reader - EIC APB Clock Enable"]
-pub struct EIC__R(crate::FieldReader<bool, bool>);
-impl EIC__R {
-    pub(crate) fn new(bits: bool) -> Self {
-        EIC__R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for EIC__R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type EIC__R = crate::BitReader<bool>;
 #[doc = "Field `EIC_` writer - EIC APB Clock Enable"]
-pub struct EIC__W<'a> {
-    w: &'a mut W,
-}
-impl<'a> EIC__W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
-        self.w
-    }
-}
+pub type EIC__W<'a, const O: u8> = crate::BitWriter<'a, u32, PBDMASK_SPEC, bool, O>;
 #[doc = "Field `PICOUART_` reader - PICOUART APB Clock Enable"]
-pub struct PICOUART__R(crate::FieldReader<bool, bool>);
-impl PICOUART__R {
-    pub(crate) fn new(bits: bool) -> Self {
-        PICOUART__R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for PICOUART__R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type PICOUART__R = crate::BitReader<bool>;
 #[doc = "Field `PICOUART_` writer - PICOUART APB Clock Enable"]
-pub struct PICOUART__W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PICOUART__W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
-        self.w
-    }
-}
+pub type PICOUART__W<'a, const O: u8> = crate::BitWriter<'a, u32, PBDMASK_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - BPM APB Clock Enable"]
     #[inline(always)]
     pub fn bpm_(&self) -> BPM__R {
-        BPM__R::new((self.bits & 0x01) != 0)
+        BPM__R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - BSCIF APB Clock Enable"]
     #[inline(always)]
     pub fn bscif_(&self) -> BSCIF__R {
-        BSCIF__R::new(((self.bits >> 1) & 0x01) != 0)
+        BSCIF__R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - AST APB Clock Enable"]
     #[inline(always)]
     pub fn ast_(&self) -> AST__R {
-        AST__R::new(((self.bits >> 2) & 0x01) != 0)
+        AST__R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - WDT APB Clock Enable"]
     #[inline(always)]
     pub fn wdt_(&self) -> WDT__R {
-        WDT__R::new(((self.bits >> 3) & 0x01) != 0)
+        WDT__R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 4 - EIC APB Clock Enable"]
     #[inline(always)]
     pub fn eic_(&self) -> EIC__R {
-        EIC__R::new(((self.bits >> 4) & 0x01) != 0)
+        EIC__R::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bit 5 - PICOUART APB Clock Enable"]
     #[inline(always)]
     pub fn picouart_(&self) -> PICOUART__R {
-        PICOUART__R::new(((self.bits >> 5) & 0x01) != 0)
+        PICOUART__R::new(((self.bits >> 5) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - BPM APB Clock Enable"]
     #[inline(always)]
-    pub fn bpm_(&mut self) -> BPM__W {
-        BPM__W { w: self }
+    #[must_use]
+    pub fn bpm_(&mut self) -> BPM__W<0> {
+        BPM__W::new(self)
     }
     #[doc = "Bit 1 - BSCIF APB Clock Enable"]
     #[inline(always)]
-    pub fn bscif_(&mut self) -> BSCIF__W {
-        BSCIF__W { w: self }
+    #[must_use]
+    pub fn bscif_(&mut self) -> BSCIF__W<1> {
+        BSCIF__W::new(self)
     }
     #[doc = "Bit 2 - AST APB Clock Enable"]
     #[inline(always)]
-    pub fn ast_(&mut self) -> AST__W {
-        AST__W { w: self }
+    #[must_use]
+    pub fn ast_(&mut self) -> AST__W<2> {
+        AST__W::new(self)
     }
     #[doc = "Bit 3 - WDT APB Clock Enable"]
     #[inline(always)]
-    pub fn wdt_(&mut self) -> WDT__W {
-        WDT__W { w: self }
+    #[must_use]
+    pub fn wdt_(&mut self) -> WDT__W<3> {
+        WDT__W::new(self)
     }
     #[doc = "Bit 4 - EIC APB Clock Enable"]
     #[inline(always)]
-    pub fn eic_(&mut self) -> EIC__W {
-        EIC__W { w: self }
+    #[must_use]
+    pub fn eic_(&mut self) -> EIC__W<4> {
+        EIC__W::new(self)
     }
     #[doc = "Bit 5 - PICOUART APB Clock Enable"]
     #[inline(always)]
-    pub fn picouart_(&mut self) -> PICOUART__W {
-        PICOUART__W { w: self }
+    #[must_use]
+    pub fn picouart_(&mut self) -> PICOUART__W<5> {
+        PICOUART__W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -332,11 +146,10 @@ impl crate::Readable for PBDMASK_SPEC {
 #[doc = "`write(|w| ..)` method takes [pbdmask::W](W) writer structure"]
 impl crate::Writable for PBDMASK_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets PBDMASK to value 0x3f"]
 impl crate::Resettable for PBDMASK_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x3f
-    }
+    const RESET_VALUE: Self::Ux = 0x3f;
 }

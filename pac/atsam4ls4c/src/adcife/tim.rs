@@ -35,67 +35,13 @@ impl From<crate::W<TIM_SPEC>> for W {
     }
 }
 #[doc = "Field `STARTUP` reader - Startup time"]
-pub struct STARTUP_R(crate::FieldReader<u8, u8>);
-impl STARTUP_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        STARTUP_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for STARTUP_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type STARTUP_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `STARTUP` writer - Startup time"]
-pub struct STARTUP_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> STARTUP_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x1f) | (value as u32 & 0x1f);
-        self.w
-    }
-}
+pub type STARTUP_W<'a, const O: u8> = crate::FieldWriter<'a, u32, TIM_SPEC, u8, u8, 5, O>;
 #[doc = "Field `ENSTUP` reader - Enable Startup"]
-pub struct ENSTUP_R(crate::FieldReader<bool, bool>);
-impl ENSTUP_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        ENSTUP_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for ENSTUP_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type ENSTUP_R = crate::BitReader<bool>;
 #[doc = "Field `ENSTUP` writer - Enable Startup"]
-pub struct ENSTUP_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ENSTUP_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
-        self.w
-    }
-}
+pub type ENSTUP_W<'a, const O: u8> = crate::BitWriter<'a, u32, TIM_SPEC, bool, O>;
 impl R {
     #[doc = "Bits 0:4 - Startup time"]
     #[inline(always)]
@@ -105,19 +51,21 @@ impl R {
     #[doc = "Bit 8 - Enable Startup"]
     #[inline(always)]
     pub fn enstup(&self) -> ENSTUP_R {
-        ENSTUP_R::new(((self.bits >> 8) & 0x01) != 0)
+        ENSTUP_R::new(((self.bits >> 8) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bits 0:4 - Startup time"]
     #[inline(always)]
-    pub fn startup(&mut self) -> STARTUP_W {
-        STARTUP_W { w: self }
+    #[must_use]
+    pub fn startup(&mut self) -> STARTUP_W<0> {
+        STARTUP_W::new(self)
     }
     #[doc = "Bit 8 - Enable Startup"]
     #[inline(always)]
-    pub fn enstup(&mut self) -> ENSTUP_W {
-        ENSTUP_W { w: self }
+    #[must_use]
+    pub fn enstup(&mut self) -> ENSTUP_W<8> {
+        ENSTUP_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -138,11 +86,10 @@ impl crate::Readable for TIM_SPEC {
 #[doc = "`write(|w| ..)` method takes [tim::W](W) writer structure"]
 impl crate::Writable for TIM_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets TIM to value 0"]
 impl crate::Resettable for TIM_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

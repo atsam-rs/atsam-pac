@@ -20,437 +20,133 @@ impl From<crate::W<IER_SPEC>> for W {
     }
 }
 #[doc = "Field `EOC0` writer - End of Conversion Interrupt Enable 0"]
-pub struct EOC0_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> EOC0_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type EOC0_W<'a, const O: u8> = crate::BitWriter<'a, u32, IER_SPEC, bool, O>;
 #[doc = "Field `EOC1` writer - End of Conversion Interrupt Enable 1"]
-pub struct EOC1_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> EOC1_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
-}
+pub type EOC1_W<'a, const O: u8> = crate::BitWriter<'a, u32, IER_SPEC, bool, O>;
 #[doc = "Field `EOC2` writer - End of Conversion Interrupt Enable 2"]
-pub struct EOC2_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> EOC2_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
-    }
-}
+pub type EOC2_W<'a, const O: u8> = crate::BitWriter<'a, u32, IER_SPEC, bool, O>;
 #[doc = "Field `EOC3` writer - End of Conversion Interrupt Enable 3"]
-pub struct EOC3_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> EOC3_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
-        self.w
-    }
-}
+pub type EOC3_W<'a, const O: u8> = crate::BitWriter<'a, u32, IER_SPEC, bool, O>;
 #[doc = "Field `EOC4` writer - End of Conversion Interrupt Enable 4"]
-pub struct EOC4_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> EOC4_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
-        self.w
-    }
-}
+pub type EOC4_W<'a, const O: u8> = crate::BitWriter<'a, u32, IER_SPEC, bool, O>;
 #[doc = "Field `EOC5` writer - End of Conversion Interrupt Enable 5"]
-pub struct EOC5_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> EOC5_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
-        self.w
-    }
-}
+pub type EOC5_W<'a, const O: u8> = crate::BitWriter<'a, u32, IER_SPEC, bool, O>;
 #[doc = "Field `EOC6` writer - End of Conversion Interrupt Enable 6"]
-pub struct EOC6_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> EOC6_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | ((value as u32 & 0x01) << 6);
-        self.w
-    }
-}
+pub type EOC6_W<'a, const O: u8> = crate::BitWriter<'a, u32, IER_SPEC, bool, O>;
 #[doc = "Field `EOC7` writer - End of Conversion Interrupt Enable 7"]
-pub struct EOC7_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> EOC7_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | ((value as u32 & 0x01) << 7);
-        self.w
-    }
-}
+pub type EOC7_W<'a, const O: u8> = crate::BitWriter<'a, u32, IER_SPEC, bool, O>;
 #[doc = "Field `EOC8` writer - End of Conversion Interrupt Enable 8"]
-pub struct EOC8_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> EOC8_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
-        self.w
-    }
-}
+pub type EOC8_W<'a, const O: u8> = crate::BitWriter<'a, u32, IER_SPEC, bool, O>;
 #[doc = "Field `EOC9` writer - End of Conversion Interrupt Enable 9"]
-pub struct EOC9_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> EOC9_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 9)) | ((value as u32 & 0x01) << 9);
-        self.w
-    }
-}
+pub type EOC9_W<'a, const O: u8> = crate::BitWriter<'a, u32, IER_SPEC, bool, O>;
 #[doc = "Field `EOCAL` writer - End of Calibration Sequence"]
-pub struct EOCAL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> EOCAL_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 23)) | ((value as u32 & 0x01) << 23);
-        self.w
-    }
-}
+pub type EOCAL_W<'a, const O: u8> = crate::BitWriter<'a, u32, IER_SPEC, bool, O>;
 #[doc = "Field `DRDY` writer - Data Ready Interrupt Enable"]
-pub struct DRDY_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DRDY_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 24)) | ((value as u32 & 0x01) << 24);
-        self.w
-    }
-}
+pub type DRDY_W<'a, const O: u8> = crate::BitWriter<'a, u32, IER_SPEC, bool, O>;
 #[doc = "Field `GOVRE` writer - General Overrun Error Interrupt Enable"]
-pub struct GOVRE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> GOVRE_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 25)) | ((value as u32 & 0x01) << 25);
-        self.w
-    }
-}
+pub type GOVRE_W<'a, const O: u8> = crate::BitWriter<'a, u32, IER_SPEC, bool, O>;
 #[doc = "Field `COMPE` writer - Comparison Event Interrupt Enable"]
-pub struct COMPE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> COMPE_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 26)) | ((value as u32 & 0x01) << 26);
-        self.w
-    }
-}
+pub type COMPE_W<'a, const O: u8> = crate::BitWriter<'a, u32, IER_SPEC, bool, O>;
 #[doc = "Field `ENDRX` writer - End of Receive Buffer Interrupt Enable"]
-pub struct ENDRX_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ENDRX_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 27)) | ((value as u32 & 0x01) << 27);
-        self.w
-    }
-}
+pub type ENDRX_W<'a, const O: u8> = crate::BitWriter<'a, u32, IER_SPEC, bool, O>;
 #[doc = "Field `RXBUFF` writer - Receive Buffer Full Interrupt Enable"]
-pub struct RXBUFF_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RXBUFF_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 28)) | ((value as u32 & 0x01) << 28);
-        self.w
-    }
-}
+pub type RXBUFF_W<'a, const O: u8> = crate::BitWriter<'a, u32, IER_SPEC, bool, O>;
 impl W {
     #[doc = "Bit 0 - End of Conversion Interrupt Enable 0"]
     #[inline(always)]
-    pub fn eoc0(&mut self) -> EOC0_W {
-        EOC0_W { w: self }
+    #[must_use]
+    pub fn eoc0(&mut self) -> EOC0_W<0> {
+        EOC0_W::new(self)
     }
     #[doc = "Bit 1 - End of Conversion Interrupt Enable 1"]
     #[inline(always)]
-    pub fn eoc1(&mut self) -> EOC1_W {
-        EOC1_W { w: self }
+    #[must_use]
+    pub fn eoc1(&mut self) -> EOC1_W<1> {
+        EOC1_W::new(self)
     }
     #[doc = "Bit 2 - End of Conversion Interrupt Enable 2"]
     #[inline(always)]
-    pub fn eoc2(&mut self) -> EOC2_W {
-        EOC2_W { w: self }
+    #[must_use]
+    pub fn eoc2(&mut self) -> EOC2_W<2> {
+        EOC2_W::new(self)
     }
     #[doc = "Bit 3 - End of Conversion Interrupt Enable 3"]
     #[inline(always)]
-    pub fn eoc3(&mut self) -> EOC3_W {
-        EOC3_W { w: self }
+    #[must_use]
+    pub fn eoc3(&mut self) -> EOC3_W<3> {
+        EOC3_W::new(self)
     }
     #[doc = "Bit 4 - End of Conversion Interrupt Enable 4"]
     #[inline(always)]
-    pub fn eoc4(&mut self) -> EOC4_W {
-        EOC4_W { w: self }
+    #[must_use]
+    pub fn eoc4(&mut self) -> EOC4_W<4> {
+        EOC4_W::new(self)
     }
     #[doc = "Bit 5 - End of Conversion Interrupt Enable 5"]
     #[inline(always)]
-    pub fn eoc5(&mut self) -> EOC5_W {
-        EOC5_W { w: self }
+    #[must_use]
+    pub fn eoc5(&mut self) -> EOC5_W<5> {
+        EOC5_W::new(self)
     }
     #[doc = "Bit 6 - End of Conversion Interrupt Enable 6"]
     #[inline(always)]
-    pub fn eoc6(&mut self) -> EOC6_W {
-        EOC6_W { w: self }
+    #[must_use]
+    pub fn eoc6(&mut self) -> EOC6_W<6> {
+        EOC6_W::new(self)
     }
     #[doc = "Bit 7 - End of Conversion Interrupt Enable 7"]
     #[inline(always)]
-    pub fn eoc7(&mut self) -> EOC7_W {
-        EOC7_W { w: self }
+    #[must_use]
+    pub fn eoc7(&mut self) -> EOC7_W<7> {
+        EOC7_W::new(self)
     }
     #[doc = "Bit 8 - End of Conversion Interrupt Enable 8"]
     #[inline(always)]
-    pub fn eoc8(&mut self) -> EOC8_W {
-        EOC8_W { w: self }
+    #[must_use]
+    pub fn eoc8(&mut self) -> EOC8_W<8> {
+        EOC8_W::new(self)
     }
     #[doc = "Bit 9 - End of Conversion Interrupt Enable 9"]
     #[inline(always)]
-    pub fn eoc9(&mut self) -> EOC9_W {
-        EOC9_W { w: self }
+    #[must_use]
+    pub fn eoc9(&mut self) -> EOC9_W<9> {
+        EOC9_W::new(self)
     }
     #[doc = "Bit 23 - End of Calibration Sequence"]
     #[inline(always)]
-    pub fn eocal(&mut self) -> EOCAL_W {
-        EOCAL_W { w: self }
+    #[must_use]
+    pub fn eocal(&mut self) -> EOCAL_W<23> {
+        EOCAL_W::new(self)
     }
     #[doc = "Bit 24 - Data Ready Interrupt Enable"]
     #[inline(always)]
-    pub fn drdy(&mut self) -> DRDY_W {
-        DRDY_W { w: self }
+    #[must_use]
+    pub fn drdy(&mut self) -> DRDY_W<24> {
+        DRDY_W::new(self)
     }
     #[doc = "Bit 25 - General Overrun Error Interrupt Enable"]
     #[inline(always)]
-    pub fn govre(&mut self) -> GOVRE_W {
-        GOVRE_W { w: self }
+    #[must_use]
+    pub fn govre(&mut self) -> GOVRE_W<25> {
+        GOVRE_W::new(self)
     }
     #[doc = "Bit 26 - Comparison Event Interrupt Enable"]
     #[inline(always)]
-    pub fn compe(&mut self) -> COMPE_W {
-        COMPE_W { w: self }
+    #[must_use]
+    pub fn compe(&mut self) -> COMPE_W<26> {
+        COMPE_W::new(self)
     }
     #[doc = "Bit 27 - End of Receive Buffer Interrupt Enable"]
     #[inline(always)]
-    pub fn endrx(&mut self) -> ENDRX_W {
-        ENDRX_W { w: self }
+    #[must_use]
+    pub fn endrx(&mut self) -> ENDRX_W<27> {
+        ENDRX_W::new(self)
     }
     #[doc = "Bit 28 - Receive Buffer Full Interrupt Enable"]
     #[inline(always)]
-    pub fn rxbuff(&mut self) -> RXBUFF_W {
-        RXBUFF_W { w: self }
+    #[must_use]
+    pub fn rxbuff(&mut self) -> RXBUFF_W<28> {
+        RXBUFF_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -467,4 +163,6 @@ impl crate::RegisterSpec for IER_SPEC {
 #[doc = "`write(|w| ..)` method takes [ier::W](W) writer structure"]
 impl crate::Writable for IER_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

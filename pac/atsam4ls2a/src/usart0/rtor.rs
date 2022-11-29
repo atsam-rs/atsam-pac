@@ -34,80 +34,58 @@ impl From<crate::W<RTOR_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `TO` reader - Time-out Value"]
+pub type TO_R = crate::FieldReader<u32, TOSELECT_A>;
 #[doc = "Time-out Value\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u32)]
-pub enum TO_A {
+pub enum TOSELECT_A {
     #[doc = "0: Disables the RX Time-out function"]
     DISABLE = 0,
 }
-impl From<TO_A> for u32 {
+impl From<TOSELECT_A> for u32 {
     #[inline(always)]
-    fn from(variant: TO_A) -> Self {
+    fn from(variant: TOSELECT_A) -> Self {
         variant as _
     }
 }
-#[doc = "Field `TO` reader - Time-out Value"]
-pub struct TO_R(crate::FieldReader<u32, TO_A>);
 impl TO_R {
-    pub(crate) fn new(bits: u32) -> Self {
-        TO_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<TO_A> {
+    pub fn variant(&self) -> Option<TOSELECT_A> {
         match self.bits {
-            0 => Some(TO_A::DISABLE),
+            0 => Some(TOSELECT_A::DISABLE),
             _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `DISABLE`"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        **self == TO_A::DISABLE
-    }
-}
-impl core::ops::Deref for TO_R {
-    type Target = crate::FieldReader<u32, TO_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == TOSELECT_A::DISABLE
     }
 }
 #[doc = "Field `TO` writer - Time-out Value"]
-pub struct TO_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TO_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: TO_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type TO_W<'a, const O: u8> = crate::FieldWriter<'a, u32, RTOR_SPEC, u32, TOSELECT_A, 17, O>;
+impl<'a, const O: u8> TO_W<'a, O> {
     #[doc = "Disables the RX Time-out function"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
-        self.variant(TO_A::DISABLE)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x0001_ffff) | (value as u32 & 0x0001_ffff);
-        self.w
+        self.variant(TOSELECT_A::DISABLE)
     }
 }
 impl R {
     #[doc = "Bits 0:16 - Time-out Value"]
     #[inline(always)]
     pub fn to(&self) -> TO_R {
-        TO_R::new((self.bits & 0x0001_ffff) as u32)
+        TO_R::new(self.bits & 0x0001_ffff)
     }
 }
 impl W {
     #[doc = "Bits 0:16 - Time-out Value"]
     #[inline(always)]
-    pub fn to(&mut self) -> TO_W {
-        TO_W { w: self }
+    #[must_use]
+    pub fn to(&mut self) -> TO_W<0> {
+        TO_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -128,11 +106,10 @@ impl crate::Readable for RTOR_SPEC {
 #[doc = "`write(|w| ..)` method takes [rtor::W](W) writer structure"]
 impl crate::Writable for RTOR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets RTOR to value 0"]
 impl crate::Resettable for RTOR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

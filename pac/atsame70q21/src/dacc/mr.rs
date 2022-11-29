@@ -34,425 +34,239 @@ impl From<crate::W<MR_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `MAXS0` reader - Max Speed Mode for Channel 0"]
+pub type MAXS0_R = crate::BitReader<MAXS0SELECT_A>;
 #[doc = "Max Speed Mode for Channel 0\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum MAXS0_A {
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum MAXS0SELECT_A {
     #[doc = "0: External trigger mode or Free-running mode enabled. (See TRGENx.DACC_TRIGR.)"]
     TRIG_EVENT = 0,
     #[doc = "1: Max speed mode enabled."]
     MAXIMUM = 1,
 }
-impl From<MAXS0_A> for bool {
+impl From<MAXS0SELECT_A> for bool {
     #[inline(always)]
-    fn from(variant: MAXS0_A) -> Self {
+    fn from(variant: MAXS0SELECT_A) -> Self {
         variant as u8 != 0
     }
 }
-#[doc = "Field `MAXS0` reader - Max Speed Mode for Channel 0"]
-pub struct MAXS0_R(crate::FieldReader<bool, MAXS0_A>);
 impl MAXS0_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        MAXS0_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> MAXS0_A {
+    pub fn variant(&self) -> MAXS0SELECT_A {
         match self.bits {
-            false => MAXS0_A::TRIG_EVENT,
-            true => MAXS0_A::MAXIMUM,
+            false => MAXS0SELECT_A::TRIG_EVENT,
+            true => MAXS0SELECT_A::MAXIMUM,
         }
     }
     #[doc = "Checks if the value of the field is `TRIG_EVENT`"]
     #[inline(always)]
     pub fn is_trig_event(&self) -> bool {
-        **self == MAXS0_A::TRIG_EVENT
+        *self == MAXS0SELECT_A::TRIG_EVENT
     }
     #[doc = "Checks if the value of the field is `MAXIMUM`"]
     #[inline(always)]
     pub fn is_maximum(&self) -> bool {
-        **self == MAXS0_A::MAXIMUM
-    }
-}
-impl core::ops::Deref for MAXS0_R {
-    type Target = crate::FieldReader<bool, MAXS0_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == MAXS0SELECT_A::MAXIMUM
     }
 }
 #[doc = "Field `MAXS0` writer - Max Speed Mode for Channel 0"]
-pub struct MAXS0_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> MAXS0_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: MAXS0_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type MAXS0_W<'a, const O: u8> = crate::BitWriter<'a, u32, MR_SPEC, MAXS0SELECT_A, O>;
+impl<'a, const O: u8> MAXS0_W<'a, O> {
     #[doc = "External trigger mode or Free-running mode enabled. (See TRGENx.DACC_TRIGR.)"]
     #[inline(always)]
     pub fn trig_event(self) -> &'a mut W {
-        self.variant(MAXS0_A::TRIG_EVENT)
+        self.variant(MAXS0SELECT_A::TRIG_EVENT)
     }
     #[doc = "Max speed mode enabled."]
     #[inline(always)]
     pub fn maximum(self) -> &'a mut W {
-        self.variant(MAXS0_A::MAXIMUM)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
+        self.variant(MAXS0SELECT_A::MAXIMUM)
     }
 }
+#[doc = "Field `MAXS1` reader - Max Speed Mode for Channel 1"]
+pub type MAXS1_R = crate::BitReader<MAXS1SELECT_A>;
 #[doc = "Max Speed Mode for Channel 1\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum MAXS1_A {
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum MAXS1SELECT_A {
     #[doc = "0: External trigger mode or Free-running mode enabled. (See TRGENx.DACC_TRIGR.)"]
     TRIG_EVENT = 0,
     #[doc = "1: Max speed mode enabled."]
     MAXIMUM = 1,
 }
-impl From<MAXS1_A> for bool {
+impl From<MAXS1SELECT_A> for bool {
     #[inline(always)]
-    fn from(variant: MAXS1_A) -> Self {
+    fn from(variant: MAXS1SELECT_A) -> Self {
         variant as u8 != 0
     }
 }
-#[doc = "Field `MAXS1` reader - Max Speed Mode for Channel 1"]
-pub struct MAXS1_R(crate::FieldReader<bool, MAXS1_A>);
 impl MAXS1_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        MAXS1_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> MAXS1_A {
+    pub fn variant(&self) -> MAXS1SELECT_A {
         match self.bits {
-            false => MAXS1_A::TRIG_EVENT,
-            true => MAXS1_A::MAXIMUM,
+            false => MAXS1SELECT_A::TRIG_EVENT,
+            true => MAXS1SELECT_A::MAXIMUM,
         }
     }
     #[doc = "Checks if the value of the field is `TRIG_EVENT`"]
     #[inline(always)]
     pub fn is_trig_event(&self) -> bool {
-        **self == MAXS1_A::TRIG_EVENT
+        *self == MAXS1SELECT_A::TRIG_EVENT
     }
     #[doc = "Checks if the value of the field is `MAXIMUM`"]
     #[inline(always)]
     pub fn is_maximum(&self) -> bool {
-        **self == MAXS1_A::MAXIMUM
-    }
-}
-impl core::ops::Deref for MAXS1_R {
-    type Target = crate::FieldReader<bool, MAXS1_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == MAXS1SELECT_A::MAXIMUM
     }
 }
 #[doc = "Field `MAXS1` writer - Max Speed Mode for Channel 1"]
-pub struct MAXS1_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> MAXS1_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: MAXS1_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type MAXS1_W<'a, const O: u8> = crate::BitWriter<'a, u32, MR_SPEC, MAXS1SELECT_A, O>;
+impl<'a, const O: u8> MAXS1_W<'a, O> {
     #[doc = "External trigger mode or Free-running mode enabled. (See TRGENx.DACC_TRIGR.)"]
     #[inline(always)]
     pub fn trig_event(self) -> &'a mut W {
-        self.variant(MAXS1_A::TRIG_EVENT)
+        self.variant(MAXS1SELECT_A::TRIG_EVENT)
     }
     #[doc = "Max speed mode enabled."]
     #[inline(always)]
     pub fn maximum(self) -> &'a mut W {
-        self.variant(MAXS1_A::MAXIMUM)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
+        self.variant(MAXS1SELECT_A::MAXIMUM)
     }
 }
+#[doc = "Field `WORD` reader - Word Transfer Mode"]
+pub type WORD_R = crate::BitReader<WORDSELECT_A>;
 #[doc = "Word Transfer Mode\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum WORD_A {
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum WORDSELECT_A {
     #[doc = "0: One data to convert is written to the FIFO per access to DACC."]
     DISABLED = 0,
     #[doc = "1: Two data to convert are written to the FIFO per access to DACC (reduces the number of requests to DMA and the number of system bus accesses)."]
     ENABLED = 1,
 }
-impl From<WORD_A> for bool {
+impl From<WORDSELECT_A> for bool {
     #[inline(always)]
-    fn from(variant: WORD_A) -> Self {
+    fn from(variant: WORDSELECT_A) -> Self {
         variant as u8 != 0
     }
 }
-#[doc = "Field `WORD` reader - Word Transfer Mode"]
-pub struct WORD_R(crate::FieldReader<bool, WORD_A>);
 impl WORD_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        WORD_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> WORD_A {
+    pub fn variant(&self) -> WORDSELECT_A {
         match self.bits {
-            false => WORD_A::DISABLED,
-            true => WORD_A::ENABLED,
+            false => WORDSELECT_A::DISABLED,
+            true => WORDSELECT_A::ENABLED,
         }
     }
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == WORD_A::DISABLED
+        *self == WORDSELECT_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == WORD_A::ENABLED
-    }
-}
-impl core::ops::Deref for WORD_R {
-    type Target = crate::FieldReader<bool, WORD_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == WORDSELECT_A::ENABLED
     }
 }
 #[doc = "Field `WORD` writer - Word Transfer Mode"]
-pub struct WORD_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> WORD_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: WORD_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type WORD_W<'a, const O: u8> = crate::BitWriter<'a, u32, MR_SPEC, WORDSELECT_A, O>;
+impl<'a, const O: u8> WORD_W<'a, O> {
     #[doc = "One data to convert is written to the FIFO per access to DACC."]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
-        self.variant(WORD_A::DISABLED)
+        self.variant(WORDSELECT_A::DISABLED)
     }
     #[doc = "Two data to convert are written to the FIFO per access to DACC (reduces the number of requests to DMA and the number of system bus accesses)."]
     #[inline(always)]
     pub fn enabled(self) -> &'a mut W {
-        self.variant(WORD_A::ENABLED)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
-        self.w
+        self.variant(WORDSELECT_A::ENABLED)
     }
 }
 #[doc = "Field `ZERO` reader - Must always be written to 0."]
-pub struct ZERO_R(crate::FieldReader<bool, bool>);
-impl ZERO_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        ZERO_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for ZERO_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type ZERO_R = crate::BitReader<bool>;
 #[doc = "Field `ZERO` writer - Must always be written to 0."]
-pub struct ZERO_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ZERO_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
-        self.w
-    }
-}
+pub type ZERO_W<'a, const O: u8> = crate::BitWriter<'a, u32, MR_SPEC, bool, O>;
+#[doc = "Field `DIFF` reader - Differential Mode"]
+pub type DIFF_R = crate::BitReader<DIFFSELECT_A>;
 #[doc = "Differential Mode\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum DIFF_A {
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum DIFFSELECT_A {
     #[doc = "0: DAC0 and DAC1 are single-ended outputs."]
     DISABLED = 0,
     #[doc = "1: DACP and DACN are differential outputs. The differential level is configured by the channel 0 value."]
     ENABLED = 1,
 }
-impl From<DIFF_A> for bool {
+impl From<DIFFSELECT_A> for bool {
     #[inline(always)]
-    fn from(variant: DIFF_A) -> Self {
+    fn from(variant: DIFFSELECT_A) -> Self {
         variant as u8 != 0
     }
 }
-#[doc = "Field `DIFF` reader - Differential Mode"]
-pub struct DIFF_R(crate::FieldReader<bool, DIFF_A>);
 impl DIFF_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        DIFF_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> DIFF_A {
+    pub fn variant(&self) -> DIFFSELECT_A {
         match self.bits {
-            false => DIFF_A::DISABLED,
-            true => DIFF_A::ENABLED,
+            false => DIFFSELECT_A::DISABLED,
+            true => DIFFSELECT_A::ENABLED,
         }
     }
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == DIFF_A::DISABLED
+        *self == DIFFSELECT_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == DIFF_A::ENABLED
-    }
-}
-impl core::ops::Deref for DIFF_R {
-    type Target = crate::FieldReader<bool, DIFF_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == DIFFSELECT_A::ENABLED
     }
 }
 #[doc = "Field `DIFF` writer - Differential Mode"]
-pub struct DIFF_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DIFF_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: DIFF_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type DIFF_W<'a, const O: u8> = crate::BitWriter<'a, u32, MR_SPEC, DIFFSELECT_A, O>;
+impl<'a, const O: u8> DIFF_W<'a, O> {
     #[doc = "DAC0 and DAC1 are single-ended outputs."]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
-        self.variant(DIFF_A::DISABLED)
+        self.variant(DIFFSELECT_A::DISABLED)
     }
     #[doc = "DACP and DACN are differential outputs. The differential level is configured by the channel 0 value."]
     #[inline(always)]
     pub fn enabled(self) -> &'a mut W {
-        self.variant(DIFF_A::ENABLED)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 23)) | ((value as u32 & 0x01) << 23);
-        self.w
+        self.variant(DIFFSELECT_A::ENABLED)
     }
 }
 #[doc = "Field `PRESCALER` reader - Peripheral Clock to DAC Clock Ratio"]
-pub struct PRESCALER_R(crate::FieldReader<u8, u8>);
-impl PRESCALER_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        PRESCALER_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for PRESCALER_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type PRESCALER_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `PRESCALER` writer - Peripheral Clock to DAC Clock Ratio"]
-pub struct PRESCALER_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PRESCALER_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 24)) | ((value as u32 & 0x0f) << 24);
-        self.w
-    }
-}
+pub type PRESCALER_W<'a, const O: u8> = crate::FieldWriter<'a, u32, MR_SPEC, u8, u8, 4, O>;
 impl R {
     #[doc = "Bit 0 - Max Speed Mode for Channel 0"]
     #[inline(always)]
     pub fn maxs0(&self) -> MAXS0_R {
-        MAXS0_R::new((self.bits & 0x01) != 0)
+        MAXS0_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Max Speed Mode for Channel 1"]
     #[inline(always)]
     pub fn maxs1(&self) -> MAXS1_R {
-        MAXS1_R::new(((self.bits >> 1) & 0x01) != 0)
+        MAXS1_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 4 - Word Transfer Mode"]
     #[inline(always)]
     pub fn word(&self) -> WORD_R {
-        WORD_R::new(((self.bits >> 4) & 0x01) != 0)
+        WORD_R::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bit 5 - Must always be written to 0."]
     #[inline(always)]
     pub fn zero(&self) -> ZERO_R {
-        ZERO_R::new(((self.bits >> 5) & 0x01) != 0)
+        ZERO_R::new(((self.bits >> 5) & 1) != 0)
     }
     #[doc = "Bit 23 - Differential Mode"]
     #[inline(always)]
     pub fn diff(&self) -> DIFF_R {
-        DIFF_R::new(((self.bits >> 23) & 0x01) != 0)
+        DIFF_R::new(((self.bits >> 23) & 1) != 0)
     }
     #[doc = "Bits 24:27 - Peripheral Clock to DAC Clock Ratio"]
     #[inline(always)]
@@ -463,33 +277,39 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Max Speed Mode for Channel 0"]
     #[inline(always)]
-    pub fn maxs0(&mut self) -> MAXS0_W {
-        MAXS0_W { w: self }
+    #[must_use]
+    pub fn maxs0(&mut self) -> MAXS0_W<0> {
+        MAXS0_W::new(self)
     }
     #[doc = "Bit 1 - Max Speed Mode for Channel 1"]
     #[inline(always)]
-    pub fn maxs1(&mut self) -> MAXS1_W {
-        MAXS1_W { w: self }
+    #[must_use]
+    pub fn maxs1(&mut self) -> MAXS1_W<1> {
+        MAXS1_W::new(self)
     }
     #[doc = "Bit 4 - Word Transfer Mode"]
     #[inline(always)]
-    pub fn word(&mut self) -> WORD_W {
-        WORD_W { w: self }
+    #[must_use]
+    pub fn word(&mut self) -> WORD_W<4> {
+        WORD_W::new(self)
     }
     #[doc = "Bit 5 - Must always be written to 0."]
     #[inline(always)]
-    pub fn zero(&mut self) -> ZERO_W {
-        ZERO_W { w: self }
+    #[must_use]
+    pub fn zero(&mut self) -> ZERO_W<5> {
+        ZERO_W::new(self)
     }
     #[doc = "Bit 23 - Differential Mode"]
     #[inline(always)]
-    pub fn diff(&mut self) -> DIFF_W {
-        DIFF_W { w: self }
+    #[must_use]
+    pub fn diff(&mut self) -> DIFF_W<23> {
+        DIFF_W::new(self)
     }
     #[doc = "Bits 24:27 - Peripheral Clock to DAC Clock Ratio"]
     #[inline(always)]
-    pub fn prescaler(&mut self) -> PRESCALER_W {
-        PRESCALER_W { w: self }
+    #[must_use]
+    pub fn prescaler(&mut self) -> PRESCALER_W<24> {
+        PRESCALER_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -510,11 +330,10 @@ impl crate::Readable for MR_SPEC {
 #[doc = "`write(|w| ..)` method takes [mr::W](W) writer structure"]
 impl crate::Writable for MR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets MR to value 0"]
 impl crate::Resettable for MR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

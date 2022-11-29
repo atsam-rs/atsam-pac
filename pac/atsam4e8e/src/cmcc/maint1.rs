@@ -20,19 +20,9 @@ impl From<crate::W<MAINT1_SPEC>> for W {
     }
 }
 #[doc = "Field `INDEX` writer - Invalidate Index"]
-pub struct INDEX_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> INDEX_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x1f << 4)) | ((value as u32 & 0x1f) << 4);
-        self.w
-    }
-}
+pub type INDEX_W<'a, const O: u8> = crate::FieldWriter<'a, u32, MAINT1_SPEC, u8, u8, 5, O>;
 #[doc = "Invalidate Way"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum WAY_AW {
     #[doc = "0: Way 0 is selection for index invalidation"]
@@ -51,15 +41,8 @@ impl From<WAY_AW> for u8 {
     }
 }
 #[doc = "Field `WAY` writer - Invalidate Way"]
-pub struct WAY_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> WAY_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: WAY_AW) -> &'a mut W {
-        self.bits(variant.into())
-    }
+pub type WAY_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, MAINT1_SPEC, u8, WAY_AW, 2, O>;
+impl<'a, const O: u8> WAY_W<'a, O> {
     #[doc = "Way 0 is selection for index invalidation"]
     #[inline(always)]
     pub fn way0(self) -> &'a mut W {
@@ -80,23 +63,19 @@ impl<'a> WAY_W<'a> {
     pub fn way3(self) -> &'a mut W {
         self.variant(WAY_AW::WAY3)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 30)) | ((value as u32 & 0x03) << 30);
-        self.w
-    }
 }
 impl W {
     #[doc = "Bits 4:8 - Invalidate Index"]
     #[inline(always)]
-    pub fn index(&mut self) -> INDEX_W {
-        INDEX_W { w: self }
+    #[must_use]
+    pub fn index(&mut self) -> INDEX_W<4> {
+        INDEX_W::new(self)
     }
     #[doc = "Bits 30:31 - Invalidate Way"]
     #[inline(always)]
-    pub fn way(&mut self) -> WAY_W {
-        WAY_W { w: self }
+    #[must_use]
+    pub fn way(&mut self) -> WAY_W<30> {
+        WAY_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -113,4 +92,6 @@ impl crate::RegisterSpec for MAINT1_SPEC {
 #[doc = "`write(|w| ..)` method takes [maint1::W](W) writer structure"]
 impl crate::Writable for MAINT1_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

@@ -14,19 +14,7 @@ impl From<crate::R<PARAMETER_SPEC>> for R {
     }
 }
 #[doc = "Field `LUTS` reader - LUTs"]
-pub struct LUTS_R(crate::FieldReader<u8, u8>);
-impl LUTS_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        LUTS_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for LUTS_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type LUTS_R = crate::FieldReader<u8, u8>;
 impl R {
     #[doc = "Bits 0:7 - LUTs"]
     #[inline(always)]
@@ -45,8 +33,5 @@ impl crate::Readable for PARAMETER_SPEC {
 }
 #[doc = "`reset()` method sets PARAMETER to value 0"]
 impl crate::Resettable for PARAMETER_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

@@ -34,426 +34,267 @@ impl From<crate::W<FCR_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `FRDY` reader - Flash Ready Interrupt Enable"]
+pub type FRDY_R = crate::BitReader<FRDYSELECT_A>;
 #[doc = "Flash Ready Interrupt Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum FRDY_A {
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum FRDYSELECT_A {
     #[doc = "0: Flash Ready does not generate an interrupt"]
     _0 = 0,
     #[doc = "1: Flash Ready generates an interrupt"]
     _1 = 1,
 }
-impl From<FRDY_A> for bool {
+impl From<FRDYSELECT_A> for bool {
     #[inline(always)]
-    fn from(variant: FRDY_A) -> Self {
+    fn from(variant: FRDYSELECT_A) -> Self {
         variant as u8 != 0
     }
 }
-#[doc = "Field `FRDY` reader - Flash Ready Interrupt Enable"]
-pub struct FRDY_R(crate::FieldReader<bool, FRDY_A>);
 impl FRDY_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        FRDY_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> FRDY_A {
+    pub fn variant(&self) -> FRDYSELECT_A {
         match self.bits {
-            false => FRDY_A::_0,
-            true => FRDY_A::_1,
+            false => FRDYSELECT_A::_0,
+            true => FRDYSELECT_A::_1,
         }
     }
     #[doc = "Checks if the value of the field is `_0`"]
     #[inline(always)]
     pub fn is_0(&self) -> bool {
-        **self == FRDY_A::_0
+        *self == FRDYSELECT_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
     #[inline(always)]
     pub fn is_1(&self) -> bool {
-        **self == FRDY_A::_1
-    }
-}
-impl core::ops::Deref for FRDY_R {
-    type Target = crate::FieldReader<bool, FRDY_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == FRDYSELECT_A::_1
     }
 }
 #[doc = "Field `FRDY` writer - Flash Ready Interrupt Enable"]
-pub struct FRDY_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> FRDY_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: FRDY_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type FRDY_W<'a, const O: u8> = crate::BitWriter<'a, u32, FCR_SPEC, FRDYSELECT_A, O>;
+impl<'a, const O: u8> FRDY_W<'a, O> {
     #[doc = "Flash Ready does not generate an interrupt"]
     #[inline(always)]
     pub fn _0(self) -> &'a mut W {
-        self.variant(FRDY_A::_0)
+        self.variant(FRDYSELECT_A::_0)
     }
     #[doc = "Flash Ready generates an interrupt"]
     #[inline(always)]
     pub fn _1(self) -> &'a mut W {
-        self.variant(FRDY_A::_1)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
+        self.variant(FRDYSELECT_A::_1)
     }
 }
+#[doc = "Field `LOCKE` reader - Lock Error Interrupt Enable"]
+pub type LOCKE_R = crate::BitReader<LOCKESELECT_A>;
 #[doc = "Lock Error Interrupt Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum LOCKE_A {
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum LOCKESELECT_A {
     #[doc = "0: Lock Error does not generate an interrupt"]
     _0 = 0,
     #[doc = "1: Lock Error generates an interrupt"]
     _1 = 1,
 }
-impl From<LOCKE_A> for bool {
+impl From<LOCKESELECT_A> for bool {
     #[inline(always)]
-    fn from(variant: LOCKE_A) -> Self {
+    fn from(variant: LOCKESELECT_A) -> Self {
         variant as u8 != 0
     }
 }
-#[doc = "Field `LOCKE` reader - Lock Error Interrupt Enable"]
-pub struct LOCKE_R(crate::FieldReader<bool, LOCKE_A>);
 impl LOCKE_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        LOCKE_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> LOCKE_A {
+    pub fn variant(&self) -> LOCKESELECT_A {
         match self.bits {
-            false => LOCKE_A::_0,
-            true => LOCKE_A::_1,
+            false => LOCKESELECT_A::_0,
+            true => LOCKESELECT_A::_1,
         }
     }
     #[doc = "Checks if the value of the field is `_0`"]
     #[inline(always)]
     pub fn is_0(&self) -> bool {
-        **self == LOCKE_A::_0
+        *self == LOCKESELECT_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
     #[inline(always)]
     pub fn is_1(&self) -> bool {
-        **self == LOCKE_A::_1
-    }
-}
-impl core::ops::Deref for LOCKE_R {
-    type Target = crate::FieldReader<bool, LOCKE_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == LOCKESELECT_A::_1
     }
 }
 #[doc = "Field `LOCKE` writer - Lock Error Interrupt Enable"]
-pub struct LOCKE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> LOCKE_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: LOCKE_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type LOCKE_W<'a, const O: u8> = crate::BitWriter<'a, u32, FCR_SPEC, LOCKESELECT_A, O>;
+impl<'a, const O: u8> LOCKE_W<'a, O> {
     #[doc = "Lock Error does not generate an interrupt"]
     #[inline(always)]
     pub fn _0(self) -> &'a mut W {
-        self.variant(LOCKE_A::_0)
+        self.variant(LOCKESELECT_A::_0)
     }
     #[doc = "Lock Error generates an interrupt"]
     #[inline(always)]
     pub fn _1(self) -> &'a mut W {
-        self.variant(LOCKE_A::_1)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
+        self.variant(LOCKESELECT_A::_1)
     }
 }
+#[doc = "Field `PROGE` reader - Programming Error Interrupt Enable"]
+pub type PROGE_R = crate::BitReader<PROGESELECT_A>;
 #[doc = "Programming Error Interrupt Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PROGE_A {
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum PROGESELECT_A {
     #[doc = "0: Programming Error does not generate an interrupt"]
     _0 = 0,
     #[doc = "1: Programming Error generates an interrupt"]
     _1 = 1,
 }
-impl From<PROGE_A> for bool {
+impl From<PROGESELECT_A> for bool {
     #[inline(always)]
-    fn from(variant: PROGE_A) -> Self {
+    fn from(variant: PROGESELECT_A) -> Self {
         variant as u8 != 0
     }
 }
-#[doc = "Field `PROGE` reader - Programming Error Interrupt Enable"]
-pub struct PROGE_R(crate::FieldReader<bool, PROGE_A>);
 impl PROGE_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        PROGE_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PROGE_A {
+    pub fn variant(&self) -> PROGESELECT_A {
         match self.bits {
-            false => PROGE_A::_0,
-            true => PROGE_A::_1,
+            false => PROGESELECT_A::_0,
+            true => PROGESELECT_A::_1,
         }
     }
     #[doc = "Checks if the value of the field is `_0`"]
     #[inline(always)]
     pub fn is_0(&self) -> bool {
-        **self == PROGE_A::_0
+        *self == PROGESELECT_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
     #[inline(always)]
     pub fn is_1(&self) -> bool {
-        **self == PROGE_A::_1
-    }
-}
-impl core::ops::Deref for PROGE_R {
-    type Target = crate::FieldReader<bool, PROGE_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == PROGESELECT_A::_1
     }
 }
 #[doc = "Field `PROGE` writer - Programming Error Interrupt Enable"]
-pub struct PROGE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PROGE_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: PROGE_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type PROGE_W<'a, const O: u8> = crate::BitWriter<'a, u32, FCR_SPEC, PROGESELECT_A, O>;
+impl<'a, const O: u8> PROGE_W<'a, O> {
     #[doc = "Programming Error does not generate an interrupt"]
     #[inline(always)]
     pub fn _0(self) -> &'a mut W {
-        self.variant(PROGE_A::_0)
+        self.variant(PROGESELECT_A::_0)
     }
     #[doc = "Programming Error generates an interrupt"]
     #[inline(always)]
     pub fn _1(self) -> &'a mut W {
-        self.variant(PROGE_A::_1)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
-        self.w
+        self.variant(PROGESELECT_A::_1)
     }
 }
+#[doc = "Field `FWS` reader - Flash Wait State"]
+pub type FWS_R = crate::BitReader<FWSSELECT_A>;
 #[doc = "Flash Wait State\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum FWS_A {
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum FWSSELECT_A {
     #[doc = "0: The flash is read with 0 wait states"]
     _0 = 0,
     #[doc = "1: The flash is read with 1 wait states"]
     _1 = 1,
 }
-impl From<FWS_A> for bool {
+impl From<FWSSELECT_A> for bool {
     #[inline(always)]
-    fn from(variant: FWS_A) -> Self {
+    fn from(variant: FWSSELECT_A) -> Self {
         variant as u8 != 0
     }
 }
-#[doc = "Field `FWS` reader - Flash Wait State"]
-pub struct FWS_R(crate::FieldReader<bool, FWS_A>);
 impl FWS_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        FWS_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> FWS_A {
+    pub fn variant(&self) -> FWSSELECT_A {
         match self.bits {
-            false => FWS_A::_0,
-            true => FWS_A::_1,
+            false => FWSSELECT_A::_0,
+            true => FWSSELECT_A::_1,
         }
     }
     #[doc = "Checks if the value of the field is `_0`"]
     #[inline(always)]
     pub fn is_0(&self) -> bool {
-        **self == FWS_A::_0
+        *self == FWSSELECT_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
     #[inline(always)]
     pub fn is_1(&self) -> bool {
-        **self == FWS_A::_1
-    }
-}
-impl core::ops::Deref for FWS_R {
-    type Target = crate::FieldReader<bool, FWS_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == FWSSELECT_A::_1
     }
 }
 #[doc = "Field `FWS` writer - Flash Wait State"]
-pub struct FWS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> FWS_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: FWS_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type FWS_W<'a, const O: u8> = crate::BitWriter<'a, u32, FCR_SPEC, FWSSELECT_A, O>;
+impl<'a, const O: u8> FWS_W<'a, O> {
     #[doc = "The flash is read with 0 wait states"]
     #[inline(always)]
     pub fn _0(self) -> &'a mut W {
-        self.variant(FWS_A::_0)
+        self.variant(FWSSELECT_A::_0)
     }
     #[doc = "The flash is read with 1 wait states"]
     #[inline(always)]
     pub fn _1(self) -> &'a mut W {
-        self.variant(FWS_A::_1)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | ((value as u32 & 0x01) << 6);
-        self.w
+        self.variant(FWSSELECT_A::_1)
     }
 }
 #[doc = "Field `WS1OPT` reader - Wait State 1 Optimization"]
-pub struct WS1OPT_R(crate::FieldReader<bool, bool>);
-impl WS1OPT_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        WS1OPT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for WS1OPT_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type WS1OPT_R = crate::BitReader<bool>;
 #[doc = "Field `WS1OPT` writer - Wait State 1 Optimization"]
-pub struct WS1OPT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> WS1OPT_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | ((value as u32 & 0x01) << 7);
-        self.w
-    }
-}
+pub type WS1OPT_W<'a, const O: u8> = crate::BitWriter<'a, u32, FCR_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - Flash Ready Interrupt Enable"]
     #[inline(always)]
     pub fn frdy(&self) -> FRDY_R {
-        FRDY_R::new((self.bits & 0x01) != 0)
+        FRDY_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 2 - Lock Error Interrupt Enable"]
     #[inline(always)]
     pub fn locke(&self) -> LOCKE_R {
-        LOCKE_R::new(((self.bits >> 2) & 0x01) != 0)
+        LOCKE_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - Programming Error Interrupt Enable"]
     #[inline(always)]
     pub fn proge(&self) -> PROGE_R {
-        PROGE_R::new(((self.bits >> 3) & 0x01) != 0)
+        PROGE_R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 6 - Flash Wait State"]
     #[inline(always)]
     pub fn fws(&self) -> FWS_R {
-        FWS_R::new(((self.bits >> 6) & 0x01) != 0)
+        FWS_R::new(((self.bits >> 6) & 1) != 0)
     }
     #[doc = "Bit 7 - Wait State 1 Optimization"]
     #[inline(always)]
     pub fn ws1opt(&self) -> WS1OPT_R {
-        WS1OPT_R::new(((self.bits >> 7) & 0x01) != 0)
+        WS1OPT_R::new(((self.bits >> 7) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Flash Ready Interrupt Enable"]
     #[inline(always)]
-    pub fn frdy(&mut self) -> FRDY_W {
-        FRDY_W { w: self }
+    #[must_use]
+    pub fn frdy(&mut self) -> FRDY_W<0> {
+        FRDY_W::new(self)
     }
     #[doc = "Bit 2 - Lock Error Interrupt Enable"]
     #[inline(always)]
-    pub fn locke(&mut self) -> LOCKE_W {
-        LOCKE_W { w: self }
+    #[must_use]
+    pub fn locke(&mut self) -> LOCKE_W<2> {
+        LOCKE_W::new(self)
     }
     #[doc = "Bit 3 - Programming Error Interrupt Enable"]
     #[inline(always)]
-    pub fn proge(&mut self) -> PROGE_W {
-        PROGE_W { w: self }
+    #[must_use]
+    pub fn proge(&mut self) -> PROGE_W<3> {
+        PROGE_W::new(self)
     }
     #[doc = "Bit 6 - Flash Wait State"]
     #[inline(always)]
-    pub fn fws(&mut self) -> FWS_W {
-        FWS_W { w: self }
+    #[must_use]
+    pub fn fws(&mut self) -> FWS_W<6> {
+        FWS_W::new(self)
     }
     #[doc = "Bit 7 - Wait State 1 Optimization"]
     #[inline(always)]
-    pub fn ws1opt(&mut self) -> WS1OPT_W {
-        WS1OPT_W { w: self }
+    #[must_use]
+    pub fn ws1opt(&mut self) -> WS1OPT_W<7> {
+        WS1OPT_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -474,11 +315,10 @@ impl crate::Readable for FCR_SPEC {
 #[doc = "`write(|w| ..)` method takes [fcr::W](W) writer structure"]
 impl crate::Writable for FCR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets FCR to value 0"]
 impl crate::Resettable for FCR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

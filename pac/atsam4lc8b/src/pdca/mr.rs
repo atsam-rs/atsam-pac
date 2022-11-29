@@ -34,10 +34,12 @@ impl From<crate::W<MR_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `SIZE` reader - Transfer size"]
+pub type SIZE_R = crate::FieldReader<u8, SIZESELECT_A>;
 #[doc = "Transfer size\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum SIZE_A {
+pub enum SIZESELECT_A {
     #[doc = "0: `0`"]
     BYTE = 0,
     #[doc = "1: `1`"]
@@ -45,187 +47,101 @@ pub enum SIZE_A {
     #[doc = "2: `10`"]
     WORD = 2,
 }
-impl From<SIZE_A> for u8 {
+impl From<SIZESELECT_A> for u8 {
     #[inline(always)]
-    fn from(variant: SIZE_A) -> Self {
+    fn from(variant: SIZESELECT_A) -> Self {
         variant as _
     }
 }
-#[doc = "Field `SIZE` reader - Transfer size"]
-pub struct SIZE_R(crate::FieldReader<u8, SIZE_A>);
 impl SIZE_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        SIZE_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<SIZE_A> {
+    pub fn variant(&self) -> Option<SIZESELECT_A> {
         match self.bits {
-            0 => Some(SIZE_A::BYTE),
-            1 => Some(SIZE_A::HALF_WORD),
-            2 => Some(SIZE_A::WORD),
+            0 => Some(SIZESELECT_A::BYTE),
+            1 => Some(SIZESELECT_A::HALF_WORD),
+            2 => Some(SIZESELECT_A::WORD),
             _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `BYTE`"]
     #[inline(always)]
     pub fn is_byte(&self) -> bool {
-        **self == SIZE_A::BYTE
+        *self == SIZESELECT_A::BYTE
     }
     #[doc = "Checks if the value of the field is `HALF_WORD`"]
     #[inline(always)]
     pub fn is_half_word(&self) -> bool {
-        **self == SIZE_A::HALF_WORD
+        *self == SIZESELECT_A::HALF_WORD
     }
     #[doc = "Checks if the value of the field is `WORD`"]
     #[inline(always)]
     pub fn is_word(&self) -> bool {
-        **self == SIZE_A::WORD
-    }
-}
-impl core::ops::Deref for SIZE_R {
-    type Target = crate::FieldReader<u8, SIZE_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == SIZESELECT_A::WORD
     }
 }
 #[doc = "Field `SIZE` writer - Transfer size"]
-pub struct SIZE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SIZE_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: SIZE_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type SIZE_W<'a, const O: u8> = crate::FieldWriter<'a, u32, MR_SPEC, u8, SIZESELECT_A, 2, O>;
+impl<'a, const O: u8> SIZE_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn byte(self) -> &'a mut W {
-        self.variant(SIZE_A::BYTE)
+        self.variant(SIZESELECT_A::BYTE)
     }
     #[doc = "`1`"]
     #[inline(always)]
     pub fn half_word(self) -> &'a mut W {
-        self.variant(SIZE_A::HALF_WORD)
+        self.variant(SIZESELECT_A::HALF_WORD)
     }
     #[doc = "`10`"]
     #[inline(always)]
     pub fn word(self) -> &'a mut W {
-        self.variant(SIZE_A::WORD)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x03) | (value as u32 & 0x03);
-        self.w
+        self.variant(SIZESELECT_A::WORD)
     }
 }
 #[doc = "Field `ETRIG` reader - Event trigger"]
-pub struct ETRIG_R(crate::FieldReader<bool, bool>);
-impl ETRIG_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        ETRIG_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for ETRIG_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type ETRIG_R = crate::BitReader<bool>;
 #[doc = "Field `ETRIG` writer - Event trigger"]
-pub struct ETRIG_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ETRIG_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
-    }
-}
+pub type ETRIG_W<'a, const O: u8> = crate::BitWriter<'a, u32, MR_SPEC, bool, O>;
 #[doc = "Field `RING` reader - Ring Buffer"]
-pub struct RING_R(crate::FieldReader<bool, bool>);
-impl RING_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        RING_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for RING_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type RING_R = crate::BitReader<bool>;
 #[doc = "Field `RING` writer - Ring Buffer"]
-pub struct RING_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RING_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
-        self.w
-    }
-}
+pub type RING_W<'a, const O: u8> = crate::BitWriter<'a, u32, MR_SPEC, bool, O>;
 impl R {
     #[doc = "Bits 0:1 - Transfer size"]
     #[inline(always)]
     pub fn size(&self) -> SIZE_R {
-        SIZE_R::new((self.bits & 0x03) as u8)
+        SIZE_R::new((self.bits & 3) as u8)
     }
     #[doc = "Bit 2 - Event trigger"]
     #[inline(always)]
     pub fn etrig(&self) -> ETRIG_R {
-        ETRIG_R::new(((self.bits >> 2) & 0x01) != 0)
+        ETRIG_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - Ring Buffer"]
     #[inline(always)]
     pub fn ring(&self) -> RING_R {
-        RING_R::new(((self.bits >> 3) & 0x01) != 0)
+        RING_R::new(((self.bits >> 3) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bits 0:1 - Transfer size"]
     #[inline(always)]
-    pub fn size(&mut self) -> SIZE_W {
-        SIZE_W { w: self }
+    #[must_use]
+    pub fn size(&mut self) -> SIZE_W<0> {
+        SIZE_W::new(self)
     }
     #[doc = "Bit 2 - Event trigger"]
     #[inline(always)]
-    pub fn etrig(&mut self) -> ETRIG_W {
-        ETRIG_W { w: self }
+    #[must_use]
+    pub fn etrig(&mut self) -> ETRIG_W<2> {
+        ETRIG_W::new(self)
     }
     #[doc = "Bit 3 - Ring Buffer"]
     #[inline(always)]
-    pub fn ring(&mut self) -> RING_W {
-        RING_W { w: self }
+    #[must_use]
+    pub fn ring(&mut self) -> RING_W<3> {
+        RING_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -246,11 +162,10 @@ impl crate::Readable for MR_SPEC {
 #[doc = "`write(|w| ..)` method takes [mr::W](W) writer structure"]
 impl crate::Writable for MR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets MR%s to value 0"]
 impl crate::Resettable for MR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

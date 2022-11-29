@@ -54,11 +54,10 @@ impl crate::Readable for PMC_PMMR_SPEC {
 #[doc = "`write(|w| ..)` method takes [pmc_pmmr::W](W) writer structure"]
 impl crate::Writable for PMC_PMMR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets PMC_PMMR to value 0x07ff_07ff"]
 impl crate::Resettable for PMC_PMMR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x07ff_07ff
-    }
+    const RESET_VALUE: Self::Ux = 0x07ff_07ff;
 }

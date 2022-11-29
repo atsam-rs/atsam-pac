@@ -14,131 +14,23 @@ impl From<crate::R<FWPSAVEPS_SPEC>> for R {
     }
 }
 #[doc = "Field `WREGLEVEL` reader - Wait mode Regulator Level"]
-pub struct WREGLEVEL_R(crate::FieldReader<u8, u8>);
-impl WREGLEVEL_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        WREGLEVEL_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for WREGLEVEL_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type WREGLEVEL_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `WBIAS` reader - Bias in wait mode"]
-pub struct WBIAS_R(crate::FieldReader<u8, u8>);
-impl WBIAS_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        WBIAS_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for WBIAS_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type WBIAS_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `WLATDEL` reader - Flash Latdel in wait mode"]
-pub struct WLATDEL_R(crate::FieldReader<u8, u8>);
-impl WLATDEL_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        WLATDEL_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for WLATDEL_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type WLATDEL_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `RREGLEVEL` reader - Retention mode Regulator Level"]
-pub struct RREGLEVEL_R(crate::FieldReader<u8, u8>);
-impl RREGLEVEL_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        RREGLEVEL_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for RREGLEVEL_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type RREGLEVEL_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `RBIAS` reader - Bias in Retention mode"]
-pub struct RBIAS_R(crate::FieldReader<u8, u8>);
-impl RBIAS_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        RBIAS_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for RBIAS_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type RBIAS_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `RLATDEL` reader - Flash Latdel in Retention mode"]
-pub struct RLATDEL_R(crate::FieldReader<u8, u8>);
-impl RLATDEL_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        RLATDEL_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for RLATDEL_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type RLATDEL_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `BREGLEVEL` reader - Backup mode Regulator Level"]
-pub struct BREGLEVEL_R(crate::FieldReader<u8, u8>);
-impl BREGLEVEL_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        BREGLEVEL_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for BREGLEVEL_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type BREGLEVEL_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `POR18DIS` reader - POR 18 Disable"]
-pub struct POR18DIS_R(crate::FieldReader<bool, bool>);
-impl POR18DIS_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        POR18DIS_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for POR18DIS_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type POR18DIS_R = crate::BitReader<bool>;
 #[doc = "Field `FWSAS` reader - Flash Wait State Automatic Switching"]
-pub struct FWSAS_R(crate::FieldReader<bool, bool>);
-impl FWSAS_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        FWSAS_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for FWSAS_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type FWSAS_R = crate::BitReader<bool>;
 impl R {
     #[doc = "Bits 0:3 - Wait mode Regulator Level"]
     #[inline(always)]
@@ -178,12 +70,12 @@ impl R {
     #[doc = "Bit 30 - POR 18 Disable"]
     #[inline(always)]
     pub fn por18dis(&self) -> POR18DIS_R {
-        POR18DIS_R::new(((self.bits >> 30) & 0x01) != 0)
+        POR18DIS_R::new(((self.bits >> 30) & 1) != 0)
     }
     #[doc = "Bit 31 - Flash Wait State Automatic Switching"]
     #[inline(always)]
     pub fn fwsas(&self) -> FWSAS_R {
-        FWSAS_R::new(((self.bits >> 31) & 0x01) != 0)
+        FWSAS_R::new(((self.bits >> 31) & 1) != 0)
     }
 }
 #[doc = "Factory Word Power Save PS Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [fwpsaveps](index.html) module"]
@@ -197,8 +89,5 @@ impl crate::Readable for FWPSAVEPS_SPEC {
 }
 #[doc = "`reset()` method sets FWPSAVEPS to value 0"]
 impl crate::Resettable for FWPSAVEPS_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

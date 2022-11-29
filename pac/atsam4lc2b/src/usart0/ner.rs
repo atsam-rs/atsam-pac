@@ -14,19 +14,7 @@ impl From<crate::R<NER_SPEC>> for R {
     }
 }
 #[doc = "Field `NB_ERRORS` reader - Error number during ISO7816 transfers"]
-pub struct NB_ERRORS_R(crate::FieldReader<u8, u8>);
-impl NB_ERRORS_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        NB_ERRORS_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for NB_ERRORS_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type NB_ERRORS_R = crate::FieldReader<u8, u8>;
 impl R {
     #[doc = "Bits 0:7 - Error number during ISO7816 transfers"]
     #[inline(always)]
@@ -45,8 +33,5 @@ impl crate::Readable for NER_SPEC {
 }
 #[doc = "`reset()` method sets NER to value 0"]
 impl crate::Resettable for NER_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

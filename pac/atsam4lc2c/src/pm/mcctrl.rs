@@ -35,43 +35,22 @@ impl From<crate::W<MCCTRL_SPEC>> for W {
     }
 }
 #[doc = "Field `MCSEL` reader - Main Clock Select"]
-pub struct MCSEL_R(crate::FieldReader<u8, u8>);
-impl MCSEL_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        MCSEL_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for MCSEL_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type MCSEL_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `MCSEL` writer - Main Clock Select"]
-pub struct MCSEL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> MCSEL_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x07) | (value as u32 & 0x07);
-        self.w
-    }
-}
+pub type MCSEL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, MCCTRL_SPEC, u8, u8, 3, O>;
 impl R {
     #[doc = "Bits 0:2 - Main Clock Select"]
     #[inline(always)]
     pub fn mcsel(&self) -> MCSEL_R {
-        MCSEL_R::new((self.bits & 0x07) as u8)
+        MCSEL_R::new((self.bits & 7) as u8)
     }
 }
 impl W {
     #[doc = "Bits 0:2 - Main Clock Select"]
     #[inline(always)]
-    pub fn mcsel(&mut self) -> MCSEL_W {
-        MCSEL_W { w: self }
+    #[must_use]
+    pub fn mcsel(&mut self) -> MCSEL_W<0> {
+        MCSEL_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -92,11 +71,10 @@ impl crate::Readable for MCCTRL_SPEC {
 #[doc = "`write(|w| ..)` method takes [mcctrl::W](W) writer structure"]
 impl crate::Writable for MCCTRL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets MCCTRL to value 0"]
 impl crate::Resettable for MCCTRL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

@@ -35,237 +35,33 @@ impl From<crate::W<MR_SPEC>> for W {
     }
 }
 #[doc = "Field `CLKDIV` reader - Clock Divider"]
-pub struct CLKDIV_R(crate::FieldReader<u8, u8>);
-impl CLKDIV_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        CLKDIV_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CLKDIV_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CLKDIV_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `CLKDIV` writer - Clock Divider"]
-pub struct CLKDIV_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CLKDIV_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xff) | (value as u32 & 0xff);
-        self.w
-    }
-}
+pub type CLKDIV_W<'a, const O: u8> = crate::FieldWriter<'a, u32, MR_SPEC, u8, u8, 8, O>;
 #[doc = "Field `PWSDIV` reader - Power Saving Divider"]
-pub struct PWSDIV_R(crate::FieldReader<u8, u8>);
-impl PWSDIV_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        PWSDIV_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for PWSDIV_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type PWSDIV_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `PWSDIV` writer - Power Saving Divider"]
-pub struct PWSDIV_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PWSDIV_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 8)) | ((value as u32 & 0x07) << 8);
-        self.w
-    }
-}
+pub type PWSDIV_W<'a, const O: u8> = crate::FieldWriter<'a, u32, MR_SPEC, u8, u8, 3, O>;
 #[doc = "Field `RDPROOF` reader - Read Proof Enable"]
-pub struct RDPROOF_R(crate::FieldReader<bool, bool>);
-impl RDPROOF_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        RDPROOF_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for RDPROOF_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type RDPROOF_R = crate::BitReader<bool>;
 #[doc = "Field `RDPROOF` writer - Read Proof Enable"]
-pub struct RDPROOF_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RDPROOF_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 11)) | ((value as u32 & 0x01) << 11);
-        self.w
-    }
-}
+pub type RDPROOF_W<'a, const O: u8> = crate::BitWriter<'a, u32, MR_SPEC, bool, O>;
 #[doc = "Field `WRPROOF` reader - Write Proof Enable"]
-pub struct WRPROOF_R(crate::FieldReader<bool, bool>);
-impl WRPROOF_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        WRPROOF_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for WRPROOF_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type WRPROOF_R = crate::BitReader<bool>;
 #[doc = "Field `WRPROOF` writer - Write Proof Enable"]
-pub struct WRPROOF_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> WRPROOF_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 12)) | ((value as u32 & 0x01) << 12);
-        self.w
-    }
-}
+pub type WRPROOF_W<'a, const O: u8> = crate::BitWriter<'a, u32, MR_SPEC, bool, O>;
 #[doc = "Field `FBYTE` reader - Force Byte Transfer"]
-pub struct FBYTE_R(crate::FieldReader<bool, bool>);
-impl FBYTE_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        FBYTE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for FBYTE_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type FBYTE_R = crate::BitReader<bool>;
 #[doc = "Field `FBYTE` writer - Force Byte Transfer"]
-pub struct FBYTE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> FBYTE_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 13)) | ((value as u32 & 0x01) << 13);
-        self.w
-    }
-}
+pub type FBYTE_W<'a, const O: u8> = crate::BitWriter<'a, u32, MR_SPEC, bool, O>;
 #[doc = "Field `PADV` reader - Padding Value"]
-pub struct PADV_R(crate::FieldReader<bool, bool>);
-impl PADV_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        PADV_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for PADV_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type PADV_R = crate::BitReader<bool>;
 #[doc = "Field `PADV` writer - Padding Value"]
-pub struct PADV_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PADV_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 14)) | ((value as u32 & 0x01) << 14);
-        self.w
-    }
-}
+pub type PADV_W<'a, const O: u8> = crate::BitWriter<'a, u32, MR_SPEC, bool, O>;
 #[doc = "Field `CLKODD` reader - Clock divider is odd"]
-pub struct CLKODD_R(crate::FieldReader<bool, bool>);
-impl CLKODD_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        CLKODD_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CLKODD_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CLKODD_R = crate::BitReader<bool>;
 #[doc = "Field `CLKODD` writer - Clock divider is odd"]
-pub struct CLKODD_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CLKODD_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 16)) | ((value as u32 & 0x01) << 16);
-        self.w
-    }
-}
+pub type CLKODD_W<'a, const O: u8> = crate::BitWriter<'a, u32, MR_SPEC, bool, O>;
 impl R {
     #[doc = "Bits 0:7 - Clock Divider"]
     #[inline(always)]
@@ -275,69 +71,76 @@ impl R {
     #[doc = "Bits 8:10 - Power Saving Divider"]
     #[inline(always)]
     pub fn pwsdiv(&self) -> PWSDIV_R {
-        PWSDIV_R::new(((self.bits >> 8) & 0x07) as u8)
+        PWSDIV_R::new(((self.bits >> 8) & 7) as u8)
     }
     #[doc = "Bit 11 - Read Proof Enable"]
     #[inline(always)]
     pub fn rdproof(&self) -> RDPROOF_R {
-        RDPROOF_R::new(((self.bits >> 11) & 0x01) != 0)
+        RDPROOF_R::new(((self.bits >> 11) & 1) != 0)
     }
     #[doc = "Bit 12 - Write Proof Enable"]
     #[inline(always)]
     pub fn wrproof(&self) -> WRPROOF_R {
-        WRPROOF_R::new(((self.bits >> 12) & 0x01) != 0)
+        WRPROOF_R::new(((self.bits >> 12) & 1) != 0)
     }
     #[doc = "Bit 13 - Force Byte Transfer"]
     #[inline(always)]
     pub fn fbyte(&self) -> FBYTE_R {
-        FBYTE_R::new(((self.bits >> 13) & 0x01) != 0)
+        FBYTE_R::new(((self.bits >> 13) & 1) != 0)
     }
     #[doc = "Bit 14 - Padding Value"]
     #[inline(always)]
     pub fn padv(&self) -> PADV_R {
-        PADV_R::new(((self.bits >> 14) & 0x01) != 0)
+        PADV_R::new(((self.bits >> 14) & 1) != 0)
     }
     #[doc = "Bit 16 - Clock divider is odd"]
     #[inline(always)]
     pub fn clkodd(&self) -> CLKODD_R {
-        CLKODD_R::new(((self.bits >> 16) & 0x01) != 0)
+        CLKODD_R::new(((self.bits >> 16) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bits 0:7 - Clock Divider"]
     #[inline(always)]
-    pub fn clkdiv(&mut self) -> CLKDIV_W {
-        CLKDIV_W { w: self }
+    #[must_use]
+    pub fn clkdiv(&mut self) -> CLKDIV_W<0> {
+        CLKDIV_W::new(self)
     }
     #[doc = "Bits 8:10 - Power Saving Divider"]
     #[inline(always)]
-    pub fn pwsdiv(&mut self) -> PWSDIV_W {
-        PWSDIV_W { w: self }
+    #[must_use]
+    pub fn pwsdiv(&mut self) -> PWSDIV_W<8> {
+        PWSDIV_W::new(self)
     }
     #[doc = "Bit 11 - Read Proof Enable"]
     #[inline(always)]
-    pub fn rdproof(&mut self) -> RDPROOF_W {
-        RDPROOF_W { w: self }
+    #[must_use]
+    pub fn rdproof(&mut self) -> RDPROOF_W<11> {
+        RDPROOF_W::new(self)
     }
     #[doc = "Bit 12 - Write Proof Enable"]
     #[inline(always)]
-    pub fn wrproof(&mut self) -> WRPROOF_W {
-        WRPROOF_W { w: self }
+    #[must_use]
+    pub fn wrproof(&mut self) -> WRPROOF_W<12> {
+        WRPROOF_W::new(self)
     }
     #[doc = "Bit 13 - Force Byte Transfer"]
     #[inline(always)]
-    pub fn fbyte(&mut self) -> FBYTE_W {
-        FBYTE_W { w: self }
+    #[must_use]
+    pub fn fbyte(&mut self) -> FBYTE_W<13> {
+        FBYTE_W::new(self)
     }
     #[doc = "Bit 14 - Padding Value"]
     #[inline(always)]
-    pub fn padv(&mut self) -> PADV_W {
-        PADV_W { w: self }
+    #[must_use]
+    pub fn padv(&mut self) -> PADV_W<14> {
+        PADV_W::new(self)
     }
     #[doc = "Bit 16 - Clock divider is odd"]
     #[inline(always)]
-    pub fn clkodd(&mut self) -> CLKODD_W {
-        CLKODD_W { w: self }
+    #[must_use]
+    pub fn clkodd(&mut self) -> CLKODD_W<16> {
+        CLKODD_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -358,11 +161,10 @@ impl crate::Readable for MR_SPEC {
 #[doc = "`write(|w| ..)` method takes [mr::W](W) writer structure"]
 impl crate::Writable for MR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets MR to value 0"]
 impl crate::Resettable for MR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

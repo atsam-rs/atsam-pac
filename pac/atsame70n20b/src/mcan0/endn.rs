@@ -14,24 +14,12 @@ impl From<crate::R<ENDN_SPEC>> for R {
     }
 }
 #[doc = "Field `ETV` reader - Endianness Test Value"]
-pub struct ETV_R(crate::FieldReader<u32, u32>);
-impl ETV_R {
-    pub(crate) fn new(bits: u32) -> Self {
-        ETV_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for ETV_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type ETV_R = crate::FieldReader<u32, u32>;
 impl R {
     #[doc = "Bits 0:31 - Endianness Test Value"]
     #[inline(always)]
     pub fn etv(&self) -> ETV_R {
-        ETV_R::new((self.bits & 0xffff_ffff) as u32)
+        ETV_R::new(self.bits)
     }
 }
 #[doc = "Endian Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [endn](index.html) module"]
@@ -45,8 +33,5 @@ impl crate::Readable for ENDN_SPEC {
 }
 #[doc = "`reset()` method sets ENDN to value 0"]
 impl crate::Resettable for ENDN_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

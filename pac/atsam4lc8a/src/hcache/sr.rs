@@ -13,60 +13,79 @@ impl From<crate::R<SR_SPEC>> for R {
         R(reader)
     }
 }
+#[doc = "Register `SR` writer"]
+pub struct W(crate::W<SR_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<SR_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<SR_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<SR_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `CSTS` reader - Cache Controller Status"]
+pub type CSTS_R = crate::BitReader<CSTSSELECT_A>;
 #[doc = "Cache Controller Status\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CSTS_A {
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum CSTSSELECT_A {
     #[doc = "0: Cache Controller Disabled"]
     DIS = 0,
     #[doc = "1: Cache Controller Enabled"]
     EN = 1,
 }
-impl From<CSTS_A> for bool {
+impl From<CSTSSELECT_A> for bool {
     #[inline(always)]
-    fn from(variant: CSTS_A) -> Self {
+    fn from(variant: CSTSSELECT_A) -> Self {
         variant as u8 != 0
     }
 }
-#[doc = "Field `CSTS` reader - Cache Controller Status"]
-pub struct CSTS_R(crate::FieldReader<bool, CSTS_A>);
 impl CSTS_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        CSTS_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CSTS_A {
+    pub fn variant(&self) -> CSTSSELECT_A {
         match self.bits {
-            false => CSTS_A::DIS,
-            true => CSTS_A::EN,
+            false => CSTSSELECT_A::DIS,
+            true => CSTSSELECT_A::EN,
         }
     }
     #[doc = "Checks if the value of the field is `DIS`"]
     #[inline(always)]
     pub fn is_dis(&self) -> bool {
-        **self == CSTS_A::DIS
+        *self == CSTSSELECT_A::DIS
     }
     #[doc = "Checks if the value of the field is `EN`"]
     #[inline(always)]
     pub fn is_en(&self) -> bool {
-        **self == CSTS_A::EN
-    }
-}
-impl core::ops::Deref for CSTS_R {
-    type Target = crate::FieldReader<bool, CSTS_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == CSTSSELECT_A::EN
     }
 }
 impl R {
     #[doc = "Bit 0 - Cache Controller Status"]
     #[inline(always)]
     pub fn csts(&self) -> CSTS_R {
-        CSTS_R::new((self.bits & 0x01) != 0)
+        CSTS_R::new((self.bits & 1) != 0)
     }
 }
-#[doc = "Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sr](index.html) module"]
+impl W {
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Status Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sr](index.html) module"]
 pub struct SR_SPEC;
 impl crate::RegisterSpec for SR_SPEC {
     type Ux = u32;
@@ -75,10 +94,13 @@ impl crate::RegisterSpec for SR_SPEC {
 impl crate::Readable for SR_SPEC {
     type Reader = R;
 }
+#[doc = "`write(|w| ..)` method takes [sr::W](W) writer structure"]
+impl crate::Writable for SR_SPEC {
+    type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+}
 #[doc = "`reset()` method sets SR to value 0"]
 impl crate::Resettable for SR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

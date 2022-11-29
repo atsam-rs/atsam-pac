@@ -35,329 +35,112 @@ impl From<crate::W<PBBMASK_SPEC>> for W {
     }
 }
 #[doc = "Field `HFLASHC_` reader - HFLASHC APB Clock Enable"]
-pub struct HFLASHC__R(crate::FieldReader<bool, bool>);
-impl HFLASHC__R {
-    pub(crate) fn new(bits: bool) -> Self {
-        HFLASHC__R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for HFLASHC__R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type HFLASHC__R = crate::BitReader<bool>;
 #[doc = "Field `HFLASHC_` writer - HFLASHC APB Clock Enable"]
-pub struct HFLASHC__W<'a> {
-    w: &'a mut W,
-}
-impl<'a> HFLASHC__W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type HFLASHC__W<'a, const O: u8> = crate::BitWriter<'a, u32, PBBMASK_SPEC, bool, O>;
 #[doc = "Field `HCACHE_` reader - HCACHE APB Clock Enable"]
-pub struct HCACHE__R(crate::FieldReader<bool, bool>);
-impl HCACHE__R {
-    pub(crate) fn new(bits: bool) -> Self {
-        HCACHE__R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for HCACHE__R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type HCACHE__R = crate::BitReader<bool>;
 #[doc = "Field `HCACHE_` writer - HCACHE APB Clock Enable"]
-pub struct HCACHE__W<'a> {
-    w: &'a mut W,
-}
-impl<'a> HCACHE__W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
-}
+pub type HCACHE__W<'a, const O: u8> = crate::BitWriter<'a, u32, PBBMASK_SPEC, bool, O>;
 #[doc = "Field `HMATRIX_` reader - HMATRIX APB Clock Enable"]
-pub struct HMATRIX__R(crate::FieldReader<bool, bool>);
-impl HMATRIX__R {
-    pub(crate) fn new(bits: bool) -> Self {
-        HMATRIX__R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for HMATRIX__R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type HMATRIX__R = crate::BitReader<bool>;
 #[doc = "Field `HMATRIX_` writer - HMATRIX APB Clock Enable"]
-pub struct HMATRIX__W<'a> {
-    w: &'a mut W,
-}
-impl<'a> HMATRIX__W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
-    }
-}
+pub type HMATRIX__W<'a, const O: u8> = crate::BitWriter<'a, u32, PBBMASK_SPEC, bool, O>;
 #[doc = "Field `PDCA_` reader - PDCA APB Clock Enable"]
-pub struct PDCA__R(crate::FieldReader<bool, bool>);
-impl PDCA__R {
-    pub(crate) fn new(bits: bool) -> Self {
-        PDCA__R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for PDCA__R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type PDCA__R = crate::BitReader<bool>;
 #[doc = "Field `PDCA_` writer - PDCA APB Clock Enable"]
-pub struct PDCA__W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PDCA__W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
-        self.w
-    }
-}
+pub type PDCA__W<'a, const O: u8> = crate::BitWriter<'a, u32, PBBMASK_SPEC, bool, O>;
 #[doc = "Field `CRCCU_` reader - CRCCU APB Clock Enable"]
-pub struct CRCCU__R(crate::FieldReader<bool, bool>);
-impl CRCCU__R {
-    pub(crate) fn new(bits: bool) -> Self {
-        CRCCU__R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CRCCU__R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CRCCU__R = crate::BitReader<bool>;
 #[doc = "Field `CRCCU_` writer - CRCCU APB Clock Enable"]
-pub struct CRCCU__W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CRCCU__W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
-        self.w
-    }
-}
+pub type CRCCU__W<'a, const O: u8> = crate::BitWriter<'a, u32, PBBMASK_SPEC, bool, O>;
 #[doc = "Field `USBC_` reader - USBC APB Clock Enable"]
-pub struct USBC__R(crate::FieldReader<bool, bool>);
-impl USBC__R {
-    pub(crate) fn new(bits: bool) -> Self {
-        USBC__R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for USBC__R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type USBC__R = crate::BitReader<bool>;
 #[doc = "Field `USBC_` writer - USBC APB Clock Enable"]
-pub struct USBC__W<'a> {
-    w: &'a mut W,
-}
-impl<'a> USBC__W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
-        self.w
-    }
-}
+pub type USBC__W<'a, const O: u8> = crate::BitWriter<'a, u32, PBBMASK_SPEC, bool, O>;
 #[doc = "Field `PEVC_` reader - PEVC APB Clock Enable"]
-pub struct PEVC__R(crate::FieldReader<bool, bool>);
-impl PEVC__R {
-    pub(crate) fn new(bits: bool) -> Self {
-        PEVC__R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for PEVC__R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type PEVC__R = crate::BitReader<bool>;
 #[doc = "Field `PEVC_` writer - PEVC APB Clock Enable"]
-pub struct PEVC__W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PEVC__W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | ((value as u32 & 0x01) << 6);
-        self.w
-    }
-}
+pub type PEVC__W<'a, const O: u8> = crate::BitWriter<'a, u32, PBBMASK_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - HFLASHC APB Clock Enable"]
     #[inline(always)]
     pub fn hflashc_(&self) -> HFLASHC__R {
-        HFLASHC__R::new((self.bits & 0x01) != 0)
+        HFLASHC__R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - HCACHE APB Clock Enable"]
     #[inline(always)]
     pub fn hcache_(&self) -> HCACHE__R {
-        HCACHE__R::new(((self.bits >> 1) & 0x01) != 0)
+        HCACHE__R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - HMATRIX APB Clock Enable"]
     #[inline(always)]
     pub fn hmatrix_(&self) -> HMATRIX__R {
-        HMATRIX__R::new(((self.bits >> 2) & 0x01) != 0)
+        HMATRIX__R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - PDCA APB Clock Enable"]
     #[inline(always)]
     pub fn pdca_(&self) -> PDCA__R {
-        PDCA__R::new(((self.bits >> 3) & 0x01) != 0)
+        PDCA__R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 4 - CRCCU APB Clock Enable"]
     #[inline(always)]
     pub fn crccu_(&self) -> CRCCU__R {
-        CRCCU__R::new(((self.bits >> 4) & 0x01) != 0)
+        CRCCU__R::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bit 5 - USBC APB Clock Enable"]
     #[inline(always)]
     pub fn usbc_(&self) -> USBC__R {
-        USBC__R::new(((self.bits >> 5) & 0x01) != 0)
+        USBC__R::new(((self.bits >> 5) & 1) != 0)
     }
     #[doc = "Bit 6 - PEVC APB Clock Enable"]
     #[inline(always)]
     pub fn pevc_(&self) -> PEVC__R {
-        PEVC__R::new(((self.bits >> 6) & 0x01) != 0)
+        PEVC__R::new(((self.bits >> 6) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - HFLASHC APB Clock Enable"]
     #[inline(always)]
-    pub fn hflashc_(&mut self) -> HFLASHC__W {
-        HFLASHC__W { w: self }
+    #[must_use]
+    pub fn hflashc_(&mut self) -> HFLASHC__W<0> {
+        HFLASHC__W::new(self)
     }
     #[doc = "Bit 1 - HCACHE APB Clock Enable"]
     #[inline(always)]
-    pub fn hcache_(&mut self) -> HCACHE__W {
-        HCACHE__W { w: self }
+    #[must_use]
+    pub fn hcache_(&mut self) -> HCACHE__W<1> {
+        HCACHE__W::new(self)
     }
     #[doc = "Bit 2 - HMATRIX APB Clock Enable"]
     #[inline(always)]
-    pub fn hmatrix_(&mut self) -> HMATRIX__W {
-        HMATRIX__W { w: self }
+    #[must_use]
+    pub fn hmatrix_(&mut self) -> HMATRIX__W<2> {
+        HMATRIX__W::new(self)
     }
     #[doc = "Bit 3 - PDCA APB Clock Enable"]
     #[inline(always)]
-    pub fn pdca_(&mut self) -> PDCA__W {
-        PDCA__W { w: self }
+    #[must_use]
+    pub fn pdca_(&mut self) -> PDCA__W<3> {
+        PDCA__W::new(self)
     }
     #[doc = "Bit 4 - CRCCU APB Clock Enable"]
     #[inline(always)]
-    pub fn crccu_(&mut self) -> CRCCU__W {
-        CRCCU__W { w: self }
+    #[must_use]
+    pub fn crccu_(&mut self) -> CRCCU__W<4> {
+        CRCCU__W::new(self)
     }
     #[doc = "Bit 5 - USBC APB Clock Enable"]
     #[inline(always)]
-    pub fn usbc_(&mut self) -> USBC__W {
-        USBC__W { w: self }
+    #[must_use]
+    pub fn usbc_(&mut self) -> USBC__W<5> {
+        USBC__W::new(self)
     }
     #[doc = "Bit 6 - PEVC APB Clock Enable"]
     #[inline(always)]
-    pub fn pevc_(&mut self) -> PEVC__W {
-        PEVC__W { w: self }
+    #[must_use]
+    pub fn pevc_(&mut self) -> PEVC__W<6> {
+        PEVC__W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -378,11 +161,10 @@ impl crate::Readable for PBBMASK_SPEC {
 #[doc = "`write(|w| ..)` method takes [pbbmask::W](W) writer structure"]
 impl crate::Writable for PBBMASK_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets PBBMASK to value 0x01"]
 impl crate::Resettable for PBBMASK_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x01
-    }
+    const RESET_VALUE: Self::Ux = 0x01;
 }

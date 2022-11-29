@@ -14,38 +14,14 @@ impl From<crate::R<WPSR_SPEC>> for R {
     }
 }
 #[doc = "Field `WPVS` reader - Write Protect Violation Status"]
-pub struct WPVS_R(crate::FieldReader<bool, bool>);
-impl WPVS_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        WPVS_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for WPVS_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type WPVS_R = crate::BitReader<bool>;
 #[doc = "Field `WPVSRC` reader - Write Protect Violation Source"]
-pub struct WPVSRC_R(crate::FieldReader<u16, u16>);
-impl WPVSRC_R {
-    pub(crate) fn new(bits: u16) -> Self {
-        WPVSRC_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for WPVSRC_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type WPVSRC_R = crate::FieldReader<u16, u16>;
 impl R {
     #[doc = "Bit 0 - Write Protect Violation Status"]
     #[inline(always)]
     pub fn wpvs(&self) -> WPVS_R {
-        WPVS_R::new((self.bits & 0x01) != 0)
+        WPVS_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bits 8:23 - Write Protect Violation Source"]
     #[inline(always)]
@@ -64,8 +40,5 @@ impl crate::Readable for WPSR_SPEC {
 }
 #[doc = "`reset()` method sets WPSR to value 0"]
 impl crate::Resettable for WPSR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

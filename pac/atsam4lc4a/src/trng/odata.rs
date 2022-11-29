@@ -14,24 +14,12 @@ impl From<crate::R<ODATA_SPEC>> for R {
     }
 }
 #[doc = "Field `ODATA` reader - Output Data"]
-pub struct ODATA_R(crate::FieldReader<bool, bool>);
-impl ODATA_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        ODATA_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for ODATA_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type ODATA_R = crate::BitReader<bool>;
 impl R {
     #[doc = "Bit 0 - Output Data"]
     #[inline(always)]
     pub fn odata(&self) -> ODATA_R {
-        ODATA_R::new((self.bits & 0x01) != 0)
+        ODATA_R::new((self.bits & 1) != 0)
     }
 }
 #[doc = "Output Data Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [odata](index.html) module"]
@@ -45,8 +33,5 @@ impl crate::Readable for ODATA_SPEC {
 }
 #[doc = "`reset()` method sets ODATA to value 0"]
 impl crate::Resettable for ODATA_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

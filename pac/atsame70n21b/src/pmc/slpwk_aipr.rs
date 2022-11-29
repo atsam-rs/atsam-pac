@@ -14,24 +14,12 @@ impl From<crate::R<SLPWK_AIPR_SPEC>> for R {
     }
 }
 #[doc = "Field `AIP` reader - Activity In Progress"]
-pub struct AIP_R(crate::FieldReader<bool, bool>);
-impl AIP_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        AIP_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for AIP_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type AIP_R = crate::BitReader<bool>;
 impl R {
     #[doc = "Bit 0 - Activity In Progress"]
     #[inline(always)]
     pub fn aip(&self) -> AIP_R {
-        AIP_R::new((self.bits & 0x01) != 0)
+        AIP_R::new((self.bits & 1) != 0)
     }
 }
 #[doc = "SleepWalking Activity In Progress Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [slpwk_aipr](index.html) module"]
@@ -45,8 +33,5 @@ impl crate::Readable for SLPWK_AIPR_SPEC {
 }
 #[doc = "`reset()` method sets SLPWK_AIPR to value 0"]
 impl crate::Resettable for SLPWK_AIPR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

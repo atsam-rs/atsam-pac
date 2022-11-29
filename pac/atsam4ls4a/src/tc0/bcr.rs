@@ -20,61 +20,39 @@ impl From<crate::W<BCR_SPEC>> for W {
     }
 }
 #[doc = "Synchro Command\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SYNC_AW {
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum SYNCSELECT_AW {
     #[doc = "0: No effect."]
     _0 = 0,
     #[doc = "1: Asserts the SYNC signal which generates a software trigger simultaneously for each of the channels."]
     _1 = 1,
 }
-impl From<SYNC_AW> for bool {
+impl From<SYNCSELECT_AW> for bool {
     #[inline(always)]
-    fn from(variant: SYNC_AW) -> Self {
+    fn from(variant: SYNCSELECT_AW) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `SYNC` writer - Synchro Command"]
-pub struct SYNC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SYNC_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: SYNC_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type SYNC_W<'a, const O: u8> = crate::BitWriter<'a, u32, BCR_SPEC, SYNCSELECT_AW, O>;
+impl<'a, const O: u8> SYNC_W<'a, O> {
     #[doc = "No effect."]
     #[inline(always)]
     pub fn _0(self) -> &'a mut W {
-        self.variant(SYNC_AW::_0)
+        self.variant(SYNCSELECT_AW::_0)
     }
     #[doc = "Asserts the SYNC signal which generates a software trigger simultaneously for each of the channels."]
     #[inline(always)]
     pub fn _1(self) -> &'a mut W {
-        self.variant(SYNC_AW::_1)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
+        self.variant(SYNCSELECT_AW::_1)
     }
 }
 impl W {
     #[doc = "Bit 0 - Synchro Command"]
     #[inline(always)]
-    pub fn sync(&mut self) -> SYNC_W {
-        SYNC_W { w: self }
+    #[must_use]
+    pub fn sync(&mut self) -> SYNC_W<0> {
+        SYNC_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -91,11 +69,10 @@ impl crate::RegisterSpec for BCR_SPEC {
 #[doc = "`write(|w| ..)` method takes [bcr::W](W) writer structure"]
 impl crate::Writable for BCR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets BCR to value 0"]
 impl crate::Resettable for BCR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

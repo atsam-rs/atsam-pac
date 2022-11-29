@@ -20,95 +20,55 @@ impl From<crate::W<TDR_SPEC>> for W {
     }
 }
 #[doc = "Field `TD` writer - Transmit Data"]
-pub struct TD_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TD_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xffff) | (value as u32 & 0xffff);
-        self.w
-    }
-}
+pub type TD_W<'a, const O: u8> = crate::FieldWriter<'a, u32, TDR_SPEC, u16, u16, 16, O>;
 #[doc = "Field `PCS` writer - Peripheral Chip Select"]
-pub struct PCS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PCS_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 16)) | ((value as u32 & 0x0f) << 16);
-        self.w
-    }
-}
+pub type PCS_W<'a, const O: u8> = crate::FieldWriter<'a, u32, TDR_SPEC, u8, u8, 4, O>;
 #[doc = "Last Transfer\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum LASTXFER_AW {
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum LASTXFERSELECT_AW {
     #[doc = "0: No effect."]
     _0 = 0,
     #[doc = "1: The current NPCS will be deasserted after the character written in TD has been transferred. When CSAAT is set, thisallows to close the communication with the current serial peripheral by raising the corresponding NPCS line as soon as TDtransfer has completed."]
     _1 = 1,
 }
-impl From<LASTXFER_AW> for bool {
+impl From<LASTXFERSELECT_AW> for bool {
     #[inline(always)]
-    fn from(variant: LASTXFER_AW) -> Self {
+    fn from(variant: LASTXFERSELECT_AW) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `LASTXFER` writer - Last Transfer"]
-pub struct LASTXFER_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> LASTXFER_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: LASTXFER_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type LASTXFER_W<'a, const O: u8> = crate::BitWriter<'a, u32, TDR_SPEC, LASTXFERSELECT_AW, O>;
+impl<'a, const O: u8> LASTXFER_W<'a, O> {
     #[doc = "No effect."]
     #[inline(always)]
     pub fn _0(self) -> &'a mut W {
-        self.variant(LASTXFER_AW::_0)
+        self.variant(LASTXFERSELECT_AW::_0)
     }
     #[doc = "The current NPCS will be deasserted after the character written in TD has been transferred. When CSAAT is set, thisallows to close the communication with the current serial peripheral by raising the corresponding NPCS line as soon as TDtransfer has completed."]
     #[inline(always)]
     pub fn _1(self) -> &'a mut W {
-        self.variant(LASTXFER_AW::_1)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 24)) | ((value as u32 & 0x01) << 24);
-        self.w
+        self.variant(LASTXFERSELECT_AW::_1)
     }
 }
 impl W {
     #[doc = "Bits 0:15 - Transmit Data"]
     #[inline(always)]
-    pub fn td(&mut self) -> TD_W {
-        TD_W { w: self }
+    #[must_use]
+    pub fn td(&mut self) -> TD_W<0> {
+        TD_W::new(self)
     }
     #[doc = "Bits 16:19 - Peripheral Chip Select"]
     #[inline(always)]
-    pub fn pcs(&mut self) -> PCS_W {
-        PCS_W { w: self }
+    #[must_use]
+    pub fn pcs(&mut self) -> PCS_W<16> {
+        PCS_W::new(self)
     }
     #[doc = "Bit 24 - Last Transfer"]
     #[inline(always)]
-    pub fn lastxfer(&mut self) -> LASTXFER_W {
-        LASTXFER_W { w: self }
+    #[must_use]
+    pub fn lastxfer(&mut self) -> LASTXFER_W<24> {
+        LASTXFER_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -125,11 +85,10 @@ impl crate::RegisterSpec for TDR_SPEC {
 #[doc = "`write(|w| ..)` method takes [tdr::W](W) writer structure"]
 impl crate::Writable for TDR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets TDR to value 0"]
 impl crate::Resettable for TDR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

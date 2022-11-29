@@ -14,19 +14,7 @@ impl From<crate::R<RSHR_SPEC>> for R {
     }
 }
 #[doc = "Field `RSDAT` reader - Receive Synchronization Data"]
-pub struct RSDAT_R(crate::FieldReader<u16, u16>);
-impl RSDAT_R {
-    pub(crate) fn new(bits: u16) -> Self {
-        RSDAT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for RSDAT_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type RSDAT_R = crate::FieldReader<u16, u16>;
 impl R {
     #[doc = "Bits 0:15 - Receive Synchronization Data"]
     #[inline(always)]
@@ -45,8 +33,5 @@ impl crate::Readable for RSHR_SPEC {
 }
 #[doc = "`reset()` method sets RSHR to value 0"]
 impl crate::Resettable for RSHR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

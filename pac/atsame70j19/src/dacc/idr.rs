@@ -20,113 +20,37 @@ impl From<crate::W<IDR_SPEC>> for W {
     }
 }
 #[doc = "Field `TXRDY0` writer - Transmit Ready Interrupt Disable of channel 0"]
-pub struct TXRDY0_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TXRDY0_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type TXRDY0_W<'a, const O: u8> = crate::BitWriter<'a, u32, IDR_SPEC, bool, O>;
 #[doc = "Field `TXRDY1` writer - Transmit Ready Interrupt Disable of channel 1"]
-pub struct TXRDY1_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TXRDY1_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
-}
+pub type TXRDY1_W<'a, const O: u8> = crate::BitWriter<'a, u32, IDR_SPEC, bool, O>;
 #[doc = "Field `EOC0` writer - End of Conversion Interrupt Disable of channel 0"]
-pub struct EOC0_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> EOC0_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
-        self.w
-    }
-}
+pub type EOC0_W<'a, const O: u8> = crate::BitWriter<'a, u32, IDR_SPEC, bool, O>;
 #[doc = "Field `EOC1` writer - End of Conversion Interrupt Disable of channel 1"]
-pub struct EOC1_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> EOC1_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
-        self.w
-    }
-}
+pub type EOC1_W<'a, const O: u8> = crate::BitWriter<'a, u32, IDR_SPEC, bool, O>;
 impl W {
     #[doc = "Bit 0 - Transmit Ready Interrupt Disable of channel 0"]
     #[inline(always)]
-    pub fn txrdy0(&mut self) -> TXRDY0_W {
-        TXRDY0_W { w: self }
+    #[must_use]
+    pub fn txrdy0(&mut self) -> TXRDY0_W<0> {
+        TXRDY0_W::new(self)
     }
     #[doc = "Bit 1 - Transmit Ready Interrupt Disable of channel 1"]
     #[inline(always)]
-    pub fn txrdy1(&mut self) -> TXRDY1_W {
-        TXRDY1_W { w: self }
+    #[must_use]
+    pub fn txrdy1(&mut self) -> TXRDY1_W<1> {
+        TXRDY1_W::new(self)
     }
     #[doc = "Bit 4 - End of Conversion Interrupt Disable of channel 0"]
     #[inline(always)]
-    pub fn eoc0(&mut self) -> EOC0_W {
-        EOC0_W { w: self }
+    #[must_use]
+    pub fn eoc0(&mut self) -> EOC0_W<4> {
+        EOC0_W::new(self)
     }
     #[doc = "Bit 5 - End of Conversion Interrupt Disable of channel 1"]
     #[inline(always)]
-    pub fn eoc1(&mut self) -> EOC1_W {
-        EOC1_W { w: self }
+    #[must_use]
+    pub fn eoc1(&mut self) -> EOC1_W<5> {
+        EOC1_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -143,11 +67,10 @@ impl crate::RegisterSpec for IDR_SPEC {
 #[doc = "`write(|w| ..)` method takes [idr::W](W) writer structure"]
 impl crate::Writable for IDR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets IDR to value 0"]
 impl crate::Resettable for IDR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

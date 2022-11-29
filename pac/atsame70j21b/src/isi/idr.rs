@@ -20,248 +20,77 @@ impl From<crate::W<IDR_SPEC>> for W {
     }
 }
 #[doc = "Field `DIS_DONE` writer - Disable Done Interrupt Disable"]
-pub struct DIS_DONE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DIS_DONE_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
-}
+pub type DIS_DONE_W<'a, const O: u8> = crate::BitWriter<'a, u32, IDR_SPEC, bool, O>;
 #[doc = "Field `SRST` writer - Software Reset Interrupt Disable"]
-pub struct SRST_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SRST_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
-    }
-}
+pub type SRST_W<'a, const O: u8> = crate::BitWriter<'a, u32, IDR_SPEC, bool, O>;
 #[doc = "Field `VSYNC` writer - Vertical Synchronization Interrupt Disable"]
-pub struct VSYNC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> VSYNC_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 10)) | ((value as u32 & 0x01) << 10);
-        self.w
-    }
-}
+pub type VSYNC_W<'a, const O: u8> = crate::BitWriter<'a, u32, IDR_SPEC, bool, O>;
 #[doc = "Field `PXFR_DONE` writer - Preview DMA Transfer Done Interrupt Disable"]
-pub struct PXFR_DONE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PXFR_DONE_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 16)) | ((value as u32 & 0x01) << 16);
-        self.w
-    }
-}
+pub type PXFR_DONE_W<'a, const O: u8> = crate::BitWriter<'a, u32, IDR_SPEC, bool, O>;
 #[doc = "Field `CXFR_DONE` writer - Codec DMA Transfer Done Interrupt Disable"]
-pub struct CXFR_DONE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CXFR_DONE_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 17)) | ((value as u32 & 0x01) << 17);
-        self.w
-    }
-}
+pub type CXFR_DONE_W<'a, const O: u8> = crate::BitWriter<'a, u32, IDR_SPEC, bool, O>;
 #[doc = "Field `P_OVR` writer - Preview Datapath Overflow Interrupt Disable"]
-pub struct P_OVR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> P_OVR_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 24)) | ((value as u32 & 0x01) << 24);
-        self.w
-    }
-}
+pub type P_OVR_W<'a, const O: u8> = crate::BitWriter<'a, u32, IDR_SPEC, bool, O>;
 #[doc = "Field `C_OVR` writer - Codec Datapath Overflow Interrupt Disable"]
-pub struct C_OVR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> C_OVR_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 25)) | ((value as u32 & 0x01) << 25);
-        self.w
-    }
-}
+pub type C_OVR_W<'a, const O: u8> = crate::BitWriter<'a, u32, IDR_SPEC, bool, O>;
 #[doc = "Field `CRC_ERR` writer - Embedded Synchronization CRC Error Interrupt Disable"]
-pub struct CRC_ERR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CRC_ERR_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 26)) | ((value as u32 & 0x01) << 26);
-        self.w
-    }
-}
+pub type CRC_ERR_W<'a, const O: u8> = crate::BitWriter<'a, u32, IDR_SPEC, bool, O>;
 #[doc = "Field `FR_OVR` writer - Frame Rate Overflow Interrupt Disable"]
-pub struct FR_OVR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> FR_OVR_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 27)) | ((value as u32 & 0x01) << 27);
-        self.w
-    }
-}
+pub type FR_OVR_W<'a, const O: u8> = crate::BitWriter<'a, u32, IDR_SPEC, bool, O>;
 impl W {
     #[doc = "Bit 1 - Disable Done Interrupt Disable"]
     #[inline(always)]
-    pub fn dis_done(&mut self) -> DIS_DONE_W {
-        DIS_DONE_W { w: self }
+    #[must_use]
+    pub fn dis_done(&mut self) -> DIS_DONE_W<1> {
+        DIS_DONE_W::new(self)
     }
     #[doc = "Bit 2 - Software Reset Interrupt Disable"]
     #[inline(always)]
-    pub fn srst(&mut self) -> SRST_W {
-        SRST_W { w: self }
+    #[must_use]
+    pub fn srst(&mut self) -> SRST_W<2> {
+        SRST_W::new(self)
     }
     #[doc = "Bit 10 - Vertical Synchronization Interrupt Disable"]
     #[inline(always)]
-    pub fn vsync(&mut self) -> VSYNC_W {
-        VSYNC_W { w: self }
+    #[must_use]
+    pub fn vsync(&mut self) -> VSYNC_W<10> {
+        VSYNC_W::new(self)
     }
     #[doc = "Bit 16 - Preview DMA Transfer Done Interrupt Disable"]
     #[inline(always)]
-    pub fn pxfr_done(&mut self) -> PXFR_DONE_W {
-        PXFR_DONE_W { w: self }
+    #[must_use]
+    pub fn pxfr_done(&mut self) -> PXFR_DONE_W<16> {
+        PXFR_DONE_W::new(self)
     }
     #[doc = "Bit 17 - Codec DMA Transfer Done Interrupt Disable"]
     #[inline(always)]
-    pub fn cxfr_done(&mut self) -> CXFR_DONE_W {
-        CXFR_DONE_W { w: self }
+    #[must_use]
+    pub fn cxfr_done(&mut self) -> CXFR_DONE_W<17> {
+        CXFR_DONE_W::new(self)
     }
     #[doc = "Bit 24 - Preview Datapath Overflow Interrupt Disable"]
     #[inline(always)]
-    pub fn p_ovr(&mut self) -> P_OVR_W {
-        P_OVR_W { w: self }
+    #[must_use]
+    pub fn p_ovr(&mut self) -> P_OVR_W<24> {
+        P_OVR_W::new(self)
     }
     #[doc = "Bit 25 - Codec Datapath Overflow Interrupt Disable"]
     #[inline(always)]
-    pub fn c_ovr(&mut self) -> C_OVR_W {
-        C_OVR_W { w: self }
+    #[must_use]
+    pub fn c_ovr(&mut self) -> C_OVR_W<25> {
+        C_OVR_W::new(self)
     }
     #[doc = "Bit 26 - Embedded Synchronization CRC Error Interrupt Disable"]
     #[inline(always)]
-    pub fn crc_err(&mut self) -> CRC_ERR_W {
-        CRC_ERR_W { w: self }
+    #[must_use]
+    pub fn crc_err(&mut self) -> CRC_ERR_W<26> {
+        CRC_ERR_W::new(self)
     }
     #[doc = "Bit 27 - Frame Rate Overflow Interrupt Disable"]
     #[inline(always)]
-    pub fn fr_ovr(&mut self) -> FR_OVR_W {
-        FR_OVR_W { w: self }
+    #[must_use]
+    pub fn fr_ovr(&mut self) -> FR_OVR_W<27> {
+        FR_OVR_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -278,11 +107,10 @@ impl crate::RegisterSpec for IDR_SPEC {
 #[doc = "`write(|w| ..)` method takes [idr::W](W) writer structure"]
 impl crate::Writable for IDR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets IDR to value 0"]
 impl crate::Resettable for IDR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

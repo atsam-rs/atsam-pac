@@ -20,61 +20,39 @@ impl From<crate::W<CTRL_SPEC>> for W {
     }
 }
 #[doc = "Cache Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CEN_AW {
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum CENSELECT_AW {
     #[doc = "0: Disable Cache Controller"]
     NO = 0,
     #[doc = "1: Enable Cache Controller"]
     YES = 1,
 }
-impl From<CEN_AW> for bool {
+impl From<CENSELECT_AW> for bool {
     #[inline(always)]
-    fn from(variant: CEN_AW) -> Self {
+    fn from(variant: CENSELECT_AW) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `CEN` writer - Cache Enable"]
-pub struct CEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CEN_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CEN_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type CEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, CENSELECT_AW, O>;
+impl<'a, const O: u8> CEN_W<'a, O> {
     #[doc = "Disable Cache Controller"]
     #[inline(always)]
     pub fn no(self) -> &'a mut W {
-        self.variant(CEN_AW::NO)
+        self.variant(CENSELECT_AW::NO)
     }
     #[doc = "Enable Cache Controller"]
     #[inline(always)]
     pub fn yes(self) -> &'a mut W {
-        self.variant(CEN_AW::YES)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
+        self.variant(CENSELECT_AW::YES)
     }
 }
 impl W {
     #[doc = "Bit 0 - Cache Enable"]
     #[inline(always)]
-    pub fn cen(&mut self) -> CEN_W {
-        CEN_W { w: self }
+    #[must_use]
+    pub fn cen(&mut self) -> CEN_W<0> {
+        CEN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -91,11 +69,10 @@ impl crate::RegisterSpec for CTRL_SPEC {
 #[doc = "`write(|w| ..)` method takes [ctrl::W](W) writer structure"]
 impl crate::Writable for CTRL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets CTRL to value 0"]
 impl crate::Resettable for CTRL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

@@ -35,43 +35,23 @@ impl From<crate::W<DEVDMAADDRESS_SPEC>> for W {
     }
 }
 #[doc = "Field `BUFF_ADD` reader - Buffer Address"]
-pub struct BUFF_ADD_R(crate::FieldReader<u32, u32>);
-impl BUFF_ADD_R {
-    pub(crate) fn new(bits: u32) -> Self {
-        BUFF_ADD_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for BUFF_ADD_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type BUFF_ADD_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `BUFF_ADD` writer - Buffer Address"]
-pub struct BUFF_ADD_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> BUFF_ADD_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xffff_ffff) | (value as u32 & 0xffff_ffff);
-        self.w
-    }
-}
+pub type BUFF_ADD_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, DEVDMAADDRESS_SPEC, u32, u32, 32, O>;
 impl R {
     #[doc = "Bits 0:31 - Buffer Address"]
     #[inline(always)]
     pub fn buff_add(&self) -> BUFF_ADD_R {
-        BUFF_ADD_R::new((self.bits & 0xffff_ffff) as u32)
+        BUFF_ADD_R::new(self.bits)
     }
 }
 impl W {
     #[doc = "Bits 0:31 - Buffer Address"]
     #[inline(always)]
-    pub fn buff_add(&mut self) -> BUFF_ADD_W {
-        BUFF_ADD_W { w: self }
+    #[must_use]
+    pub fn buff_add(&mut self) -> BUFF_ADD_W<0> {
+        BUFF_ADD_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -92,11 +72,10 @@ impl crate::Readable for DEVDMAADDRESS_SPEC {
 #[doc = "`write(|w| ..)` method takes [devdmaaddress::W](W) writer structure"]
 impl crate::Writable for DEVDMAADDRESS_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets DEVDMAADDRESS to value 0"]
 impl crate::Resettable for DEVDMAADDRESS_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

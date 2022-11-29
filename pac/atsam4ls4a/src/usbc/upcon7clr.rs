@@ -20,329 +20,101 @@ impl From<crate::W<UPCON7CLR_SPEC>> for W {
     }
 }
 #[doc = "Field `RXINEC` writer - RXINE Clear"]
-pub struct RXINEC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RXINEC_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type RXINEC_W<'a, const O: u8> = crate::BitWriter<'a, u32, UPCON7CLR_SPEC, bool, O>;
 #[doc = "Field `TXOUTEC` writer - TXOUTE Clear"]
-pub struct TXOUTEC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TXOUTEC_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
-}
+pub type TXOUTEC_W<'a, const O: u8> = crate::BitWriter<'a, u32, UPCON7CLR_SPEC, bool, O>;
 #[doc = "Field `TXSTPEC` writer - TXSTPE Clear"]
-pub struct TXSTPEC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TXSTPEC_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
-    }
-}
+pub type TXSTPEC_W<'a, const O: u8> = crate::BitWriter<'a, u32, UPCON7CLR_SPEC, bool, O>;
 #[doc = "Field `PERREC` writer - PERRE Clear"]
-pub struct PERREC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PERREC_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
-        self.w
-    }
-}
+pub type PERREC_W<'a, const O: u8> = crate::BitWriter<'a, u32, UPCON7CLR_SPEC, bool, O>;
 #[doc = "Field `NAKEDEC` writer - NAKEDE Clear"]
-pub struct NAKEDEC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> NAKEDEC_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
-        self.w
-    }
-}
+pub type NAKEDEC_W<'a, const O: u8> = crate::BitWriter<'a, u32, UPCON7CLR_SPEC, bool, O>;
 #[doc = "Field `ERRORFIEC` writer - ERRORFIE Clear"]
-pub struct ERRORFIEC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ERRORFIEC_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
-        self.w
-    }
-}
+pub type ERRORFIEC_W<'a, const O: u8> = crate::BitWriter<'a, u32, UPCON7CLR_SPEC, bool, O>;
 #[doc = "Field `RXSTALLDEC` writer - RXTALLDE Clear"]
-pub struct RXSTALLDEC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RXSTALLDEC_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | ((value as u32 & 0x01) << 6);
-        self.w
-    }
-}
+pub type RXSTALLDEC_W<'a, const O: u8> = crate::BitWriter<'a, u32, UPCON7CLR_SPEC, bool, O>;
 #[doc = "Field `RAMACEREC` writer - RAMACERE Clear"]
-pub struct RAMACEREC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RAMACEREC_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 10)) | ((value as u32 & 0x01) << 10);
-        self.w
-    }
-}
+pub type RAMACEREC_W<'a, const O: u8> = crate::BitWriter<'a, u32, UPCON7CLR_SPEC, bool, O>;
 #[doc = "Field `NBUSYBKEC` writer - NBUSYBKE Clear"]
-pub struct NBUSYBKEC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> NBUSYBKEC_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 12)) | ((value as u32 & 0x01) << 12);
-        self.w
-    }
-}
+pub type NBUSYBKEC_W<'a, const O: u8> = crate::BitWriter<'a, u32, UPCON7CLR_SPEC, bool, O>;
 #[doc = "Field `FIFOCONC` writer - FIFOCON Clear"]
-pub struct FIFOCONC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> FIFOCONC_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 14)) | ((value as u32 & 0x01) << 14);
-        self.w
-    }
-}
+pub type FIFOCONC_W<'a, const O: u8> = crate::BitWriter<'a, u32, UPCON7CLR_SPEC, bool, O>;
 #[doc = "Field `PFREEZEC` writer - PFREEZE Clear"]
-pub struct PFREEZEC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PFREEZEC_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 17)) | ((value as u32 & 0x01) << 17);
-        self.w
-    }
-}
+pub type PFREEZEC_W<'a, const O: u8> = crate::BitWriter<'a, u32, UPCON7CLR_SPEC, bool, O>;
 #[doc = "Field `INITBKC` writer - INITBK Clear"]
-pub struct INITBKC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> INITBKC_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 19)) | ((value as u32 & 0x01) << 19);
-        self.w
-    }
-}
+pub type INITBKC_W<'a, const O: u8> = crate::BitWriter<'a, u32, UPCON7CLR_SPEC, bool, O>;
 impl W {
     #[doc = "Bit 0 - RXINE Clear"]
     #[inline(always)]
-    pub fn rxinec(&mut self) -> RXINEC_W {
-        RXINEC_W { w: self }
+    #[must_use]
+    pub fn rxinec(&mut self) -> RXINEC_W<0> {
+        RXINEC_W::new(self)
     }
     #[doc = "Bit 1 - TXOUTE Clear"]
     #[inline(always)]
-    pub fn txoutec(&mut self) -> TXOUTEC_W {
-        TXOUTEC_W { w: self }
+    #[must_use]
+    pub fn txoutec(&mut self) -> TXOUTEC_W<1> {
+        TXOUTEC_W::new(self)
     }
     #[doc = "Bit 2 - TXSTPE Clear"]
     #[inline(always)]
-    pub fn txstpec(&mut self) -> TXSTPEC_W {
-        TXSTPEC_W { w: self }
+    #[must_use]
+    pub fn txstpec(&mut self) -> TXSTPEC_W<2> {
+        TXSTPEC_W::new(self)
     }
     #[doc = "Bit 3 - PERRE Clear"]
     #[inline(always)]
-    pub fn perrec(&mut self) -> PERREC_W {
-        PERREC_W { w: self }
+    #[must_use]
+    pub fn perrec(&mut self) -> PERREC_W<3> {
+        PERREC_W::new(self)
     }
     #[doc = "Bit 4 - NAKEDE Clear"]
     #[inline(always)]
-    pub fn nakedec(&mut self) -> NAKEDEC_W {
-        NAKEDEC_W { w: self }
+    #[must_use]
+    pub fn nakedec(&mut self) -> NAKEDEC_W<4> {
+        NAKEDEC_W::new(self)
     }
     #[doc = "Bit 5 - ERRORFIE Clear"]
     #[inline(always)]
-    pub fn errorfiec(&mut self) -> ERRORFIEC_W {
-        ERRORFIEC_W { w: self }
+    #[must_use]
+    pub fn errorfiec(&mut self) -> ERRORFIEC_W<5> {
+        ERRORFIEC_W::new(self)
     }
     #[doc = "Bit 6 - RXTALLDE Clear"]
     #[inline(always)]
-    pub fn rxstalldec(&mut self) -> RXSTALLDEC_W {
-        RXSTALLDEC_W { w: self }
+    #[must_use]
+    pub fn rxstalldec(&mut self) -> RXSTALLDEC_W<6> {
+        RXSTALLDEC_W::new(self)
     }
     #[doc = "Bit 10 - RAMACERE Clear"]
     #[inline(always)]
-    pub fn ramacerec(&mut self) -> RAMACEREC_W {
-        RAMACEREC_W { w: self }
+    #[must_use]
+    pub fn ramacerec(&mut self) -> RAMACEREC_W<10> {
+        RAMACEREC_W::new(self)
     }
     #[doc = "Bit 12 - NBUSYBKE Clear"]
     #[inline(always)]
-    pub fn nbusybkec(&mut self) -> NBUSYBKEC_W {
-        NBUSYBKEC_W { w: self }
+    #[must_use]
+    pub fn nbusybkec(&mut self) -> NBUSYBKEC_W<12> {
+        NBUSYBKEC_W::new(self)
     }
     #[doc = "Bit 14 - FIFOCON Clear"]
     #[inline(always)]
-    pub fn fifoconc(&mut self) -> FIFOCONC_W {
-        FIFOCONC_W { w: self }
+    #[must_use]
+    pub fn fifoconc(&mut self) -> FIFOCONC_W<14> {
+        FIFOCONC_W::new(self)
     }
     #[doc = "Bit 17 - PFREEZE Clear"]
     #[inline(always)]
-    pub fn pfreezec(&mut self) -> PFREEZEC_W {
-        PFREEZEC_W { w: self }
+    #[must_use]
+    pub fn pfreezec(&mut self) -> PFREEZEC_W<17> {
+        PFREEZEC_W::new(self)
     }
     #[doc = "Bit 19 - INITBK Clear"]
     #[inline(always)]
-    pub fn initbkc(&mut self) -> INITBKC_W {
-        INITBKC_W { w: self }
+    #[must_use]
+    pub fn initbkc(&mut self) -> INITBKC_W<19> {
+        INITBKC_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -359,11 +131,10 @@ impl crate::RegisterSpec for UPCON7CLR_SPEC {
 #[doc = "`write(|w| ..)` method takes [upcon7clr::W](W) writer structure"]
 impl crate::Writable for UPCON7CLR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets UPCON7CLR to value 0"]
 impl crate::Resettable for UPCON7CLR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

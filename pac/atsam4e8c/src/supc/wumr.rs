@@ -34,8 +34,10 @@ impl From<crate::W<WUMR_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `FWUPEN` reader - Force Wake-up Enable"]
+pub type FWUPEN_R = crate::BitReader<FWUPEN_A>;
 #[doc = "Force Wake-up Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum FWUPEN_A {
     #[doc = "0: The force wake-up pin has no wake-up effect."]
     NOT_ENABLE = 0,
@@ -48,13 +50,8 @@ impl From<FWUPEN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `FWUPEN` reader - Force Wake-up Enable"]
-pub struct FWUPEN_R(crate::FieldReader<bool, FWUPEN_A>);
 impl FWUPEN_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        FWUPEN_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> FWUPEN_A {
         match self.bits {
@@ -65,31 +62,17 @@ impl FWUPEN_R {
     #[doc = "Checks if the value of the field is `NOT_ENABLE`"]
     #[inline(always)]
     pub fn is_not_enable(&self) -> bool {
-        **self == FWUPEN_A::NOT_ENABLE
+        *self == FWUPEN_A::NOT_ENABLE
     }
     #[doc = "Checks if the value of the field is `ENABLE`"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
-        **self == FWUPEN_A::ENABLE
-    }
-}
-impl core::ops::Deref for FWUPEN_R {
-    type Target = crate::FieldReader<bool, FWUPEN_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == FWUPEN_A::ENABLE
     }
 }
 #[doc = "Field `FWUPEN` writer - Force Wake-up Enable"]
-pub struct FWUPEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> FWUPEN_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: FWUPEN_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type FWUPEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, WUMR_SPEC, FWUPEN_A, O>;
+impl<'a, const O: u8> FWUPEN_W<'a, O> {
     #[doc = "The force wake-up pin has no wake-up effect."]
     #[inline(always)]
     pub fn not_enable(self) -> &'a mut W {
@@ -100,25 +83,11 @@ impl<'a> FWUPEN_W<'a> {
     pub fn enable(self) -> &'a mut W {
         self.variant(FWUPEN_A::ENABLE)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
 }
+#[doc = "Field `SMEN` reader - Supply Monitor Wake-up Enable"]
+pub type SMEN_R = crate::BitReader<SMEN_A>;
 #[doc = "Supply Monitor Wake-up Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SMEN_A {
     #[doc = "0: The supply monitor detection has no wake-up effect."]
     NOT_ENABLE = 0,
@@ -131,13 +100,8 @@ impl From<SMEN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `SMEN` reader - Supply Monitor Wake-up Enable"]
-pub struct SMEN_R(crate::FieldReader<bool, SMEN_A>);
 impl SMEN_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        SMEN_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> SMEN_A {
         match self.bits {
@@ -148,31 +112,17 @@ impl SMEN_R {
     #[doc = "Checks if the value of the field is `NOT_ENABLE`"]
     #[inline(always)]
     pub fn is_not_enable(&self) -> bool {
-        **self == SMEN_A::NOT_ENABLE
+        *self == SMEN_A::NOT_ENABLE
     }
     #[doc = "Checks if the value of the field is `ENABLE`"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
-        **self == SMEN_A::ENABLE
-    }
-}
-impl core::ops::Deref for SMEN_R {
-    type Target = crate::FieldReader<bool, SMEN_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == SMEN_A::ENABLE
     }
 }
 #[doc = "Field `SMEN` writer - Supply Monitor Wake-up Enable"]
-pub struct SMEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SMEN_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: SMEN_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type SMEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, WUMR_SPEC, SMEN_A, O>;
+impl<'a, const O: u8> SMEN_W<'a, O> {
     #[doc = "The supply monitor detection has no wake-up effect."]
     #[inline(always)]
     pub fn not_enable(self) -> &'a mut W {
@@ -183,25 +133,11 @@ impl<'a> SMEN_W<'a> {
     pub fn enable(self) -> &'a mut W {
         self.variant(SMEN_A::ENABLE)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
 }
+#[doc = "Field `RTTEN` reader - Real-time Timer Wake-up Enable"]
+pub type RTTEN_R = crate::BitReader<RTTEN_A>;
 #[doc = "Real-time Timer Wake-up Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum RTTEN_A {
     #[doc = "0: The RTT alarm signal has no wake-up effect."]
     NOT_ENABLE = 0,
@@ -214,13 +150,8 @@ impl From<RTTEN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `RTTEN` reader - Real-time Timer Wake-up Enable"]
-pub struct RTTEN_R(crate::FieldReader<bool, RTTEN_A>);
 impl RTTEN_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        RTTEN_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> RTTEN_A {
         match self.bits {
@@ -231,31 +162,17 @@ impl RTTEN_R {
     #[doc = "Checks if the value of the field is `NOT_ENABLE`"]
     #[inline(always)]
     pub fn is_not_enable(&self) -> bool {
-        **self == RTTEN_A::NOT_ENABLE
+        *self == RTTEN_A::NOT_ENABLE
     }
     #[doc = "Checks if the value of the field is `ENABLE`"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
-        **self == RTTEN_A::ENABLE
-    }
-}
-impl core::ops::Deref for RTTEN_R {
-    type Target = crate::FieldReader<bool, RTTEN_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == RTTEN_A::ENABLE
     }
 }
 #[doc = "Field `RTTEN` writer - Real-time Timer Wake-up Enable"]
-pub struct RTTEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RTTEN_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: RTTEN_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type RTTEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, WUMR_SPEC, RTTEN_A, O>;
+impl<'a, const O: u8> RTTEN_W<'a, O> {
     #[doc = "The RTT alarm signal has no wake-up effect."]
     #[inline(always)]
     pub fn not_enable(self) -> &'a mut W {
@@ -266,25 +183,11 @@ impl<'a> RTTEN_W<'a> {
     pub fn enable(self) -> &'a mut W {
         self.variant(RTTEN_A::ENABLE)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
-    }
 }
+#[doc = "Field `RTCEN` reader - Real-time Clock Wake-up Enable"]
+pub type RTCEN_R = crate::BitReader<RTCEN_A>;
 #[doc = "Real-time Clock Wake-up Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum RTCEN_A {
     #[doc = "0: The RTC alarm signal has no wake-up effect."]
     NOT_ENABLE = 0,
@@ -297,13 +200,8 @@ impl From<RTCEN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `RTCEN` reader - Real-time Clock Wake-up Enable"]
-pub struct RTCEN_R(crate::FieldReader<bool, RTCEN_A>);
 impl RTCEN_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        RTCEN_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> RTCEN_A {
         match self.bits {
@@ -314,31 +212,17 @@ impl RTCEN_R {
     #[doc = "Checks if the value of the field is `NOT_ENABLE`"]
     #[inline(always)]
     pub fn is_not_enable(&self) -> bool {
-        **self == RTCEN_A::NOT_ENABLE
+        *self == RTCEN_A::NOT_ENABLE
     }
     #[doc = "Checks if the value of the field is `ENABLE`"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
-        **self == RTCEN_A::ENABLE
-    }
-}
-impl core::ops::Deref for RTCEN_R {
-    type Target = crate::FieldReader<bool, RTCEN_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == RTCEN_A::ENABLE
     }
 }
 #[doc = "Field `RTCEN` writer - Real-time Clock Wake-up Enable"]
-pub struct RTCEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RTCEN_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: RTCEN_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type RTCEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, WUMR_SPEC, RTCEN_A, O>;
+impl<'a, const O: u8> RTCEN_W<'a, O> {
     #[doc = "The RTC alarm signal has no wake-up effect."]
     #[inline(always)]
     pub fn not_enable(self) -> &'a mut W {
@@ -349,25 +233,11 @@ impl<'a> RTCEN_W<'a> {
     pub fn enable(self) -> &'a mut W {
         self.variant(RTCEN_A::ENABLE)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
-        self.w
-    }
 }
+#[doc = "Field `LPDBCEN0` reader - Low-power Debouncer Enable WKUP0"]
+pub type LPDBCEN0_R = crate::BitReader<LPDBCEN0_A>;
 #[doc = "Low-power Debouncer Enable WKUP0\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum LPDBCEN0_A {
     #[doc = "0: The WKUP0 input pin is not connected with low-power debouncer."]
     NOT_ENABLE = 0,
@@ -380,13 +250,8 @@ impl From<LPDBCEN0_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `LPDBCEN0` reader - Low-power Debouncer Enable WKUP0"]
-pub struct LPDBCEN0_R(crate::FieldReader<bool, LPDBCEN0_A>);
 impl LPDBCEN0_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        LPDBCEN0_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> LPDBCEN0_A {
         match self.bits {
@@ -397,31 +262,17 @@ impl LPDBCEN0_R {
     #[doc = "Checks if the value of the field is `NOT_ENABLE`"]
     #[inline(always)]
     pub fn is_not_enable(&self) -> bool {
-        **self == LPDBCEN0_A::NOT_ENABLE
+        *self == LPDBCEN0_A::NOT_ENABLE
     }
     #[doc = "Checks if the value of the field is `ENABLE`"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
-        **self == LPDBCEN0_A::ENABLE
-    }
-}
-impl core::ops::Deref for LPDBCEN0_R {
-    type Target = crate::FieldReader<bool, LPDBCEN0_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == LPDBCEN0_A::ENABLE
     }
 }
 #[doc = "Field `LPDBCEN0` writer - Low-power Debouncer Enable WKUP0"]
-pub struct LPDBCEN0_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> LPDBCEN0_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: LPDBCEN0_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type LPDBCEN0_W<'a, const O: u8> = crate::BitWriter<'a, u32, WUMR_SPEC, LPDBCEN0_A, O>;
+impl<'a, const O: u8> LPDBCEN0_W<'a, O> {
     #[doc = "The WKUP0 input pin is not connected with low-power debouncer."]
     #[inline(always)]
     pub fn not_enable(self) -> &'a mut W {
@@ -432,25 +283,11 @@ impl<'a> LPDBCEN0_W<'a> {
     pub fn enable(self) -> &'a mut W {
         self.variant(LPDBCEN0_A::ENABLE)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
-        self.w
-    }
 }
+#[doc = "Field `LPDBCEN1` reader - Low-power Debouncer Enable WKUP1"]
+pub type LPDBCEN1_R = crate::BitReader<LPDBCEN1_A>;
 #[doc = "Low-power Debouncer Enable WKUP1\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum LPDBCEN1_A {
     #[doc = "0: The WKUP1 input pin is not connected with low-power debouncer."]
     NOT_ENABLE = 0,
@@ -463,13 +300,8 @@ impl From<LPDBCEN1_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `LPDBCEN1` reader - Low-power Debouncer Enable WKUP1"]
-pub struct LPDBCEN1_R(crate::FieldReader<bool, LPDBCEN1_A>);
 impl LPDBCEN1_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        LPDBCEN1_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> LPDBCEN1_A {
         match self.bits {
@@ -480,31 +312,17 @@ impl LPDBCEN1_R {
     #[doc = "Checks if the value of the field is `NOT_ENABLE`"]
     #[inline(always)]
     pub fn is_not_enable(&self) -> bool {
-        **self == LPDBCEN1_A::NOT_ENABLE
+        *self == LPDBCEN1_A::NOT_ENABLE
     }
     #[doc = "Checks if the value of the field is `ENABLE`"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
-        **self == LPDBCEN1_A::ENABLE
-    }
-}
-impl core::ops::Deref for LPDBCEN1_R {
-    type Target = crate::FieldReader<bool, LPDBCEN1_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == LPDBCEN1_A::ENABLE
     }
 }
 #[doc = "Field `LPDBCEN1` writer - Low-power Debouncer Enable WKUP1"]
-pub struct LPDBCEN1_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> LPDBCEN1_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: LPDBCEN1_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type LPDBCEN1_W<'a, const O: u8> = crate::BitWriter<'a, u32, WUMR_SPEC, LPDBCEN1_A, O>;
+impl<'a, const O: u8> LPDBCEN1_W<'a, O> {
     #[doc = "The WKUP1 input pin is not connected with low-power debouncer."]
     #[inline(always)]
     pub fn not_enable(self) -> &'a mut W {
@@ -515,25 +333,11 @@ impl<'a> LPDBCEN1_W<'a> {
     pub fn enable(self) -> &'a mut W {
         self.variant(LPDBCEN1_A::ENABLE)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | ((value as u32 & 0x01) << 6);
-        self.w
-    }
 }
+#[doc = "Field `LPDBCCLR` reader - Low-power Debouncer Clear"]
+pub type LPDBCCLR_R = crate::BitReader<LPDBCCLR_A>;
 #[doc = "Low-power Debouncer Clear\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum LPDBCCLR_A {
     #[doc = "0: A low-power debounce event does not create an immediate clear on the first half of GPBR registers."]
     NOT_ENABLE = 0,
@@ -546,13 +350,8 @@ impl From<LPDBCCLR_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `LPDBCCLR` reader - Low-power Debouncer Clear"]
-pub struct LPDBCCLR_R(crate::FieldReader<bool, LPDBCCLR_A>);
 impl LPDBCCLR_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        LPDBCCLR_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> LPDBCCLR_A {
         match self.bits {
@@ -563,31 +362,17 @@ impl LPDBCCLR_R {
     #[doc = "Checks if the value of the field is `NOT_ENABLE`"]
     #[inline(always)]
     pub fn is_not_enable(&self) -> bool {
-        **self == LPDBCCLR_A::NOT_ENABLE
+        *self == LPDBCCLR_A::NOT_ENABLE
     }
     #[doc = "Checks if the value of the field is `ENABLE`"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
-        **self == LPDBCCLR_A::ENABLE
-    }
-}
-impl core::ops::Deref for LPDBCCLR_R {
-    type Target = crate::FieldReader<bool, LPDBCCLR_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == LPDBCCLR_A::ENABLE
     }
 }
 #[doc = "Field `LPDBCCLR` writer - Low-power Debouncer Clear"]
-pub struct LPDBCCLR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> LPDBCCLR_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: LPDBCCLR_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type LPDBCCLR_W<'a, const O: u8> = crate::BitWriter<'a, u32, WUMR_SPEC, LPDBCCLR_A, O>;
+impl<'a, const O: u8> LPDBCCLR_W<'a, O> {
     #[doc = "A low-power debounce event does not create an immediate clear on the first half of GPBR registers."]
     #[inline(always)]
     pub fn not_enable(self) -> &'a mut W {
@@ -598,25 +383,11 @@ impl<'a> LPDBCCLR_W<'a> {
     pub fn enable(self) -> &'a mut W {
         self.variant(LPDBCCLR_A::ENABLE)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | ((value as u32 & 0x01) << 7);
-        self.w
-    }
 }
+#[doc = "Field `FWUPDBC` reader - Force Wake-up Debouncer Period"]
+pub type FWUPDBC_R = crate::FieldReader<u8, FWUPDBC_A>;
 #[doc = "Force Wake-up Debouncer Period\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum FWUPDBC_A {
     #[doc = "0: Immediate, no debouncing, detected active at least on one Slow Clock edge."]
@@ -638,13 +409,8 @@ impl From<FWUPDBC_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `FWUPDBC` reader - Force Wake-up Debouncer Period"]
-pub struct FWUPDBC_R(crate::FieldReader<u8, FWUPDBC_A>);
 impl FWUPDBC_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        FWUPDBC_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<FWUPDBC_A> {
         match self.bits {
@@ -660,51 +426,37 @@ impl FWUPDBC_R {
     #[doc = "Checks if the value of the field is `IMMEDIATE`"]
     #[inline(always)]
     pub fn is_immediate(&self) -> bool {
-        **self == FWUPDBC_A::IMMEDIATE
+        *self == FWUPDBC_A::IMMEDIATE
     }
     #[doc = "Checks if the value of the field is `_3_SCLK`"]
     #[inline(always)]
     pub fn is_3_sclk(&self) -> bool {
-        **self == FWUPDBC_A::_3_SCLK
+        *self == FWUPDBC_A::_3_SCLK
     }
     #[doc = "Checks if the value of the field is `_32_SCLK`"]
     #[inline(always)]
     pub fn is_32_sclk(&self) -> bool {
-        **self == FWUPDBC_A::_32_SCLK
+        *self == FWUPDBC_A::_32_SCLK
     }
     #[doc = "Checks if the value of the field is `_512_SCLK`"]
     #[inline(always)]
     pub fn is_512_sclk(&self) -> bool {
-        **self == FWUPDBC_A::_512_SCLK
+        *self == FWUPDBC_A::_512_SCLK
     }
     #[doc = "Checks if the value of the field is `_4096_SCLK`"]
     #[inline(always)]
     pub fn is_4096_sclk(&self) -> bool {
-        **self == FWUPDBC_A::_4096_SCLK
+        *self == FWUPDBC_A::_4096_SCLK
     }
     #[doc = "Checks if the value of the field is `_32768_SCLK`"]
     #[inline(always)]
     pub fn is_32768_sclk(&self) -> bool {
-        **self == FWUPDBC_A::_32768_SCLK
-    }
-}
-impl core::ops::Deref for FWUPDBC_R {
-    type Target = crate::FieldReader<u8, FWUPDBC_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == FWUPDBC_A::_32768_SCLK
     }
 }
 #[doc = "Field `FWUPDBC` writer - Force Wake-up Debouncer Period"]
-pub struct FWUPDBC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> FWUPDBC_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: FWUPDBC_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type FWUPDBC_W<'a, const O: u8> = crate::FieldWriter<'a, u32, WUMR_SPEC, u8, FWUPDBC_A, 3, O>;
+impl<'a, const O: u8> FWUPDBC_W<'a, O> {
     #[doc = "Immediate, no debouncing, detected active at least on one Slow Clock edge."]
     #[inline(always)]
     pub fn immediate(self) -> &'a mut W {
@@ -735,15 +487,11 @@ impl<'a> FWUPDBC_W<'a> {
     pub fn _32768_sclk(self) -> &'a mut W {
         self.variant(FWUPDBC_A::_32768_SCLK)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 8)) | ((value as u32 & 0x07) << 8);
-        self.w
-    }
 }
+#[doc = "Field `WKUPDBC` reader - Wake-up Inputs Debouncer Period"]
+pub type WKUPDBC_R = crate::FieldReader<u8, WKUPDBC_A>;
 #[doc = "Wake-up Inputs Debouncer Period\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum WKUPDBC_A {
     #[doc = "0: Immediate, no debouncing, detected active at least on one Slow Clock edge."]
@@ -765,13 +513,8 @@ impl From<WKUPDBC_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `WKUPDBC` reader - Wake-up Inputs Debouncer Period"]
-pub struct WKUPDBC_R(crate::FieldReader<u8, WKUPDBC_A>);
 impl WKUPDBC_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        WKUPDBC_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<WKUPDBC_A> {
         match self.bits {
@@ -787,51 +530,37 @@ impl WKUPDBC_R {
     #[doc = "Checks if the value of the field is `IMMEDIATE`"]
     #[inline(always)]
     pub fn is_immediate(&self) -> bool {
-        **self == WKUPDBC_A::IMMEDIATE
+        *self == WKUPDBC_A::IMMEDIATE
     }
     #[doc = "Checks if the value of the field is `_3_SCLK`"]
     #[inline(always)]
     pub fn is_3_sclk(&self) -> bool {
-        **self == WKUPDBC_A::_3_SCLK
+        *self == WKUPDBC_A::_3_SCLK
     }
     #[doc = "Checks if the value of the field is `_32_SCLK`"]
     #[inline(always)]
     pub fn is_32_sclk(&self) -> bool {
-        **self == WKUPDBC_A::_32_SCLK
+        *self == WKUPDBC_A::_32_SCLK
     }
     #[doc = "Checks if the value of the field is `_512_SCLK`"]
     #[inline(always)]
     pub fn is_512_sclk(&self) -> bool {
-        **self == WKUPDBC_A::_512_SCLK
+        *self == WKUPDBC_A::_512_SCLK
     }
     #[doc = "Checks if the value of the field is `_4096_SCLK`"]
     #[inline(always)]
     pub fn is_4096_sclk(&self) -> bool {
-        **self == WKUPDBC_A::_4096_SCLK
+        *self == WKUPDBC_A::_4096_SCLK
     }
     #[doc = "Checks if the value of the field is `_32768_SCLK`"]
     #[inline(always)]
     pub fn is_32768_sclk(&self) -> bool {
-        **self == WKUPDBC_A::_32768_SCLK
-    }
-}
-impl core::ops::Deref for WKUPDBC_R {
-    type Target = crate::FieldReader<u8, WKUPDBC_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == WKUPDBC_A::_32768_SCLK
     }
 }
 #[doc = "Field `WKUPDBC` writer - Wake-up Inputs Debouncer Period"]
-pub struct WKUPDBC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> WKUPDBC_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: WKUPDBC_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type WKUPDBC_W<'a, const O: u8> = crate::FieldWriter<'a, u32, WUMR_SPEC, u8, WKUPDBC_A, 3, O>;
+impl<'a, const O: u8> WKUPDBC_W<'a, O> {
     #[doc = "Immediate, no debouncing, detected active at least on one Slow Clock edge."]
     #[inline(always)]
     pub fn immediate(self) -> &'a mut W {
@@ -862,15 +591,11 @@ impl<'a> WKUPDBC_W<'a> {
     pub fn _32768_sclk(self) -> &'a mut W {
         self.variant(WKUPDBC_A::_32768_SCLK)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 12)) | ((value as u32 & 0x07) << 12);
-        self.w
-    }
 }
+#[doc = "Field `LPDBC` reader - Low-power Debouncer Period"]
+pub type LPDBC_R = crate::FieldReader<u8, LPDBC_A>;
 #[doc = "Low-power Debouncer Period\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum LPDBC_A {
     #[doc = "0: Disable the low-power debouncers."]
@@ -896,13 +621,8 @@ impl From<LPDBC_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `LPDBC` reader - Low-power Debouncer Period"]
-pub struct LPDBC_R(crate::FieldReader<u8, LPDBC_A>);
 impl LPDBC_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        LPDBC_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> LPDBC_A {
         match self.bits {
@@ -920,61 +640,47 @@ impl LPDBC_R {
     #[doc = "Checks if the value of the field is `DISABLE`"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        **self == LPDBC_A::DISABLE
+        *self == LPDBC_A::DISABLE
     }
     #[doc = "Checks if the value of the field is `_2_RTCOUT0`"]
     #[inline(always)]
     pub fn is_2_rtcout0(&self) -> bool {
-        **self == LPDBC_A::_2_RTCOUT0
+        *self == LPDBC_A::_2_RTCOUT0
     }
     #[doc = "Checks if the value of the field is `_3_RTCOUT0`"]
     #[inline(always)]
     pub fn is_3_rtcout0(&self) -> bool {
-        **self == LPDBC_A::_3_RTCOUT0
+        *self == LPDBC_A::_3_RTCOUT0
     }
     #[doc = "Checks if the value of the field is `_4_RTCOUT0`"]
     #[inline(always)]
     pub fn is_4_rtcout0(&self) -> bool {
-        **self == LPDBC_A::_4_RTCOUT0
+        *self == LPDBC_A::_4_RTCOUT0
     }
     #[doc = "Checks if the value of the field is `_5_RTCOUT0`"]
     #[inline(always)]
     pub fn is_5_rtcout0(&self) -> bool {
-        **self == LPDBC_A::_5_RTCOUT0
+        *self == LPDBC_A::_5_RTCOUT0
     }
     #[doc = "Checks if the value of the field is `_6_RTCOUT0`"]
     #[inline(always)]
     pub fn is_6_rtcout0(&self) -> bool {
-        **self == LPDBC_A::_6_RTCOUT0
+        *self == LPDBC_A::_6_RTCOUT0
     }
     #[doc = "Checks if the value of the field is `_7_RTCOUT0`"]
     #[inline(always)]
     pub fn is_7_rtcout0(&self) -> bool {
-        **self == LPDBC_A::_7_RTCOUT0
+        *self == LPDBC_A::_7_RTCOUT0
     }
     #[doc = "Checks if the value of the field is `_8_RTCOUT0`"]
     #[inline(always)]
     pub fn is_8_rtcout0(&self) -> bool {
-        **self == LPDBC_A::_8_RTCOUT0
-    }
-}
-impl core::ops::Deref for LPDBC_R {
-    type Target = crate::FieldReader<u8, LPDBC_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == LPDBC_A::_8_RTCOUT0
     }
 }
 #[doc = "Field `LPDBC` writer - Low-power Debouncer Period"]
-pub struct LPDBC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> LPDBC_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: LPDBC_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
+pub type LPDBC_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, WUMR_SPEC, u8, LPDBC_A, 3, O>;
+impl<'a, const O: u8> LPDBC_W<'a, O> {
     #[doc = "Disable the low-power debouncers."]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -1015,115 +721,119 @@ impl<'a> LPDBC_W<'a> {
     pub fn _8_rtcout0(self) -> &'a mut W {
         self.variant(LPDBC_A::_8_RTCOUT0)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 16)) | ((value as u32 & 0x07) << 16);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bit 0 - Force Wake-up Enable"]
     #[inline(always)]
     pub fn fwupen(&self) -> FWUPEN_R {
-        FWUPEN_R::new((self.bits & 0x01) != 0)
+        FWUPEN_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Supply Monitor Wake-up Enable"]
     #[inline(always)]
     pub fn smen(&self) -> SMEN_R {
-        SMEN_R::new(((self.bits >> 1) & 0x01) != 0)
+        SMEN_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - Real-time Timer Wake-up Enable"]
     #[inline(always)]
     pub fn rtten(&self) -> RTTEN_R {
-        RTTEN_R::new(((self.bits >> 2) & 0x01) != 0)
+        RTTEN_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - Real-time Clock Wake-up Enable"]
     #[inline(always)]
     pub fn rtcen(&self) -> RTCEN_R {
-        RTCEN_R::new(((self.bits >> 3) & 0x01) != 0)
+        RTCEN_R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 5 - Low-power Debouncer Enable WKUP0"]
     #[inline(always)]
     pub fn lpdbcen0(&self) -> LPDBCEN0_R {
-        LPDBCEN0_R::new(((self.bits >> 5) & 0x01) != 0)
+        LPDBCEN0_R::new(((self.bits >> 5) & 1) != 0)
     }
     #[doc = "Bit 6 - Low-power Debouncer Enable WKUP1"]
     #[inline(always)]
     pub fn lpdbcen1(&self) -> LPDBCEN1_R {
-        LPDBCEN1_R::new(((self.bits >> 6) & 0x01) != 0)
+        LPDBCEN1_R::new(((self.bits >> 6) & 1) != 0)
     }
     #[doc = "Bit 7 - Low-power Debouncer Clear"]
     #[inline(always)]
     pub fn lpdbcclr(&self) -> LPDBCCLR_R {
-        LPDBCCLR_R::new(((self.bits >> 7) & 0x01) != 0)
+        LPDBCCLR_R::new(((self.bits >> 7) & 1) != 0)
     }
     #[doc = "Bits 8:10 - Force Wake-up Debouncer Period"]
     #[inline(always)]
     pub fn fwupdbc(&self) -> FWUPDBC_R {
-        FWUPDBC_R::new(((self.bits >> 8) & 0x07) as u8)
+        FWUPDBC_R::new(((self.bits >> 8) & 7) as u8)
     }
     #[doc = "Bits 12:14 - Wake-up Inputs Debouncer Period"]
     #[inline(always)]
     pub fn wkupdbc(&self) -> WKUPDBC_R {
-        WKUPDBC_R::new(((self.bits >> 12) & 0x07) as u8)
+        WKUPDBC_R::new(((self.bits >> 12) & 7) as u8)
     }
     #[doc = "Bits 16:18 - Low-power Debouncer Period"]
     #[inline(always)]
     pub fn lpdbc(&self) -> LPDBC_R {
-        LPDBC_R::new(((self.bits >> 16) & 0x07) as u8)
+        LPDBC_R::new(((self.bits >> 16) & 7) as u8)
     }
 }
 impl W {
     #[doc = "Bit 0 - Force Wake-up Enable"]
     #[inline(always)]
-    pub fn fwupen(&mut self) -> FWUPEN_W {
-        FWUPEN_W { w: self }
+    #[must_use]
+    pub fn fwupen(&mut self) -> FWUPEN_W<0> {
+        FWUPEN_W::new(self)
     }
     #[doc = "Bit 1 - Supply Monitor Wake-up Enable"]
     #[inline(always)]
-    pub fn smen(&mut self) -> SMEN_W {
-        SMEN_W { w: self }
+    #[must_use]
+    pub fn smen(&mut self) -> SMEN_W<1> {
+        SMEN_W::new(self)
     }
     #[doc = "Bit 2 - Real-time Timer Wake-up Enable"]
     #[inline(always)]
-    pub fn rtten(&mut self) -> RTTEN_W {
-        RTTEN_W { w: self }
+    #[must_use]
+    pub fn rtten(&mut self) -> RTTEN_W<2> {
+        RTTEN_W::new(self)
     }
     #[doc = "Bit 3 - Real-time Clock Wake-up Enable"]
     #[inline(always)]
-    pub fn rtcen(&mut self) -> RTCEN_W {
-        RTCEN_W { w: self }
+    #[must_use]
+    pub fn rtcen(&mut self) -> RTCEN_W<3> {
+        RTCEN_W::new(self)
     }
     #[doc = "Bit 5 - Low-power Debouncer Enable WKUP0"]
     #[inline(always)]
-    pub fn lpdbcen0(&mut self) -> LPDBCEN0_W {
-        LPDBCEN0_W { w: self }
+    #[must_use]
+    pub fn lpdbcen0(&mut self) -> LPDBCEN0_W<5> {
+        LPDBCEN0_W::new(self)
     }
     #[doc = "Bit 6 - Low-power Debouncer Enable WKUP1"]
     #[inline(always)]
-    pub fn lpdbcen1(&mut self) -> LPDBCEN1_W {
-        LPDBCEN1_W { w: self }
+    #[must_use]
+    pub fn lpdbcen1(&mut self) -> LPDBCEN1_W<6> {
+        LPDBCEN1_W::new(self)
     }
     #[doc = "Bit 7 - Low-power Debouncer Clear"]
     #[inline(always)]
-    pub fn lpdbcclr(&mut self) -> LPDBCCLR_W {
-        LPDBCCLR_W { w: self }
+    #[must_use]
+    pub fn lpdbcclr(&mut self) -> LPDBCCLR_W<7> {
+        LPDBCCLR_W::new(self)
     }
     #[doc = "Bits 8:10 - Force Wake-up Debouncer Period"]
     #[inline(always)]
-    pub fn fwupdbc(&mut self) -> FWUPDBC_W {
-        FWUPDBC_W { w: self }
+    #[must_use]
+    pub fn fwupdbc(&mut self) -> FWUPDBC_W<8> {
+        FWUPDBC_W::new(self)
     }
     #[doc = "Bits 12:14 - Wake-up Inputs Debouncer Period"]
     #[inline(always)]
-    pub fn wkupdbc(&mut self) -> WKUPDBC_W {
-        WKUPDBC_W { w: self }
+    #[must_use]
+    pub fn wkupdbc(&mut self) -> WKUPDBC_W<12> {
+        WKUPDBC_W::new(self)
     }
     #[doc = "Bits 16:18 - Low-power Debouncer Period"]
     #[inline(always)]
-    pub fn lpdbc(&mut self) -> LPDBC_W {
-        LPDBC_W { w: self }
+    #[must_use]
+    pub fn lpdbc(&mut self) -> LPDBC_W<16> {
+        LPDBC_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -1144,11 +854,10 @@ impl crate::Readable for WUMR_SPEC {
 #[doc = "`write(|w| ..)` method takes [wumr::W](W) writer structure"]
 impl crate::Writable for WUMR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets WUMR to value 0"]
 impl crate::Resettable for WUMR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

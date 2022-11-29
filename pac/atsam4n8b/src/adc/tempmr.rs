@@ -35,43 +35,13 @@ impl From<crate::W<TEMPMR_SPEC>> for W {
     }
 }
 #[doc = "Field `TEMPON` reader - Temperature Sensor ON"]
-pub struct TEMPON_R(crate::FieldReader<bool, bool>);
-impl TEMPON_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        TEMPON_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TEMPON_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TEMPON_R = crate::BitReader<bool>;
 #[doc = "Field `TEMPON` writer - Temperature Sensor ON"]
-pub struct TEMPON_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TEMPON_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type TEMPON_W<'a, const O: u8> = crate::BitWriter<'a, u32, TEMPMR_SPEC, bool, O>;
+#[doc = "Field `TEMPCMPMOD` reader - Temperature Comparison Mode"]
+pub type TEMPCMPMOD_R = crate::FieldReader<u8, TEMPCMPMOD_A>;
 #[doc = "Temperature Comparison Mode\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum TEMPCMPMOD_A {
     #[doc = "0: Generates an event when the converted data is lower than the low threshold of the window."]
@@ -89,13 +59,8 @@ impl From<TEMPCMPMOD_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `TEMPCMPMOD` reader - Temperature Comparison Mode"]
-pub struct TEMPCMPMOD_R(crate::FieldReader<u8, TEMPCMPMOD_A>);
 impl TEMPCMPMOD_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        TEMPCMPMOD_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> TEMPCMPMOD_A {
         match self.bits {
@@ -109,41 +74,28 @@ impl TEMPCMPMOD_R {
     #[doc = "Checks if the value of the field is `LOW`"]
     #[inline(always)]
     pub fn is_low(&self) -> bool {
-        **self == TEMPCMPMOD_A::LOW
+        *self == TEMPCMPMOD_A::LOW
     }
     #[doc = "Checks if the value of the field is `HIGH`"]
     #[inline(always)]
     pub fn is_high(&self) -> bool {
-        **self == TEMPCMPMOD_A::HIGH
+        *self == TEMPCMPMOD_A::HIGH
     }
     #[doc = "Checks if the value of the field is `IN`"]
     #[inline(always)]
     pub fn is_in(&self) -> bool {
-        **self == TEMPCMPMOD_A::IN
+        *self == TEMPCMPMOD_A::IN
     }
     #[doc = "Checks if the value of the field is `OUT`"]
     #[inline(always)]
     pub fn is_out(&self) -> bool {
-        **self == TEMPCMPMOD_A::OUT
-    }
-}
-impl core::ops::Deref for TEMPCMPMOD_R {
-    type Target = crate::FieldReader<u8, TEMPCMPMOD_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == TEMPCMPMOD_A::OUT
     }
 }
 #[doc = "Field `TEMPCMPMOD` writer - Temperature Comparison Mode"]
-pub struct TEMPCMPMOD_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TEMPCMPMOD_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: TEMPCMPMOD_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
+pub type TEMPCMPMOD_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, TEMPMR_SPEC, u8, TEMPCMPMOD_A, 2, O>;
+impl<'a, const O: u8> TEMPCMPMOD_W<'a, O> {
     #[doc = "Generates an event when the converted data is lower than the low threshold of the window."]
     #[inline(always)]
     pub fn low(self) -> &'a mut W {
@@ -164,35 +116,31 @@ impl<'a> TEMPCMPMOD_W<'a> {
     pub fn out(self) -> &'a mut W {
         self.variant(TEMPCMPMOD_A::OUT)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 4)) | ((value as u32 & 0x03) << 4);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bit 0 - Temperature Sensor ON"]
     #[inline(always)]
     pub fn tempon(&self) -> TEMPON_R {
-        TEMPON_R::new((self.bits & 0x01) != 0)
+        TEMPON_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bits 4:5 - Temperature Comparison Mode"]
     #[inline(always)]
     pub fn tempcmpmod(&self) -> TEMPCMPMOD_R {
-        TEMPCMPMOD_R::new(((self.bits >> 4) & 0x03) as u8)
+        TEMPCMPMOD_R::new(((self.bits >> 4) & 3) as u8)
     }
 }
 impl W {
     #[doc = "Bit 0 - Temperature Sensor ON"]
     #[inline(always)]
-    pub fn tempon(&mut self) -> TEMPON_W {
-        TEMPON_W { w: self }
+    #[must_use]
+    pub fn tempon(&mut self) -> TEMPON_W<0> {
+        TEMPON_W::new(self)
     }
     #[doc = "Bits 4:5 - Temperature Comparison Mode"]
     #[inline(always)]
-    pub fn tempcmpmod(&mut self) -> TEMPCMPMOD_W {
-        TEMPCMPMOD_W { w: self }
+    #[must_use]
+    pub fn tempcmpmod(&mut self) -> TEMPCMPMOD_W<4> {
+        TEMPCMPMOD_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -213,11 +161,10 @@ impl crate::Readable for TEMPMR_SPEC {
 #[doc = "`write(|w| ..)` method takes [tempmr::W](W) writer structure"]
 impl crate::Writable for TEMPMR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets TEMPMR to value 0"]
 impl crate::Resettable for TEMPMR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

@@ -20,22 +20,13 @@ impl From<crate::W<DMAR_SPEC>> for W {
     }
 }
 #[doc = "Field `DMADUTY` writer - Duty-Cycle Holding Register for DMA Access"]
-pub struct DMADUTY_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DMADUTY_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x00ff_ffff) | (value as u32 & 0x00ff_ffff);
-        self.w
-    }
-}
+pub type DMADUTY_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DMAR_SPEC, u32, u32, 24, O>;
 impl W {
     #[doc = "Bits 0:23 - Duty-Cycle Holding Register for DMA Access"]
     #[inline(always)]
-    pub fn dmaduty(&mut self) -> DMADUTY_W {
-        DMADUTY_W { w: self }
+    #[must_use]
+    pub fn dmaduty(&mut self) -> DMADUTY_W<0> {
+        DMADUTY_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -52,11 +43,10 @@ impl crate::RegisterSpec for DMAR_SPEC {
 #[doc = "`write(|w| ..)` method takes [dmar::W](W) writer structure"]
 impl crate::Writable for DMAR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets DMAR to value 0"]
 impl crate::Resettable for DMAR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

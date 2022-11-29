@@ -35,213 +35,37 @@ impl From<crate::W<DELAYR_SPEC>> for W {
     }
 }
 #[doc = "Field `Delay0` reader - Delay Control for Simultaneous Switch Reduction"]
-pub struct DELAY0_R(crate::FieldReader<u8, u8>);
-impl DELAY0_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        DELAY0_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DELAY0_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DELAY0_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `Delay0` writer - Delay Control for Simultaneous Switch Reduction"]
-pub struct DELAY0_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DELAY0_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x0f) | (value as u32 & 0x0f);
-        self.w
-    }
-}
+pub type DELAY0_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DELAYR_SPEC, u8, u8, 4, O>;
 #[doc = "Field `Delay1` reader - Delay Control for Simultaneous Switch Reduction"]
-pub struct DELAY1_R(crate::FieldReader<u8, u8>);
-impl DELAY1_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        DELAY1_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DELAY1_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DELAY1_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `Delay1` writer - Delay Control for Simultaneous Switch Reduction"]
-pub struct DELAY1_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DELAY1_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 4)) | ((value as u32 & 0x0f) << 4);
-        self.w
-    }
-}
+pub type DELAY1_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DELAYR_SPEC, u8, u8, 4, O>;
 #[doc = "Field `Delay2` reader - Delay Control for Simultaneous Switch Reduction"]
-pub struct DELAY2_R(crate::FieldReader<u8, u8>);
-impl DELAY2_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        DELAY2_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DELAY2_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DELAY2_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `Delay2` writer - Delay Control for Simultaneous Switch Reduction"]
-pub struct DELAY2_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DELAY2_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 8)) | ((value as u32 & 0x0f) << 8);
-        self.w
-    }
-}
+pub type DELAY2_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DELAYR_SPEC, u8, u8, 4, O>;
 #[doc = "Field `Delay3` reader - Delay Control for Simultaneous Switch Reduction"]
-pub struct DELAY3_R(crate::FieldReader<u8, u8>);
-impl DELAY3_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        DELAY3_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DELAY3_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DELAY3_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `Delay3` writer - Delay Control for Simultaneous Switch Reduction"]
-pub struct DELAY3_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DELAY3_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 12)) | ((value as u32 & 0x0f) << 12);
-        self.w
-    }
-}
+pub type DELAY3_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DELAYR_SPEC, u8, u8, 4, O>;
 #[doc = "Field `Delay4` reader - Delay Control for Simultaneous Switch Reduction"]
-pub struct DELAY4_R(crate::FieldReader<u8, u8>);
-impl DELAY4_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        DELAY4_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DELAY4_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DELAY4_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `Delay4` writer - Delay Control for Simultaneous Switch Reduction"]
-pub struct DELAY4_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DELAY4_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 16)) | ((value as u32 & 0x0f) << 16);
-        self.w
-    }
-}
+pub type DELAY4_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DELAYR_SPEC, u8, u8, 4, O>;
 #[doc = "Field `Delay5` reader - Delay Control for Simultaneous Switch Reduction"]
-pub struct DELAY5_R(crate::FieldReader<u8, u8>);
-impl DELAY5_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        DELAY5_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DELAY5_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DELAY5_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `Delay5` writer - Delay Control for Simultaneous Switch Reduction"]
-pub struct DELAY5_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DELAY5_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 20)) | ((value as u32 & 0x0f) << 20);
-        self.w
-    }
-}
+pub type DELAY5_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DELAYR_SPEC, u8, u8, 4, O>;
 #[doc = "Field `Delay6` reader - Delay Control for Simultaneous Switch Reduction"]
-pub struct DELAY6_R(crate::FieldReader<u8, u8>);
-impl DELAY6_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        DELAY6_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DELAY6_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DELAY6_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `Delay6` writer - Delay Control for Simultaneous Switch Reduction"]
-pub struct DELAY6_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DELAY6_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 24)) | ((value as u32 & 0x0f) << 24);
-        self.w
-    }
-}
+pub type DELAY6_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DELAYR_SPEC, u8, u8, 4, O>;
 #[doc = "Field `Delay7` reader - Delay Control for Simultaneous Switch Reduction"]
-pub struct DELAY7_R(crate::FieldReader<u8, u8>);
-impl DELAY7_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        DELAY7_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DELAY7_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DELAY7_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `Delay7` writer - Delay Control for Simultaneous Switch Reduction"]
-pub struct DELAY7_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DELAY7_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 28)) | ((value as u32 & 0x0f) << 28);
-        self.w
-    }
-}
+pub type DELAY7_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DELAYR_SPEC, u8, u8, 4, O>;
 impl R {
     #[doc = "Bits 0:3 - Delay Control for Simultaneous Switch Reduction"]
     #[inline(always)]
@@ -287,43 +111,51 @@ impl R {
 impl W {
     #[doc = "Bits 0:3 - Delay Control for Simultaneous Switch Reduction"]
     #[inline(always)]
-    pub fn delay0(&mut self) -> DELAY0_W {
-        DELAY0_W { w: self }
+    #[must_use]
+    pub fn delay0(&mut self) -> DELAY0_W<0> {
+        DELAY0_W::new(self)
     }
     #[doc = "Bits 4:7 - Delay Control for Simultaneous Switch Reduction"]
     #[inline(always)]
-    pub fn delay1(&mut self) -> DELAY1_W {
-        DELAY1_W { w: self }
+    #[must_use]
+    pub fn delay1(&mut self) -> DELAY1_W<4> {
+        DELAY1_W::new(self)
     }
     #[doc = "Bits 8:11 - Delay Control for Simultaneous Switch Reduction"]
     #[inline(always)]
-    pub fn delay2(&mut self) -> DELAY2_W {
-        DELAY2_W { w: self }
+    #[must_use]
+    pub fn delay2(&mut self) -> DELAY2_W<8> {
+        DELAY2_W::new(self)
     }
     #[doc = "Bits 12:15 - Delay Control for Simultaneous Switch Reduction"]
     #[inline(always)]
-    pub fn delay3(&mut self) -> DELAY3_W {
-        DELAY3_W { w: self }
+    #[must_use]
+    pub fn delay3(&mut self) -> DELAY3_W<12> {
+        DELAY3_W::new(self)
     }
     #[doc = "Bits 16:19 - Delay Control for Simultaneous Switch Reduction"]
     #[inline(always)]
-    pub fn delay4(&mut self) -> DELAY4_W {
-        DELAY4_W { w: self }
+    #[must_use]
+    pub fn delay4(&mut self) -> DELAY4_W<16> {
+        DELAY4_W::new(self)
     }
     #[doc = "Bits 20:23 - Delay Control for Simultaneous Switch Reduction"]
     #[inline(always)]
-    pub fn delay5(&mut self) -> DELAY5_W {
-        DELAY5_W { w: self }
+    #[must_use]
+    pub fn delay5(&mut self) -> DELAY5_W<20> {
+        DELAY5_W::new(self)
     }
     #[doc = "Bits 24:27 - Delay Control for Simultaneous Switch Reduction"]
     #[inline(always)]
-    pub fn delay6(&mut self) -> DELAY6_W {
-        DELAY6_W { w: self }
+    #[must_use]
+    pub fn delay6(&mut self) -> DELAY6_W<24> {
+        DELAY6_W::new(self)
     }
     #[doc = "Bits 28:31 - Delay Control for Simultaneous Switch Reduction"]
     #[inline(always)]
-    pub fn delay7(&mut self) -> DELAY7_W {
-        DELAY7_W { w: self }
+    #[must_use]
+    pub fn delay7(&mut self) -> DELAY7_W<28> {
+        DELAY7_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -344,11 +176,10 @@ impl crate::Readable for DELAYR_SPEC {
 #[doc = "`write(|w| ..)` method takes [delayr::W](W) writer structure"]
 impl crate::Writable for DELAYR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets DELAYR to value 0"]
 impl crate::Resettable for DELAYR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

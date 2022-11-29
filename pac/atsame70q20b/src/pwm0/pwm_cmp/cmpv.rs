@@ -35,136 +35,83 @@ impl From<crate::W<CMPV_SPEC>> for W {
     }
 }
 #[doc = "Field `CV` reader - Comparison x Value"]
-pub struct CV_R(crate::FieldReader<u32, u32>);
-impl CV_R {
-    pub(crate) fn new(bits: u32) -> Self {
-        CV_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CV_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CV_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `CV` writer - Comparison x Value"]
-pub struct CV_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CV_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x00ff_ffff) | (value as u32 & 0x00ff_ffff);
-        self.w
-    }
-}
+pub type CV_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CMPV_SPEC, u32, u32, 24, O>;
+#[doc = "Field `CVM` reader - Comparison x Value Mode"]
+pub type CVM_R = crate::BitReader<CVMSELECT_A>;
 #[doc = "Comparison x Value Mode\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CVM_A {
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum CVMSELECT_A {
     #[doc = "0: Compare when counter is incrementing"]
     COMPARE_AT_INCREMENT = 0,
     #[doc = "1: Compare when counter is decrementing"]
     COMPARE_AT_DECREMENT = 1,
 }
-impl From<CVM_A> for bool {
+impl From<CVMSELECT_A> for bool {
     #[inline(always)]
-    fn from(variant: CVM_A) -> Self {
+    fn from(variant: CVMSELECT_A) -> Self {
         variant as u8 != 0
     }
 }
-#[doc = "Field `CVM` reader - Comparison x Value Mode"]
-pub struct CVM_R(crate::FieldReader<bool, CVM_A>);
 impl CVM_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        CVM_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CVM_A {
+    pub fn variant(&self) -> CVMSELECT_A {
         match self.bits {
-            false => CVM_A::COMPARE_AT_INCREMENT,
-            true => CVM_A::COMPARE_AT_DECREMENT,
+            false => CVMSELECT_A::COMPARE_AT_INCREMENT,
+            true => CVMSELECT_A::COMPARE_AT_DECREMENT,
         }
     }
     #[doc = "Checks if the value of the field is `COMPARE_AT_INCREMENT`"]
     #[inline(always)]
     pub fn is_compare_at_increment(&self) -> bool {
-        **self == CVM_A::COMPARE_AT_INCREMENT
+        *self == CVMSELECT_A::COMPARE_AT_INCREMENT
     }
     #[doc = "Checks if the value of the field is `COMPARE_AT_DECREMENT`"]
     #[inline(always)]
     pub fn is_compare_at_decrement(&self) -> bool {
-        **self == CVM_A::COMPARE_AT_DECREMENT
-    }
-}
-impl core::ops::Deref for CVM_R {
-    type Target = crate::FieldReader<bool, CVM_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == CVMSELECT_A::COMPARE_AT_DECREMENT
     }
 }
 #[doc = "Field `CVM` writer - Comparison x Value Mode"]
-pub struct CVM_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CVM_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CVM_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type CVM_W<'a, const O: u8> = crate::BitWriter<'a, u32, CMPV_SPEC, CVMSELECT_A, O>;
+impl<'a, const O: u8> CVM_W<'a, O> {
     #[doc = "Compare when counter is incrementing"]
     #[inline(always)]
     pub fn compare_at_increment(self) -> &'a mut W {
-        self.variant(CVM_A::COMPARE_AT_INCREMENT)
+        self.variant(CVMSELECT_A::COMPARE_AT_INCREMENT)
     }
     #[doc = "Compare when counter is decrementing"]
     #[inline(always)]
     pub fn compare_at_decrement(self) -> &'a mut W {
-        self.variant(CVM_A::COMPARE_AT_DECREMENT)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 24)) | ((value as u32 & 0x01) << 24);
-        self.w
+        self.variant(CVMSELECT_A::COMPARE_AT_DECREMENT)
     }
 }
 impl R {
     #[doc = "Bits 0:23 - Comparison x Value"]
     #[inline(always)]
     pub fn cv(&self) -> CV_R {
-        CV_R::new((self.bits & 0x00ff_ffff) as u32)
+        CV_R::new(self.bits & 0x00ff_ffff)
     }
     #[doc = "Bit 24 - Comparison x Value Mode"]
     #[inline(always)]
     pub fn cvm(&self) -> CVM_R {
-        CVM_R::new(((self.bits >> 24) & 0x01) != 0)
+        CVM_R::new(((self.bits >> 24) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bits 0:23 - Comparison x Value"]
     #[inline(always)]
-    pub fn cv(&mut self) -> CV_W {
-        CV_W { w: self }
+    #[must_use]
+    pub fn cv(&mut self) -> CV_W<0> {
+        CV_W::new(self)
     }
     #[doc = "Bit 24 - Comparison x Value Mode"]
     #[inline(always)]
-    pub fn cvm(&mut self) -> CVM_W {
-        CVM_W { w: self }
+    #[must_use]
+    pub fn cvm(&mut self) -> CVM_W<24> {
+        CVM_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -185,11 +132,10 @@ impl crate::Readable for CMPV_SPEC {
 #[doc = "`write(|w| ..)` method takes [cmpv::W](W) writer structure"]
 impl crate::Writable for CMPV_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets CMPV to value 0"]
 impl crate::Resettable for CMPV_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

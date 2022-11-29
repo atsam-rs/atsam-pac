@@ -20,397 +20,243 @@ impl From<crate::W<IDR_SPEC>> for W {
     }
 }
 #[doc = "Overflow\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum OVF_AW {
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum OVFSELECT_AW {
     #[doc = "0: No effect"]
     _0 = 0,
     #[doc = "1: Disable Interrupt."]
     _1 = 1,
 }
-impl From<OVF_AW> for bool {
+impl From<OVFSELECT_AW> for bool {
     #[inline(always)]
-    fn from(variant: OVF_AW) -> Self {
+    fn from(variant: OVFSELECT_AW) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `OVF` writer - Overflow"]
-pub struct OVF_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> OVF_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: OVF_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type OVF_W<'a, const O: u8> = crate::BitWriter<'a, u32, IDR_SPEC, OVFSELECT_AW, O>;
+impl<'a, const O: u8> OVF_W<'a, O> {
     #[doc = "No effect"]
     #[inline(always)]
     pub fn _0(self) -> &'a mut W {
-        self.variant(OVF_AW::_0)
+        self.variant(OVFSELECT_AW::_0)
     }
     #[doc = "Disable Interrupt."]
     #[inline(always)]
     pub fn _1(self) -> &'a mut W {
-        self.variant(OVF_AW::_1)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
+        self.variant(OVFSELECT_AW::_1)
     }
 }
 #[doc = "Alarm 0\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ALARM0_AW {
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum ALARM0SELECT_AW {
     #[doc = "0: No effect"]
     _0 = 0,
     #[doc = "1: Disable interrupt"]
     _1 = 1,
 }
-impl From<ALARM0_AW> for bool {
+impl From<ALARM0SELECT_AW> for bool {
     #[inline(always)]
-    fn from(variant: ALARM0_AW) -> Self {
+    fn from(variant: ALARM0SELECT_AW) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `ALARM0` writer - Alarm 0"]
-pub struct ALARM0_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ALARM0_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: ALARM0_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type ALARM0_W<'a, const O: u8> = crate::BitWriter<'a, u32, IDR_SPEC, ALARM0SELECT_AW, O>;
+impl<'a, const O: u8> ALARM0_W<'a, O> {
     #[doc = "No effect"]
     #[inline(always)]
     pub fn _0(self) -> &'a mut W {
-        self.variant(ALARM0_AW::_0)
+        self.variant(ALARM0SELECT_AW::_0)
     }
     #[doc = "Disable interrupt"]
     #[inline(always)]
     pub fn _1(self) -> &'a mut W {
-        self.variant(ALARM0_AW::_1)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
-        self.w
+        self.variant(ALARM0SELECT_AW::_1)
     }
 }
 #[doc = "Alarm 1\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ALARM1_AW {
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum ALARM1SELECT_AW {
     #[doc = "0: No effect"]
     _0 = 0,
     #[doc = "1: Disable interrupt"]
     _1 = 1,
 }
-impl From<ALARM1_AW> for bool {
+impl From<ALARM1SELECT_AW> for bool {
     #[inline(always)]
-    fn from(variant: ALARM1_AW) -> Self {
+    fn from(variant: ALARM1SELECT_AW) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `ALARM1` writer - Alarm 1"]
-pub struct ALARM1_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ALARM1_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: ALARM1_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type ALARM1_W<'a, const O: u8> = crate::BitWriter<'a, u32, IDR_SPEC, ALARM1SELECT_AW, O>;
+impl<'a, const O: u8> ALARM1_W<'a, O> {
     #[doc = "No effect"]
     #[inline(always)]
     pub fn _0(self) -> &'a mut W {
-        self.variant(ALARM1_AW::_0)
+        self.variant(ALARM1SELECT_AW::_0)
     }
     #[doc = "Disable interrupt"]
     #[inline(always)]
     pub fn _1(self) -> &'a mut W {
-        self.variant(ALARM1_AW::_1)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 9)) | ((value as u32 & 0x01) << 9);
-        self.w
+        self.variant(ALARM1SELECT_AW::_1)
     }
 }
 #[doc = "Periodic 0\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PER0_AW {
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum PER0SELECT_AW {
     #[doc = "0: No effet"]
     _0 = 0,
     #[doc = "1: Disalbe interrupt"]
     _1 = 1,
 }
-impl From<PER0_AW> for bool {
+impl From<PER0SELECT_AW> for bool {
     #[inline(always)]
-    fn from(variant: PER0_AW) -> Self {
+    fn from(variant: PER0SELECT_AW) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `PER0` writer - Periodic 0"]
-pub struct PER0_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PER0_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: PER0_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type PER0_W<'a, const O: u8> = crate::BitWriter<'a, u32, IDR_SPEC, PER0SELECT_AW, O>;
+impl<'a, const O: u8> PER0_W<'a, O> {
     #[doc = "No effet"]
     #[inline(always)]
     pub fn _0(self) -> &'a mut W {
-        self.variant(PER0_AW::_0)
+        self.variant(PER0SELECT_AW::_0)
     }
     #[doc = "Disalbe interrupt"]
     #[inline(always)]
     pub fn _1(self) -> &'a mut W {
-        self.variant(PER0_AW::_1)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 16)) | ((value as u32 & 0x01) << 16);
-        self.w
+        self.variant(PER0SELECT_AW::_1)
     }
 }
 #[doc = "Periodic 1\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PER1_AW {
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum PER1SELECT_AW {
     #[doc = "0: No effect"]
     _0 = 0,
     #[doc = "1: Disable interrupt"]
     _1 = 1,
 }
-impl From<PER1_AW> for bool {
+impl From<PER1SELECT_AW> for bool {
     #[inline(always)]
-    fn from(variant: PER1_AW) -> Self {
+    fn from(variant: PER1SELECT_AW) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `PER1` writer - Periodic 1"]
-pub struct PER1_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PER1_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: PER1_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type PER1_W<'a, const O: u8> = crate::BitWriter<'a, u32, IDR_SPEC, PER1SELECT_AW, O>;
+impl<'a, const O: u8> PER1_W<'a, O> {
     #[doc = "No effect"]
     #[inline(always)]
     pub fn _0(self) -> &'a mut W {
-        self.variant(PER1_AW::_0)
+        self.variant(PER1SELECT_AW::_0)
     }
     #[doc = "Disable interrupt"]
     #[inline(always)]
     pub fn _1(self) -> &'a mut W {
-        self.variant(PER1_AW::_1)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 17)) | ((value as u32 & 0x01) << 17);
-        self.w
+        self.variant(PER1SELECT_AW::_1)
     }
 }
 #[doc = "AST Ready\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum READY_AW {
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum READYSELECT_AW {
     #[doc = "0: No effect"]
     _0 = 0,
     #[doc = "1: Disable interrupt"]
     _1 = 1,
 }
-impl From<READY_AW> for bool {
+impl From<READYSELECT_AW> for bool {
     #[inline(always)]
-    fn from(variant: READY_AW) -> Self {
+    fn from(variant: READYSELECT_AW) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `READY` writer - AST Ready"]
-pub struct READY_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> READY_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: READY_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type READY_W<'a, const O: u8> = crate::BitWriter<'a, u32, IDR_SPEC, READYSELECT_AW, O>;
+impl<'a, const O: u8> READY_W<'a, O> {
     #[doc = "No effect"]
     #[inline(always)]
     pub fn _0(self) -> &'a mut W {
-        self.variant(READY_AW::_0)
+        self.variant(READYSELECT_AW::_0)
     }
     #[doc = "Disable interrupt"]
     #[inline(always)]
     pub fn _1(self) -> &'a mut W {
-        self.variant(READY_AW::_1)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 25)) | ((value as u32 & 0x01) << 25);
-        self.w
+        self.variant(READYSELECT_AW::_1)
     }
 }
 #[doc = "Clock Ready\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CLKRDY_AW {
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum CLKRDYSELECT_AW {
     #[doc = "0: No effect"]
     _0 = 0,
     #[doc = "1: Disable interrupt"]
     _1 = 1,
 }
-impl From<CLKRDY_AW> for bool {
+impl From<CLKRDYSELECT_AW> for bool {
     #[inline(always)]
-    fn from(variant: CLKRDY_AW) -> Self {
+    fn from(variant: CLKRDYSELECT_AW) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `CLKRDY` writer - Clock Ready"]
-pub struct CLKRDY_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CLKRDY_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CLKRDY_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type CLKRDY_W<'a, const O: u8> = crate::BitWriter<'a, u32, IDR_SPEC, CLKRDYSELECT_AW, O>;
+impl<'a, const O: u8> CLKRDY_W<'a, O> {
     #[doc = "No effect"]
     #[inline(always)]
     pub fn _0(self) -> &'a mut W {
-        self.variant(CLKRDY_AW::_0)
+        self.variant(CLKRDYSELECT_AW::_0)
     }
     #[doc = "Disable interrupt"]
     #[inline(always)]
     pub fn _1(self) -> &'a mut W {
-        self.variant(CLKRDY_AW::_1)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 29)) | ((value as u32 & 0x01) << 29);
-        self.w
+        self.variant(CLKRDYSELECT_AW::_1)
     }
 }
 impl W {
     #[doc = "Bit 0 - Overflow"]
     #[inline(always)]
-    pub fn ovf(&mut self) -> OVF_W {
-        OVF_W { w: self }
+    #[must_use]
+    pub fn ovf(&mut self) -> OVF_W<0> {
+        OVF_W::new(self)
     }
     #[doc = "Bit 8 - Alarm 0"]
     #[inline(always)]
-    pub fn alarm0(&mut self) -> ALARM0_W {
-        ALARM0_W { w: self }
+    #[must_use]
+    pub fn alarm0(&mut self) -> ALARM0_W<8> {
+        ALARM0_W::new(self)
     }
     #[doc = "Bit 9 - Alarm 1"]
     #[inline(always)]
-    pub fn alarm1(&mut self) -> ALARM1_W {
-        ALARM1_W { w: self }
+    #[must_use]
+    pub fn alarm1(&mut self) -> ALARM1_W<9> {
+        ALARM1_W::new(self)
     }
     #[doc = "Bit 16 - Periodic 0"]
     #[inline(always)]
-    pub fn per0(&mut self) -> PER0_W {
-        PER0_W { w: self }
+    #[must_use]
+    pub fn per0(&mut self) -> PER0_W<16> {
+        PER0_W::new(self)
     }
     #[doc = "Bit 17 - Periodic 1"]
     #[inline(always)]
-    pub fn per1(&mut self) -> PER1_W {
-        PER1_W { w: self }
+    #[must_use]
+    pub fn per1(&mut self) -> PER1_W<17> {
+        PER1_W::new(self)
     }
     #[doc = "Bit 25 - AST Ready"]
     #[inline(always)]
-    pub fn ready(&mut self) -> READY_W {
-        READY_W { w: self }
+    #[must_use]
+    pub fn ready(&mut self) -> READY_W<25> {
+        READY_W::new(self)
     }
     #[doc = "Bit 29 - Clock Ready"]
     #[inline(always)]
-    pub fn clkrdy(&mut self) -> CLKRDY_W {
-        CLKRDY_W { w: self }
+    #[must_use]
+    pub fn clkrdy(&mut self) -> CLKRDY_W<29> {
+        CLKRDY_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -427,11 +273,10 @@ impl crate::RegisterSpec for IDR_SPEC {
 #[doc = "`write(|w| ..)` method takes [idr::W](W) writer structure"]
 impl crate::Writable for IDR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets IDR to value 0"]
 impl crate::Resettable for IDR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

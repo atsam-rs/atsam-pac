@@ -35,31 +35,9 @@ impl From<crate::W<PDECF_SPEC>> for W {
     }
 }
 #[doc = "Field `DEC_FACTOR` reader - Decimation Factor"]
-pub struct DEC_FACTOR_R(crate::FieldReader<u8, u8>);
-impl DEC_FACTOR_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        DEC_FACTOR_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DEC_FACTOR_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DEC_FACTOR_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `DEC_FACTOR` writer - Decimation Factor"]
-pub struct DEC_FACTOR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DEC_FACTOR_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xff) | (value as u32 & 0xff);
-        self.w
-    }
-}
+pub type DEC_FACTOR_W<'a, const O: u8> = crate::FieldWriter<'a, u32, PDECF_SPEC, u8, u8, 8, O>;
 impl R {
     #[doc = "Bits 0:7 - Decimation Factor"]
     #[inline(always)]
@@ -70,8 +48,9 @@ impl R {
 impl W {
     #[doc = "Bits 0:7 - Decimation Factor"]
     #[inline(always)]
-    pub fn dec_factor(&mut self) -> DEC_FACTOR_W {
-        DEC_FACTOR_W { w: self }
+    #[must_use]
+    pub fn dec_factor(&mut self) -> DEC_FACTOR_W<0> {
+        DEC_FACTOR_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -92,11 +71,10 @@ impl crate::Readable for PDECF_SPEC {
 #[doc = "`write(|w| ..)` method takes [pdecf::W](W) writer structure"]
 impl crate::Writable for PDECF_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets PDECF to value 0"]
 impl crate::Resettable for PDECF_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

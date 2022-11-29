@@ -20,93 +20,37 @@ impl From<crate::W<SSR_SPEC>> for W {
     }
 }
 #[doc = "Field `RXOR` writer - Receive Overrun Status Set"]
-pub struct RXOR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RXOR_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
-    }
-}
+pub type RXOR_W<'a, const O: u8> = crate::BitWriter<'a, u32, SSR_SPEC, bool, O>;
 #[doc = "Field `TXUR` writer - Transmit Underrun Status Set"]
-pub struct TXUR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TXUR_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | ((value as u32 & 0x01) << 6);
-        self.w
-    }
-}
+pub type TXUR_W<'a, const O: u8> = crate::BitWriter<'a, u32, SSR_SPEC, bool, O>;
 #[doc = "Field `RXORCH` writer - Receive Overrun Per Channel Status Set"]
-pub struct RXORCH_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RXORCH_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 8)) | ((value as u32 & 0x03) << 8);
-        self.w
-    }
-}
+pub type RXORCH_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SSR_SPEC, u8, u8, 2, O>;
 #[doc = "Field `TXURCH` writer - Transmit Underrun Per Channel Status Set"]
-pub struct TXURCH_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TXURCH_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 20)) | ((value as u32 & 0x03) << 20);
-        self.w
-    }
-}
+pub type TXURCH_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SSR_SPEC, u8, u8, 2, O>;
 impl W {
     #[doc = "Bit 2 - Receive Overrun Status Set"]
     #[inline(always)]
-    pub fn rxor(&mut self) -> RXOR_W {
-        RXOR_W { w: self }
+    #[must_use]
+    pub fn rxor(&mut self) -> RXOR_W<2> {
+        RXOR_W::new(self)
     }
     #[doc = "Bit 6 - Transmit Underrun Status Set"]
     #[inline(always)]
-    pub fn txur(&mut self) -> TXUR_W {
-        TXUR_W { w: self }
+    #[must_use]
+    pub fn txur(&mut self) -> TXUR_W<6> {
+        TXUR_W::new(self)
     }
     #[doc = "Bits 8:9 - Receive Overrun Per Channel Status Set"]
     #[inline(always)]
-    pub fn rxorch(&mut self) -> RXORCH_W {
-        RXORCH_W { w: self }
+    #[must_use]
+    pub fn rxorch(&mut self) -> RXORCH_W<8> {
+        RXORCH_W::new(self)
     }
     #[doc = "Bits 20:21 - Transmit Underrun Per Channel Status Set"]
     #[inline(always)]
-    pub fn txurch(&mut self) -> TXURCH_W {
-        TXURCH_W { w: self }
+    #[must_use]
+    pub fn txurch(&mut self) -> TXURCH_W<20> {
+        TXURCH_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -123,11 +67,10 @@ impl crate::RegisterSpec for SSR_SPEC {
 #[doc = "`write(|w| ..)` method takes [ssr::W](W) writer structure"]
 impl crate::Writable for SSR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets SSR to value 0"]
 impl crate::Resettable for SSR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

@@ -20,22 +20,13 @@ impl From<crate::W<KEY1_SPEC>> for W {
     }
 }
 #[doc = "Field `KEY1` writer - Off Chip Memory Scrambling (OCMS) Key Part 1"]
-pub struct KEY1_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> KEY1_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xffff_ffff) | (value as u32 & 0xffff_ffff);
-        self.w
-    }
-}
+pub type KEY1_W<'a, const O: u8> = crate::FieldWriter<'a, u32, KEY1_SPEC, u32, u32, 32, O>;
 impl W {
     #[doc = "Bits 0:31 - Off Chip Memory Scrambling (OCMS) Key Part 1"]
     #[inline(always)]
-    pub fn key1(&mut self) -> KEY1_W {
-        KEY1_W { w: self }
+    #[must_use]
+    pub fn key1(&mut self) -> KEY1_W<0> {
+        KEY1_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -52,11 +43,10 @@ impl crate::RegisterSpec for KEY1_SPEC {
 #[doc = "`write(|w| ..)` method takes [key1::W](W) writer structure"]
 impl crate::Writable for KEY1_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets KEY1 to value 0"]
 impl crate::Resettable for KEY1_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

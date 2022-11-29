@@ -35,365 +35,65 @@ impl From<crate::W<SMR_SPEC>> for W {
     }
 }
 #[doc = "Field `NACKEN` reader - Slave Receiver Data Phase NACK enable"]
-pub struct NACKEN_R(crate::FieldReader<bool, bool>);
-impl NACKEN_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        NACKEN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for NACKEN_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type NACKEN_R = crate::BitReader<bool>;
 #[doc = "Field `NACKEN` writer - Slave Receiver Data Phase NACK enable"]
-pub struct NACKEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> NACKEN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type NACKEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMR_SPEC, bool, O>;
 #[doc = "Field `SMDA` reader - SMBus Default Address"]
-pub struct SMDA_R(crate::FieldReader<bool, bool>);
-impl SMDA_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        SMDA_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for SMDA_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type SMDA_R = crate::BitReader<bool>;
 #[doc = "Field `SMDA` writer - SMBus Default Address"]
-pub struct SMDA_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SMDA_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
-    }
-}
+pub type SMDA_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMR_SPEC, bool, O>;
 #[doc = "Field `SMHH` reader - SMBus Host Header"]
-pub struct SMHH_R(crate::FieldReader<bool, bool>);
-impl SMHH_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        SMHH_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for SMHH_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type SMHH_R = crate::BitReader<bool>;
 #[doc = "Field `SMHH` writer - SMBus Host Header"]
-pub struct SMHH_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SMHH_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
-        self.w
-    }
-}
+pub type SMHH_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMR_SPEC, bool, O>;
 #[doc = "Field `SCLWSDIS` reader - Clock Wait State Disable"]
-pub struct SCLWSDIS_R(crate::FieldReader<bool, bool>);
-impl SCLWSDIS_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        SCLWSDIS_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for SCLWSDIS_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type SCLWSDIS_R = crate::BitReader<bool>;
 #[doc = "Field `SCLWSDIS` writer - Clock Wait State Disable"]
-pub struct SCLWSDIS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SCLWSDIS_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | ((value as u32 & 0x01) << 6);
-        self.w
-    }
-}
+pub type SCLWSDIS_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMR_SPEC, bool, O>;
 #[doc = "Field `MASK` reader - Slave Address Mask"]
-pub struct MASK_R(crate::FieldReader<u8, u8>);
-impl MASK_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        MASK_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for MASK_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type MASK_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `MASK` writer - Slave Address Mask"]
-pub struct MASK_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> MASK_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x7f << 8)) | ((value as u32 & 0x7f) << 8);
-        self.w
-    }
-}
+pub type MASK_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SMR_SPEC, u8, u8, 7, O>;
 #[doc = "Field `SADR` reader - Slave Address"]
-pub struct SADR_R(crate::FieldReader<u8, u8>);
-impl SADR_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        SADR_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for SADR_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type SADR_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `SADR` writer - Slave Address"]
-pub struct SADR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SADR_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x7f << 16)) | ((value as u32 & 0x7f) << 16);
-        self.w
-    }
-}
+pub type SADR_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SMR_SPEC, u8, u8, 7, O>;
 #[doc = "Field `SADR1EN` reader - Slave Address 1 Enable"]
-pub struct SADR1EN_R(crate::FieldReader<bool, bool>);
-impl SADR1EN_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        SADR1EN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for SADR1EN_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type SADR1EN_R = crate::BitReader<bool>;
 #[doc = "Field `SADR1EN` writer - Slave Address 1 Enable"]
-pub struct SADR1EN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SADR1EN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 28)) | ((value as u32 & 0x01) << 28);
-        self.w
-    }
-}
+pub type SADR1EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMR_SPEC, bool, O>;
 #[doc = "Field `SADR2EN` reader - Slave Address 2 Enable"]
-pub struct SADR2EN_R(crate::FieldReader<bool, bool>);
-impl SADR2EN_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        SADR2EN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for SADR2EN_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type SADR2EN_R = crate::BitReader<bool>;
 #[doc = "Field `SADR2EN` writer - Slave Address 2 Enable"]
-pub struct SADR2EN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SADR2EN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 29)) | ((value as u32 & 0x01) << 29);
-        self.w
-    }
-}
+pub type SADR2EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMR_SPEC, bool, O>;
 #[doc = "Field `SADR3EN` reader - Slave Address 3 Enable"]
-pub struct SADR3EN_R(crate::FieldReader<bool, bool>);
-impl SADR3EN_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        SADR3EN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for SADR3EN_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type SADR3EN_R = crate::BitReader<bool>;
 #[doc = "Field `SADR3EN` writer - Slave Address 3 Enable"]
-pub struct SADR3EN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SADR3EN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 30)) | ((value as u32 & 0x01) << 30);
-        self.w
-    }
-}
+pub type SADR3EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMR_SPEC, bool, O>;
 #[doc = "Field `DATAMEN` reader - Data Matching Enable"]
-pub struct DATAMEN_R(crate::FieldReader<bool, bool>);
-impl DATAMEN_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        DATAMEN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DATAMEN_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DATAMEN_R = crate::BitReader<bool>;
 #[doc = "Field `DATAMEN` writer - Data Matching Enable"]
-pub struct DATAMEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DATAMEN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 31)) | ((value as u32 & 0x01) << 31);
-        self.w
-    }
-}
+pub type DATAMEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMR_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - Slave Receiver Data Phase NACK enable"]
     #[inline(always)]
     pub fn nacken(&self) -> NACKEN_R {
-        NACKEN_R::new((self.bits & 0x01) != 0)
+        NACKEN_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 2 - SMBus Default Address"]
     #[inline(always)]
     pub fn smda(&self) -> SMDA_R {
-        SMDA_R::new(((self.bits >> 2) & 0x01) != 0)
+        SMDA_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - SMBus Host Header"]
     #[inline(always)]
     pub fn smhh(&self) -> SMHH_R {
-        SMHH_R::new(((self.bits >> 3) & 0x01) != 0)
+        SMHH_R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 6 - Clock Wait State Disable"]
     #[inline(always)]
     pub fn sclwsdis(&self) -> SCLWSDIS_R {
-        SCLWSDIS_R::new(((self.bits >> 6) & 0x01) != 0)
+        SCLWSDIS_R::new(((self.bits >> 6) & 1) != 0)
     }
     #[doc = "Bits 8:14 - Slave Address Mask"]
     #[inline(always)]
@@ -408,74 +108,84 @@ impl R {
     #[doc = "Bit 28 - Slave Address 1 Enable"]
     #[inline(always)]
     pub fn sadr1en(&self) -> SADR1EN_R {
-        SADR1EN_R::new(((self.bits >> 28) & 0x01) != 0)
+        SADR1EN_R::new(((self.bits >> 28) & 1) != 0)
     }
     #[doc = "Bit 29 - Slave Address 2 Enable"]
     #[inline(always)]
     pub fn sadr2en(&self) -> SADR2EN_R {
-        SADR2EN_R::new(((self.bits >> 29) & 0x01) != 0)
+        SADR2EN_R::new(((self.bits >> 29) & 1) != 0)
     }
     #[doc = "Bit 30 - Slave Address 3 Enable"]
     #[inline(always)]
     pub fn sadr3en(&self) -> SADR3EN_R {
-        SADR3EN_R::new(((self.bits >> 30) & 0x01) != 0)
+        SADR3EN_R::new(((self.bits >> 30) & 1) != 0)
     }
     #[doc = "Bit 31 - Data Matching Enable"]
     #[inline(always)]
     pub fn datamen(&self) -> DATAMEN_R {
-        DATAMEN_R::new(((self.bits >> 31) & 0x01) != 0)
+        DATAMEN_R::new(((self.bits >> 31) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Slave Receiver Data Phase NACK enable"]
     #[inline(always)]
-    pub fn nacken(&mut self) -> NACKEN_W {
-        NACKEN_W { w: self }
+    #[must_use]
+    pub fn nacken(&mut self) -> NACKEN_W<0> {
+        NACKEN_W::new(self)
     }
     #[doc = "Bit 2 - SMBus Default Address"]
     #[inline(always)]
-    pub fn smda(&mut self) -> SMDA_W {
-        SMDA_W { w: self }
+    #[must_use]
+    pub fn smda(&mut self) -> SMDA_W<2> {
+        SMDA_W::new(self)
     }
     #[doc = "Bit 3 - SMBus Host Header"]
     #[inline(always)]
-    pub fn smhh(&mut self) -> SMHH_W {
-        SMHH_W { w: self }
+    #[must_use]
+    pub fn smhh(&mut self) -> SMHH_W<3> {
+        SMHH_W::new(self)
     }
     #[doc = "Bit 6 - Clock Wait State Disable"]
     #[inline(always)]
-    pub fn sclwsdis(&mut self) -> SCLWSDIS_W {
-        SCLWSDIS_W { w: self }
+    #[must_use]
+    pub fn sclwsdis(&mut self) -> SCLWSDIS_W<6> {
+        SCLWSDIS_W::new(self)
     }
     #[doc = "Bits 8:14 - Slave Address Mask"]
     #[inline(always)]
-    pub fn mask(&mut self) -> MASK_W {
-        MASK_W { w: self }
+    #[must_use]
+    pub fn mask(&mut self) -> MASK_W<8> {
+        MASK_W::new(self)
     }
     #[doc = "Bits 16:22 - Slave Address"]
     #[inline(always)]
-    pub fn sadr(&mut self) -> SADR_W {
-        SADR_W { w: self }
+    #[must_use]
+    pub fn sadr(&mut self) -> SADR_W<16> {
+        SADR_W::new(self)
     }
     #[doc = "Bit 28 - Slave Address 1 Enable"]
     #[inline(always)]
-    pub fn sadr1en(&mut self) -> SADR1EN_W {
-        SADR1EN_W { w: self }
+    #[must_use]
+    pub fn sadr1en(&mut self) -> SADR1EN_W<28> {
+        SADR1EN_W::new(self)
     }
     #[doc = "Bit 29 - Slave Address 2 Enable"]
     #[inline(always)]
-    pub fn sadr2en(&mut self) -> SADR2EN_W {
-        SADR2EN_W { w: self }
+    #[must_use]
+    pub fn sadr2en(&mut self) -> SADR2EN_W<29> {
+        SADR2EN_W::new(self)
     }
     #[doc = "Bit 30 - Slave Address 3 Enable"]
     #[inline(always)]
-    pub fn sadr3en(&mut self) -> SADR3EN_W {
-        SADR3EN_W { w: self }
+    #[must_use]
+    pub fn sadr3en(&mut self) -> SADR3EN_W<30> {
+        SADR3EN_W::new(self)
     }
     #[doc = "Bit 31 - Data Matching Enable"]
     #[inline(always)]
-    pub fn datamen(&mut self) -> DATAMEN_W {
-        DATAMEN_W { w: self }
+    #[must_use]
+    pub fn datamen(&mut self) -> DATAMEN_W<31> {
+        DATAMEN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -496,11 +206,10 @@ impl crate::Readable for SMR_SPEC {
 #[doc = "`write(|w| ..)` method takes [smr::W](W) writer structure"]
 impl crate::Writable for SMR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets SMR to value 0"]
 impl crate::Resettable for SMR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

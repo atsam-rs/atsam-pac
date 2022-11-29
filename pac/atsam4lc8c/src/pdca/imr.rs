@@ -14,62 +14,26 @@ impl From<crate::R<IMR_SPEC>> for R {
     }
 }
 #[doc = "Field `RCZ` reader - Reload Counter Zero"]
-pub struct RCZ_R(crate::FieldReader<bool, bool>);
-impl RCZ_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        RCZ_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for RCZ_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type RCZ_R = crate::BitReader<bool>;
 #[doc = "Field `TRC` reader - Transfer Complete"]
-pub struct TRC_R(crate::FieldReader<bool, bool>);
-impl TRC_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        TRC_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TRC_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TRC_R = crate::BitReader<bool>;
 #[doc = "Field `TERR` reader - Transfer Error"]
-pub struct TERR_R(crate::FieldReader<bool, bool>);
-impl TERR_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        TERR_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TERR_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TERR_R = crate::BitReader<bool>;
 impl R {
     #[doc = "Bit 0 - Reload Counter Zero"]
     #[inline(always)]
     pub fn rcz(&self) -> RCZ_R {
-        RCZ_R::new((self.bits & 0x01) != 0)
+        RCZ_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Transfer Complete"]
     #[inline(always)]
     pub fn trc(&self) -> TRC_R {
-        TRC_R::new(((self.bits >> 1) & 0x01) != 0)
+        TRC_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - Transfer Error"]
     #[inline(always)]
     pub fn terr(&self) -> TERR_R {
-        TERR_R::new(((self.bits >> 2) & 0x01) != 0)
+        TERR_R::new(((self.bits >> 2) & 1) != 0)
     }
 }
 #[doc = "Interrupt Mask Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [imr](index.html) module"]
@@ -83,8 +47,5 @@ impl crate::Readable for IMR_SPEC {
 }
 #[doc = "`reset()` method sets IMR%s to value 0"]
 impl crate::Resettable for IMR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

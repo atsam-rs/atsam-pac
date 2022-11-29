@@ -14,81 +14,33 @@ impl From<crate::R<FSR_SPEC>> for R {
     }
 }
 #[doc = "Field `FRDY` reader - Flash Ready Status"]
-pub struct FRDY_R(crate::FieldReader<bool, bool>);
-impl FRDY_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        FRDY_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for FRDY_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type FRDY_R = crate::BitReader<bool>;
 #[doc = "Field `FCMDE` reader - Flash Command Error Status"]
-pub struct FCMDE_R(crate::FieldReader<bool, bool>);
-impl FCMDE_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        FCMDE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for FCMDE_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type FCMDE_R = crate::BitReader<bool>;
 #[doc = "Field `FLOCKE` reader - Flash Lock Error Status"]
-pub struct FLOCKE_R(crate::FieldReader<bool, bool>);
-impl FLOCKE_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        FLOCKE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for FLOCKE_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type FLOCKE_R = crate::BitReader<bool>;
 #[doc = "Field `FLERR` reader - Flash Error Status"]
-pub struct FLERR_R(crate::FieldReader<bool, bool>);
-impl FLERR_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        FLERR_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for FLERR_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type FLERR_R = crate::BitReader<bool>;
 impl R {
     #[doc = "Bit 0 - Flash Ready Status"]
     #[inline(always)]
     pub fn frdy(&self) -> FRDY_R {
-        FRDY_R::new((self.bits & 0x01) != 0)
+        FRDY_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Flash Command Error Status"]
     #[inline(always)]
     pub fn fcmde(&self) -> FCMDE_R {
-        FCMDE_R::new(((self.bits >> 1) & 0x01) != 0)
+        FCMDE_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - Flash Lock Error Status"]
     #[inline(always)]
     pub fn flocke(&self) -> FLOCKE_R {
-        FLOCKE_R::new(((self.bits >> 2) & 0x01) != 0)
+        FLOCKE_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - Flash Error Status"]
     #[inline(always)]
     pub fn flerr(&self) -> FLERR_R {
-        FLERR_R::new(((self.bits >> 3) & 0x01) != 0)
+        FLERR_R::new(((self.bits >> 3) & 1) != 0)
     }
 }
 #[doc = "EEFC Flash Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [fsr](index.html) module"]
@@ -102,8 +54,5 @@ impl crate::Readable for FSR_SPEC {
 }
 #[doc = "`reset()` method sets FSR to value 0x01"]
 impl crate::Resettable for FSR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x01
-    }
+    const RESET_VALUE: Self::Ux = 0x01;
 }

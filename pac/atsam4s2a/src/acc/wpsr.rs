@@ -14,24 +14,12 @@ impl From<crate::R<WPSR_SPEC>> for R {
     }
 }
 #[doc = "Field `WPVS` reader - Write Protection Violation Status"]
-pub struct WPVS_R(crate::FieldReader<bool, bool>);
-impl WPVS_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        WPVS_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for WPVS_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type WPVS_R = crate::BitReader<bool>;
 impl R {
     #[doc = "Bit 0 - Write Protection Violation Status"]
     #[inline(always)]
     pub fn wpvs(&self) -> WPVS_R {
-        WPVS_R::new((self.bits & 0x01) != 0)
+        WPVS_R::new((self.bits & 1) != 0)
     }
 }
 #[doc = "Write Protection Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [wpsr](index.html) module"]
@@ -45,8 +33,5 @@ impl crate::Readable for WPSR_SPEC {
 }
 #[doc = "`reset()` method sets WPSR to value 0"]
 impl crate::Resettable for WPSR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

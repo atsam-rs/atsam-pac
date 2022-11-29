@@ -20,66 +20,29 @@ impl From<crate::W<SR_SPEC>> for W {
     }
 }
 #[doc = "Field `ENABLE` writer - ICM Controller Enable Register"]
-pub struct ENABLE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ENABLE_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type ENABLE_W<'a, const O: u8> = crate::BitWriter<'a, u32, SR_SPEC, bool, O>;
 #[doc = "Field `RAWRMDIS` writer - Region Monitoring Disabled Raw Status"]
-pub struct RAWRMDIS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RAWRMDIS_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 8)) | ((value as u32 & 0x0f) << 8);
-        self.w
-    }
-}
+pub type RAWRMDIS_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SR_SPEC, u8, u8, 4, O>;
 #[doc = "Field `RMDIS` writer - Region Monitoring Disabled Status"]
-pub struct RMDIS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RMDIS_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 12)) | ((value as u32 & 0x0f) << 12);
-        self.w
-    }
-}
+pub type RMDIS_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SR_SPEC, u8, u8, 4, O>;
 impl W {
     #[doc = "Bit 0 - ICM Controller Enable Register"]
     #[inline(always)]
-    pub fn enable(&mut self) -> ENABLE_W {
-        ENABLE_W { w: self }
+    #[must_use]
+    pub fn enable(&mut self) -> ENABLE_W<0> {
+        ENABLE_W::new(self)
     }
     #[doc = "Bits 8:11 - Region Monitoring Disabled Raw Status"]
     #[inline(always)]
-    pub fn rawrmdis(&mut self) -> RAWRMDIS_W {
-        RAWRMDIS_W { w: self }
+    #[must_use]
+    pub fn rawrmdis(&mut self) -> RAWRMDIS_W<8> {
+        RAWRMDIS_W::new(self)
     }
     #[doc = "Bits 12:15 - Region Monitoring Disabled Status"]
     #[inline(always)]
-    pub fn rmdis(&mut self) -> RMDIS_W {
-        RMDIS_W { w: self }
+    #[must_use]
+    pub fn rmdis(&mut self) -> RMDIS_W<12> {
+        RMDIS_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -96,11 +59,10 @@ impl crate::RegisterSpec for SR_SPEC {
 #[doc = "`write(|w| ..)` method takes [sr::W](W) writer structure"]
 impl crate::Writable for SR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets SR to value 0"]
 impl crate::Resettable for SR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

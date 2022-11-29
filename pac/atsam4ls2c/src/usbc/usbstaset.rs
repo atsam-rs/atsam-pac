@@ -20,59 +20,21 @@ impl From<crate::W<USBSTASET_SPEC>> for W {
     }
 }
 #[doc = "Field `RAMACERIS` writer - RAMACERI Set"]
-pub struct RAMACERIS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RAMACERIS_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
-        self.w
-    }
-}
+pub type RAMACERIS_W<'a, const O: u8> = crate::BitWriter<'a, u32, USBSTASET_SPEC, bool, O>;
 #[doc = "Field `VBUSRQS` writer - VBUSRQ Set"]
-pub struct VBUSRQS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> VBUSRQS_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 9)) | ((value as u32 & 0x01) << 9);
-        self.w
-    }
-}
+pub type VBUSRQS_W<'a, const O: u8> = crate::BitWriter<'a, u32, USBSTASET_SPEC, bool, O>;
 impl W {
     #[doc = "Bit 8 - RAMACERI Set"]
     #[inline(always)]
-    pub fn ramaceris(&mut self) -> RAMACERIS_W {
-        RAMACERIS_W { w: self }
+    #[must_use]
+    pub fn ramaceris(&mut self) -> RAMACERIS_W<8> {
+        RAMACERIS_W::new(self)
     }
     #[doc = "Bit 9 - VBUSRQ Set"]
     #[inline(always)]
-    pub fn vbusrqs(&mut self) -> VBUSRQS_W {
-        VBUSRQS_W { w: self }
+    #[must_use]
+    pub fn vbusrqs(&mut self) -> VBUSRQS_W<9> {
+        VBUSRQS_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -89,11 +51,10 @@ impl crate::RegisterSpec for USBSTASET_SPEC {
 #[doc = "`write(|w| ..)` method takes [usbstaset::W](W) writer structure"]
 impl crate::Writable for USBSTASET_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets USBSTASET to value 0"]
 impl crate::Resettable for USBSTASET_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

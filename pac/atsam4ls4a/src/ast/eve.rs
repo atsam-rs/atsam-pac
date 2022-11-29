@@ -20,140 +20,45 @@ impl From<crate::W<EVE_SPEC>> for W {
     }
 }
 #[doc = "Field `OVF` writer - Overflow"]
-pub struct OVF_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> OVF_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type OVF_W<'a, const O: u8> = crate::BitWriter<'a, u32, EVE_SPEC, bool, O>;
 #[doc = "Field `ALARM0` writer - Alarm 0"]
-pub struct ALARM0_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ALARM0_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
-        self.w
-    }
-}
+pub type ALARM0_W<'a, const O: u8> = crate::BitWriter<'a, u32, EVE_SPEC, bool, O>;
 #[doc = "Field `ALARM1` writer - Alarm 1"]
-pub struct ALARM1_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ALARM1_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 9)) | ((value as u32 & 0x01) << 9);
-        self.w
-    }
-}
+pub type ALARM1_W<'a, const O: u8> = crate::BitWriter<'a, u32, EVE_SPEC, bool, O>;
 #[doc = "Field `PER0` writer - Perioidc 0"]
-pub struct PER0_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PER0_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 16)) | ((value as u32 & 0x01) << 16);
-        self.w
-    }
-}
+pub type PER0_W<'a, const O: u8> = crate::BitWriter<'a, u32, EVE_SPEC, bool, O>;
 #[doc = "Field `PER1` writer - Periodic 1"]
-pub struct PER1_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PER1_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 17)) | ((value as u32 & 0x01) << 17);
-        self.w
-    }
-}
+pub type PER1_W<'a, const O: u8> = crate::BitWriter<'a, u32, EVE_SPEC, bool, O>;
 impl W {
     #[doc = "Bit 0 - Overflow"]
     #[inline(always)]
-    pub fn ovf(&mut self) -> OVF_W {
-        OVF_W { w: self }
+    #[must_use]
+    pub fn ovf(&mut self) -> OVF_W<0> {
+        OVF_W::new(self)
     }
     #[doc = "Bit 8 - Alarm 0"]
     #[inline(always)]
-    pub fn alarm0(&mut self) -> ALARM0_W {
-        ALARM0_W { w: self }
+    #[must_use]
+    pub fn alarm0(&mut self) -> ALARM0_W<8> {
+        ALARM0_W::new(self)
     }
     #[doc = "Bit 9 - Alarm 1"]
     #[inline(always)]
-    pub fn alarm1(&mut self) -> ALARM1_W {
-        ALARM1_W { w: self }
+    #[must_use]
+    pub fn alarm1(&mut self) -> ALARM1_W<9> {
+        ALARM1_W::new(self)
     }
     #[doc = "Bit 16 - Perioidc 0"]
     #[inline(always)]
-    pub fn per0(&mut self) -> PER0_W {
-        PER0_W { w: self }
+    #[must_use]
+    pub fn per0(&mut self) -> PER0_W<16> {
+        PER0_W::new(self)
     }
     #[doc = "Bit 17 - Periodic 1"]
     #[inline(always)]
-    pub fn per1(&mut self) -> PER1_W {
-        PER1_W { w: self }
+    #[must_use]
+    pub fn per1(&mut self) -> PER1_W<17> {
+        PER1_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -170,11 +75,10 @@ impl crate::RegisterSpec for EVE_SPEC {
 #[doc = "`write(|w| ..)` method takes [eve::W](W) writer structure"]
 impl crate::Writable for EVE_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets EVE to value 0"]
 impl crate::Resettable for EVE_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

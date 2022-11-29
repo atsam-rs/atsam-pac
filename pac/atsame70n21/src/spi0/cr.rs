@@ -20,248 +20,77 @@ impl From<crate::W<CR_SPEC>> for W {
     }
 }
 #[doc = "Field `SPIEN` writer - SPI Enable"]
-pub struct SPIEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SPIEN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type SPIEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CR_SPEC, bool, O>;
 #[doc = "Field `SPIDIS` writer - SPI Disable"]
-pub struct SPIDIS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SPIDIS_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
-}
+pub type SPIDIS_W<'a, const O: u8> = crate::BitWriter<'a, u32, CR_SPEC, bool, O>;
 #[doc = "Field `SWRST` writer - SPI Software Reset"]
-pub struct SWRST_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SWRST_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | ((value as u32 & 0x01) << 7);
-        self.w
-    }
-}
-#[doc = "Field `LASTXFER` writer - Last Transfer"]
-pub struct LASTXFER_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> LASTXFER_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 24)) | ((value as u32 & 0x01) << 24);
-        self.w
-    }
-}
+pub type SWRST_W<'a, const O: u8> = crate::BitWriter<'a, u32, CR_SPEC, bool, O>;
 #[doc = "Field `REQCLR` writer - Request to Clear the Comparison Trigger"]
-pub struct REQCLR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> REQCLR_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 12)) | ((value as u32 & 0x01) << 12);
-        self.w
-    }
-}
+pub type REQCLR_W<'a, const O: u8> = crate::BitWriter<'a, u32, CR_SPEC, bool, O>;
 #[doc = "Field `TXFCLR` writer - Transmit FIFO Clear"]
-pub struct TXFCLR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TXFCLR_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 16)) | ((value as u32 & 0x01) << 16);
-        self.w
-    }
-}
+pub type TXFCLR_W<'a, const O: u8> = crate::BitWriter<'a, u32, CR_SPEC, bool, O>;
 #[doc = "Field `RXFCLR` writer - Receive FIFO Clear"]
-pub struct RXFCLR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RXFCLR_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 17)) | ((value as u32 & 0x01) << 17);
-        self.w
-    }
-}
+pub type RXFCLR_W<'a, const O: u8> = crate::BitWriter<'a, u32, CR_SPEC, bool, O>;
+#[doc = "Field `LASTXFER` writer - Last Transfer"]
+pub type LASTXFER_W<'a, const O: u8> = crate::BitWriter<'a, u32, CR_SPEC, bool, O>;
 #[doc = "Field `FIFOEN` writer - FIFO Enable"]
-pub struct FIFOEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> FIFOEN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 30)) | ((value as u32 & 0x01) << 30);
-        self.w
-    }
-}
+pub type FIFOEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CR_SPEC, bool, O>;
 #[doc = "Field `FIFODIS` writer - FIFO Disable"]
-pub struct FIFODIS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> FIFODIS_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 31)) | ((value as u32 & 0x01) << 31);
-        self.w
-    }
-}
+pub type FIFODIS_W<'a, const O: u8> = crate::BitWriter<'a, u32, CR_SPEC, bool, O>;
 impl W {
     #[doc = "Bit 0 - SPI Enable"]
     #[inline(always)]
-    pub fn spien(&mut self) -> SPIEN_W {
-        SPIEN_W { w: self }
+    #[must_use]
+    pub fn spien(&mut self) -> SPIEN_W<0> {
+        SPIEN_W::new(self)
     }
     #[doc = "Bit 1 - SPI Disable"]
     #[inline(always)]
-    pub fn spidis(&mut self) -> SPIDIS_W {
-        SPIDIS_W { w: self }
+    #[must_use]
+    pub fn spidis(&mut self) -> SPIDIS_W<1> {
+        SPIDIS_W::new(self)
     }
     #[doc = "Bit 7 - SPI Software Reset"]
     #[inline(always)]
-    pub fn swrst(&mut self) -> SWRST_W {
-        SWRST_W { w: self }
-    }
-    #[doc = "Bit 24 - Last Transfer"]
-    #[inline(always)]
-    pub fn lastxfer(&mut self) -> LASTXFER_W {
-        LASTXFER_W { w: self }
+    #[must_use]
+    pub fn swrst(&mut self) -> SWRST_W<7> {
+        SWRST_W::new(self)
     }
     #[doc = "Bit 12 - Request to Clear the Comparison Trigger"]
     #[inline(always)]
-    pub fn reqclr(&mut self) -> REQCLR_W {
-        REQCLR_W { w: self }
+    #[must_use]
+    pub fn reqclr(&mut self) -> REQCLR_W<12> {
+        REQCLR_W::new(self)
     }
     #[doc = "Bit 16 - Transmit FIFO Clear"]
     #[inline(always)]
-    pub fn txfclr(&mut self) -> TXFCLR_W {
-        TXFCLR_W { w: self }
+    #[must_use]
+    pub fn txfclr(&mut self) -> TXFCLR_W<16> {
+        TXFCLR_W::new(self)
     }
     #[doc = "Bit 17 - Receive FIFO Clear"]
     #[inline(always)]
-    pub fn rxfclr(&mut self) -> RXFCLR_W {
-        RXFCLR_W { w: self }
+    #[must_use]
+    pub fn rxfclr(&mut self) -> RXFCLR_W<17> {
+        RXFCLR_W::new(self)
+    }
+    #[doc = "Bit 24 - Last Transfer"]
+    #[inline(always)]
+    #[must_use]
+    pub fn lastxfer(&mut self) -> LASTXFER_W<24> {
+        LASTXFER_W::new(self)
     }
     #[doc = "Bit 30 - FIFO Enable"]
     #[inline(always)]
-    pub fn fifoen(&mut self) -> FIFOEN_W {
-        FIFOEN_W { w: self }
+    #[must_use]
+    pub fn fifoen(&mut self) -> FIFOEN_W<30> {
+        FIFOEN_W::new(self)
     }
     #[doc = "Bit 31 - FIFO Disable"]
     #[inline(always)]
-    pub fn fifodis(&mut self) -> FIFODIS_W {
-        FIFODIS_W { w: self }
+    #[must_use]
+    pub fn fifodis(&mut self) -> FIFODIS_W<31> {
+        FIFODIS_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -278,11 +107,10 @@ impl crate::RegisterSpec for CR_SPEC {
 #[doc = "`write(|w| ..)` method takes [cr::W](W) writer structure"]
 impl crate::Writable for CR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets CR to value 0"]
 impl crate::Resettable for CR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

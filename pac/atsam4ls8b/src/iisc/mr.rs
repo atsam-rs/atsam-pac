@@ -34,93 +34,62 @@ impl From<crate::W<MR_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `MODE` reader - Master/Slave/Controller Mode"]
+pub type MODE_R = crate::BitReader<MODESELECT_A>;
 #[doc = "Master/Slave/Controller Mode\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum MODE_A {
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum MODESELECT_A {
     #[doc = "0: Slave mode (only serial data handled, clocks received from external master or controller)"]
     SLAVE = 0,
     #[doc = "1: Master mode (clocks generated and output by IISC, serial data handled if CR.RXEN and/or CR.TXEN written to 1)"]
     MASTER = 1,
 }
-impl From<MODE_A> for bool {
+impl From<MODESELECT_A> for bool {
     #[inline(always)]
-    fn from(variant: MODE_A) -> Self {
+    fn from(variant: MODESELECT_A) -> Self {
         variant as u8 != 0
     }
 }
-#[doc = "Field `MODE` reader - Master/Slave/Controller Mode"]
-pub struct MODE_R(crate::FieldReader<bool, MODE_A>);
 impl MODE_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        MODE_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> MODE_A {
+    pub fn variant(&self) -> MODESELECT_A {
         match self.bits {
-            false => MODE_A::SLAVE,
-            true => MODE_A::MASTER,
+            false => MODESELECT_A::SLAVE,
+            true => MODESELECT_A::MASTER,
         }
     }
     #[doc = "Checks if the value of the field is `SLAVE`"]
     #[inline(always)]
     pub fn is_slave(&self) -> bool {
-        **self == MODE_A::SLAVE
+        *self == MODESELECT_A::SLAVE
     }
     #[doc = "Checks if the value of the field is `MASTER`"]
     #[inline(always)]
     pub fn is_master(&self) -> bool {
-        **self == MODE_A::MASTER
-    }
-}
-impl core::ops::Deref for MODE_R {
-    type Target = crate::FieldReader<bool, MODE_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == MODESELECT_A::MASTER
     }
 }
 #[doc = "Field `MODE` writer - Master/Slave/Controller Mode"]
-pub struct MODE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> MODE_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: MODE_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type MODE_W<'a, const O: u8> = crate::BitWriter<'a, u32, MR_SPEC, MODESELECT_A, O>;
+impl<'a, const O: u8> MODE_W<'a, O> {
     #[doc = "Slave mode (only serial data handled, clocks received from external master or controller)"]
     #[inline(always)]
     pub fn slave(self) -> &'a mut W {
-        self.variant(MODE_A::SLAVE)
+        self.variant(MODESELECT_A::SLAVE)
     }
     #[doc = "Master mode (clocks generated and output by IISC, serial data handled if CR.RXEN and/or CR.TXEN written to 1)"]
     #[inline(always)]
     pub fn master(self) -> &'a mut W {
-        self.variant(MODE_A::MASTER)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
+        self.variant(MODESELECT_A::MASTER)
     }
 }
+#[doc = "Field `DATALENGTH` reader - Data Word Length"]
+pub type DATALENGTH_R = crate::FieldReader<u8, DATALENGTHSELECT_A>;
 #[doc = "Data Word Length\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum DATALENGTH_A {
+pub enum DATALENGTHSELECT_A {
     #[doc = "0: 32 bits"]
     _32 = 0,
     #[doc = "1: 24 bits"]
@@ -138,640 +107,420 @@ pub enum DATALENGTH_A {
     #[doc = "7: 8 bits compact stereo"]
     _8C = 7,
 }
-impl From<DATALENGTH_A> for u8 {
+impl From<DATALENGTHSELECT_A> for u8 {
     #[inline(always)]
-    fn from(variant: DATALENGTH_A) -> Self {
+    fn from(variant: DATALENGTHSELECT_A) -> Self {
         variant as _
     }
 }
-#[doc = "Field `DATALENGTH` reader - Data Word Length"]
-pub struct DATALENGTH_R(crate::FieldReader<u8, DATALENGTH_A>);
 impl DATALENGTH_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        DATALENGTH_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> DATALENGTH_A {
+    pub fn variant(&self) -> DATALENGTHSELECT_A {
         match self.bits {
-            0 => DATALENGTH_A::_32,
-            1 => DATALENGTH_A::_24,
-            2 => DATALENGTH_A::_20,
-            3 => DATALENGTH_A::_18,
-            4 => DATALENGTH_A::_16,
-            5 => DATALENGTH_A::_16C,
-            6 => DATALENGTH_A::_8,
-            7 => DATALENGTH_A::_8C,
+            0 => DATALENGTHSELECT_A::_32,
+            1 => DATALENGTHSELECT_A::_24,
+            2 => DATALENGTHSELECT_A::_20,
+            3 => DATALENGTHSELECT_A::_18,
+            4 => DATALENGTHSELECT_A::_16,
+            5 => DATALENGTHSELECT_A::_16C,
+            6 => DATALENGTHSELECT_A::_8,
+            7 => DATALENGTHSELECT_A::_8C,
             _ => unreachable!(),
         }
     }
     #[doc = "Checks if the value of the field is `_32`"]
     #[inline(always)]
     pub fn is_32(&self) -> bool {
-        **self == DATALENGTH_A::_32
+        *self == DATALENGTHSELECT_A::_32
     }
     #[doc = "Checks if the value of the field is `_24`"]
     #[inline(always)]
     pub fn is_24(&self) -> bool {
-        **self == DATALENGTH_A::_24
+        *self == DATALENGTHSELECT_A::_24
     }
     #[doc = "Checks if the value of the field is `_20`"]
     #[inline(always)]
     pub fn is_20(&self) -> bool {
-        **self == DATALENGTH_A::_20
+        *self == DATALENGTHSELECT_A::_20
     }
     #[doc = "Checks if the value of the field is `_18`"]
     #[inline(always)]
     pub fn is_18(&self) -> bool {
-        **self == DATALENGTH_A::_18
+        *self == DATALENGTHSELECT_A::_18
     }
     #[doc = "Checks if the value of the field is `_16`"]
     #[inline(always)]
     pub fn is_16(&self) -> bool {
-        **self == DATALENGTH_A::_16
+        *self == DATALENGTHSELECT_A::_16
     }
     #[doc = "Checks if the value of the field is `_16C`"]
     #[inline(always)]
     pub fn is_16c(&self) -> bool {
-        **self == DATALENGTH_A::_16C
+        *self == DATALENGTHSELECT_A::_16C
     }
     #[doc = "Checks if the value of the field is `_8`"]
     #[inline(always)]
     pub fn is_8(&self) -> bool {
-        **self == DATALENGTH_A::_8
+        *self == DATALENGTHSELECT_A::_8
     }
     #[doc = "Checks if the value of the field is `_8C`"]
     #[inline(always)]
     pub fn is_8c(&self) -> bool {
-        **self == DATALENGTH_A::_8C
-    }
-}
-impl core::ops::Deref for DATALENGTH_R {
-    type Target = crate::FieldReader<u8, DATALENGTH_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == DATALENGTHSELECT_A::_8C
     }
 }
 #[doc = "Field `DATALENGTH` writer - Data Word Length"]
-pub struct DATALENGTH_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DATALENGTH_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: DATALENGTH_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
+pub type DATALENGTH_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, MR_SPEC, u8, DATALENGTHSELECT_A, 3, O>;
+impl<'a, const O: u8> DATALENGTH_W<'a, O> {
     #[doc = "32 bits"]
     #[inline(always)]
     pub fn _32(self) -> &'a mut W {
-        self.variant(DATALENGTH_A::_32)
+        self.variant(DATALENGTHSELECT_A::_32)
     }
     #[doc = "24 bits"]
     #[inline(always)]
     pub fn _24(self) -> &'a mut W {
-        self.variant(DATALENGTH_A::_24)
+        self.variant(DATALENGTHSELECT_A::_24)
     }
     #[doc = "20 bits"]
     #[inline(always)]
     pub fn _20(self) -> &'a mut W {
-        self.variant(DATALENGTH_A::_20)
+        self.variant(DATALENGTHSELECT_A::_20)
     }
     #[doc = "18 bits"]
     #[inline(always)]
     pub fn _18(self) -> &'a mut W {
-        self.variant(DATALENGTH_A::_18)
+        self.variant(DATALENGTHSELECT_A::_18)
     }
     #[doc = "16 bits"]
     #[inline(always)]
     pub fn _16(self) -> &'a mut W {
-        self.variant(DATALENGTH_A::_16)
+        self.variant(DATALENGTHSELECT_A::_16)
     }
     #[doc = "16 bits compact stereo"]
     #[inline(always)]
     pub fn _16c(self) -> &'a mut W {
-        self.variant(DATALENGTH_A::_16C)
+        self.variant(DATALENGTHSELECT_A::_16C)
     }
     #[doc = "8 bits"]
     #[inline(always)]
     pub fn _8(self) -> &'a mut W {
-        self.variant(DATALENGTH_A::_8)
+        self.variant(DATALENGTHSELECT_A::_8)
     }
     #[doc = "8 bits compact stereo"]
     #[inline(always)]
     pub fn _8c(self) -> &'a mut W {
-        self.variant(DATALENGTH_A::_8C)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 2)) | ((value as u32 & 0x07) << 2);
-        self.w
+        self.variant(DATALENGTHSELECT_A::_8C)
     }
 }
+#[doc = "Field `RXMONO` reader - Receiver Mono"]
+pub type RXMONO_R = crate::BitReader<RXMONOSELECT_A>;
 #[doc = "Receiver Mono\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum RXMONO_A {
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum RXMONOSELECT_A {
     #[doc = "0: Normal mode"]
     STEREO = 0,
     #[doc = "1: Left channel data is duplicated to right channel"]
     MONO = 1,
 }
-impl From<RXMONO_A> for bool {
+impl From<RXMONOSELECT_A> for bool {
     #[inline(always)]
-    fn from(variant: RXMONO_A) -> Self {
+    fn from(variant: RXMONOSELECT_A) -> Self {
         variant as u8 != 0
     }
 }
-#[doc = "Field `RXMONO` reader - Receiver Mono"]
-pub struct RXMONO_R(crate::FieldReader<bool, RXMONO_A>);
 impl RXMONO_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        RXMONO_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> RXMONO_A {
+    pub fn variant(&self) -> RXMONOSELECT_A {
         match self.bits {
-            false => RXMONO_A::STEREO,
-            true => RXMONO_A::MONO,
+            false => RXMONOSELECT_A::STEREO,
+            true => RXMONOSELECT_A::MONO,
         }
     }
     #[doc = "Checks if the value of the field is `STEREO`"]
     #[inline(always)]
     pub fn is_stereo(&self) -> bool {
-        **self == RXMONO_A::STEREO
+        *self == RXMONOSELECT_A::STEREO
     }
     #[doc = "Checks if the value of the field is `MONO`"]
     #[inline(always)]
     pub fn is_mono(&self) -> bool {
-        **self == RXMONO_A::MONO
-    }
-}
-impl core::ops::Deref for RXMONO_R {
-    type Target = crate::FieldReader<bool, RXMONO_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == RXMONOSELECT_A::MONO
     }
 }
 #[doc = "Field `RXMONO` writer - Receiver Mono"]
-pub struct RXMONO_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RXMONO_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: RXMONO_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type RXMONO_W<'a, const O: u8> = crate::BitWriter<'a, u32, MR_SPEC, RXMONOSELECT_A, O>;
+impl<'a, const O: u8> RXMONO_W<'a, O> {
     #[doc = "Normal mode"]
     #[inline(always)]
     pub fn stereo(self) -> &'a mut W {
-        self.variant(RXMONO_A::STEREO)
+        self.variant(RXMONOSELECT_A::STEREO)
     }
     #[doc = "Left channel data is duplicated to right channel"]
     #[inline(always)]
     pub fn mono(self) -> &'a mut W {
-        self.variant(RXMONO_A::MONO)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
-        self.w
+        self.variant(RXMONOSELECT_A::MONO)
     }
 }
+#[doc = "Field `RXDMA` reader - Single or Multiple DMA Channels for Receiver"]
+pub type RXDMA_R = crate::BitReader<RXDMASELECT_A>;
 #[doc = "Single or Multiple DMA Channels for Receiver\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum RXDMA_A {
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum RXDMASELECT_A {
     #[doc = "0: Single DMA channel"]
     SINGLE = 0,
     #[doc = "1: One DMA channel per data channel"]
     MULTIPLE = 1,
 }
-impl From<RXDMA_A> for bool {
+impl From<RXDMASELECT_A> for bool {
     #[inline(always)]
-    fn from(variant: RXDMA_A) -> Self {
+    fn from(variant: RXDMASELECT_A) -> Self {
         variant as u8 != 0
     }
 }
-#[doc = "Field `RXDMA` reader - Single or Multiple DMA Channels for Receiver"]
-pub struct RXDMA_R(crate::FieldReader<bool, RXDMA_A>);
 impl RXDMA_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        RXDMA_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> RXDMA_A {
+    pub fn variant(&self) -> RXDMASELECT_A {
         match self.bits {
-            false => RXDMA_A::SINGLE,
-            true => RXDMA_A::MULTIPLE,
+            false => RXDMASELECT_A::SINGLE,
+            true => RXDMASELECT_A::MULTIPLE,
         }
     }
     #[doc = "Checks if the value of the field is `SINGLE`"]
     #[inline(always)]
     pub fn is_single(&self) -> bool {
-        **self == RXDMA_A::SINGLE
+        *self == RXDMASELECT_A::SINGLE
     }
     #[doc = "Checks if the value of the field is `MULTIPLE`"]
     #[inline(always)]
     pub fn is_multiple(&self) -> bool {
-        **self == RXDMA_A::MULTIPLE
-    }
-}
-impl core::ops::Deref for RXDMA_R {
-    type Target = crate::FieldReader<bool, RXDMA_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == RXDMASELECT_A::MULTIPLE
     }
 }
 #[doc = "Field `RXDMA` writer - Single or Multiple DMA Channels for Receiver"]
-pub struct RXDMA_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RXDMA_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: RXDMA_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type RXDMA_W<'a, const O: u8> = crate::BitWriter<'a, u32, MR_SPEC, RXDMASELECT_A, O>;
+impl<'a, const O: u8> RXDMA_W<'a, O> {
     #[doc = "Single DMA channel"]
     #[inline(always)]
     pub fn single(self) -> &'a mut W {
-        self.variant(RXDMA_A::SINGLE)
+        self.variant(RXDMASELECT_A::SINGLE)
     }
     #[doc = "One DMA channel per data channel"]
     #[inline(always)]
     pub fn multiple(self) -> &'a mut W {
-        self.variant(RXDMA_A::MULTIPLE)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 9)) | ((value as u32 & 0x01) << 9);
-        self.w
+        self.variant(RXDMASELECT_A::MULTIPLE)
     }
 }
+#[doc = "Field `RXLOOP` reader - Loop-back Test Mode"]
+pub type RXLOOP_R = crate::BitReader<RXLOOPSELECT_A>;
 #[doc = "Loop-back Test Mode\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum RXLOOP_A {
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum RXLOOPSELECT_A {
     #[doc = "0: Normal mode"]
     OFF = 0,
     #[doc = "1: ISDO internally connected to ISDI"]
     ON = 1,
 }
-impl From<RXLOOP_A> for bool {
+impl From<RXLOOPSELECT_A> for bool {
     #[inline(always)]
-    fn from(variant: RXLOOP_A) -> Self {
+    fn from(variant: RXLOOPSELECT_A) -> Self {
         variant as u8 != 0
     }
 }
-#[doc = "Field `RXLOOP` reader - Loop-back Test Mode"]
-pub struct RXLOOP_R(crate::FieldReader<bool, RXLOOP_A>);
 impl RXLOOP_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        RXLOOP_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> RXLOOP_A {
+    pub fn variant(&self) -> RXLOOPSELECT_A {
         match self.bits {
-            false => RXLOOP_A::OFF,
-            true => RXLOOP_A::ON,
+            false => RXLOOPSELECT_A::OFF,
+            true => RXLOOPSELECT_A::ON,
         }
     }
     #[doc = "Checks if the value of the field is `OFF`"]
     #[inline(always)]
     pub fn is_off(&self) -> bool {
-        **self == RXLOOP_A::OFF
+        *self == RXLOOPSELECT_A::OFF
     }
     #[doc = "Checks if the value of the field is `ON`"]
     #[inline(always)]
     pub fn is_on(&self) -> bool {
-        **self == RXLOOP_A::ON
-    }
-}
-impl core::ops::Deref for RXLOOP_R {
-    type Target = crate::FieldReader<bool, RXLOOP_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == RXLOOPSELECT_A::ON
     }
 }
 #[doc = "Field `RXLOOP` writer - Loop-back Test Mode"]
-pub struct RXLOOP_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RXLOOP_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: RXLOOP_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type RXLOOP_W<'a, const O: u8> = crate::BitWriter<'a, u32, MR_SPEC, RXLOOPSELECT_A, O>;
+impl<'a, const O: u8> RXLOOP_W<'a, O> {
     #[doc = "Normal mode"]
     #[inline(always)]
     pub fn off(self) -> &'a mut W {
-        self.variant(RXLOOP_A::OFF)
+        self.variant(RXLOOPSELECT_A::OFF)
     }
     #[doc = "ISDO internally connected to ISDI"]
     #[inline(always)]
     pub fn on(self) -> &'a mut W {
-        self.variant(RXLOOP_A::ON)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 10)) | ((value as u32 & 0x01) << 10);
-        self.w
+        self.variant(RXLOOPSELECT_A::ON)
     }
 }
+#[doc = "Field `TXMONO` reader - Transmitter Mono"]
+pub type TXMONO_R = crate::BitReader<TXMONOSELECT_A>;
 #[doc = "Transmitter Mono\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum TXMONO_A {
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum TXMONOSELECT_A {
     #[doc = "0: Normal mode"]
     STEREO = 0,
     #[doc = "1: Left channel data is duplicated to right channel"]
     MONO = 1,
 }
-impl From<TXMONO_A> for bool {
+impl From<TXMONOSELECT_A> for bool {
     #[inline(always)]
-    fn from(variant: TXMONO_A) -> Self {
+    fn from(variant: TXMONOSELECT_A) -> Self {
         variant as u8 != 0
     }
 }
-#[doc = "Field `TXMONO` reader - Transmitter Mono"]
-pub struct TXMONO_R(crate::FieldReader<bool, TXMONO_A>);
 impl TXMONO_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        TXMONO_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> TXMONO_A {
+    pub fn variant(&self) -> TXMONOSELECT_A {
         match self.bits {
-            false => TXMONO_A::STEREO,
-            true => TXMONO_A::MONO,
+            false => TXMONOSELECT_A::STEREO,
+            true => TXMONOSELECT_A::MONO,
         }
     }
     #[doc = "Checks if the value of the field is `STEREO`"]
     #[inline(always)]
     pub fn is_stereo(&self) -> bool {
-        **self == TXMONO_A::STEREO
+        *self == TXMONOSELECT_A::STEREO
     }
     #[doc = "Checks if the value of the field is `MONO`"]
     #[inline(always)]
     pub fn is_mono(&self) -> bool {
-        **self == TXMONO_A::MONO
-    }
-}
-impl core::ops::Deref for TXMONO_R {
-    type Target = crate::FieldReader<bool, TXMONO_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == TXMONOSELECT_A::MONO
     }
 }
 #[doc = "Field `TXMONO` writer - Transmitter Mono"]
-pub struct TXMONO_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TXMONO_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: TXMONO_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type TXMONO_W<'a, const O: u8> = crate::BitWriter<'a, u32, MR_SPEC, TXMONOSELECT_A, O>;
+impl<'a, const O: u8> TXMONO_W<'a, O> {
     #[doc = "Normal mode"]
     #[inline(always)]
     pub fn stereo(self) -> &'a mut W {
-        self.variant(TXMONO_A::STEREO)
+        self.variant(TXMONOSELECT_A::STEREO)
     }
     #[doc = "Left channel data is duplicated to right channel"]
     #[inline(always)]
     pub fn mono(self) -> &'a mut W {
-        self.variant(TXMONO_A::MONO)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 12)) | ((value as u32 & 0x01) << 12);
-        self.w
+        self.variant(TXMONOSELECT_A::MONO)
     }
 }
+#[doc = "Field `TXDMA` reader - Single or Multiple DMA Channels for Transmitter"]
+pub type TXDMA_R = crate::BitReader<TXDMASELECT_A>;
 #[doc = "Single or Multiple DMA Channels for Transmitter\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum TXDMA_A {
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum TXDMASELECT_A {
     #[doc = "0: Single DMA channel"]
     SINGLE = 0,
     #[doc = "1: One DMA channel per data channel"]
     MULTIPLE = 1,
 }
-impl From<TXDMA_A> for bool {
+impl From<TXDMASELECT_A> for bool {
     #[inline(always)]
-    fn from(variant: TXDMA_A) -> Self {
+    fn from(variant: TXDMASELECT_A) -> Self {
         variant as u8 != 0
     }
 }
-#[doc = "Field `TXDMA` reader - Single or Multiple DMA Channels for Transmitter"]
-pub struct TXDMA_R(crate::FieldReader<bool, TXDMA_A>);
 impl TXDMA_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        TXDMA_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> TXDMA_A {
+    pub fn variant(&self) -> TXDMASELECT_A {
         match self.bits {
-            false => TXDMA_A::SINGLE,
-            true => TXDMA_A::MULTIPLE,
+            false => TXDMASELECT_A::SINGLE,
+            true => TXDMASELECT_A::MULTIPLE,
         }
     }
     #[doc = "Checks if the value of the field is `SINGLE`"]
     #[inline(always)]
     pub fn is_single(&self) -> bool {
-        **self == TXDMA_A::SINGLE
+        *self == TXDMASELECT_A::SINGLE
     }
     #[doc = "Checks if the value of the field is `MULTIPLE`"]
     #[inline(always)]
     pub fn is_multiple(&self) -> bool {
-        **self == TXDMA_A::MULTIPLE
-    }
-}
-impl core::ops::Deref for TXDMA_R {
-    type Target = crate::FieldReader<bool, TXDMA_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == TXDMASELECT_A::MULTIPLE
     }
 }
 #[doc = "Field `TXDMA` writer - Single or Multiple DMA Channels for Transmitter"]
-pub struct TXDMA_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TXDMA_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: TXDMA_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type TXDMA_W<'a, const O: u8> = crate::BitWriter<'a, u32, MR_SPEC, TXDMASELECT_A, O>;
+impl<'a, const O: u8> TXDMA_W<'a, O> {
     #[doc = "Single DMA channel"]
     #[inline(always)]
     pub fn single(self) -> &'a mut W {
-        self.variant(TXDMA_A::SINGLE)
+        self.variant(TXDMASELECT_A::SINGLE)
     }
     #[doc = "One DMA channel per data channel"]
     #[inline(always)]
     pub fn multiple(self) -> &'a mut W {
-        self.variant(TXDMA_A::MULTIPLE)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 13)) | ((value as u32 & 0x01) << 13);
-        self.w
+        self.variant(TXDMASELECT_A::MULTIPLE)
     }
 }
+#[doc = "Field `TXSAME` reader - Transmit Data when Underrun"]
+pub type TXSAME_R = crate::BitReader<TXSAMESELECT_A>;
 #[doc = "Transmit Data when Underrun\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum TXSAME_A {
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum TXSAMESELECT_A {
     #[doc = "0: Zero data transmitted in case of underrun"]
     ZERO = 0,
     #[doc = "1: Last data transmitted in case of underrun"]
     SAME = 1,
 }
-impl From<TXSAME_A> for bool {
+impl From<TXSAMESELECT_A> for bool {
     #[inline(always)]
-    fn from(variant: TXSAME_A) -> Self {
+    fn from(variant: TXSAMESELECT_A) -> Self {
         variant as u8 != 0
     }
 }
-#[doc = "Field `TXSAME` reader - Transmit Data when Underrun"]
-pub struct TXSAME_R(crate::FieldReader<bool, TXSAME_A>);
 impl TXSAME_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        TXSAME_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> TXSAME_A {
+    pub fn variant(&self) -> TXSAMESELECT_A {
         match self.bits {
-            false => TXSAME_A::ZERO,
-            true => TXSAME_A::SAME,
+            false => TXSAMESELECT_A::ZERO,
+            true => TXSAMESELECT_A::SAME,
         }
     }
     #[doc = "Checks if the value of the field is `ZERO`"]
     #[inline(always)]
     pub fn is_zero(&self) -> bool {
-        **self == TXSAME_A::ZERO
+        *self == TXSAMESELECT_A::ZERO
     }
     #[doc = "Checks if the value of the field is `SAME`"]
     #[inline(always)]
     pub fn is_same(&self) -> bool {
-        **self == TXSAME_A::SAME
-    }
-}
-impl core::ops::Deref for TXSAME_R {
-    type Target = crate::FieldReader<bool, TXSAME_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == TXSAMESELECT_A::SAME
     }
 }
 #[doc = "Field `TXSAME` writer - Transmit Data when Underrun"]
-pub struct TXSAME_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TXSAME_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: TXSAME_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type TXSAME_W<'a, const O: u8> = crate::BitWriter<'a, u32, MR_SPEC, TXSAMESELECT_A, O>;
+impl<'a, const O: u8> TXSAME_W<'a, O> {
     #[doc = "Zero data transmitted in case of underrun"]
     #[inline(always)]
     pub fn zero(self) -> &'a mut W {
-        self.variant(TXSAME_A::ZERO)
+        self.variant(TXSAMESELECT_A::ZERO)
     }
     #[doc = "Last data transmitted in case of underrun"]
     #[inline(always)]
     pub fn same(self) -> &'a mut W {
-        self.variant(TXSAME_A::SAME)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 14)) | ((value as u32 & 0x01) << 14);
-        self.w
+        self.variant(TXSAMESELECT_A::SAME)
     }
 }
+#[doc = "Field `IMCKFS` reader - Master Clock to fs Ratio"]
+pub type IMCKFS_R = crate::FieldReader<u8, IMCKFSSELECT_A>;
 #[doc = "Master Clock to fs Ratio\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum IMCKFS_A {
+pub enum IMCKFSSELECT_A {
     #[doc = "0: 16 fs"]
     _16 = 0,
     #[doc = "1: 32 fs"]
@@ -791,355 +540,264 @@ pub enum IMCKFS_A {
     #[doc = "63: 1024 fs"]
     _1024 = 63,
 }
-impl From<IMCKFS_A> for u8 {
+impl From<IMCKFSSELECT_A> for u8 {
     #[inline(always)]
-    fn from(variant: IMCKFS_A) -> Self {
+    fn from(variant: IMCKFSSELECT_A) -> Self {
         variant as _
     }
 }
-#[doc = "Field `IMCKFS` reader - Master Clock to fs Ratio"]
-pub struct IMCKFS_R(crate::FieldReader<u8, IMCKFS_A>);
 impl IMCKFS_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        IMCKFS_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<IMCKFS_A> {
+    pub fn variant(&self) -> Option<IMCKFSSELECT_A> {
         match self.bits {
-            0 => Some(IMCKFS_A::_16),
-            1 => Some(IMCKFS_A::_32),
-            3 => Some(IMCKFS_A::_64),
-            7 => Some(IMCKFS_A::_128),
-            15 => Some(IMCKFS_A::_256),
-            23 => Some(IMCKFS_A::_384),
-            31 => Some(IMCKFS_A::_512),
-            47 => Some(IMCKFS_A::_768),
-            63 => Some(IMCKFS_A::_1024),
+            0 => Some(IMCKFSSELECT_A::_16),
+            1 => Some(IMCKFSSELECT_A::_32),
+            3 => Some(IMCKFSSELECT_A::_64),
+            7 => Some(IMCKFSSELECT_A::_128),
+            15 => Some(IMCKFSSELECT_A::_256),
+            23 => Some(IMCKFSSELECT_A::_384),
+            31 => Some(IMCKFSSELECT_A::_512),
+            47 => Some(IMCKFSSELECT_A::_768),
+            63 => Some(IMCKFSSELECT_A::_1024),
             _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `_16`"]
     #[inline(always)]
     pub fn is_16(&self) -> bool {
-        **self == IMCKFS_A::_16
+        *self == IMCKFSSELECT_A::_16
     }
     #[doc = "Checks if the value of the field is `_32`"]
     #[inline(always)]
     pub fn is_32(&self) -> bool {
-        **self == IMCKFS_A::_32
+        *self == IMCKFSSELECT_A::_32
     }
     #[doc = "Checks if the value of the field is `_64`"]
     #[inline(always)]
     pub fn is_64(&self) -> bool {
-        **self == IMCKFS_A::_64
+        *self == IMCKFSSELECT_A::_64
     }
     #[doc = "Checks if the value of the field is `_128`"]
     #[inline(always)]
     pub fn is_128(&self) -> bool {
-        **self == IMCKFS_A::_128
+        *self == IMCKFSSELECT_A::_128
     }
     #[doc = "Checks if the value of the field is `_256`"]
     #[inline(always)]
     pub fn is_256(&self) -> bool {
-        **self == IMCKFS_A::_256
+        *self == IMCKFSSELECT_A::_256
     }
     #[doc = "Checks if the value of the field is `_384`"]
     #[inline(always)]
     pub fn is_384(&self) -> bool {
-        **self == IMCKFS_A::_384
+        *self == IMCKFSSELECT_A::_384
     }
     #[doc = "Checks if the value of the field is `_512`"]
     #[inline(always)]
     pub fn is_512(&self) -> bool {
-        **self == IMCKFS_A::_512
+        *self == IMCKFSSELECT_A::_512
     }
     #[doc = "Checks if the value of the field is `_768`"]
     #[inline(always)]
     pub fn is_768(&self) -> bool {
-        **self == IMCKFS_A::_768
+        *self == IMCKFSSELECT_A::_768
     }
     #[doc = "Checks if the value of the field is `_1024`"]
     #[inline(always)]
     pub fn is_1024(&self) -> bool {
-        **self == IMCKFS_A::_1024
-    }
-}
-impl core::ops::Deref for IMCKFS_R {
-    type Target = crate::FieldReader<u8, IMCKFS_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == IMCKFSSELECT_A::_1024
     }
 }
 #[doc = "Field `IMCKFS` writer - Master Clock to fs Ratio"]
-pub struct IMCKFS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> IMCKFS_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: IMCKFS_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type IMCKFS_W<'a, const O: u8> = crate::FieldWriter<'a, u32, MR_SPEC, u8, IMCKFSSELECT_A, 6, O>;
+impl<'a, const O: u8> IMCKFS_W<'a, O> {
     #[doc = "16 fs"]
     #[inline(always)]
     pub fn _16(self) -> &'a mut W {
-        self.variant(IMCKFS_A::_16)
+        self.variant(IMCKFSSELECT_A::_16)
     }
     #[doc = "32 fs"]
     #[inline(always)]
     pub fn _32(self) -> &'a mut W {
-        self.variant(IMCKFS_A::_32)
+        self.variant(IMCKFSSELECT_A::_32)
     }
     #[doc = "64 fs"]
     #[inline(always)]
     pub fn _64(self) -> &'a mut W {
-        self.variant(IMCKFS_A::_64)
+        self.variant(IMCKFSSELECT_A::_64)
     }
     #[doc = "128 fs"]
     #[inline(always)]
     pub fn _128(self) -> &'a mut W {
-        self.variant(IMCKFS_A::_128)
+        self.variant(IMCKFSSELECT_A::_128)
     }
     #[doc = "256 fs"]
     #[inline(always)]
     pub fn _256(self) -> &'a mut W {
-        self.variant(IMCKFS_A::_256)
+        self.variant(IMCKFSSELECT_A::_256)
     }
     #[doc = "384 fs"]
     #[inline(always)]
     pub fn _384(self) -> &'a mut W {
-        self.variant(IMCKFS_A::_384)
+        self.variant(IMCKFSSELECT_A::_384)
     }
     #[doc = "512 fs"]
     #[inline(always)]
     pub fn _512(self) -> &'a mut W {
-        self.variant(IMCKFS_A::_512)
+        self.variant(IMCKFSSELECT_A::_512)
     }
     #[doc = "768 fs"]
     #[inline(always)]
     pub fn _768(self) -> &'a mut W {
-        self.variant(IMCKFS_A::_768)
+        self.variant(IMCKFSSELECT_A::_768)
     }
     #[doc = "1024 fs"]
     #[inline(always)]
     pub fn _1024(self) -> &'a mut W {
-        self.variant(IMCKFS_A::_1024)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x3f << 24)) | ((value as u32 & 0x3f) << 24);
-        self.w
+        self.variant(IMCKFSSELECT_A::_1024)
     }
 }
+#[doc = "Field `IMCKMODE` reader - Master Clock Mode"]
+pub type IMCKMODE_R = crate::BitReader<IMCKMODESELECT_A>;
 #[doc = "Master Clock Mode\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum IMCKMODE_A {
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum IMCKMODESELECT_A {
     #[doc = "0: No IMCK generated"]
     NO_IMCK = 0,
     #[doc = "1: IMCK generated"]
     IMCK = 1,
 }
-impl From<IMCKMODE_A> for bool {
+impl From<IMCKMODESELECT_A> for bool {
     #[inline(always)]
-    fn from(variant: IMCKMODE_A) -> Self {
+    fn from(variant: IMCKMODESELECT_A) -> Self {
         variant as u8 != 0
     }
 }
-#[doc = "Field `IMCKMODE` reader - Master Clock Mode"]
-pub struct IMCKMODE_R(crate::FieldReader<bool, IMCKMODE_A>);
 impl IMCKMODE_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        IMCKMODE_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> IMCKMODE_A {
+    pub fn variant(&self) -> IMCKMODESELECT_A {
         match self.bits {
-            false => IMCKMODE_A::NO_IMCK,
-            true => IMCKMODE_A::IMCK,
+            false => IMCKMODESELECT_A::NO_IMCK,
+            true => IMCKMODESELECT_A::IMCK,
         }
     }
     #[doc = "Checks if the value of the field is `NO_IMCK`"]
     #[inline(always)]
     pub fn is_no_imck(&self) -> bool {
-        **self == IMCKMODE_A::NO_IMCK
+        *self == IMCKMODESELECT_A::NO_IMCK
     }
     #[doc = "Checks if the value of the field is `IMCK`"]
     #[inline(always)]
     pub fn is_imck(&self) -> bool {
-        **self == IMCKMODE_A::IMCK
-    }
-}
-impl core::ops::Deref for IMCKMODE_R {
-    type Target = crate::FieldReader<bool, IMCKMODE_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == IMCKMODESELECT_A::IMCK
     }
 }
 #[doc = "Field `IMCKMODE` writer - Master Clock Mode"]
-pub struct IMCKMODE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> IMCKMODE_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: IMCKMODE_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type IMCKMODE_W<'a, const O: u8> = crate::BitWriter<'a, u32, MR_SPEC, IMCKMODESELECT_A, O>;
+impl<'a, const O: u8> IMCKMODE_W<'a, O> {
     #[doc = "No IMCK generated"]
     #[inline(always)]
     pub fn no_imck(self) -> &'a mut W {
-        self.variant(IMCKMODE_A::NO_IMCK)
+        self.variant(IMCKMODESELECT_A::NO_IMCK)
     }
     #[doc = "IMCK generated"]
     #[inline(always)]
     pub fn imck(self) -> &'a mut W {
-        self.variant(IMCKMODE_A::IMCK)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 30)) | ((value as u32 & 0x01) << 30);
-        self.w
+        self.variant(IMCKMODESELECT_A::IMCK)
     }
 }
+#[doc = "Field `IWS24` reader - IWS Data Slot Width"]
+pub type IWS24_R = crate::BitReader<IWS24SELECT_A>;
 #[doc = "IWS Data Slot Width\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum IWS24_A {
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum IWS24SELECT_A {
     #[doc = "0: IWS Data Slot is 32-bit wide for DATALENGTH=18/20/24-bit"]
     _32 = 0,
     #[doc = "1: IWS Data Slot is 24-bit wide for DATALENGTH=18/20/24-bit"]
     _24 = 1,
 }
-impl From<IWS24_A> for bool {
+impl From<IWS24SELECT_A> for bool {
     #[inline(always)]
-    fn from(variant: IWS24_A) -> Self {
+    fn from(variant: IWS24SELECT_A) -> Self {
         variant as u8 != 0
     }
 }
-#[doc = "Field `IWS24` reader - IWS Data Slot Width"]
-pub struct IWS24_R(crate::FieldReader<bool, IWS24_A>);
 impl IWS24_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        IWS24_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> IWS24_A {
+    pub fn variant(&self) -> IWS24SELECT_A {
         match self.bits {
-            false => IWS24_A::_32,
-            true => IWS24_A::_24,
+            false => IWS24SELECT_A::_32,
+            true => IWS24SELECT_A::_24,
         }
     }
     #[doc = "Checks if the value of the field is `_32`"]
     #[inline(always)]
     pub fn is_32(&self) -> bool {
-        **self == IWS24_A::_32
+        *self == IWS24SELECT_A::_32
     }
     #[doc = "Checks if the value of the field is `_24`"]
     #[inline(always)]
     pub fn is_24(&self) -> bool {
-        **self == IWS24_A::_24
-    }
-}
-impl core::ops::Deref for IWS24_R {
-    type Target = crate::FieldReader<bool, IWS24_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == IWS24SELECT_A::_24
     }
 }
 #[doc = "Field `IWS24` writer - IWS Data Slot Width"]
-pub struct IWS24_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> IWS24_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: IWS24_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type IWS24_W<'a, const O: u8> = crate::BitWriter<'a, u32, MR_SPEC, IWS24SELECT_A, O>;
+impl<'a, const O: u8> IWS24_W<'a, O> {
     #[doc = "IWS Data Slot is 32-bit wide for DATALENGTH=18/20/24-bit"]
     #[inline(always)]
     pub fn _32(self) -> &'a mut W {
-        self.variant(IWS24_A::_32)
+        self.variant(IWS24SELECT_A::_32)
     }
     #[doc = "IWS Data Slot is 24-bit wide for DATALENGTH=18/20/24-bit"]
     #[inline(always)]
     pub fn _24(self) -> &'a mut W {
-        self.variant(IWS24_A::_24)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 31)) | ((value as u32 & 0x01) << 31);
-        self.w
+        self.variant(IWS24SELECT_A::_24)
     }
 }
 impl R {
     #[doc = "Bit 0 - Master/Slave/Controller Mode"]
     #[inline(always)]
     pub fn mode(&self) -> MODE_R {
-        MODE_R::new((self.bits & 0x01) != 0)
+        MODE_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bits 2:4 - Data Word Length"]
     #[inline(always)]
     pub fn datalength(&self) -> DATALENGTH_R {
-        DATALENGTH_R::new(((self.bits >> 2) & 0x07) as u8)
+        DATALENGTH_R::new(((self.bits >> 2) & 7) as u8)
     }
     #[doc = "Bit 8 - Receiver Mono"]
     #[inline(always)]
     pub fn rxmono(&self) -> RXMONO_R {
-        RXMONO_R::new(((self.bits >> 8) & 0x01) != 0)
+        RXMONO_R::new(((self.bits >> 8) & 1) != 0)
     }
     #[doc = "Bit 9 - Single or Multiple DMA Channels for Receiver"]
     #[inline(always)]
     pub fn rxdma(&self) -> RXDMA_R {
-        RXDMA_R::new(((self.bits >> 9) & 0x01) != 0)
+        RXDMA_R::new(((self.bits >> 9) & 1) != 0)
     }
     #[doc = "Bit 10 - Loop-back Test Mode"]
     #[inline(always)]
     pub fn rxloop(&self) -> RXLOOP_R {
-        RXLOOP_R::new(((self.bits >> 10) & 0x01) != 0)
+        RXLOOP_R::new(((self.bits >> 10) & 1) != 0)
     }
     #[doc = "Bit 12 - Transmitter Mono"]
     #[inline(always)]
     pub fn txmono(&self) -> TXMONO_R {
-        TXMONO_R::new(((self.bits >> 12) & 0x01) != 0)
+        TXMONO_R::new(((self.bits >> 12) & 1) != 0)
     }
     #[doc = "Bit 13 - Single or Multiple DMA Channels for Transmitter"]
     #[inline(always)]
     pub fn txdma(&self) -> TXDMA_R {
-        TXDMA_R::new(((self.bits >> 13) & 0x01) != 0)
+        TXDMA_R::new(((self.bits >> 13) & 1) != 0)
     }
     #[doc = "Bit 14 - Transmit Data when Underrun"]
     #[inline(always)]
     pub fn txsame(&self) -> TXSAME_R {
-        TXSAME_R::new(((self.bits >> 14) & 0x01) != 0)
+        TXSAME_R::new(((self.bits >> 14) & 1) != 0)
     }
     #[doc = "Bits 24:29 - Master Clock to fs Ratio"]
     #[inline(always)]
@@ -1149,69 +807,80 @@ impl R {
     #[doc = "Bit 30 - Master Clock Mode"]
     #[inline(always)]
     pub fn imckmode(&self) -> IMCKMODE_R {
-        IMCKMODE_R::new(((self.bits >> 30) & 0x01) != 0)
+        IMCKMODE_R::new(((self.bits >> 30) & 1) != 0)
     }
     #[doc = "Bit 31 - IWS Data Slot Width"]
     #[inline(always)]
     pub fn iws24(&self) -> IWS24_R {
-        IWS24_R::new(((self.bits >> 31) & 0x01) != 0)
+        IWS24_R::new(((self.bits >> 31) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Master/Slave/Controller Mode"]
     #[inline(always)]
-    pub fn mode(&mut self) -> MODE_W {
-        MODE_W { w: self }
+    #[must_use]
+    pub fn mode(&mut self) -> MODE_W<0> {
+        MODE_W::new(self)
     }
     #[doc = "Bits 2:4 - Data Word Length"]
     #[inline(always)]
-    pub fn datalength(&mut self) -> DATALENGTH_W {
-        DATALENGTH_W { w: self }
+    #[must_use]
+    pub fn datalength(&mut self) -> DATALENGTH_W<2> {
+        DATALENGTH_W::new(self)
     }
     #[doc = "Bit 8 - Receiver Mono"]
     #[inline(always)]
-    pub fn rxmono(&mut self) -> RXMONO_W {
-        RXMONO_W { w: self }
+    #[must_use]
+    pub fn rxmono(&mut self) -> RXMONO_W<8> {
+        RXMONO_W::new(self)
     }
     #[doc = "Bit 9 - Single or Multiple DMA Channels for Receiver"]
     #[inline(always)]
-    pub fn rxdma(&mut self) -> RXDMA_W {
-        RXDMA_W { w: self }
+    #[must_use]
+    pub fn rxdma(&mut self) -> RXDMA_W<9> {
+        RXDMA_W::new(self)
     }
     #[doc = "Bit 10 - Loop-back Test Mode"]
     #[inline(always)]
-    pub fn rxloop(&mut self) -> RXLOOP_W {
-        RXLOOP_W { w: self }
+    #[must_use]
+    pub fn rxloop(&mut self) -> RXLOOP_W<10> {
+        RXLOOP_W::new(self)
     }
     #[doc = "Bit 12 - Transmitter Mono"]
     #[inline(always)]
-    pub fn txmono(&mut self) -> TXMONO_W {
-        TXMONO_W { w: self }
+    #[must_use]
+    pub fn txmono(&mut self) -> TXMONO_W<12> {
+        TXMONO_W::new(self)
     }
     #[doc = "Bit 13 - Single or Multiple DMA Channels for Transmitter"]
     #[inline(always)]
-    pub fn txdma(&mut self) -> TXDMA_W {
-        TXDMA_W { w: self }
+    #[must_use]
+    pub fn txdma(&mut self) -> TXDMA_W<13> {
+        TXDMA_W::new(self)
     }
     #[doc = "Bit 14 - Transmit Data when Underrun"]
     #[inline(always)]
-    pub fn txsame(&mut self) -> TXSAME_W {
-        TXSAME_W { w: self }
+    #[must_use]
+    pub fn txsame(&mut self) -> TXSAME_W<14> {
+        TXSAME_W::new(self)
     }
     #[doc = "Bits 24:29 - Master Clock to fs Ratio"]
     #[inline(always)]
-    pub fn imckfs(&mut self) -> IMCKFS_W {
-        IMCKFS_W { w: self }
+    #[must_use]
+    pub fn imckfs(&mut self) -> IMCKFS_W<24> {
+        IMCKFS_W::new(self)
     }
     #[doc = "Bit 30 - Master Clock Mode"]
     #[inline(always)]
-    pub fn imckmode(&mut self) -> IMCKMODE_W {
-        IMCKMODE_W { w: self }
+    #[must_use]
+    pub fn imckmode(&mut self) -> IMCKMODE_W<30> {
+        IMCKMODE_W::new(self)
     }
     #[doc = "Bit 31 - IWS Data Slot Width"]
     #[inline(always)]
-    pub fn iws24(&mut self) -> IWS24_W {
-        IWS24_W { w: self }
+    #[must_use]
+    pub fn iws24(&mut self) -> IWS24_W<31> {
+        IWS24_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -1232,11 +901,10 @@ impl crate::Readable for MR_SPEC {
 #[doc = "`write(|w| ..)` method takes [mr::W](W) writer structure"]
 impl crate::Writable for MR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets MR to value 0"]
 impl crate::Resettable for MR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

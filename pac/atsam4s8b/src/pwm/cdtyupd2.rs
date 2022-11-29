@@ -20,22 +20,13 @@ impl From<crate::W<CDTYUPD2_SPEC>> for W {
     }
 }
 #[doc = "Field `CDTYUPD` writer - Channel Duty-Cycle Update"]
-pub struct CDTYUPD_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CDTYUPD_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x00ff_ffff) | (value as u32 & 0x00ff_ffff);
-        self.w
-    }
-}
+pub type CDTYUPD_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CDTYUPD2_SPEC, u32, u32, 24, O>;
 impl W {
     #[doc = "Bits 0:23 - Channel Duty-Cycle Update"]
     #[inline(always)]
-    pub fn cdtyupd(&mut self) -> CDTYUPD_W {
-        CDTYUPD_W { w: self }
+    #[must_use]
+    pub fn cdtyupd(&mut self) -> CDTYUPD_W<0> {
+        CDTYUPD_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -52,4 +43,6 @@ impl crate::RegisterSpec for CDTYUPD2_SPEC {
 #[doc = "`write(|w| ..)` method takes [cdtyupd2::W](W) writer structure"]
 impl crate::Writable for CDTYUPD2_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

@@ -14,24 +14,12 @@ impl From<crate::R<ISR_SPEC>> for R {
     }
 }
 #[doc = "Field `ERRISR` reader - CRC Error Interrupt Status"]
-pub struct ERRISR_R(crate::FieldReader<bool, bool>);
-impl ERRISR_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        ERRISR_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for ERRISR_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type ERRISR_R = crate::BitReader<bool>;
 impl R {
     #[doc = "Bit 0 - CRC Error Interrupt Status"]
     #[inline(always)]
     pub fn errisr(&self) -> ERRISR_R {
-        ERRISR_R::new((self.bits & 0x01) != 0)
+        ERRISR_R::new((self.bits & 1) != 0)
     }
 }
 #[doc = "Interrupt Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [isr](index.html) module"]
@@ -45,8 +33,5 @@ impl crate::Readable for ISR_SPEC {
 }
 #[doc = "`reset()` method sets ISR to value 0"]
 impl crate::Resettable for ISR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

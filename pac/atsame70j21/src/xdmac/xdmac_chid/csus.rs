@@ -35,43 +35,22 @@ impl From<crate::W<CSUS_SPEC>> for W {
     }
 }
 #[doc = "Field `SUBS` reader - Channel x Source Microblock Stride"]
-pub struct SUBS_R(crate::FieldReader<u32, u32>);
-impl SUBS_R {
-    pub(crate) fn new(bits: u32) -> Self {
-        SUBS_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for SUBS_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type SUBS_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `SUBS` writer - Channel x Source Microblock Stride"]
-pub struct SUBS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SUBS_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x00ff_ffff) | (value as u32 & 0x00ff_ffff);
-        self.w
-    }
-}
+pub type SUBS_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CSUS_SPEC, u32, u32, 24, O>;
 impl R {
     #[doc = "Bits 0:23 - Channel x Source Microblock Stride"]
     #[inline(always)]
     pub fn subs(&self) -> SUBS_R {
-        SUBS_R::new((self.bits & 0x00ff_ffff) as u32)
+        SUBS_R::new(self.bits & 0x00ff_ffff)
     }
 }
 impl W {
     #[doc = "Bits 0:23 - Channel x Source Microblock Stride"]
     #[inline(always)]
-    pub fn subs(&mut self) -> SUBS_W {
-        SUBS_W { w: self }
+    #[must_use]
+    pub fn subs(&mut self) -> SUBS_W<0> {
+        SUBS_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -92,11 +71,10 @@ impl crate::Readable for CSUS_SPEC {
 #[doc = "`write(|w| ..)` method takes [csus::W](W) writer structure"]
 impl crate::Writable for CSUS_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets CSUS to value 0"]
 impl crate::Resettable for CSUS_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

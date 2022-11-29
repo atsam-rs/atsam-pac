@@ -20,59 +20,21 @@ impl From<crate::W<SFR_SPEC>> for W {
     }
 }
 #[doc = "Field `RDERRIS` writer - Remote Device Connection Error Interrupt Set"]
-pub struct RDERRIS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RDERRIS_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
-        self.w
-    }
-}
+pub type RDERRIS_W<'a, const O: u8> = crate::BitWriter<'a, u32, SFR_SPEC, bool, O>;
 #[doc = "Field `VBUSRQS` writer - VBUS Request Set"]
-pub struct VBUSRQS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> VBUSRQS_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 9)) | ((value as u32 & 0x01) << 9);
-        self.w
-    }
-}
+pub type VBUSRQS_W<'a, const O: u8> = crate::BitWriter<'a, u32, SFR_SPEC, bool, O>;
 impl W {
     #[doc = "Bit 4 - Remote Device Connection Error Interrupt Set"]
     #[inline(always)]
-    pub fn rderris(&mut self) -> RDERRIS_W {
-        RDERRIS_W { w: self }
+    #[must_use]
+    pub fn rderris(&mut self) -> RDERRIS_W<4> {
+        RDERRIS_W::new(self)
     }
     #[doc = "Bit 9 - VBUS Request Set"]
     #[inline(always)]
-    pub fn vbusrqs(&mut self) -> VBUSRQS_W {
-        VBUSRQS_W { w: self }
+    #[must_use]
+    pub fn vbusrqs(&mut self) -> VBUSRQS_W<9> {
+        VBUSRQS_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -89,11 +51,10 @@ impl crate::RegisterSpec for SFR_SPEC {
 #[doc = "`write(|w| ..)` method takes [sfr::W](W) writer structure"]
 impl crate::Writable for SFR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets SFR to value 0"]
 impl crate::Resettable for SFR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

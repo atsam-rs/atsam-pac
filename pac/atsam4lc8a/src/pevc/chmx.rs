@@ -34,162 +34,106 @@ impl From<crate::W<CHMX_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `EVMX` reader - Event Multiplexer"]
+pub type EVMX_R = crate::FieldReader<u8, EVMXSELECT_A>;
 #[doc = "Event Multiplexer\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum EVMX_A {
+pub enum EVMXSELECT_A {
     #[doc = "0: Event 0"]
     _0X00 = 0,
     #[doc = "1: Event 1"]
     _0X01 = 1,
 }
-impl From<EVMX_A> for u8 {
+impl From<EVMXSELECT_A> for u8 {
     #[inline(always)]
-    fn from(variant: EVMX_A) -> Self {
+    fn from(variant: EVMXSELECT_A) -> Self {
         variant as _
     }
 }
-#[doc = "Field `EVMX` reader - Event Multiplexer"]
-pub struct EVMX_R(crate::FieldReader<u8, EVMX_A>);
 impl EVMX_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        EVMX_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<EVMX_A> {
+    pub fn variant(&self) -> Option<EVMXSELECT_A> {
         match self.bits {
-            0 => Some(EVMX_A::_0X00),
-            1 => Some(EVMX_A::_0X01),
+            0 => Some(EVMXSELECT_A::_0X00),
+            1 => Some(EVMXSELECT_A::_0X01),
             _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `_0X00`"]
     #[inline(always)]
     pub fn is_0x00(&self) -> bool {
-        **self == EVMX_A::_0X00
+        *self == EVMXSELECT_A::_0X00
     }
     #[doc = "Checks if the value of the field is `_0X01`"]
     #[inline(always)]
     pub fn is_0x01(&self) -> bool {
-        **self == EVMX_A::_0X01
-    }
-}
-impl core::ops::Deref for EVMX_R {
-    type Target = crate::FieldReader<u8, EVMX_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == EVMXSELECT_A::_0X01
     }
 }
 #[doc = "Field `EVMX` writer - Event Multiplexer"]
-pub struct EVMX_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> EVMX_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: EVMX_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type EVMX_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CHMX_SPEC, u8, EVMXSELECT_A, 6, O>;
+impl<'a, const O: u8> EVMX_W<'a, O> {
     #[doc = "Event 0"]
     #[inline(always)]
     pub fn _0x00(self) -> &'a mut W {
-        self.variant(EVMX_A::_0X00)
+        self.variant(EVMXSELECT_A::_0X00)
     }
     #[doc = "Event 1"]
     #[inline(always)]
     pub fn _0x01(self) -> &'a mut W {
-        self.variant(EVMX_A::_0X01)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x3f) | (value as u32 & 0x3f);
-        self.w
+        self.variant(EVMXSELECT_A::_0X01)
     }
 }
+#[doc = "Field `SMX` reader - Software Event Multiplexer"]
+pub type SMX_R = crate::BitReader<SMXSELECT_A>;
 #[doc = "Software Event Multiplexer\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SMX_A {
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum SMXSELECT_A {
     #[doc = "0: Hardware events"]
     _0 = 0,
     #[doc = "1: Software event"]
     _1 = 1,
 }
-impl From<SMX_A> for bool {
+impl From<SMXSELECT_A> for bool {
     #[inline(always)]
-    fn from(variant: SMX_A) -> Self {
+    fn from(variant: SMXSELECT_A) -> Self {
         variant as u8 != 0
     }
 }
-#[doc = "Field `SMX` reader - Software Event Multiplexer"]
-pub struct SMX_R(crate::FieldReader<bool, SMX_A>);
 impl SMX_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        SMX_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SMX_A {
+    pub fn variant(&self) -> SMXSELECT_A {
         match self.bits {
-            false => SMX_A::_0,
-            true => SMX_A::_1,
+            false => SMXSELECT_A::_0,
+            true => SMXSELECT_A::_1,
         }
     }
     #[doc = "Checks if the value of the field is `_0`"]
     #[inline(always)]
     pub fn is_0(&self) -> bool {
-        **self == SMX_A::_0
+        *self == SMXSELECT_A::_0
     }
     #[doc = "Checks if the value of the field is `_1`"]
     #[inline(always)]
     pub fn is_1(&self) -> bool {
-        **self == SMX_A::_1
-    }
-}
-impl core::ops::Deref for SMX_R {
-    type Target = crate::FieldReader<bool, SMX_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == SMXSELECT_A::_1
     }
 }
 #[doc = "Field `SMX` writer - Software Event Multiplexer"]
-pub struct SMX_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SMX_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: SMX_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type SMX_W<'a, const O: u8> = crate::BitWriter<'a, u32, CHMX_SPEC, SMXSELECT_A, O>;
+impl<'a, const O: u8> SMX_W<'a, O> {
     #[doc = "Hardware events"]
     #[inline(always)]
     pub fn _0(self) -> &'a mut W {
-        self.variant(SMX_A::_0)
+        self.variant(SMXSELECT_A::_0)
     }
     #[doc = "Software event"]
     #[inline(always)]
     pub fn _1(self) -> &'a mut W {
-        self.variant(SMX_A::_1)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
-        self.w
+        self.variant(SMXSELECT_A::_1)
     }
 }
 impl R {
@@ -201,19 +145,21 @@ impl R {
     #[doc = "Bit 8 - Software Event Multiplexer"]
     #[inline(always)]
     pub fn smx(&self) -> SMX_R {
-        SMX_R::new(((self.bits >> 8) & 0x01) != 0)
+        SMX_R::new(((self.bits >> 8) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bits 0:5 - Event Multiplexer"]
     #[inline(always)]
-    pub fn evmx(&mut self) -> EVMX_W {
-        EVMX_W { w: self }
+    #[must_use]
+    pub fn evmx(&mut self) -> EVMX_W<0> {
+        EVMX_W::new(self)
     }
     #[doc = "Bit 8 - Software Event Multiplexer"]
     #[inline(always)]
-    pub fn smx(&mut self) -> SMX_W {
-        SMX_W { w: self }
+    #[must_use]
+    pub fn smx(&mut self) -> SMX_W<8> {
+        SMX_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -234,11 +180,10 @@ impl crate::Readable for CHMX_SPEC {
 #[doc = "`write(|w| ..)` method takes [chmx::W](W) writer structure"]
 impl crate::Writable for CHMX_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets CHMX%s to value 0"]
 impl crate::Resettable for CHMX_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

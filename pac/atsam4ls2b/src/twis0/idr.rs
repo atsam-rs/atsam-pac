@@ -20,464 +20,141 @@ impl From<crate::W<IDR_SPEC>> for W {
     }
 }
 #[doc = "Field `RXRDY` writer - RX Buffer Ready"]
-pub struct RXRDY_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RXRDY_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type RXRDY_W<'a, const O: u8> = crate::BitWriter<'a, u32, IDR_SPEC, bool, O>;
 #[doc = "Field `TXRDY` writer - TX Buffer Ready"]
-pub struct TXRDY_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TXRDY_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
-}
+pub type TXRDY_W<'a, const O: u8> = crate::BitWriter<'a, u32, IDR_SPEC, bool, O>;
 #[doc = "Field `TCOMP` writer - Transmission Complete"]
-pub struct TCOMP_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TCOMP_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
-        self.w
-    }
-}
+pub type TCOMP_W<'a, const O: u8> = crate::BitWriter<'a, u32, IDR_SPEC, bool, O>;
 #[doc = "Field `URUN` writer - Underrun"]
-pub struct URUN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> URUN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | ((value as u32 & 0x01) << 6);
-        self.w
-    }
-}
+pub type URUN_W<'a, const O: u8> = crate::BitWriter<'a, u32, IDR_SPEC, bool, O>;
 #[doc = "Field `ORUN` writer - Overrun"]
-pub struct ORUN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ORUN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | ((value as u32 & 0x01) << 7);
-        self.w
-    }
-}
+pub type ORUN_W<'a, const O: u8> = crate::BitWriter<'a, u32, IDR_SPEC, bool, O>;
 #[doc = "Field `NAK` writer - NAK Received"]
-pub struct NAK_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> NAK_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
-        self.w
-    }
-}
+pub type NAK_W<'a, const O: u8> = crate::BitWriter<'a, u32, IDR_SPEC, bool, O>;
 #[doc = "Field `SMBTOUT` writer - SMBus Timeout"]
-pub struct SMBTOUT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SMBTOUT_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 12)) | ((value as u32 & 0x01) << 12);
-        self.w
-    }
-}
+pub type SMBTOUT_W<'a, const O: u8> = crate::BitWriter<'a, u32, IDR_SPEC, bool, O>;
 #[doc = "Field `SMBPECERR` writer - SMBus PEC Error"]
-pub struct SMBPECERR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SMBPECERR_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 13)) | ((value as u32 & 0x01) << 13);
-        self.w
-    }
-}
+pub type SMBPECERR_W<'a, const O: u8> = crate::BitWriter<'a, u32, IDR_SPEC, bool, O>;
 #[doc = "Field `BUSERR` writer - Bus Error"]
-pub struct BUSERR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> BUSERR_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 14)) | ((value as u32 & 0x01) << 14);
-        self.w
-    }
-}
+pub type BUSERR_W<'a, const O: u8> = crate::BitWriter<'a, u32, IDR_SPEC, bool, O>;
 #[doc = "Field `SAM` writer - Slave Address Match"]
-pub struct SAM_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SAM_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 16)) | ((value as u32 & 0x01) << 16);
-        self.w
-    }
-}
+pub type SAM_W<'a, const O: u8> = crate::BitWriter<'a, u32, IDR_SPEC, bool, O>;
 #[doc = "Field `GCM` writer - General Call Match"]
-pub struct GCM_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> GCM_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 17)) | ((value as u32 & 0x01) << 17);
-        self.w
-    }
-}
+pub type GCM_W<'a, const O: u8> = crate::BitWriter<'a, u32, IDR_SPEC, bool, O>;
 #[doc = "Field `SMBALERTM` writer - SMBus Alert Response Address Match"]
-pub struct SMBALERTM_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SMBALERTM_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 18)) | ((value as u32 & 0x01) << 18);
-        self.w
-    }
-}
+pub type SMBALERTM_W<'a, const O: u8> = crate::BitWriter<'a, u32, IDR_SPEC, bool, O>;
 #[doc = "Field `SMBHHM` writer - SMBus Host Header Address Match"]
-pub struct SMBHHM_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SMBHHM_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 19)) | ((value as u32 & 0x01) << 19);
-        self.w
-    }
-}
+pub type SMBHHM_W<'a, const O: u8> = crate::BitWriter<'a, u32, IDR_SPEC, bool, O>;
 #[doc = "Field `SMBDAM` writer - SMBus Default Address Match"]
-pub struct SMBDAM_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SMBDAM_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 20)) | ((value as u32 & 0x01) << 20);
-        self.w
-    }
-}
+pub type SMBDAM_W<'a, const O: u8> = crate::BitWriter<'a, u32, IDR_SPEC, bool, O>;
 #[doc = "Field `STO` writer - Stop Received"]
-pub struct STO_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> STO_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 21)) | ((value as u32 & 0x01) << 21);
-        self.w
-    }
-}
+pub type STO_W<'a, const O: u8> = crate::BitWriter<'a, u32, IDR_SPEC, bool, O>;
 #[doc = "Field `REP` writer - Repeated Start Received"]
-pub struct REP_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> REP_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 22)) | ((value as u32 & 0x01) << 22);
-        self.w
-    }
-}
+pub type REP_W<'a, const O: u8> = crate::BitWriter<'a, u32, IDR_SPEC, bool, O>;
 #[doc = "Field `BTF` writer - Byte Transfer Finished"]
-pub struct BTF_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> BTF_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 23)) | ((value as u32 & 0x01) << 23);
-        self.w
-    }
-}
+pub type BTF_W<'a, const O: u8> = crate::BitWriter<'a, u32, IDR_SPEC, bool, O>;
 impl W {
     #[doc = "Bit 0 - RX Buffer Ready"]
     #[inline(always)]
-    pub fn rxrdy(&mut self) -> RXRDY_W {
-        RXRDY_W { w: self }
+    #[must_use]
+    pub fn rxrdy(&mut self) -> RXRDY_W<0> {
+        RXRDY_W::new(self)
     }
     #[doc = "Bit 1 - TX Buffer Ready"]
     #[inline(always)]
-    pub fn txrdy(&mut self) -> TXRDY_W {
-        TXRDY_W { w: self }
+    #[must_use]
+    pub fn txrdy(&mut self) -> TXRDY_W<1> {
+        TXRDY_W::new(self)
     }
     #[doc = "Bit 3 - Transmission Complete"]
     #[inline(always)]
-    pub fn tcomp(&mut self) -> TCOMP_W {
-        TCOMP_W { w: self }
+    #[must_use]
+    pub fn tcomp(&mut self) -> TCOMP_W<3> {
+        TCOMP_W::new(self)
     }
     #[doc = "Bit 6 - Underrun"]
     #[inline(always)]
-    pub fn urun(&mut self) -> URUN_W {
-        URUN_W { w: self }
+    #[must_use]
+    pub fn urun(&mut self) -> URUN_W<6> {
+        URUN_W::new(self)
     }
     #[doc = "Bit 7 - Overrun"]
     #[inline(always)]
-    pub fn orun(&mut self) -> ORUN_W {
-        ORUN_W { w: self }
+    #[must_use]
+    pub fn orun(&mut self) -> ORUN_W<7> {
+        ORUN_W::new(self)
     }
     #[doc = "Bit 8 - NAK Received"]
     #[inline(always)]
-    pub fn nak(&mut self) -> NAK_W {
-        NAK_W { w: self }
+    #[must_use]
+    pub fn nak(&mut self) -> NAK_W<8> {
+        NAK_W::new(self)
     }
     #[doc = "Bit 12 - SMBus Timeout"]
     #[inline(always)]
-    pub fn smbtout(&mut self) -> SMBTOUT_W {
-        SMBTOUT_W { w: self }
+    #[must_use]
+    pub fn smbtout(&mut self) -> SMBTOUT_W<12> {
+        SMBTOUT_W::new(self)
     }
     #[doc = "Bit 13 - SMBus PEC Error"]
     #[inline(always)]
-    pub fn smbpecerr(&mut self) -> SMBPECERR_W {
-        SMBPECERR_W { w: self }
+    #[must_use]
+    pub fn smbpecerr(&mut self) -> SMBPECERR_W<13> {
+        SMBPECERR_W::new(self)
     }
     #[doc = "Bit 14 - Bus Error"]
     #[inline(always)]
-    pub fn buserr(&mut self) -> BUSERR_W {
-        BUSERR_W { w: self }
+    #[must_use]
+    pub fn buserr(&mut self) -> BUSERR_W<14> {
+        BUSERR_W::new(self)
     }
     #[doc = "Bit 16 - Slave Address Match"]
     #[inline(always)]
-    pub fn sam(&mut self) -> SAM_W {
-        SAM_W { w: self }
+    #[must_use]
+    pub fn sam(&mut self) -> SAM_W<16> {
+        SAM_W::new(self)
     }
     #[doc = "Bit 17 - General Call Match"]
     #[inline(always)]
-    pub fn gcm(&mut self) -> GCM_W {
-        GCM_W { w: self }
+    #[must_use]
+    pub fn gcm(&mut self) -> GCM_W<17> {
+        GCM_W::new(self)
     }
     #[doc = "Bit 18 - SMBus Alert Response Address Match"]
     #[inline(always)]
-    pub fn smbalertm(&mut self) -> SMBALERTM_W {
-        SMBALERTM_W { w: self }
+    #[must_use]
+    pub fn smbalertm(&mut self) -> SMBALERTM_W<18> {
+        SMBALERTM_W::new(self)
     }
     #[doc = "Bit 19 - SMBus Host Header Address Match"]
     #[inline(always)]
-    pub fn smbhhm(&mut self) -> SMBHHM_W {
-        SMBHHM_W { w: self }
+    #[must_use]
+    pub fn smbhhm(&mut self) -> SMBHHM_W<19> {
+        SMBHHM_W::new(self)
     }
     #[doc = "Bit 20 - SMBus Default Address Match"]
     #[inline(always)]
-    pub fn smbdam(&mut self) -> SMBDAM_W {
-        SMBDAM_W { w: self }
+    #[must_use]
+    pub fn smbdam(&mut self) -> SMBDAM_W<20> {
+        SMBDAM_W::new(self)
     }
     #[doc = "Bit 21 - Stop Received"]
     #[inline(always)]
-    pub fn sto(&mut self) -> STO_W {
-        STO_W { w: self }
+    #[must_use]
+    pub fn sto(&mut self) -> STO_W<21> {
+        STO_W::new(self)
     }
     #[doc = "Bit 22 - Repeated Start Received"]
     #[inline(always)]
-    pub fn rep(&mut self) -> REP_W {
-        REP_W { w: self }
+    #[must_use]
+    pub fn rep(&mut self) -> REP_W<22> {
+        REP_W::new(self)
     }
     #[doc = "Bit 23 - Byte Transfer Finished"]
     #[inline(always)]
-    pub fn btf(&mut self) -> BTF_W {
-        BTF_W { w: self }
+    #[must_use]
+    pub fn btf(&mut self) -> BTF_W<23> {
+        BTF_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -494,11 +171,10 @@ impl crate::RegisterSpec for IDR_SPEC {
 #[doc = "`write(|w| ..)` method takes [idr::W](W) writer structure"]
 impl crate::Writable for IDR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets IDR to value 0"]
 impl crate::Resettable for IDR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

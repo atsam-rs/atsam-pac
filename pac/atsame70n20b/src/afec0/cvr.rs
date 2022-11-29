@@ -35,57 +35,13 @@ impl From<crate::W<CVR_SPEC>> for W {
     }
 }
 #[doc = "Field `OFFSETCORR` reader - Offset Correction"]
-pub struct OFFSETCORR_R(crate::FieldReader<u16, u16>);
-impl OFFSETCORR_R {
-    pub(crate) fn new(bits: u16) -> Self {
-        OFFSETCORR_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for OFFSETCORR_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type OFFSETCORR_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `OFFSETCORR` writer - Offset Correction"]
-pub struct OFFSETCORR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> OFFSETCORR_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xffff) | (value as u32 & 0xffff);
-        self.w
-    }
-}
+pub type OFFSETCORR_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CVR_SPEC, u16, u16, 16, O>;
 #[doc = "Field `GAINCORR` reader - Gain Correction"]
-pub struct GAINCORR_R(crate::FieldReader<u16, u16>);
-impl GAINCORR_R {
-    pub(crate) fn new(bits: u16) -> Self {
-        GAINCORR_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for GAINCORR_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type GAINCORR_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `GAINCORR` writer - Gain Correction"]
-pub struct GAINCORR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> GAINCORR_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0xffff << 16)) | ((value as u32 & 0xffff) << 16);
-        self.w
-    }
-}
+pub type GAINCORR_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CVR_SPEC, u16, u16, 16, O>;
 impl R {
     #[doc = "Bits 0:15 - Offset Correction"]
     #[inline(always)]
@@ -101,13 +57,15 @@ impl R {
 impl W {
     #[doc = "Bits 0:15 - Offset Correction"]
     #[inline(always)]
-    pub fn offsetcorr(&mut self) -> OFFSETCORR_W {
-        OFFSETCORR_W { w: self }
+    #[must_use]
+    pub fn offsetcorr(&mut self) -> OFFSETCORR_W<0> {
+        OFFSETCORR_W::new(self)
     }
     #[doc = "Bits 16:31 - Gain Correction"]
     #[inline(always)]
-    pub fn gaincorr(&mut self) -> GAINCORR_W {
-        GAINCORR_W { w: self }
+    #[must_use]
+    pub fn gaincorr(&mut self) -> GAINCORR_W<16> {
+        GAINCORR_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -128,11 +86,10 @@ impl crate::Readable for CVR_SPEC {
 #[doc = "`write(|w| ..)` method takes [cvr::W](W) writer structure"]
 impl crate::Writable for CVR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets CVR to value 0"]
 impl crate::Resettable for CVR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

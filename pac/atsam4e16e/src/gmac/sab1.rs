@@ -35,43 +35,22 @@ impl From<crate::W<SAB1_SPEC>> for W {
     }
 }
 #[doc = "Field `ADDR` reader - Specific Address 1"]
-pub struct ADDR_R(crate::FieldReader<u32, u32>);
-impl ADDR_R {
-    pub(crate) fn new(bits: u32) -> Self {
-        ADDR_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for ADDR_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type ADDR_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `ADDR` writer - Specific Address 1"]
-pub struct ADDR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ADDR_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xffff_ffff) | (value as u32 & 0xffff_ffff);
-        self.w
-    }
-}
+pub type ADDR_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SAB1_SPEC, u32, u32, 32, O>;
 impl R {
     #[doc = "Bits 0:31 - Specific Address 1"]
     #[inline(always)]
     pub fn addr(&self) -> ADDR_R {
-        ADDR_R::new((self.bits & 0xffff_ffff) as u32)
+        ADDR_R::new(self.bits)
     }
 }
 impl W {
     #[doc = "Bits 0:31 - Specific Address 1"]
     #[inline(always)]
-    pub fn addr(&mut self) -> ADDR_W {
-        ADDR_W { w: self }
+    #[must_use]
+    pub fn addr(&mut self) -> ADDR_W<0> {
+        ADDR_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -93,11 +72,10 @@ impl crate::Readable for SAB1_SPEC {
 #[doc = "`write(|w| ..)` method takes [sab1::W](W) writer structure"]
 impl crate::Writable for SAB1_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets SAB1 to value 0"]
 impl crate::Resettable for SAB1_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

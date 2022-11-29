@@ -20,599 +20,181 @@ impl From<crate::W<CR_SPEC>> for W {
     }
 }
 #[doc = "Field `START` writer - Send a START Condition"]
-pub struct START_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> START_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type START_W<'a, const O: u8> = crate::BitWriter<'a, u32, CR_SPEC, bool, O>;
 #[doc = "Field `STOP` writer - Send a STOP Condition"]
-pub struct STOP_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> STOP_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
-}
+pub type STOP_W<'a, const O: u8> = crate::BitWriter<'a, u32, CR_SPEC, bool, O>;
 #[doc = "Field `MSEN` writer - TWIHS Master Mode Enabled"]
-pub struct MSEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> MSEN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
-    }
-}
+pub type MSEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CR_SPEC, bool, O>;
 #[doc = "Field `MSDIS` writer - TWIHS Master Mode Disabled"]
-pub struct MSDIS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> MSDIS_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
-        self.w
-    }
-}
+pub type MSDIS_W<'a, const O: u8> = crate::BitWriter<'a, u32, CR_SPEC, bool, O>;
 #[doc = "Field `SVEN` writer - TWIHS Slave Mode Enabled"]
-pub struct SVEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SVEN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
-        self.w
-    }
-}
+pub type SVEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CR_SPEC, bool, O>;
 #[doc = "Field `SVDIS` writer - TWIHS Slave Mode Disabled"]
-pub struct SVDIS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SVDIS_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
-        self.w
-    }
-}
+pub type SVDIS_W<'a, const O: u8> = crate::BitWriter<'a, u32, CR_SPEC, bool, O>;
 #[doc = "Field `QUICK` writer - SMBus Quick Command"]
-pub struct QUICK_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> QUICK_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | ((value as u32 & 0x01) << 6);
-        self.w
-    }
-}
+pub type QUICK_W<'a, const O: u8> = crate::BitWriter<'a, u32, CR_SPEC, bool, O>;
 #[doc = "Field `SWRST` writer - Software Reset"]
-pub struct SWRST_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SWRST_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | ((value as u32 & 0x01) << 7);
-        self.w
-    }
-}
+pub type SWRST_W<'a, const O: u8> = crate::BitWriter<'a, u32, CR_SPEC, bool, O>;
 #[doc = "Field `HSEN` writer - TWIHS High-Speed Mode Enabled"]
-pub struct HSEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> HSEN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
-        self.w
-    }
-}
+pub type HSEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CR_SPEC, bool, O>;
 #[doc = "Field `HSDIS` writer - TWIHS High-Speed Mode Disabled"]
-pub struct HSDIS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> HSDIS_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 9)) | ((value as u32 & 0x01) << 9);
-        self.w
-    }
-}
+pub type HSDIS_W<'a, const O: u8> = crate::BitWriter<'a, u32, CR_SPEC, bool, O>;
 #[doc = "Field `SMBEN` writer - SMBus Mode Enabled"]
-pub struct SMBEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SMBEN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 10)) | ((value as u32 & 0x01) << 10);
-        self.w
-    }
-}
+pub type SMBEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CR_SPEC, bool, O>;
 #[doc = "Field `SMBDIS` writer - SMBus Mode Disabled"]
-pub struct SMBDIS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SMBDIS_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 11)) | ((value as u32 & 0x01) << 11);
-        self.w
-    }
-}
+pub type SMBDIS_W<'a, const O: u8> = crate::BitWriter<'a, u32, CR_SPEC, bool, O>;
 #[doc = "Field `PECEN` writer - Packet Error Checking Enable"]
-pub struct PECEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PECEN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 12)) | ((value as u32 & 0x01) << 12);
-        self.w
-    }
-}
+pub type PECEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CR_SPEC, bool, O>;
 #[doc = "Field `PECDIS` writer - Packet Error Checking Disable"]
-pub struct PECDIS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PECDIS_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 13)) | ((value as u32 & 0x01) << 13);
-        self.w
-    }
-}
+pub type PECDIS_W<'a, const O: u8> = crate::BitWriter<'a, u32, CR_SPEC, bool, O>;
 #[doc = "Field `PECRQ` writer - PEC Request"]
-pub struct PECRQ_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PECRQ_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 14)) | ((value as u32 & 0x01) << 14);
-        self.w
-    }
-}
+pub type PECRQ_W<'a, const O: u8> = crate::BitWriter<'a, u32, CR_SPEC, bool, O>;
 #[doc = "Field `CLEAR` writer - Bus CLEAR Command"]
-pub struct CLEAR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CLEAR_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 15)) | ((value as u32 & 0x01) << 15);
-        self.w
-    }
-}
+pub type CLEAR_W<'a, const O: u8> = crate::BitWriter<'a, u32, CR_SPEC, bool, O>;
 #[doc = "Field `ACMEN` writer - Alternative Command Mode Enable"]
-pub struct ACMEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ACMEN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 16)) | ((value as u32 & 0x01) << 16);
-        self.w
-    }
-}
+pub type ACMEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CR_SPEC, bool, O>;
 #[doc = "Field `ACMDIS` writer - Alternative Command Mode Disable"]
-pub struct ACMDIS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ACMDIS_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 17)) | ((value as u32 & 0x01) << 17);
-        self.w
-    }
-}
+pub type ACMDIS_W<'a, const O: u8> = crate::BitWriter<'a, u32, CR_SPEC, bool, O>;
 #[doc = "Field `THRCLR` writer - Transmit Holding Register Clear"]
-pub struct THRCLR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> THRCLR_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 24)) | ((value as u32 & 0x01) << 24);
-        self.w
-    }
-}
+pub type THRCLR_W<'a, const O: u8> = crate::BitWriter<'a, u32, CR_SPEC, bool, O>;
 #[doc = "Field `LOCKCLR` writer - Lock Clear"]
-pub struct LOCKCLR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> LOCKCLR_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 26)) | ((value as u32 & 0x01) << 26);
-        self.w
-    }
-}
+pub type LOCKCLR_W<'a, const O: u8> = crate::BitWriter<'a, u32, CR_SPEC, bool, O>;
 #[doc = "Field `FIFOEN` writer - FIFO Enable"]
-pub struct FIFOEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> FIFOEN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 28)) | ((value as u32 & 0x01) << 28);
-        self.w
-    }
-}
+pub type FIFOEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CR_SPEC, bool, O>;
 #[doc = "Field `FIFODIS` writer - FIFO Disable"]
-pub struct FIFODIS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> FIFODIS_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 29)) | ((value as u32 & 0x01) << 29);
-        self.w
-    }
-}
+pub type FIFODIS_W<'a, const O: u8> = crate::BitWriter<'a, u32, CR_SPEC, bool, O>;
 impl W {
     #[doc = "Bit 0 - Send a START Condition"]
     #[inline(always)]
-    pub fn start(&mut self) -> START_W {
-        START_W { w: self }
+    #[must_use]
+    pub fn start(&mut self) -> START_W<0> {
+        START_W::new(self)
     }
     #[doc = "Bit 1 - Send a STOP Condition"]
     #[inline(always)]
-    pub fn stop(&mut self) -> STOP_W {
-        STOP_W { w: self }
+    #[must_use]
+    pub fn stop(&mut self) -> STOP_W<1> {
+        STOP_W::new(self)
     }
     #[doc = "Bit 2 - TWIHS Master Mode Enabled"]
     #[inline(always)]
-    pub fn msen(&mut self) -> MSEN_W {
-        MSEN_W { w: self }
+    #[must_use]
+    pub fn msen(&mut self) -> MSEN_W<2> {
+        MSEN_W::new(self)
     }
     #[doc = "Bit 3 - TWIHS Master Mode Disabled"]
     #[inline(always)]
-    pub fn msdis(&mut self) -> MSDIS_W {
-        MSDIS_W { w: self }
+    #[must_use]
+    pub fn msdis(&mut self) -> MSDIS_W<3> {
+        MSDIS_W::new(self)
     }
     #[doc = "Bit 4 - TWIHS Slave Mode Enabled"]
     #[inline(always)]
-    pub fn sven(&mut self) -> SVEN_W {
-        SVEN_W { w: self }
+    #[must_use]
+    pub fn sven(&mut self) -> SVEN_W<4> {
+        SVEN_W::new(self)
     }
     #[doc = "Bit 5 - TWIHS Slave Mode Disabled"]
     #[inline(always)]
-    pub fn svdis(&mut self) -> SVDIS_W {
-        SVDIS_W { w: self }
+    #[must_use]
+    pub fn svdis(&mut self) -> SVDIS_W<5> {
+        SVDIS_W::new(self)
     }
     #[doc = "Bit 6 - SMBus Quick Command"]
     #[inline(always)]
-    pub fn quick(&mut self) -> QUICK_W {
-        QUICK_W { w: self }
+    #[must_use]
+    pub fn quick(&mut self) -> QUICK_W<6> {
+        QUICK_W::new(self)
     }
     #[doc = "Bit 7 - Software Reset"]
     #[inline(always)]
-    pub fn swrst(&mut self) -> SWRST_W {
-        SWRST_W { w: self }
+    #[must_use]
+    pub fn swrst(&mut self) -> SWRST_W<7> {
+        SWRST_W::new(self)
     }
     #[doc = "Bit 8 - TWIHS High-Speed Mode Enabled"]
     #[inline(always)]
-    pub fn hsen(&mut self) -> HSEN_W {
-        HSEN_W { w: self }
+    #[must_use]
+    pub fn hsen(&mut self) -> HSEN_W<8> {
+        HSEN_W::new(self)
     }
     #[doc = "Bit 9 - TWIHS High-Speed Mode Disabled"]
     #[inline(always)]
-    pub fn hsdis(&mut self) -> HSDIS_W {
-        HSDIS_W { w: self }
+    #[must_use]
+    pub fn hsdis(&mut self) -> HSDIS_W<9> {
+        HSDIS_W::new(self)
     }
     #[doc = "Bit 10 - SMBus Mode Enabled"]
     #[inline(always)]
-    pub fn smben(&mut self) -> SMBEN_W {
-        SMBEN_W { w: self }
+    #[must_use]
+    pub fn smben(&mut self) -> SMBEN_W<10> {
+        SMBEN_W::new(self)
     }
     #[doc = "Bit 11 - SMBus Mode Disabled"]
     #[inline(always)]
-    pub fn smbdis(&mut self) -> SMBDIS_W {
-        SMBDIS_W { w: self }
+    #[must_use]
+    pub fn smbdis(&mut self) -> SMBDIS_W<11> {
+        SMBDIS_W::new(self)
     }
     #[doc = "Bit 12 - Packet Error Checking Enable"]
     #[inline(always)]
-    pub fn pecen(&mut self) -> PECEN_W {
-        PECEN_W { w: self }
+    #[must_use]
+    pub fn pecen(&mut self) -> PECEN_W<12> {
+        PECEN_W::new(self)
     }
     #[doc = "Bit 13 - Packet Error Checking Disable"]
     #[inline(always)]
-    pub fn pecdis(&mut self) -> PECDIS_W {
-        PECDIS_W { w: self }
+    #[must_use]
+    pub fn pecdis(&mut self) -> PECDIS_W<13> {
+        PECDIS_W::new(self)
     }
     #[doc = "Bit 14 - PEC Request"]
     #[inline(always)]
-    pub fn pecrq(&mut self) -> PECRQ_W {
-        PECRQ_W { w: self }
+    #[must_use]
+    pub fn pecrq(&mut self) -> PECRQ_W<14> {
+        PECRQ_W::new(self)
     }
     #[doc = "Bit 15 - Bus CLEAR Command"]
     #[inline(always)]
-    pub fn clear(&mut self) -> CLEAR_W {
-        CLEAR_W { w: self }
+    #[must_use]
+    pub fn clear(&mut self) -> CLEAR_W<15> {
+        CLEAR_W::new(self)
     }
     #[doc = "Bit 16 - Alternative Command Mode Enable"]
     #[inline(always)]
-    pub fn acmen(&mut self) -> ACMEN_W {
-        ACMEN_W { w: self }
+    #[must_use]
+    pub fn acmen(&mut self) -> ACMEN_W<16> {
+        ACMEN_W::new(self)
     }
     #[doc = "Bit 17 - Alternative Command Mode Disable"]
     #[inline(always)]
-    pub fn acmdis(&mut self) -> ACMDIS_W {
-        ACMDIS_W { w: self }
+    #[must_use]
+    pub fn acmdis(&mut self) -> ACMDIS_W<17> {
+        ACMDIS_W::new(self)
     }
     #[doc = "Bit 24 - Transmit Holding Register Clear"]
     #[inline(always)]
-    pub fn thrclr(&mut self) -> THRCLR_W {
-        THRCLR_W { w: self }
+    #[must_use]
+    pub fn thrclr(&mut self) -> THRCLR_W<24> {
+        THRCLR_W::new(self)
     }
     #[doc = "Bit 26 - Lock Clear"]
     #[inline(always)]
-    pub fn lockclr(&mut self) -> LOCKCLR_W {
-        LOCKCLR_W { w: self }
+    #[must_use]
+    pub fn lockclr(&mut self) -> LOCKCLR_W<26> {
+        LOCKCLR_W::new(self)
     }
     #[doc = "Bit 28 - FIFO Enable"]
     #[inline(always)]
-    pub fn fifoen(&mut self) -> FIFOEN_W {
-        FIFOEN_W { w: self }
+    #[must_use]
+    pub fn fifoen(&mut self) -> FIFOEN_W<28> {
+        FIFOEN_W::new(self)
     }
     #[doc = "Bit 29 - FIFO Disable"]
     #[inline(always)]
-    pub fn fifodis(&mut self) -> FIFODIS_W {
-        FIFODIS_W { w: self }
+    #[must_use]
+    pub fn fifodis(&mut self) -> FIFODIS_W<29> {
+        FIFODIS_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -629,11 +211,10 @@ impl crate::RegisterSpec for CR_SPEC {
 #[doc = "`write(|w| ..)` method takes [cr::W](W) writer structure"]
 impl crate::Writable for CR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets CR to value 0"]
 impl crate::Resettable for CR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

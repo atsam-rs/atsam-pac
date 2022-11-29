@@ -20,113 +20,37 @@ impl From<crate::W<ICR_SPEC>> for W {
     }
 }
 #[doc = "Field `CFD` writer - Clock Failure Detected Interrupt Status Clear"]
-pub struct CFD_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CFD_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type CFD_W<'a, const O: u8> = crate::BitWriter<'a, u32, ICR_SPEC, bool, O>;
 #[doc = "Field `CKRDY` writer - Clock Ready Interrupt Status Clear"]
-pub struct CKRDY_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CKRDY_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
-        self.w
-    }
-}
+pub type CKRDY_W<'a, const O: u8> = crate::BitWriter<'a, u32, ICR_SPEC, bool, O>;
 #[doc = "Field `WAKE` writer - Wake up Interrupt Status Clear"]
-pub struct WAKE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> WAKE_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
-        self.w
-    }
-}
+pub type WAKE_W<'a, const O: u8> = crate::BitWriter<'a, u32, ICR_SPEC, bool, O>;
 #[doc = "Field `AE` writer - Access Error Interrupt Status Clear"]
-pub struct AE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> AE_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 31)) | ((value as u32 & 0x01) << 31);
-        self.w
-    }
-}
+pub type AE_W<'a, const O: u8> = crate::BitWriter<'a, u32, ICR_SPEC, bool, O>;
 impl W {
     #[doc = "Bit 0 - Clock Failure Detected Interrupt Status Clear"]
     #[inline(always)]
-    pub fn cfd(&mut self) -> CFD_W {
-        CFD_W { w: self }
+    #[must_use]
+    pub fn cfd(&mut self) -> CFD_W<0> {
+        CFD_W::new(self)
     }
     #[doc = "Bit 5 - Clock Ready Interrupt Status Clear"]
     #[inline(always)]
-    pub fn ckrdy(&mut self) -> CKRDY_W {
-        CKRDY_W { w: self }
+    #[must_use]
+    pub fn ckrdy(&mut self) -> CKRDY_W<5> {
+        CKRDY_W::new(self)
     }
     #[doc = "Bit 8 - Wake up Interrupt Status Clear"]
     #[inline(always)]
-    pub fn wake(&mut self) -> WAKE_W {
-        WAKE_W { w: self }
+    #[must_use]
+    pub fn wake(&mut self) -> WAKE_W<8> {
+        WAKE_W::new(self)
     }
     #[doc = "Bit 31 - Access Error Interrupt Status Clear"]
     #[inline(always)]
-    pub fn ae(&mut self) -> AE_W {
-        AE_W { w: self }
+    #[must_use]
+    pub fn ae(&mut self) -> AE_W<31> {
+        AE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -143,11 +67,10 @@ impl crate::RegisterSpec for ICR_SPEC {
 #[doc = "`write(|w| ..)` method takes [icr::W](W) writer structure"]
 impl crate::Writable for ICR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets ICR to value 0"]
 impl crate::Resettable for ICR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

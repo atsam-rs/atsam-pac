@@ -20,22 +20,13 @@ impl From<crate::W<MAINT1_SPEC>> for W {
     }
 }
 #[doc = "Field `INDEX` writer - Invalidate Index"]
-pub struct INDEX_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> INDEX_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 4)) | ((value as u32 & 0x0f) << 4);
-        self.w
-    }
-}
+pub type INDEX_W<'a, const O: u8> = crate::FieldWriter<'a, u32, MAINT1_SPEC, u8, u8, 4, O>;
 impl W {
     #[doc = "Bits 4:7 - Invalidate Index"]
     #[inline(always)]
-    pub fn index(&mut self) -> INDEX_W {
-        INDEX_W { w: self }
+    #[must_use]
+    pub fn index(&mut self) -> INDEX_W<4> {
+        INDEX_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -52,11 +43,10 @@ impl crate::RegisterSpec for MAINT1_SPEC {
 #[doc = "`write(|w| ..)` method takes [maint1::W](W) writer structure"]
 impl crate::Writable for MAINT1_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets MAINT1 to value 0"]
 impl crate::Resettable for MAINT1_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

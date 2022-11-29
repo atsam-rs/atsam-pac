@@ -20,22 +20,13 @@ impl From<crate::W<CHDR_SPEC>> for W {
     }
 }
 #[doc = "Field `CHD` writer - Channel Disable"]
-pub struct CHD_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CHD_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xffff_ffff) | (value as u32 & 0xffff_ffff);
-        self.w
-    }
-}
+pub type CHD_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CHDR_SPEC, u32, u32, 32, O>;
 impl W {
     #[doc = "Bits 0:31 - Channel Disable"]
     #[inline(always)]
-    pub fn chd(&mut self) -> CHD_W {
-        CHD_W { w: self }
+    #[must_use]
+    pub fn chd(&mut self) -> CHD_W<0> {
+        CHD_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -52,11 +43,10 @@ impl crate::RegisterSpec for CHDR_SPEC {
 #[doc = "`write(|w| ..)` method takes [chdr::W](W) writer structure"]
 impl crate::Writable for CHDR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets CHDR to value 0"]
 impl crate::Resettable for CHDR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

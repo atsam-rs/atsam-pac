@@ -20,49 +20,21 @@ impl From<crate::W<CLR_SPEC>> for W {
     }
 }
 #[doc = "Field `WDTCLR` writer - Clear WDT counter"]
-pub struct WDTCLR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> WDTCLR_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type WDTCLR_W<'a, const O: u8> = crate::BitWriter<'a, u32, CLR_SPEC, bool, O>;
 #[doc = "Field `KEY` writer - Key"]
-pub struct KEY_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> KEY_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0xff << 24)) | ((value as u32 & 0xff) << 24);
-        self.w
-    }
-}
+pub type KEY_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CLR_SPEC, u8, u8, 8, O>;
 impl W {
     #[doc = "Bit 0 - Clear WDT counter"]
     #[inline(always)]
-    pub fn wdtclr(&mut self) -> WDTCLR_W {
-        WDTCLR_W { w: self }
+    #[must_use]
+    pub fn wdtclr(&mut self) -> WDTCLR_W<0> {
+        WDTCLR_W::new(self)
     }
     #[doc = "Bits 24:31 - Key"]
     #[inline(always)]
-    pub fn key(&mut self) -> KEY_W {
-        KEY_W { w: self }
+    #[must_use]
+    pub fn key(&mut self) -> KEY_W<24> {
+        KEY_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -79,11 +51,10 @@ impl crate::RegisterSpec for CLR_SPEC {
 #[doc = "`write(|w| ..)` method takes [clr::W](W) writer structure"]
 impl crate::Writable for CLR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets CLR to value 0"]
 impl crate::Resettable for CLR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

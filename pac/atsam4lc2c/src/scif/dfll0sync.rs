@@ -20,32 +20,13 @@ impl From<crate::W<DFLL0SYNC_SPEC>> for W {
     }
 }
 #[doc = "Field `SYNC` writer - Synchronization"]
-pub struct SYNC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SYNC_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type SYNC_W<'a, const O: u8> = crate::BitWriter<'a, u32, DFLL0SYNC_SPEC, bool, O>;
 impl W {
     #[doc = "Bit 0 - Synchronization"]
     #[inline(always)]
-    pub fn sync(&mut self) -> SYNC_W {
-        SYNC_W { w: self }
+    #[must_use]
+    pub fn sync(&mut self) -> SYNC_W<0> {
+        SYNC_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -62,11 +43,10 @@ impl crate::RegisterSpec for DFLL0SYNC_SPEC {
 #[doc = "`write(|w| ..)` method takes [dfll0sync::W](W) writer structure"]
 impl crate::Writable for DFLL0SYNC_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets DFLL0SYNC to value 0"]
 impl crate::Resettable for DFLL0SYNC_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

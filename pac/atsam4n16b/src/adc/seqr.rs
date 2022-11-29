@@ -54,4 +54,6 @@ impl crate::Readable for SEQR_SPEC {
 #[doc = "`write(|w| ..)` method takes [seqr::W](W) writer structure"]
 impl crate::Writable for SEQR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

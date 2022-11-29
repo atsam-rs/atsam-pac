@@ -35,161 +35,29 @@ impl From<crate::W<CALV_SPEC>> for W {
     }
 }
 #[doc = "Field `SEC` reader - Second"]
-pub struct SEC_R(crate::FieldReader<u8, u8>);
-impl SEC_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        SEC_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for SEC_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type SEC_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `SEC` writer - Second"]
-pub struct SEC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SEC_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x3f) | (value as u32 & 0x3f);
-        self.w
-    }
-}
+pub type SEC_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CALV_SPEC, u8, u8, 6, O>;
 #[doc = "Field `MIN` reader - Minute"]
-pub struct MIN_R(crate::FieldReader<u8, u8>);
-impl MIN_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        MIN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for MIN_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type MIN_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `MIN` writer - Minute"]
-pub struct MIN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> MIN_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x3f << 6)) | ((value as u32 & 0x3f) << 6);
-        self.w
-    }
-}
+pub type MIN_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CALV_SPEC, u8, u8, 6, O>;
 #[doc = "Field `HOUR` reader - Hour"]
-pub struct HOUR_R(crate::FieldReader<u8, u8>);
-impl HOUR_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        HOUR_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for HOUR_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type HOUR_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `HOUR` writer - Hour"]
-pub struct HOUR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> HOUR_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x1f << 12)) | ((value as u32 & 0x1f) << 12);
-        self.w
-    }
-}
+pub type HOUR_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CALV_SPEC, u8, u8, 5, O>;
 #[doc = "Field `DAY` reader - Day"]
-pub struct DAY_R(crate::FieldReader<u8, u8>);
-impl DAY_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        DAY_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DAY_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DAY_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `DAY` writer - Day"]
-pub struct DAY_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DAY_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x1f << 17)) | ((value as u32 & 0x1f) << 17);
-        self.w
-    }
-}
+pub type DAY_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CALV_SPEC, u8, u8, 5, O>;
 #[doc = "Field `MONTH` reader - Month"]
-pub struct MONTH_R(crate::FieldReader<u8, u8>);
-impl MONTH_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        MONTH_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for MONTH_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type MONTH_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `MONTH` writer - Month"]
-pub struct MONTH_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> MONTH_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 22)) | ((value as u32 & 0x0f) << 22);
-        self.w
-    }
-}
+pub type MONTH_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CALV_SPEC, u8, u8, 4, O>;
 #[doc = "Field `YEAR` reader - Year"]
-pub struct YEAR_R(crate::FieldReader<u8, u8>);
-impl YEAR_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        YEAR_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for YEAR_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type YEAR_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `YEAR` writer - Year"]
-pub struct YEAR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> YEAR_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x3f << 26)) | ((value as u32 & 0x3f) << 26);
-        self.w
-    }
-}
+pub type YEAR_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CALV_SPEC, u8, u8, 6, O>;
 impl R {
     #[doc = "Bits 0:5 - Second"]
     #[inline(always)]
@@ -225,33 +93,39 @@ impl R {
 impl W {
     #[doc = "Bits 0:5 - Second"]
     #[inline(always)]
-    pub fn sec(&mut self) -> SEC_W {
-        SEC_W { w: self }
+    #[must_use]
+    pub fn sec(&mut self) -> SEC_W<0> {
+        SEC_W::new(self)
     }
     #[doc = "Bits 6:11 - Minute"]
     #[inline(always)]
-    pub fn min(&mut self) -> MIN_W {
-        MIN_W { w: self }
+    #[must_use]
+    pub fn min(&mut self) -> MIN_W<6> {
+        MIN_W::new(self)
     }
     #[doc = "Bits 12:16 - Hour"]
     #[inline(always)]
-    pub fn hour(&mut self) -> HOUR_W {
-        HOUR_W { w: self }
+    #[must_use]
+    pub fn hour(&mut self) -> HOUR_W<12> {
+        HOUR_W::new(self)
     }
     #[doc = "Bits 17:21 - Day"]
     #[inline(always)]
-    pub fn day(&mut self) -> DAY_W {
-        DAY_W { w: self }
+    #[must_use]
+    pub fn day(&mut self) -> DAY_W<17> {
+        DAY_W::new(self)
     }
     #[doc = "Bits 22:25 - Month"]
     #[inline(always)]
-    pub fn month(&mut self) -> MONTH_W {
-        MONTH_W { w: self }
+    #[must_use]
+    pub fn month(&mut self) -> MONTH_W<22> {
+        MONTH_W::new(self)
     }
     #[doc = "Bits 26:31 - Year"]
     #[inline(always)]
-    pub fn year(&mut self) -> YEAR_W {
-        YEAR_W { w: self }
+    #[must_use]
+    pub fn year(&mut self) -> YEAR_W<26> {
+        YEAR_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -272,11 +146,10 @@ impl crate::Readable for CALV_SPEC {
 #[doc = "`write(|w| ..)` method takes [calv::W](W) writer structure"]
 impl crate::Writable for CALV_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets CALV to value 0"]
 impl crate::Resettable for CALV_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

@@ -35,151 +35,67 @@ impl From<crate::W<PRBS_SPEC>> for W {
     }
 }
 #[doc = "Field `M8PR` reader - Master 8 Priority"]
-pub struct M8PR_R(crate::FieldReader<u8, u8>);
-impl M8PR_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        M8PR_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for M8PR_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type M8PR_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `M8PR` writer - Master 8 Priority"]
-pub struct M8PR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> M8PR_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x03) | (value as u32 & 0x03);
-        self.w
-    }
-}
+pub type M8PR_W<'a, const O: u8> = crate::FieldWriter<'a, u32, PRBS_SPEC, u8, u8, 2, O>;
 #[doc = "Field `M9PR` reader - Master 9 Priority"]
-pub struct M9PR_R(crate::FieldReader<u8, u8>);
-impl M9PR_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        M9PR_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for M9PR_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type M9PR_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `M9PR` writer - Master 9 Priority"]
-pub struct M9PR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> M9PR_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 4)) | ((value as u32 & 0x03) << 4);
-        self.w
-    }
-}
+pub type M9PR_W<'a, const O: u8> = crate::FieldWriter<'a, u32, PRBS_SPEC, u8, u8, 2, O>;
 #[doc = "Field `M10PR` reader - Master 10 Priority"]
-pub struct M10PR_R(crate::FieldReader<u8, u8>);
-impl M10PR_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        M10PR_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for M10PR_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type M10PR_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `M10PR` writer - Master 10 Priority"]
-pub struct M10PR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> M10PR_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 8)) | ((value as u32 & 0x03) << 8);
-        self.w
-    }
-}
+pub type M10PR_W<'a, const O: u8> = crate::FieldWriter<'a, u32, PRBS_SPEC, u8, u8, 2, O>;
 #[doc = "Field `M11PR` reader - Master 11 Priority"]
-pub struct M11PR_R(crate::FieldReader<u8, u8>);
-impl M11PR_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        M11PR_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for M11PR_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type M11PR_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `M11PR` writer - Master 11 Priority"]
-pub struct M11PR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> M11PR_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 12)) | ((value as u32 & 0x03) << 12);
-        self.w
-    }
-}
+pub type M11PR_W<'a, const O: u8> = crate::FieldWriter<'a, u32, PRBS_SPEC, u8, u8, 2, O>;
 impl R {
     #[doc = "Bits 0:1 - Master 8 Priority"]
     #[inline(always)]
     pub fn m8pr(&self) -> M8PR_R {
-        M8PR_R::new((self.bits & 0x03) as u8)
+        M8PR_R::new((self.bits & 3) as u8)
     }
     #[doc = "Bits 4:5 - Master 9 Priority"]
     #[inline(always)]
     pub fn m9pr(&self) -> M9PR_R {
-        M9PR_R::new(((self.bits >> 4) & 0x03) as u8)
+        M9PR_R::new(((self.bits >> 4) & 3) as u8)
     }
     #[doc = "Bits 8:9 - Master 10 Priority"]
     #[inline(always)]
     pub fn m10pr(&self) -> M10PR_R {
-        M10PR_R::new(((self.bits >> 8) & 0x03) as u8)
+        M10PR_R::new(((self.bits >> 8) & 3) as u8)
     }
     #[doc = "Bits 12:13 - Master 11 Priority"]
     #[inline(always)]
     pub fn m11pr(&self) -> M11PR_R {
-        M11PR_R::new(((self.bits >> 12) & 0x03) as u8)
+        M11PR_R::new(((self.bits >> 12) & 3) as u8)
     }
 }
 impl W {
     #[doc = "Bits 0:1 - Master 8 Priority"]
     #[inline(always)]
-    pub fn m8pr(&mut self) -> M8PR_W {
-        M8PR_W { w: self }
+    #[must_use]
+    pub fn m8pr(&mut self) -> M8PR_W<0> {
+        M8PR_W::new(self)
     }
     #[doc = "Bits 4:5 - Master 9 Priority"]
     #[inline(always)]
-    pub fn m9pr(&mut self) -> M9PR_W {
-        M9PR_W { w: self }
+    #[must_use]
+    pub fn m9pr(&mut self) -> M9PR_W<4> {
+        M9PR_W::new(self)
     }
     #[doc = "Bits 8:9 - Master 10 Priority"]
     #[inline(always)]
-    pub fn m10pr(&mut self) -> M10PR_W {
-        M10PR_W { w: self }
+    #[must_use]
+    pub fn m10pr(&mut self) -> M10PR_W<8> {
+        M10PR_W::new(self)
     }
     #[doc = "Bits 12:13 - Master 11 Priority"]
     #[inline(always)]
-    pub fn m11pr(&mut self) -> M11PR_W {
-        M11PR_W { w: self }
+    #[must_use]
+    pub fn m11pr(&mut self) -> M11PR_W<12> {
+        M11PR_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -200,11 +116,10 @@ impl crate::Readable for PRBS_SPEC {
 #[doc = "`write(|w| ..)` method takes [prbs::W](W) writer structure"]
 impl crate::Writable for PRBS_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets PRBS to value 0"]
 impl crate::Resettable for PRBS_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

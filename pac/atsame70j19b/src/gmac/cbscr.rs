@@ -35,99 +35,37 @@ impl From<crate::W<CBSCR_SPEC>> for W {
     }
 }
 #[doc = "Field `QBE` reader - Queue B CBS Enable"]
-pub struct QBE_R(crate::FieldReader<bool, bool>);
-impl QBE_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        QBE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for QBE_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type QBE_R = crate::BitReader<bool>;
 #[doc = "Field `QBE` writer - Queue B CBS Enable"]
-pub struct QBE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> QBE_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type QBE_W<'a, const O: u8> = crate::BitWriter<'a, u32, CBSCR_SPEC, bool, O>;
 #[doc = "Field `QAE` reader - Queue A CBS Enable"]
-pub struct QAE_R(crate::FieldReader<bool, bool>);
-impl QAE_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        QAE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for QAE_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type QAE_R = crate::BitReader<bool>;
 #[doc = "Field `QAE` writer - Queue A CBS Enable"]
-pub struct QAE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> QAE_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
-}
+pub type QAE_W<'a, const O: u8> = crate::BitWriter<'a, u32, CBSCR_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - Queue B CBS Enable"]
     #[inline(always)]
     pub fn qbe(&self) -> QBE_R {
-        QBE_R::new((self.bits & 0x01) != 0)
+        QBE_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Queue A CBS Enable"]
     #[inline(always)]
     pub fn qae(&self) -> QAE_R {
-        QAE_R::new(((self.bits >> 1) & 0x01) != 0)
+        QAE_R::new(((self.bits >> 1) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Queue B CBS Enable"]
     #[inline(always)]
-    pub fn qbe(&mut self) -> QBE_W {
-        QBE_W { w: self }
+    #[must_use]
+    pub fn qbe(&mut self) -> QBE_W<0> {
+        QBE_W::new(self)
     }
     #[doc = "Bit 1 - Queue A CBS Enable"]
     #[inline(always)]
-    pub fn qae(&mut self) -> QAE_W {
-        QAE_W { w: self }
+    #[must_use]
+    pub fn qae(&mut self) -> QAE_W<1> {
+        QAE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -148,11 +86,10 @@ impl crate::Readable for CBSCR_SPEC {
 #[doc = "`write(|w| ..)` method takes [cbscr::W](W) writer structure"]
 impl crate::Writable for CBSCR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets CBSCR to value 0"]
 impl crate::Resettable for CBSCR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

@@ -35,31 +35,9 @@ impl From<crate::W<FPDIV_SPEC>> for W {
     }
 }
 #[doc = "Field `FPDIV` reader - Fractional Prescaler Division Factor"]
-pub struct FPDIV_R(crate::FieldReader<u16, u16>);
-impl FPDIV_R {
-    pub(crate) fn new(bits: u16) -> Self {
-        FPDIV_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for FPDIV_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type FPDIV_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `FPDIV` writer - Fractional Prescaler Division Factor"]
-pub struct FPDIV_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> FPDIV_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xffff) | (value as u32 & 0xffff);
-        self.w
-    }
-}
+pub type FPDIV_W<'a, const O: u8> = crate::FieldWriter<'a, u32, FPDIV_SPEC, u16, u16, 16, O>;
 impl R {
     #[doc = "Bits 0:15 - Fractional Prescaler Division Factor"]
     #[inline(always)]
@@ -70,8 +48,9 @@ impl R {
 impl W {
     #[doc = "Bits 0:15 - Fractional Prescaler Division Factor"]
     #[inline(always)]
-    pub fn fpdiv(&mut self) -> FPDIV_W {
-        FPDIV_W { w: self }
+    #[must_use]
+    pub fn fpdiv(&mut self) -> FPDIV_W<0> {
+        FPDIV_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -92,11 +71,10 @@ impl crate::Readable for FPDIV_SPEC {
 #[doc = "`write(|w| ..)` method takes [fpdiv::W](W) writer structure"]
 impl crate::Writable for FPDIV_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets FPDIV to value 0"]
 impl crate::Resettable for FPDIV_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

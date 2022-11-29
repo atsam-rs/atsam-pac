@@ -14,19 +14,7 @@ impl From<crate::R<CDR_SPEC>> for R {
     }
 }
 #[doc = "Field `DATA` reader - Converted Data"]
-pub struct DATA_R(crate::FieldReader<u16, u16>);
-impl DATA_R {
-    pub(crate) fn new(bits: u16) -> Self {
-        DATA_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DATA_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DATA_R = crate::FieldReader<u16, u16>;
 impl R {
     #[doc = "Bits 0:11 - Converted Data"]
     #[inline(always)]
@@ -45,8 +33,5 @@ impl crate::Readable for CDR_SPEC {
 }
 #[doc = "`reset()` method sets CDR to value 0"]
 impl crate::Resettable for CDR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

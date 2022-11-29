@@ -14,47 +14,11 @@ impl From<crate::R<GTYPE_SPEC>> for R {
     }
 }
 #[doc = "Field `NB_CH` reader - Number of Channels Minus One"]
-pub struct NB_CH_R(crate::FieldReader<u8, u8>);
-impl NB_CH_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        NB_CH_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for NB_CH_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type NB_CH_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `FIFO_SZ` reader - Number of Bytes"]
-pub struct FIFO_SZ_R(crate::FieldReader<u16, u16>);
-impl FIFO_SZ_R {
-    pub(crate) fn new(bits: u16) -> Self {
-        FIFO_SZ_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for FIFO_SZ_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type FIFO_SZ_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `NB_REQ` reader - Number of Peripheral Requests Minus One"]
-pub struct NB_REQ_R(crate::FieldReader<u8, u8>);
-impl NB_REQ_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        NB_REQ_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for NB_REQ_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type NB_REQ_R = crate::FieldReader<u8, u8>;
 impl R {
     #[doc = "Bits 0:4 - Number of Channels Minus One"]
     #[inline(always)]
@@ -83,8 +47,5 @@ impl crate::Readable for GTYPE_SPEC {
 }
 #[doc = "`reset()` method sets GTYPE to value 0"]
 impl crate::Resettable for GTYPE_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

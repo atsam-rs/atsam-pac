@@ -20,9 +20,9 @@ impl From<crate::W<WPCR_SPEC>> for W {
     }
 }
 #[doc = "Write Protection Command\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum WPCMD_AW {
+pub enum WPCMDSELECT_AW {
     #[doc = "0: Disables the software write protection of the register groups of which the bit WPRGx is at '1'."]
     DISABLE_SW_PROT = 0,
     #[doc = "1: Enables the software write protection of the register groups of which the bit WPRGx is at '1'."]
@@ -30,251 +30,115 @@ pub enum WPCMD_AW {
     #[doc = "2: Enables the hardware write protection of the register groups of which the bit WPRGx is at '1'. Only a hardware reset of the PWM controller can disable the hardware write protection. Moreover, to meet security requirements, the PIO lines associated with the PWM can not be configured through the PIO interface."]
     ENABLE_HW_PROT = 2,
 }
-impl From<WPCMD_AW> for u8 {
+impl From<WPCMDSELECT_AW> for u8 {
     #[inline(always)]
-    fn from(variant: WPCMD_AW) -> Self {
+    fn from(variant: WPCMDSELECT_AW) -> Self {
         variant as _
     }
 }
 #[doc = "Field `WPCMD` writer - Write Protection Command"]
-pub struct WPCMD_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> WPCMD_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: WPCMD_AW) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type WPCMD_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, WPCR_SPEC, u8, WPCMDSELECT_AW, 2, O>;
+impl<'a, const O: u8> WPCMD_W<'a, O> {
     #[doc = "Disables the software write protection of the register groups of which the bit WPRGx is at '1'."]
     #[inline(always)]
     pub fn disable_sw_prot(self) -> &'a mut W {
-        self.variant(WPCMD_AW::DISABLE_SW_PROT)
+        self.variant(WPCMDSELECT_AW::DISABLE_SW_PROT)
     }
     #[doc = "Enables the software write protection of the register groups of which the bit WPRGx is at '1'."]
     #[inline(always)]
     pub fn enable_sw_prot(self) -> &'a mut W {
-        self.variant(WPCMD_AW::ENABLE_SW_PROT)
+        self.variant(WPCMDSELECT_AW::ENABLE_SW_PROT)
     }
     #[doc = "Enables the hardware write protection of the register groups of which the bit WPRGx is at '1'. Only a hardware reset of the PWM controller can disable the hardware write protection. Moreover, to meet security requirements, the PIO lines associated with the PWM can not be configured through the PIO interface."]
     #[inline(always)]
     pub fn enable_hw_prot(self) -> &'a mut W {
-        self.variant(WPCMD_AW::ENABLE_HW_PROT)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x03) | (value as u32 & 0x03);
-        self.w
+        self.variant(WPCMDSELECT_AW::ENABLE_HW_PROT)
     }
 }
 #[doc = "Field `WPRG0` writer - Write Protection Register Group 0"]
-pub struct WPRG0_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> WPRG0_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
-    }
-}
+pub type WPRG0_W<'a, const O: u8> = crate::BitWriter<'a, u32, WPCR_SPEC, bool, O>;
 #[doc = "Field `WPRG1` writer - Write Protection Register Group 1"]
-pub struct WPRG1_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> WPRG1_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
-        self.w
-    }
-}
+pub type WPRG1_W<'a, const O: u8> = crate::BitWriter<'a, u32, WPCR_SPEC, bool, O>;
 #[doc = "Field `WPRG2` writer - Write Protection Register Group 2"]
-pub struct WPRG2_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> WPRG2_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
-        self.w
-    }
-}
+pub type WPRG2_W<'a, const O: u8> = crate::BitWriter<'a, u32, WPCR_SPEC, bool, O>;
 #[doc = "Field `WPRG3` writer - Write Protection Register Group 3"]
-pub struct WPRG3_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> WPRG3_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
-        self.w
-    }
-}
+pub type WPRG3_W<'a, const O: u8> = crate::BitWriter<'a, u32, WPCR_SPEC, bool, O>;
 #[doc = "Field `WPRG4` writer - Write Protection Register Group 4"]
-pub struct WPRG4_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> WPRG4_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | ((value as u32 & 0x01) << 6);
-        self.w
-    }
-}
+pub type WPRG4_W<'a, const O: u8> = crate::BitWriter<'a, u32, WPCR_SPEC, bool, O>;
 #[doc = "Field `WPRG5` writer - Write Protection Register Group 5"]
-pub struct WPRG5_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> WPRG5_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | ((value as u32 & 0x01) << 7);
-        self.w
-    }
-}
+pub type WPRG5_W<'a, const O: u8> = crate::BitWriter<'a, u32, WPCR_SPEC, bool, O>;
 #[doc = "Write Protection Key\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u32)]
-pub enum WPKEY_AW {
+pub enum WPKEYSELECT_AW {
     #[doc = "5265229: Writing any other value in this field aborts the write operation of the WPCMD field.Always reads as 0"]
     PASSWD = 5265229,
 }
-impl From<WPKEY_AW> for u32 {
+impl From<WPKEYSELECT_AW> for u32 {
     #[inline(always)]
-    fn from(variant: WPKEY_AW) -> Self {
+    fn from(variant: WPKEYSELECT_AW) -> Self {
         variant as _
     }
 }
 #[doc = "Field `WPKEY` writer - Write Protection Key"]
-pub struct WPKEY_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> WPKEY_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: WPKEY_AW) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type WPKEY_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, WPCR_SPEC, u32, WPKEYSELECT_AW, 24, O>;
+impl<'a, const O: u8> WPKEY_W<'a, O> {
     #[doc = "Writing any other value in this field aborts the write operation of the WPCMD field.Always reads as 0"]
     #[inline(always)]
     pub fn passwd(self) -> &'a mut W {
-        self.variant(WPKEY_AW::PASSWD)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x00ff_ffff << 8)) | ((value as u32 & 0x00ff_ffff) << 8);
-        self.w
+        self.variant(WPKEYSELECT_AW::PASSWD)
     }
 }
 impl W {
     #[doc = "Bits 0:1 - Write Protection Command"]
     #[inline(always)]
-    pub fn wpcmd(&mut self) -> WPCMD_W {
-        WPCMD_W { w: self }
+    #[must_use]
+    pub fn wpcmd(&mut self) -> WPCMD_W<0> {
+        WPCMD_W::new(self)
     }
     #[doc = "Bit 2 - Write Protection Register Group 0"]
     #[inline(always)]
-    pub fn wprg0(&mut self) -> WPRG0_W {
-        WPRG0_W { w: self }
+    #[must_use]
+    pub fn wprg0(&mut self) -> WPRG0_W<2> {
+        WPRG0_W::new(self)
     }
     #[doc = "Bit 3 - Write Protection Register Group 1"]
     #[inline(always)]
-    pub fn wprg1(&mut self) -> WPRG1_W {
-        WPRG1_W { w: self }
+    #[must_use]
+    pub fn wprg1(&mut self) -> WPRG1_W<3> {
+        WPRG1_W::new(self)
     }
     #[doc = "Bit 4 - Write Protection Register Group 2"]
     #[inline(always)]
-    pub fn wprg2(&mut self) -> WPRG2_W {
-        WPRG2_W { w: self }
+    #[must_use]
+    pub fn wprg2(&mut self) -> WPRG2_W<4> {
+        WPRG2_W::new(self)
     }
     #[doc = "Bit 5 - Write Protection Register Group 3"]
     #[inline(always)]
-    pub fn wprg3(&mut self) -> WPRG3_W {
-        WPRG3_W { w: self }
+    #[must_use]
+    pub fn wprg3(&mut self) -> WPRG3_W<5> {
+        WPRG3_W::new(self)
     }
     #[doc = "Bit 6 - Write Protection Register Group 4"]
     #[inline(always)]
-    pub fn wprg4(&mut self) -> WPRG4_W {
-        WPRG4_W { w: self }
+    #[must_use]
+    pub fn wprg4(&mut self) -> WPRG4_W<6> {
+        WPRG4_W::new(self)
     }
     #[doc = "Bit 7 - Write Protection Register Group 5"]
     #[inline(always)]
-    pub fn wprg5(&mut self) -> WPRG5_W {
-        WPRG5_W { w: self }
+    #[must_use]
+    pub fn wprg5(&mut self) -> WPRG5_W<7> {
+        WPRG5_W::new(self)
     }
     #[doc = "Bits 8:31 - Write Protection Key"]
     #[inline(always)]
-    pub fn wpkey(&mut self) -> WPKEY_W {
-        WPKEY_W { w: self }
+    #[must_use]
+    pub fn wpkey(&mut self) -> WPKEY_W<8> {
+        WPKEY_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -291,11 +155,10 @@ impl crate::RegisterSpec for WPCR_SPEC {
 #[doc = "`write(|w| ..)` method takes [wpcr::W](W) writer structure"]
 impl crate::Writable for WPCR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets WPCR to value 0"]
 impl crate::Resettable for WPCR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

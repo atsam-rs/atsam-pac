@@ -20,229 +20,141 @@ impl From<crate::W<IER_SPEC>> for W {
     }
 }
 #[doc = "Receiver Ready Interrupt Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum RXRDY_AW {
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum RXRDYSELECT_AW {
     #[doc = "0: No effect"]
     OFF = 0,
     #[doc = "1: Enables the corresponding interrupt"]
     ON = 1,
 }
-impl From<RXRDY_AW> for bool {
+impl From<RXRDYSELECT_AW> for bool {
     #[inline(always)]
-    fn from(variant: RXRDY_AW) -> Self {
+    fn from(variant: RXRDYSELECT_AW) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `RXRDY` writer - Receiver Ready Interrupt Enable"]
-pub struct RXRDY_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RXRDY_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: RXRDY_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type RXRDY_W<'a, const O: u8> = crate::BitWriter<'a, u32, IER_SPEC, RXRDYSELECT_AW, O>;
+impl<'a, const O: u8> RXRDY_W<'a, O> {
     #[doc = "No effect"]
     #[inline(always)]
     pub fn off(self) -> &'a mut W {
-        self.variant(RXRDY_AW::OFF)
+        self.variant(RXRDYSELECT_AW::OFF)
     }
     #[doc = "Enables the corresponding interrupt"]
     #[inline(always)]
     pub fn on(self) -> &'a mut W {
-        self.variant(RXRDY_AW::ON)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
+        self.variant(RXRDYSELECT_AW::ON)
     }
 }
 #[doc = "Receive Overrun Interrupt Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum RXOR_AW {
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum RXORSELECT_AW {
     #[doc = "0: No effect"]
     OFF = 0,
     #[doc = "1: Enables the corresponding interrupt"]
     ON = 1,
 }
-impl From<RXOR_AW> for bool {
+impl From<RXORSELECT_AW> for bool {
     #[inline(always)]
-    fn from(variant: RXOR_AW) -> Self {
+    fn from(variant: RXORSELECT_AW) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `RXOR` writer - Receive Overrun Interrupt Enable"]
-pub struct RXOR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RXOR_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: RXOR_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type RXOR_W<'a, const O: u8> = crate::BitWriter<'a, u32, IER_SPEC, RXORSELECT_AW, O>;
+impl<'a, const O: u8> RXOR_W<'a, O> {
     #[doc = "No effect"]
     #[inline(always)]
     pub fn off(self) -> &'a mut W {
-        self.variant(RXOR_AW::OFF)
+        self.variant(RXORSELECT_AW::OFF)
     }
     #[doc = "Enables the corresponding interrupt"]
     #[inline(always)]
     pub fn on(self) -> &'a mut W {
-        self.variant(RXOR_AW::ON)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
+        self.variant(RXORSELECT_AW::ON)
     }
 }
 #[doc = "Transmit Ready Interrupt Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum TXRDY_AW {
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum TXRDYSELECT_AW {
     #[doc = "0: No effect"]
     OFF = 0,
     #[doc = "1: Enables the corresponding interrupt"]
     ON = 1,
 }
-impl From<TXRDY_AW> for bool {
+impl From<TXRDYSELECT_AW> for bool {
     #[inline(always)]
-    fn from(variant: TXRDY_AW) -> Self {
+    fn from(variant: TXRDYSELECT_AW) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `TXRDY` writer - Transmit Ready Interrupt Enable"]
-pub struct TXRDY_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TXRDY_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: TXRDY_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type TXRDY_W<'a, const O: u8> = crate::BitWriter<'a, u32, IER_SPEC, TXRDYSELECT_AW, O>;
+impl<'a, const O: u8> TXRDY_W<'a, O> {
     #[doc = "No effect"]
     #[inline(always)]
     pub fn off(self) -> &'a mut W {
-        self.variant(TXRDY_AW::OFF)
+        self.variant(TXRDYSELECT_AW::OFF)
     }
     #[doc = "Enables the corresponding interrupt"]
     #[inline(always)]
     pub fn on(self) -> &'a mut W {
-        self.variant(TXRDY_AW::ON)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
-        self.w
+        self.variant(TXRDYSELECT_AW::ON)
     }
 }
 #[doc = "Transmit Underrun Interrupt Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum TXUR_AW {
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum TXURSELECT_AW {
     #[doc = "0: No effect"]
     OFF = 0,
     #[doc = "1: Enables the corresponding interrupt"]
     ON = 1,
 }
-impl From<TXUR_AW> for bool {
+impl From<TXURSELECT_AW> for bool {
     #[inline(always)]
-    fn from(variant: TXUR_AW) -> Self {
+    fn from(variant: TXURSELECT_AW) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `TXUR` writer - Transmit Underrun Interrupt Enable"]
-pub struct TXUR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TXUR_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: TXUR_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type TXUR_W<'a, const O: u8> = crate::BitWriter<'a, u32, IER_SPEC, TXURSELECT_AW, O>;
+impl<'a, const O: u8> TXUR_W<'a, O> {
     #[doc = "No effect"]
     #[inline(always)]
     pub fn off(self) -> &'a mut W {
-        self.variant(TXUR_AW::OFF)
+        self.variant(TXURSELECT_AW::OFF)
     }
     #[doc = "Enables the corresponding interrupt"]
     #[inline(always)]
     pub fn on(self) -> &'a mut W {
-        self.variant(TXUR_AW::ON)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | ((value as u32 & 0x01) << 6);
-        self.w
+        self.variant(TXURSELECT_AW::ON)
     }
 }
 impl W {
     #[doc = "Bit 1 - Receiver Ready Interrupt Enable"]
     #[inline(always)]
-    pub fn rxrdy(&mut self) -> RXRDY_W {
-        RXRDY_W { w: self }
+    #[must_use]
+    pub fn rxrdy(&mut self) -> RXRDY_W<1> {
+        RXRDY_W::new(self)
     }
     #[doc = "Bit 2 - Receive Overrun Interrupt Enable"]
     #[inline(always)]
-    pub fn rxor(&mut self) -> RXOR_W {
-        RXOR_W { w: self }
+    #[must_use]
+    pub fn rxor(&mut self) -> RXOR_W<2> {
+        RXOR_W::new(self)
     }
     #[doc = "Bit 5 - Transmit Ready Interrupt Enable"]
     #[inline(always)]
-    pub fn txrdy(&mut self) -> TXRDY_W {
-        TXRDY_W { w: self }
+    #[must_use]
+    pub fn txrdy(&mut self) -> TXRDY_W<5> {
+        TXRDY_W::new(self)
     }
     #[doc = "Bit 6 - Transmit Underrun Interrupt Enable"]
     #[inline(always)]
-    pub fn txur(&mut self) -> TXUR_W {
-        TXUR_W { w: self }
+    #[must_use]
+    pub fn txur(&mut self) -> TXUR_W<6> {
+        TXUR_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -259,11 +171,10 @@ impl crate::RegisterSpec for IER_SPEC {
 #[doc = "`write(|w| ..)` method takes [ier::W](W) writer structure"]
 impl crate::Writable for IER_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets IER to value 0"]
 impl crate::Resettable for IER_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }
