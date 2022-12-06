@@ -80,6 +80,7 @@ version = "0.1.0"
 
 [dependencies]
 cortex-m = "0.7.6"
+critical-section = { version = "1.0.0", optional = true }
 vcell = "0.1.3"
 
 [dependencies.cortex-m-rt]
@@ -88,6 +89,7 @@ version = "0.7.2"
 
 [features]
 rt = ["cortex-m-rt/device"]
+critical-section = ["dep:critical-section"]
 
 [package.metadata.docs.rs]
 features = ["rt"]
