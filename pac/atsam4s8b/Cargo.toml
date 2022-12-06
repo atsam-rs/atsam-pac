@@ -6,7 +6,7 @@ keywords = ["arm", "cortex-m", "atsam4s8b", "svd2rust"]
 license = "MIT OR Apache-2.0"
 name = "atsam4s8b-pac"
 repository = "https://github.com/atsam-rs/atsam-pac"
-version = "0.2.2"
+version = "0.3.0"
 edition = "2021"
 
 [dependencies]
