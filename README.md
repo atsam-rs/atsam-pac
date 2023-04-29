@@ -1,4 +1,4 @@
-# Microchip/Atmel ATSAM4E, ATSAM4L, ATSAM4N, ATSAM4S, and ATSAME70 PACs for Rust
+# Microchip/Atmel ATSAM4E, ATSAM4L, ATSAM4N, and ATSAM4S PACs for Rust
 
 This repository holds the Peripheral Access Crates (PAC) for various Microchip/Atmel `ATSAM` microcontrollers.
 
@@ -52,24 +52,6 @@ This repository holds the Peripheral Access Crates (PAC) for various Microchip/A
 |          | ATSAM4SD32B  |                                                                                    |
 |          | ATSAM4SD32C  |                                                                                    |
 |          | ATSAM4SP32A  |                                                                                    |
-| ATSAME70 | ATSAME70J19  | [4.5.86 (2021-01-27)](https://packs.download.microchip.com)                        |
-|          | ATSAME70J19B |                                                                                    |
-|          | ATSAME70J20  |                                                                                    |
-|          | ATSAME70J20B |                                                                                    |
-|          | ATSAME70J21  |                                                                                    |
-|          | ATSAME70J21B |                                                                                    |
-|          | ATSAME70N19  |                                                                                    |
-|          | ATSAME70N19B |                                                                                    |
-|          | ATSAME70N20  |                                                                                    |
-|          | ATSAME70N20B |                                                                                    |
-|          | ATSAME70N21  |                                                                                    |
-|          | ATSAME70N21B |                                                                                    |
-|          | ATSAME70Q19  |                                                                                    |
-|          | ATSAME70Q19B |                                                                                    |
-|          | ATSAME70Q20  |                                                                                    |
-|          | ATSAME70Q20B |                                                                                    |
-|          | ATSAME70Q21  |                                                                                    |
-|          | ATSAME70Q21B |                                                                                    |
 
 ## Unmaintained / Deprecated
 
@@ -94,6 +76,30 @@ The code has been removed from this repo.
 |          | ATSAME54N20A |                                                                                    |
 |          | ATSAME54P19A |                                                                                    |
 |          | ATSAME54P20A |                                                                                    |
+
+These pacs are handled by the excellent [atsamx7x-rust](https://crates.io/crates/atsamx7x-hal) crate.
+The code has been removed from this repo.
+
+| Family   | Variant      | Source Package Version                                                             |
+|----------|--------------|------------------------------------------------------------------------------------|
+| ATSAME70 | ATSAME70J19  | [4.5.86 (2021-01-27)](https://packs.download.microchip.com)                        |
+|          | ATSAME70J19B |                                                                                    |
+|          | ATSAME70J20  |                                                                                    |
+|          | ATSAME70J20B |                                                                                    |
+|          | ATSAME70J21  |                                                                                    |
+|          | ATSAME70J21B |                                                                                    |
+|          | ATSAME70N19  |                                                                                    |
+|          | ATSAME70N19B |                                                                                    |
+|          | ATSAME70N20  |                                                                                    |
+|          | ATSAME70N20B |                                                                                    |
+|          | ATSAME70N21  |                                                                                    |
+|          | ATSAME70N21B |                                                                                    |
+|          | ATSAME70Q19  |                                                                                    |
+|          | ATSAME70Q19B |                                                                                    |
+|          | ATSAME70Q20  |                                                                                    |
+|          | ATSAME70Q20B |                                                                                    |
+|          | ATSAME70Q21  |                                                                                    |
+|          | ATSAME70Q21B |                                                                                    |
 
 ## License
 

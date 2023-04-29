@@ -79,13 +79,13 @@ repository = "https://github.com/atsam-rs/atsam-pac"
 version = "0.1.0"
 
 [dependencies]
-cortex-m = "0.7.6"
-critical-section = { version = "1.0.0", optional = true }
+cortex-m = "0.7.7"
+critical-section = { version = "1.1.1", optional = true }
 vcell = "0.1.3"
 
 [dependencies.cortex-m-rt]
 optional = true
-version = "0.7.2"
+version = "0.7.3"
 
 [features]
 rt = ["cortex-m-rt/device"]
