@@ -5,16 +5,41 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## v0.3.2 (2023-06-06)
+
+### Bug Fixes
+
+ - <csr-id-93df3149790573cde6a3a25a7923267d81d8fab4/> Add missing CHIDID CIDR fields to atsam4l
+
+### Commit Statistics
+
+<csr-read-only-do-not-edit/>
+
+ - 1 commit contributed to the release.
+ - 37 days passed between releases.
+ - 1 commit was understood as [conventional](https://www.conventionalcommits.org).
+ - 0 issues like '(#ID)' were seen in commit messages
+
+### Commit Details
+
+<csr-read-only-do-not-edit/>
+
+<details><summary>view details</summary>
+
+ * **Uncategorized**
+    - Add missing CHIDID CIDR fields to atsam4l ([`93df314`](https://github.com/atsam-rs/atsam-pac/commit/93df3149790573cde6a3a25a7923267d81d8fab4))
+</details>
+
 ## v0.3.1 (2023-04-29)
 
 ### Bug Fixes
 
  - <csr-id-350e7515159199ef5cfd37ffdca2b511ab4486dc/> Update dependencies and deprecate atsame7 pacs
    - cortex-m -> 0.7.7
-   - cortex-m-rt -> 0.7.3
-   - critical-section -> 1.1.1
-   - Renamed LICENSE_MIT -> LICENSE-MIT
-   - Deprecated (handled by https://github.com/atsams-rs/atsamx7x-rust)
+- cortex-m-rt -> 0.7.3
+- critical-section -> 1.1.1
+- Renamed LICENSE_MIT -> LICENSE-MIT
+- Deprecated (handled by https://github.com/atsams-rs/atsamx7x-rust)
      * atsame70j19
      * atsame70j19b
      * atsame70j20
@@ -33,12 +58,29 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
      * atsame70q20b
      * atsame70q21
      * atsame70q21b
+* atsame70j19b
+* atsame70j20
+* atsame70j20b
+* atsame70j21
+* atsame70j21b
+* atsame70n19
+* atsame70n19b
+* atsame70n20
+* atsame70n20b
+* atsame70n21
+* atsame70n21b
+* atsame70q19
+* atsame70q19b
+* atsame70q20
+* atsame70q20b
+* atsame70q21
+* atsame70q21b
 
 ### Commit Statistics
 
 <csr-read-only-do-not-edit/>
 
- - 1 commit contributed to the release.
+ - 2 commits contributed to the release.
  - 144 days passed between releases.
  - 1 commit was understood as [conventional](https://www.conventionalcommits.org).
  - 0 issues like '(#ID)' were seen in commit messages
@@ -50,6 +92,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 <details><summary>view details</summary>
 
  * **Uncategorized**
+    - Release atsam4e16c-pac v0.3.1, atsam4e16e-pac v0.3.1, atsam4e8c-pac v0.3.1, atsam4e8e-pac v0.3.1, atsam4lc2a-pac v0.3.1, atsam4lc2b-pac v0.3.1, atsam4lc2c-pac v0.3.1, atsam4lc4a-pac v0.3.1, atsam4lc4b-pac v0.3.1, atsam4lc4c-pac v0.3.1, atsam4lc8a-pac v0.3.1, atsam4lc8b-pac v0.3.1, atsam4lc8c-pac v0.3.1, atsam4ls2a-pac v0.3.1, atsam4ls2b-pac v0.3.1, atsam4ls2c-pac v0.3.1, atsam4ls4a-pac v0.3.1, atsam4ls4b-pac v0.3.1, atsam4ls4c-pac v0.3.1, atsam4ls8a-pac v0.3.1, atsam4ls8b-pac v0.3.1, atsam4ls8c-pac v0.3.1, atsam4n16b-pac v0.3.1, atsam4n16c-pac v0.3.1, atsam4n8a-pac v0.3.1, atsam4n8b-pac v0.3.1, atsam4n8c-pac v0.3.1, atsam4s16b-pac v0.3.1, atsam4s16c-pac v0.3.1, atsam4s2a-pac v0.3.1, atsam4s2b-pac v0.3.1, atsam4s2c-pac v0.3.1, atsam4s4a-pac v0.3.1, atsam4s4b-pac v0.3.1, atsam4s4c-pac v0.3.1, atsam4s8b-pac v0.3.1, atsam4s8c-pac v0.3.1, atsam4sa16b-pac v0.3.1, atsam4sa16c-pac v0.3.1, atsam4sd16b-pac v0.3.1, atsam4sd16c-pac v0.3.1, atsam4sd32b-pac v0.3.1, atsam4sd32c-pac v0.3.1, atsam4sp32a-pac v0.3.1 ([`101ed9e`](https://github.com/atsam-rs/atsam-pac/commit/101ed9e5083952a6ebc10231735e07ce037a96a2))
     - Update dependencies and deprecate atsame7 pacs ([`350e751`](https://github.com/atsam-rs/atsam-pac/commit/350e7515159199ef5cfd37ffdca2b511ab4486dc))
 </details>
 
