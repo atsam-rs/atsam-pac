@@ -12,7 +12,7 @@ This repository holds the Peripheral Access Crates (PAC) for various Microchip/A
 |          | ATSAM4E8E    |                                                                                    |
 |          | ATSAM4E16C   |                                                                                    |
 |          | ATSAM4E16E   |                                                                                    |
-| ATSAM4N  | ATSAM4LC2A   | [1.6.1 (2018-05-07)](https://keilpack.azureedge.net/pack/Keil.SAM4_DFP.1.6.1.pack) |
+| ATSAM4L  | ATSAM4LC2A   | [1.6.1 (2018-05-07)](https://keilpack.azureedge.net/pack/Keil.SAM4_DFP.1.6.1.pack) |
 |          | ATSAM4LC2B   |                                                                                    |
 |          | ATSAM4LC2C   |                                                                                    |
 |          | ATSAM4LC4A   |                                                                                    |
