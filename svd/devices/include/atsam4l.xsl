@@ -111,63 +111,75 @@
   <!-- Missing CHIPID CIDR bitfields in the SVD -->
   <xsl:template match="/device/peripherals/peripheral[name='CHIPID']/registers/register[name='CIDR']/resetValue">
     <xsl:copy-of select="."/>
-          <fields>
-            <field>
-              <name>VERSION</name>
-              <description>Version of the Device</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>5</bitWidth>
-              <access>read-only</access>
-            </field>
-            <field>
-              <name>EPROC</name>
-              <description>Embedded Processor</description>
-              <bitOffset>5</bitOffset>
-              <bitWidth>3</bitWidth>
-              <access>read-only</access>
-            </field>
-            <field>
-              <name>NVPSIZ</name>
-              <description>Nonvolatile Program Memory Size</description>
-              <bitOffset>8</bitOffset>
-              <bitWidth>4</bitWidth>
-              <access>read-only</access>
-            </field>
-            <field>
-              <name>NVPSIZ2</name>
-              <description>Second Nonvolatile Program Memory Size</description>
-              <bitOffset>12</bitOffset>
-              <bitWidth>4</bitWidth>
-              <access>read-only</access>
-            </field>
-            <field>
-              <name>SRAMSIZ</name>
-              <description>Internal SRAM Size</description>
-              <bitOffset>16</bitOffset>
-              <bitWidth>5</bitWidth>
-              <access>read-only</access>
-            </field>
-            <field>
-              <name>ARCH</name>
-              <description>Architecture Identifier</description>
-              <bitOffset>21</bitOffset>
-              <bitWidth>7</bitWidth>
-              <access>read-only</access>
-            </field>
-            <field>
-              <name>NVPTYP</name>
-              <description>Nonvolatile Program Memory Type</description>
-              <bitOffset>28</bitOffset>
-              <bitWidth>3</bitWidth>
-              <access>read-only</access>
-            </field>
-            <field>
-              <name>EXT</name>
-              <description>Extension Flag</description>
-              <bitOffset>31</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-only</access>
-            </field>
-          </fields>
+    <fields>
+      <field>
+        <name>VERSION</name>
+        <description>Version of the Device</description>
+        <bitOffset>0</bitOffset>
+        <bitWidth>5</bitWidth>
+        <access>read-only</access>
+      </field>
+      <field>
+        <name>EPROC</name>
+        <description>Embedded Processor</description>
+        <bitOffset>5</bitOffset>
+        <bitWidth>3</bitWidth>
+        <access>read-only</access>
+      </field>
+      <field>
+        <name>NVPSIZ</name>
+        <description>Nonvolatile Program Memory Size</description>
+        <bitOffset>8</bitOffset>
+        <bitWidth>4</bitWidth>
+        <access>read-only</access>
+      </field>
+      <field>
+        <name>NVPSIZ2</name>
+        <description>Second Nonvolatile Program Memory Size</description>
+        <bitOffset>12</bitOffset>
+        <bitWidth>4</bitWidth>
+        <access>read-only</access>
+      </field>
+      <field>
+        <name>SRAMSIZ</name>
+        <description>Internal SRAM Size</description>
+        <bitOffset>16</bitOffset>
+        <bitWidth>5</bitWidth>
+        <access>read-only</access>
+      </field>
+      <field>
+        <name>ARCH</name>
+        <description>Architecture Identifier</description>
+        <bitOffset>21</bitOffset>
+        <bitWidth>7</bitWidth>
+        <access>read-only</access>
+      </field>
+      <field>
+        <name>NVPTYP</name>
+        <description>Nonvolatile Program Memory Type</description>
+        <bitOffset>28</bitOffset>
+        <bitWidth>3</bitWidth>
+        <access>read-only</access>
+      </field>
+      <field>
+        <name>EXT</name>
+        <description>Extension Flag</description>
+        <bitOffset>31</bitOffset>
+        <bitWidth>1</bitWidth>
+        <access>read-only</access>
+      </field>
+    </fields>
+  </xsl:template>
+
+  <!-- Missing passwd field (TC WPMR WPKEY) -->
+  <xsl:template match="/device/peripherals/peripheral[name='TC0']/registers/register[name='WPMR']/fields/field[name='WPKEY']/bitWidth">
+    <xsl:copy-of select="."/>
+      <enumeratedValues>
+        <enumeratedValue>
+          <name>PASSWD</name>
+          <description>Writing any other value in this field aborts the write operation of the WPEN bit.</description>
+          <value>0x54494D</value>
+        </enumeratedValue>
+      </enumeratedValues>
   </xsl:template>
 </xsl:stylesheet>

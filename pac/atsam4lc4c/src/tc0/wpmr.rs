@@ -39,9 +39,44 @@ pub type WPEN_R = crate::BitReader<bool>;
 #[doc = "Field `WPEN` writer - Write Protect Enable"]
 pub type WPEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, WPMR_SPEC, bool, O>;
 #[doc = "Field `WPKEY` reader - Write Protect Key"]
-pub type WPKEY_R = crate::FieldReader<u32, u32>;
+pub type WPKEY_R = crate::FieldReader<u32, WPKEY_A>;
+#[doc = "Write Protect Key\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+#[repr(u32)]
+pub enum WPKEY_A {
+    #[doc = "5523789: Writing any other value in this field aborts the write operation of the WPEN bit."]
+    PASSWD = 5523789,
+}
+impl From<WPKEY_A> for u32 {
+    #[inline(always)]
+    fn from(variant: WPKEY_A) -> Self {
+        variant as _
+    }
+}
+impl WPKEY_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> Option<WPKEY_A> {
+        match self.bits {
+            5523789 => Some(WPKEY_A::PASSWD),
+            _ => None,
+        }
+    }
+    #[doc = "Checks if the value of the field is `PASSWD`"]
+    #[inline(always)]
+    pub fn is_passwd(&self) -> bool {
+        *self == WPKEY_A::PASSWD
+    }
+}
 #[doc = "Field `WPKEY` writer - Write Protect Key"]
-pub type WPKEY_W<'a, const O: u8> = crate::FieldWriter<'a, u32, WPMR_SPEC, u32, u32, 24, O>;
+pub type WPKEY_W<'a, const O: u8> = crate::FieldWriter<'a, u32, WPMR_SPEC, u32, WPKEY_A, 24, O>;
+impl<'a, const O: u8> WPKEY_W<'a, O> {
+    #[doc = "Writing any other value in this field aborts the write operation of the WPEN bit."]
+    #[inline(always)]
+    pub fn passwd(self) -> &'a mut W {
+        self.variant(WPKEY_A::PASSWD)
+    }
+}
 impl R {
     #[doc = "Bit 0 - Write Protect Enable"]
     #[inline(always)]
